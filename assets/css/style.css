@@ -168,7 +168,44 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;bac
 
 .reveal-hero{opacity:0;transform:translateY(28px);animation:fadeUp 0.8s var(--delay,0s) ease both}
 @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+/* HERO PROOF BOX */
+.hero-proof-box{
+  position:absolute;
+  left:2rem;
+  top:50%;
+  transform:translateY(-50%);
+  background:rgba(8,8,16,0.65);
+  backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,0.12);
+  border-radius:16px;
+  padding:1.25rem 1.5rem;
+  max-width:320px;
+  z-index:6;
+  box-shadow:0 12px 40px rgba(0,0,0,0.45);
+}
 
+.hero-proof-box .proof-item{
+  display:flex;
+  align-items:flex-start;
+  gap:.6rem;
+  font-size:.9rem;
+  color:#e5e7eb;
+  line-height:1.5;
+}
+
+.hero-proof-box .proof-item + .proof-item{
+  margin-top:.5rem;
+}
+
+.hero-proof-box .proof-icon{
+  flex-shrink:0;
+  opacity:.9;
+}
+
+/* Mobile: ซ่อน (กันบัง hero) */
+@media(max-width:900px){
+  .hero-proof-box{display:none;}
+}
 /* ════════════════════════════════
    PROOF BAR
    ════════════════════════════════ */
