@@ -168,7 +168,65 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;bac
 
 .reveal-hero{opacity:0;transform:translateY(28px);animation:fadeUp 0.8s var(--delay,0s) ease both}
 @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+.hero-left-column {
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 320px;
+  background: rgba(20, 20, 40, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-left: 4px solid rgba(6, 199, 85, 0.5);
+  border-radius: 16px;
+  padding: 2.2rem 1.8rem;
+  position: relative;
+  z-index: 15;
+  opacity: 0;
+  transform: translateX(-40px);
+  animation: slideInLeftHero 0.8s ease-out 0.2s forwards;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3), inset 0 1px 1px rgba(255,255,255,0.1);
+}
 
+@keyframes slideInLeftHero {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.hero-left-column .feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.6rem;
+  padding-bottom: 1.6rem;
+  border-bottom: 1px solid rgba(6, 199, 85, 0.15);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: rgba(245, 242, 236, 0.92);
+  transition: all 0.3s ease;
+}
+
+.hero-left-column .feature-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.hero-left-column .feature-item .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2rem;
+  height: 2rem;
+  flex-shrink: 0;
+  font-size: 1.5rem;
+  background: rgba(6, 199, 85, 0.1);
+  border-radius: 8px;
+}
 /* ════════════════════════════════
    PROOF BAR
    ════════════════════════════════ */
