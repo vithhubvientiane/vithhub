@@ -185,8 +185,19 @@ function submitLead() {
 }
 
 // ─── POPUP ───
-function openPopup()  { const el = document.getElementById('popupOverlay'); if (el) el.classList.add('popup-open'); }
-function closePopup() { const el = document.getElementById('popupOverlay'); if (el) el.classList.remove('popup-open'); }
+function openPopup()  {
+  // Suppress if closed within the last 24 hours
+  const dismissed = localStorage.getItem('vith-popup-dismissed');
+  if (dismissed && Date.now() - parseInt(dismissed) < 86400000) return;
+  const el = document.getElementById('popupOverlay');
+  if (el) el.classList.add('popup-open');
+}
+function closePopup() {
+  const el = document.getElementById('popupOverlay');
+  if (el) el.classList.remove('popup-open');
+  // Remember dismissal time
+  localStorage.setItem('vith-popup-dismissed', Date.now().toString());
+}
 function handlePopupOverlayClick(e) { if (e.target === document.getElementById('popupOverlay')) closePopup(); }
 function handlePopupRemind() {
   const btn = document.getElementById('popupRemindBtn');
