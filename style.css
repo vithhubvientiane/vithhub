@@ -5,22 +5,25 @@
    ══════════════════════════════════════════ */
 
 :root {
-  /* ── Brand Palette (Modern Luxury) ── */
-  --red:        #C41E3A;   /* แดงเข้มแบบพรีเมียม */
+  /* ── Brand Colors ── */
+  --red:        #C41E3A;   
   --red-dark:   #8B0000;
-  --gold:       #C5A059;   /* ทองแชมเปญ ดูแพง */
+  --gold:       #C5A059;   
   --gold-dark:  #94763C;
-  --black:      #1a1a2e;   /* สำหรับ Nav/Footer */
+  --black:      #1a1a2e;   
 
-  /* ── Backgrounds (เน้นให้ตัวหนังสือสีแดง/ทองเด้งออกมา) ── */
-  --surface:    #F8F9FB;   /* พื้นหลังหลัก (ขาวอมเทานิดๆ) */
-  --surface2:   #FFFFFF;   /* พื้นหลังการ์ด (ขาวสนิทเพื่อให้ดูสะอาด) */
-  --surface3:   #F1F4F9;   /* ส่วนที่ต้องการเน้นความต่าง */
+  /* ── Backgrounds ── */
+  --surface:    #F7F8FA;   /* พื้นหลังหลัก */
+  --surface2:   #FFFFFF;   /* พื้นหลัง Card */
+  --surface3:   #EEF1F6;   /* ส่วนสลับ */
 
-  /* ── Typography (ความเข้มที่พอเหมาะ) ── */
-  --body-text:  #2D3436;   /* เทาเข้มเกือบดำ อ่านง่ายมาก */
-  --sub-text:   #636E72;   /* สำหรับคำอธิบายประกอบ */
-  --muted:      #9CA3AF;   
+  /* ── Typography ── */
+  --body-text:  #2D3436;   
+  --sub-text:   #636E72;
+  
+  /* ── Shadows (สำคัญมากที่จะทำให้เว็บไม่ดูแบน) ── */
+  --shadow-sm:  0 2px 8px rgba(0,0,0,0.05);
+  --shadow-md:  0 10px 25px rgba(0,0,0,0.08);
 }
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -309,15 +312,42 @@ section{position:relative;z-index:1}
 .bundle-col-title{font-family:'Kanit',sans-serif;font-size:1.4rem;font-weight:600;color:#111827;line-height:1.2}
 .bundle-col-sub{font-size:0.82rem;color:var(--muted)}
 
-.bundle-price-main{display:flex;flex-direction:column;gap:0.25rem;padding:1.25rem 1rem;background:#EFF6FF;border:1px solid rgba(30,58,138,0.15);border-radius:var(--radius-sm)}
-.bundle-from{font-size:0.65rem;font-weight:800;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted)}
-.bundle-price-num{font-family:var(--font-deco);font-size:2.8rem;color:#1E3A8A;line-height:1;font-weight:900}
-.bundle-price-gold{background:linear-gradient(90deg,var(--gold),#ffe98a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.bundle-price-original{font-size:1rem;color:#94A3B8;text-decoration:line-through;margin-top:-0.3rem}
-.bundle-price-unit{font-size:0.78rem;color:var(--muted);font-weight:600}
-.bundle-save-badge{display:inline-flex;align-items:center;gap:4px;background:rgba(227,30,36,0.15);border:1px solid rgba(227,30,36,0.35);color:#ff8a8e;font-size:0.72rem;font-weight:800;padding:4px 12px;border-radius:99px;width:fit-content;margin-bottom:0.25rem}
-.bundle-save-badge strong{color:var(--gold);font-size:0.9rem}
+.bundle-price-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px 15px;
+    background: var(--surface2);
+    border-radius: 20px;
+    border: 1px solid rgba(197, 160, 89, 0.2); /* ขอบทองจางๆ */
+    box-shadow: var(--shadow-md);
+    margin: 20px auto;
+    max-width: 250px;
+}
 
+.bundle-price-num {
+    font-family: 'Kanit', sans-serif;
+    font-size: 3.5rem;   /* ใหญ่และชัด */
+    font-weight: 900;
+    color: var(--red);
+    line-height: 1;
+    margin: 10px 0;
+    letter-spacing: -2px;
+}
+
+.bundle-from {
+    font-size: 1rem;
+    color: var(--gold);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.bundle-price-unit {
+    font-size: 0.9rem;
+    color: var(--sub-text);
+    font-weight: 500;
+    opacity: 0.8;
+}
 .bundle-features{list-style:none;display:flex;flex-direction:column;gap:0.65rem}
 .bundle-features li{font-size:0.9rem;line-height:1.55;color:var(--body-text);display:flex;gap:0.5rem;align-items:flex-start}
 .bf-yes{color:var(--body-text)}
@@ -659,33 +689,39 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,0.08);paddi
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 15px 0;
-    border-top: 1px solid rgba(0,0,0,0.05);
-    margin-top: 10px;
+    padding: 20px 10px; /* ลด padding นิดนึงให้กระชับ */
+    background: var(--surface2);
+    border-radius: 16px;
+    border: 1px solid rgba(197, 160, 89, 0.25); /* เพิ่มความเข้มขอบทองอีกนิด */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* เงาแบบฟุ้งๆ จะดูแพงกว่า */
+    margin: 15px auto;
+    width: 100%; /* เปลี่ยนจาก max-width เป็น width */
 }
 
 .bundle-price-num {
     font-family: 'Kanit', sans-serif;
-    font-size: 3.2rem; /* ขนาดใหญ่พิเศษ */
-    font-weight: 800;
-    color: var(--red); /* ใช้สีแดงแบรนด์ */
-    line-height: 1;
-    margin: 5px 0;
-    letter-spacing: -1px;
+    font-size: 3.2rem;   /* ปรับขนาดให้พอดี ไม่ใหญ่จนล้นหน้าจอมือถือ */
+    font-weight: 900;
+    color: var(--red);
+    line-height: 0.85;   /* ดึงตัวเลขขึ้นไปชิดกับคำว่าเริ่มต้นมากขึ้น */
+    margin: 8px 0;       /* ลดระยะห่าง */
+    letter-spacing: -2px;
 }
 
 .bundle-from {
-    font-size: 0.9rem;
-    color: var(--sub-text);
+    font-size: 0.85rem;  /* เล็กลงนิดนึงเพื่อให้ราคาดูเด่น */
+    color: var(--gold);
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1px; /* เพิ่มระยะห่างตัวอักษรให้ดูโมเดิร์น */
 }
 
 .bundle-price-unit {
     font-size: 0.85rem;
-    color: #fff;
-    background: var(--black); /* ใช้สีเข้มตัดกับราคา */
-    padding: 3px 12px;
-    border-radius: 50px;
-    font-weight: 500;
+    color: var(--sub-text);
+    font-weight: 600;
+    background: #f1f1f1; /* ใส่พื้นหลังอ่อนๆ ให้หน่วย จะดูมีลูกเล่นขึ้น */
+    padding: 2px 12px;
+    border-radius: 20px;
+    margin-top: 5px;
 }
