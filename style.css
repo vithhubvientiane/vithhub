@@ -5,44 +5,49 @@
    ══════════════════════════════════════════ */
 
 :root {
-  /* ── Brand Accent ── */
-  --red:        #E31E24;
-  --red-dark:   #B01519;
-  --gold:       #D4A017;
-  --gold-dark:  #a87a10;
-  --blue:       #1A3CFF;
-  --blue-dark:  #1230cc;
+  --primary:    #1E3A8A;
+  --secondary:  #3B82F6;
+  --accent:     #60A5FA;
+  --bg:         #F8FAFC;
+  --surface:    #FFFFFF;
+  --surface2:   #FFFFFF;
+  --surface3:   #F1F5F9;
+  --text-main:  #0F172A;
+  --text-sub:   #475569;
+  --border:     #E2E8F0;
+  --border2:    #CBD5E1;
+  --black:      #0F172A;
+  --body-text:  #0F172A;
+  --sub-text:   #475569;
+  --muted:      #94A3B8;
+  --red:        #DC2626;
+  --red-dark:   #B91C1C;
+  --gold:       #D97706;
+  --gold-dark:  #B45309;
+  --blue:       #1E3A8A;
+  --blue-dark:  #1e40af;
   --green:      #16a34a;
-
-  /* ── Light Theme Surfaces (ขาว/เทาอ่อน 70–80%) ── */
-  --black:      #1a1a2e;           /* ใช้แค่ Nav/Footer */
-  --surface:    #f7f8fa;           /* พื้นหลักขาวอ่อน */
-  --surface2:   #ffffff;           /* card ขาวสะอาด */
-  --surface3:   #eef1f6;           /* section สลับ */
-
-  /* ── Typography ── */
-  --off-white:  #F5F2EC;
-  --body-text:  #1e2230;           /* เข้มพออ่านบนขาว */
-  --sub-text:   #4a5568;
-  --muted:      #8a96a8;
-
-  /* ── Borders ── */
-  --border:     rgba(0,0,0,0.08);
-  --border2:    rgba(0,0,0,0.14);
-
-  /* ── Fonts: Kanit (หัวข้อ) + Sarabun (เนื้อหา) ── */
-  --font-head:  'Kanit','Noto Sans Lao','Noto Sans Thai',sans-serif;
-  --font-body:  'Sarabun','Noto Sans Lao','Noto Sans Thai',sans-serif;
+  --font-head:  'Kanit',sans-serif;
+  --font-body:  'Sarabun',sans-serif;
   --font-deco:  'Bebas Neue',sans-serif;
-
-  /* ── Shadows ── */
-  --shadow-red:  0 8px 40px rgba(227,30,36,0.18);
-  --shadow-gold: 0 8px 40px rgba(212,160,23,0.22);
-  --shadow-card: 0 4px 24px rgba(0,0,0,0.08);
-  --shadow-blue: 0 8px 40px rgba(26,60,255,0.18);
-
+  --shadow-card: 0 4px 24px rgba(30,58,138,0.08);
+  --shadow-blue: 0 8px 40px rgba(30,58,138,0.2);
+  --shadow-red:  0 8px 40px rgba(220,38,38,0.18);
+  --shadow-gold: 0 8px 40px rgba(217,119,6,0.18);
   --radius:     20px;
   --radius-sm:  12px;
+}
+[data-theme="dark"] {
+  --bg:         #020617;
+  --surface:    #0F172A;
+  --surface2:   #0F172A;
+  --surface3:   #0F172A;
+  --text-main:  #E5E7EB;
+  --text-sub:   #94A3B8;
+  --body-text:  #E5E7EB;
+  --border:     #1E293B;
+  --border2:    #334155;
+  --black:      #020617;
 }
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
