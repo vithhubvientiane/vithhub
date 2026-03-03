@@ -5,49 +5,44 @@
    ══════════════════════════════════════════ */
 
 :root {
-  --primary:    #1E3A8A;
-  --secondary:  #3B82F6;
-  --accent:     #60A5FA;
-  --bg:         #F8FAFC;
-  --surface:    #FFFFFF;
-  --surface2:   #FFFFFF;
-  --surface3:   #F1F5F9;
-  --text-main:  #0F172A;
-  --text-sub:   #475569;
-  --border:     #E2E8F0;
-  --border2:    #CBD5E1;
-  --black:      #0F172A;
-  --body-text:  #0F172A;
-  --sub-text:   #475569;
-  --muted:      #94A3B8;
-  --red:        #DC2626;
-  --red-dark:   #B91C1C;
-  --gold:       #D97706;
-  --gold-dark:  #B45309;
-  --blue:       #1E3A8A;
-  --blue-dark:  #1e40af;
+  /* ── Brand Accent ── */
+  --red:        #E31E24;
+  --red-dark:   #B01519;
+  --gold:       #D4A017;
+  --gold-dark:  #a87a10;
+  --blue:       #1A3CFF;
+  --blue-dark:  #1230cc;
   --green:      #16a34a;
-  --font-head:  'Kanit',sans-serif;
-  --font-body:  'Sarabun',sans-serif;
+
+  /* ── Light Theme Surfaces (ขาว/เทาอ่อน 70–80%) ── */
+  --black:      #1a1a2e;           /* ใช้แค่ Nav/Footer */
+  --surface:    #f7f8fa;           /* พื้นหลักขาวอ่อน */
+  --surface2:   #ffffff;           /* card ขาวสะอาด */
+  --surface3:   #eef1f6;           /* section สลับ */
+
+  /* ── Typography ── */
+  --off-white:  #F5F2EC;
+  --body-text:  #1e2230;           /* เข้มพออ่านบนขาว */
+  --sub-text:   #4a5568;
+  --muted:      #8a96a8;
+
+  /* ── Borders ── */
+  --border:     rgba(0,0,0,0.08);
+  --border2:    rgba(0,0,0,0.14);
+
+  /* ── Fonts: Kanit (หัวข้อ) + Sarabun (เนื้อหา) ── */
+  --font-head:  'Kanit','Noto Sans Lao','Noto Sans Thai',sans-serif;
+  --font-body:  'Sarabun','Noto Sans Lao','Noto Sans Thai',sans-serif;
   --font-deco:  'Bebas Neue',sans-serif;
-  --shadow-card: 0 4px 24px rgba(30,58,138,0.08);
-  --shadow-blue: 0 8px 40px rgba(30,58,138,0.2);
-  --shadow-red:  0 8px 40px rgba(220,38,38,0.18);
-  --shadow-gold: 0 8px 40px rgba(217,119,6,0.18);
+
+  /* ── Shadows ── */
+  --shadow-red:  0 8px 40px rgba(227,30,36,0.18);
+  --shadow-gold: 0 8px 40px rgba(212,160,23,0.22);
+  --shadow-card: 0 4px 24px rgba(0,0,0,0.08);
+  --shadow-blue: 0 8px 40px rgba(26,60,255,0.18);
+
   --radius:     20px;
   --radius-sm:  12px;
-}
-[data-theme="dark"] {
-  --bg:         #020617;
-  --surface:    #0F172A;
-  --surface2:   #0F172A;
-  --surface3:   #0F172A;
-  --text-main:  #E5E7EB;
-  --text-sub:   #94A3B8;
-  --body-text:  #E5E7EB;
-  --border:     #1E293B;
-  --border2:    #334155;
-  --black:      #020617;
 }
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -142,11 +137,11 @@ span[data-lang].active{display:inline}
 #hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:6rem 2rem 5rem;overflow:hidden}
 .hero-bg-img{position:absolute;inset:0}
 .hero-bg-img img{width:100%;height:100%;object-fit:cover;object-position:center 40%}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(26,60,255,0.55) 0%,transparent 50%),linear-gradient(225deg,rgba(227,30,36,0.45) 0%,transparent 45%),linear-gradient(0deg,rgba(8,8,16,0.97) 0%,rgba(8,8,16,0.55) 55%,rgba(8,8,16,0.2) 100%)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(26,60,255,0.55) 0%,transparent 50%),linear-gradient(225deg,rgba(227,30,36,0.45) 0%,transparent 45%),linear-gradient(0deg,rgba(8,8,16,0.97) 0%,rgba(8,8,16,0.75) 55%,rgba(8,8,16,0.5) 100%)}
 .hero-grid{position:absolute;inset:0;opacity:0.04;background-image:linear-gradient(rgba(255,255,255,0.8) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.8) 1px,transparent 1px);background-size:64px 64px}
 
 /* Floating urgency badge */
-.hero-floating-badge{position:absolute;top:5.5rem;left:50%;transform:translateX(-50%);z-index:10;display:inline-flex;align-items:center;gap:8px;background:rgba(227,30,36,0.18);border:1px solid rgba(227,30,36,0.5);backdrop-filter:blur(8px);color:#ffc0c2;font-family:var(--font-head);font-size:0.75rem;font-weight:700;letter-spacing:0.08em;padding:8px 20px;border-radius:99px;animation:badgePulse 2s ease-in-out infinite;white-space:nowrap}
+.hero-floating-badge{display:none;position:absolute;top:5.5rem;left:50%;transform:translateX(-50%);z-index:10;display:inline-flex;align-items:center;gap:8px;background:rgba(227,30,36,0.18);border:1px solid rgba(227,30,36,0.5);backdrop-filter:blur(8px);color:#ffc0c2;font-family:var(--font-head);font-size:0.75rem;font-weight:700;letter-spacing:0.08em;padding:8px 20px;border-radius:99px;animation:badgePulse 2s ease-in-out infinite;white-space:nowrap}
 .hfb-dot{width:8px;height:8px;border-radius:50%;background:var(--red);animation:pulse 1.4s infinite;flex-shrink:0}
 .hero-floating-badge strong{color:#fff}
 @keyframes badgePulse{0%,100%{box-shadow:0 0 0 0 rgba(227,30,36,0.4)}50%{box-shadow:0 0 0 8px rgba(227,30,36,0)}}
@@ -160,8 +155,8 @@ span[data-lang].active{display:inline}
 .hero-title-accent{display:block;font-family:var(--font-deco);font-size:clamp(2.5rem,8vw,6rem);background:linear-gradient(90deg,var(--gold) 0%,#ffe98a 50%,var(--gold) 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s linear infinite;letter-spacing:0.04em}
 @keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
 
-.hero-desc{font-size:clamp(1rem,2.2vw,1.2rem);line-height:1.75;color:var(--sub-text);max-width:600px;margin:1.2rem auto 2rem}
-.hero-desc strong{color:#fff;font-weight:700}
+.hero-desc{font-size:clamp(1rem,2.2vw,1.2rem);line-height:1.75;color:rgba(255,255,255,0.92);max-width:600px;margin:1.2rem auto 2rem}
+.hero-desc strong{color:#fff;font-weight:800}
 
 .hero-badges-row{display:flex;justify-content:center;gap:0.75rem;flex-wrap:wrap;margin-bottom:2rem}
 .hbadge{display:flex;flex-direction:column;align-items:center;padding:0.7rem 1.4rem;border-radius:var(--radius-sm);min-width:100px;border:1px solid transparent;transition:all 0.3s}
@@ -336,11 +331,11 @@ section{position:relative;z-index:1}
 .bundle-col-title{font-family:'Kanit',sans-serif;font-size:1.4rem;font-weight:600;color:#111827;line-height:1.2}
 .bundle-col-sub{font-size:0.82rem;color:var(--muted)}
 
-.bundle-price-main{display:flex;flex-direction:column;gap:0.25rem;padding:1.25rem 1rem;background:#f8f9fa;border:1px solid rgba(0,0,0,0.08);border-radius:var(--radius-sm)}
+.bundle-price-main{display:flex;flex-direction:column;gap:0.25rem;padding:1.25rem 1rem;background:#EFF6FF;border:1px solid rgba(30,58,138,0.15);border-radius:var(--radius-sm)}
 .bundle-from{font-size:0.65rem;font-weight:800;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted)}
-.bundle-price-num{font-family:var(--font-deco);font-size:2.8rem;color:#fff;line-height:1}
+.bundle-price-num{font-family:var(--font-deco);font-size:2.8rem;color:#1E3A8A;line-height:1;font-weight:900}
 .bundle-price-gold{background:linear-gradient(90deg,var(--gold),#ffe98a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.bundle-price-original{font-size:1rem;color:var(--muted);text-decoration:line-through;margin-top:-0.3rem}
+.bundle-price-original{font-size:1rem;color:#94A3B8;text-decoration:line-through;margin-top:-0.3rem}
 .bundle-price-unit{font-size:0.78rem;color:var(--muted);font-weight:600}
 .bundle-save-badge{display:inline-flex;align-items:center;gap:4px;background:rgba(227,30,36,0.15);border:1px solid rgba(227,30,36,0.35);color:#ff8a8e;font-size:0.72rem;font-weight:800;padding:4px 12px;border-radius:99px;width:fit-content;margin-bottom:0.25rem}
 .bundle-save-badge strong{color:var(--gold);font-size:0.9rem}
@@ -681,4 +676,3 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,0.08);paddi
 .rm-scarcity-text strong{color:var(--gold);font-size:1rem}
 .rm-scarcity-cta{background:var(--red);color:#fff;font-family:var(--font-body);font-size:0.85rem;font-weight:800;padding:10px 22px;border-radius:99px;white-space:nowrap;transition:all 0.25s;flex-shrink:0;box-shadow:0 4px 16px rgba(227,30,36,0.35)}
 .rm-scarcity-cta:hover{background:var(--red-dark);transform:scale(1.05)}
-.dark-toggle-btn{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);color:#fff;cursor:pointer;width:36px;height:36px;border-radius:50%;font-size:1rem;display:flex;align-items:center;justify-content:center;transition:all 0.2s}
