@@ -676,3 +676,38 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,0.08);paddi
 .rm-scarcity-text strong{color:var(--gold);font-size:1rem}
 .rm-scarcity-cta{background:var(--red);color:#fff;font-family:var(--font-body);font-size:0.85rem;font-weight:800;padding:10px 22px;border-radius:99px;white-space:nowrap;transition:all 0.25s;flex-shrink:0;box-shadow:0 4px 16px rgba(227,30,36,0.35)}
 .rm-scarcity-cta:hover{background:var(--red-dark);transform:scale(1.05)}
+/* แต่งส่วนราคาให้ดูพรีเมียมและเด่น */
+.bundle-price-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 0;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    margin-top: 10px;
+}
+
+.bundle-price-num {
+    font-family: 'Kanit', sans-serif;
+    font-size: 3.2rem; /* ขนาดใหญ่พิเศษ */
+    font-weight: 800;
+    color: var(--red); /* ใช้สีแดงแบรนด์ */
+    line-height: 1;
+    margin: 5px 0;
+    letter-spacing: -1px;
+}
+
+.bundle-from {
+    font-size: 0.9rem;
+    color: var(--sub-text);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.bundle-price-unit {
+    font-size: 0.85rem;
+    color: #fff;
+    background: var(--black); /* ใช้สีเข้มตัดกับราคา */
+    padding: 3px 12px;
+    border-radius: 50px;
+    font-weight: 500;
+}
