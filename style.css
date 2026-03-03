@@ -312,27 +312,27 @@ section{position:relative;z-index:1}
 .bundle-col-title{font-family:'Kanit',sans-serif;font-size:1.4rem;font-weight:600;color:#111827;line-height:1.2}
 .bundle-col-sub{font-size:0.82rem;color:var(--muted)}
 
+/* คุมระดับราคาให้เท่ากันทั้ง 2 ฝั่ง */
 .bundle-price-main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 25px 15px;
-    background: var(--surface2);
-    border-radius: 20px;
-    border: 1px solid rgba(197, 160, 89, 0.2); /* ขอบทองจางๆ */
-    box-shadow: var(--shadow-md);
-    margin: 20px auto;
-    max-width: 250px;
+    justify-content: center; /* จัดให้อยู่กึ่งกลางแนวตั้ง */
+    min-height: 180px;      /* บังคับความสูงขั้นต่ำ */
+    padding: 20px;
+    background: linear-gradient(180deg, var(--surface2) 0%, var(--surface) 100%);
+    border-radius: 15px;
+    border: 1.5px solid rgba(197, 160, 89, 0.3);
+    margin-bottom: 20px;
 }
 
+/* ปรับราคาให้ตัวใหญ่แต่อยู่ในกรอบ */
 .bundle-price-num {
-    font-family: 'Kanit', sans-serif;
-    font-size: 3.5rem;   /* ใหญ่และชัด */
-    font-weight: 900;
+    font-size: 3rem !important; /* ใหญ่ชัดเจน */
     color: var(--red);
+    font-weight: 900;
     line-height: 1;
-    margin: 10px 0;
-    letter-spacing: -2px;
+    margin: 5px 0;
 }
 
 .bundle-from {
