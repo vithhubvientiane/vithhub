@@ -5,44 +5,22 @@
    ══════════════════════════════════════════ */
 
 :root {
-  /* ── Brand Accent ── */
-  --red:        #E31E24;
-  --red-dark:   #B01519;
-  --gold:       #D4A017;
-  --gold-dark:  #a87a10;
-  --blue:       #1A3CFF;
-  --blue-dark:  #1230cc;
-  --green:      #16a34a;
+  /* ── Brand Palette (Modern Luxury) ── */
+  --red:        #C41E3A;   /* แดงเข้มแบบพรีเมียม */
+  --red-dark:   #8B0000;
+  --gold:       #C5A059;   /* ทองแชมเปญ ดูแพง */
+  --gold-dark:  #94763C;
+  --black:      #1a1a2e;   /* สำหรับ Nav/Footer */
 
-  /* ── Light Theme Surfaces (ขาว/เทาอ่อน 70–80%) ── */
-  --black:      #1a1a2e;           /* ใช้แค่ Nav/Footer */
-  --surface:    #f7f8fa;           /* พื้นหลักขาวอ่อน */
-  --surface2:   #ffffff;           /* card ขาวสะอาด */
-  --surface3:   #eef1f6;           /* section สลับ */
+  /* ── Backgrounds (เน้นให้ตัวหนังสือสีแดง/ทองเด้งออกมา) ── */
+  --surface:    #F8F9FB;   /* พื้นหลังหลัก (ขาวอมเทานิดๆ) */
+  --surface2:   #FFFFFF;   /* พื้นหลังการ์ด (ขาวสนิทเพื่อให้ดูสะอาด) */
+  --surface3:   #F1F4F9;   /* ส่วนที่ต้องการเน้นความต่าง */
 
-  /* ── Typography ── */
-  --off-white:  #F5F2EC;
-  --body-text:  #1e2230;           /* เข้มพออ่านบนขาว */
-  --sub-text:   #4a5568;
-  --muted:      #8a96a8;
-
-  /* ── Borders ── */
-  --border:     rgba(0,0,0,0.08);
-  --border2:    rgba(0,0,0,0.14);
-
-  /* ── Fonts: Kanit (หัวข้อ) + Sarabun (เนื้อหา) ── */
-  --font-head:  'Kanit','Noto Sans Lao','Noto Sans Thai',sans-serif;
-  --font-body:  'Sarabun','Noto Sans Lao','Noto Sans Thai',sans-serif;
-  --font-deco:  'Bebas Neue',sans-serif;
-
-  /* ── Shadows ── */
-  --shadow-red:  0 8px 40px rgba(227,30,36,0.18);
-  --shadow-gold: 0 8px 40px rgba(212,160,23,0.22);
-  --shadow-card: 0 4px 24px rgba(0,0,0,0.08);
-  --shadow-blue: 0 8px 40px rgba(26,60,255,0.18);
-
-  --radius:     20px;
-  --radius-sm:  12px;
+  /* ── Typography (ความเข้มที่พอเหมาะ) ── */
+  --body-text:  #2D3436;   /* เทาเข้มเกือบดำ อ่านง่ายมาก */
+  --sub-text:   #636E72;   /* สำหรับคำอธิบายประกอบ */
+  --muted:      #9CA3AF;   
 }
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
