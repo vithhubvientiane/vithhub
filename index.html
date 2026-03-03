@@ -70,7 +70,6 @@
       <button class="lang-btn" onclick="setLang('la')">LAO</button>
       <button class="lang-btn" onclick="setLang('en')">EN</button>
     </div>
-    <button class="dark-toggle-btn" onclick="toggleTheme()">🌙</button>
     <a href="#contact" class="btn-nav pulse-btn">
       <span data-lang="th" class="active">จองด่วน!</span>
       <span data-lang="la">ຈອງດ່ວນ!</span>
@@ -88,7 +87,7 @@
   <div class="hero-grid"></div>
 
   <!-- Floating urgency badge (Pulse) -->
-  <div class="hero-floating-badge">
+  <div class="hero-floating-badge" style="display:none">
     <span class="hfb-dot"></span>
     <span data-lang="th" class="active">⚡ เหลือ <strong>19 บูถสุดท้าย</strong> — จองก่อนหมด!</span>
     <span data-lang="la">⚡ ເຫຼືອ <strong>19 ທີ່ສຸດທ້າຍ</strong>!</span>
@@ -594,19 +593,6 @@
       <div class="fp-map-box">
         <div class="fp-map" style="position:relative;">
           <img src="images/floor-plan.png" alt="Floor Plan Phase 1" loading="lazy" style="width:100%; border-radius:10px;">
-          
-          <button class="fp-hotspot" style="top:30%;left:20%" onclick="fpSelectZone('a')">
-            <span class="fp-hspot-pulse"></span>Zone A
-          </button>
-          <button class="fp-hotspot fp-hspot-orange" style="top:50%;left:50%" onclick="fpSelectZone('shock')">
-            <span class="fp-hspot-pulse"></span>Shock
-          </button>
-          <button class="fp-hotspot" style="top:35%;left:70%" onclick="fpSelectZone('b')">
-            <span class="fp-hspot-pulse"></span>Zone B
-          </button>
-          <button class="fp-hotspot fp-hspot-muted" style="top:65%;left:75%" onclick="fpSelectZone('c')">
-            <span class="fp-hspot-pulse"></span>Zone C
-          </button>
         </div>
         <p class="fp-hint" style="text-align:center; margin-top:15px;">
           💡 <span data-lang="th" class="active">แตะที่ Zone เพื่อดูรายละเอียดและสถานะ</span>
