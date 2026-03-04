@@ -146,16 +146,16 @@ span[data-lang].active{display:inline}
 
 50%{box-shadow:0 0 0 8px rgba(227,30,36,0)}}
 
-.hero-inner{position:relative;z-index:1;max-width:960px;width:100%;text-align:center}
+.hero-inner{position:relative;z-index:1;max-width:960px;width:100%;text-align:center;margin:0 auto}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(227,30,36,0.15);border:1px solid rgba(227,30,36,0.4);color:#ffa0a3;font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;padding:7px 20px;border-radius:99px;margin-bottom:1.5rem}
 .badge-dot{width:7px;height:7px;border-radius:50%;background:var(--red);animation:pulse 1.8s infinite;flex-shrink:0}
 
-.hero-title{font-family:var(--font-head);font-size:clamp(1.8rem,4.5vw,3.6rem);font-weight:700;line-height:1.15;margin-bottom:0.5rem}
-.hero-title-line1{display:block;color:#fff}
-.hero-title-accent{display:block;font-family:var(--font-deco);font-size:clamp(1.3rem,3.2vw,2.4rem);background:linear-gradient(90deg,var(--gold) 0%,#ffe98a 50%,var(--gold) 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s linear infinite;letter-spacing:0.04em}
+.hero-title{font-family:var(--font-head);font-size:clamp(1.8rem,4.5vw,3.6rem);font-weight:700;line-height:1.15;margin-bottom:0.5rem;text-align:center;width:100%}
+.hero-title-line1{display:block;color:#fff;text-align:center}
+.hero-title-accent{display:block;text-align:center;font-family:var(--font-deco);font-size:clamp(1.3rem,3.2vw,2.4rem);background:linear-gradient(90deg,var(--gold) 0%,#ffe98a 50%,var(--gold) 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s linear infinite;letter-spacing:0.04em}
 @keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
 
-.hero-desc{font-size:1rem;line-height:1.75;color:rgba(255,255,255,0.92);max-width:680px;margin:1rem auto 1.8rem;text-shadow:0 1px 3px rgba(0,0,0,0.4)}
+.hero-desc{font-size:1rem;line-height:1.75;color:rgba(255,255,255,0.92);max-width:680px;margin:1rem auto 1.8rem;text-shadow:0 1px 3px rgba(0,0,0,0.4);text-align:center}
 .hero-desc strong{color:#fff;font-weight:800;text-shadow:0 2px 8px rgba(0,0,0,0.6)}
 
 .hero-badges-row{display:flex;justify-content:center;gap:0.75rem;flex-wrap:wrap;margin-bottom:2rem}
