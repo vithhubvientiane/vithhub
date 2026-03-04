@@ -1,13 +1,5 @@
 // ─── VITH HUB v3 · script.js ───
 
-function toggleTheme() {
-  const html = document.documentElement;
-  const isDark = html.dataset.theme === 'dark';
-  html.dataset.theme = isDark ? 'light' : 'dark';
-  localStorage.setItem('vith-theme', html.dataset.theme);
-  const btn = document.querySelector('.dark-toggle-btn');
-  if (btn) btn.textContent = isDark ? '🌙' : '☀️';
-}
 const LINE_URL = 'https://line.me/ti/p/@cef8930n';
 
 // ─── LANGUAGE ───
@@ -251,3 +243,11 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 window.addEventListener('load', () => setTimeout(openPopup, 1200));
+
+// ─── GALLERY TAB SWITCHER ───
+function switchGallery(tab, btn) {
+  document.querySelectorAll('.gallery-tab').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  document.getElementById('gallery-now').style.display   = tab === 'now'    ? 'block' : 'none';
+  document.getElementById('gallery-future').style.display = tab === 'future' ? 'block' : 'none';
+}
