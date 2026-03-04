@@ -141,10 +141,10 @@ span[data-lang].active{display:inline}
 .hero-grid{position:absolute;inset:0;opacity:0.04;background-image:linear-gradient(rgba(255,255,255,0.8) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.8) 1px,transparent 1px);background-size:64px 64px}
 
 /* Floating urgency badge */
-.hero-floating-badge{position:absolute;top:5.5rem;left:50%;transform:translateX(-50%);z-index:10;display:inline-flex;align-items:center;gap:8px;background:rgba(227,30,36,0.18);border:1px solid rgba(227,30,36,0.5);backdrop-filter:blur(8px);color:#ffc0c2;font-family:var(--font-head);font-size:0.75rem;font-weight:700;letter-spacing:0.08em;padding:8px 20px;border-radius:99px;animation:badgePulse 2s ease-in-out infinite;white-space:nowrap}
-.hfb-dot{width:8px;height:8px;border-radius:50%;background:var(--red);animation:pulse 1.4s infinite;flex-shrink:0}
-.hero-floating-badge strong{color:#fff}
-@keyframes badgePulse{0%,100%{box-shadow:0 0 0 0 rgba(227,30,36,0.4)}50%{box-shadow:0 0 0 8px rgba(227,30,36,0)}}
+
+
+
+50%{box-shadow:0 0 0 8px rgba(227,30,36,0)}}
 
 .hero-inner{position:relative;z-index:1;max-width:960px;width:100%;text-align:center}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(227,30,36,0.15);border:1px solid rgba(227,30,36,0.4);color:#ffa0a3;font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;padding:7px 20px;border-radius:99px;margin-bottom:1.5rem}
