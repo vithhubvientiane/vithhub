@@ -109,7 +109,7 @@
     </h1>
 
     <p class="hero-desc reveal-hero" style="--delay:0.2s">
-      <span data-lang="th" class="active"><strong>แพลตฟอร์มความร่วมมือรัฐ-เอกชน</strong>ช่วยให้การบุกตลาดลาวเป็นเรื่องง่าย<br>ด้วยระบบ <strong>Business Matching และ Managed Showroom</strong> ครบวงจร<br>โดยที่คุณไม่ต้องเดินทางไปเอง</span>
+      <span data-lang="th" class="active"><strong>แพลตฟอร์มความร่วมมือรัฐ-เอกชน</strong> ที่ช่วยให้การบุกตลาดลาวเป็นเรื่องง่าย<br>ด้วยระบบ <strong>Business Matching และ Managed Showroom</strong> ครบวงจร<br>โดยที่คุณไม่ต้องเดินทางไปเอง</span>
       <span data-lang="la"><strong>ແພລດຟອມຮ່ວມລັດ-ເອກະຊົນ</strong> ທີ່ຊ່ວຍໃຫ້ທ່ານບຸກຕະຫຼາດລາວໄດ້ງ່າຍ<br>ດ້ວຍ <strong>Business Matching + Managed Showroom</strong></span>
       <span data-lang="en">A <strong>Public-Private Partnership platform</strong> making Lao market entry effortless<br>with end-to-end <strong>Business Matching and Managed Showroom</strong> services</span>
     </p>
@@ -202,42 +202,63 @@
 </section>
 
 <!-- ══ GALLERY ══ -->
-<section id="gallery" class="section-pad" style="background:var(--surface3); border-top:1px solid var(--border)">
-    <div class="section-center">
-      <div class="reveal">
-        <div class="section-eyebrow">
-          <span data-lang="th" class="active">สถานที่จริง</span>
-          <span data-lang="la">ສະຖານທີ່ຈິງ</span>
-          <span data-lang="en">The Venue</span>
-        </div>
-        <h2 class="section-title">
-          <span data-lang="th" class="active">Big C เวียงจันทน์<br><em>ห้างใหญ่สุดในลาว</em></span>
-          <span data-lang="la">Big C ວຽງຈັນ<br><em>ຫ້າງໃຫຍ່ທີ່ສຸດ</em></span>
-          <span data-lang="en">Big C Vientiane<br><em>Laos' Biggest Mall</em></span>
-        </h2>
+<section id="gallery" class="section-pad" style="background:var(--surface3);border-top:1px solid var(--border)">
+  <div class="section-center">
+    <div class="reveal" style="text-align:center;margin-bottom:2.5rem">
+      <div class="section-eyebrow">📍 สถานที่จริง</div>
+      <h2 class="section-title">
+        <span data-lang="th" class="active">Big C เวียงจันทน์<br><em>ห้างใหญ่สุดในลาว</em></span>
+        <span data-lang="la">Big C ວຽງຈັນ<br><em>ຫ້າງໃຫຍ່ທີ່ສຸດ</em></span>
+        <span data-lang="en">Big C Vientiane<br><em>Laos' Biggest Mall</em></span>
+      </h2>
+      <p class="section-sub"><span data-lang="th" class="active">ดูบรรยากาศจริงและวิสัยทัศน์ที่กำลังจะเกิดขึ้น — ทำเลที่ดีที่สุดสำหรับสินค้าไทยในลาว</span><span data-lang="en">See the real venue and the future vision — the best spot for Thai products in Laos</span></p>
+    </div>
+
+    <!-- Tabs -->
+    <div class="gallery-tabs reveal">
+      <button class="gallery-tab active" onclick="switchGallery('now',this)">🏬 <span data-lang="th" class="active">ปัจจุบัน</span><span data-lang="en">Now</span></button>
+      <button class="gallery-tab" onclick="switchGallery('future',this)">🚀 <span data-lang="th" class="active">อนาคต / VITH Hub</span><span data-lang="en">Future / VITH Hub</span></button>
+    </div>
+
+    <!-- NOW -->
+    <div id="gallery-now" class="gallery-panel">
+      <div class="gallery-hero-img reveal">
+        <img src="images/hero-bigc.png" alt="Big C Vientiane" loading="lazy">
+        <div class="gallery-hero-label">📍 Big C เวียงจันทน์ — Ring Road, เวียงจันทน์</div>
       </div>
-      
-      <div class="gallery-bento reveal">
-        <div class="bento-main">
-          <img src="images/hero-bigc.png" alt="Big C Vientiane" loading="lazy">
-          <div class="bento-label">📍 <span data-lang="th" class="active">ทำเลติด Ring Road เวียงจันทน์</span></div>
-        </div>
-        <div class="bento-side">
-          <div class="bento-thumb">
-            <img src="images/indoor-01.jpg" alt="Booth Area" loading="lazy">
-            <div class="bento-label">🏬 <span data-lang="th" class="active">พื้นที่จัดบูธ</span></div>
-          </div>
-          <div class="bento-thumb">
-            <img src="images/indoor-02.jpg" alt="Shopping" loading="lazy">
-            <div class="bento-label">🛍️ <span data-lang="th" class="active">Traffic หนาแน่น</span></div>
-          </div>
-          <div class="bento-thumb">
-            <img src="images/team.jpg" alt="Team" loading="lazy">
-            <div class="bento-label">🤝 <span data-lang="th" class="active">ทีมงานพร้อมดูแล</span></div>
-          </div>
+      <div class="gallery-grid reveal">
+        <div class="gallery-item"><img src="images/indoor-01.jpg" alt="Indoor" loading="lazy"><div class="gallery-caption">🏬 <span data-lang="th" class="active">พื้นที่ภายในห้าง</span><span data-lang="en">Mall Interior</span></div></div>
+        <div class="gallery-item"><img src="images/indoor-02.jpg" alt="Traffic" loading="lazy"><div class="gallery-caption">🛍️ <span data-lang="th" class="active">Traffic หนาแน่น</span><span data-lang="en">High Traffic</span></div></div>
+        <div class="gallery-item"><img src="images/booth-01.jpg" alt="Booth" loading="lazy"><div class="gallery-caption">📦 <span data-lang="th" class="active">ตัวอย่างบูธ</span><span data-lang="en">Booth Example</span></div></div>
+        <div class="gallery-item"><img src="images/booth-02.jpg" alt="Display" loading="lazy"><div class="gallery-caption">✨ <span data-lang="th" class="active">พื้นที่จัดแสดง</span><span data-lang="en">Display Area</span></div></div>
+        <div class="gallery-item"><img src="images/team.jpg" alt="Team" loading="lazy"><div class="gallery-caption">🤝 <span data-lang="th" class="active">ทีมงาน VITH Hub</span><span data-lang="en">VITH Hub Team</span></div></div>
+        <div class="gallery-item gallery-add-slot" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+          <div class="gallery-ph-inner"><span class="gallery-ph-icon">📷</span><span class="gallery-ph-text"><span data-lang="th" class="active">รูปเพิ่มเติม<br>เร็วๆ นี้</span><span data-lang="en">More photos<br>coming soon</span></span></div>
         </div>
       </div>
-  </section>
+    </div>
+
+    <!-- FUTURE -->
+    <div id="gallery-future" class="gallery-panel" style="display:none">
+      <div class="gallery-future-banner reveal">
+        <div class="gfb-icon">🚀</div>
+        <div class="gfb-text">
+          <div class="gfb-title"><span data-lang="th" class="active">วิสัยทัศน์ที่กำลังจะเกิดขึ้น</span><span data-lang="en">The Vision Coming Soon</span></div>
+          <div class="gfb-sub"><span data-lang="th" class="active">Phase 1 มีนาคม 2026 · Phase 2 พฤษภาคม 2026 — ภาพจากงานจริงจะอัพเดตที่นี่</span><span data-lang="en">Phase 1 Mar 2026 · Phase 2 May 2026 — Real photos updated here after events</span></div>
+        </div>
+      </div>
+      <div class="gallery-grid reveal">
+        <div class="gallery-item gallery-ph-future"><div class="gallery-ph-inner"><span class="gallery-ph-icon">🏗️</span><span class="gallery-ph-text"><span data-lang="th" class="active">Setup Phase 1<br>มีนาคม 2026</span><span data-lang="en">Phase 1 Setup<br>March 2026</span></span></div></div>
+        <div class="gallery-item gallery-ph-future"><div class="gallery-ph-inner"><span class="gallery-ph-icon">🎪</span><span class="gallery-ph-text"><span data-lang="th" class="active">บรรยากาศวันงาน<br>จริง</span><span data-lang="en">Event Day<br>Atmosphere</span></span></div></div>
+        <div class="gallery-item gallery-ph-future"><div class="gallery-ph-inner"><span class="gallery-ph-icon">🤝</span><span class="gallery-ph-text"><span data-lang="th" class="active">Business Matching<br>พบคู่ค้า</span><span data-lang="en">Business Matching<br>Partners</span></span></div></div>
+        <div class="gallery-item gallery-ph-future"><div class="gallery-ph-inner"><span class="gallery-ph-icon">🌏</span><span class="gallery-ph-text"><span data-lang="th" class="active">Grand Opening<br>Phase 2</span><span data-lang="en">Grand Opening<br>Phase 2</span></span></div></div>
+        <div class="gallery-item gallery-ph-future"><div class="gallery-ph-inner"><span class="gallery-ph-icon">📸</span><span class="gallery-ph-text"><span data-lang="th" class="active">ภาพจากงานจริง<br>อัพเดตที่นี่</span><span data-lang="en">Real photos<br>updated here</span></span></div></div>
+        <div class="gallery-item gallery-ph-future"><div class="gallery-ph-inner"><span class="gallery-ph-icon">🎬</span><span class="gallery-ph-text"><span data-lang="th" class="active">Highlight Video<br>หลังงาน</span><span data-lang="en">Highlight Video<br>After Event</span></span></div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
   
 <!-- ══ STRATEGIC CONNECTIVITY MAP (NEW) ══ -->
 <section id="connectivity" class="section-pad" style="background:var(--surface3);border-top:1px solid var(--border);overflow:hidden">
