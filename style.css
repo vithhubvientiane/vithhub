@@ -147,7 +147,7 @@ span[data-lang].active{display:inline}
 50%{box-shadow:0 0 0 8px rgba(227,30,36,0)}}
 
 .hero-inner{position:relative;z-index:1;max-width:960px;width:100%;text-align:center;margin:0 auto}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(227,30,36,0.15);border:1px solid rgba(227,30,36,0.4);color:#ffa0a3;font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;padding:7px 20px;border-radius:99px;margin-bottom:1.5rem}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(227,30,36,0.15);border:1px solid rgba(227,30,36,0.4);color:#ffa0a3;font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;padding:7px 20px;border-radius:99px;margin:0 auto 1.5rem;width:fit-content}
 .badge-dot{width:7px;height:7px;border-radius:50%;background:var(--red);animation:pulse 1.8s infinite;flex-shrink:0}
 
 .hero-title{font-family:var(--font-head);font-size:clamp(1.8rem,4.5vw,3.6rem);font-weight:700;line-height:1.15;margin-bottom:0.5rem;text-align:center;width:100%}
