@@ -3,1025 +3,938 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VITH HUB — Connecting Thai SMEs to the Mekong Market</title>
-<meta name="description" content="VITH HUB แพลตฟอร์มความร่วมมือรัฐ-เอกชน Business Matching และ Managed Showroom เชื่อมธุรกิจไทยสู่ลาว จีน รัสเซีย ผ่าน Big C เวียงจันทน์">
-<meta property="og:title" content="VITH HUB — Connecting Thai SMEs to the Mekong Market">
-<meta property="og:image" content="images/hero-bigc.png">
+<title>VITH HUB Event — Mekong Business Connect 2026 · Big C เวียงจันทน์</title>
+<meta name="description" content="งานแสดงสินค้านานาชาติ Phase 1: 25-29 มีนาคม 2026 ณ Big C เวียงจันทน์ ราคาบูท พื้นที่ และรายละเอียดทั้งหมด">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kanit:wght@400;500;600;700;800;900&family=Noto+Sans+Thai:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kanit:wght@500;600;700;800;900&family=Sarabun:wght@400;500;600;700&family=Noto+Sans+Lao:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 <style>
-/* ── Reset & Base ── */
-*{margin:0;padding:0;box-sizing:border-box}
-html{font-size:16px;scroll-behavior:smooth}
-body{font-family:'Noto Sans Thai','Kanit',sans-serif;color:#1a202c;background:#fff;overflow-x:hidden}
-img{max-width:100%;display:block}
-a{text-decoration:none}
-
-/* ── Variables ── */
-:root{
-  --navy:#0d1b3e;
-  --navy2:#1E3A8A;
-  --navy3:#162d6e;
-  --gold:#D4A017;
-  --gold2:#fbbf24;
-  --red:#E31E24;
-  --white:#fff;
-  --bg:#f8fafc;
-  --text:#1a202c;
-  --sub:#4a5568;
-  --border:#e2e8f0;
-  --radius:12px;
-}
-
-/* ── NAV ── */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:200;
-  background:rgba(255,255,255,0.97);backdrop-filter:blur(20px);
-  border-bottom:1px solid var(--border);
-  padding:0.75rem 2rem;
-  display:flex;align-items:center;justify-content:space-between;gap:1rem;
-  box-shadow:0 1px 12px rgba(0,0,0,0.06);
-}
-.nav-logo{
-  font-family:'Bebas Neue',sans-serif;font-size:1.75rem;
-  letter-spacing:0.1em;color:var(--navy2);white-space:nowrap;
-}
-.nav-logo span{color:var(--gold)}
-.nav-links{display:flex;align-items:center;gap:0.5rem}
-.nav-link{
-  font-family:'Kanit',sans-serif;font-size:0.82rem;font-weight:600;
-  color:var(--navy2);padding:7px 14px;border-radius:8px;
-  border:1px solid transparent;transition:all 0.2s;min-height:36px;
-  display:inline-flex;align-items:center;gap:5px;
-}
-.nav-link:hover{border-color:rgba(30,58,138,0.2);background:rgba(30,58,138,0.05)}
-.nav-link.primary{
-  background:linear-gradient(90deg,#92400e,#b45309);
-  color:#fbbf24;border-color:transparent;
-}
-.nav-link.primary:hover{opacity:0.9}
-.lang-group{display:flex;gap:3px}
-.lang-btn{
-  font-family:'Kanit',sans-serif;font-size:0.72rem;font-weight:700;
-  padding:5px 9px;border-radius:6px;
-  border:1px solid rgba(30,58,138,0.2);background:transparent;
-  color:var(--navy2);cursor:pointer;transition:all 0.2s;
-}
-.lang-btn.active{background:var(--navy2);color:#fff;border-color:var(--navy2)}
-
-/* ── HERO ── */
-.hero{
-  position:relative;min-height:95vh;
-  display:flex;align-items:center;overflow:hidden;
-}
-.hero-bg{position:absolute;inset:0}
-.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center}
-.hero-overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(135deg,
-    rgba(8,15,40,0.88) 0%,
-    rgba(20,50,120,0.72) 55%,
-    rgba(8,15,40,0.82) 100%);
-}
-.hero-inner{
-  position:relative;z-index:2;
-  max-width:900px;margin:0 auto;
-  padding:7rem 2rem 5rem;
-  text-align:center;
-}
-.hero-badge{
-  display:inline-flex;align-items:center;gap:8px;
-  background:rgba(212,160,23,0.15);border:1px solid rgba(212,160,23,0.45);
-  color:#fbbf24;font-family:'Kanit',sans-serif;
-  font-size:0.72rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;
-  padding:7px 20px;border-radius:99px;margin-bottom:1.75rem;
-  animation:fadeSlideDown 0.8s ease both;
-}
-.hero-tagline{
-  font-family:'Kanit',sans-serif;font-weight:400;
-  font-size:clamp(1rem,2.5vw,1.2rem);
-  color:rgba(255,255,255,0.65);
-  letter-spacing:0.15em;text-transform:uppercase;
-  margin-bottom:0.75rem;
-  animation:fadeSlideDown 0.8s 0.1s ease both;
-}
-.hero-title{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:clamp(3.2rem,11vw,7.5rem);
-  color:#fff;letter-spacing:0.03em;line-height:0.95;
-  margin-bottom:0.5rem;
-  animation:fadeSlideDown 0.8s 0.15s ease both;
-}
-.hero-title .gold{
-  background:linear-gradient(90deg,#D4A017,#fde68a,#D4A017);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-}
-.hero-subtitle{
-  font-family:'Kanit',sans-serif;font-weight:500;
-  font-size:clamp(1rem,2.5vw,1.35rem);color:rgba(255,255,255,0.78);
-  margin-bottom:1rem;letter-spacing:0.05em;
-  animation:fadeSlideDown 0.8s 0.2s ease both;
-}
-.hero-desc{
-  font-size:0.9375rem;color:rgba(255,255,255,0.6);
-  max-width:580px;margin:0 auto 2.25rem;line-height:1.8;
-  animation:fadeSlideDown 0.8s 0.25s ease both;
-}
-.hero-pills{
-  display:flex;gap:0.625rem;justify-content:center;flex-wrap:wrap;
-  margin-bottom:2.5rem;
-  animation:fadeSlideDown 0.8s 0.3s ease both;
-}
-.hero-pill{
-  background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.18);
-  color:rgba(255,255,255,0.75);font-family:'Kanit',sans-serif;
-  font-size:0.78rem;font-weight:600;padding:6px 14px;border-radius:99px;
-}
-.hero-btns{
-  display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;
-  margin-bottom:3rem;
-  animation:fadeSlideDown 0.8s 0.35s ease both;
-}
-.btn-primary{
-  background:linear-gradient(90deg,#D4A017,#fbbf24);color:#1a0a00;
-  font-family:'Kanit',sans-serif;font-weight:800;font-size:1rem;
-  padding:14px 32px;border-radius:var(--radius);
-  display:inline-flex;align-items:center;gap:8px;min-height:52px;
-  box-shadow:0 6px 28px rgba(212,160,23,0.45);transition:all 0.25s;
-}
-.btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(212,160,23,0.6)}
-.btn-outline{
-  background:transparent;border:2px solid rgba(255,255,255,0.4);
-  color:#fff;font-family:'Kanit',sans-serif;font-weight:700;font-size:1rem;
-  padding:13px 28px;border-radius:var(--radius);
-  display:inline-flex;align-items:center;gap:8px;min-height:52px;
-  transition:all 0.25s;
-}
-.btn-outline:hover{border-color:#fff;background:rgba(255,255,255,0.1)}
-.btn-gold-outline{
-  background:transparent;border:2px solid rgba(212,160,23,0.6);
-  color:#fbbf24;font-family:'Kanit',sans-serif;font-weight:700;font-size:1rem;
-  padding:13px 28px;border-radius:var(--radius);
-  display:inline-flex;align-items:center;gap:8px;min-height:52px;
-  transition:all 0.25s;
-}
-.btn-gold-outline:hover{border-color:#fbbf24;background:rgba(212,160,23,0.12)}
-.hero-stats{
-  display:flex;align-items:center;justify-content:center;gap:0;
-  background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);
-  border-radius:18px;overflow:hidden;max-width:580px;margin:0 auto;
-  animation:fadeSlideDown 0.8s 0.4s ease both;
-}
-.h-stat{padding:1.125rem 1.75rem;text-align:center;flex:1}
-.h-stat+.h-stat{border-left:1px solid rgba(255,255,255,0.08)}
-.h-stat-num{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;color:#fbbf24;line-height:1}
-.h-stat-label{font-size:0.68rem;color:rgba(255,255,255,0.45);letter-spacing:0.1em;margin-top:2px}
-
-/* ── SECTIONS ── */
-.section{padding:5rem 2rem}
-.section-center{max-width:1080px;margin:0 auto}
-.s-eyebrow{
-  font-family:'Kanit',sans-serif;font-size:0.72rem;font-weight:700;
-  letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);
-  margin-bottom:0.75rem;
-}
-.s-title{
-  font-family:'Kanit',sans-serif;font-weight:900;
-  font-size:clamp(1.6rem,4vw,2.6rem);
-  color:var(--navy);line-height:1.2;margin-bottom:0.75rem;
-}
-.s-title em{font-style:normal;color:var(--navy2)}
-.s-sub{
-  font-size:0.9375rem;color:var(--sub);
-  max-width:580px;line-height:1.75;
-}
-
-/* ── ABOUT ── */
-#about{background:#fff;border-bottom:1px solid var(--border)}
-.about-grid{
-  display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;
-}
-@media(max-width:720px){.about-grid{grid-template-columns:1fr;gap:2.5rem}}
-.about-text{font-size:0.9375rem;color:var(--sub);line-height:1.8;margin-bottom:1rem}
-.about-pills{display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:1.25rem}
-.about-pill{
-  background:rgba(30,58,138,0.07);border:1px solid rgba(30,58,138,0.15);
-  color:var(--navy2);font-family:'Kanit',sans-serif;font-size:0.8rem;font-weight:600;
-  padding:5px 14px;border-radius:99px;
-}
-.about-img{border-radius:20px;overflow:hidden;box-shadow:0 12px 48px rgba(0,0,0,0.1)}
-.about-img img{width:100%;height:300px;object-fit:cover}
-
-/* ── EVENT TEASER ── */
-#event-teaser{
-  background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);
-  text-align:center;
-}
-.et-title{
-  font-family:'Bebas Neue',sans-serif;font-size:clamp(2.2rem,6vw,4.5rem);
-  color:#fff;letter-spacing:0.04em;margin-bottom:0.5rem;
-}
-.et-title span{color:var(--gold2)}
-.et-sub{color:rgba(255,255,255,0.6);font-size:0.9375rem;
-  max-width:540px;margin:0 auto 2.5rem;line-height:1.7}
-.et-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  gap:1.25rem;margin-bottom:2.5rem;
-}
-@media(max-width:640px){.et-grid{grid-template-columns:1fr}}
-.et-card{
-  background:rgba(255,255,255,0.06);
-  border:1px solid rgba(255,255,255,0.1);
-  border-top:3px solid var(--gold);
-  border-radius:16px;padding:1.5rem 1.25rem;text-align:left;
-}
-.et-icon{font-size:1.75rem;margin-bottom:0.625rem}
-.et-name{font-family:'Kanit',sans-serif;font-weight:700;color:#fff;
-  font-size:0.9375rem;margin-bottom:0.375rem}
-.et-desc{font-size:0.8125rem;color:rgba(255,255,255,0.5);line-height:1.6}
-.et-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-.btn-et{
-  background:linear-gradient(90deg,#D4A017,#fbbf24);color:#1a0a00;
-  font-family:'Kanit',sans-serif;font-weight:800;font-size:1rem;
-  padding:14px 32px;border-radius:var(--radius);
-  display:inline-flex;align-items:center;gap:8px;min-height:52px;
-  box-shadow:0 6px 24px rgba(212,160,23,0.4);transition:all 0.25s;
-}
-.btn-et:hover{transform:translateY(-2px)}
-.btn-et-ghost{
-  background:transparent;border:2px solid rgba(255,255,255,0.3);color:#fff;
-  font-family:'Kanit',sans-serif;font-weight:700;font-size:1rem;
-  padding:13px 28px;border-radius:var(--radius);
-  display:inline-flex;align-items:center;gap:8px;min-height:52px;
-  transition:all 0.25s;
-}
-.btn-et-ghost:hover{border-color:#fff}
-
-/* ── WHY ── */
-#why{background:var(--bg)}
-.why-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.5rem;
-}
-@media(max-width:720px){.why-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:480px){.why-grid{grid-template-columns:1fr}}
-.why-card{
-  background:#fff;border:1px solid var(--border);border-radius:16px;
-  padding:1.5rem;transition:all 0.25s;
-}
-.why-card:hover{box-shadow:0 8px 32px rgba(30,58,138,0.1);transform:translateY(-3px);border-color:rgba(30,58,138,0.2)}
-.why-icon{font-size:2rem;margin-bottom:0.75rem}
-.why-name{font-family:'Kanit',sans-serif;font-weight:700;color:var(--navy);
-  font-size:1rem;margin-bottom:0.375rem}
-.why-desc{font-size:0.8125rem;color:var(--sub);line-height:1.65}
-
-/* ── TRADE MAP ── */
-#connectivity{
-  background:linear-gradient(160deg,#0f1f4a 0%,#1a3a7a 30%,#0d2448 60%,#162040 100%);
-  border-top:1px solid rgba(99,149,255,0.15);
-  border-bottom:1px solid rgba(99,149,255,0.15);
-  position:relative;overflow:hidden;
-}
-/* animated aurora layers */
-#connectivity::before{
-  content:'';position:absolute;inset:0;
-  background:
-    radial-gradient(ellipse 70% 50% at 20% 60%, rgba(212,160,23,0.08) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 70% at 80% 30%, rgba(79,142,247,0.1) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 40% at 50% 80%, rgba(30,58,138,0.2) 0%, transparent 70%);
-  animation:auroraShift 8s ease-in-out infinite alternate;
-  pointer-events:none;
-}
-/* floating dot particles */
-#connectivity::after{
-  content:'';position:absolute;inset:0;
-  background-image:
-    radial-gradient(circle, rgba(255,255,255,0.35) 1px, transparent 1px),
-    radial-gradient(circle, rgba(212,160,23,0.25) 1px, transparent 1px);
-  background-size:80px 80px, 130px 130px;
-  background-position:0 0, 40px 40px;
-  animation:particleDrift 20s linear infinite;
-  pointer-events:none;opacity:0.6;
-}
-@keyframes auroraShift{
-  0%{opacity:0.6;transform:scale(1) rotate(0deg)}
-  100%{opacity:1;transform:scale(1.08) rotate(2deg)}
-}
-@keyframes particleDrift{
-  0%{transform:translate(0,0)}
-  100%{transform:translate(-80px,-80px)}
-}
-#connectivity .section{position:relative;z-index:1}
-#connectivity .s-eyebrow{
-  color:#fbbf24;
-  text-shadow:0 0 20px rgba(251,191,36,0.5);
-}
-#connectivity .s-title{
-  color:#fff;
-  text-shadow:0 2px 20px rgba(30,58,138,0.4);
-}
-#connectivity .s-sub{color:rgba(255,255,255,0.7)}
-/* map container glow frame */
-.map-frame{
-  position:relative;border-radius:20px;overflow:hidden;
-  box-shadow:
-    0 0 0 1px rgba(99,149,255,0.2),
-    0 8px 40px rgba(30,58,138,0.4),
-    0 0 80px rgba(212,160,23,0.06);
-}
-.map-frame::before{
-  content:'';position:absolute;inset:0;border-radius:20px;
-  background:linear-gradient(135deg,rgba(212,160,23,0.06),transparent 40%,rgba(79,142,247,0.04));
-  pointer-events:none;z-index:2;
-}
-/* animated route paths */
-.route-animated{
-  stroke-dashoffset:0;
-  animation:routePulse 3s ease-in-out infinite;
-}
-@keyframes routePulse{
-  0%,100%{opacity:1}50%{opacity:0.5}
-}
-
-/* ── PARTNERS ── */
-#partners{background:#fff}
-.partners-strategic{
-  display:flex;gap:1.5rem;flex-wrap:wrap;
-  justify-content:center;margin-bottom:3rem;
-}
-.partner-card{
-  background:var(--bg);border:1.5px solid var(--border);
-  border-radius:16px;padding:1.5rem 1.75rem;
-  display:flex;flex-direction:column;align-items:center;gap:0.625rem;
-  min-width:160px;transition:all 0.25s;
-}
-.partner-card:hover{border-color:var(--navy2);box-shadow:0 8px 28px rgba(30,58,138,0.1)}
-.partner-card img{height:52px;object-fit:contain}
-.partner-name{font-family:'Kanit',sans-serif;font-weight:700;
-  color:var(--navy);font-size:0.875rem}
-.partner-role{font-size:0.75rem;color:var(--sub)}
-.chambers-row{
-  display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;
-}
-.chamber-pill{
-  background:var(--bg);border:1.5px solid var(--border);
-  border-radius:12px;padding:0.875rem 1.25rem;
-  display:flex;align-items:center;gap:0.75rem;
-  transition:all 0.25s;
-}
-.chamber-pill:hover{border-color:var(--navy2);background:#fff}
-.chamber-pill .flag{font-size:1.5rem}
-.chamber-pill .info{}
-.chamber-pill .cn{font-family:'Kanit',sans-serif;font-weight:700;
-  color:var(--navy);font-size:0.82rem}
-.chamber-pill .cr{font-size:0.72rem;color:var(--sub)}
-
-/* ── FOUNDER BANNER ── */
-#founder-banner{
-  background:linear-gradient(135deg,#0f0500,#7c2d12,#0f0500);
-  padding:5rem 2rem;text-align:center;
-}
-.fb-badge{
-  display:inline-flex;align-items:center;gap:6px;
-  background:rgba(245,158,11,0.15);border:1px solid rgba(245,158,11,0.4);
-  color:#fbbf24;font-family:'Kanit',sans-serif;font-size:0.7rem;font-weight:700;
-  letter-spacing:0.15em;padding:5px 16px;border-radius:99px;margin-bottom:1rem;
-}
-.fb-title{
-  font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,7vw,5rem);
-  color:#fff;letter-spacing:0.04em;line-height:1;margin-bottom:0.5rem;
-}
-.fb-title span{color:var(--gold2)}
-.fb-sub{color:rgba(255,255,255,0.6);font-size:0.9375rem;
-  max-width:500px;margin:0 auto 2rem;line-height:1.7}
-.fb-stats{
-  display:flex;gap:3rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem;
-}
-.fb-num{font-family:'Bebas Neue',sans-serif;font-size:3rem;color:#fbbf24;line-height:1}
-.fb-label{font-size:0.72rem;color:rgba(255,255,255,0.4);letter-spacing:0.1em}
-.btn-founder{
-  background:linear-gradient(90deg,#D4A017,#fbbf24);color:#1a0a00;
-  font-family:'Kanit',sans-serif;font-weight:800;font-size:1.05rem;
-  padding:15px 40px;border-radius:var(--radius);
-  display:inline-flex;align-items:center;gap:8px;min-height:54px;
-  box-shadow:0 8px 32px rgba(212,160,23,0.5);transition:all 0.25s;
-}
-.btn-founder:hover{transform:translateY(-3px);box-shadow:0 14px 44px rgba(212,160,23,0.65)}
-
-/* ── FOOTER ── */
-footer{
-  background:var(--navy);color:rgba(255,255,255,0.5);
-  padding:3.5rem 2rem;
-}
-.footer-inner{max-width:1080px;margin:0 auto}
-.footer-top{
-  display:flex;align-items:flex-start;justify-content:space-between;
-  gap:2rem;flex-wrap:wrap;margin-bottom:2rem;
-  padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,0.07);
-}
-.footer-brand{}
-.footer-logo{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;
-  letter-spacing:0.1em;color:#fff;margin-bottom:0.375rem}
-.footer-logo span{color:var(--gold2)}
-.footer-tagline{font-size:0.8125rem;color:rgba(255,255,255,0.4);line-height:1.5}
-.footer-nav{display:flex;gap:3rem;flex-wrap:wrap}
-.footer-col{}
-.footer-col-title{font-family:'Kanit',sans-serif;font-size:0.75rem;font-weight:700;
-  letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.35);
-  margin-bottom:0.75rem}
-.footer-col a{display:block;font-size:0.875rem;color:rgba(255,255,255,0.55);
-  margin-bottom:0.5rem;transition:color 0.2s}
-.footer-col a:hover{color:#fbbf24}
-.footer-bottom{
-  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;
-}
-.footer-contact{font-size:0.875rem}
-.footer-contact a{color:rgba(255,255,255,0.55);transition:color 0.2s}
-.footer-contact a:hover{color:#fbbf24}
-.footer-copy{font-size:0.75rem;color:rgba(255,255,255,0.25)}
-
-/* ── STICKY CTA ── */
-.sticky-wrap{
+.sticky-cta-wrap{
   position:fixed;bottom:1.25rem;right:1.25rem;z-index:999;
   display:flex;flex-direction:column;gap:0.625rem;align-items:flex-end;
 }
-.sticky-btn{
+.sticky-cta-btn{
+  background:linear-gradient(90deg,#E31E24,#c01017);color:#fff;
   font-family:'Kanit',sans-serif;font-weight:700;font-size:0.875rem;
-  padding:11px 20px;border-radius:50px;
+  padding:11px 20px;border-radius:50px;text-decoration:none;
   display:inline-flex;align-items:center;gap:8px;min-height:48px;
-  box-shadow:0 4px 20px rgba(0,0,0,0.25);transition:all 0.25s;
+  box-shadow:0 4px 20px rgba(227,30,36,0.4);transition:all 0.25s;
 }
-.sticky-btn:hover{transform:translateY(-2px)}
-.sticky-btn.event{background:linear-gradient(90deg,#E31E24,#c01017);color:#fff}
-.sticky-btn.line{background:#06C755;color:#fff}
-
-/* ── ANIMATIONS ── */
-@keyframes fadeSlideDown{
-  from{opacity:0;transform:translateY(-16px)}
-  to{opacity:1;transform:none}
+.sticky-cta-btn:hover{transform:translateY(-2px)}
+.sticky-line-btn{
+  background:#06C755;color:#fff;font-family:'Kanit',sans-serif;font-weight:700;
+  font-size:0.875rem;padding:11px 20px;border-radius:50px;text-decoration:none;
+  display:inline-flex;align-items:center;gap:8px;min-height:48px;
+  box-shadow:0 4px 16px rgba(6,199,85,0.4);transition:all 0.25s;
 }
-.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease}
-.reveal.in{opacity:1;transform:none}
-.d1{transition-delay:0.1s}.d2{transition-delay:0.2s}.d3{transition-delay:0.3s}
-
-/* ── DATA-LANG ── */
-[data-lang]{display:none}
-[data-lang].active{display:inline}
-[data-lang="th"].active,[data-lang="la"].active,[data-lang="en"].active{display:inline}
-span[data-lang]:not(.active){display:none}
-div[data-lang]:not(.active){display:none}
-
-/* ── MOBILE ── */
-@media(max-width:600px){
-  nav{padding:0.625rem 1rem}
-  .nav-links .nav-link:not(.primary){display:none}
-  .hero-stats{flex-wrap:wrap}
-  .h-stat{min-width:40%}
-  .h-stat+.h-stat{border-left:none;border-top:1px solid rgba(255,255,255,0.08)}
+.sticky-line-btn:hover{transform:translateY(-2px)}
+.breadcrumb{
+  background:rgba(8,8,16,0.6);border-bottom:1px solid rgba(255,255,255,0.06);
+  padding:0.625rem 2rem;font-family:'Kanit',sans-serif;font-size:0.78rem;
+  color:rgba(255,255,255,0.4);
 }
+.breadcrumb a{color:rgba(255,255,255,0.55);text-decoration:none;transition:color 0.2s}
+.breadcrumb a:hover{color:#fbbf24}
+.btn-eph-primary{
+  background:linear-gradient(90deg,#D4A017,#fbbf24);color:#1a0a00;
+  font-family:'Kanit',sans-serif;font-weight:800;font-size:1rem;
+  padding:14px 32px;border-radius:12px;text-decoration:none;
+  display:inline-flex;align-items:center;gap:8px;min-height:52px;
+  box-shadow:0 6px 24px rgba(212,160,23,0.45);transition:all 0.25s;
+}
+.btn-eph-primary:hover{transform:translateY(-2px)}
+.btn-eph-ghost{
+  background:transparent;border:2px solid rgba(255,255,255,0.3);color:#fff;
+  font-family:'Kanit',sans-serif;font-weight:700;font-size:1rem;
+  padding:13px 28px;border-radius:12px;text-decoration:none;
+  display:inline-flex;align-items:center;gap:8px;min-height:52px;transition:all 0.25s;
+}
+.btn-eph-ghost:hover{border-color:#fff}
 </style>
 </head>
 <body>
 
 <!-- ══ NAV ══ -->
-<nav>
-  <a href="/" style="text-decoration:none"><div class="nav-logo">VITH<span>HUB</span></div></a>
-  <div class="nav-links">
-    <div class="lang-group">
+<nav id="mainNav">
+  <div class="nav-logo">VITH <span>HUB</span></div>
+  <div class="phase-switcher">
+    <button class="phase-tab active" id="tab-p1" onclick="switchPhase(1)">
+      <span class="phase-tab-dot phase-dot-gold"></span>
+      <span class="phase-tab-text">Phase 1 · <em>มีนาคม</em></span>
+    </button>
+    <button class="phase-tab" id="tab-p2" onclick="switchPhase(2)">
+      <span class="phase-tab-dot phase-dot-red"></span>
+      <span class="phase-tab-text">Phase 2 · <em>พฤษภาคม</em></span>
+    </button>
+  </div>
+  <div class="nav-right">
+    <div class="nav-slots-badge">
+      <span class="urgency-dot"></span>
+      <span data-lang="th" class="active">🔥 เหลือ <strong>19</strong> บูท</span>
+      <span data-lang="la">🔥 ເຫຼືອ <strong>19</strong> ທີ່</span>
+      <span data-lang="en">🔥 <strong>19</strong> left</span>
+    </div>
+    <div class="lang-switcher">
       <button class="lang-btn active" onclick="setLang('th')">TH</button>
       <button class="lang-btn" onclick="setLang('la')">LAO</button>
       <button class="lang-btn" onclick="setLang('en')">EN</button>
     </div>
-    <a href="/about" class="nav-link">🌐 Partners</a>
-    <a href="/event" class="nav-link">📅 Event</a>
-    <a href="/membership" class="nav-link primary">👑 Founder</a>
+    <a href="/about" class="btn-nav" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.8);margin-right:0.4rem">🌐 About</a>
+    <a href="/membership" class="btn-nav" style="background:linear-gradient(90deg,#92400e,#b45309);color:#fbbf24;border:none;margin-right:0.4rem">👑 Founder</a>
+    <a href="#contact" class="btn-nav pulse-btn">
+      <span data-lang="th" class="active">จองด่วน!</span>
+      <span data-lang="la">ຈອງດ່ວນ!</span>
+      <span data-lang="en">Book Now!</span>
+    </a>
   </div>
 </nav>
 
-<!-- ══ HERO ══ -->
-<section class="hero">
-  <div class="hero-bg">
-    <img src="images/hero-bigc.png" alt="Big C Vientiane — VITH HUB" fetchpriority="high">
-  </div>
-  <div class="hero-overlay"></div>
-  <div class="hero-inner">
-    <div class="hero-badge">
-      🏛️ <span data-lang="th" class="active">ความร่วมมือรัฐ-เอกชน ไทย-ลาว · มีนาคม 2026</span>
-      <span data-lang="la">ຮ່ວມມືລັດ-ເອກະຊົນ ໄທ-ລາວ · ມີນາ 2026</span>
-      <span data-lang="en">Thailand–Laos PPP · March 2026</span>
-    </div>
-    <div class="hero-tagline">
-      <span data-lang="th" class="active">International Trade · Business Networking · Investment</span>
-      <span data-lang="la">ການຄ້າສາກົນ · ເຄືອຂ່າຍທຸລະກິດ</span>
-      <span data-lang="en">International Trade · Business Networking · Investment</span>
-    </div>
-    <h1 class="hero-title">
-      <span data-lang="th" class="active">Connecting Thai SMEs<br><span class="gold">to the Mekong Market</span></span>
-      <span data-lang="la">ເຊື່ອມ SME ໄທ<br><span class="gold">ສູ່ຕະຫຼາດເມຄອງ</span></span>
-      <span data-lang="en">Connecting Thai SMEs<br><span class="gold">to the Mekong Market</span></span>
+<div class="breadcrumb" style="padding-top:calc(0.625rem + 60px)">
+  <a href="/">VITH HUB</a> › <span style="color:rgba(255,255,255,0.7)">Mekong Business Connect 2026</span>
+</div>
+
+<!-- ══ HERO CAROUSEL ══ -->
+<style>
+/* ── Carousel base ── */
+.hero-carousel{position:relative;min-height:95vh;overflow:hidden;}
+
+/* ── Slides ── */
+.hc-slide{
+  position:absolute;inset:0;opacity:0;
+  transition:opacity 1.2s ease;
+  background-size:cover;background-position:center;
+}
+.hc-slide.active{opacity:1;z-index:1;animation:kenBurns 6s ease-out forwards;}
+@keyframes kenBurns{from{transform:scale(1.06)}to{transform:scale(1)}}
+
+/* ── Slide backgrounds — rename your image files to match these ── */
+.hc-slide:nth-child(1){background-image:url('images/bigc-exterior-main.jpg')}
+.hc-slide:nth-child(2){background-image:url('images/bigc-indoor-hall.jpg')}
+.hc-slide:nth-child(3){background-image:url('images/booth-setup-example.jpg')}
+.hc-slide:nth-child(4){background-image:url('images/bigc-trade-floor.jpg')}
+.hc-slide:nth-child(5){background-image:url('images/booth-display-ready.jpg')}
+
+/* ── Overlay: lighter at top so images breathe, dark at bottom for text ── */
+.hc-slide::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(
+    to bottom,
+    rgba(8,15,40,0.22) 0%,
+    rgba(8,15,40,0.28) 35%,
+    rgba(8,15,40,0.75) 100%
+  );
+}
+
+/* ── Content sits at the bottom of the viewport ── */
+.hc-content{
+  position:relative;z-index:10;
+  min-height:95vh;display:flex;flex-direction:column;
+  align-items:center;justify-content:flex-end;
+  text-align:center;padding:7rem 2rem 6rem;
+}
+
+/* ── Animated text ── */
+.hc-anim{
+  opacity:0;transform:translateY(22px);
+  transition:opacity 0.75s ease, transform 0.75s ease;
+}
+.hc-content.text-ready .hc-anim:nth-child(1){opacity:1;transform:none;transition-delay:0.05s}
+.hc-content.text-ready .hc-anim:nth-child(2){opacity:1;transform:none;transition-delay:0.18s}
+.hc-content.text-ready .hc-anim:nth-child(3){opacity:1;transform:none;transition-delay:0.30s}
+.hc-content.text-ready .hc-anim:nth-child(4){opacity:1;transform:none;transition-delay:0.42s}
+.hc-content.text-ready .hc-anim:nth-child(5){opacity:1;transform:none;transition-delay:0.52s}
+
+/* ── Badge ── */
+.hc-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(245,158,11,0.18);border:1px solid rgba(245,158,11,0.5);
+  color:#fbbf24;font-family:'Kanit',sans-serif;
+  font-size:0.72rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;
+  padding:7px 20px;border-radius:99px;margin-bottom:1.2rem;
+}
+
+/* ── Title ── */
+.hc-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(3rem,9vw,5.5rem);
+  color:#fff;letter-spacing:0.03em;line-height:0.95;
+  margin-bottom:0.6rem;
+  text-shadow:0 2px 24px rgba(0,0,0,0.55);
+}
+.hc-title .gold{
+  background:linear-gradient(90deg,#D4A017,#fde68a,#D4A017);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+
+/* ── Per-slide caption ── */
+.hc-slide-caption{
+  font-family:'Kanit',sans-serif;font-size:clamp(0.85rem,2vw,1.05rem);
+  color:rgba(255,255,255,0.8);margin-bottom:1.1rem;
+  min-height:1.6em;
+  text-shadow:0 1px 12px rgba(0,0,0,0.6);
+}
+
+/* ── Meta pills ── */
+.hc-meta{display:flex;gap:0.65rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.75rem;}
+.hc-meta-item{
+  background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.16);
+  color:rgba(255,255,255,0.85);font-family:'Kanit',sans-serif;
+  font-size:0.8rem;padding:5px 14px;border-radius:99px;
+  display:flex;align-items:center;gap:5px;backdrop-filter:blur(6px);
+}
+
+/* ── CTA buttons ── */
+.hc-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+
+/* ── Slide label (bottom-left) ── */
+.hc-slide-label{
+  position:absolute;bottom:5.5rem;left:2rem;z-index:10;
+  font-family:'Kanit',sans-serif;font-size:0.78rem;font-weight:600;
+  color:rgba(255,255,255,0.45);letter-spacing:0.08em;
+}
+
+/* ── Dot navigation ── */
+.hc-dots{
+  position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);
+  z-index:10;display:flex;gap:8px;align-items:center;
+}
+.hc-dot{
+  width:8px;height:8px;border-radius:99px;
+  background:rgba(255,255,255,0.3);border:none;cursor:pointer;
+  padding:0;transition:all 0.35s ease;
+}
+.hc-dot.active{background:#fbbf24;width:28px;}
+
+/* ── Arrows ── */
+.hc-arrow{
+  position:absolute;top:50%;transform:translateY(-50%);z-index:10;
+  background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);
+  color:#fff;width:44px;height:44px;border-radius:50%;
+  cursor:pointer;font-size:1.1rem;
+  display:flex;align-items:center;justify-content:center;
+  transition:all 0.25s;backdrop-filter:blur(8px);
+}
+.hc-arrow:hover{background:rgba(255,255,255,0.22);border-color:rgba(255,255,255,0.4)}
+.hc-arrow.prev{left:1.25rem}
+.hc-arrow.next{right:1.25rem}
+@media(max-width:600px){.hc-arrow{display:none}}
+
+/* ── Progress bar ── */
+.hc-progress{
+  position:absolute;bottom:0;left:0;height:3px;
+  background:linear-gradient(90deg,#D4A017,#fbbf24);
+  z-index:10;width:0%;transition:width 0s linear;
+}
+.hc-progress.running{width:100%;transition:width 5.5s linear;}
+</style>
+
+<section class="hero-carousel" id="heroCarousel">
+
+  <!-- 5 background slides -->
+  <div class="hc-slide active"></div>
+  <div class="hc-slide"></div>
+  <div class="hc-slide"></div>
+  <div class="hc-slide"></div>
+  <div class="hc-slide"></div>
+
+  <!-- Content overlay (shared, sits on top of all slides) -->
+  <div class="hc-content" id="hcContent">
+
+    <div class="hc-badge hc-anim">📅 Mekong Business Connect 2026</div>
+
+    <h1 class="hc-title hc-anim">
+      <span data-lang="th" class="active">Mekong Business<br><span class="gold">Connect 2026</span></span>
+      <span data-lang="la">Mekong Business<br><span class="gold">Connect 2026</span></span>
+      <span data-lang="en">Mekong Business<br><span class="gold">Connect 2026</span></span>
     </h1>
-    <p class="hero-subtitle">
-      <span data-lang="th" class="active">แพลตฟอร์มธุรกิจ ไทย–ลาว–จีน–รัสเซีย ผ่าน Big C เวียงจันทน์</span>
-      <span data-lang="la">ແພລດຟອມທຸລະກິດ ໄທ-ລາວ-ຈີນ-ລັດເຊຍ ຜ່ານ Big C ວຽງຈັນ</span>
-      <span data-lang="en">Thai–Laos–China–Russia Business Platform via Big C Vientiane</span>
+
+    <p class="hc-slide-caption hc-anim" id="hcCaption">
+      Big C Vientiane · หอการค้านานาชาติ 6 ประเทศ
     </p>
-    <div class="hero-pills">
-      <span class="hero-pill">🤝 B2B Matching</span>
-      <span class="hero-pill">📦 Managed Showroom</span>
-      <span class="hero-pill">🚚 Logistics ครบวงจร</span>
-      <span class="hero-pill">0% Commission</span>
+
+    <div class="hc-meta hc-anim">
+      <div class="hc-meta-item">📍 Big C Vientiane</div>
+      <div class="hc-meta-item">
+        <span data-lang="th" class="active">📅 25–29 มีนาคม 2026</span>
+        <span data-lang="la">📅 25–29 ມີນາ 2026</span>
+        <span data-lang="en">📅 Mar 25–29, 2026</span>
+      </div>
+      <div class="hc-meta-item">🏪 60–80 Booths</div>
+      <div class="hc-meta-item">🤝 B2B Matching</div>
     </div>
-    <div class="hero-btns">
-      <a href="/event" class="btn-primary">
-        📅 <span data-lang="th" class="active">ดูงาน & จองบูท</span>
-        <span data-lang="la">ເບິ່ງງານ & ຈອງ</span>
-        <span data-lang="en">Exhibit With Us</span>
+
+    <div class="hc-btns hc-anim">
+      <a href="#contact" class="btn-eph-primary">🚀
+        <span data-lang="th" class="active">จองบูทเลย</span>
+        <span data-lang="la">ຈອງບູດ</span>
+        <span data-lang="en">Book a Booth</span>
       </a>
-      <a href="/membership" class="btn-gold-outline">
-        👑 <span data-lang="th" class="active">Become a Partner</span>
-        <span data-lang="la">ເປັນພາກສ່ວນ</span>
-        <span data-lang="en">Become a Partner</span>
-      </a>
-      <a href="/about" class="btn-outline">
-        🌐 <span data-lang="th" class="active">พันธมิตร</span>
-        <span data-lang="la">ພັນທະມິດ</span>
-        <span data-lang="en">Our Alliance</span>
-      </a>
+      <a href="/membership" class="btn-eph-ghost">👑 Founder Member</a>
+      <a href="/" class="btn-eph-ghost">← หน้าหลัก</a>
     </div>
-    <div class="hero-stats">
-      <div class="h-stat">
-        <div class="h-stat-num">200</div>
-        <div class="h-stat-label">sqm Showroom</div>
-      </div>
-      <div class="h-stat">
-        <div class="h-stat-num">0%</div>
-        <div class="h-stat-label">Commission</div>
-      </div>
-      <div class="h-stat">
-        <div class="h-stat-num">4</div>
-        <div class="h-stat-label">Countries</div>
-      </div>
-      <div class="h-stat">
-        <div class="h-stat-num">20</div>
-        <div class="h-stat-label">Founder Slots</div>
-      </div>
-    </div>
+
   </div>
+
+  <div class="hc-slide-label" id="hcLabel">Big C Vientiane · Main Venue</div>
+  <button class="hc-arrow prev" onclick="hcMove(-1)" aria-label="Previous">‹</button>
+  <button class="hc-arrow next" onclick="hcMove(1)" aria-label="Next">›</button>
+  <div class="hc-dots" id="hcDots"></div>
+  <div class="hc-progress" id="hcProgress"></div>
+
 </section>
 
-<!-- ══ ABOUT ══ -->
-<section class="section" id="about">
-  <div class="section-center about-grid">
-    <div class="reveal">
-      <div class="s-eyebrow">🏛️ About VITH Hub</div>
-      <h2 class="s-title">
-        <span data-lang="th" class="active">ยกระดับธุรกิจไทย<br><em>สู่ตลาดโลก</em></span>
-        <span data-lang="en">Elevating Thai Business<br><em>to the World Stage</em></span>
-        <span data-lang="la">ຍົກລະດັບທຸລະກິດໄທ<br><em>ສູ່ຕະຫຼາດໂລກ</em></span>
-      </h2>
-      <p class="about-text">
-        <span data-lang="th" class="active"><strong>VITH Hub</strong> คือกลุ่มความร่วมมือระหว่างภาครัฐและเอกชนของไทย ลาว และนานาชาติ เพื่อร่วมกันผลักดันการแลกเปลี่ยนสินค้า การค้า การตลาด และเทคโนโลยีสมัยใหม่ระหว่างกัน</span>
-        <span data-lang="en"><strong>VITH Hub</strong> is a boutique business platform connecting Thai SMEs with international buyers and investors in Laos and the Mekong region.</span>
-        <span data-lang="la"><strong>VITH Hub</strong> ແມ່ນແພລດຟອມທຸລະກິດທີ່ເຊື່ອມ SME ໄທກັບຜູ້ຊື້ສາກົນໃນລາວ ແລະ ພາກພື້ນເມຄອງ</span>
-      </p>
-      <p class="about-text">
-        <span data-lang="th" class="active">โดยอาศัย <strong>Big C เวียงจันทน์</strong> เป็น Showroom และ Distribution Hub — จุดพบกันระหว่างสินค้าไทยคุณภาพสูงกับตลาดลาวและเส้นทางการค้าสู่จีน รัสเซีย และยุโรป</span>
-        <span data-lang="en">Based in Vientiane, we create a gateway for Thai entrepreneurs to new markets through curated exhibitions, B2B matchmaking, and networking events.</span>
-        <span data-lang="la">ຕັ້ງຢູ່ວຽງຈັນ, ພວກເຮົາສ້າງທາງເຂົ້າສູ່ຕະຫຼາດໃໝ່ ຜ່ານ B2B Matching ແລະ ກິດຈະກຳເຄືອຂ່າຍ</span>
-      </p>
-      <div class="about-pills">
-        <span class="about-pill">🤝 รัฐ-เอกชน</span>
-        <span class="about-pill">🌏 ไทย-ลาว-จีน-รัสเซีย</span>
-        <span class="about-pill">📦 Managed Showroom</span>
-        <span class="about-pill">0% Commission</span>
-      </div>
-    </div>
-    <div class="reveal d2">
-      <div class="about-img">
-        <img src="images/indoor-01.jpg" alt="VITH HUB Showroom" loading="lazy" onerror="this.src='images/hero-bigc.png'">
-      </div>
-    </div>
-  </div>
-</section>
+<script>
+(function(){
+  const slides    = document.querySelectorAll('.hc-slide');
+  const dotsWrap  = document.getElementById('hcDots');
+  const progress  = document.getElementById('hcProgress');
+  const labelEl   = document.getElementById('hcLabel');
+  const captionEl = document.getElementById('hcCaption');
+  const content   = document.getElementById('hcContent');
+  const DURATION  = 5500;
+  let current = 0, timer = null;
 
-<!-- ══ EVENT TEASER ══ -->
-<section class="section" id="event-teaser">
-  <div class="section-center" style="text-align:center">
-    <div class="reveal">
-      <div class="s-eyebrow" style="color:var(--gold2)">📅 Mekong Business Connect 2026</div>
-      <h2 class="et-title">Mini International Trade Showcase<br><span>in Vientiane</span></h2>
-      <p class="et-sub">Phase 1: 25–29 มีนาคม 2026 · Big C เวียงจันทน์ สปป.ลาว<br>60–80 บูท · B2B Matching · หอการค้านานาชาติ 6 ประเทศ</p>
-    </div>
-    <div class="et-grid reveal d1">
-      <div class="et-card">
-        <div class="et-icon">🏪</div>
-        <div class="et-name">60–80 Exhibition Booths</div>
-        <div class="et-desc">พื้นที่จัดแสดงสินค้าพร้อม Lao Staff ดูแล Managed ให้ครบ</div>
-      </div>
-      <div class="et-card">
-        <div class="et-icon">🤝</div>
-        <div class="et-name">Business Networking Sessions</div>
-        <div class="et-desc">B2B Matching กับผู้ซื้อจาก Lao, Chinese, Vietnamese & Russian Chambers</div>
-      </div>
-      <div class="et-card">
-        <div class="et-icon">🌏</div>
-        <div class="et-name">6 International Chambers</div>
-        <div class="et-desc">Participation from Lao, Chinese, Vietnamese, Russian, Korean & EU Chambers</div>
-      </div>
-    </div>
-    <div class="et-btns reveal">
-      <a href="/event" class="btn-et">📅 ดูรายละเอียด & ราคาบูท</a>
-      <a href="/event" class="btn-et-ghost">Apply for a Booth</a>
-    </div>
-  </div>
-</section>
+  const slideData = [
+    {
+      label: 'Big C Vientiane · Main Venue',
+      caption: {
+        th: 'Big C Vientiane · ห้างใหญ่สุดในลาว · ลูกค้า 15,000+ คน/วัน',
+        la: 'Big C ວຽງຈັນ · ລູກຄ້າ 15,000+ ຄົນ/ວັນ',
+        en: 'Big C Vientiane · Laos\' biggest mall · 15,000+ visitors/day',
+      }
+    },
+    {
+      label: 'Indoor Exhibition Hall · 200 sqm',
+      caption: {
+        th: 'พื้นที่ภายใน 200+ ตร.ม. · แอร์เย็น · ไฟส่องสว่างครบ',
+        la: '200+ ຕ.ມ ພາຍໃນ · ມີແອ + ໄຟ',
+        en: '200+ sqm indoor hall · air-conditioned · full lighting',
+      }
+    },
+    {
+      label: 'Booth Setup · Phase 1',
+      caption: {
+        th: 'บูทพร้อมขาย 60–80 บูท · Zone A B C · เลือกทำเลได้เลย',
+        la: '60–80 ບູດ · Zone A B C · ເລືອກທຳເລ',
+        en: '60–80 exhibition booths · Zone A B C · choose your spot',
+      }
+    },
+    {
+      label: 'Trade Floor · Vientiane',
+      caption: {
+        th: 'สินค้าไทย · Beauty · Food · Lifestyle · ตรงกลุ่มลูกค้าลาว',
+        la: 'ສິນຄ້າໄທ · Beauty · Food · Lifestyle',
+        en: 'Thai products · Beauty · Food · Lifestyle · Lao buyers ready',
+      }
+    },
+    {
+      label: 'Booth Display · Ready to Exhibit',
+      caption: {
+        th: 'ร่วมกับหอการค้านานาชาติ 6 ประเทศ · B2B Matching',
+        la: 'ຫໍການຄ້າ 6 ປະເທດ · B2B Matching',
+        en: '6 International Chambers · B2B Matching included',
+      }
+    },
+  ];
 
-<!-- ══ WHY VITH HUB ══ -->
-<section class="section" id="why" style="background:var(--bg)">
-  <div class="section-center">
-    <div class="reveal" style="text-align:center;margin-bottom:0.5rem">
-      <div class="s-eyebrow">✨ Why Choose Us</div>
-      <h2 class="s-title" style="text-align:center">
-        <span data-lang="th" class="active">ระบบที่ออกแบบมา<br><em>เพื่อนักธุรกิจไทย</em></span>
-        <span data-lang="en">A System Designed<br><em>for Thai Entrepreneurs</em></span>
-        <span data-lang="la">ລະບົບທີ່ອອກແບບ<br><em>ສຳລັບນັກທຸລະກິດໄທ</em></span>
-      </h2>
-    </div>
-    <div class="why-grid reveal d1">
-      <div class="why-card">
-        <div class="why-icon">🏪</div>
-        <div class="why-name"><span data-lang="th" class="active">Showroom 200 ตร.ม.</span><span data-lang="en">200 sqm Showroom</span></div>
-        <div class="why-desc"><span data-lang="th" class="active">พื้นที่จัดแสดงถาวรใจกลาง Big C เวียงจันทน์ มีลูกค้า Traffic สูงทุกวัน</span><span data-lang="en">Permanent display in Big C Vientiane with high daily foot traffic</span></div>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">👥</div>
-        <div class="why-name"><span data-lang="th" class="active">Lao Staff Full-time</span><span data-lang="en">Full-time Lao Staff</span></div>
-        <div class="why-desc"><span data-lang="th" class="active">ทีมงานลาวดูแลหน้าร้านทุกวัน คุณไม่ต้องบินไปเองทุกครั้ง</span><span data-lang="en">Our Lao team manages your booth daily — no need to fly over yourself</span></div>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">🚚</div>
-        <div class="why-name"><span data-lang="th" class="active">ขนส่งฟรี 100 KG/เดือน</span><span data-lang="en">Free 100 KG Shipping</span></div>
-        <div class="why-desc"><span data-lang="th" class="active">ส่งสินค้าจากโรงงานไทยถึง Showroom เวียงจันทน์ ฟรีทุกเดือน</span><span data-lang="en">Free monthly shipping from Thai factory to Vientiane Showroom</span></div>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">💰</div>
-        <div class="why-name"><span data-lang="th" class="active">0% Commission</span><span data-lang="en">Zero Commission</span></div>
-        <div class="why-desc"><span data-lang="th" class="active">รายได้ทั้งหมดเป็นของคุณ เราคิดค่าบริการรายเดือนคงที่เท่านั้น</span><span data-lang="en">100% of revenue stays with you — flat monthly fee only</span></div>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">🤝</div>
-        <div class="why-name"><span data-lang="th" class="active">B2B Matching</span><span data-lang="en">B2B Matching</span></div>
-        <div class="why-desc"><span data-lang="th" class="active">จับคู่กับผู้ซื้อชาวลาว จีน รัสเซียผ่านเครือข่ายหอการค้า 6 ประเทศ</span><span data-lang="en">Match with Lao, Chinese & Russian buyers through 6-country chamber network</span></div>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">📦</div>
-        <div class="why-name"><span data-lang="th" class="active">คลังสินค้า 1 พาเลท</span><span data-lang="en">1 Pallet Storage</span></div>
-        <div class="why-desc"><span data-lang="th" class="active">พื้นที่เก็บสินค้าฟรี 1 พาเลท/เดือน ส่วนเกิน 25 บาท/KG</span><span data-lang="en">Free 1 pallet storage monthly, additional at only 25 THB/KG</span></div>
-      </div>
-    </div>
-  </div>
-</section>
+  function getLang(){
+    const btn = document.querySelector('.lang-btn.active');
+    return btn ? btn.textContent.trim().toLowerCase() : 'th';
+  }
 
-<!-- ══ TRADE ROUTE MAP ══ -->
-<section class="section" id="connectivity">
-  <div class="section-center">
-    <div class="reveal" style="text-align:center;margin-bottom:2rem">
-      <div class="s-eyebrow">🌐 Strategic Trade Routes</div>
-      <h2 class="s-title">
-        <span data-lang="th" class="active">จุดเชื่อมโยง<br><em style="color:#fff;font-style:normal">ไทย · ลาว · จีน · รัสเซีย</em></span>
-        <span data-lang="en">The Trade Crossroads of<br><em style="color:#fff;font-style:normal">Thailand · Laos · China · Russia</em></span>
-      </h2>
-      <p class="s-sub" style="margin:0 auto;color:rgba(255,255,255,0.55);text-align:center">
-        <span data-lang="th" class="active">สินค้าไทยจากโรงงาน ผ่าน VITH Hub เวียงจันทน์ ขึ้นรถไฟลาว-จีน เชื่อมคุนหมิง กระจายทั่วยุโรปและรัสเซีย</span>
-        <span data-lang="en">Thai products flow through VITH Hub, connect via Laos-China Railway to Kunming, then reach buyers across Europe and Russia.</span>
-      </p>
-    </div>
-    <div class="reveal d1 map-frame">
-      <svg viewBox="0 0 900 440" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:900px;display:block;margin:0 auto">
-        <defs>
-          <!-- grid pattern -->
-          <pattern id="mapGrid" x="0" y="0" width="45" height="45" patternUnits="userSpaceOnUse">
-            <path d="M45 0H0V45" stroke="rgba(99,149,255,0.07)" stroke-width="1"/>
-          </pattern>
-          <!-- diagonal lines texture -->
-          <pattern id="diag" x="0" y="0" width="12" height="12" patternUnits="userSpaceOnUse">
-            <path d="M0 12L12 0" stroke="rgba(255,255,255,0.025)" stroke-width="1"/>
-          </pattern>
-          <!-- arrow markers -->
-          <marker id="arrowGold" markerWidth="10" markerHeight="10" refX="8" refY="3.5" orient="auto">
-            <path d="M0,0 L0,7 L10,3.5 z" fill="#F5C842"/>
-          </marker>
-          <marker id="arrowRed" markerWidth="10" markerHeight="10" refX="8" refY="3.5" orient="auto">
-            <path d="M0,0 L0,7 L10,3.5 z" fill="#ff6b7a"/>
-          </marker>
-          <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="8" refY="3.5" orient="auto">
-            <path d="M0,0 L0,7 L10,3.5 z" fill="#60a5fa"/>
-          </marker>
-          <marker id="arrowGreen" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
-            <path d="M0,0 L0,8 L8,4 z" fill="#34d399"/>
-          </marker>
-          <!-- glow filters -->
-          <filter id="glowGold" x="-40%" y="-40%" width="180%" height="180%">
-            <feGaussianBlur stdDeviation="4" result="blur"/>
-            <feMerge><feMergeNode in="blur"/><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-          </filter>
-          <filter id="glowBlue" x="-40%" y="-40%" width="180%" height="180%">
-            <feGaussianBlur stdDeviation="5" result="blur"/>
-            <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.37  0 0 0 0 0.64  0 0 0 0 1  0 0 0 0.8 0" result="coloredBlur"/>
-            <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
-          </filter>
-          <filter id="glowHub" x="-60%" y="-60%" width="220%" height="220%">
-            <feGaussianBlur stdDeviation="8" result="blur"/>
-            <feColorMatrix in="blur" type="matrix" values="0 0 0 0 1  0 0 0 0 0.76  0 0 0 0 0  0 0 0 1 0" result="coloredBlur"/>
-            <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
-          </filter>
-          <filter id="glowNode">
-            <feGaussianBlur stdDeviation="3" result="blur"/>
-            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-          </filter>
-          <!-- radial for hub glow bg -->
-          <radialGradient id="hubGlow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stop-color="#F5C842" stop-opacity="0.25"/>
-            <stop offset="100%" stop-color="#F5C842" stop-opacity="0"/>
-          </radialGradient>
-          <radialGradient id="thGlow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stop-color="#ff6b7a" stop-opacity="0.2"/>
-            <stop offset="100%" stop-color="#ff6b7a" stop-opacity="0"/>
-          </radialGradient>
-          <radialGradient id="cnGlow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stop-color="#60a5fa" stop-opacity="0.2"/>
-            <stop offset="100%" stop-color="#60a5fa" stop-opacity="0"/>
-          </radialGradient>
-          <radialGradient id="ruGlow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stop-color="#c084fc" stop-opacity="0.2"/>
-            <stop offset="100%" stop-color="#c084fc" stop-opacity="0"/>
-          </radialGradient>
-          <!-- node bg gradient -->
-          <linearGradient id="nodeBg" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#1e3a6e"/>
-            <stop offset="100%" stop-color="#0f2244"/>
-          </linearGradient>
-          <linearGradient id="hubBg" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#e8a800"/>
-            <stop offset="100%" stop-color="#c47f00"/>
-          </linearGradient>
-        </defs>
+  slides.forEach((_, i) => {
+    const d = document.createElement('button');
+    d.className = 'hc-dot' + (i===0?' active':'');
+    d.setAttribute('aria-label','Slide '+(i+1));
+    d.onclick = () => goTo(i);
+    dotsWrap.appendChild(d);
+  });
 
-        <!-- Background -->
-        <rect width="900" height="440" fill="url(#nodeBg)"/>
-        <rect width="900" height="440" fill="url(#mapGrid)"/>
-        <rect width="900" height="440" fill="url(#diag)"/>
+  function animateText(){
+    content.classList.remove('text-ready');
+    void content.offsetWidth;
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      content.classList.add('text-ready');
+    }));
+  }
 
-        <!-- subtle horizon line -->
-        <line x1="0" y1="360" x2="900" y2="360" stroke="rgba(99,149,255,0.06)" stroke-width="1"/>
+  function updateCaption(idx){
+    const lang = getLang();
+    const data = slideData[idx] || slideData[0];
+    if(captionEl) captionEl.textContent = data.caption[lang] || data.caption.th;
+  }
 
-        <!-- glow halos around nodes -->
-        <ellipse cx="155" cy="290" rx="75" ry="55" fill="url(#thGlow)"/>
-        <ellipse cx="420" cy="210" rx="90" ry="70" fill="url(#hubGlow)"/>
-        <ellipse cx="635" cy="150" rx="65" ry="50" fill="url(#cnGlow)"/>
-        <ellipse cx="810" cy="115" rx="70" ry="55" fill="url(#ruGlow)"/>
+  function goTo(n){
+    slides[current].classList.remove('active');
+    dotsWrap.children[current].classList.remove('active');
+    current = (n + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dotsWrap.children[current].classList.add('active');
+    if(labelEl) labelEl.textContent = slideData[current].label;
+    updateCaption(current);
+    animateText();
+    progress.classList.remove('running');
+    progress.style.transition = 'none';
+    progress.style.width = '0%';
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      progress.style.transition = '';
+      progress.classList.add('running');
+    }));
+    clearTimeout(timer);
+    timer = setTimeout(() => goTo(current + 1), DURATION);
+  }
 
-        <!-- region borders (subtle) -->
-        <ellipse cx="155" cy="290" rx="72" ry="48" fill="rgba(255,107,122,0.07)" stroke="rgba(255,107,122,0.2)" stroke-width="1" stroke-dasharray="4,3"/>
-        <ellipse cx="420" cy="210" rx="78" ry="52" fill="rgba(245,200,66,0.06)" stroke="rgba(245,200,66,0.22)" stroke-width="1.5" stroke-dasharray="5,3"/>
-        <ellipse cx="635" cy="150" rx="60" ry="42" fill="rgba(96,165,250,0.07)" stroke="rgba(96,165,250,0.2)" stroke-width="1" stroke-dasharray="4,3"/>
-        <ellipse cx="810" cy="115" rx="62" ry="48" fill="rgba(192,132,252,0.07)" stroke="rgba(192,132,252,0.2)" stroke-width="1" stroke-dasharray="4,3"/>
+  window.hcMove = dir => goTo(current + dir);
+  goTo(0);
 
-        <!-- ── TRADE ROUTE LINES ── -->
-        <!-- Road: Thailand → VITH Hub -->
-        <path d="M170,290 C240,275 320,250 388,218" stroke="rgba(255,107,122,0.25)" stroke-width="5" fill="none"/>
-        <path d="M170,290 C240,275 320,250 388,218" stroke="#ff6b7a" stroke-width="2" stroke-dasharray="8,5" fill="none" marker-end="url(#arrowRed)" filter="url(#glowGold)">
-          <animate attributeName="stroke-dashoffset" from="0" to="-26" dur="1.5s" repeatCount="indefinite"/>
-        </path>
+  const carousel = document.getElementById('heroCarousel');
+  carousel.addEventListener('mouseenter', () => clearTimeout(timer));
+  carousel.addEventListener('mouseleave', () => {
+    timer = setTimeout(() => goTo(current + 1), DURATION);
+  });
 
-        <!-- Railway: VITH Hub → Kunming -->
-        <path d="M452,210 C510,192 570,170 612,158" stroke="rgba(245,200,66,0.2)" stroke-width="6" fill="none"/>
-        <path d="M452,210 C510,192 570,170 612,158" stroke="#F5C842" stroke-width="2.5" stroke-dasharray="10,4" fill="none" marker-end="url(#arrowGold)" filter="url(#glowGold)">
-          <animate attributeName="stroke-dashoffset" from="0" to="-28" dur="1.2s" repeatCount="indefinite"/>
-        </path>
+  let tx = 0;
+  carousel.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, {passive:true});
+  carousel.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - tx;
+    if(Math.abs(dx) > 50) goTo(current + (dx < 0 ? 1 : -1));
+  }, {passive:true});
 
-        <!-- Global: Kunming → Russia/Europe -->
-        <path d="M660,148 C720,132 760,118 792,118" stroke="rgba(96,165,250,0.2)" stroke-width="5" fill="none"/>
-        <path d="M660,148 C720,132 760,118 792,118" stroke="#60a5fa" stroke-width="2" stroke-dasharray="8,5" fill="none" marker-end="url(#arrowBlue)" filter="url(#glowBlue)">
-          <animate attributeName="stroke-dashoffset" from="0" to="-26" dur="1.8s" repeatCount="indefinite"/>
-        </path>
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      setTimeout(() => updateCaption(current), 50);
+    });
+  });
+})();
+</script>
 
-        <!-- Local: VITH Hub → Lao Market (down) -->
-        <path d="M420,228 C420,260 420,285 420,308" stroke="rgba(52,211,153,0.25)" stroke-width="4" fill="none"/>
-        <path d="M420,228 C420,260 420,285 420,308" stroke="#34d399" stroke-width="1.8" stroke-dasharray="6,4" fill="none" marker-end="url(#arrowGreen)">
-          <animate attributeName="stroke-dashoffset" from="0" to="-20" dur="1s" repeatCount="indefinite"/>
-        </path>
-
-        <!-- ── NODES ── -->
-        <!-- Thailand -->
-        <circle cx="155" cy="290" r="28" fill="url(#nodeBg)" stroke="rgba(255,107,122,0.5)" stroke-width="1.5" filter="url(#glowNode)"/>
-        <circle cx="155" cy="290" r="14" fill="#7f1d1d"/>
-        <circle cx="155" cy="290" r="8" fill="#ff6b7a"/>
-        <!-- pulse ring Thailand -->
-        <circle cx="155" cy="290" r="22" fill="none" stroke="#ff6b7a" stroke-width="1" opacity="0.6">
-          <animate attributeName="r" values="18;30;18" dur="3s" repeatCount="indefinite"/>
-          <animate attributeName="opacity" values="0.6;0;0.6" dur="3s" repeatCount="indefinite"/>
-        </circle>
-        <text x="155" y="330" text-anchor="middle" font-family="Kanit,sans-serif" font-size="12" font-weight="700" fill="#fca5a5">🇹🇭 Thailand</text>
-        <text x="155" y="345" text-anchor="middle" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.4)">Factory / Origin</text>
-
-        <!-- VITH Hub (center star) -->
-        <circle cx="420" cy="210" r="44" fill="url(#hubGlow)" filter="url(#glowHub)"/>
-        <circle cx="420" cy="210" r="36" fill="rgba(245,200,66,0.12)" stroke="#F5C842" stroke-width="2"/>
-        <!-- pulse ring Hub -->
-        <circle cx="420" cy="210" r="38" fill="none" stroke="#F5C842" stroke-width="1.5" opacity="0.7">
-          <animate attributeName="r" values="36;52;36" dur="2.5s" repeatCount="indefinite"/>
-          <animate attributeName="opacity" values="0.7;0;0.7" dur="2.5s" repeatCount="indefinite"/>
-        </circle>
-        <circle cx="420" cy="210" r="22" fill="url(#hubBg)"/>
-        <circle cx="420" cy="210" r="22" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
-        <text x="420" y="206" text-anchor="middle" font-family="Bebas Neue,sans-serif" font-size="9" fill="#1a0a00" letter-spacing="0.1em">VITH HUB</text>
-        <text x="420" y="218" text-anchor="middle" font-family="Bebas Neue,sans-serif" font-size="8" fill="rgba(0,0,0,0.6)">BIG C</text>
-        <text x="420" y="262" text-anchor="middle" font-family="Kanit,sans-serif" font-size="13" font-weight="800" fill="#fde68a" filter="url(#glowGold)">🌟 VITH Hub</text>
-        <text x="420" y="278" text-anchor="middle" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.6)">Big C Vientiane 🇱🇦</text>
-        <text x="420" y="291" text-anchor="middle" font-family="sans-serif" font-size="9" fill="rgba(245,200,66,0.65)">Distribution Hub</text>
-
-        <!-- Lao Market (below hub) -->
-        <circle cx="420" cy="325" r="16" fill="rgba(52,211,153,0.1)" stroke="#34d399" stroke-width="1.2"/>
-        <circle cx="420" cy="325" r="7" fill="#065f46"/>
-        <circle cx="420" cy="325" r="4" fill="#34d399"/>
-        <text x="420" y="352" text-anchor="middle" font-family="Kanit,sans-serif" font-size="11" font-weight="600" fill="#6ee7b7">🛍️ Lao Market</text>
-        <text x="420" y="365" text-anchor="middle" font-family="sans-serif" font-size="9" fill="rgba(255,255,255,0.35)">Local Distribution</text>
-
-        <!-- Kunming -->
-        <circle cx="635" cy="150" r="28" fill="url(#nodeBg)" stroke="rgba(96,165,250,0.5)" stroke-width="1.5" filter="url(#glowNode)"/>
-        <circle cx="635" cy="150" r="14" fill="#1e3a8a"/>
-        <circle cx="635" cy="150" r="8" fill="#60a5fa"/>
-        <circle cx="635" cy="150" r="22" fill="none" stroke="#60a5fa" stroke-width="1" opacity="0.5">
-          <animate attributeName="r" values="18;28;18" dur="3.5s" repeatCount="indefinite"/>
-          <animate attributeName="opacity" values="0.5;0;0.5" dur="3.5s" repeatCount="indefinite"/>
-        </circle>
-        <text x="635" y="144" text-anchor="middle" font-family="Bebas Neue,sans-serif" font-size="16" fill="#fff">昆明</text>
-        <text x="635" y="155" text-anchor="middle" font-family="sans-serif" font-size="8" fill="rgba(255,255,255,0.5)">KUNMING</text>
-        <text x="635" y="190" text-anchor="middle" font-family="Kanit,sans-serif" font-size="12" font-weight="700" fill="#93c5fd">🇨🇳 Kunming</text>
-        <text x="635" y="204" text-anchor="middle" font-family="sans-serif" font-size="9" fill="rgba(255,255,255,0.4)">Laos-China Railway</text>
-
-        <!-- Russia & Europe -->
-        <circle cx="810" cy="115" r="26" fill="url(#nodeBg)" stroke="rgba(192,132,252,0.5)" stroke-width="1.5" filter="url(#glowNode)"/>
-        <circle cx="810" cy="115" r="13" fill="#3b0764"/>
-        <circle cx="810" cy="115" r="7" fill="#c084fc"/>
-        <circle cx="810" cy="115" r="20" fill="none" stroke="#c084fc" stroke-width="1" opacity="0.5">
-          <animate attributeName="r" values="16;26;16" dur="4s" repeatCount="indefinite"/>
-          <animate attributeName="opacity" values="0.5;0;0.5" dur="4s" repeatCount="indefinite"/>
-        </circle>
-        <text x="810" y="154" text-anchor="middle" font-family="Kanit,sans-serif" font-size="11" font-weight="700" fill="#d8b4fe">🇷🇺 Russia</text>
-        <text x="810" y="168" text-anchor="middle" font-family="Kanit,sans-serif" font-size="11" font-weight="700" fill="#d8b4fe">🇪🇺 Europe</text>
-        <text x="810" y="182" text-anchor="middle" font-family="sans-serif" font-size="9" fill="rgba(255,255,255,0.35)">End Buyers</text>
-
-        <!-- ── LEGEND ── -->
-        <rect x="24" y="24" width="210" height="126" rx="12" fill="rgba(8,16,36,0.88)" stroke="rgba(99,149,255,0.3)" stroke-width="1"/>
-        <text x="44" y="50" font-family="Kanit,sans-serif" font-size="11" font-weight="800" fill="rgba(255,255,255,0.9)" letter-spacing="0.1em">TRADE ROUTES</text>
-        <line x1="44" y1="64" x2="78" y2="64" stroke="#ff6b7a" stroke-width="2" stroke-dasharray="6,4"/>
-        <text x="86" y="68" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.6)">Road Logistics</text>
-        <line x1="44" y1="82" x2="78" y2="82" stroke="#F5C842" stroke-width="2.5" stroke-dasharray="8,4"/>
-        <text x="86" y="86" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.6)">Laos-China Railway</text>
-        <line x1="44" y1="100" x2="78" y2="100" stroke="#60a5fa" stroke-width="2" stroke-dasharray="6,4"/>
-        <text x="86" y="104" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.6)">Global Distribution</text>
-        <line x1="44" y1="118" x2="78" y2="118" stroke="#34d399" stroke-width="1.8" stroke-dasharray="5,4"/>
-        <text x="86" y="122" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.6)">Local Lao Market</text>
-        <text x="44" y="140" font-family="sans-serif" font-size="9" fill="rgba(255,255,255,0.25)">● Animated live routes</text>
-      </svg>
-    </div>
-  </div>
-</section>
-
-<!-- ══ PARTNERS & CHAMBERS ══ -->
-<section class="section" id="partners">
+<!-- ══ GALLERY ══ -->
+<section id="gallery" class="section-pad" style="background:var(--surface3);border-top:1px solid var(--border)">
   <div class="section-center">
     <div class="reveal" style="text-align:center;margin-bottom:2.5rem">
-      <div class="s-eyebrow">🌟 Our Partners & Chambers</div>
-      <h2 class="s-title" style="text-align:center">Proudly Working With</h2>
+      <div class="section-eyebrow">📍 สถานที่จริง</div>
+      <h2 class="section-title">
+        <span data-lang="th" class="active">Big C เวียงจันทน์<br><em>ห้างใหญ่สุดในลาว</em></span>
+        <span data-lang="la">Big C ວຽງຈັນ<br><em>ຫ້າງໃຫຍ່ທີ່ສຸດ</em></span>
+        <span data-lang="en">Big C Vientiane<br><em>Laos' Biggest Mall</em></span>
+      </h2>
+      <p class="section-sub">
+        <span data-lang="th" class="active">บรรยากาศและวิสัยทัศน์ที่กำลังจะเกิดขึ้น — ทำเลที่ดีที่สุดสำหรับสินค้าไทยในลาว</span>
+        <span data-lang="en">See the real venue and the future vision — the best spot for Thai products in Laos</span>
+      </p>
     </div>
-    <!-- Strategic -->
-    <div class="partners-strategic reveal d1">
-      <div class="partner-card">
-        <img src="images/Big_C.png" alt="Big C Vientiane">
-        <div class="partner-name">Big C Vientiane</div>
-        <div class="partner-role">Main Venue Partner</div>
+    <div class="gallery-tabs reveal">
+      <button class="gallery-tab active" onclick="switchGallery('now',this)">🏬 <span data-lang="th" class="active">ปัจจุบัน</span><span data-lang="en">Now</span></button>
+      <button class="gallery-tab" onclick="switchGallery('future',this)">🚀 <span data-lang="th" class="active">อนาคต / VITH Hub</span><span data-lang="en">Future / VITH Hub</span></button>
+    </div>
+    <div id="gallery-now" class="gallery-panel">
+      <div class="gallery-hero-img reveal">
+        <img src="images/bigc-exterior-main.jpg" alt="Big C Vientiane" loading="lazy">
+        <div class="gallery-hero-label">📍 Big C เวียงจันทน์ — Ring Road, เวียงจันทน์</div>
       </div>
-      <div class="partner-card">
-        <img src="images/LITSE.png" alt="LITSE">
-        <div class="partner-name">LITSE</div>
-        <div class="partner-role">Lao State Agency</div>
-      </div>
-      <div class="partner-card">
-        <img src="images/VITH.png" alt="VITH Hub">
-        <div class="partner-name">VITH Hub</div>
-        <div class="partner-role">Main Organizer</div>
-      </div>
-      <div class="partner-card">
-        <img src="images/RB99.png" alt="RB99">
-        <div class="partner-name">RB99</div>
-        <div class="partner-role">Logistics Partner</div>
+      <div class="gallery-grid reveal">
+        <div class="gallery-item"><img src="images/bigc-indoor-hall.jpg" alt="Indoor" loading="lazy"><div class="gallery-caption">🏬 <span data-lang="th" class="active">พื้นที่ภายในห้าง</span><span data-lang="en">Mall Interior</span></div></div>
+        <div class="gallery-item"><img src="images/bigc-trade-floor.jpg" alt="Traffic" loading="lazy"><div class="gallery-caption">🛍️ <span data-lang="th" class="active">Traffic หนาแน่น</span><span data-lang="en">High Traffic</span></div></div>
+        <div class="gallery-item"><img src="images/booth-setup-example.jpg" alt="Booth" loading="lazy"><div class="gallery-caption">📦 <span data-lang="th" class="active">ตัวอย่างบูธ</span><span data-lang="en">Booth Example</span></div></div>
+        <div class="gallery-item"><img src="images/booth-display-ready.jpg" alt="Display" loading="lazy"><div class="gallery-caption">✨ <span data-lang="th" class="active">พื้นที่จัดแสดง</span><span data-lang="en">Display Area</span></div></div>
+        <div class="gallery-item"><img src="images/team.jpg" alt="Team" loading="lazy"><div class="gallery-caption">🤝 <span data-lang="th" class="active">ทีมงาน VITH Hub</span><span data-lang="en">VITH Hub Team</span></div></div>
+        <div class="gallery-item gallery-add-slot" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+          <div class="gallery-ph-inner"><span class="gallery-ph-icon">📷</span><span class="gallery-ph-text"><span data-lang="th" class="active">รูปเพิ่มเติม<br>เร็วๆ นี้</span><span data-lang="en">More photos<br>coming soon</span></span></div>
+        </div>
       </div>
     </div>
-    <!-- Chambers -->
-    <div style="text-align:center;margin-bottom:1.25rem">
-      <div class="s-eyebrow">🌐 International Chambers</div>
-    </div>
-    <div class="chambers-row reveal d2">
-      <div class="chamber-pill"><span class="flag">🇱🇦</span><div class="info"><div class="cn">LNCCI</div><div class="cr">Lao National Chamber</div></div></div>
-      <div class="chamber-pill"><span class="flag">🇹🇭</span><div class="info"><div class="cn">Thai Business Assoc.</div><div class="cr">Thailand</div></div></div>
-      <div class="chamber-pill"><span class="flag">🇪🇺</span><div class="info"><div class="cn">ECCIL</div><div class="cr">European Chamber</div></div></div>
-      <div class="chamber-pill"><span class="flag">🇨🇳</span><div class="info"><div class="cn">Chinese Chamber</div><div class="cr">China · Laos</div></div></div>
-      <div class="chamber-pill"><span class="flag">🇦🇺</span><div class="info"><div class="cn">AustCham</div><div class="cr">Australia · Laos</div></div></div>
-      <div class="chamber-pill"><span class="flag">🇰🇷</span><div class="info"><div class="cn">Korean Chamber</div><div class="cr">Korea · Laos</div></div></div>
-    </div>
-    <div style="text-align:center;margin-top:2rem">
-      <a href="/about" style="font-family:'Kanit',sans-serif;font-size:0.875rem;color:var(--navy2);font-weight:700;border-bottom:2px solid var(--gold);padding-bottom:2px">ดูพันธมิตรทั้งหมด →</a>
+    <div id="gallery-future" class="gallery-panel" style="display:none">
+      <div class="gallery-future-banner reveal">
+        <div class="gfb-icon">🚀</div>
+        <div class="gfb-text">
+          <div class="gfb-title"><span data-lang="th" class="active">วิสัยทัศน์ที่กำลังจะเกิดขึ้น</span><span data-lang="en">The Vision Coming Soon</span></div>
+          <div class="gfb-sub"><span data-lang="th" class="active">Phase 1 มีนาคม 2026 · Phase 2 พฤษภาคม 2026 — ภาพจากงานจริงจะอัพเดตที่นี่</span><span data-lang="en">Phase 1 Mar 2026 · Phase 2 May 2026 — Real photos updated here after events</span></div>
+        </div>
+      </div>
+      <div class="gallery-grid reveal">
+        <div class="gallery-item gallery-ph-future"><div class="gallery-ph-inner"><span class="gallery-ph-icon">🏗️</span><span class="gallery-ph-text"><span data-lang="th" class="active">Setup Phase 1<br>มีนาคม 2026</span><span data-lang="en">Phase 1 Setup<br>March 2026</span></span></div></div>
+        <div class="gallery-item gallery-ph-future"><div class="gallery-ph-inner"><span class="gallery-ph-icon">🎪</span><span class="gallery-ph-text"><span data-lang="th" class="active">บรรยากาศวันงานจริง</span><span data-lang="en">Event Day Atmosphere</span></span></div></div>
+        <div class="gallery-item gallery-ph-future"><div class="gallery-ph-inner"><span class="gallery-ph-icon">🤝</span><span class="gallery-ph-text"><span data-lang="th" class="active">Business Matching<br>พบคู่ค้า</span><span data-lang="en">Business Matching</span></span></div></div>
+        <div class="gallery-item gallery-ph-future"><div class="gallery-ph-inner"><span class="gallery-ph-icon">🌏</span><span class="gallery-ph-text"><span data-lang="th" class="active">Grand Opening<br>Phase 2</span><span data-lang="en">Grand Opening Phase 2</span></span></div></div>
+        <div class="gallery-item gallery-ph-future"><div class="gallery-ph-inner"><span class="gallery-ph-icon">📸</span><span class="gallery-ph-text"><span data-lang="th" class="active">ภาพจากงานจริง<br>อัพเดตที่นี่</span><span data-lang="en">Real photos updated here</span></span></div></div>
+        <div class="gallery-item gallery-ph-future"><div class="gallery-ph-inner"><span class="gallery-ph-icon">🎬</span><span class="gallery-ph-text"><span data-lang="th" class="active">Highlight Video<br>หลังงาน</span><span data-lang="en">Highlight Video After Event</span></span></div></div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ══ FOUNDER BANNER ══ -->
-<section id="founder-banner">
-  <div style="max-width:720px;margin:0 auto;text-align:center" class="reveal">
-    <div class="fb-badge">👑 LIMITED 20 SLOTS ONLY</div>
-    <h2 class="fb-title">Founder <span>Member</span><br>Annual Showroom</h2>
-    <p class="fb-sub">
-      <span data-lang="th" class="active">มีหน้าร้านที่ลาวตลอดทั้งปี พร้อม B2B Matching + Lao Staff + Logistics<br>ส่วนลด 15% ทุกเดือน · ไม่รับ % ยอดขาย</span>
-      <span data-lang="en">Your own Laos storefront all year — B2B Matching, Lao Staff, Logistics included. 15% discount monthly. Zero commission.</span>
-    </p>
-    <div class="fb-stats">
-      <div><div class="fb-num">฿39,000</div><div class="fb-label">ต่อปี / Per Year</div></div>
-      <div><div class="fb-num">20</div><div class="fb-label">Slots เท่านั้น</div></div>
-      <div><div class="fb-num">0%</div><div class="fb-label">Commission</div></div>
+<!-- ══ PACKAGES ══ -->
+<section id="packages" class="section-pad">
+  <div class="section-center">
+    <div class="reveal">
+      <div class="section-eyebrow">Packages · Phase 1 · March 2026</div>
+      <h2 class="section-title">
+        <span data-lang="th" class="active">เลือกแพ็กเกจ<br><em>ที่ใช่สำหรับคุณ</em></span>
+        <span data-lang="la">ເລືອກແພັກເກັດ<br><em>ທີ່ເໝາະສຳລັບທ່ານ</em></span>
+        <span data-lang="en">Choose Your<br><em>Perfect Package</em></span>
+      </h2>
     </div>
-    <a href="/membership" class="btn-founder">👑 สมัคร Founder Member</a>
+    <div class="pkg-grid-v2 reveal">
+
+      <div class="pkg-card-v2 pkg-prime">
+        <div class="pkg-tag pkg-tag-red">🔥 Zone A · Super Prime</div>
+        <p class="pkg-loc"><span data-lang="th" class="active">หน้าทางเข้าหลัก + ติดเวทีกิจกรรม</span><span data-lang="la">ໜ້າທາງເຂົ້າ + ເວທີ</span><span data-lang="en">Main entrance + event stage</span></p>
+        <div class="pkg-prices">
+          <div class="pkg-price-col"><span class="pkg-type-label">Space Only</span><span class="pkg-price-big">฿12,000</span></div>
+          <div class="pkg-price-sep"></div>
+          <div class="pkg-price-col"><span class="pkg-type-label pkg-star">⭐ Full Managed</span><span class="pkg-price-big pkg-price-gold">฿17,500</span></div>
+        </div>
+        <ul class="pkg-feats">
+          <li><span class="feat-icon feat-gold">✦</span><span data-lang="th" class="active">Traffic สูงสุด เห็นจากทุกมุม</span><span data-lang="la">Traffic ສູງສຸດ</span><span data-lang="en">Peak traffic — max visibility</span></li>
+          <li><span class="feat-icon feat-gold">✦</span><span data-lang="th" class="active">ขนส่งฟรี 100 KG (ไทย→เวียงจันทน์)</span><span data-lang="la">ຂົນສົ່ງຟຣີ 100 KG</span><span data-lang="en">Free 100 KG shipping</span></li>
+          <li><span class="feat-icon feat-star">★</span><span data-lang="th" class="active"><em>Full Managed:</em> พนักงาน Dedicated 1 คน</span><span data-lang="la"><em>Full:</em> ພະນັກງານ 1 ຄົນ</span><span data-lang="en"><em>Full:</em> 1 dedicated staff</span></li>
+          <li><span class="feat-icon feat-star">★</span><span data-lang="th" class="active"><em>Full Managed:</em> ฉลากลาว + รายงานทุกวัน</span><span data-lang="la"><em>Full:</em> ສະຫຼາກ + ລາຍງານ</span><span data-lang="en"><em>Full:</em> Lao label + daily report</span></li>
+        </ul>
+        <div class="pkg-avail"><span class="avail-dot avail-red"></span><span data-lang="th" class="active">⚡ เหลือ 5 ที่สุดท้าย</span><span data-lang="la">⚡ ເຫຼືອ 5 ທີ່</span><span data-lang="en">⚡ Only 5 left</span></div>
+        <a href="#contact" class="pkg-cta"><span data-lang="th" class="active">จอง Zone A</span><span data-lang="la">ຈອງ Zone A</span><span data-lang="en">Book Zone A</span></a>
+      </div>
+
+      <div class="pkg-card-v2 pkg-shock">
+        <div class="pkg-tag pkg-tag-orange">⚡ Shock Sale · 8 บล็อก</div>
+        <p class="pkg-loc"><span data-lang="th" class="active">จุดกลางทางเดินหลัก Traffic 2 ทิศทาง</span><span data-lang="la">ກາງທາງຍ່າງ Traffic 2 ທິດ</span><span data-lang="en">Mid-aisle — two-way foot traffic</span></p>
+        <div class="pkg-prices">
+          <div class="pkg-price-col"><span class="pkg-type-label">Space Only</span><span class="pkg-price-big">฿10,000</span></div>
+          <div class="pkg-price-sep"></div>
+          <div class="pkg-price-col"><span class="pkg-type-label pkg-star">⭐ Full Managed</span><span class="pkg-price-big pkg-price-gold">฿15,000</span></div>
+        </div>
+        <ul class="pkg-feats">
+          <li><span class="feat-icon feat-gold">✦</span><span data-lang="th" class="active">เหมาะสินค้า Flash Sale / โปรโมชั่นสด</span><span data-lang="la">ເໝາະ Flash Sale</span><span data-lang="en">Perfect for Flash Sale & live promos</span></li>
+          <li><span class="feat-icon feat-gold">✦</span><span data-lang="th" class="active">ขนส่งฟรี 100 KG</span><span data-lang="la">ຂົນສົ່ງຟຣີ 100 KG</span><span data-lang="en">Free 100 KG shipping</span></li>
+          <li><span class="feat-icon feat-star">★</span><span data-lang="th" class="active"><em>Full Managed:</em> พนักงาน + รายงาน</span><span data-lang="la"><em>Full:</em> ພະນັກງານ + ລາຍງານ</span><span data-lang="en"><em>Full:</em> Staff + daily report</span></li>
+          <li><span class="feat-icon feat-star">★</span><span data-lang="th" class="active"><em>Full Managed:</em> ฉลากลาว + ภาษีนำเข้า</span><span data-lang="la"><em>Full:</em> ສະຫຼາກ + ພາສີ</span><span data-lang="en"><em>Full:</em> Lao label + import tax</span></li>
+        </ul>
+        <div class="pkg-avail"><span class="avail-dot"></span><span data-lang="th" class="active">เหลือ 8 บล็อก</span><span data-lang="la">ເຫຼືອ 8 ບ່ອນ</span><span data-lang="en">8 blocks remaining</span></div>
+        <a href="#contact" class="pkg-cta pkg-cta-orange"><span data-lang="th" class="active">จอง Shock Sale</span><span data-lang="la">ຈອງ Shock Sale</span><span data-lang="en">Book Shock Sale</span></a>
+      </div>
+
+      <div class="pkg-card-v2 pkg-rec-card">
+        <div class="pkg-rec-ribbon"><span data-lang="th" class="active">⭐ แนะนำ</span><span data-lang="la">⭐ ແນະນຳ</span><span data-lang="en">⭐ Best Value</span></div>
+        <div class="pkg-tag pkg-tag-red">💄 Zone B · Thai Brands</div>
+        <p class="pkg-loc"><span data-lang="th" class="active">โซนสินค้า Lifestyle & Beauty ไทย</span><span data-lang="la">ໂຊນ Lifestyle & Beauty</span><span data-lang="en">Thai lifestyle & beauty zone</span></p>
+        <div class="pkg-prices">
+          <div class="pkg-price-col"><span class="pkg-type-label">Space Only</span><span class="pkg-price-big">฿9,000</span></div>
+          <div class="pkg-price-sep"></div>
+          <div class="pkg-price-col"><span class="pkg-type-label pkg-star">⭐ Full Managed</span><span class="pkg-price-big pkg-price-red">฿14,000</span></div>
+        </div>
+        <ul class="pkg-feats">
+          <li><span class="feat-icon feat-gold">✦</span><span data-lang="th" class="active">กลุ่มเป้าหมายตรง ลูกค้าสนใจสินค้าไทย</span><span data-lang="la">ກຸ່ມເປົ້າໝາຍຊັດ</span><span data-lang="en">On-target Thai-product shoppers</span></li>
+          <li><span class="feat-icon feat-gold">✦</span><span data-lang="th" class="active">ขนส่งฟรี 100 KG</span><span data-lang="la">ຂົນສົ່ງຟຣີ 100 KG</span><span data-lang="en">Free 100 KG shipping</span></li>
+          <li><span class="feat-icon feat-star">★</span><span data-lang="th" class="active"><em>Full Managed:</em> พนักงาน + 1 Influencer</span><span data-lang="la"><em>Full:</em> ພະນັກງານ + 1 Influencer</span><span data-lang="en"><em>Full:</em> Staff + 1 Influencer</span></li>
+          <li><span class="feat-icon feat-star">★</span><span data-lang="th" class="active"><em>Full Managed:</em> ฉลากลาว + รายงานทุกวัน</span><span data-lang="la"><em>Full:</em> ສະຫຼາກ + ລາຍງານ</span><span data-lang="en"><em>Full:</em> Lao label + daily report</span></li>
+        </ul>
+        <div class="pkg-avail pkg-avail-urgent"><span class="avail-dot avail-red"></span><span data-lang="th" class="active">🔴 เหลือ 6 ที่ — จองก่อนหมด!</span><span data-lang="la">🔴 ເຫຼືອ 6 ທີ່!</span><span data-lang="en">🔴 Only 6 left!</span></div>
+        <a href="#contact" class="pkg-cta pkg-cta-glow"><span data-lang="th" class="active">จองด่วน — ที่เหลือน้อย</span><span data-lang="la">ຈອງດ່ວນ!</span><span data-lang="en">Book Fast!</span></a>
+      </div>
+
+      <div class="pkg-card-v2">
+        <div class="pkg-tag pkg-tag-muted">🚗 Zone C · Mini Hub</div>
+        <p class="pkg-loc"><span data-lang="th" class="active">ใกล้ Drive Thru + ลิฟต์ ดักลูกค้าขาเข้า</span><span data-lang="la">ໃກ້ Drive Thru + ລິຟ</span><span data-lang="en">Near Drive Thru & elevator</span></p>
+        <div class="pkg-prices">
+          <div class="pkg-price-col"><span class="pkg-type-label">Space Only</span><span class="pkg-price-big">฿7,000</span></div>
+          <div class="pkg-price-sep"></div>
+          <div class="pkg-price-col"><span class="pkg-type-label pkg-star">⭐ Full Managed</span><span class="pkg-price-big pkg-price-gold">฿12,000</span></div>
+        </div>
+        <ul class="pkg-feats">
+          <li><span class="feat-icon feat-gold">✦</span><span data-lang="th" class="active">ราคาประหยัดสุด เหมาะทดลองตลาดครั้งแรก</span><span data-lang="la">ລາຄາຖືກສຸດ ທົດລອງຄັ້ງທຳອິດ</span><span data-lang="en">Most affordable — first market test</span></li>
+          <li><span class="feat-icon feat-gold">✦</span><span data-lang="th" class="active">ขนส่งฟรี 100 KG</span><span data-lang="la">ຂົນສົ່ງຟຣີ 100 KG</span><span data-lang="en">Free 100 KG shipping</span></li>
+          <li><span class="feat-icon feat-star">★</span><span data-lang="th" class="active"><em>Full Managed:</em> พนักงาน Shared + รายงาน</span><span data-lang="la"><em>Full:</em> ພະນັກງານ + ລາຍງານ</span><span data-lang="en"><em>Full:</em> Shared staff + report</span></li>
+          <li><span class="feat-icon feat-star">★</span><span data-lang="th" class="active"><em>Full Managed:</em> ฉลากลาว + ภาษีนำเข้า</span><span data-lang="la"><em>Full:</em> ສະຫຼາກ + ພາສີ</span><span data-lang="en"><em>Full:</em> Lao label + import tax</span></li>
+        </ul>
+        <div class="pkg-avail"><span class="avail-dot"></span><span data-lang="th" class="active">เหลือ 8 ที่</span><span data-lang="la">ເຫຼືອ 8 ທີ່</span><span data-lang="en">8 slots remaining</span></div>
+        <a href="#contact" class="pkg-cta pkg-cta-outline"><span data-lang="th" class="active">จอง Zone C</span><span data-lang="la">ຈອງ Zone C</span><span data-lang="en">Book Zone C</span></a>
+      </div>
+
+    </div>
+    <div class="roi-strip reveal">
+      <div class="roi-item"><div class="roi-label"><span data-lang="th" class="active">ตัวอย่าง ROI Zone B Full Managed</span><span data-lang="la">ROI Zone B</span><span data-lang="en">Example ROI Zone B Full Managed</span></div></div>
+      <div class="roi-item"><div class="roi-val">฿12K</div><div class="roi-sub">all-in</div></div>
+      <div class="roi-item"><div class="roi-val">฿5K+</div><div class="roi-sub"><span data-lang="th" class="active">ยอดขาย/วัน</span><span data-lang="la">ຍອດ/ວັນ</span><span data-lang="en">sales/day</span></div></div>
+      <div class="roi-item"><div class="roi-val" style="color:var(--gold)">2–3</div><div class="roi-sub"><span data-lang="th" class="active">วันคืนทุน</span><span data-lang="la">ວັນຄືນທຶນ</span><span data-lang="en">break-even days</span></div></div>
+    </div>
   </div>
 </section>
 
-<!-- ══ FOOTER ══ -->
+<!-- ══ BUNDLE ══ -->
+<section id="bundle" class="section-pad" style="background:var(--surface2);border-top:1px solid var(--border)">
+  <div class="section-center">
+    <div class="reveal">
+      <div class="section-eyebrow">🔥 Super Connect Bundle</div>
+      <h2 class="section-title">
+        <span data-lang="th" class="active">เปรียบราคา 2 Phase<br><em>จองควบ — ประหยัดสุด</em></span>
+        <span data-lang="la">ປຽບລາຄາ 2 Phase<br><em>ຈອງຄວບ — ປະຢັດສຸດ</em></span>
+        <span data-lang="en">2-Phase Comparison<br><em>Bundle & Save More</em></span>
+      </h2>
+      <p class="section-sub">
+        <span data-lang="th" class="active">จองควบ 2 Phase ได้สิทธิ์เลือกทำเลก่อนใคร + ราคาพิเศษที่ไม่มีในราคาปกติ</span>
+        <span data-lang="la">ຈອງຄວບ 2 Phase ໄດ້ສິດເລືອກທຳເລ + ລາຄາພິເສດ</span>
+        <span data-lang="en">Book both phases — choose your location first + exclusive pricing unavailable elsewhere.</span>
+      </p>
+    </div>
+    <div class="bundle-table reveal">
+
+      <div class="bundle-col">
+        <div class="bundle-col-head">
+          <div class="bundle-phase-label">Phase 1</div>
+          <div class="bundle-col-title"><span data-lang="th" class="active">มีนาคม 2026</span><span data-lang="la">ມີນາ 2026</span><span data-lang="en">March 2026</span></div>
+          <div class="bundle-col-sub"><span data-lang="th" class="active">รอบแรก · 5 วัน</span><span data-lang="la">ຮອບທຳອິດ · 5 ວັນ</span><span data-lang="en">Round 1 · 5 Days</span></div>
+        </div>
+        <div class="bundle-price-main">
+          <span class="bundle-from"><span data-lang="th" class="active">เริ่มต้น</span><span data-lang="la">ເລີ່ມ</span><span data-lang="en">From</span></span>
+          <span class="bundle-price-num">฿7,000</span>
+          <span class="bundle-price-unit">Space Only</span>
+        </div>
+        <ul class="bundle-features">
+          <li class="bf-yes">✓ <span data-lang="th" class="active">Big C เวียงจันทน์ 5 วัน</span><span data-lang="la">Big C 5 ວັນ</span><span data-lang="en">Big C Vientiane 5 days</span></li>
+          <li class="bf-yes">✓ <span data-lang="th" class="active">ขนส่งฟรี 100 KG</span><span data-lang="la">ຂົນສົ່ງຟຣີ 100 KG</span><span data-lang="en">Free 100 KG shipping</span></li>
+          <li class="bf-yes">✓ <span data-lang="th" class="active">ถูกกฎหมาย 100%</span><span data-lang="la">ຖືກກົດໝາຍ 100%</span><span data-lang="en">100% legal</span></li>
+          <li class="bf-no">✗ <span data-lang="th" class="active">ไม่มีสิทธิ์เลือกทำเลก่อน</span><span data-lang="la">ບໍ່ໄດ້ເລືອກທຳເລກ່ອນ</span><span data-lang="en">No priority booth selection</span></li>
+          <li class="bf-no">✗ <span data-lang="th" class="active">ไม่มีส่วนลด Phase 2</span><span data-lang="la">ບໍ່ມີສ່ວນຫຼຸດ Phase 2</span><span data-lang="en">No Phase 2 discount</span></li>
+          <li class="bf-no">✗ <span data-lang="th" class="active">ไม่มี Influencer Bonus</span><span data-lang="la">ບໍ່ມີ Influencer</span><span data-lang="en">No influencer bonus</span></li>
+        </ul>
+        <a href="#contact" class="bundle-cta bundle-cta-outline"><span data-lang="th" class="active">จอง Phase 1</span><span data-lang="la">ຈອງ Phase 1</span><span data-lang="en">Book Phase 1</span></a>
+      </div>
+
+      <div class="bundle-col">
+        <div class="bundle-col-head">
+          <div class="bundle-phase-label">Phase 2</div>
+          <div class="bundle-col-title"><span data-lang="th" class="active">พฤษภาคม 2026</span><span data-lang="la">ພຶດສະພາ 2026</span><span data-lang="en">May 2026</span></div>
+          <div class="bundle-col-sub"><span data-lang="th" class="active">Grand Opening · 7 วัน</span><span data-lang="la">Grand Opening · 7 ວັນ</span><span data-lang="en">Grand Opening · 7 Days</span></div>
+        </div>
+        <div class="bundle-price-main">
+          <span class="bundle-from"><span data-lang="th" class="active">เริ่มต้น</span><span data-lang="la">ເລີ່ມ</span><span data-lang="en">From</span></span>
+          <span class="bundle-price-num">฿9,000</span>
+          <span class="bundle-price-unit">Space Only</span>
+        </div>
+        <ul class="bundle-features">
+          <li class="bf-yes">✓ <span data-lang="th" class="active">Grand Opening ระดับนานาชาติ</span><span data-lang="la">Grand Opening ສາກົນ</span><span data-lang="en">International Grand Opening</span></li>
+          <li class="bf-yes">✓ <span data-lang="th" class="active">ขนส่งฟรี 100 KG</span><span data-lang="la">ຂົນສົ່ງຟຣີ 100 KG</span><span data-lang="en">Free 100 KG shipping</span></li>
+          <li class="bf-yes">✓ <span data-lang="th" class="active">ถูกกฎหมาย 100%</span><span data-lang="la">ຖືກກົດໝາຍ 100%</span><span data-lang="en">100% legal</span></li>
+          <li class="bf-no">✗ <span data-lang="th" class="active">ไม่มีสิทธิ์เลือกทำเลก่อน</span><span data-lang="la">ບໍ່ໄດ້ເລືອກທຳເລກ່ອນ</span><span data-lang="en">No priority booth selection</span></li>
+          <li class="bf-no">✗ <span data-lang="th" class="active">ไม่มีส่วนลด</span><span data-lang="la">ບໍ່ມີສ່ວນຫຼຸດ</span><span data-lang="en">No discount</span></li>
+          <li class="bf-no">✗ <span data-lang="th" class="active">ไม่มี Influencer Bonus</span><span data-lang="la">ບໍ່ມີ Influencer</span><span data-lang="en">No influencer bonus</span></li>
+        </ul>
+        <a href="#contact" class="bundle-cta bundle-cta-outline"><span data-lang="th" class="active">จอง Phase 2</span><span data-lang="la">ຈອງ Phase 2</span><span data-lang="en">Book Phase 2</span></a>
+      </div>
+
+      <div class="bundle-col bundle-hero-col">
+        <div class="bundle-badge-top"><span data-lang="th" class="active">🏆 คุ้มสุด · เลือกก่อนใคร</span><span data-lang="la">🏆 ຄຸ້ມສຸດ</span><span data-lang="en">🏆 Best Value · First Pick</span></div>
+        <div class="bundle-col-head">
+          <div class="bundle-phase-label bundle-phase-label-gold">Phase 1 + 2</div>
+          <div class="bundle-col-title">Super Connect<br>Bundle</div>
+          <div class="bundle-col-sub"><span data-lang="th" class="active">มีนาคม + พฤษภาคม · 12 วัน</span><span data-lang="la">ມີນາ + ພຶດ · 12 ວັນ</span><span data-lang="en">March + May · 12 Days</span></div>
+        </div>
+        <div class="bundle-price-main">
+          <div class="bundle-save-badge"><span data-lang="th" class="active">ประหยัด</span><span data-lang="la">ປະຢັດ</span><span data-lang="en">Save</span> <strong>15%</strong></div>
+          <span class="bundle-price-num bundle-price-gold">฿14,000</span>
+          <span class="bundle-price-original">฿16,000</span>
+          <span class="bundle-price-unit"><span data-lang="th" class="active">ควบ 2 Phase</span><span data-lang="la">ຄວບ 2 Phase</span><span data-lang="en">both phases</span></span>
+        </div>
+        <ul class="bundle-features">
+          <li class="bf-yes bf-gold">⭐ <span data-lang="th" class="active"><strong>Select booth location first</strong></span><span data-lang="la"><strong>ເລືອກທຳເລກ່ອນໃຜ</strong></span><span data-lang="en"><strong>Select booth location first</strong></span></li>
+          <li class="bf-yes bf-gold">⭐ <span data-lang="th" class="active">ขนส่งฟรี 100 KG ทั้ง 2 รอบ</span><span data-lang="la">ຟຣີ 100 KG ທັງ 2 ຮອບ</span><span data-lang="en">Free 100 KG both rounds</span></li>
+          <li class="bf-yes bf-gold">⭐ <span data-lang="th" class="active">ถูกกฎหมาย 100% ทั้ง 2 ประเทศ</span><span data-lang="la">100% ຖືກກົດໝາຍ</span><span data-lang="en">100% legal both countries</span></li>
+          <li class="bf-yes">✓ <span data-lang="th" class="active">Influencer Lao Bonus 1 คน</span><span data-lang="la">Influencer Bonus 1 ຄົນ</span><span data-lang="en">1 Lao Influencer Bonus</span></li>
+          <li class="bf-yes">✓ <span data-lang="th" class="active">Priority Support ทีม VITH 24/7</span><span data-lang="la">Priority Support 24/7</span><span data-lang="en">Priority VITH team support 24/7</span></li>
+          <li class="bf-yes">✓ <span data-lang="th" class="active">รายงานยอดขายสด + วิเคราะห์ตลาด</span><span data-lang="la">ລາຍງານ + ວິເຄາະຕະຫຼາດ</span><span data-lang="en">Sales report + market analysis</span></li>
+        </ul>
+        <a href="#contact" class="bundle-cta bundle-cta-gold" onclick="selectBundle()">
+          <span data-lang="th" class="active">🎯 จองด่วน — ประหยัด 15%!</span>
+          <span data-lang="la">🎯 ຈອງດ່ວນ — ປະຢັດ 15%!</span>
+          <span data-lang="en">🎯 Book Now — Save 15%!</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ FLOOR PLAN ══ -->
+<section id="floorplan" class="section-pad" style="background:var(--surface3);border-top:1px solid var(--border)">
+  <div class="section-center">
+    <div class="reveal">
+      <div class="section-eyebrow">
+        <span data-lang="th" class="active">แผนผังบูธ</span>
+        <span data-lang="la">ແຜນຜັງບູດ</span>
+        <span data-lang="en">Floor Plan</span>
+      </div>
+      <h2 class="section-title">
+        <span data-lang="th" class="active">เลือกทำเลของคุณ<br><em>ก่อนที่จะหมด</em></span>
+        <span data-lang="la">ເລືອກທຳເລ<br><em>ກ່ອນຈະໝົດ</em></span>
+        <span data-lang="en">Pick Your Spot<br><em>Before It's Gone</em></span>
+      </h2>
+    </div>
+    <div class="fp-tabs reveal">
+      <button class="fp-tab active" onclick="showFloorPhase(1, this)">
+        <span>Phase 1</span> <em><span data-lang="th" class="active">มีนาคม</span><span data-lang="la">ມີນາ</span><span data-lang="en">March</span></em>
+      </button>
+      <button class="fp-tab" onclick="showFloorPhase(2, this)">
+        <span>Phase 2</span> <em><span data-lang="th" class="active">พฤษภาคม · Draft</span><span data-lang="la">ພຶດ · Draft</span><span data-lang="en">May · Draft</span></em>
+      </button>
+    </div>
+    <div id="fp-phase1" class="fp-content reveal">
+      <div class="fp-map-box">
+        <div class="fp-map" style="position:relative;">
+          <img src="images/floor-plan.png" alt="Floor Plan Phase 1" loading="lazy" style="width:100%;border-radius:10px;">
+        </div>
+        <p class="fp-hint" style="text-align:center;margin-top:15px;">
+          💡 <span data-lang="th" class="active">แตะที่ Zone เพื่อดูรายละเอียดและสถานะ</span>
+          <span data-lang="la">ແຕະ Zone ເພື່ອເບິ່ງລາຍລະອຽດ</span>
+          <span data-lang="en">Tap a zone to see details & availability</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ URGENCY ══ -->
+<section class="urgency-section">
+  <div class="urgency-inner">
+    <div class="urgency-left">
+      <div class="urgency-eyebrow">⏰ <span data-lang="th" class="active">เหลือเวลาอีก</span><span data-lang="la">ເຫຼືອເວລາ</span><span data-lang="en">Event starts in</span></div>
+      <div class="urgency-countdown">
+        <div class="uc-unit"><span class="uc-num" id="uDays">--</span><span class="uc-label"><span data-lang="th" class="active">วัน</span><span data-lang="la">ວັນ</span><span data-lang="en">Days</span></span></div>
+        <span class="uc-sep">:</span>
+        <div class="uc-unit"><span class="uc-num" id="uHours">--</span><span class="uc-label"><span data-lang="th" class="active">ชม.</span><span data-lang="la">ຊມ.</span><span data-lang="en">Hrs</span></span></div>
+        <span class="uc-sep">:</span>
+        <div class="uc-unit"><span class="uc-num" id="uMins">--</span><span class="uc-label"><span data-lang="th" class="active">นาที</span><span data-lang="la">ນາທີ</span><span data-lang="en">Mins</span></span></div>
+        <span class="uc-sep">:</span>
+        <div class="uc-unit"><span class="uc-num" id="uSecs">--</span><span class="uc-label"><span data-lang="th" class="active">วิ</span><span data-lang="la">ວິ</span><span data-lang="en">Sec</span></span></div>
+      </div>
+    </div>
+    <div class="urgency-right">
+      <div class="us-label"><span data-lang="th" class="active">บูทที่เหลือ (Phase 1)</span><span data-lang="la">ທີ່ເຫຼືອ Phase 1</span><span data-lang="en">Phase 1 Booths Left</span></div>
+      <div class="us-num">19</div>
+      <div class="us-bar"><div class="us-bar-fill" style="width:24%"></div></div>
+      <div class="us-sub"><span data-lang="th" class="active">จาก 25 บูททั้งหมด — จองแล้ว 6</span><span data-lang="la">ຈາກ 25 ທີ່ — ຈອງແລ້ວ 6</span><span data-lang="en">of 25 total — 6 already booked</span></div>
+      <a href="#contact" class="urgency-cta"><span data-lang="th" class="active">🎪 จองก่อนหมด!</span><span data-lang="la">🎪 ຈອງດ່ວນ!</span><span data-lang="en">🎪 Reserve Before Sold Out!</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ROADMAP ══ -->
+<section id="roadmap" class="section-pad" style="background:var(--surface);border-top:1px solid var(--border)">
+  <div class="section-center">
+    <div class="reveal">
+      <div class="section-eyebrow">🗺️ Future Roadmap</div>
+      <h2 class="section-title">
+        <span data-lang="th" class="active">2 Phase · 2 ระดับของโอกาส<br><em>เลือก Entry Point ที่ใช่สำหรับคุณ</em></span>
+        <span data-lang="la">2 Phase · 2 ລະດັບໂອກາດ<br><em>ເລືອກ Entry Point ທີ່ໃຊ່</em></span>
+        <span data-lang="en">2 Phases · 2 Levels of Opportunity<br><em>Choose your perfect entry point</em></span>
+      </h2>
+    </div>
+    <div class="roadmap-grid reveal">
+
+      <div class="roadmap-card rm-phase1">
+        <div class="rm-phase-tag rm-tag-gold">Phase 1 · March 2026</div>
+        <div class="rm-phase-title">
+          <span data-lang="th" class="active">Market Entry<br><strong>& Sandbox</strong></span>
+          <span data-lang="la">Market Entry<br><strong>& Sandbox</strong></span>
+          <span data-lang="en">Market Entry<br><strong>& Sandbox</strong></span>
+        </div>
+        <div class="rm-date">📅 <span data-lang="th" class="active">25–29 มีนาคม 2026 · 5 วัน</span><span data-lang="la">25–29 ມີນາ 2026 · 5 ວັນ</span><span data-lang="en">Mar 25–29, 2026 · 5 Days</span></div>
+        <ul class="rm-list">
+          <li><span class="rm-icon rm-icon-blue">🧪</span><div><strong><span data-lang="th" class="active">ทดสอบตลาดจริง</span><span data-lang="la">ທົດສອບຕະຫຼາດຈິງ</span><span data-lang="en">Real Market Testing</span></strong><br><span data-lang="th" class="active">วัดผลยอดขาย สินค้าประเภทไหนขายดีในลาว ก่อนลงทุนเพิ่ม</span><span data-lang="la">ວັດຜົນຍອດຂາຍ ສິນຄ້າໃດຂາຍດີ</span><span data-lang="en">Measure which products sell best in Laos before scaling.</span></div></li>
+          <li><span class="rm-icon rm-icon-gold">📊</span><div><strong><span data-lang="th" class="active">เก็บข้อมูลผู้บริโภคชาวลาว</span><span data-lang="la">ເກັບຂໍ້ມູນຜູ້ບໍລິໂພກລາວ</span><span data-lang="en">Lao Consumer Data Collection</span></strong><br><span data-lang="th" class="active">Real-time Market Intelligence เพื่อวางแผนการเข้าตลาดจีน-รัสเซีย</span><span data-lang="la">Market Intelligence ສຳລັບວາງແຜນຕະຫຼາດ</span><span data-lang="en">Consumer insights to plan China & Russia market entry.</span></div></li>
+          <li><span class="rm-icon rm-icon-red">🚚</span><div><strong><span data-lang="th" class="active">พิสูจน์ระบบ Logistics 100%</span><span data-lang="la">ພິສູດລະບົບ Logistics 100%</span><span data-lang="en">100% Logistics System Proof</span></strong><br><span data-lang="th" class="active">ทดสอบเส้นทางขนส่งไทย-ลาว ก่อนเปิดเส้นทางรถไฟจีน</span><span data-lang="la">ທົດສອບການຂົນສົ່ງ ກ່ອນເປີດ Railway ຈີນ</span><span data-lang="en">Test Thai-Lao logistics before activating the China Railway route.</span></div></li>
+        </ul>
+        <div class="rm-value-box">
+          <span class="rm-value-label"><span data-lang="th" class="active">มูลค่าที่ได้</span><span data-lang="la">ມູນຄ່າທີ່ໄດ້</span><span data-lang="en">Value Delivered</span></span>
+          <span class="rm-value-num">฿5K–17.5K</span>
+          <span class="rm-value-sub"><span data-lang="th" class="active">ลงทุน · คืนทุน 2–3 วัน</span><span data-lang="la">ລົງທຶນ · ຄືນທຶນ 2–3 ວັນ</span><span data-lang="en">Investment · Break-even 2–3 days</span></span>
+        </div>
+        <a href="#packages" class="rm-cta rm-cta-gold"><span data-lang="th" class="active">🎯 จอง Phase 1 ตอนนี้</span><span data-lang="la">🎯 ຈອງ Phase 1</span><span data-lang="en">🎯 Book Phase 1 Now</span></a>
+      </div>
+
+      <div class="roadmap-card rm-phase2">
+        <div class="rm-badge-new"><span data-lang="th" class="active">🚀 ยกระดับ Global</span><span data-lang="la">🚀 ລະດັບ Global</span><span data-lang="en">🚀 Go Global</span></div>
+        <div class="rm-phase-tag rm-tag-red">Phase 2 · May 2026</div>
+        <div class="rm-phase-title">
+          <span data-lang="th" class="active">Global Connection<br><strong>& Grand Opening</strong></span>
+          <span data-lang="la">Global Connection<br><strong>& Grand Opening</strong></span>
+          <span data-lang="en">Global Connection<br><strong>& Grand Opening</strong></span>
+        </div>
+        <div class="rm-date">📅 <span data-lang="th" class="active">พฤษภาคม 2026 · 7 วัน · ระดับนานาชาติ</span><span data-lang="la">ພຶດ 2026 · 7 ວັນ · ສາກົນ</span><span data-lang="en">May 2026 · 7 Days · International Scale</span></div>
+        <ul class="rm-list">
+          <li><span class="rm-icon rm-icon-blue">🤝</span><div><strong><span data-lang="th" class="active">B2B Matching · นักลงทุนจีน-รัสเซีย</span><span data-lang="la">B2B Matching · ຈີນ-ລັດເຊຍ</span><span data-lang="en">B2B Matching — Chinese & Russian Investors</span></strong><br><span data-lang="th" class="active">เชิญนักลงทุนและคู่ค้าจากจีนและรัสเซียเข้าชมสินค้าและเครือข่าย VITH Hub</span><span data-lang="la">ເຊີນນັກລົງທຶນຈາກຈີນ-ລັດເຊຍ ເຂົ້າຊົມ VITH Hub</span><span data-lang="en">Chinese & Russian investors invited to view products & negotiate trade deals.</span></div></li>
+          <li><span class="rm-icon rm-icon-gold">🚄</span><div><strong><span data-lang="th" class="active">เปิดเส้นทางรถไฟลาว-จีน สู่คุนหมิง</span><span data-lang="la">ເປີດ Railway ລາວ-ຈີນ ສູ່ຄຸນໝິງ</span><span data-lang="en">Activate Laos-China Railway → Kunming</span></strong><br><span data-lang="th" class="active">สินค้าที่พิสูจน์ตลาดใน Phase 1 ขึ้นรถไฟกระจายสู่จีนและรัสเซียได้เลย</span><span data-lang="la">ສິນຄ້າ Phase 1 ຂຶ້ນລົດໄຟກະຈາຍຈີນ-ລັດເຊຍ</span><span data-lang="en">Products proven in Phase 1 ship via Railway to China & Russia buyers.</span></div></li>
+          <li><span class="rm-icon rm-icon-purple">🌍</span><div><strong><span data-lang="th" class="active">Hub นานาชาติ — ไม่ใช่แค่ขายของ</span><span data-lang="la">Hub ສາກົນ — ບໍ່ພຽງຂາຍ</span><span data-lang="en">International Trade Hub — Beyond Retail</span></strong><br><span data-lang="th" class="active">สมาคมแฟรนไชส์ + SME ภาคเหนือ + Influencer ลาว + TikTok/FB Campaign ระดับ International</span><span data-lang="la">Franchise + SME + Influencer ລາວ + TikTok/FB</span><span data-lang="en">Franchise assoc. + Northern SMEs + Lao Influencers + International Campaign.</span></div></li>
+        </ul>
+        <div class="rm-value-box rm-value-global">
+          <span class="rm-value-label"><span data-lang="th" class="active">ศักยภาพตลาด</span><span data-lang="la">ທ່າແຮງຕະຫຼາດ</span><span data-lang="en">Market Potential</span></span>
+          <span class="rm-value-num rm-num-red">10K+</span>
+          <span class="rm-value-sub"><span data-lang="th" class="active">ผู้เข้าร่วม + นักธุรกิจจีน-รัสเซีย</span><span data-lang="la">ຜູ້ເຂົ້າ + ນັກທຸລະກິດຈີນ-ລັດເຊຍ</span><span data-lang="en">Attendees + Chinese & Russian trade partners</span></span>
+        </div>
+        <a href="#bundle" class="rm-cta rm-cta-red"><span data-lang="th" class="active">💎 จอง Bundle 2 Phase — ได้ทั้ง 2 ตลาด</span><span data-lang="la">💎 Bundle 2 Phase</span><span data-lang="en">💎 Book Bundle — Access Both Markets</span></a>
+      </div>
+
+    </div>
+    <div class="rm-scarcity reveal">
+      <div class="rm-scarcity-inner">
+        <span class="rm-scarcity-dot"></span>
+        <span class="rm-scarcity-text">
+          <strong><span data-lang="th" class="active">เหลือเพียง 19 บูทสุดท้าย</span><span data-lang="la">ເຫຼືອ 19 ທີ່ສຸດທ້າຍ</span><span data-lang="en">Only 19 booths left</span></strong>
+          <span data-lang="th" class="active"> สำหรับโควตาผู้ประกอบการส่งออกระดับนานาชาติ — จองก่อนปิดรับ!</span>
+          <span data-lang="la"> ສຳລັບໂຄວຕ້ານັກທຸລະກິດສ່ງອອກ</span>
+          <span data-lang="en"> in the international export entrepreneur quota — reserve before registration closes!</span>
+        </span>
+        <a href="#contact" class="rm-scarcity-cta"><span data-lang="th" class="active">จองเลย →</span><span data-lang="la">ຈອງ →</span><span data-lang="en">Book Now →</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ══ -->
+<section id="contact" style="background:var(--surface3);border-top:1px solid var(--border);padding:6rem 2rem;">
+  <div class="contact-wrap">
+    <div class="contact-left reveal">
+      <div class="section-eyebrow"><span data-lang="th" class="active">ติดต่อสมัคร</span><span data-lang="la">ຕິດຕໍ່ສະໝັກ</span><span data-lang="en">Get In Touch</span></div>
+      <h2 class="section-title"><span data-lang="th" class="active">พร้อมพาคุณ<br>ข้ามแดน</span><span data-lang="la">ພ້ອມພາທ່ານ<br>ຂ້າມດ່ານ</span><span data-lang="en">Let's Cross The<br>Border Together</span></h2>
+      <p class="section-sub" style="margin-bottom:2rem;">
+        <span data-lang="th" class="active">ทีมงานจะติดต่อกลับภายใน 24 ชั่วโมง พร้อม Proposal และตำแหน่งบูทที่ดีที่สุด</span>
+        <span data-lang="la">ທີມຈະຕິດຕໍ່ 24 ຊົ່ວໂມງ ພ້ອມ Proposal</span>
+        <span data-lang="en">We follow up within 24 hours with a proposal and best booth positions.</span>
+      </p>
+      <div class="contact-info">
+        <div class="contact-item"><span class="contact-icon">📱</span><span>LINE: @cef8930n</span></div>
+        <div class="contact-item"><span class="contact-icon">📧</span><span>contact@vithhub.com</span></div>
+        <div class="contact-item"><span class="contact-icon">📍</span><span>Big C Vientiane, Laos PDR</span></div>
+        <div class="contact-item"><span class="contact-icon">🕐</span><span><span data-lang="th" class="active">ตอบกลับภายใน 24 ชั่วโมง</span><span data-lang="la">ຕອບ 24 ຊົ່ວໂມງ</span><span data-lang="en">Reply within 24 hours</span></span></div>
+      </div>
+    </div>
+    <div class="form-box reveal">
+      <div class="form-title"><span data-lang="th" class="active">จองบูท / ขอ Proposal</span><span data-lang="la">ຈອງ / ຂໍ Proposal</span><span data-lang="en">Book / Get Proposal</span></div>
+      <div class="form-sub"><span data-lang="th" class="active">กรอกข้อมูล ทีมงานส่ง Proposal โดยเร็วที่สุด</span><span data-lang="la">ກົ້ງຂໍ້ມູນ ທີມສົ່ງ Proposal ໄວ</span><span data-lang="en">Fill in and we'll send your proposal ASAP.</span></div>
+      <div id="leadForm">
+        <div class="form-group"><label class="form-label"><span data-lang="th" class="active">ชื่อ / บริษัท</span><span data-lang="la">ຊື່ / ບໍລິສັດ</span><span data-lang="en">Name / Company</span></label><input class="form-input" id="f-name" type="text" placeholder="ชื่อ หรือ ชื่อแบรนด์"></div>
+        <div class="form-group"><label class="form-label"><span data-lang="th" class="active">LINE ID หรือเบอร์โทร</span><span data-lang="la">LINE ID ຫຼື ເບີໂທ</span><span data-lang="en">LINE ID or Phone</span></label><input class="form-input" id="f-contact" type="text" placeholder="@line_id หรือ 08X-XXX-XXXX"></div>
+        <div class="form-group"><label class="form-label"><span data-lang="th" class="active">สินค้าหรือธุรกิจของคุณ</span><span data-lang="la">ສິນຄ້າ / ທຸລະກິດ</span><span data-lang="en">Your Product / Business</span></label><input class="form-input" id="f-product" type="text" placeholder="เช่น อาหาร, เครื่องสำอาง"></div>
+        <div class="form-group">
+          <label class="form-label"><span data-lang="th" class="active">เลือก Phase ที่สนใจ</span><span data-lang="la">ເລືອກ Phase</span><span data-lang="en">Phase Interest</span></label>
+          <div class="phase-radio-group">
+            <label class="phase-radio-item">
+              <input type="radio" name="f-phase" id="f-phase-1" value="phase1" onchange="onPhaseRadio(this)">
+              <div class="phase-radio-box"><span class="prc-icon">📅</span><div><strong>Phase 1</strong><br><span data-lang="th" class="active">มีนาคม 2026 · 5 วัน</span><span data-lang="la">ມີນາ 2026 · 5 ວັນ</span><span data-lang="en">March 2026 · 5 Days</span></div></div>
+            </label>
+            <label class="phase-radio-item">
+              <input type="radio" name="f-phase" id="f-phase-2" value="phase2" onchange="onPhaseRadio(this)">
+              <div class="phase-radio-box"><span class="prc-icon">🚀</span><div><strong>Phase 2</strong><br><span data-lang="th" class="active">พฤษภาคม 2026 · 7 วัน</span><span data-lang="la">ພຶດ 2026 · 7 ວັນ</span><span data-lang="en">May 2026 · 7 Days</span></div></div>
+            </label>
+            <label class="phase-radio-item phase-radio-bundle">
+              <input type="radio" name="f-phase" value="bundle" id="f-phase-bundle" onchange="onPhaseRadio(this)">
+              <div class="phase-radio-box"><span class="prc-icon">🔥</span><div><strong>Bundle Pack</strong><br><span class="prc-popular">Most Popular</span><br><span data-lang="th" class="active">Phase 1 + 2 · ประหยัด 15%</span><span data-lang="la">Phase 1+2 · ປະຢັດ 15%</span><span data-lang="en">Phase 1+2 · Save 15%</span></div></div>
+            </label>
+          </div>
+        </div>
+        <div class="form-group"><label class="form-label"><span data-lang="th" class="active">Zone / แพ็กเกจที่สนใจ</span><span data-lang="la">Zone / ແພັກເກັດ</span><span data-lang="en">Zone / Package</span></label>
+          <select class="form-select" id="f-package">
+            <option value="">-- เลือก Zone --</option>
+            <option value="zone-a-space">Zone A Super Prime · Space Only (฿12,000)</option>
+            <option value="zone-a-managed">Zone A Super Prime · Full Managed (฿17,500)</option>
+            <option value="shock-space">Shock Sale · Space Only (฿10,000)</option>
+            <option value="shock-managed">Shock Sale · Full Managed (฿15,000)</option>
+            <option value="zone-b-space">Zone B · Space Only (฿9,000) ⭐</option>
+            <option value="zone-b-managed">Zone B · Full Managed (฿14,000) ⭐</option>
+            <option value="zone-c-space">Zone C · Space Only (฿7,000)</option>
+            <option value="zone-c-managed">Zone C · Full Managed (฿12,000)</option>
+            <option value="bundle">Bundle (Phase 1+2) — ประหยัด 15% 🔥</option>
+            <option value="unsure">ยังไม่แน่ใจ ขอคุยก่อน</option>
+          </select>
+        </div>
+        <button class="form-submit" onclick="submitLead()">
+          <span data-lang="th" class="active">ส่งข้อมูล — รับ Proposal ฟรี 🎪</span>
+          <span data-lang="la">ສົ່ງຂໍ້ມູນ — ຟຣີ Proposal</span>
+          <span data-lang="en">Submit — Get Free Proposal 🎪</span>
+        </button>
+        <p class="form-note">🔒 <span data-lang="th" class="active">ข้อมูลปลอดภัย ไม่ขายให้บุคคลที่สาม</span><span data-lang="la">ຂໍ້ມູນປອດໄພ</span><span data-lang="en">Your info is safe. Never shared.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer>
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <div class="footer-logo">VITH<span>HUB</span></div>
-        <div class="footer-tagline">Gateway for Thai SMEs<br>to reach international buyers<br>vithhub.asia</div>
-      </div>
-      <div class="footer-nav">
-        <div class="footer-col">
-          <div class="footer-col-title">Platform</div>
-          <a href="/">หน้าแรก</a>
-          <a href="/about">Partners & Alliance</a>
-          <a href="/event">Event 2026</a>
-          <a href="/membership">Founder Member</a>
-        </div>
-        <div class="footer-col">
-          <div class="footer-col-title">Resources</div>
-          <a href="/salesdeck" target="_blank">Sales Deck</a>
-          <a href="/event#floorplan">Floor Plan</a>
-          <a href="/event#timeline">Timeline</a>
-        </div>
-        <div class="footer-col">
-          <div class="footer-col-title">Contact</div>
-          <a href="/cdn-cgi/l/email-protection#05736c716d6d7067736c606b716c646b60456268646c692b666a68"><span class="__cf_email__" data-cfemail="a6d0cfd2ceced3c4d0cfc3c8d2cfc7c8c3e6c1cbc7cfca88c5c9cb">[email&#160;protected]</span></a>
-          <a href="https://line.me/ti/p/@cef8930n" target="_blank">LINE: @cef8930n</a>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="footer-contact">
-        📧 <a href="/cdn-cgi/l/email-protection#60160914080815021609050e1409010e0520070d01090c4e030f0d"><span class="__cf_email__" data-cfemail="eb9d829f83839e899d828e859f828a858eab8c868a8287c5888486">[email&#160;protected]</span></a>
-        &nbsp;·&nbsp;
-        📱 <a href="https://line.me/ti/p/@cef8930n">LINE @cef8930n</a>
-      </div>
-      <div class="footer-copy">© 2026 VITH HUB · vithhub.asia</div>
-    </div>
-  </div>
+  <div class="footer-logo">VITH HUB × BIG C VIENTIANE</div>
+  <p>© 2026 VITH Hub. All rights reserved. · ວຽງຈັນ, ລາວ PDR</p>
 </footer>
 
-<!-- ══ STICKY CTA ══ -->
-<div class="sticky-wrap">
-  <a href="/event" class="sticky-btn event">
-    📋 <span><span data-lang="th" class="active">จองพื้นที่<br><strong>Register Now</strong></span><span data-lang="en">Book Booth<br><strong>Register Now</strong></span></span>
+<!-- ══ POPUP ══ -->
+<div class="popup-overlay" id="popupOverlay" onclick="handlePopupOverlayClick(event)">
+  <div class="popup-card">
+    <div class="popup-bg-layer"></div>
+    <div class="popup-noise-layer"></div>
+    <button class="popup-close-btn" onclick="closePopup()">✕</button>
+    <div class="popup-inner">
+      <div class="popup-left">
+        <div>
+          <div class="popup-eyebrow">Special Event · 2026</div>
+          <div class="popup-date-num">25–29</div>
+          <span class="popup-date-range">March · มีนาคม · ມີນາ</span>
+          <div class="popup-month-wrap">
+            <span class="popup-month-th">มีนาคม 2026</span>
+            <span class="popup-month-en">MARCH</span>
+          </div>
+        </div>
+        <div class="popup-location-tag">📍 <span>Big C</span> Vientiane, Laos</div>
+      </div>
+      <div class="popup-right">
+        <div class="popup-event-name">
+          <span class="popup-collab">VITH <span class="popup-x">×</span> BIG C</span>
+          <span class="popup-title-th">ขอบใจเด้อ 2026</span>
+          <span class="popup-title-la">ຂໍໃຈເດີ້ 2026</span>
+          <span class="popup-title-en">Thank You Fair 2026</span>
+        </div>
+        <div class="popup-concept-row">
+          <div class="popup-pill popup-pill-shock">ซ็อค</div>
+          <div class="popup-pill popup-pill-taste">ชิม</div>
+          <div class="popup-pill popup-pill-shop">ซอป</div>
+        </div>
+        <div class="popup-lang-trio">
+          <div class="popup-lang-item"><span class="popup-lang-flag">🇹🇭</span><div class="popup-lang-text">สินค้าไทย<br>กลางเวียงจันทน์</div><span class="popup-lang-sub">25–29 มีนาคม</span></div>
+          <div class="popup-lang-item"><span class="popup-lang-flag">🇱🇦</span><div class="popup-lang-text">ສິນຄ້າໄທ<br>ກາງວຽງຈັນ</div><span class="popup-lang-sub">25–29 ມີນາ</span></div>
+          <div class="popup-lang-item"><span class="popup-lang-flag">🌏</span><div class="popup-lang-text">Thai Brands<br>in Vientiane</div><span class="popup-lang-sub">Mar 25–29</span></div>
+        </div>
+        <div class="popup-cta-row">
+          <a href="#contact" class="popup-btn-book" onclick="closePopup()">🎪 ຈອງບູດ / จองบูท</a>
+          <button class="popup-btn-remind" id="popupRemindBtn" onclick="handlePopupRemind()">🔔 ແຈ້ງ</button>
+        </div>
+      </div>
+    </div>
+    <div class="popup-countdown">
+      <span class="popup-cd-label">ນັບຖອຍຫຼັງ · Countdown</span>
+      <div class="popup-cd-timer">
+        <div class="popup-cd-unit"><span class="popup-cd-num" id="popupDays">--</span><span class="popup-cd-unit-label"><span data-lang="th" class="active">วัน</span><span data-lang="la">ວັນ</span><span data-lang="en">Days</span></span></div>
+        <span class="popup-cd-sep">:</span>
+        <div class="popup-cd-unit"><span class="popup-cd-num" id="popupHours">--</span><span class="popup-cd-unit-label"><span data-lang="th" class="active">ชม.</span><span data-lang="la">ຊມ.</span><span data-lang="en">Hrs</span></span></div>
+        <span class="popup-cd-sep">:</span>
+        <div class="popup-cd-unit"><span class="popup-cd-num" id="popupMins">--</span><span class="popup-cd-unit-label"><span data-lang="th" class="active">นาที</span><span data-lang="la">ນາທີ</span><span data-lang="en">Min</span></span></div>
+        <span class="popup-cd-sep">:</span>
+        <div class="popup-cd-unit"><span class="popup-cd-num" id="popupSecs">--</span><span class="popup-cd-unit-label"><span data-lang="th" class="active">วิ</span><span data-lang="la">ວິ</span><span data-lang="en">Sec</span></span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ Sticky CTAs ══ -->
+<div class="sticky-cta-wrap">
+  <a href="#contact" class="sticky-cta-btn">
+    <span>📋</span>
+    <span>
+      <span data-lang="th" class="active">จองพื้นที่<br><strong>Register Now</strong></span>
+      <span data-lang="la">ຈອງ<br><strong>Register Now</strong></span>
+      <span data-lang="en">Book Booth<br><strong>Register Now</strong></span>
+    </span>
   </a>
-  <a href="https://line.me/ti/p/@cef8930n" class="sticky-btn line" target="_blank">
+  <a href="https://line.me/ti/p/@cef8930n" target="_blank" class="sticky-line-btn">
     <svg width="18" height="18" viewBox="0 0 48 48"><path d="M24 4C13 4 4 11.8 4 21.5c0 5.5 3.1 10.4 7.9 13.7-.3 1.2-1.1 4.3-1.3 5 0 0-.1.3.2.4.2.1.5 0 .5 0 .7-.1 8.5-5.6 9.8-6.5.9.1 1.9.2 2.9.2 11 0 20-7.8 20-17.3S35 4 24 4z" fill="white"/></svg>
     Add LINE
   </a>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-function setLang(lang) {
-  document.querySelectorAll('[data-lang]').forEach(el => {
-    el.classList.toggle('active', el.dataset.lang === lang);
-  });
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.classList.toggle('active',
-      btn.textContent.toLowerCase() === lang ||
-      (lang === 'la' && btn.textContent === 'LAO'));
-  });
-}
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
-}, { threshold: 0.08 });
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-</script>
+<script src="script.js"></script>
 </body>
 </html>
