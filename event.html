@@ -135,37 +135,263 @@
   <a href="/">VITH HUB</a> › <span style="color:rgba(255,255,255,0.7)">Mekong Business Connect 2026</span>
 </div>
 
-<!-- ══ EVENT HERO ══ -->
-<section class="event-page-hero">
-  <div class="eph-inner">
-    <div class="eph-badge">📅 Mekong Business Connect 2026</div>
-    <h1 class="eph-title">
+<!-- ══ EVENT HERO CAROUSEL ══ -->
+<style>
+.hero-carousel{
+  position:relative;min-height:95vh;overflow:hidden;
+}
+/* slides */
+.hc-slide{
+  position:absolute;inset:0;opacity:0;
+  transition:opacity 1.2s ease;
+  background-size:cover;background-position:center;
+}
+.hc-slide.active{opacity:1;z-index:1}
+.hc-slide::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(
+    to bottom,
+    rgba(8,15,40,0.45) 0%,
+    rgba(8,15,40,0.55) 40%,
+    rgba(8,15,40,0.75) 100%
+  );
+}
+/* slide backgrounds */
+.hc-slide:nth-child(1){background-image:url('images/hero-bigc.png')}
+.hc-slide:nth-child(2){background-image:url('images/indoor-01.jpg')}
+.hc-slide:nth-child(3){background-image:url('images/booth-01.jpg')}
+.hc-slide:nth-child(4){background-image:url('images/indoor-02.jpg')}
+.hc-slide:nth-child(5){background-image:url('images/booth-02.jpg')}
+
+/* Ken Burns zoom effect on active slide */
+.hc-slide.active{
+  animation:kenBurns 6s ease-out forwards;
+}
+@keyframes kenBurns{
+  from{transform:scale(1.06)}
+  to{transform:scale(1)}
+}
+
+/* content overlay */
+.hc-content{
+  position:relative;z-index:10;
+  min-height:95vh;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  text-align:center;padding:7rem 2rem 5rem;
+}
+.hc-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(245,158,11,0.18);border:1px solid rgba(245,158,11,0.5);
+  color:#fbbf24;font-family:'Kanit',sans-serif;
+  font-size:0.72rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;
+  padding:7px 20px;border-radius:99px;margin-bottom:1.5rem;
+  animation:fadeUp 0.8s ease both;
+}
+.hc-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(3rem,10vw,6.5rem);
+  color:#fff;letter-spacing:0.03em;line-height:0.95;
+  margin-bottom:0.75rem;
+  animation:fadeUp 0.8s 0.1s ease both;
+}
+.hc-title .gold{
+  background:linear-gradient(90deg,#D4A017,#fde68a,#D4A017);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.hc-sub{
+  font-family:'Kanit',sans-serif;font-size:clamp(0.9rem,2.5vw,1.2rem);
+  color:rgba(255,255,255,0.78);margin-bottom:1.25rem;
+  animation:fadeUp 0.8s 0.2s ease both;
+}
+.hc-meta{
+  display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;
+  margin-bottom:2rem;
+  animation:fadeUp 0.8s 0.25s ease both;
+}
+.hc-meta-item{
+  background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);
+  color:rgba(255,255,255,0.85);font-family:'Kanit',sans-serif;
+  font-size:0.82rem;padding:6px 16px;border-radius:99px;
+  display:flex;align-items:center;gap:5px;
+}
+.hc-btns{
+  display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;
+  animation:fadeUp 0.8s 0.3s ease both;
+}
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:none}
+}
+
+/* slide label (bottom left) */
+.hc-slide-label{
+  position:absolute;bottom:5.5rem;left:2rem;z-index:10;
+  font-family:'Kanit',sans-serif;font-size:0.78rem;font-weight:600;
+  color:rgba(255,255,255,0.45);letter-spacing:0.08em;
+  transition:opacity 0.4s;
+}
+
+/* dots navigation */
+.hc-dots{
+  position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);
+  z-index:10;display:flex;gap:8px;align-items:center;
+}
+.hc-dot{
+  width:8px;height:8px;border-radius:99px;
+  background:rgba(255,255,255,0.3);border:none;cursor:pointer;
+  padding:0;transition:all 0.35s ease;
+}
+.hc-dot.active{
+  background:#fbbf24;width:28px;
+}
+
+/* prev/next arrows */
+.hc-arrow{
+  position:absolute;top:50%;transform:translateY(-50%);
+  z-index:10;background:rgba(255,255,255,0.1);
+  border:1px solid rgba(255,255,255,0.2);color:#fff;
+  width:44px;height:44px;border-radius:50%;
+  cursor:pointer;font-size:1.1rem;
+  display:flex;align-items:center;justify-content:center;
+  transition:all 0.25s;backdrop-filter:blur(8px);
+}
+.hc-arrow:hover{background:rgba(255,255,255,0.22);border-color:rgba(255,255,255,0.4)}
+.hc-arrow.prev{left:1.25rem}
+.hc-arrow.next{right:1.25rem}
+@media(max-width:600px){.hc-arrow{display:none}}
+
+/* progress bar */
+.hc-progress{
+  position:absolute;bottom:0;left:0;height:3px;
+  background:linear-gradient(90deg,#D4A017,#fbbf24);
+  z-index:10;width:0%;
+  transition:width 0s linear;
+}
+.hc-progress.running{
+  width:100%;
+  transition:width 5s linear;
+}
+</style>
+
+<section class="hero-carousel" id="heroCarousel">
+  <!-- slides (รูปพื้นหลัง) -->
+  <div class="hc-slide active"></div>
+  <div class="hc-slide"></div>
+  <div class="hc-slide"></div>
+  <div class="hc-slide"></div>
+  <div class="hc-slide"></div>
+
+  <!-- content (อยู่บนทุก slide) -->
+  <div class="hc-content">
+    <div class="hc-badge">📅 Mekong Business Connect 2026</div>
+    <h1 class="hc-title">
       <span data-lang="th" class="active">งานแสดงสินค้า<br><span class="gold">นานาชาติ</span></span>
       <span data-lang="la">ງານວາງສະແດງ<br><span class="gold">ສາກົນ</span></span>
       <span data-lang="en">Mini International<br><span class="gold">Trade Showcase</span></span>
     </h1>
-    <p class="eph-sub">
+    <p class="hc-sub">
       <span data-lang="th" class="active">Big C เวียงจันทน์ สปป.ลาว · ร่วมกับหอการค้านานาชาติ 6 ประเทศ</span>
       <span data-lang="la">Big C ວຽງຈັນ ສປປ.ລາວ · ຫໍການຄ້າ 6 ປະເທດ</span>
-      <span data-lang="en">Big C Vientiane, Laos · 6 International Chambers of Commerce</span>
+      <span data-lang="en">Big C Vientiane, Laos · 6 International Chambers</span>
     </p>
-    <div class="eph-meta">
-      <div class="eph-meta-item">📍 Big C Vientiane</div>
-      <div class="eph-meta-item">
-        <span data-lang="th" class="active">📅 Phase 1: 25–29 มีนาคม 2026</span>
-        <span data-lang="la">📅 Phase 1: 25–29 ມີນາ 2026</span>
-        <span data-lang="en">📅 Phase 1: Mar 25–29, 2026</span>
+    <div class="hc-meta">
+      <div class="hc-meta-item">📍 Big C Vientiane</div>
+      <div class="hc-meta-item">
+        <span data-lang="th" class="active">📅 25–29 มีนาคม 2026</span>
+        <span data-lang="la">📅 25–29 ມີນາ 2026</span>
+        <span data-lang="en">📅 Mar 25–29, 2026</span>
       </div>
-      <div class="eph-meta-item">🏪 60–80 บูท</div>
-      <div class="eph-meta-item">🤝 B2B Matching</div>
+      <div class="hc-meta-item">🏪 60–80 บูท</div>
+      <div class="hc-meta-item">🤝 B2B Matching</div>
     </div>
-    <div class="eph-btns">
+    <div class="hc-btns">
       <a href="#contact" class="btn-eph-primary">🚀 จองบูทเลย</a>
       <a href="/membership" class="btn-eph-ghost">👑 Founder Member</a>
       <a href="/" class="btn-eph-ghost">← หน้าหลัก</a>
     </div>
   </div>
+
+  <!-- slide label -->
+  <div class="hc-slide-label" id="hcLabel">Big C Vientiane · Main Venue</div>
+
+  <!-- arrows -->
+  <button class="hc-arrow prev" onclick="hcMove(-1)" aria-label="Previous">‹</button>
+  <button class="hc-arrow next" onclick="hcMove(1)" aria-label="Next">›</button>
+
+  <!-- dots -->
+  <div class="hc-dots" id="hcDots"></div>
+
+  <!-- progress bar -->
+  <div class="hc-progress" id="hcProgress"></div>
 </section>
+
+<script>
+(function(){
+  const slides = document.querySelectorAll('.hc-slide');
+  const dotsWrap = document.getElementById('hcDots');
+  const progress = document.getElementById('hcProgress');
+  const label = document.getElementById('hcLabel');
+  const labels = [
+    'Big C Vientiane · Main Venue',
+    'Indoor Showroom · 200 sqm',
+    'Exhibition Booths · Phase 1',
+    'Trade Floor · Vientiane',
+    'Booth Setup · Ready to Exhibit',
+  ];
+  const DURATION = 5000;
+  let current = 0, timer = null;
+
+  // สร้าง dots
+  slides.forEach((_, i) => {
+    const d = document.createElement('button');
+    d.className = 'hc-dot' + (i===0?' active':'');
+    d.setAttribute('aria-label', 'Slide ' + (i+1));
+    d.onclick = () => goTo(i);
+    dotsWrap.appendChild(d);
+  });
+
+  function goTo(n) {
+    slides[current].classList.remove('active');
+    dotsWrap.children[current].classList.remove('active');
+    current = (n + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dotsWrap.children[current].classList.add('active');
+    if (label) label.textContent = labels[current] || '';
+    // reset progress bar
+    progress.classList.remove('running');
+    progress.style.transition = 'none';
+    progress.style.width = '0%';
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      progress.style.transition = '';
+      progress.classList.add('running');
+    }));
+    clearTimeout(timer);
+    timer = setTimeout(() => goTo(current + 1), DURATION);
+  }
+
+  window.hcMove = (dir) => goTo(current + dir);
+
+  // start
+  goTo(0);
+
+  // pause on hover
+  const carousel = document.getElementById('heroCarousel');
+  if (carousel) {
+    carousel.addEventListener('mouseenter', () => { clearTimeout(timer); progress.style.animationPlayState='paused'; });
+    carousel.addEventListener('mouseleave', () => {
+      timer = setTimeout(() => goTo(current + 1), DURATION);
+    });
+  }
+
+  // swipe support (mobile)
+  let tx = 0;
+  carousel.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, {passive:true});
+  carousel.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - tx;
+    if (Math.abs(dx) > 50) goTo(current + (dx < 0 ? 1 : -1));
+  }, {passive:true});
+})();
+</script>
 
 <!-- ══ GALLERY สถานที่จริง ══ -->
 <section id="gallery" class="section-pad" style="background:var(--surface3);border-top:1px solid var(--border)">
@@ -177,7 +403,7 @@
         <span data-lang="la">Big C ວຽງຈັນ<br><em>ຫ້າງໃຫຍ່ທີ່ສຸດ</em></span>
         <span data-lang="en">Big C Vientiane<br><em>Laos' Biggest Mall</em></span>
       </h2>
-      <p class="section-sub"><span data-lang="th" class="active">บรรยากาศและวิสัยทัศน์ที่จะเกิดขึ้น — กับทำเลดีที่สุดของสินค้าไทยในลาว</span><span data-lang="en">See the real venue and the future vision — the best spot for Thai products in Laos</span></p>
+      <p class="section-sub"><span data-lang="th" class="active">บรรยากาศและวิสัยทัศน์ที่กำลังจะเกิดขึ้น — ทำเลที่ดีที่สุดสำหรับสินค้าไทยในลาว</span><span data-lang="en">See the real venue and the future vision — the best spot for Thai products in Laos</span></p>
     </div>
 
     <!-- Tabs -->
