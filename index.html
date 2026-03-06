@@ -277,13 +277,71 @@ nav{
 
 /* ── TRADE MAP ── */
 #connectivity{
-  background:#0d1117;
-  border-top:1px solid rgba(255,255,255,0.05);
-  border-bottom:1px solid rgba(255,255,255,0.05);
+  background:linear-gradient(160deg,#0f1f4a 0%,#1a3a7a 30%,#0d2448 60%,#162040 100%);
+  border-top:1px solid rgba(99,149,255,0.15);
+  border-bottom:1px solid rgba(99,149,255,0.15);
+  position:relative;overflow:hidden;
 }
-#connectivity .s-eyebrow{color:var(--gold2)}
-#connectivity .s-title{color:#fff}
-#connectivity .s-sub{color:rgba(255,255,255,0.55)}
+/* animated aurora layers */
+#connectivity::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 70% 50% at 20% 60%, rgba(212,160,23,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 70% at 80% 30%, rgba(79,142,247,0.1) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 50% 80%, rgba(30,58,138,0.2) 0%, transparent 70%);
+  animation:auroraShift 8s ease-in-out infinite alternate;
+  pointer-events:none;
+}
+/* floating dot particles */
+#connectivity::after{
+  content:'';position:absolute;inset:0;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,0.35) 1px, transparent 1px),
+    radial-gradient(circle, rgba(212,160,23,0.25) 1px, transparent 1px);
+  background-size:80px 80px, 130px 130px;
+  background-position:0 0, 40px 40px;
+  animation:particleDrift 20s linear infinite;
+  pointer-events:none;opacity:0.6;
+}
+@keyframes auroraShift{
+  0%{opacity:0.6;transform:scale(1) rotate(0deg)}
+  100%{opacity:1;transform:scale(1.08) rotate(2deg)}
+}
+@keyframes particleDrift{
+  0%{transform:translate(0,0)}
+  100%{transform:translate(-80px,-80px)}
+}
+#connectivity .section{position:relative;z-index:1}
+#connectivity .s-eyebrow{
+  color:#fbbf24;
+  text-shadow:0 0 20px rgba(251,191,36,0.5);
+}
+#connectivity .s-title{
+  color:#fff;
+  text-shadow:0 2px 20px rgba(30,58,138,0.4);
+}
+#connectivity .s-sub{color:rgba(255,255,255,0.7)}
+/* map container glow frame */
+.map-frame{
+  position:relative;border-radius:20px;overflow:hidden;
+  box-shadow:
+    0 0 0 1px rgba(99,149,255,0.2),
+    0 8px 40px rgba(30,58,138,0.4),
+    0 0 80px rgba(212,160,23,0.06);
+}
+.map-frame::before{
+  content:'';position:absolute;inset:0;border-radius:20px;
+  background:linear-gradient(135deg,rgba(212,160,23,0.06),transparent 40%,rgba(79,142,247,0.04));
+  pointer-events:none;z-index:2;
+}
+/* animated route paths */
+.route-animated{
+  stroke-dashoffset:0;
+  animation:routePulse 3s ease-in-out infinite;
+}
+@keyframes routePulse{
+  0%,100%{opacity:1}50%{opacity:0.5}
+}
 
 /* ── PARTNERS ── */
 #partners{background:#fff}
@@ -638,61 +696,195 @@ div[data-lang]:not(.active){display:none}
         <span data-lang="en">Thai products flow through VITH Hub, connect via Laos-China Railway to Kunming, then reach buyers across Europe and Russia.</span>
       </p>
     </div>
-    <div class="reveal d1" style="overflow-x:auto">
-      <svg viewBox="0 0 900 420" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:900px;display:block;margin:0 auto">
+    <div class="reveal d1 map-frame">
+      <svg viewBox="0 0 900 440" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:900px;display:block;margin:0 auto">
         <defs>
-          <pattern id="mapGrid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-            <path d="M40 0H0V40" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+          <!-- grid pattern -->
+          <pattern id="mapGrid" x="0" y="0" width="45" height="45" patternUnits="userSpaceOnUse">
+            <path d="M45 0H0V45" stroke="rgba(99,149,255,0.07)" stroke-width="1"/>
           </pattern>
-          <marker id="arrowGold" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#F5C842"/></marker>
-          <marker id="arrowRed" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#E31E24"/></marker>
-          <marker id="arrowBlue" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#4f8ef7"/></marker>
-          <marker id="arrowGreen" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L6,3 z" fill="#22c55e"/></marker>
-          <filter id="glow"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          <!-- diagonal lines texture -->
+          <pattern id="diag" x="0" y="0" width="12" height="12" patternUnits="userSpaceOnUse">
+            <path d="M0 12L12 0" stroke="rgba(255,255,255,0.025)" stroke-width="1"/>
+          </pattern>
+          <!-- arrow markers -->
+          <marker id="arrowGold" markerWidth="10" markerHeight="10" refX="8" refY="3.5" orient="auto">
+            <path d="M0,0 L0,7 L10,3.5 z" fill="#F5C842"/>
+          </marker>
+          <marker id="arrowRed" markerWidth="10" markerHeight="10" refX="8" refY="3.5" orient="auto">
+            <path d="M0,0 L0,7 L10,3.5 z" fill="#ff6b7a"/>
+          </marker>
+          <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="8" refY="3.5" orient="auto">
+            <path d="M0,0 L0,7 L10,3.5 z" fill="#60a5fa"/>
+          </marker>
+          <marker id="arrowGreen" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+            <path d="M0,0 L0,8 L8,4 z" fill="#34d399"/>
+          </marker>
+          <!-- glow filters -->
+          <filter id="glowGold" x="-40%" y="-40%" width="180%" height="180%">
+            <feGaussianBlur stdDeviation="4" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <filter id="glowBlue" x="-40%" y="-40%" width="180%" height="180%">
+            <feGaussianBlur stdDeviation="5" result="blur"/>
+            <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.37  0 0 0 0 0.64  0 0 0 0 1  0 0 0 0.8 0" result="coloredBlur"/>
+            <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <filter id="glowHub" x="-60%" y="-60%" width="220%" height="220%">
+            <feGaussianBlur stdDeviation="8" result="blur"/>
+            <feColorMatrix in="blur" type="matrix" values="0 0 0 0 1  0 0 0 0 0.76  0 0 0 0 0  0 0 0 1 0" result="coloredBlur"/>
+            <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <filter id="glowNode">
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <!-- radial for hub glow bg -->
+          <radialGradient id="hubGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#F5C842" stop-opacity="0.25"/>
+            <stop offset="100%" stop-color="#F5C842" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="thGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#ff6b7a" stop-opacity="0.2"/>
+            <stop offset="100%" stop-color="#ff6b7a" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="cnGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#60a5fa" stop-opacity="0.2"/>
+            <stop offset="100%" stop-color="#60a5fa" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="ruGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#c084fc" stop-opacity="0.2"/>
+            <stop offset="100%" stop-color="#c084fc" stop-opacity="0"/>
+          </radialGradient>
+          <!-- node bg gradient -->
+          <linearGradient id="nodeBg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#1e3a6e"/>
+            <stop offset="100%" stop-color="#0f2244"/>
+          </linearGradient>
+          <linearGradient id="hubBg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#e8a800"/>
+            <stop offset="100%" stop-color="#c47f00"/>
+          </linearGradient>
         </defs>
-        <rect width="900" height="420" fill="#0d1117"/>
-        <rect width="900" height="420" fill="url(#mapGrid)"/>
-        <ellipse cx="150" cy="280" rx="90" ry="55" fill="rgba(30,58,138,0.18)" stroke="rgba(99,130,180,0.3)" stroke-width="1"/>
-        <ellipse cx="420" cy="200" rx="70" ry="45" fill="rgba(30,58,138,0.18)" stroke="rgba(99,130,180,0.3)" stroke-width="1"/>
-        <ellipse cx="620" cy="140" rx="55" ry="40" fill="rgba(30,58,138,0.18)" stroke="rgba(99,130,180,0.3)" stroke-width="1"/>
-        <ellipse cx="800" cy="110" rx="65" ry="50" fill="rgba(30,58,138,0.18)" stroke="rgba(99,130,180,0.3)" stroke-width="1"/>
-        <path d="M155,280 Q260,260 385,210" stroke="#E31E24" stroke-width="2.5" stroke-dasharray="10,6" fill="none" marker-end="url(#arrowRed)" filter="url(#glow)"/>
-        <path d="M420,215 Q510,190 595,148" stroke="#F5C842" stroke-width="3" stroke-dasharray="12,5" fill="none" marker-end="url(#arrowGold)" filter="url(#glow)"/>
-        <path d="M620,142 Q710,120 800,115" stroke="#4f8ef7" stroke-width="2.5" stroke-dasharray="10,6" fill="none" marker-end="url(#arrowBlue)"/>
-        <path d="M420,215 Q420,260 418,295" stroke="#22c55e" stroke-width="2" stroke-dasharray="8,5" fill="none" marker-end="url(#arrowGreen)"/>
-        <circle cx="155" cy="280" r="20" fill="rgba(30,58,138,0.25)" stroke="#1e3a5f" stroke-width="2"/>
-        <circle cx="155" cy="280" r="10" fill="#334155"/>
-        <text x="155" y="316" text-anchor="middle" font-family="Kanit,sans-serif" font-size="11" font-weight="700" fill="rgba(255,255,255,0.9)">🇹🇭 Thailand</text>
-        <text x="155" y="330" text-anchor="middle" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.45)">Factory</text>
-        <circle cx="420" cy="200" r="32" fill="rgba(245,200,66,0.15)" stroke="#F5C842" stroke-width="2.5"/>
-        <circle cx="420" cy="200" r="18" fill="#D4A017"/>
-        <text x="420" y="196" text-anchor="middle" font-family="Bebas Neue,sans-serif" font-size="9" fill="#1a0a00" letter-spacing="0.08em">VITH HUB</text>
-        <text x="420" y="207" text-anchor="middle" font-family="Bebas Neue,sans-serif" font-size="8" fill="#1a0a00">BIG C</text>
-        <text x="420" y="252" text-anchor="middle" font-family="Kanit,sans-serif" font-size="12" font-weight="800" fill="#F5C842">🌟 VITH Hub</text>
-        <text x="420" y="267" text-anchor="middle" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.55)">Big C Vientiane 🇱🇦</text>
-        <circle cx="418" cy="310" r="11" fill="rgba(34,197,94,0.15)" stroke="#22c55e" stroke-width="1.5"/>
-        <circle cx="418" cy="310" r="5" fill="#475569"/>
-        <text x="418" y="334" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#86efac">🛍️ Lao Market</text>
-        <circle cx="620" cy="143" r="22" fill="rgba(30,58,138,0.25)" stroke="#1e3a5f" stroke-width="2"/>
-        <circle cx="620" cy="143" r="11" fill="#1E3A8A"/>
-        <text x="620" y="139" text-anchor="middle" font-family="Bebas Neue,sans-serif" font-size="14" fill="#fff">昆明</text>
-        <text x="620" y="149" text-anchor="middle" font-family="sans-serif" font-size="8" fill="rgba(255,255,255,0.6)">KMG</text>
-        <text x="620" y="181" text-anchor="middle" font-family="Kanit,sans-serif" font-size="11" font-weight="700" fill="#4f8ef7">🇨🇳 Kunming</text>
-        <text x="620" y="193" text-anchor="middle" font-family="sans-serif" font-size="9" fill="rgba(255,255,255,0.4)">Lao-China Railway</text>
-        <circle cx="800" cy="112" r="20" fill="rgba(30,58,138,0.25)" stroke="#1e3a5f" stroke-width="2"/>
-        <circle cx="800" cy="112" r="10" fill="#334155"/>
-        <text x="800" y="146" text-anchor="middle" font-family="Kanit,sans-serif" font-size="11" font-weight="700" fill="#c084fc">🇷🇺 Russia & Europe</text>
-        <text x="800" y="159" text-anchor="middle" font-family="sans-serif" font-size="9" fill="rgba(255,255,255,0.4)">End Buyers</text>
-        <rect x="28" y="28" width="200" height="115" rx="10" fill="rgba(15,23,42,0.95)" stroke="rgba(99,130,180,0.4)" stroke-width="1.5"/>
-        <text x="48" y="53" font-family="Kanit,sans-serif" font-size="11" font-weight="800" fill="rgba(255,255,255,0.85)" letter-spacing="0.08em">TRADE ROUTES</text>
-        <line x1="48" y1="67" x2="78" y2="67" stroke="#E31E24" stroke-width="2.5" stroke-dasharray="6,4"/>
-        <text x="86" y="71" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.55)">Road Logistics</text>
-        <line x1="48" y1="85" x2="78" y2="85" stroke="#F5C842" stroke-width="3" stroke-dasharray="8,4"/>
-        <text x="86" y="89" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.55)">Laos-China Railway</text>
-        <line x1="48" y1="103" x2="78" y2="103" stroke="#4f8ef7" stroke-width="2.5" stroke-dasharray="6,4"/>
-        <text x="86" y="107" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.55)">Global Distribution</text>
-        <line x1="48" y1="121" x2="78" y2="121" stroke="#22c55e" stroke-width="2" stroke-dasharray="5,4"/>
-        <text x="86" y="125" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.55)">Local Lao Market</text>
+
+        <!-- Background -->
+        <rect width="900" height="440" fill="url(#nodeBg)"/>
+        <rect width="900" height="440" fill="url(#mapGrid)"/>
+        <rect width="900" height="440" fill="url(#diag)"/>
+
+        <!-- subtle horizon line -->
+        <line x1="0" y1="360" x2="900" y2="360" stroke="rgba(99,149,255,0.06)" stroke-width="1"/>
+
+        <!-- glow halos around nodes -->
+        <ellipse cx="155" cy="290" rx="75" ry="55" fill="url(#thGlow)"/>
+        <ellipse cx="420" cy="210" rx="90" ry="70" fill="url(#hubGlow)"/>
+        <ellipse cx="635" cy="150" rx="65" ry="50" fill="url(#cnGlow)"/>
+        <ellipse cx="810" cy="115" rx="70" ry="55" fill="url(#ruGlow)"/>
+
+        <!-- region borders (subtle) -->
+        <ellipse cx="155" cy="290" rx="72" ry="48" fill="rgba(255,107,122,0.07)" stroke="rgba(255,107,122,0.2)" stroke-width="1" stroke-dasharray="4,3"/>
+        <ellipse cx="420" cy="210" rx="78" ry="52" fill="rgba(245,200,66,0.06)" stroke="rgba(245,200,66,0.22)" stroke-width="1.5" stroke-dasharray="5,3"/>
+        <ellipse cx="635" cy="150" rx="60" ry="42" fill="rgba(96,165,250,0.07)" stroke="rgba(96,165,250,0.2)" stroke-width="1" stroke-dasharray="4,3"/>
+        <ellipse cx="810" cy="115" rx="62" ry="48" fill="rgba(192,132,252,0.07)" stroke="rgba(192,132,252,0.2)" stroke-width="1" stroke-dasharray="4,3"/>
+
+        <!-- ── TRADE ROUTE LINES ── -->
+        <!-- Road: Thailand → VITH Hub -->
+        <path d="M170,290 C240,275 320,250 388,218" stroke="rgba(255,107,122,0.25)" stroke-width="5" fill="none"/>
+        <path d="M170,290 C240,275 320,250 388,218" stroke="#ff6b7a" stroke-width="2" stroke-dasharray="8,5" fill="none" marker-end="url(#arrowRed)" filter="url(#glowGold)">
+          <animate attributeName="stroke-dashoffset" from="0" to="-26" dur="1.5s" repeatCount="indefinite"/>
+        </path>
+
+        <!-- Railway: VITH Hub → Kunming -->
+        <path d="M452,210 C510,192 570,170 612,158" stroke="rgba(245,200,66,0.2)" stroke-width="6" fill="none"/>
+        <path d="M452,210 C510,192 570,170 612,158" stroke="#F5C842" stroke-width="2.5" stroke-dasharray="10,4" fill="none" marker-end="url(#arrowGold)" filter="url(#glowGold)">
+          <animate attributeName="stroke-dashoffset" from="0" to="-28" dur="1.2s" repeatCount="indefinite"/>
+        </path>
+
+        <!-- Global: Kunming → Russia/Europe -->
+        <path d="M660,148 C720,132 760,118 792,118" stroke="rgba(96,165,250,0.2)" stroke-width="5" fill="none"/>
+        <path d="M660,148 C720,132 760,118 792,118" stroke="#60a5fa" stroke-width="2" stroke-dasharray="8,5" fill="none" marker-end="url(#arrowBlue)" filter="url(#glowBlue)">
+          <animate attributeName="stroke-dashoffset" from="0" to="-26" dur="1.8s" repeatCount="indefinite"/>
+        </path>
+
+        <!-- Local: VITH Hub → Lao Market (down) -->
+        <path d="M420,228 C420,260 420,285 420,308" stroke="rgba(52,211,153,0.25)" stroke-width="4" fill="none"/>
+        <path d="M420,228 C420,260 420,285 420,308" stroke="#34d399" stroke-width="1.8" stroke-dasharray="6,4" fill="none" marker-end="url(#arrowGreen)">
+          <animate attributeName="stroke-dashoffset" from="0" to="-20" dur="1s" repeatCount="indefinite"/>
+        </path>
+
+        <!-- ── NODES ── -->
+        <!-- Thailand -->
+        <circle cx="155" cy="290" r="28" fill="url(#nodeBg)" stroke="rgba(255,107,122,0.5)" stroke-width="1.5" filter="url(#glowNode)"/>
+        <circle cx="155" cy="290" r="14" fill="#7f1d1d"/>
+        <circle cx="155" cy="290" r="8" fill="#ff6b7a"/>
+        <!-- pulse ring Thailand -->
+        <circle cx="155" cy="290" r="22" fill="none" stroke="#ff6b7a" stroke-width="1" opacity="0.6">
+          <animate attributeName="r" values="18;30;18" dur="3s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.6;0;0.6" dur="3s" repeatCount="indefinite"/>
+        </circle>
+        <text x="155" y="330" text-anchor="middle" font-family="Kanit,sans-serif" font-size="12" font-weight="700" fill="#fca5a5">🇹🇭 Thailand</text>
+        <text x="155" y="345" text-anchor="middle" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.4)">Factory / Origin</text>
+
+        <!-- VITH Hub (center star) -->
+        <circle cx="420" cy="210" r="44" fill="url(#hubGlow)" filter="url(#glowHub)"/>
+        <circle cx="420" cy="210" r="36" fill="rgba(245,200,66,0.12)" stroke="#F5C842" stroke-width="2"/>
+        <!-- pulse ring Hub -->
+        <circle cx="420" cy="210" r="38" fill="none" stroke="#F5C842" stroke-width="1.5" opacity="0.7">
+          <animate attributeName="r" values="36;52;36" dur="2.5s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.7;0;0.7" dur="2.5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="420" cy="210" r="22" fill="url(#hubBg)"/>
+        <circle cx="420" cy="210" r="22" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+        <text x="420" y="206" text-anchor="middle" font-family="Bebas Neue,sans-serif" font-size="9" fill="#1a0a00" letter-spacing="0.1em">VITH HUB</text>
+        <text x="420" y="218" text-anchor="middle" font-family="Bebas Neue,sans-serif" font-size="8" fill="rgba(0,0,0,0.6)">BIG C</text>
+        <text x="420" y="262" text-anchor="middle" font-family="Kanit,sans-serif" font-size="13" font-weight="800" fill="#fde68a" filter="url(#glowGold)">🌟 VITH Hub</text>
+        <text x="420" y="278" text-anchor="middle" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.6)">Big C Vientiane 🇱🇦</text>
+        <text x="420" y="291" text-anchor="middle" font-family="sans-serif" font-size="9" fill="rgba(245,200,66,0.65)">Distribution Hub</text>
+
+        <!-- Lao Market (below hub) -->
+        <circle cx="420" cy="325" r="16" fill="rgba(52,211,153,0.1)" stroke="#34d399" stroke-width="1.2"/>
+        <circle cx="420" cy="325" r="7" fill="#065f46"/>
+        <circle cx="420" cy="325" r="4" fill="#34d399"/>
+        <text x="420" y="352" text-anchor="middle" font-family="Kanit,sans-serif" font-size="11" font-weight="600" fill="#6ee7b7">🛍️ Lao Market</text>
+        <text x="420" y="365" text-anchor="middle" font-family="sans-serif" font-size="9" fill="rgba(255,255,255,0.35)">Local Distribution</text>
+
+        <!-- Kunming -->
+        <circle cx="635" cy="150" r="28" fill="url(#nodeBg)" stroke="rgba(96,165,250,0.5)" stroke-width="1.5" filter="url(#glowNode)"/>
+        <circle cx="635" cy="150" r="14" fill="#1e3a8a"/>
+        <circle cx="635" cy="150" r="8" fill="#60a5fa"/>
+        <circle cx="635" cy="150" r="22" fill="none" stroke="#60a5fa" stroke-width="1" opacity="0.5">
+          <animate attributeName="r" values="18;28;18" dur="3.5s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.5;0;0.5" dur="3.5s" repeatCount="indefinite"/>
+        </circle>
+        <text x="635" y="144" text-anchor="middle" font-family="Bebas Neue,sans-serif" font-size="16" fill="#fff">昆明</text>
+        <text x="635" y="155" text-anchor="middle" font-family="sans-serif" font-size="8" fill="rgba(255,255,255,0.5)">KUNMING</text>
+        <text x="635" y="190" text-anchor="middle" font-family="Kanit,sans-serif" font-size="12" font-weight="700" fill="#93c5fd">🇨🇳 Kunming</text>
+        <text x="635" y="204" text-anchor="middle" font-family="sans-serif" font-size="9" fill="rgba(255,255,255,0.4)">Laos-China Railway</text>
+
+        <!-- Russia & Europe -->
+        <circle cx="810" cy="115" r="26" fill="url(#nodeBg)" stroke="rgba(192,132,252,0.5)" stroke-width="1.5" filter="url(#glowNode)"/>
+        <circle cx="810" cy="115" r="13" fill="#3b0764"/>
+        <circle cx="810" cy="115" r="7" fill="#c084fc"/>
+        <circle cx="810" cy="115" r="20" fill="none" stroke="#c084fc" stroke-width="1" opacity="0.5">
+          <animate attributeName="r" values="16;26;16" dur="4s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.5;0;0.5" dur="4s" repeatCount="indefinite"/>
+        </circle>
+        <text x="810" y="154" text-anchor="middle" font-family="Kanit,sans-serif" font-size="11" font-weight="700" fill="#d8b4fe">🇷🇺 Russia</text>
+        <text x="810" y="168" text-anchor="middle" font-family="Kanit,sans-serif" font-size="11" font-weight="700" fill="#d8b4fe">🇪🇺 Europe</text>
+        <text x="810" y="182" text-anchor="middle" font-family="sans-serif" font-size="9" fill="rgba(255,255,255,0.35)">End Buyers</text>
+
+        <!-- ── LEGEND ── -->
+        <rect x="24" y="24" width="210" height="126" rx="12" fill="rgba(8,16,36,0.88)" stroke="rgba(99,149,255,0.3)" stroke-width="1"/>
+        <text x="44" y="50" font-family="Kanit,sans-serif" font-size="11" font-weight="800" fill="rgba(255,255,255,0.9)" letter-spacing="0.1em">TRADE ROUTES</text>
+        <line x1="44" y1="64" x2="78" y2="64" stroke="#ff6b7a" stroke-width="2" stroke-dasharray="6,4"/>
+        <text x="86" y="68" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.6)">Road Logistics</text>
+        <line x1="44" y1="82" x2="78" y2="82" stroke="#F5C842" stroke-width="2.5" stroke-dasharray="8,4"/>
+        <text x="86" y="86" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.6)">Laos-China Railway</text>
+        <line x1="44" y1="100" x2="78" y2="100" stroke="#60a5fa" stroke-width="2" stroke-dasharray="6,4"/>
+        <text x="86" y="104" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.6)">Global Distribution</text>
+        <line x1="44" y1="118" x2="78" y2="118" stroke="#34d399" stroke-width="1.8" stroke-dasharray="5,4"/>
+        <text x="86" y="122" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.6)">Local Lao Market</text>
+        <text x="44" y="140" font-family="sans-serif" font-size="9" fill="rgba(255,255,255,0.25)">● Animated live routes</text>
       </svg>
     </div>
   </div>
@@ -788,14 +980,14 @@ div[data-lang]:not(.active){display:none}
         </div>
         <div class="footer-col">
           <div class="footer-col-title">Contact</div>
-          <a href="mailto:vithhubvientiane@gmail.com">vithhubvientiane@gmail.com</a>
+          <a href="/cdn-cgi/l/email-protection#05736c716d6d7067736c606b716c646b60456268646c692b666a68"><span class="__cf_email__" data-cfemail="a6d0cfd2ceced3c4d0cfc3c8d2cfc7c8c3e6c1cbc7cfca88c5c9cb">[email&#160;protected]</span></a>
           <a href="https://line.me/ti/p/@cef8930n" target="_blank">LINE: @cef8930n</a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
       <div class="footer-contact">
-        📧 <a href="mailto:vithhubvientiane@gmail.com">vithhubvientiane@gmail.com</a>
+        📧 <a href="/cdn-cgi/l/email-protection#60160914080815021609050e1409010e0520070d01090c4e030f0d"><span class="__cf_email__" data-cfemail="eb9d829f83839e899d828e859f828a858eab8c868a8287c5888486">[email&#160;protected]</span></a>
         &nbsp;·&nbsp;
         📱 <a href="https://line.me/ti/p/@cef8930n">LINE @cef8930n</a>
       </div>
@@ -815,7 +1007,7 @@ div[data-lang]:not(.active){display:none}
   </a>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 function setLang(lang) {
   document.querySelectorAll('[data-lang]').forEach(el => {
     el.classList.toggle('active', el.dataset.lang === lang);
