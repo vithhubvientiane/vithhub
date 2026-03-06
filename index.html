@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VITH HUB — Connecting Thai SMEs to the Mekong Market</title>
+<meta name="description" content="VITH HUB แพลตฟอร์มความร่วมมือรัฐ-เอกชน Business Matching และ Managed Showroom เชื่อมธุรกิจไทยสู่ลาว จีน รัสเซีย ผ่าน Big C เวียงจันทน์">
+<meta property="og:title" content="VITH HUB — Connecting Thai SMEs to the Mekong Market">
+<meta property="og:image" content="images/hero-bigc.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kanit:wght@400;500;600;700;800;900&family=Noto+Sans+Thai:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ── Reset & Base ── */
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:'Noto Sans Thai','Kanit',sans-serif;color:#1a202c;background:#fff;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{text-decoration:none}
+
+/* ── Variables ── */
+:root{
+  --navy:#0d1b3e;
+  --navy2:#1E3A8A;
+  --navy3:#162d6e;
+  --gold:#D4A017;
+  --gold2:#fbbf24;
+  --red:#E31E24;
+  --white:#fff;
+  --bg:#f8fafc;
+  --text:#1a202c;
+  --sub:#4a5568;
+  --border:#e2e8f0;
+  --radius:12px;
+}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  background:rgba(255,255,255,0.97);backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+  padding:0.75rem 2rem;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  box-shadow:0 1px 12px rgba(0,0,0,0.06);
+}
+.nav-logo{
+  font-family:'Bebas Neue',sans-serif;font-size:1.75rem;
+  letter-spacing:0.1em;color:var(--navy2);white-space:nowrap;
+}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;align-items:center;gap:0.5rem}
+.nav-link{
+  font-family:'Kanit',sans-serif;font-size:0.82rem;font-weight:600;
+  color:var(--navy2);padding:7px 14px;border-radius:8px;
+  border:1px solid transparent;transition:all 0.2s;min-height:36px;
+  display:inline-flex;align-items:center;gap:5px;
+}
+.nav-link:hover{border-color:rgba(30,58,138,0.2);background:rgba(30,58,138,0.05)}
+.nav-link.primary{
+  background:linear-gradient(90deg,#92400e,#b45309);
+  color:#fbbf24;border-color:transparent;
+}
+.nav-link.primary:hover{opacity:0.9}
+.lang-group{display:flex;gap:3px}
+.lang-btn{
+  font-family:'Kanit',sans-serif;font-size:0.72rem;font-weight:700;
+  padding:5px 9px;border-radius:6px;
+  border:1px solid rgba(30,58,138,0.2);background:transparent;
+  color:var(--navy2);cursor:pointer;transition:all 0.2s;
+}
+.lang-btn.active{background:var(--navy2);color:#fff;border-color:var(--navy2)}
+
+/* ── HERO ── */
+.hero{
+  position:relative;min-height:95vh;
+  display:flex;align-items:center;overflow:hidden;
+}
+.hero-bg{position:absolute;inset:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center}
+.hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(135deg,
+    rgba(8,15,40,0.88) 0%,
+    rgba(20,50,120,0.72) 55%,
+    rgba(8,15,40,0.82) 100%);
+}
+.hero-inner{
+  position:relative;z-index:2;
+  max-width:900px;margin:0 auto;
+  padding:7rem 2rem 5rem;
+  text-align:center;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(212,160,23,0.15);border:1px solid rgba(212,160,23,0.45);
+  color:#fbbf24;font-family:'Kanit',sans-serif;
+  font-size:0.72rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;
+  padding:7px 20px;border-radius:99px;margin-bottom:1.75rem;
+  animation:fadeSlideDown 0.8s ease both;
+}
+.hero-tagline{
+  font-family:'Kanit',sans-serif;font-weight:400;
+  font-size:clamp(1rem,2.5vw,1.2rem);
+  color:rgba(255,255,255,0.65);
+  letter-spacing:0.15em;text-transform:uppercase;
+  margin-bottom:0.75rem;
+  animation:fadeSlideDown 0.8s 0.1s ease both;
+}
+.hero-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(3.2rem,11vw,7.5rem);
+  color:#fff;letter-spacing:0.03em;line-height:0.95;
+  margin-bottom:0.5rem;
+  animation:fadeSlideDown 0.8s 0.15s ease both;
+}
+.hero-title .gold{
+  background:linear-gradient(90deg,#D4A017,#fde68a,#D4A017);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.hero-subtitle{
+  font-family:'Kanit',sans-serif;font-weight:500;
+  font-size:clamp(1rem,2.5vw,1.35rem);color:rgba(255,255,255,0.78);
+  margin-bottom:1rem;letter-spacing:0.05em;
+  animation:fadeSlideDown 0.8s 0.2s ease both;
+}
+.hero-desc{
+  font-size:0.9375rem;color:rgba(255,255,255,0.6);
+  max-width:580px;margin:0 auto 2.25rem;line-height:1.8;
+  animation:fadeSlideDown 0.8s 0.25s ease both;
+}
+.hero-pills{
+  display:flex;gap:0.625rem;justify-content:center;flex-wrap:wrap;
+  margin-bottom:2.5rem;
+  animation:fadeSlideDown 0.8s 0.3s ease both;
+}
+.hero-pill{
+  background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.18);
+  color:rgba(255,255,255,0.75);font-family:'Kanit',sans-serif;
+  font-size:0.78rem;font-weight:600;padding:6px 14px;border-radius:99px;
+}
+.hero-btns{
+  display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;
+  margin-bottom:3rem;
+  animation:fadeSlideDown 0.8s 0.35s ease both;
+}
+.btn-primary{
+  background:linear-gradient(90deg,#D4A017,#fbbf24);color:#1a0a00;
+  font-family:'Kanit',sans-serif;font-weight:800;font-size:1rem;
+  padding:14px 32px;border-radius:var(--radius);
+  display:inline-flex;align-items:center;gap:8px;min-height:52px;
+  box-shadow:0 6px 28px rgba(212,160,23,0.45);transition:all 0.25s;
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(212,160,23,0.6)}
+.btn-outline{
+  background:transparent;border:2px solid rgba(255,255,255,0.4);
+  color:#fff;font-family:'Kanit',sans-serif;font-weight:700;font-size:1rem;
+  padding:13px 28px;border-radius:var(--radius);
+  display:inline-flex;align-items:center;gap:8px;min-height:52px;
+  transition:all 0.25s;
+}
+.btn-outline:hover{border-color:#fff;background:rgba(255,255,255,0.1)}
+.btn-gold-outline{
+  background:transparent;border:2px solid rgba(212,160,23,0.6);
+  color:#fbbf24;font-family:'Kanit',sans-serif;font-weight:700;font-size:1rem;
+  padding:13px 28px;border-radius:var(--radius);
+  display:inline-flex;align-items:center;gap:8px;min-height:52px;
+  transition:all 0.25s;
+}
+.btn-gold-outline:hover{border-color:#fbbf24;background:rgba(212,160,23,0.12)}
+.hero-stats{
+  display:flex;align-items:center;justify-content:center;gap:0;
+  background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);
+  border-radius:18px;overflow:hidden;max-width:580px;margin:0 auto;
+  animation:fadeSlideDown 0.8s 0.4s ease both;
+}
+.h-stat{padding:1.125rem 1.75rem;text-align:center;flex:1}
+.h-stat+.h-stat{border-left:1px solid rgba(255,255,255,0.08)}
+.h-stat-num{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;color:#fbbf24;line-height:1}
+.h-stat-label{font-size:0.68rem;color:rgba(255,255,255,0.45);letter-spacing:0.1em;margin-top:2px}
+
+/* ── SECTIONS ── */
+.section{padding:5rem 2rem}
+.section-center{max-width:1080px;margin:0 auto}
+.s-eyebrow{
+  font-family:'Kanit',sans-serif;font-size:0.72rem;font-weight:700;
+  letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);
+  margin-bottom:0.75rem;
+}
+.s-title{
+  font-family:'Kanit',sans-serif;font-weight:900;
+  font-size:clamp(1.6rem,4vw,2.6rem);
+  color:var(--navy);line-height:1.2;margin-bottom:0.75rem;
+}
+.s-title em{font-style:normal;color:var(--navy2)}
+.s-sub{
+  font-size:0.9375rem;color:var(--sub);
+  max-width:580px;line-height:1.75;
+}
+
+/* ── ABOUT ── */
+#about{background:#fff;border-bottom:1px solid var(--border)}
+.about-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;
+}
+@media(max-width:720px){.about-grid{grid-template-columns:1fr;gap:2.5rem}}
+.about-text{font-size:0.9375rem;color:var(--sub);line-height:1.8;margin-bottom:1rem}
+.about-pills{display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:1.25rem}
+.about-pill{
+  background:rgba(30,58,138,0.07);border:1px solid rgba(30,58,138,0.15);
+  color:var(--navy2);font-family:'Kanit',sans-serif;font-size:0.8rem;font-weight:600;
+  padding:5px 14px;border-radius:99px;
+}
+.about-img{border-radius:20px;overflow:hidden;box-shadow:0 12px 48px rgba(0,0,0,0.1)}
+.about-img img{width:100%;height:300px;object-fit:cover}
+
+/* ── EVENT TEASER ── */
+#event-teaser{
+  background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);
+  text-align:center;
+}
+.et-title{
+  font-family:'Bebas Neue',sans-serif;font-size:clamp(2.2rem,6vw,4.5rem);
+  color:#fff;letter-spacing:0.04em;margin-bottom:0.5rem;
+}
+.et-title span{color:var(--gold2)}
+.et-sub{color:rgba(255,255,255,0.6);font-size:0.9375rem;
+  max-width:540px;margin:0 auto 2.5rem;line-height:1.7}
+.et-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1.25rem;margin-bottom:2.5rem;
+}
+@media(max-width:640px){.et-grid{grid-template-columns:1fr}}
+.et-card{
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.1);
+  border-top:3px solid var(--gold);
+  border-radius:16px;padding:1.5rem 1.25rem;text-align:left;
+}
+.et-icon{font-size:1.75rem;margin-bottom:0.625rem}
+.et-name{font-family:'Kanit',sans-serif;font-weight:700;color:#fff;
+  font-size:0.9375rem;margin-bottom:0.375rem}
+.et-desc{font-size:0.8125rem;color:rgba(255,255,255,0.5);line-height:1.6}
+.et-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-et{
+  background:linear-gradient(90deg,#D4A017,#fbbf24);color:#1a0a00;
+  font-family:'Kanit',sans-serif;font-weight:800;font-size:1rem;
+  padding:14px 32px;border-radius:var(--radius);
+  display:inline-flex;align-items:center;gap:8px;min-height:52px;
+  box-shadow:0 6px 24px rgba(212,160,23,0.4);transition:all 0.25s;
+}
+.btn-et:hover{transform:translateY(-2px)}
+.btn-et-ghost{
+  background:transparent;border:2px solid rgba(255,255,255,0.3);color:#fff;
+  font-family:'Kanit',sans-serif;font-weight:700;font-size:1rem;
+  padding:13px 28px;border-radius:var(--radius);
+  display:inline-flex;align-items:center;gap:8px;min-height:52px;
+  transition:all 0.25s;
+}
+.btn-et-ghost:hover{border-color:#fff}
+
+/* ── WHY ── */
+#why{background:var(--bg)}
+.why-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.5rem;
+}
+@media(max-width:720px){.why-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.why-grid{grid-template-columns:1fr}}
+.why-card{
+  background:#fff;border:1px solid var(--border);border-radius:16px;
+  padding:1.5rem;transition:all 0.25s;
+}
+.why-card:hover{box-shadow:0 8px 32px rgba(30,58,138,0.1);transform:translateY(-3px);border-color:rgba(30,58,138,0.2)}
+.why-icon{font-size:2rem;margin-bottom:0.75rem}
+.why-name{font-family:'Kanit',sans-serif;font-weight:700;color:var(--navy);
+  font-size:1rem;margin-bottom:0.375rem}
+.why-desc{font-size:0.8125rem;color:var(--sub);line-height:1.65}
+
+/* ── TRADE MAP ── */
+#connectivity{
+  background:linear-gradient(160deg,#0f1f4a 0%,#1a3a7a 30%,#0d2448 60%,#162040 100%);
+  border-top:1px solid rgba(99,149,255,0.15);
+  border-bottom:1px solid rgba(99,149,255,0.15);
+  position:relative;overflow:hidden;
+}
+/* animated aurora layers */
+#connectivity::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 70% 50% at 20% 60%, rgba(212,160,23,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 70% at 80% 30%, rgba(79,142,247,0.1) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 50% 80%, rgba(30,58,138,0.2) 0%, transparent 70%);
+  animation:auroraShift 8s ease-in-out infinite alternate;
+  pointer-events:none;
+}
+/* floating dot particles */
+#connectivity::after{
+  content:'';position:absolute;inset:0;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,0.35) 1px, transparent 1px),
+    radial-gradient(circle, rgba(212,160,23,0.25) 1px, transparent 1px);
+  background-size:80px 80px, 130px 130px;
+  background-position:0 0, 40px 40px;
+  animation:particleDrift 20s linear infinite;
+  pointer-events:none;opacity:0.6;
+}
+@keyframes auroraShift{
+  0%{opacity:0.6;transform:scale(1) rotate(0deg)}
+  100%{opacity:1;transform:scale(1.08) rotate(2deg)}
+}
+@keyframes particleDrift{
+  0%{transform:translate(0,0)}
+  100%{transform:translate(-80px,-80px)}
+}
+#connectivity .section{position:relative;z-index:1}
+#connectivity .s-eyebrow{
+  color:#fbbf24;
+  text-shadow:0 0 20px rgba(251,191,36,0.5);
+}
+#connectivity .s-title{
+  color:#fff;
+  text-shadow:0 2px 20px rgba(30,58,138,0.4);
+}
+#connectivity .s-sub{color:rgba(255,255,255,0.7)}
+/* map container glow frame */
+.map-frame{
+  position:relative;border-radius:20px;overflow:hidden;
+  box-shadow:
+    0 0 0 1px rgba(99,149,255,0.2),
+    0 8px 40px rgba(30,58,138,0.4),
+    0 0 80px rgba(212,160,23,0.06);
+}
+.map-frame::before{
+  content:'';position:absolute;inset:0;border-radius:20px;
+  background:linear-gradient(135deg,rgba(212,160,23,0.06),transparent 40%,rgba(79,142,247,0.04));
+  pointer-events:none;z-index:2;
+}
+/* animated route paths */
+.route-animated{
+  stroke-dashoffset:0;
+  animation:routePulse 3s ease-in-out infinite;
+}
+@keyframes routePulse{
+  0%,100%{opacity:1}50%{opacity:0.5}
+}
+
+/* ── PARTNERS ── */
+#partners{background:#fff}
+.partners-strategic{
+  display:flex;gap:1.5rem;flex-wrap:wrap;
+  justify-content:center;margin-bottom:3rem;
+}
+.partner-card{
+  background:var(--bg);border:1.5px solid var(--border);
+  border-radius:16px;padding:1.5rem 1.75rem;
+  display:flex;flex-direction:column;align-items:center;gap:0.625rem;
+  min-width:160px;transition:all 0.25s;
+}
+.partner-card:hover{border-color:var(--navy2);box-shadow:0 8px 28px rgba(30,58,138,0.1)}
+.partner-card img{height:52px;object-fit:contain}
+.partner-name{font-family:'Kanit',sans-serif;font-weight:700;
+  color:var(--navy);font-size:0.875rem}
+.partner-role{font-size:0.75rem;color:var(--sub)}
+.chambers-row{
+  display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;
+}
+.chamber-pill{
+  background:var(--bg);border:1.5px solid var(--border);
+  border-radius:12px;padding:0.875rem 1.25rem;
+  display:flex;align-items:center;gap:0.75rem;
+  transition:all 0.25s;
+}
+.chamber-pill:hover{border-color:var(--navy2);background:#fff}
+.chamber-pill .flag{font-size:1.5rem}
+.chamber-pill .info{}
+.chamber-pill .cn{font-family:'Kanit',sans-serif;font-weight:700;
+  color:var(--navy);font-size:0.82rem}
+.chamber-pill .cr{font-size:0.72rem;color:var(--sub)}
+
+/* ── FOUNDER BANNER ── */
+#founder-banner{
+  background:linear-gradient(135deg,#0f0500,#7c2d12,#0f0500);
+  padding:5rem 2rem;text-align:center;
+}
+.fb-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(245,158,11,0.15);border:1px solid rgba(245,158,11,0.4);
+  color:#fbbf24;font-family:'Kanit',sans-serif;font-size:0.7rem;font-weight:700;
+  letter-spacing:0.15em;padding:5px 16px;border-radius:99px;margin-bottom:1rem;
+}
+.fb-title{
+  font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,7vw,5rem);
+  color:#fff;letter-spacing:0.04em;line-height:1;margin-bottom:0.5rem;
+}
+.fb-title span{color:var(--gold2)}
+.fb-sub{color:rgba(255,255,255,0.6);font-size:0.9375rem;
+  max-width:500px;margin:0 auto 2rem;line-height:1.7}
+.fb-stats{
+  display:flex;gap:3rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem;
+}
+.fb-num{font-family:'Bebas Neue',sans-serif;font-size:3rem;color:#fbbf24;line-height:1}
+.fb-label{font-size:0.72rem;color:rgba(255,255,255,0.4);letter-spacing:0.1em}
+.btn-founder{
+  background:linear-gradient(90deg,#D4A017,#fbbf24);color:#1a0a00;
+  font-family:'Kanit',sans-serif;font-weight:800;font-size:1.05rem;
+  padding:15px 40px;border-radius:var(--radius);
+  display:inline-flex;align-items:center;gap:8px;min-height:54px;
+  box-shadow:0 8px 32px rgba(212,160,23,0.5);transition:all 0.25s;
+}
+.btn-founder:hover{transform:translateY(-3px);box-shadow:0 14px 44px rgba(212,160,23,0.65)}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--navy);color:rgba(255,255,255,0.5);
+  padding:3.5rem 2rem;
+}
+.footer-inner{max-width:1080px;margin:0 auto}
+.footer-top{
+  display:flex;align-items:flex-start;justify-content:space-between;
+  gap:2rem;flex-wrap:wrap;margin-bottom:2rem;
+  padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,0.07);
+}
+.footer-brand{}
+.footer-logo{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;
+  letter-spacing:0.1em;color:#fff;margin-bottom:0.375rem}
+.footer-logo span{color:var(--gold2)}
+.footer-tagline{font-size:0.8125rem;color:rgba(255,255,255,0.4);line-height:1.5}
+.footer-nav{display:flex;gap:3rem;flex-wrap:wrap}
+.footer-col{}
+.footer-col-title{font-family:'Kanit',sans-serif;font-size:0.75rem;font-weight:700;
+  letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.35);
+  margin-bottom:0.75rem}
+.footer-col a{display:block;font-size:0.875rem;color:rgba(255,255,255,0.55);
+  margin-bottom:0.5rem;transition:color 0.2s}
+.footer-col a:hover{color:#fbbf24}
+.footer-bottom{
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;
+}
+.footer-contact{font-size:0.875rem}
+.footer-contact a{color:rgba(255,255,255,0.55);transition:color 0.2s}
+.footer-contact a:hover{color:#fbbf24}
+.footer-copy{font-size:0.75rem;color:rgba(255,255,255,0.25)}
+
+/* ── STICKY CTA ── */
+.sticky-wrap{
+  position:fixed;bottom:1.25rem;right:1.25rem;z-index:999;
+  display:flex;flex-direction:column;gap:0.625rem;align-items:flex-end;
+}
+.sticky-btn{
+  font-family:'Kanit',sans-serif;font-weight:700;font-size:0.875rem;
+  padding:11px 20px;border-radius:50px;
+  display:inline-flex;align-items:center;gap:8px;min-height:48px;
+  box-shadow:0 4px 20px rgba(0,0,0,0.25);transition:all 0.25s;
+}
+.sticky-btn:hover{transform:translateY(-2px)}
+.sticky-btn.event{background:linear-gradient(90deg,#E31E24,#c01017);color:#fff}
+.sticky-btn.line{background:#06C755;color:#fff}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeSlideDown{
+  from{opacity:0;transform:translateY(-16px)}
+  to{opacity:1;transform:none}
+}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:0.1s}.d2{transition-delay:0.2s}.d3{transition-delay:0.3s}
+
+/* ── DATA-LANG ── */
+[data-lang]{display:none}
+[data-lang].active{display:inline}
+[data-lang="th"].active,[data-lang="la"].active,[data-lang="en"].active{display:inline}
+span[data-lang]:not(.active){display:none}
+div[data-lang]:not(.active){display:none}
+
+/* ── MOBILE ── */
+@media(max-width:600px){
+  nav{padding:0.625rem 1rem}
+  .nav-links .nav-link:not(.primary){display:none}
+  .hero-stats{flex-wrap:wrap}
+  .h-stat{min-width:40%}
+  .h-stat+.h-stat{border-left:none;border-top:1px solid rgba(255,255,255,0.08)}
+}
+</style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav>
+  <a href="/" style="text-decoration:none"><div class="nav-logo">VITH<span>HUB</span></div></a>
+  <div class="nav-links">
+    <div class="lang-group">
+      <button class="lang-btn active" onclick="setLang('th')">TH</button>
+      <button class="lang-btn" onclick="setLang('la')">LAO</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+    </div>
+    <a href="/about" class="nav-link">🌐 Partners</a>
+    <a href="/event" class="nav-link">📅 Event</a>
+    <a href="/membership" class="nav-link primary">👑 Founder</a>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-bg">
+    <img src="images/hero-bigc.png" alt="Big C Vientiane — VITH HUB" fetchpriority="high">
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-inner">
+    <div class="hero-badge">
+      🏛️ <span data-lang="th" class="active">ความร่วมมือรัฐ-เอกชน ไทย-ลาว · มีนาคม 2026</span>
+      <span data-lang="la">ຮ່ວມມືລັດ-ເອກະຊົນ ໄທ-ລາວ · ມີນາ 2026</span>
+      <span data-lang="en">Thailand–Laos PPP · March 2026</span>
+    </div>
+    <div class="hero-tagline">
+      <span data-lang="th" class="active">International Trade · Business Networking · Investment</span>
+      <span data-lang="la">ການຄ້າສາກົນ · ເຄືອຂ່າຍທຸລະກິດ</span>
+      <span data-lang="en">International Trade · Business Networking · Investment</span>
+    </div>
+    <h1 class="hero-title">
+      <span data-lang="th" class="active">Connecting Thai SMEs<br><span class="gold">to the Mekong Market</span></span>
+      <span data-lang="la">ເຊື່ອມ SME ໄທ<br><span class="gold">ສູ່ຕະຫຼາດເມຄອງ</span></span>
+      <span data-lang="en">Connecting Thai SMEs<br><span class="gold">to the Mekong Market</span></span>
+    </h1>
+    <p class="hero-subtitle">
+      <span data-lang="th" class="active">แพลตฟอร์มธุรกิจ ไทย–ลาว–จีน–รัสเซีย ผ่าน Big C เวียงจันทน์</span>
+      <span data-lang="la">ແພລດຟອມທຸລະກິດ ໄທ-ລາວ-ຈີນ-ລັດເຊຍ ຜ່ານ Big C ວຽງຈັນ</span>
+      <span data-lang="en">Thai–Laos–China–Russia Business Platform via Big C Vientiane</span>
+    </p>
+    <div class="hero-pills">
+      <span class="hero-pill">🤝 B2B Matching</span>
+      <span class="hero-pill">📦 Managed Showroom</span>
+      <span class="hero-pill">🚚 Logistics ครบวงจร</span>
+      <span class="hero-pill">0% Commission</span>
+    </div>
+    <div class="hero-btns">
+      <a href="/event" class="btn-primary">
+        📅 <span data-lang="th" class="active">ดูงาน & จองบูท</span>
+        <span data-lang="la">ເບິ່ງງານ & ຈອງ</span>
+        <span data-lang="en">Exhibit With Us</span>
+      </a>
+      <a href="/membership" class="btn-gold-outline">
+        👑 <span data-lang="th" class="active">Become a Partner</span>
+        <span data-lang="la">ເປັນພາກສ່ວນ</span>
+        <span data-lang="en">Become a Partner</span>
+      </a>
+      <a href="/about" class="btn-outline">
+        🌐 <span data-lang="th" class="active">พันธมิตร</span>
+        <span data-lang="la">ພັນທະມິດ</span>
+        <span data-lang="en">Our Alliance</span>
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div class="h-stat">
+        <div class="h-stat-num">200</div>
+        <div class="h-stat-label">sqm Showroom</div>
+      </div>
+      <div class="h-stat">
+        <div class="h-stat-num">0%</div>
+        <div class="h-stat-label">Commission</div>
+      </div>
+      <div class="h-stat">
+        <div class="h-stat-num">4</div>
+        <div class="h-stat-label">Countries</div>
+      </div>
+      <div class="h-stat">
+        <div class="h-stat-num">20</div>
+        <div class="h-stat-label">Founder Slots</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ABOUT ══ -->
+<section class="section" id="about">
+  <div class="section-center about-grid">
+    <div class="reveal">
+      <div class="s-eyebrow">🏛️ About VITH Hub</div>
+      <h2 class="s-title">
+        <span data-lang="th" class="active">ยกระดับธุรกิจไทย<br><em>สู่ตลาดโลก</em></span>
+        <span data-lang="en">Elevating Thai Business<br><em>to the World Stage</em></span>
+        <span data-lang="la">ຍົກລະດັບທຸລະກິດໄທ<br><em>ສູ່ຕະຫຼາດໂລກ</em></span>
+      </h2>
+      <p class="about-text">
+        <span data-lang="th" class="active"><strong>VITH Hub</strong> คือกลุ่มความร่วมมือระหว่างภาครัฐและเอกชนของไทย ลาว และนานาชาติ เพื่อร่วมกันผลักดันการแลกเปลี่ยนสินค้า การค้า การตลาด และเทคโนโลยีสมัยใหม่ระหว่างกัน</span>
+        <span data-lang="en"><strong>VITH Hub</strong> is a boutique business platform connecting Thai SMEs with international buyers and investors in Laos and the Mekong region.</span>
+        <span data-lang="la"><strong>VITH Hub</strong> ແມ່ນແພລດຟອມທຸລະກິດທີ່ເຊື່ອມ SME ໄທກັບຜູ້ຊື້ສາກົນໃນລາວ ແລະ ພາກພື້ນເມຄອງ</span>
+      </p>
+      <p class="about-text">
+        <span data-lang="th" class="active">โดยอาศัย <strong>Big C เวียงจันทน์</strong> เป็น Showroom และ Distribution Hub — จุดพบกันระหว่างสินค้าไทยคุณภาพสูงกับตลาดลาวและเส้นทางการค้าสู่จีน รัสเซีย และยุโรป</span>
+        <span data-lang="en">Based in Vientiane, we create a gateway for Thai entrepreneurs to new markets through curated exhibitions, B2B matchmaking, and networking events.</span>
+        <span data-lang="la">ຕັ້ງຢູ່ວຽງຈັນ, ພວກເຮົາສ້າງທາງເຂົ້າສູ່ຕະຫຼາດໃໝ່ ຜ່ານ B2B Matching ແລະ ກິດຈະກຳເຄືອຂ່າຍ</span>
+      </p>
+      <div class="about-pills">
+        <span class="about-pill">🤝 รัฐ-เอกชน</span>
+        <span class="about-pill">🌏 ไทย-ลาว-จีน-รัสเซีย</span>
+        <span class="about-pill">📦 Managed Showroom</span>
+        <span class="about-pill">0% Commission</span>
+      </div>
+    </div>
+    <div class="reveal d2">
+      <div class="about-img">
+        <img src="images/indoor-01.jpg" alt="VITH HUB Showroom" loading="lazy" onerror="this.src='images/hero-bigc.png'">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ EVENT TEASER ══ -->
+<section class="section" id="event-teaser">
+  <div class="section-center" style="text-align:center">
+    <div class="reveal">
+      <div class="s-eyebrow" style="color:var(--gold2)">📅 Mekong Business Connect 2026</div>
+      <h2 class="et-title">Mini International Trade Showcase<br><span>in Vientiane</span></h2>
+      <p class="et-sub">Phase 1: 25–29 มีนาคม 2026 · Big C เวียงจันทน์ สปป.ลาว<br>60–80 บูท · B2B Matching · หอการค้านานาชาติ 6 ประเทศ</p>
+    </div>
+    <div class="et-grid reveal d1">
+      <div class="et-card">
+        <div class="et-icon">🏪</div>
+        <div class="et-name">60–80 Exhibition Booths</div>
+        <div class="et-desc">พื้นที่จัดแสดงสินค้าพร้อม Lao Staff ดูแล Managed ให้ครบ</div>
+      </div>
+      <div class="et-card">
+        <div class="et-icon">🤝</div>
+        <div class="et-name">Business Networking Sessions</div>
+        <div class="et-desc">B2B Matching กับผู้ซื้อจาก Lao, Chinese, Vietnamese & Russian Chambers</div>
+      </div>
+      <div class="et-card">
+        <div class="et-icon">🌏</div>
+        <div class="et-name">6 International Chambers</div>
+        <div class="et-desc">Participation from Lao, Chinese, Vietnamese, Russian, Korean & EU Chambers</div>
+      </div>
+    </div>
+    <div class="et-btns reveal">
+      <a href="/event" class="btn-et">📅 ดูรายละเอียด & ราคาบูท</a>
+      <a href="/event" class="btn-et-ghost">Apply for a Booth</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WHY VITH HUB ══ -->
+<section class="section" id="why" style="background:var(--bg)">
+  <div class="section-center">
+    <div class="reveal" style="text-align:center;margin-bottom:0.5rem">
+      <div class="s-eyebrow">✨ Why Choose Us</div>
+      <h2 class="s-title" style="text-align:center">
+        <span data-lang="th" class="active">ระบบที่ออกแบบมา<br><em>เพื่อนักธุรกิจไทย</em></span>
+        <span data-lang="en">A System Designed<br><em>for Thai Entrepreneurs</em></span>
+        <span data-lang="la">ລະບົບທີ່ອອກແບບ<br><em>ສຳລັບນັກທຸລະກິດໄທ</em></span>
+      </h2>
+    </div>
+    <div class="why-grid reveal d1">
+      <div class="why-card">
+        <div class="why-icon">🏪</div>
+        <div class="why-name"><span data-lang="th" class="active">Showroom 200 ตร.ม.</span><span data-lang="en">200 sqm Showroom</span></div>
+        <div class="why-desc"><span data-lang="th" class="active">พื้นที่จัดแสดงถาวรใจกลาง Big C เวียงจันทน์ มีลูกค้า Traffic สูงทุกวัน</span><span data-lang="en">Permanent display in Big C Vientiane with high daily foot traffic</span></div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">👥</div>
+        <div class="why-name"><span data-lang="th" class="active">Lao Staff Full-time</span><span data-lang="en">Full-time Lao Staff</span></div>
+        <div class="why-desc"><span data-lang="th" class="active">ทีมงานลาวดูแลหน้าร้านทุกวัน คุณไม่ต้องบินไปเองทุกครั้ง</span><span data-lang="en">Our Lao team manages your booth daily — no need to fly over yourself</span></div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🚚</div>
+        <div class="why-name"><span data-lang="th" class="active">ขนส่งฟรี 100 KG/เดือน</span><span data-lang="en">Free 100 KG Shipping</span></div>
+        <div class="why-desc"><span data-lang="th" class="active">ส่งสินค้าจากโรงงานไทยถึง Showroom เวียงจันทน์ ฟรีทุกเดือน</span><span data-lang="en">Free monthly shipping from Thai factory to Vientiane Showroom</span></div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">💰</div>
+        <div class="why-name"><span data-lang="th" class="active">0% Commission</span><span data-lang="en">Zero Commission</span></div>
+        <div class="why-desc"><span data-lang="th" class="active">รายได้ทั้งหมดเป็นของคุณ เราคิดค่าบริการรายเดือนคงที่เท่านั้น</span><span data-lang="en">100% of revenue stays with you — flat monthly fee only</span></div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🤝</div>
+        <div class="why-name"><span data-lang="th" class="active">B2B Matching</span><span data-lang="en">B2B Matching</span></div>
+        <div class="why-desc"><span data-lang="th" class="active">จับคู่กับผู้ซื้อชาวลาว จีน รัสเซียผ่านเครือข่ายหอการค้า 6 ประเทศ</span><span data-lang="en">Match with Lao, Chinese & Russian buyers through 6-country chamber network</span></div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">📦</div>
+        <div class="why-name"><span data-lang="th" class="active">คลังสินค้า 1 พาเลท</span><span data-lang="en">1 Pallet Storage</span></div>
+        <div class="why-desc"><span data-lang="th" class="active">พื้นที่เก็บสินค้าฟรี 1 พาเลท/เดือน ส่วนเกิน 25 บาท/KG</span><span data-lang="en">Free 1 pallet storage monthly, additional at only 25 THB/KG</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TRADE ROUTE MAP ══ -->
+<section class="section" id="connectivity">
+  <div class="section-center">
+    <div class="reveal" style="text-align:center;margin-bottom:2rem">
+      <div class="s-eyebrow">🌐 Strategic Trade Routes</div>
+      <h2 class="s-title">
+        <span data-lang="th" class="active">จุดเชื่อมโยง<br><em style="color:#fff;font-style:normal">ไทย · ลาว · จีน · รัสเซีย</em></span>
+        <span data-lang="en">The Trade Crossroads of<br><em style="color:#fff;font-style:normal">Thailand · Laos · China · Russia</em></span>
+      </h2>
+      <p class="s-sub" style="margin:0 auto;color:rgba(255,255,255,0.55);text-align:center">
+        <span data-lang="th" class="active">สินค้าไทยจากโรงงาน ผ่าน VITH Hub เวียงจันทน์ ขึ้นรถไฟลาว-จีน เชื่อมคุนหมิง กระจายทั่วยุโรปและรัสเซีย</span>
+        <span data-lang="en">Thai products flow through VITH Hub, connect via Laos-China Railway to Kunming, then reach buyers across Europe and Russia.</span>
+      </p>
+    </div>
+    <div class="reveal d1 map-frame">
+      <svg viewBox="0 0 900 440" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:900px;display:block;margin:0 auto">
+        <defs>
+          <!-- grid pattern -->
+          <pattern id="mapGrid" x="0" y="0" width="45" height="45" patternUnits="userSpaceOnUse">
+            <path d="M45 0H0V45" stroke="rgba(99,149,255,0.07)" stroke-width="1"/>
+          </pattern>
+          <!-- diagonal lines texture -->
+          <pattern id="diag" x="0" y="0" width="12" height="12" patternUnits="userSpaceOnUse">
+            <path d="M0 12L12 0" stroke="rgba(255,255,255,0.025)" stroke-width="1"/>
+          </pattern>
+          <!-- arrow markers -->
+          <marker id="arrowGold" markerWidth="10" markerHeight="10" refX="8" refY="3.5" orient="auto">
+            <path d="M0,0 L0,7 L10,3.5 z" fill="#F5C842"/>
+          </marker>
+          <marker id="arrowRed" markerWidth="10" markerHeight="10" refX="8" refY="3.5" orient="auto">
+            <path d="M0,0 L0,7 L10,3.5 z" fill="#ff6b7a"/>
+          </marker>
+          <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="8" refY="3.5" orient="auto">
+            <path d="M0,0 L0,7 L10,3.5 z" fill="#60a5fa"/>
+          </marker>
+          <marker id="arrowGreen" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+            <path d="M0,0 L0,8 L8,4 z" fill="#34d399"/>
+          </marker>
+          <!-- glow filters -->
+          <filter id="glowGold" x="-40%" y="-40%" width="180%" height="180%">
+            <feGaussianBlur stdDeviation="4" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <filter id="glowBlue" x="-40%" y="-40%" width="180%" height="180%">
+            <feGaussianBlur stdDeviation="5" result="blur"/>
+            <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.37  0 0 0 0 0.64  0 0 0 0 1  0 0 0 0.8 0" result="coloredBlur"/>
+            <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <filter id="glowHub" x="-60%" y="-60%" width="220%" height="220%">
+            <feGaussianBlur stdDeviation="8" result="blur"/>
+            <feColorMatrix in="blur" type="matrix" values="0 0 0 0 1  0 0 0 0 0.76  0 0 0 0 0  0 0 0 1 0" result="coloredBlur"/>
+            <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <filter id="glowNode">
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <!-- radial for hub glow bg -->
+          <radialGradient id="hubGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#F5C842" stop-opacity="0.25"/>
+            <stop offset="100%" stop-color="#F5C842" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="thGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#ff6b7a" stop-opacity="0.2"/>
+            <stop offset="100%" stop-color="#ff6b7a" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="cnGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#60a5fa" stop-opacity="0.2"/>
+            <stop offset="100%" stop-color="#60a5fa" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="ruGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#c084fc" stop-opacity="0.2"/>
+            <stop offset="100%" stop-color="#c084fc" stop-opacity="0"/>
+          </radialGradient>
+          <!-- node bg gradient -->
+          <linearGradient id="nodeBg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#1e3a6e"/>
+            <stop offset="100%" stop-color="#0f2244"/>
+          </linearGradient>
+          <linearGradient id="hubBg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#e8a800"/>
+            <stop offset="100%" stop-color="#c47f00"/>
+          </linearGradient>
+        </defs>
+
+        <!-- Background -->
+        <rect width="900" height="440" fill="url(#nodeBg)"/>
+        <rect width="900" height="440" fill="url(#mapGrid)"/>
+        <rect width="900" height="440" fill="url(#diag)"/>
+
+        <!-- subtle horizon line -->
+        <line x1="0" y1="360" x2="900" y2="360" stroke="rgba(99,149,255,0.06)" stroke-width="1"/>
+
+        <!-- glow halos around nodes -->
+        <ellipse cx="155" cy="290" rx="75" ry="55" fill="url(#thGlow)"/>
+        <ellipse cx="420" cy="210" rx="90" ry="70" fill="url(#hubGlow)"/>
+        <ellipse cx="635" cy="150" rx="65" ry="50" fill="url(#cnGlow)"/>
+        <ellipse cx="810" cy="115" rx="70" ry="55" fill="url(#ruGlow)"/>
+
+        <!-- region borders (subtle) -->
+        <ellipse cx="155" cy="290" rx="72" ry="48" fill="rgba(255,107,122,0.07)" stroke="rgba(255,107,122,0.2)" stroke-width="1" stroke-dasharray="4,3"/>
+        <ellipse cx="420" cy="210" rx="78" ry="52" fill="rgba(245,200,66,0.06)" stroke="rgba(245,200,66,0.22)" stroke-width="1.5" stroke-dasharray="5,3"/>
+        <ellipse cx="635" cy="150" rx="60" ry="42" fill="rgba(96,165,250,0.07)" stroke="rgba(96,165,250,0.2)" stroke-width="1" stroke-dasharray="4,3"/>
+        <ellipse cx="810" cy="115" rx="62" ry="48" fill="rgba(192,132,252,0.07)" stroke="rgba(192,132,252,0.2)" stroke-width="1" stroke-dasharray="4,3"/>
+
+        <!-- ── TRADE ROUTE LINES ── -->
+        <!-- Road: Thailand → VITH Hub -->
+        <path d="M170,290 C240,275 320,250 388,218" stroke="rgba(255,107,122,0.25)" stroke-width="5" fill="none"/>
+        <path d="M170,290 C240,275 320,250 388,218" stroke="#ff6b7a" stroke-width="2" stroke-dasharray="8,5" fill="none" marker-end="url(#arrowRed)" filter="url(#glowGold)">
+          <animate attributeName="stroke-dashoffset" from="0" to="-26" dur="1.5s" repeatCount="indefinite"/>
+        </path>
+
+        <!-- Railway: VITH Hub → Kunming -->
+        <path d="M452,210 C510,192 570,170 612,158" stroke="rgba(245,200,66,0.2)" stroke-width="6" fill="none"/>
+        <path d="M452,210 C510,192 570,170 612,158" stroke="#F5C842" stroke-width="2.5" stroke-dasharray="10,4" fill="none" marker-end="url(#arrowGold)" filter="url(#glowGold)">
+          <animate attributeName="stroke-dashoffset" from="0" to="-28" dur="1.2s" repeatCount="indefinite"/>
+        </path>
+
+        <!-- Global: Kunming → Russia/Europe -->
+        <path d="M660,148 C720,132 760,118 792,118" stroke="rgba(96,165,250,0.2)" stroke-width="5" fill="none"/>
+        <path d="M660,148 C720,132 760,118 792,118" stroke="#60a5fa" stroke-width="2" stroke-dasharray="8,5" fill="none" marker-end="url(#arrowBlue)" filter="url(#glowBlue)">
+          <animate attributeName="stroke-dashoffset" from="0" to="-26" dur="1.8s" repeatCount="indefinite"/>
+        </path>
+
+        <!-- Local: VITH Hub → Lao Market (down) -->
+        <path d="M420,228 C420,260 420,285 420,308" stroke="rgba(52,211,153,0.25)" stroke-width="4" fill="none"/>
+        <path d="M420,228 C420,260 420,285 420,308" stroke="#34d399" stroke-width="1.8" stroke-dasharray="6,4" fill="none" marker-end="url(#arrowGreen)">
+          <animate attributeName="stroke-dashoffset" from="0" to="-20" dur="1s" repeatCount="indefinite"/>
+        </path>
+
+        <!-- ── NODES ── -->
+        <!-- Thailand -->
+        <circle cx="155" cy="290" r="28" fill="url(#nodeBg)" stroke="rgba(255,107,122,0.5)" stroke-width="1.5" filter="url(#glowNode)"/>
+        <circle cx="155" cy="290" r="14" fill="#7f1d1d"/>
+        <circle cx="155" cy="290" r="8" fill="#ff6b7a"/>
+        <!-- pulse ring Thailand -->
+        <circle cx="155" cy="290" r="22" fill="none" stroke="#ff6b7a" stroke-width="1" opacity="0.6">
+          <animate attributeName="r" values="18;30;18" dur="3s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.6;0;0.6" dur="3s" repeatCount="indefinite"/>
+        </circle>
+        <text x="155" y="330" text-anchor="middle" font-family="Kanit,sans-serif" font-size="12" font-weight="700" fill="#fca5a5">🇹🇭 Thailand</text>
+        <text x="155" y="345" text-anchor="middle" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.4)">Factory / Origin</text>
+
+        <!-- VITH Hub (center star) -->
+        <circle cx="420" cy="210" r="44" fill="url(#hubGlow)" filter="url(#glowHub)"/>
+        <circle cx="420" cy="210" r="36" fill="rgba(245,200,66,0.12)" stroke="#F5C842" stroke-width="2"/>
+        <!-- pulse ring Hub -->
+        <circle cx="420" cy="210" r="38" fill="none" stroke="#F5C842" stroke-width="1.5" opacity="0.7">
+          <animate attributeName="r" values="36;52;36" dur="2.5s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.7;0;0.7" dur="2.5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="420" cy="210" r="22" fill="url(#hubBg)"/>
+        <circle cx="420" cy="210" r="22" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+        <text x="420" y="206" text-anchor="middle" font-family="Bebas Neue,sans-serif" font-size="9" fill="#1a0a00" letter-spacing="0.1em">VITH HUB</text>
+        <text x="420" y="218" text-anchor="middle" font-family="Bebas Neue,sans-serif" font-size="8" fill="rgba(0,0,0,0.6)">BIG C</text>
+        <text x="420" y="262" text-anchor="middle" font-family="Kanit,sans-serif" font-size="13" font-weight="800" fill="#fde68a" filter="url(#glowGold)">🌟 VITH Hub</text>
+        <text x="420" y="278" text-anchor="middle" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.6)">Big C Vientiane 🇱🇦</text>
+        <text x="420" y="291" text-anchor="middle" font-family="sans-serif" font-size="9" fill="rgba(245,200,66,0.65)">Distribution Hub</text>
+
+        <!-- Lao Market (below hub) -->
+        <circle cx="420" cy="325" r="16" fill="rgba(52,211,153,0.1)" stroke="#34d399" stroke-width="1.2"/>
+        <circle cx="420" cy="325" r="7" fill="#065f46"/>
+        <circle cx="420" cy="325" r="4" fill="#34d399"/>
+        <text x="420" y="352" text-anchor="middle" font-family="Kanit,sans-serif" font-size="11" font-weight="600" fill="#6ee7b7">🛍️ Lao Market</text>
+        <text x="420" y="365" text-anchor="middle" font-family="sans-serif" font-size="9" fill="rgba(255,255,255,0.35)">Local Distribution</text>
+
+        <!-- Kunming -->
+        <circle cx="635" cy="150" r="28" fill="url(#nodeBg)" stroke="rgba(96,165,250,0.5)" stroke-width="1.5" filter="url(#glowNode)"/>
+        <circle cx="635" cy="150" r="14" fill="#1e3a8a"/>
+        <circle cx="635" cy="150" r="8" fill="#60a5fa"/>
+        <circle cx="635" cy="150" r="22" fill="none" stroke="#60a5fa" stroke-width="1" opacity="0.5">
+          <animate attributeName="r" values="18;28;18" dur="3.5s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.5;0;0.5" dur="3.5s" repeatCount="indefinite"/>
+        </circle>
+        <text x="635" y="144" text-anchor="middle" font-family="Bebas Neue,sans-serif" font-size="16" fill="#fff">昆明</text>
+        <text x="635" y="155" text-anchor="middle" font-family="sans-serif" font-size="8" fill="rgba(255,255,255,0.5)">KUNMING</text>
+        <text x="635" y="190" text-anchor="middle" font-family="Kanit,sans-serif" font-size="12" font-weight="700" fill="#93c5fd">🇨🇳 Kunming</text>
+        <text x="635" y="204" text-anchor="middle" font-family="sans-serif" font-size="9" fill="rgba(255,255,255,0.4)">Laos-China Railway</text>
+
+        <!-- Russia & Europe -->
+        <circle cx="810" cy="115" r="26" fill="url(#nodeBg)" stroke="rgba(192,132,252,0.5)" stroke-width="1.5" filter="url(#glowNode)"/>
+        <circle cx="810" cy="115" r="13" fill="#3b0764"/>
+        <circle cx="810" cy="115" r="7" fill="#c084fc"/>
+        <circle cx="810" cy="115" r="20" fill="none" stroke="#c084fc" stroke-width="1" opacity="0.5">
+          <animate attributeName="r" values="16;26;16" dur="4s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.5;0;0.5" dur="4s" repeatCount="indefinite"/>
+        </circle>
+        <text x="810" y="154" text-anchor="middle" font-family="Kanit,sans-serif" font-size="11" font-weight="700" fill="#d8b4fe">🇷🇺 Russia</text>
+        <text x="810" y="168" text-anchor="middle" font-family="Kanit,sans-serif" font-size="11" font-weight="700" fill="#d8b4fe">🇪🇺 Europe</text>
+        <text x="810" y="182" text-anchor="middle" font-family="sans-serif" font-size="9" fill="rgba(255,255,255,0.35)">End Buyers</text>
+
+        <!-- ── LEGEND ── -->
+        <rect x="24" y="24" width="210" height="126" rx="12" fill="rgba(8,16,36,0.88)" stroke="rgba(99,149,255,0.3)" stroke-width="1"/>
+        <text x="44" y="50" font-family="Kanit,sans-serif" font-size="11" font-weight="800" fill="rgba(255,255,255,0.9)" letter-spacing="0.1em">TRADE ROUTES</text>
+        <line x1="44" y1="64" x2="78" y2="64" stroke="#ff6b7a" stroke-width="2" stroke-dasharray="6,4"/>
+        <text x="86" y="68" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.6)">Road Logistics</text>
+        <line x1="44" y1="82" x2="78" y2="82" stroke="#F5C842" stroke-width="2.5" stroke-dasharray="8,4"/>
+        <text x="86" y="86" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.6)">Laos-China Railway</text>
+        <line x1="44" y1="100" x2="78" y2="100" stroke="#60a5fa" stroke-width="2" stroke-dasharray="6,4"/>
+        <text x="86" y="104" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.6)">Global Distribution</text>
+        <line x1="44" y1="118" x2="78" y2="118" stroke="#34d399" stroke-width="1.8" stroke-dasharray="5,4"/>
+        <text x="86" y="122" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.6)">Local Lao Market</text>
+        <text x="44" y="140" font-family="sans-serif" font-size="9" fill="rgba(255,255,255,0.25)">● Animated live routes</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PARTNERS & CHAMBERS ══ -->
+<section class="section" id="partners">
+  <div class="section-center">
+    <div class="reveal" style="text-align:center;margin-bottom:2.5rem">
+      <div class="s-eyebrow">🌟 Our Partners & Chambers</div>
+      <h2 class="s-title" style="text-align:center">Proudly Working With</h2>
+    </div>
+    <!-- Strategic -->
+    <div class="partners-strategic reveal d1">
+      <div class="partner-card">
+        <img src="images/Big_C.png" alt="Big C Vientiane">
+        <div class="partner-name">Big C Vientiane</div>
+        <div class="partner-role">Main Venue Partner</div>
+      </div>
+      <div class="partner-card">
+        <img src="images/LITSE.png" alt="LITSE">
+        <div class="partner-name">LITSE</div>
+        <div class="partner-role">Lao State Agency</div>
+      </div>
+      <div class="partner-card">
+        <img src="images/VITH.png" alt="VITH Hub">
+        <div class="partner-name">VITH Hub</div>
+        <div class="partner-role">Main Organizer</div>
+      </div>
+      <div class="partner-card">
+        <img src="images/RB99.png" alt="RB99">
+        <div class="partner-name">RB99</div>
+        <div class="partner-role">Logistics Partner</div>
+      </div>
+    </div>
+    <!-- Chambers -->
+    <div style="text-align:center;margin-bottom:1.25rem">
+      <div class="s-eyebrow">🌐 International Chambers</div>
+    </div>
+    <div class="chambers-row reveal d2">
+      <div class="chamber-pill"><span class="flag">🇱🇦</span><div class="info"><div class="cn">LNCCI</div><div class="cr">Lao National Chamber</div></div></div>
+      <div class="chamber-pill"><span class="flag">🇹🇭</span><div class="info"><div class="cn">Thai Business Assoc.</div><div class="cr">Thailand</div></div></div>
+      <div class="chamber-pill"><span class="flag">🇪🇺</span><div class="info"><div class="cn">ECCIL</div><div class="cr">European Chamber</div></div></div>
+      <div class="chamber-pill"><span class="flag">🇨🇳</span><div class="info"><div class="cn">Chinese Chamber</div><div class="cr">China · Laos</div></div></div>
+      <div class="chamber-pill"><span class="flag">🇦🇺</span><div class="info"><div class="cn">AustCham</div><div class="cr">Australia · Laos</div></div></div>
+      <div class="chamber-pill"><span class="flag">🇰🇷</span><div class="info"><div class="cn">Korean Chamber</div><div class="cr">Korea · Laos</div></div></div>
+    </div>
+    <div style="text-align:center;margin-top:2rem">
+      <a href="/about" style="font-family:'Kanit',sans-serif;font-size:0.875rem;color:var(--navy2);font-weight:700;border-bottom:2px solid var(--gold);padding-bottom:2px">ดูพันธมิตรทั้งหมด →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOUNDER BANNER ══ -->
+<section id="founder-banner">
+  <div style="max-width:720px;margin:0 auto;text-align:center" class="reveal">
+    <div class="fb-badge">👑 LIMITED 20 SLOTS ONLY</div>
+    <h2 class="fb-title">Founder <span>Member</span><br>Annual Showroom</h2>
+    <p class="fb-sub">
+      <span data-lang="th" class="active">มีหน้าร้านที่ลาวตลอดทั้งปี พร้อม B2B Matching + Lao Staff + Logistics<br>ส่วนลด 15% ทุกเดือน · ไม่รับ % ยอดขาย</span>
+      <span data-lang="en">Your own Laos storefront all year — B2B Matching, Lao Staff, Logistics included. 15% discount monthly. Zero commission.</span>
+    </p>
+    <div class="fb-stats">
+      <div><div class="fb-num">฿39,000</div><div class="fb-label">ต่อปี / Per Year</div></div>
+      <div><div class="fb-num">20</div><div class="fb-label">Slots เท่านั้น</div></div>
+      <div><div class="fb-num">0%</div><div class="fb-label">Commission</div></div>
+    </div>
+    <a href="/membership" class="btn-founder">👑 สมัคร Founder Member</a>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">VITH<span>HUB</span></div>
+        <div class="footer-tagline">Gateway for Thai SMEs<br>to reach international buyers<br>vithhub.asia</div>
+      </div>
+      <div class="footer-nav">
+        <div class="footer-col">
+          <div class="footer-col-title">Platform</div>
+          <a href="/">หน้าแรก</a>
+          <a href="/about">Partners & Alliance</a>
+          <a href="/event">Event 2026</a>
+          <a href="/membership">Founder Member</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Resources</div>
+          <a href="/salesdeck" target="_blank">Sales Deck</a>
+          <a href="/event#floorplan">Floor Plan</a>
+          <a href="/event#timeline">Timeline</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Contact</div>
+          <a href="/cdn-cgi/l/email-protection#05736c716d6d7067736c606b716c646b60456268646c692b666a68"><span class="__cf_email__" data-cfemail="a6d0cfd2ceced3c4d0cfc3c8d2cfc7c8c3e6c1cbc7cfca88c5c9cb">[email&#160;protected]</span></a>
+          <a href="https://line.me/ti/p/@cef8930n" target="_blank">LINE: @cef8930n</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-contact">
+        📧 <a href="/cdn-cgi/l/email-protection#60160914080815021609050e1409010e0520070d01090c4e030f0d"><span class="__cf_email__" data-cfemail="eb9d829f83839e899d828e859f828a858eab8c868a8287c5888486">[email&#160;protected]</span></a>
+        &nbsp;·&nbsp;
+        📱 <a href="https://line.me/ti/p/@cef8930n">LINE @cef8930n</a>
+      </div>
+      <div class="footer-copy">© 2026 VITH HUB · vithhub.asia</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ══ STICKY CTA ══ -->
+<div class="sticky-wrap">
+  <a href="/event" class="sticky-btn event">
+    📋 <span><span data-lang="th" class="active">จองพื้นที่<br><strong>Register Now</strong></span><span data-lang="en">Book Booth<br><strong>Register Now</strong></span></span>
+  </a>
+  <a href="https://line.me/ti/p/@cef8930n" class="sticky-btn line" target="_blank">
+    <svg width="18" height="18" viewBox="0 0 48 48"><path d="M24 4C13 4 4 11.8 4 21.5c0 5.5 3.1 10.4 7.9 13.7-.3 1.2-1.1 4.3-1.3 5 0 0-.1.3.2.4.2.1.5 0 .5 0 .7-.1 8.5-5.6 9.8-6.5.9.1 1.9.2 2.9.2 11 0 20-7.8 20-17.3S35 4 24 4z" fill="white"/></svg>
+    Add LINE
+  </a>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+function setLang(lang) {
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.classList.toggle('active', el.dataset.lang === lang);
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active',
+      btn.textContent.toLowerCase() === lang ||
+      (lang === 'la' && btn.textContent === 'LAO'));
+  });
+}
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
