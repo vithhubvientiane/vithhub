@@ -10,353 +10,268 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kanit:wght@500;600;700;800;900&family=Sarabun:wght@400;500;600;700&family=Noto+Sans+Lao:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-.event-page-hero{
-  min-height:65vh;display:flex;align-items:center;justify-content:center;
-  background:linear-gradient(135deg,#0d1b3e 0%,#1E3A8A 55%,#0d1b3e 100%);
-  position:relative;overflow:hidden;padding:7rem 2rem 4rem;text-align:center;
-}
-.event-page-hero::before{
-  content:'';position:absolute;inset:0;
-  background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);
-  background-size:60px 60px;
-}
-.eph-inner{position:relative;z-index:1;max-width:800px;margin:0 auto}
-.eph-badge{
-  display:inline-flex;align-items:center;gap:8px;
-  background:rgba(245,158,11,0.15);border:1px solid rgba(245,158,11,0.4);
-  color:#fbbf24;font-family:'Kanit',sans-serif;font-size:0.72rem;font-weight:700;
-  letter-spacing:0.15em;text-transform:uppercase;padding:7px 20px;border-radius:99px;
-  margin-bottom:1.5rem;
-}
-.eph-title{
-  font-family:'Bebas Neue',sans-serif;font-size:clamp(2.8rem,9vw,6rem);
-  color:#fff;letter-spacing:0.04em;line-height:1;margin-bottom:0.5rem;
-}
-.eph-title .gold{
-  background:linear-gradient(90deg,#D4A017,#fde68a);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-}
-.eph-sub{
-  font-family:'Kanit',sans-serif;font-size:clamp(0.9rem,2.5vw,1.15rem);
-  color:rgba(255,255,255,0.72);margin-bottom:1.5rem;
-}
-.eph-meta{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem}
-.eph-meta-item{
-  display:flex;align-items:center;gap:6px;
-  background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);
-  padding:7px 16px;border-radius:99px;
-  font-family:'Kanit',sans-serif;font-size:0.82rem;color:rgba(255,255,255,0.8);
-}
-.eph-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-.btn-eph-primary{
-  background:linear-gradient(90deg,#D4A017,#fbbf24);color:#1a0a00;
-  font-family:'Kanit',sans-serif;font-weight:800;font-size:1rem;
-  padding:14px 32px;border-radius:12px;text-decoration:none;
-  display:inline-flex;align-items:center;gap:8px;min-height:52px;
-  box-shadow:0 6px 24px rgba(212,160,23,0.45);transition:all 0.25s;
-}
-.btn-eph-primary:hover{transform:translateY(-2px)}
-.btn-eph-ghost{
-  background:transparent;border:2px solid rgba(255,255,255,0.3);color:#fff;
-  font-family:'Kanit',sans-serif;font-weight:700;font-size:1rem;
-  padding:13px 28px;border-radius:12px;text-decoration:none;
-  display:inline-flex;align-items:center;gap:8px;min-height:52px;transition:all 0.25s;
-}
-.btn-eph-ghost:hover{border-color:#fff}
-.sticky-cta-wrap{
-  position:fixed;bottom:1.25rem;right:1.25rem;z-index:999;
-  display:flex;flex-direction:column;gap:0.625rem;align-items:flex-end;
-}
-.sticky-cta-btn{
-  background:linear-gradient(90deg,#E31E24,#c01017);color:#fff;
-  font-family:'Kanit',sans-serif;font-weight:700;font-size:0.875rem;
-  padding:11px 20px;border-radius:50px;text-decoration:none;
-  display:inline-flex;align-items:center;gap:8px;min-height:48px;
-  box-shadow:0 4px 20px rgba(227,30,36,0.4);transition:all 0.25s;
-}
-.sticky-cta-btn:hover{transform:translateY(-2px)}
-.sticky-line-btn{
-  background:#06C755;color:#fff;font-family:'Kanit',sans-serif;font-weight:700;
-  font-size:0.875rem;padding:11px 20px;border-radius:50px;text-decoration:none;
-  display:inline-flex;align-items:center;gap:8px;min-height:48px;
-  box-shadow:0 4px 16px rgba(6,199,85,0.4);transition:all 0.25s;
-}
-.sticky-line-btn:hover{transform:translateY(-2px)}
-.breadcrumb{
-  background:rgba(8,8,16,0.6);border-bottom:1px solid rgba(255,255,255,0.06);
-  padding:0.625rem 2rem;font-family:'Kanit',sans-serif;font-size:0.78rem;
-  color:rgba(255,255,255,0.4);
-}
-.breadcrumb a{color:rgba(255,255,255,0.55);text-decoration:none;transition:color 0.2s}
-.breadcrumb a:hover{color:#fbbf24}
-</style>
-</head>
-<body>
+/* ── Slide backgrounds — NEW filenames ── */
+.hc-slide:nth-child(1){background-image:url('images/bigc-exterior-main.jpg')}
+.hc-slide:nth-child(2){background-image:url('images/bigc-indoor-hall.jpg')}
+.hc-slide:nth-child(3){background-image:url('images/booth-setup-example.jpg')}
+.hc-slide:nth-child(4){background-image:url('images/bigc-trade-floor.jpg')}
+.hc-slide:nth-child(5){background-image:url('images/booth-display-ready.jpg')}
 
-<!-- ══ NAV (sticky + backdrop-filter) ══ -->
-<nav id="mainNav">
-  <div class="nav-logo">VITH <span>HUB</span></div>
-
-  <!-- Phase Switcher Tab -->
-  <div class="phase-switcher">
-    <button class="phase-tab active" id="tab-p1" onclick="switchPhase(1)">
-      <span class="phase-tab-dot phase-dot-gold"></span>
-      <span class="phase-tab-text">Phase 1 · <em>มีนาคม</em></span>
-    </button>
-    <button class="phase-tab" id="tab-p2" onclick="switchPhase(2)">
-      <span class="phase-tab-dot phase-dot-red"></span>
-      <span class="phase-tab-text">Phase 2 · <em>พฤษภาคม</em></span>
-    </button>
-  </div>
-
-  <div class="nav-right">
-    <div class="nav-slots-badge">
-      <span class="urgency-dot"></span>
-      <span data-lang="th" class="active">🔥 เหลือ <strong>19</strong> บูท</span>
-      <span data-lang="la">🔥 ເຫຼືອ <strong>19</strong> ທີ່</span>
-      <span data-lang="en">🔥 <strong>19</strong> left</span>
-    </div>
-    <div class="lang-switcher">
-      <button class="lang-btn active" onclick="setLang('th')">TH</button>
-      <button class="lang-btn" onclick="setLang('la')">LAO</button>
-      <button class="lang-btn" onclick="setLang('en')">EN</button>
-    </div>
-    <a href="/about" class="btn-nav" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.8);margin-right:0.4rem">🌐 About</a><a href="/membership" class="btn-nav" style="background:linear-gradient(90deg,#92400e,#b45309);color:#fbbf24;border:none;margin-right:0.4rem">👑 Founder</a>
-    <a href="#contact" class="btn-nav pulse-btn">
-      <span data-lang="th" class="active">จองด่วน!</span>
-      <span data-lang="la">ຈອງດ່ວນ!</span>
-      <span data-lang="en">Book Now!</span>
-    </a>
-  </div>
-</nav>
-
-<div class="breadcrumb" style="padding-top:calc(0.625rem + 60px)">
-  <a href="/">VITH HUB</a> › <span style="color:rgba(255,255,255,0.7)">Mekong Business Connect 2026</span>
-</div>
-
-<!-- ══ EVENT HERO CAROUSEL ══ -->
-<style>
-.hero-carousel{
-  position:relative;min-height:95vh;overflow:hidden;
-}
-/* slides */
-.hc-slide{
-  position:absolute;inset:0;opacity:0;
-  transition:opacity 1.2s ease;
-  background-size:cover;background-position:center;
-}
-.hc-slide.active{opacity:1;z-index:1}
+/* ── Overlay: lighter gradient so images breathe ── */
 .hc-slide::after{
   content:'';position:absolute;inset:0;
   background:linear-gradient(
     to bottom,
-    rgba(8,15,40,0.45) 0%,
-    rgba(8,15,40,0.55) 40%,
-    rgba(8,15,40,0.75) 100%
+    rgba(8,15,40,0.25) 0%,     /* was 0.45 */
+    rgba(8,15,40,0.30) 35%,    /* was 0.55 */
+    rgba(8,15,40,0.72) 100%    /* keep bottom dark for text legibility */
   );
 }
-/* slide backgrounds */
-.hc-slide:nth-child(1){background-image:url('images/hero-bigc.png')}
-.hc-slide:nth-child(2){background-image:url('images/indoor-01.jpg')}
-.hc-slide:nth-child(3){background-image:url('images/booth-01.jpg')}
-.hc-slide:nth-child(4){background-image:url('images/indoor-02.jpg')}
-.hc-slide:nth-child(5){background-image:url('images/booth-02.jpg')}
 
-/* Ken Burns zoom effect on active slide */
-.hc-slide.active{
-  animation:kenBurns 6s ease-out forwards;
-}
-@keyframes kenBurns{
-  from{transform:scale(1.06)}
-  to{transform:scale(1)}
-}
-
-/* content overlay */
+/* ── Content overlay ── */
 .hc-content{
   position:relative;z-index:10;
   min-height:95vh;display:flex;flex-direction:column;
-  align-items:center;justify-content:center;
-  text-align:center;padding:7rem 2rem 5rem;
+  align-items:center;justify-content:flex-end; /* push text toward bottom */
+  text-align:center;padding:7rem 2rem 7rem;     /* more bottom padding */
 }
+
+/* ── Animated text: starts invisible, fades in after slide activates ── */
+.hc-anim{
+  opacity:0;transform:translateY(22px);
+  transition:opacity 0.75s ease, transform 0.75s ease;
+}
+/* When .text-ready is added to .hc-content, all children animate in */
+.hc-content.text-ready .hc-anim:nth-child(1){ opacity:1; transform:none; transition-delay:0.05s }
+.hc-content.text-ready .hc-anim:nth-child(2){ opacity:1; transform:none; transition-delay:0.18s }
+.hc-content.text-ready .hc-anim:nth-child(3){ opacity:1; transform:none; transition-delay:0.30s }
+.hc-content.text-ready .hc-anim:nth-child(4){ opacity:1; transform:none; transition-delay:0.42s }
+.hc-content.text-ready .hc-anim:nth-child(5){ opacity:1; transform:none; transition-delay:0.52s }
+
+/* ── Badge ── */
 .hc-badge{
   display:inline-flex;align-items:center;gap:8px;
   background:rgba(245,158,11,0.18);border:1px solid rgba(245,158,11,0.5);
   color:#fbbf24;font-family:'Kanit',sans-serif;
   font-size:0.72rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;
-  padding:7px 20px;border-radius:99px;margin-bottom:1.5rem;
-  animation:fadeUp 0.8s ease both;
+  padding:7px 20px;border-radius:99px;margin-bottom:1.2rem;
 }
+
+/* ── Title: shorter, punchier ── */
 .hc-title{
   font-family:'Bebas Neue',sans-serif;
-  font-size:clamp(3rem,10vw,6.5rem);
+  font-size:clamp(3rem,9vw,5.5rem);   /* slightly smaller than before */
   color:#fff;letter-spacing:0.03em;line-height:0.95;
-  margin-bottom:0.75rem;
-  animation:fadeUp 0.8s 0.1s ease both;
+  margin-bottom:0.6rem;
+  /* crisp text shadow instead of heavy overlay */
+  text-shadow: 0 2px 24px rgba(0,0,0,0.55);
 }
 .hc-title .gold{
   background:linear-gradient(90deg,#D4A017,#fde68a,#D4A017);
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
 }
-.hc-sub{
-  font-family:'Kanit',sans-serif;font-size:clamp(0.9rem,2.5vw,1.2rem);
-  color:rgba(255,255,255,0.78);margin-bottom:1.25rem;
-  animation:fadeUp 0.8s 0.2s ease both;
+
+/* ── Subtitle — per-slide caption, fades with each slide ── */
+.hc-slide-caption{
+  font-family:'Kanit',sans-serif;font-size:clamp(0.85rem,2vw,1.05rem);
+  color:rgba(255,255,255,0.75);margin-bottom:1.1rem;
+  min-height:1.6em; /* prevent layout jump between captions */
+  text-shadow:0 1px 12px rgba(0,0,0,0.6);
 }
+
+/* ── Meta pills ── */
 .hc-meta{
-  display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;
-  margin-bottom:2rem;
-  animation:fadeUp 0.8s 0.25s ease both;
+  display:flex;gap:0.65rem;justify-content:center;flex-wrap:wrap;
+  margin-bottom:1.75rem;
 }
 .hc-meta-item{
-  background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);
+  background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.16);
   color:rgba(255,255,255,0.85);font-family:'Kanit',sans-serif;
-  font-size:0.82rem;padding:6px 16px;border-radius:99px;
+  font-size:0.8rem;padding:5px 14px;border-radius:99px;
   display:flex;align-items:center;gap:5px;
-}
-.hc-btns{
-  display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;
-  animation:fadeUp 0.8s 0.3s ease both;
-}
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(20px)}
-  to{opacity:1;transform:none}
+  backdrop-filter:blur(6px);
 }
 
-/* slide label (bottom left) */
-.hc-slide-label{
-  position:absolute;bottom:5.5rem;left:2rem;z-index:10;
-  font-family:'Kanit',sans-serif;font-size:0.78rem;font-weight:600;
-  color:rgba(255,255,255,0.45);letter-spacing:0.08em;
-  transition:opacity 0.4s;
-}
-
-/* dots navigation */
-.hc-dots{
-  position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);
-  z-index:10;display:flex;gap:8px;align-items:center;
-}
-.hc-dot{
-  width:8px;height:8px;border-radius:99px;
-  background:rgba(255,255,255,0.3);border:none;cursor:pointer;
-  padding:0;transition:all 0.35s ease;
-}
-.hc-dot.active{
-  background:#fbbf24;width:28px;
-}
-
-/* prev/next arrows */
-.hc-arrow{
-  position:absolute;top:50%;transform:translateY(-50%);
-  z-index:10;background:rgba(255,255,255,0.1);
-  border:1px solid rgba(255,255,255,0.2);color:#fff;
-  width:44px;height:44px;border-radius:50%;
-  cursor:pointer;font-size:1.1rem;
-  display:flex;align-items:center;justify-content:center;
-  transition:all 0.25s;backdrop-filter:blur(8px);
-}
-.hc-arrow:hover{background:rgba(255,255,255,0.22);border-color:rgba(255,255,255,0.4)}
-.hc-arrow.prev{left:1.25rem}
-.hc-arrow.next{right:1.25rem}
-@media(max-width:600px){.hc-arrow{display:none}}
-
-/* progress bar */
-.hc-progress{
-  position:absolute;bottom:0;left:0;height:3px;
-  background:linear-gradient(90deg,#D4A017,#fbbf24);
-  z-index:10;width:0%;
-  transition:width 0s linear;
-}
-.hc-progress.running{
-  width:100%;
-  transition:width 5s linear;
-}
+/* ── CTA Buttons ── */
+.hc-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
 </style>
 
 <section class="hero-carousel" id="heroCarousel">
-  <!-- slides (รูปพื้นหลัง) -->
+
+  <!-- ── 5 Background Slides ── -->
   <div class="hc-slide active"></div>
   <div class="hc-slide"></div>
   <div class="hc-slide"></div>
   <div class="hc-slide"></div>
   <div class="hc-slide"></div>
 
-  <!-- content (อยู่บนทุก slide) -->
-  <div class="hc-content">
-    <div class="hc-badge">📅 Mekong Business Connect 2026</div>
-    <h1 class="hc-title">
-      <span data-lang="th" class="active">งานแสดงสินค้า<br><span class="gold">นานาชาติ</span></span>
-      <span data-lang="la">ງານວາງສະແດງ<br><span class="gold">ສາກົນ</span></span>
-      <span data-lang="en">Mini International<br><span class="gold">Trade Showcase</span></span>
+  <!-- ── Content (one overlay, shared by all slides) ── -->
+  <div class="hc-content" id="hcContent">
+
+    <!-- 1: Badge -->
+    <div class="hc-badge hc-anim">📅 Mekong Business Connect 2026</div>
+
+    <!-- 2: Headline — SHORT & punchy -->
+    <h1 class="hc-title hc-anim">
+      <span data-lang="th" class="active">
+        Mekong Business<br><span class="gold">Connect 2026</span>
+      </span>
+      <span data-lang="la">
+        Mekong Business<br><span class="gold">Connect 2026</span>
+      </span>
+      <span data-lang="en">
+        Mekong Business<br><span class="gold">Connect 2026</span>
+      </span>
     </h1>
-    <p class="hc-sub">
-      <span data-lang="th" class="active">Big C เวียงจันทน์ สปป.ลาว · ร่วมกับหอการค้านานาชาติ 6 ประเทศ</span>
-      <span data-lang="la">Big C ວຽງຈັນ ສປປ.ລາວ · ຫໍການຄ້າ 6 ປະເທດ</span>
-      <span data-lang="en">Big C Vientiane, Laos · 6 International Chambers</span>
+
+    <!-- 3: Per-slide caption (changes with JS) -->
+    <p class="hc-slide-caption hc-anim" id="hcCaption">
+      Big C Vientiane · หอการค้านานาชาติ 6 ประเทศ
     </p>
-    <div class="hc-meta">
+
+    <!-- 4: Meta pills -->
+    <div class="hc-meta hc-anim">
       <div class="hc-meta-item">📍 Big C Vientiane</div>
       <div class="hc-meta-item">
         <span data-lang="th" class="active">📅 25–29 มีนาคม 2026</span>
         <span data-lang="la">📅 25–29 ມີນາ 2026</span>
         <span data-lang="en">📅 Mar 25–29, 2026</span>
       </div>
-      <div class="hc-meta-item">🏪 60–80 บูท</div>
+      <div class="hc-meta-item">🏪 60–80 Booths</div>
       <div class="hc-meta-item">🤝 B2B Matching</div>
     </div>
-    <div class="hc-btns">
-      <a href="#contact" class="btn-eph-primary">🚀 จองบูทเลย</a>
+
+    <!-- 5: CTA Buttons -->
+    <div class="hc-btns hc-anim">
+      <a href="#contact" class="btn-eph-primary">🚀
+        <span data-lang="th" class="active">จองบูทเลย</span>
+        <span data-lang="la">ຈອງບູດ</span>
+        <span data-lang="en">Book a Booth</span>
+      </a>
       <a href="/membership" class="btn-eph-ghost">👑 Founder Member</a>
       <a href="/" class="btn-eph-ghost">← หน้าหลัก</a>
     </div>
-  </div>
 
-  <!-- slide label -->
+  </div><!-- /hc-content -->
+
+  <!-- Slide label (bottom-left) -->
   <div class="hc-slide-label" id="hcLabel">Big C Vientiane · Main Venue</div>
 
-  <!-- arrows -->
+  <!-- Navigation Arrows -->
   <button class="hc-arrow prev" onclick="hcMove(-1)" aria-label="Previous">‹</button>
   <button class="hc-arrow next" onclick="hcMove(1)" aria-label="Next">›</button>
 
-  <!-- dots -->
+  <!-- Dot Navigation -->
   <div class="hc-dots" id="hcDots"></div>
 
-  <!-- progress bar -->
+  <!-- Progress Bar -->
   <div class="hc-progress" id="hcProgress"></div>
+
 </section>
 
 <script>
 (function(){
-  const slides = document.querySelectorAll('.hc-slide');
-  const dotsWrap = document.getElementById('hcDots');
-  const progress = document.getElementById('hcProgress');
-  const label = document.getElementById('hcLabel');
-  const labels = [
-    'Big C Vientiane · Main Venue',
-    'Indoor Showroom · 200 sqm',
-    'Exhibition Booths · Phase 1',
-    'Trade Floor · Vientiane',
-    'Booth Setup · Ready to Exhibit',
-  ];
-  const DURATION = 5000;
+  const slides    = document.querySelectorAll('.hc-slide');
+  const dotsWrap  = document.getElementById('hcDots');
+  const progress  = document.getElementById('hcProgress');
+  const labelEl   = document.getElementById('hcLabel');
+  const captionEl = document.getElementById('hcCaption');
+  const content   = document.getElementById('hcContent');
+  const DURATION  = 5500;
   let current = 0, timer = null;
 
-  // สร้าง dots
+  // ─── Per-slide data ───────────────────────────────────────
+  const slideData = [
+    {
+      label:   'Big C Vientiane · Main Venue',
+      caption: {
+        th: 'Big C Vientiane · ห้างใหญ่สุดในลาว ลูกค้า 15,000+ คน/วัน',
+        la: 'Big C ວຽງຈັນ · ລູກຄ້າ 15,000+ ຄົນ/ວັນ',
+        en: 'Big C Vientiane · Laos' biggest mall · 15,000+ visitors/day',
+      }
+    },
+    {
+      label:   'Indoor Exhibition Hall · 200 sqm',
+      caption: {
+        th: 'พื้นที่ภายใน 200+ ตร.ม. · แอร์เย็น · ไฟส่องสว่างครบ',
+        la: '200+ ຕ.ມ ພາຍໃນ · ມີແອ + ໄຟ',
+        en: '200+ sqm indoor hall · air-conditioned · full lighting',
+      }
+    },
+    {
+      label:   'Booth Setup · Phase 1',
+      caption: {
+        th: 'บูทพร้อมขาย 60–80 บูท · Zone A B C · เลือกทำเลได้เลย',
+        la: '60–80 ບູດ · Zone A B C · ເລືອກທຳເລ',
+        en: '60–80 exhibition booths · Zone A B C · choose your spot',
+      }
+    },
+    {
+      label:   'Trade Floor · Vientiane',
+      caption: {
+        th: 'สินค้าไทย · Beauty · Food · Lifestyle · ตรงกลุ่มลูกค้าลาว',
+        la: 'ສິນຄ້າໄທ · Beauty · Food · Lifestyle',
+        en: 'Thai products · Beauty · Food · Lifestyle · Lao buyers ready',
+      }
+    },
+    {
+      label:   'Booth Display · Ready to Exhibit',
+      caption: {
+        th: 'ร่วมกับหอการค้านานาชาติ 6 ประเทศ · B2B Matching',
+        la: 'ຫໍການຄ້າ 6 ປະເທດ · B2B Matching',
+        en: '6 International Chambers · B2B Matching included',
+      }
+    },
+  ];
+
+  // ─── Helper: get active lang ──────────────────────────────
+  function getLang(){
+    const btn = document.querySelector('.lang-btn.active');
+    return btn ? btn.textContent.trim().toLowerCase() : 'th';
+  }
+
+  // ─── Build dots ───────────────────────────────────────────
   slides.forEach((_, i) => {
     const d = document.createElement('button');
     d.className = 'hc-dot' + (i===0?' active':'');
-    d.setAttribute('aria-label', 'Slide ' + (i+1));
+    d.setAttribute('aria-label','Slide '+(i+1));
     d.onclick = () => goTo(i);
     dotsWrap.appendChild(d);
   });
 
-  function goTo(n) {
+  // ─── Animate text: remove class → micro-delay → re-add ───
+  function animateText(){
+    content.classList.remove('text-ready');
+    void content.offsetWidth; // force reflow
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      content.classList.add('text-ready');
+    }));
+  }
+
+  // ─── Update per-slide caption ─────────────────────────────
+  function updateCaption(idx){
+    const lang = getLang();
+    const data = slideData[idx] || slideData[0];
+    if(captionEl){
+      captionEl.textContent = data.caption[lang] || data.caption.th;
+    }
+  }
+
+  // ─── Main slide transition ────────────────────────────────
+  function goTo(n){
     slides[current].classList.remove('active');
     dotsWrap.children[current].classList.remove('active');
     current = (n + slides.length) % slides.length;
     slides[current].classList.add('active');
     dotsWrap.children[current].classList.add('active');
-    if (label) label.textContent = labels[current] || '';
+
+    // update label & caption
+    if(labelEl) labelEl.textContent = slideData[current].label;
+    updateCaption(current);
+
+    // trigger text animation
+    animateText();
+
     // reset progress bar
     progress.classList.remove('running');
     progress.style.transition = 'none';
@@ -365,31 +280,39 @@
       progress.style.transition = '';
       progress.classList.add('running');
     }));
+
     clearTimeout(timer);
     timer = setTimeout(() => goTo(current + 1), DURATION);
   }
 
-  window.hcMove = (dir) => goTo(current + dir);
+  // expose for arrow buttons
+  window.hcMove = dir => goTo(current + dir);
 
-  // start
+  // ─── Start ────────────────────────────────────────────────
   goTo(0);
 
-  // pause on hover
+  // ─── Pause on hover ───────────────────────────────────────
   const carousel = document.getElementById('heroCarousel');
-  if (carousel) {
-    carousel.addEventListener('mouseenter', () => { clearTimeout(timer); progress.style.animationPlayState='paused'; });
-    carousel.addEventListener('mouseleave', () => {
-      timer = setTimeout(() => goTo(current + 1), DURATION);
-    });
-  }
+  carousel.addEventListener('mouseenter', () => clearTimeout(timer));
+  carousel.addEventListener('mouseleave', () => {
+    timer = setTimeout(() => goTo(current + 1), DURATION);
+  });
 
-  // swipe support (mobile)
+  // ─── Swipe (mobile) ───────────────────────────────────────
   let tx = 0;
   carousel.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, {passive:true});
-  carousel.addEventListener('touchend', e => {
+  carousel.addEventListener('touchend',   e => {
     const dx = e.changedTouches[0].clientX - tx;
-    if (Math.abs(dx) > 50) goTo(current + (dx < 0 ? 1 : -1));
+    if(Math.abs(dx) > 50) goTo(current + (dx < 0 ? 1 : -1));
   }, {passive:true});
+
+  // ─── Re-update caption when lang switches ─────────────────
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      setTimeout(() => updateCaption(current), 50);
+    });
+  });
+
 })();
 </script>
 
