@@ -421,7 +421,7 @@ div[data-lang]:not(.active){display:none}
 </section>
 
 <!-- ══ 3. FLOOR PLAN & BOOTH PACKAGES ══ -->
-<section class="sec" id="booth-section" style="background:#f8fafc;padding:4rem 1.5rem">
+<section class="sec" id="booth-section" style="background:#0f172a;padding:4rem 1.5rem">
 
 <style>
 /* ── BOOTH SECTION REDESIGN ── */
@@ -430,7 +430,7 @@ div[data-lang]:not(.active){display:none}
 .booth-eyebrow{font-family:'Kanit',sans-serif;font-size:0.72rem;font-weight:700;
   letter-spacing:0.2em;text-transform:uppercase;color:#f59e0b;margin-bottom:0.5rem}
 .booth-title{font-family:'Kanit',sans-serif;font-weight:900;
-  font-size:clamp(1.5rem,3.5vw,2.25rem);color:#1E3A8A;line-height:1.2}
+  font-size:clamp(1.5rem,3.5vw,2.25rem);color:#fff;line-height:1.2}
 .booth-title span{color:#f59e0b}
 
 /* Floor plan — LARGE */
@@ -476,80 +476,86 @@ div[data-lang]:not(.active){display:none}
 .zone-c::before{background:#0f2044}
 .zone-vip::before{background:#f59e0b}
 
-/* Package cards grid */
+/* Package cards grid — 2x2 dark style */
 .pkg-grid{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:2rem;
+  display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-bottom:2rem;
 }
-@media(max-width:900px){.pkg-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:480px){.pkg-grid{grid-template-columns:1fr}}
+@media(max-width:640px){.pkg-grid{grid-template-columns:1fr}}
 
 .pkg-card{
-  background:#fff;border:1.5px solid #e2e8f0;border-radius:14px;
+  background:#1a1a2e;border:1.5px solid rgba(255,255,255,0.08);border-radius:16px;
   overflow:hidden;transition:all 0.3s;display:flex;flex-direction:column;
-}
-.pkg-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(30,58,138,0.13);border-color:#1E3A8A}
-.pkg-card.featured{border-color:#f59e0b;box-shadow:0 4px 20px rgba(245,158,11,0.2)}
-
-.pkg-card-top{
-  padding:1.25rem 1.25rem 1rem;
-  background:linear-gradient(135deg,#1E3A8A,#162d6e);
   position:relative;
 }
-.pkg-card.zone-b-card .pkg-card-top{background:linear-gradient(135deg,#1a3270,#0f2455)}
-.pkg-card.zone-c-card .pkg-card-top{background:linear-gradient(135deg,#0f2044,#091530)}
-.pkg-card.shock-card .pkg-card-top{background:linear-gradient(135deg,#92400e,#b45309)}
+.pkg-card:hover{transform:translateY(-3px);box-shadow:0 16px 48px rgba(0,0,0,0.4)}
+.pkg-card.featured{border-color:rgba(245,158,11,0.5)}
+.pkg-card.featured::after{
+  content:'★ แนะนำ';position:absolute;top:0;right:1.25rem;
+  background:#f59e0b;color:#1a0a00;
+  font-family:'Kanit',sans-serif;font-size:0.72rem;font-weight:800;
+  padding:4px 14px;border-radius:0 0 10px 10px;
+}
+.pkg-card.shock-card{border-color:rgba(251,146,60,0.4)}
 
-.pkg-card-badge{
-  position:absolute;top:0.75rem;right:0.75rem;
-  background:rgba(255,255,255,0.15);
+.pkg-card-header{padding:1.25rem 1.5rem 1rem}
+.pkg-zone-pill{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:5px 14px;border-radius:99px;margin-bottom:0.75rem;
+  font-family:'Kanit',sans-serif;font-size:0.78rem;font-weight:700;
+}
+.pill-red{background:#7f1d1d;color:#fca5a5}
+.pill-orange{background:#78350f;color:#fcd34d}
+.pill-blue{background:#1e3a8a;color:#93c5fd}
+.pill-gray{background:#374151;color:#d1d5db}
+
+.pkg-zone-desc{font-family:'Sarabun',sans-serif;font-size:0.8125rem;color:rgba(255,255,255,0.45);margin-bottom:1rem}
+
+.pkg-price-row{
+  display:grid;grid-template-columns:1fr auto 1fr;
+  background:rgba(255,255,255,0.04);border-radius:10px;
+  overflow:hidden;margin-bottom:1rem;
+}
+.pkg-price-col{padding:0.875rem 1rem}
+.pkg-price-col.divider{width:1px;background:rgba(255,255,255,0.08);padding:0}
+.pkg-price-col-label{
   font-family:'Kanit',sans-serif;font-size:0.62rem;font-weight:700;
-  color:rgba(255,255,255,0.9);padding:3px 8px;border-radius:99px;letter-spacing:0.08em;
+  letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:0.25rem;
 }
-.pkg-card-badge.hot{background:rgba(239,68,68,0.85);color:#fff}
-.pkg-card-badge.best{background:rgba(245,158,11,0.9);color:#1a0a00}
-
-.pkg-zone{font-family:'Kanit',sans-serif;font-size:0.68rem;font-weight:700;
-  letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:0.25rem}
-.pkg-name2{font-family:'Kanit',sans-serif;font-weight:800;font-size:1rem;color:#fff;margin-bottom:0.125rem}
-.pkg-size{font-family:'Sarabun',sans-serif;font-size:0.78rem;color:rgba(255,255,255,0.55)}
-.pkg-price2{
-  font-family:'Bebas Neue',sans-serif;font-size:2rem;color:#fbbf24;
-  letter-spacing:0.04em;line-height:1;margin-top:0.625rem;
+.pkg-price-amount{
+  font-family:'Bebas Neue',sans-serif;font-size:1.75rem;color:#fff;letter-spacing:0.02em;line-height:1;
 }
-.pkg-price2 small{font-family:'Kanit',sans-serif;font-size:0.78rem;color:rgba(255,255,255,0.5);letter-spacing:0;font-weight:400}
-
-.pkg-card-body{padding:1rem 1.25rem;flex:1;display:flex;flex-direction:column;gap:0.5rem}
-.pkg-feat{
-  display:flex;align-items:center;gap:7px;
-  font-family:'Sarabun',sans-serif;font-size:0.8125rem;color:#4a5568;
+.pkg-price-amount.gold{color:#fbbf24}
+.pkg-managed-label{
+  display:flex;align-items:center;gap:5px;
+  font-family:'Kanit',sans-serif;font-size:0.62rem;font-weight:700;
+  color:rgba(245,158,11,0.8);letter-spacing:0.1em;text-transform:uppercase;
+  margin-bottom:0.25rem;
 }
-.pkg-feat::before{content:'✓';color:#1E3A8A;font-weight:700;font-size:0.875rem;flex-shrink:0}
+.pkg-managed-label::after{content:'★';font-size:0.6rem}
 
-.pkg-card-footer{padding:0 1.25rem 1.25rem;margin-top:auto}
-.pkg-book-btn{
-  display:block;text-align:center;
-  background:linear-gradient(90deg,#D4A017,#f59e0b);color:#1a0a00;
-  font-family:'Kanit',sans-serif;font-weight:800;font-size:0.875rem;
-  padding:10px;border-radius:8px;text-decoration:none;
-  transition:all 0.2s;
+.pkg-feat-list{padding:0 1.5rem 0.75rem;display:flex;flex-direction:column;gap:0.5rem}
+.pkg-feat2{
+  display:flex;align-items:flex-start;gap:8px;
+  font-family:'Sarabun',sans-serif;font-size:0.8125rem;color:rgba(255,255,255,0.7);
+  line-height:1.4;
 }
-.pkg-book-btn:hover{filter:brightness(1.1);transform:translateY(-1px)}
+.pkg-feat2 .diamond{color:#f59e0b;flex-shrink:0;font-size:0.7rem;margin-top:3px}
+.pkg-feat2 .star{color:#f59e0b;flex-shrink:0;font-size:0.8rem;margin-top:2px}
+.pkg-feat2 strong{color:#fbbf24}
 
-/* Includes banner */
-.includes-bar{
-  background:linear-gradient(135deg,#1E3A8A,#162d6e);
-  border-radius:14px;padding:1.5rem 2rem;
-  display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;
-  margin-bottom:2rem;
+.pkg-book-btn2{
+  display:block;margin:0 1.5rem 1.5rem;text-align:center;
+  font-family:'Kanit',sans-serif;font-weight:800;font-size:0.9375rem;
+  padding:13px;border-radius:10px;text-decoration:none;
+  transition:all 0.2s;letter-spacing:0.02em;margin-top:auto;
 }
-@media(max-width:700px){.includes-bar{grid-template-columns:1fr 1fr}}
-@media(max-width:400px){.includes-bar{grid-template-columns:1fr}}
-.inc-item{text-align:center}
-.inc-icon{font-size:1.75rem;margin-bottom:0.375rem}
-.inc-label{font-family:'Kanit',sans-serif;font-weight:700;font-size:0.8125rem;color:#fff;margin-bottom:0.125rem}
-.inc-sub{font-size:0.72rem;color:rgba(255,255,255,0.55);font-family:'Sarabun',sans-serif}
+.btn-book-red{background:#D32F2F;color:#fff;box-shadow:0 4px 16px rgba(211,47,47,0.4)}
+.btn-book-red:hover{background:#b71c1c;transform:translateY(-1px)}
+.btn-book-orange{background:linear-gradient(90deg,#ea580c,#f97316);color:#fff;box-shadow:0 4px 16px rgba(234,88,12,0.4)}
+.btn-book-orange:hover{filter:brightness(1.1);transform:translateY(-1px)}
+.btn-book-outline{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,0.25)}
+.btn-book-outline:hover{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.5)}
 
-/* FOMO bar */
 .fomo-bar{
   background:linear-gradient(90deg,#fef3c7,#fff7e6);
   border:1.5px solid #fcd34d;border-radius:10px;
@@ -589,90 +595,113 @@ div[data-lang]:not(.active){display:none}
     <!-- ── PACKAGE CARDS ── -->
     <div class="pkg-grid reveal d1">
 
-      <!-- Zone A Shock -->
+      <!-- Zone A Super Prime -->
+      <div class="pkg-card">
+        <div class="pkg-card-header">
+          <div class="pkg-zone-pill pill-red">🔥 Zone A · Super Prime</div>
+          <div class="pkg-zone-desc">หน้าทางเข้าหลัก + ติดเวที​กิจกรรม</div>
+          <div class="pkg-price-row">
+            <div class="pkg-price-col">
+              <div class="pkg-price-col-label">Space Only</div>
+              <div class="pkg-price-amount">฿12,000</div>
+            </div>
+            <div class="pkg-price-col divider"></div>
+            <div class="pkg-price-col">
+              <div class="pkg-managed-label">Full Managed</div>
+              <div class="pkg-price-amount gold">฿17,500</div>
+            </div>
+          </div>
+        </div>
+        <div class="pkg-feat-list">
+          <div class="pkg-feat2"><span class="diamond">◆</span>Traffic สูงสุดในงาน — เห็นจากทุกมุม</div>
+          <div class="pkg-feat2"><span class="diamond">◆</span>ขนส่งฟรี 100 KG (ไทย → เวียงจันทน์)</div>
+          <div class="pkg-feat2"><span class="star">★</span><span><strong>Full Managed:</strong> พนักงาน Dedicated 1 คน</span></div>
+          <div class="pkg-feat2"><span class="star">★</span><span><strong>Full Managed:</strong> ฉลากลาว + รายงานทุกวัน</span></div>
+        </div>
+        <a href="#register" class="pkg-book-btn2 btn-book-red">จอง Zone A</a>
+      </div>
+
+      <!-- Shock Sale -->
       <div class="pkg-card shock-card">
-        <div class="pkg-card-top">
-          <div class="pkg-card-badge hot">🔥 SHOCK PRICE</div>
-          <div class="pkg-zone">Zone A</div>
-          <div class="pkg-name2">Shock Price</div>
-          <div class="pkg-size">3×3m · Managed Booth</div>
-          <div class="pkg-price2">฿12,000 <small>/งาน</small></div>
+        <div class="pkg-card-header">
+          <div class="pkg-zone-pill pill-orange">⚡ Shock Sale · 8 บล็อก</div>
+          <div class="pkg-zone-desc">จุดกึ่งกลางทางเดินหลัก คนผ่าน 2 ทิศทาง</div>
+          <div class="pkg-price-row">
+            <div class="pkg-price-col">
+              <div class="pkg-price-col-label">Space Only</div>
+              <div class="pkg-price-amount">฿10,000</div>
+            </div>
+            <div class="pkg-price-col divider"></div>
+            <div class="pkg-price-col">
+              <div class="pkg-managed-label">Full Managed</div>
+              <div class="pkg-price-amount gold">฿15,000</div>
+            </div>
+          </div>
         </div>
-        <div class="pkg-card-body">
-          <div class="pkg-feat">Lao Staff ดูแลบูธ 5 วัน</div>
-          <div class="pkg-feat">ขนส่ง TH→LA ฟรี 100 KG</div>
-          <div class="pkg-feat">0% Commission</div>
-          <div class="pkg-feat">ป้ายชื่อบูธ + ไฟ</div>
+        <div class="pkg-feat-list">
+          <div class="pkg-feat2"><span class="diamond">◆</span>เหมาะสินค้า Flash Sale / โปรโมชั่นสด</div>
+          <div class="pkg-feat2"><span class="diamond">◆</span>ขนส่งฟรี 100 KG (ไทย → เวียงจันทน์)</div>
+          <div class="pkg-feat2"><span class="star">★</span><span><strong>Full Managed:</strong> พนักงาน Dedicated 1 คน</span></div>
+          <div class="pkg-feat2"><span class="star">★</span><span><strong>Full Managed:</strong> ฉลากลาว + รายงานทุกวัน</span></div>
         </div>
-        <div class="pkg-card-footer">
-          <a href="#register" class="pkg-book-btn">จองเลย →</a>
-        </div>
+        <a href="#register" class="pkg-book-btn2 btn-book-orange">จอง Shock Sale</a>
       </div>
 
-      <!-- Zone A Standard -->
+      <!-- Zone B Thai Brands -->
       <div class="pkg-card featured">
-        <div class="pkg-card-top">
-          <div class="pkg-card-badge best">⭐ POPULAR</div>
-          <div class="pkg-zone">Zone A</div>
-          <div class="pkg-name2">Standard</div>
-          <div class="pkg-size">3×3m · Managed + B2B</div>
-          <div class="pkg-price2">฿17,500 <small>/งาน</small></div>
+        <div class="pkg-card-header">
+          <div class="pkg-zone-pill pill-blue">🧴 Zone B · Thai Brands</div>
+          <div class="pkg-zone-desc">โซนสินค้าไลฟ์สไตล์และบิวตี้ไทย</div>
+          <div class="pkg-price-row">
+            <div class="pkg-price-col">
+              <div class="pkg-price-col-label">Space Only</div>
+              <div class="pkg-price-amount">฿7,000</div>
+            </div>
+            <div class="pkg-price-col divider"></div>
+            <div class="pkg-price-col">
+              <div class="pkg-managed-label">Full Managed</div>
+              <div class="pkg-price-amount gold">฿12,000</div>
+            </div>
+          </div>
         </div>
-        <div class="pkg-card-body">
-          <div class="pkg-feat">Lao Staff ดูแลบูธ 5 วัน</div>
-          <div class="pkg-feat">ขนส่ง TH→LA ฟรี 100 KG</div>
-          <div class="pkg-feat">B2B Matching กับผู้ซื้อ</div>
-          <div class="pkg-feat">0% Commission</div>
-          <div class="pkg-feat">ป้ายชื่อบูธ + ไฟ + โต๊ะ</div>
+        <div class="pkg-feat-list">
+          <div class="pkg-feat2"><span class="diamond">◆</span>กลุ่มเป้าหมายตรง — ลูกค้าสนใจสินค้าไทย</div>
+          <div class="pkg-feat2"><span class="diamond">◆</span>ขนส่งฟรี 100 KG (ไทย → เวียงจันทน์)</div>
+          <div class="pkg-feat2"><span class="star">★</span><span><strong>Full Managed:</strong> พนักงาน Shared + รายงานทุกวัน</span></div>
+          <div class="pkg-feat2"><span class="star">★</span><span><strong>Full Managed:</strong> 1 Influencer + ฉลากลาว</span></div>
         </div>
-        <div class="pkg-card-footer">
-          <a href="#register" class="pkg-book-btn">จองเลย →</a>
-        </div>
+        <a href="#register" class="pkg-book-btn2 btn-book-red">จองด่วน — ที่เหลือน้อย</a>
       </div>
 
-      <!-- Zone B -->
-      <div class="pkg-card zone-b-card">
-        <div class="pkg-card-top">
-          <div class="pkg-card-badge">ZONE B</div>
-          <div class="pkg-zone">Zone B</div>
-          <div class="pkg-name2">Standard</div>
-          <div class="pkg-size">3×3m · All-inclusive</div>
-          <div class="pkg-price2">฿14,500 <small>/งาน</small></div>
+      <!-- Zone C Mini Hub -->
+      <div class="pkg-card">
+        <div class="pkg-card-header">
+          <div class="pkg-zone-pill pill-gray">🚗 Zone C · Mini Hub</div>
+          <div class="pkg-zone-desc">ใกล้จุด Drive Thru + ลิฟต์ ดักลูกค้าขาเข้า</div>
+          <div class="pkg-price-row">
+            <div class="pkg-price-col">
+              <div class="pkg-price-col-label">Space Only</div>
+              <div class="pkg-price-amount">฿5,000</div>
+            </div>
+            <div class="pkg-price-col divider"></div>
+            <div class="pkg-price-col">
+              <div class="pkg-managed-label">Full Managed</div>
+              <div class="pkg-price-amount gold">฿10,000</div>
+            </div>
+          </div>
         </div>
-        <div class="pkg-card-body">
-          <div class="pkg-feat">Lao Staff ดูแลบูธ 5 วัน</div>
-          <div class="pkg-feat">ขนส่ง TH→LA ฟรี 100 KG</div>
-          <div class="pkg-feat">B2B Matching กับผู้ซื้อ</div>
-          <div class="pkg-feat">0% Commission</div>
+        <div class="pkg-feat-list">
+          <div class="pkg-feat2"><span class="diamond">◆</span>ราคาประหยัดที่สุด — เหมาะทดลองตลาดลาว</div>
+          <div class="pkg-feat2"><span class="diamond">◆</span>ขนส่งฟรี 100 KG (ไทย → เวียงจันทน์)</div>
+          <div class="pkg-feat2"><span class="star">★</span><span><strong>Full Managed:</strong> พนักงาน Shared + รายงานทุกวัน</span></div>
+          <div class="pkg-feat2"><span class="star">★</span><span><strong>Full Managed:</strong> ฉลากลาว + ภาษีนำเข้า</span></div>
         </div>
-        <div class="pkg-card-footer">
-          <a href="#register" class="pkg-book-btn">จองเลย →</a>
-        </div>
-      </div>
-
-      <!-- Zone C -->
-      <div class="pkg-card zone-c-card">
-        <div class="pkg-card-top">
-          <div class="pkg-card-badge">ZONE C</div>
-          <div class="pkg-zone">Zone C</div>
-          <div class="pkg-name2">Standard</div>
-          <div class="pkg-size">3×3m · All-inclusive</div>
-          <div class="pkg-price2">฿11,500 <small>/งาน</small></div>
-        </div>
-        <div class="pkg-card-body">
-          <div class="pkg-feat">Lao Staff ดูแลบูธ 5 วัน</div>
-          <div class="pkg-feat">ขนส่ง TH→LA ฟรี 100 KG</div>
-          <div class="pkg-feat">0% Commission</div>
-          <div class="pkg-feat">ป้ายชื่อบูธ + ไฟ</div>
-        </div>
-        <div class="pkg-card-footer">
-          <a href="#register" class="pkg-book-btn">จองเลย →</a>
-        </div>
+        <a href="#register" class="pkg-book-btn2 btn-book-outline">จอง Zone C</a>
       </div>
 
     </div>
 
-    <!-- ── WHAT'S INCLUDED ── -->
+<!-- ── WHAT'S INCLUDED ── -->
     <div class="includes-bar reveal d2">
       <div class="inc-item">
         <div class="inc-icon">🚚</div>
