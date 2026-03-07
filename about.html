@@ -749,4 +749,13 @@ document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 const progObs = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if(e.isIntersecting) {
-      const fill = e.target.querySelector(
+      const fill = e.target.querySelector('.progress-fill');
+      if(fill) { fill.style.width = fill.dataset.width + '%'; }
+      progObs.unobserve(e.target);
+    }
+  });
+}, {threshold:0.3});
+document.querySelectorAll('.progress-wrap').forEach(el => progObs.observe(el));
+</script>
+</body>
+</html>
