@@ -22,13 +22,18 @@ a{text-decoration:none}
   --bg:#f8fafc;--border:#e2e8f0;--text:#1a202c;--sub:#4a5568;
 }
 
-/* ── NAV OVERRIDE (light) ── */
+/* ── NAV OVERRIDE (dark — sits over carousel) ── */
 #mainNav{
-  background:rgba(255,255,255,0.97)!important;
+  background:rgba(10,20,55,0.88)!important;
   backdrop-filter:blur(16px);
-  border-bottom:1px solid var(--border);
-  box-shadow:0 1px 12px rgba(0,0,0,0.07);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  box-shadow:0 2px 20px rgba(0,0,0,0.3);
 }
+#mainNav .nav-logo,
+#mainNav a.nav-link{color:#fff!important}
+#mainNav .lang-btn{color:#fff!important;border-color:rgba(255,255,255,0.25)!important}
+#mainNav .lang-btn.active{background:rgba(255,255,255,0.2)!important;color:#fff!important}
+#mainNav a.nav-link:hover{background:rgba(255,255,255,0.1)!important;border-color:rgba(255,255,255,0.3)!important}
 
 /* ── HERO CAROUSEL ── */
 .hero-carousel{position:relative;height:520px;overflow:hidden}
@@ -395,7 +400,7 @@ div[data-lang]:not(.active){display:none}
       </div>
       <div class="reveal d1">
         <p class="about-tagline">
-          ทีมงานนักบระลมการณ์ เชื่อม SMEs ไทยสู่ตลาดลากล
+          ทีมงานที่มีประสบการณ์ เชื่อม SMEs ไทยสู่ตลาดสากล
         </p>
         <div class="partner-logos">
           <img src="images/Big_C.png" alt="Big C">
@@ -458,7 +463,7 @@ div[data-lang]:not(.active){display:none}
             </div>
             <div class="pkg-price">฿11,500</div>
           </div>
-          <div class="pkg-fomo">🔥 เหลือพอง 15 บูธเท่านั้น!</div>
+          <div class="pkg-fomo">🔥 เหลือเพียง 15 บูธเท่านั้น!</div>
           <div class="pkg-includes">
             <div class="pkg-include-item">ขนส่งสินค้าไทย→เวียงจันทน์ ฟรี 100 KG</div>
             <div class="pkg-include-item">Lao Staff ดูแลบูธตลอด 5 วัน</div>
@@ -496,11 +501,11 @@ div[data-lang]:not(.active){display:none}
       </div>
       <div class="why-item">
         <img src="images/Big_C.png" alt="Big C" style="height:44px;object-fit:contain;margin:0 auto 0.5rem">
-        <div class="why-label">วัตถุ Big C เจี๊ยงจนนกี</div>
+        <div class="why-label">สถานที่ Big C เวียงจันทน์</div>
       </div>
     </div>
     <div class="why-quote-bar reveal d2">
-      "<strong>VITH HUB</strong> พร้อมช่วยบินคบบุน SMEs ไทยสู่ตลาดลาว" – <em>Thai Trade Center Laos</em>
+      "<strong>VITH HUB</strong> พร้อมช่วยนำ SMEs ไทยสู่ตลาดลาว" – <em>Thai Trade Center Laos</em>
     </div>
   </div>
 </section>
@@ -631,7 +636,7 @@ div[data-lang]:not(.active){display:none}
           </div>
         </div>
         <div class="reg-urgency">
-          ⚡ เหลียวลก <strong style="font-size:1.3rem;margin:0 4px" id="slotsLeft">15</strong> วันก่อนสุดท้าน!
+          ⚡ เหลือเพียง <strong style="font-size:1.3rem;margin:0 4px" id="slotsLeft">15</strong> วันก่อนถึงงาน!
         </div>
         <div class="reg-form-grid" id="regForm">
           <input class="reg-input" id="r-name" placeholder="ชื่อผู้จองบูถ" type="text">
@@ -656,23 +661,71 @@ div[data-lang]:not(.active){display:none}
 
 <!-- ══ 7. FOOTER ══ -->
 <footer class="event-footer">
-  <div class="event-footer-logo">VITH<span>HUB</span></div>
-  <div class="event-footer-addr">
-    ที่อยู่ Big C เวียงจันทน์, ลาว &nbsp;|&nbsp;
-    Tns. <a href="tel:+85621123456" style="color:rgba(255,255,255,0.65)">+856-21-123456</a> &nbsp;|&nbsp;
-    อีเมล <a href="mailto:vithhubvientiane@gmail.com" style="color:rgba(255,255,255,0.65)">info@vithhub.asia</a>
-  </div>
-  <div class="event-footer-social">
-    <a href="#" class="social-btn">f</a>
-    <a href="#" class="social-btn" style="font-size:0.9rem">ig</a>
-    <a href="#" class="social-btn" style="font-size:0.75rem">in</a>
-    <a href="#" class="social-btn">▶</a>
-  </div>
-  <div class="event-footer-links">
-    <a href="/">หน้าหลัก</a>
-    <a href="/about">Partners</a>
-    <a href="/membership">Founder Member</a>
-    <a href="/salesdeck">Sales Deck</a>
+  <div style="max-width:960px;margin:0 auto">
+
+    <!-- Logo -->
+    <div style="text-align:center;margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,0.1)">
+      <div class="event-footer-logo">VITH<span>HUB</span></div>
+      <p style="font-size:0.78rem;color:rgba(255,255,255,0.4);letter-spacing:0.12em;text-transform:uppercase;margin-top:0.25rem">Gateway for Thai SMEs to International Markets</p>
+    </div>
+
+    <!-- 2-column contacts -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,0.08)">
+
+      <!-- Thailand -->
+      <div>
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:0.875rem">
+          <span style="font-size:1.2rem">🇹🇭</span>
+          <span style="font-family:'Kanit',sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#f59e0b">Thailand Partner</span>
+        </div>
+        <div style="font-family:'Kanit',sans-serif;font-weight:800;font-size:0.9375rem;color:#fff;margin-bottom:0.625rem;line-height:1.4">
+          Royal Bridge 99<br>Limited Partnership
+        </div>
+        <div style="font-size:0.8125rem;color:rgba(255,255,255,0.5);line-height:2;font-family:'Sarabun',sans-serif">
+          📍 211 Moo 3, T.Ban Chan, A.Muang<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Udon Thani 41000, Thailand<br>
+          📞 <a href="tel:+66855907666" style="color:rgba(255,255,255,0.65)">+66 85 590 7666</a>
+        </div>
+      </div>
+
+      <!-- Laos -->
+      <div>
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:0.875rem">
+          <span style="font-size:1.2rem">🇱🇦</span>
+          <span style="font-family:'Kanit',sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#f59e0b">Lao Partner</span>
+        </div>
+        <div style="font-family:'Kanit',sans-serif;font-weight:800;font-size:0.9375rem;color:#fff;margin-bottom:0.625rem;line-height:1.4">
+          Boualapha Khao-Khaoak<br>Agricultural Development Co., Ltd.
+        </div>
+        <div style="font-size:0.8125rem;color:rgba(255,255,255,0.5);line-height:2;font-family:'Sarabun',sans-serif">
+          🏢 Business Code: 17-00000261<br>
+          🧾 Tax ID: 111516312900<br>
+          📞 <a href="tel:+8562056605450" style="color:rgba(255,255,255,0.65)">+856 20 56605450</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Social + nav -->
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.25rem;margin-bottom:1.5rem">
+      <div style="display:flex;gap:0.625rem">
+        <a href="#" style="width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;color:#fff;font-size:0.875rem;font-weight:700;transition:all 0.2s">f</a>
+        <a href="#" style="width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;color:#fff;font-size:0.75rem;font-weight:700;transition:all 0.2s">ig</a>
+        <a href="#" style="width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;color:#fff;font-size:0.7rem;font-weight:700;transition:all 0.2s">in</a>
+        <a href="#" style="width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;color:#fff;transition:all 0.2s">▶</a>
+      </div>
+      <div style="display:flex;gap:1.25rem;flex-wrap:wrap">
+        <a href="/" style="font-size:0.8125rem;color:rgba(255,255,255,0.45)">หน้าหลัก</a>
+        <a href="/about" style="font-size:0.8125rem;color:rgba(255,255,255,0.45)">Partners</a>
+        <a href="/membership" style="font-size:0.8125rem;color:rgba(255,255,255,0.45)">Founder Member</a>
+        <a href="/salesdeck" style="font-size:0.8125rem;color:rgba(255,255,255,0.45)">Sales Deck</a>
+      </div>
+    </div>
+
+    <div style="text-align:center;font-size:0.72rem;color:rgba(255,255,255,0.2)">
+      © 2026 VITH HUB · vithhub.asia · All rights reserved
+    </div>
+
   </div>
 </footer>
 
@@ -687,7 +740,7 @@ div[data-lang]:not(.active){display:none}
   </a>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ── CAROUSEL ──
 (function(){
   const slides = document.querySelectorAll('.hc-slide');
