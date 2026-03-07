@@ -136,10 +136,15 @@ img{max-width:100%;display:block}
 @media(max-width:640px){.partner-card{grid-template-columns:1fr}}
 .partner-logo-box{
   background:var(--bg);border:1px solid var(--border);border-radius:12px;
-  padding:1.5rem;display:flex;align-items:center;justify-content:center;
-  min-height:120px;
+  padding:2rem 1.5rem;display:flex;align-items:center;justify-content:center;
+  min-height:180px;
 }
-.partner-logo-box img{max-height:70px;object-fit:contain;margin:0 auto}
+.partner-logo-box img{
+  max-height:110px;width:auto;max-width:180px;
+  object-fit:contain;margin:0 auto;
+  transition:transform 0.3s ease;
+}
+.partner-logo-box img:hover{transform:scale(1.06)}
 .partner-num{
   font-family:'Bebas Neue',sans-serif;font-size:2.5rem;
   color:var(--border);line-height:1;margin-bottom:0.25rem;
@@ -388,7 +393,7 @@ img{max-width:100%;display:block}
     <div class="partner-card reveal">
       <div>
         <div class="partner-logo-box">
-          <img src="images/Big_C.png" alt="Big C Vientiane — Main Venue Partner VITH HUB" loading="eager" width="160" height="70">
+          <img src="images/Big_C.png" alt="Big C Vientiane — Main Venue Partner VITH HUB" loading="eager" style="max-height:120px;width:auto;max-width:200px;object-fit:contain;margin:0 auto">
         </div>
         <div class="progress-wrap" style="margin-top:1rem">
           <div class="progress-label"><span>Showroom Setup</span><span>65%</span></div>
@@ -414,7 +419,7 @@ img{max-width:100%;display:block}
     <div class="partner-card reveal d1">
       <div>
         <div class="partner-logo-box">
-          <img src="images/LITSE.png" alt="LITSE Lao Institute of Trade and SME — Government Partner VITH HUB" loading="lazy" width="160" height="70">
+          <img src="images/LITSE.png" alt="LITSE Lao Institute of Trade and SME — Government Partner VITH HUB" loading="lazy" style="max-height:120px;width:auto;max-width:200px;object-fit:contain;margin:0 auto">
         </div>
         <div class="status-badge active" style="margin-top:0.75rem;font-size:0.7rem"><span class="status-dot"></span>Active Partner</div>
       </div>
@@ -435,7 +440,7 @@ img{max-width:100%;display:block}
     <div class="partner-card reveal d2">
       <div>
         <div class="partner-logo-box">
-          <img src="images/VITH.png" alt="VITH Hub Main Organizer — Thai SME Gateway" loading="lazy" width="160" height="70">
+          <img src="images/VITH.png" alt="VITH Hub Main Organizer — Thai SME Gateway" loading="lazy" style="max-height:120px;width:auto;max-width:200px;object-fit:contain;margin:0 auto">
         </div>
         <div class="status-badge active" style="margin-top:0.75rem;font-size:0.7rem"><span class="status-dot"></span>Main Organizer</div>
       </div>
@@ -456,7 +461,7 @@ img{max-width:100%;display:block}
     <div class="partner-card reveal">
       <div>
         <div class="partner-logo-box">
-          <img src="images/RB99.png" alt="Royal Bridge 99 RB99 — Logistics Partner VITH HUB Thailand Laos" loading="lazy" width="160" height="70">
+          <img src="images/RB99.png" alt="Royal Bridge 99 RB99 — Logistics Partner VITH HUB Thailand Laos" loading="lazy" style="max-height:120px;width:auto;max-width:200px;object-fit:contain;margin:0 auto">
         </div>
         <div class="status-badge active" style="margin-top:0.75rem;font-size:0.7rem"><span class="status-dot"></span>Active · Logistics Ready</div>
       </div>
@@ -472,6 +477,45 @@ img{max-width:100%;display:block}
         </div>
       </div>
     </div>
+
+    <!-- Boualapha -->
+    <div class="partner-card reveal">
+      <div>
+        <div class="partner-logo-box">
+          <img src="images/BP.jpg"
+            alt="Boualapha Khao-Khaoak Agricultural Development Company Laos — Agri Partner VITH HUB"
+            loading="lazy"
+            style="max-height:120px;width:auto;max-width:200px;object-fit:contain;margin:0 auto"
+            onerror="this.parentNode.innerHTML='<div style=&quot;font-family:Bebas Neue,sans-serif;font-size:2.5rem;color:#1E3A8A;letter-spacing:0.1em&quot;>BP</div>'">
+        </div>
+        <div class="progress-wrap" style="margin-top:1rem">
+          <div class="progress-label"><span>Partnership Active</span><span>100%</span></div>
+          <div class="progress-bar"><div class="progress-fill" data-width="100"></div></div>
+        </div>
+        <div class="status-badge active" style="margin-top:0.75rem;font-size:0.7rem"><span class="status-dot"></span>Active · Lao Partner</div>
+      </div>
+      <div>
+        <div class="partner-num">05</div>
+        <div class="partner-tag tag-gov" style="background:#dcfce7;color:#15803d">🌾 Agri Development</div>
+        <div class="partner-name-big">Boualapha Khao-Khaoak</div>
+        <div class="partner-role-text">Agricultural Development Co., Ltd. — สปป.ลาว</div>
+        <p class="partner-desc-text">ผู้เชี่ยวชาญด้านสินค้าเกษตรแปรรูปและวัตถุดิบในสปป.ลาว เป็นพันธมิตรหลักด้านการจัดซื้อและกระจายสินค้าเกษตรคุณภาพสูงระหว่างลาว–ไทย พร้อมเชื่อมเครือข่ายเกษตรกรและผู้ประกอบการท้องถิ่นกับตลาดนานาชาติผ่าน VITH HUB</p>
+        <div class="partner-stats">
+          <div class="p-stat"><div class="p-stat-num">🌾</div><div class="p-stat-label">Agri Export</div></div>
+          <div class="p-stat"><div class="p-stat-num">LAO</div><div class="p-stat-label">Local Expert</div></div>
+          <div class="p-stat"><div class="p-stat-num">MOU</div><div class="p-stat-label">Signed</div></div>
+        </div>
+        <div style="margin-top:1rem;padding:0.875rem 1rem;background:#f8fafc;border-radius:10px;border:1px solid #e2e8f0">
+          <div style="font-family:'Kanit',sans-serif;font-size:0.72rem;font-weight:700;color:#4a5568;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.375rem">Company Details</div>
+          <div style="font-size:0.8125rem;color:#4a5568;line-height:1.9;font-family:'Sarabun',sans-serif">
+            🏢 Business Code: <strong style="color:#1a202c">17-00000261</strong><br>
+            🧾 Tax ID: <strong style="color:#1a202c">111516312900</strong><br>
+            📞 <a href="tel:+8562056605450" style="color:#1E3A8A;font-weight:600">+856 20 56605450</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -653,7 +697,7 @@ img{max-width:100%;display:block}
     </div>
     <div class="about-footer-bottom">
       <div class="footer-nav-links">
-        <a href="mailto:vithhubvientiane@gmail.com" style="color:rgba(255,255,255,0.55)">vithhubvientiane@gmail.com</a>
+        <a href="/cdn-cgi/l/email-protection#31475845595944534758545f4558505f5471565c50585d1f525e5c" style="color:rgba(255,255,255,0.55)"><span class="__cf_email__" data-cfemail="15637c617d7d6077637c707b617c747b70557278747c793b767a78">[email&#160;protected]</span></a>
       </div>
       <div class="footer-privacy">
         <a href="/privacy">Privacy Policy</a> · <a href="/terms">Terms & Conditions</a>
@@ -678,7 +722,7 @@ img{max-width:100%;display:block}
   </a>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ── LANG ──
 function setLang(lang) {
   document.querySelectorAll('[data-lang]').forEach(el => {
@@ -705,13 +749,4 @@ document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 const progObs = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if(e.isIntersecting) {
-      const fill = e.target.querySelector('.progress-fill');
-      if(fill) { fill.style.width = fill.dataset.width + '%'; }
-      progObs.unobserve(e.target);
-    }
-  });
-}, {threshold:0.3});
-document.querySelectorAll('.progress-wrap').forEach(el => progObs.observe(el));
-</script>
-</body>
-</html>
+      const fill = e.target.querySelector(
