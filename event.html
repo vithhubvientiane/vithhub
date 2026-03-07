@@ -330,7 +330,7 @@ div[data-lang]:not(.active){display:none}
       <button class="lang-btn" onclick="setLang('la')">LAO</button>
       <button class="lang-btn" onclick="setLang('en')">EN</button>
     </div>
-    <a href="/about" class="btn-nav" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.8);margin-right:0.4rem">🌐 About</a><a href="/membership" class="btn-nav" style="background:linear-gradient(90deg,#92400e,#b45309);color:#fbbf24;border:none;margin-right:0.4rem">👑 Founder</a>
+    <a href="/about" class="btn-nav" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.8);margin-right:0.4rem">🌐 About</a><a href="/salesdeck" target="_blank" class="btn-nav" style="background:rgba(245,158,11,0.15);border:1px solid rgba(245,158,11,0.4);color:#fbbf24;margin-right:0.4rem">📋 Sales Deck</a><a href="/membership" class="btn-nav" style="background:linear-gradient(90deg,#92400e,#b45309);color:#fbbf24;border:none;margin-right:0.4rem">🚀 จบงานแล้วไปไหน?</a>
     <a href="#contact" class="btn-nav pulse-btn">
       <span data-lang="th" class="active">จองด่วน!</span>
       <span data-lang="la">ຈອງດ່ວນ!</span>
@@ -968,6 +968,37 @@ div[data-lang]:not(.active){display:none}
 </div>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// ── PHASE SWITCHER ──
+function switchPhase(phase) {
+  // อัพเดต tab active
+  document.querySelectorAll('.phase-tab').forEach(t => t.classList.remove('active'));
+  const activeTab = document.getElementById('tab-p' + phase);
+  if(activeTab) activeTab.classList.add('active');
+
+  window._currentPhase = phase;
+
+  // scroll ไป section ที่เกี่ยวข้อง
+  if(phase === 1) {
+    const target = document.getElementById('booth-section');
+    if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
+  } else {
+    // หา Phase 2 ใน roadmap
+    const target = document.getElementById('roadmap') || document.querySelector('.rm-phase2');
+    if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
+  // flash highlight
+  const highlight = phase === 1
+    ? document.getElementById('booth-section')
+    : document.querySelector('.rm-phase2');
+  if(highlight) {
+    highlight.style.transition = 'box-shadow 0.3s';
+    highlight.style.boxShadow = '0 0 0 3px rgba(245,158,11,0.5)';
+    setTimeout(() => { highlight.style.boxShadow = ''; }, 1200);
+  }
+}
+window._currentPhase = 1;
+
 // ── CAROUSEL ──
 (function(){
   const slides = document.querySelectorAll('.hc-slide');
