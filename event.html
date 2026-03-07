@@ -9,6 +9,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800;900&family=Sarabun:wght@400;500;600;700&family=Bebas+Neue&family=Noto+Sans+Lao:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<link rel="preload" href="images/slideshow01.jpg" as="image">
+<link rel="preload" href="images/slideshow02.jpg" as="image">
 <style>
 /* ══ BASE ══ */
 *{box-sizing:border-box;margin:0;padding:0}
@@ -39,7 +41,7 @@ img{max-width:100%;display:block}
 }
 .announce-bar a{color:var(--gold2);font-weight:700}
 .announce-dot{width:6px;height:6px;border-radius:50%;background:var(--gold2);animation:blink 1.4s infinite}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}} .announce-dot{will-change:opacity}
 
 /* ══ NAV ══ */
 .top-nav{
@@ -96,14 +98,27 @@ img{max-width:100%;display:block}
   position:relative;min-height:520px;overflow:hidden;
   background:var(--navy3);
 }
-.hero-slides{position:absolute;inset:0}
+.hero-slides{position:absolute;inset:0;transform:translateZ(0)}
 .hero-slide{
   position:absolute;inset:0;opacity:0;
   background-size:cover;background-position:center;
-  transition:opacity 1.2s ease;
+  transition:opacity 1s ease;
+  will-change:opacity;
+  backface-visibility:hidden;
+  transform:translateZ(0);
 }
-.hero-slide.active{opacity:1;z-index:1;animation:kbZoom 7s ease-out forwards}
-@keyframes kbZoom{from{transform:scale(1.05)}to{transform:scale(1)}}
+.hero-slide.active{
+  opacity:1;z-index:1;
+}
+/* Ken Burns — แยก pseudo-element ออกจาก opacity layer */
+.hero-slide::after{
+  content:'';position:absolute;inset:-8%;
+  background:inherit;background-size:cover;background-position:center;
+  will-change:transform;
+  backface-visibility:hidden;
+}
+.hero-slide.active::after{animation:kbZoom 7s ease-out forwards}
+@keyframes kbZoom{from{transform:scale(1.08) translateZ(0)}to{transform:scale(1) translateZ(0)}}
 .hero-slide:nth-child(1){background-image:url('images/slideshow01.jpg')}
 .hero-slide:nth-child(2){background-image:url('images/slideshow02.jpg')}
 .hero-slide:nth-child(3){background-image:url('images/slideshow03.jpg')}
@@ -1097,16 +1112,24 @@ img{max-width:100%;display:block}
     d.onclick = ()=>goTo(i);
     dots.appendChild(d);
   });
+  let transitioning = false;
   function goTo(n){
+    if(transitioning) return;
+    transitioning = true;
     slides[cur].classList.remove('active');
     dots.children[cur].classList.remove('active');
     cur = (n+slides.length)%slides.length;
     slides[cur].classList.add('active');
     dots.children[cur].classList.add('active');
+    // preload next slide
+    const nxt = (cur+1)%slides.length;
+    const bg = slides[nxt].style.backgroundImage||getComputedStyle(slides[nxt]).backgroundImage;
+    if(bg&&bg!=='none'){const img=new Image();img.src=bg.replace(/url\(['"]/,'').replace(/['"]\)/,'');}
     prog.classList.remove('run');
     prog.style.transition='none';prog.style.width='0';
     requestAnimationFrame(()=>requestAnimationFrame(()=>{
       prog.style.transition='';prog.classList.add('run');
+      setTimeout(()=>{transitioning=false;},400);
     }));
     clearTimeout(timer);
     timer = setTimeout(()=>goTo(cur+1),DUR);
@@ -1139,7 +1162,12 @@ function updateCD(){
     if(g('Secs'))g('Secs').textContent=pad(s);
   });
 }
-updateCD(); setInterval(updateCD,1000);
+updateCD();
+(function loop(){
+  const now = Date.now();
+  const msToNext = 1000 - (now % 1000);
+  setTimeout(()=>{updateCD();requestAnimationFrame(loop);}, msToNext);
+})();
 
 // ── LANG ──
 function setLang(lang){
@@ -1179,8 +1207,13 @@ function submitRegForm(){
 
 // ── REVEAL ──
 const obs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});
-},{threshold:0.07});
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('in');
+      obs.unobserve(e.target); // unobserve หลัง reveal แล้ว
+    }
+  });
+},{rootMargin:'0px 0px -40px 0px',threshold:0});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 </script>
 </body>
