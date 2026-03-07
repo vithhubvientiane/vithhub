@@ -3,1134 +3,1185 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VITH HUB 2026 — Mekong Business Connect · Big C เวียงจันทน์</title>
-<meta name="description" content="งานแสดงสินค้านานาชาติ เชื่อม SME ไทยสู่ลูกค้าต่างชาติในลาว จีน รัสเซีย 25-29 มีนาคม 2026 ณ Big C เวียงจันทน์">
+<title>VITH HUB SME Showcase 2026 — Big C Vientiane | vithhub.asia</title>
+<meta name="description" content="งานแสดงสินค้า SME ไทย ณ Big C เวียงจันทน์ 25-29 มีนาคม 2026 เชื่อม SME ไทยสู่ผู้ซื้อลาว จีน รัสเซีย">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kanit:wght@400;500;600;700;800;900&family=Sarabun:wght@400;500;600;700&family=Noto+Sans+Lao:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800;900&family=Sarabun:wght@400;500;600;700&family=Bebas+Neue&family=Noto+Sans+Lao:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
+/* ══ BASE ══ */
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Sarabun','Kanit',sans-serif;color:#1a202c;background:#fff;overflow-x:hidden}
-img{max-width:100%;display:block}
+body{font-family:'Sarabun','Kanit',sans-serif;background:#fff;color:#1a202c;overflow-x:hidden}
 a{text-decoration:none}
+img{max-width:100%;display:block}
 
-/* ── COLORS ── */
+/* ══ VARIABLES ══ */
 :root{
-  --navy:#1E3A8A;--navy2:#162d6e;--gold:#D4A017;--gold2:#f59e0b;
-  --red:#D32F2F;--red2:#b71c1c;--white:#fff;
-  --bg:#f8fafc;--border:#e2e8f0;--text:#1a202c;--sub:#4a5568;
+  --navy:#0F2A44;--navy2:#1a3a5c;--navy3:#0a1f33;
+  --gold:#D4AF37;--gold2:#f0c843;--gold3:#b8960c;
+  --white:#fff;--off-white:#F7F9FC;
+  --border:#DDE3ED;--text:#1a202c;--sub:#4a5568;
+  --radius:12px;--radius-lg:20px;
+  --shadow:0 4px 24px rgba(15,42,68,0.10);
+  --shadow-lg:0 16px 48px rgba(15,42,68,0.16);
 }
 
-/* ── NAV OVERRIDE (dark — sits over carousel) ── */
-#mainNav{
-  background:rgba(10,20,55,0.88)!important;
+/* ══ [data-lang] ══ */
+[data-lang]{display:none}[data-lang].active{display:inline}
+
+/* ══ TOP ANNOUNCEMENT BAR ══ */
+.announce-bar{
+  background:var(--navy);color:rgba(255,255,255,0.85);
+  text-align:center;padding:9px 1.5rem;
+  font-family:'Kanit',sans-serif;font-size:0.8rem;font-weight:600;
+  display:flex;align-items:center;justify-content:center;gap:0.75rem;flex-wrap:wrap;
+}
+.announce-bar a{color:var(--gold2);font-weight:700}
+.announce-dot{width:6px;height:6px;border-radius:50%;background:var(--gold2);animation:blink 1.4s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+
+/* ══ NAV ══ */
+.top-nav{
+  position:sticky;top:0;z-index:200;
+  background:rgba(255,255,255,0.97);
   backdrop-filter:blur(16px);
-  border-bottom:1px solid rgba(255,255,255,0.08);
-  box-shadow:0 2px 20px rgba(0,0,0,0.3);
+  border-bottom:1px solid var(--border);
+  box-shadow:0 1px 12px rgba(15,42,68,0.07);
 }
-#mainNav .nav-logo,
-#mainNav a.nav-link{color:#fff!important}
-#mainNav .lang-btn{color:#fff!important;border-color:rgba(255,255,255,0.25)!important}
-#mainNav .lang-btn.active{background:rgba(255,255,255,0.2)!important;color:#fff!important}
-#mainNav a.nav-link:hover{background:rgba(255,255,255,0.1)!important;border-color:rgba(255,255,255,0.3)!important}
+.nav-inner{
+  max-width:1200px;margin:0 auto;
+  padding:0.75rem 2rem;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+}
+.nav-logo-link{text-decoration:none}
+.nav-logo-txt{
+  font-family:'Bebas Neue',sans-serif;font-size:1.6rem;
+  letter-spacing:0.08em;color:var(--navy);line-height:1;
+}
+.nav-logo-txt span{color:var(--gold)}
+.nav-links{display:flex;align-items:center;gap:0.25rem}
+.nav-link{
+  font-family:'Kanit',sans-serif;font-size:0.8rem;font-weight:600;
+  color:var(--sub);padding:6px 12px;border-radius:8px;transition:all 0.2s;
+}
+.nav-link:hover{background:var(--off-white);color:var(--navy)}
+.nav-link.active{color:var(--navy);background:var(--off-white)}
+.nav-actions{display:flex;align-items:center;gap:0.5rem}
+.btn-nav-reserve{
+  background:var(--gold);color:var(--navy);
+  font-family:'Kanit',sans-serif;font-weight:800;font-size:0.82rem;
+  padding:9px 20px;border-radius:8px;transition:all 0.2s;
+}
+.btn-nav-reserve:hover{background:var(--gold2);transform:translateY(-1px)}
+.btn-nav-deck{
+  background:transparent;color:var(--navy);
+  font-family:'Kanit',sans-serif;font-weight:700;font-size:0.82rem;
+  padding:8px 16px;border-radius:8px;
+  border:1.5px solid var(--border);transition:all 0.2s;
+}
+.btn-nav-deck:hover{border-color:var(--navy);background:var(--off-white)}
+.lang-wrap{display:flex;gap:2px;margin-right:0.25rem}
+.lang-btn{
+  font-family:'Kanit',sans-serif;font-size:0.7rem;font-weight:700;
+  padding:5px 8px;border-radius:6px;border:1px solid var(--border);
+  background:transparent;cursor:pointer;color:var(--sub);transition:all 0.2s;
+}
+.lang-btn.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+@media(max-width:900px){.nav-links{display:none}}
+@media(max-width:600px){.btn-nav-deck{display:none}}
 
-/* ── HERO CAROUSEL ── */
-.hero-carousel{position:relative;height:520px;overflow:hidden}
-@media(max-width:600px){.hero-carousel{height:380px}}
-.hc-slide{
+/* ══ HERO ══ */
+.hero{
+  position:relative;min-height:520px;overflow:hidden;
+  background:var(--navy3);
+}
+.hero-slides{position:absolute;inset:0}
+.hero-slide{
   position:absolute;inset:0;opacity:0;
   background-size:cover;background-position:center;
   transition:opacity 1.2s ease;
 }
-.hc-slide.active{opacity:1;z-index:1;animation:kenBurns 7s ease-out forwards}
-@keyframes kenBurns{from{transform:scale(1.06)}to{transform:scale(1)}}
-.hc-slide:nth-child(1){background-image:url('images/slideshow01.jpg')}
-.hc-slide:nth-child(2){background-image:url('images/slideshow02.jpg')}
-.hc-slide:nth-child(3){background-image:url('images/slideshow03.jpg')}
-.hc-slide:nth-child(4){background-image:url('images/slideshow04.jpg')}
-.hc-slide:nth-child(5){background-image:url('images/slideshow05.jpg')}
-.hc-slide:nth-child(6){background-image:url('images/slideshow06.jpg')}
-.hc-slide::after{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(to right,rgba(15,30,80,0.78) 0%,rgba(15,30,80,0.5) 55%,rgba(15,30,80,0.2) 100%);
+.hero-slide.active{opacity:1;z-index:1;animation:kbZoom 7s ease-out forwards}
+@keyframes kbZoom{from{transform:scale(1.05)}to{transform:scale(1)}}
+.hero-slide:nth-child(1){background-image:url('images/slideshow01.jpg')}
+.hero-slide:nth-child(2){background-image:url('images/slideshow02.jpg')}
+.hero-slide:nth-child(3){background-image:url('images/slideshow03.jpg')}
+.hero-slide:nth-child(4){background-image:url('images/slideshow04.jpg')}
+.hero-slide:nth-child(5){background-image:url('images/slideshow05.jpg')}
+.hero-slide:nth-child(6){background-image:url('images/slideshow06.jpg')}
+.hero-overlay{
+  position:absolute;inset:0;z-index:2;
+  background:linear-gradient(105deg,rgba(10,31,51,0.88) 0%,rgba(10,31,51,0.65) 55%,rgba(10,31,51,0.3) 100%);
 }
-.hc-content{
-  position:absolute;inset:0;z-index:5;
-  display:flex;align-items:center;
-  padding:2rem 3rem;
-  padding-top:80px;
+.hero-content{
+  position:relative;z-index:3;
+  max-width:1200px;margin:0 auto;padding:5rem 2rem 4rem;
+  display:grid;grid-template-columns:1fr 440px;gap:3rem;align-items:center;
 }
-@media(max-width:600px){.hc-content{padding:1.5rem;padding-top:70px}}
-.hc-inner{max-width:580px}
-.hc-eyebrow{
-  font-family:'Kanit',sans-serif;font-size:0.75rem;font-weight:700;
-  letter-spacing:0.15em;text-transform:uppercase;
-  color:rgba(255,255,255,0.7);margin-bottom:0.625rem;
+@media(max-width:900px){.hero-content{grid-template-columns:1fr;padding:4rem 1.5rem 3rem}}
+.hero-left{}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(212,175,55,0.15);border:1px solid rgba(212,175,55,0.4);
+  color:var(--gold2);font-family:'Kanit',sans-serif;font-size:0.72rem;font-weight:700;
+  letter-spacing:0.15em;text-transform:uppercase;padding:6px 16px;border-radius:99px;
+  margin-bottom:1.25rem;
 }
-.hc-title{
+.hero-title{
   font-family:'Kanit',sans-serif;font-weight:900;
-  font-size:clamp(1.75rem,5vw,3rem);
-  color:#fff;line-height:1.15;margin-bottom:0.5rem;
+  font-size:clamp(2.25rem,5.5vw,3.75rem);color:#fff;
+  line-height:1.1;margin-bottom:0.75rem;
 }
-.hc-title span{color:var(--gold2)}
-.hc-sub{
-  font-size:clamp(1rem,2.5vw,1.25rem);font-weight:700;
-  color:#fff;margin-bottom:0.375rem;line-height:1.4;
-  font-family:'Kanit',sans-serif;
+.hero-title span{color:var(--gold2)}
+.hero-sub{
+  font-family:'Kanit',sans-serif;font-size:clamp(1rem,2vw,1.2rem);
+  color:rgba(255,255,255,0.78);margin-bottom:1.5rem;line-height:1.5;
 }
-.hc-date{
-  font-family:'Kanit',sans-serif;font-size:0.875rem;font-weight:600;
-  color:rgba(255,255,255,0.75);margin-bottom:1.5rem;
-  display:flex;align-items:center;gap:6px;
+.hero-stats{
+  display:flex;gap:1.5rem;margin-bottom:2rem;flex-wrap:wrap;
 }
-.hc-btns{display:flex;gap:0.75rem;flex-wrap:wrap}
-.btn-red{
-  background:var(--red);color:#fff;
-  font-family:'Kanit',sans-serif;font-weight:700;font-size:0.9375rem;
-  padding:12px 28px;border-radius:8px;
-  display:inline-flex;align-items:center;gap:6px;min-height:48px;
-  box-shadow:0 4px 16px rgba(211,47,47,0.45);transition:all 0.25s;
+.hero-stat{
+  display:flex;align-items:center;gap:7px;
+  font-family:'Kanit',sans-serif;font-size:0.85rem;font-weight:600;
+  color:rgba(255,255,255,0.8);
 }
-.btn-red:hover{background:var(--red2);transform:translateY(-2px)}
-.btn-gold{
-  background:linear-gradient(90deg,#D4A017,#f59e0b);color:#1a0a00;
+.hero-stat-icon{font-size:1rem}
+.hero-btns{display:flex;gap:0.875rem;flex-wrap:wrap}
+.btn-reserve{
+  background:var(--gold);color:var(--navy);
   font-family:'Kanit',sans-serif;font-weight:800;font-size:0.9375rem;
-  padding:12px 28px;border-radius:8px;
-  display:inline-flex;align-items:center;gap:6px;min-height:48px;
-  box-shadow:0 4px 16px rgba(212,160,23,0.4);transition:all 0.25s;
+  padding:13px 28px;border-radius:10px;display:inline-flex;align-items:center;gap:7px;
+  box-shadow:0 4px 20px rgba(212,175,55,0.45);transition:all 0.25s;
 }
-.btn-gold:hover{transform:translateY(-2px)}
-/* carousel controls */
-.hc-dots{
-  position:absolute;bottom:1rem;left:50%;transform:translateX(-50%);
-  z-index:10;display:flex;gap:7px;
+.btn-reserve:hover{background:var(--gold2);transform:translateY(-2px)}
+.btn-deck{
+  background:rgba(255,255,255,0.1);color:#fff;
+  border:1.5px solid rgba(255,255,255,0.3);
+  font-family:'Kanit',sans-serif;font-weight:700;font-size:0.9375rem;
+  padding:12px 24px;border-radius:10px;display:inline-flex;align-items:center;gap:7px;
+  transition:all 0.25s;backdrop-filter:blur(8px);
 }
-.hc-dot{
-  width:8px;height:8px;border-radius:50%;
-  background:rgba(255,255,255,0.35);border:none;cursor:pointer;padding:0;
-  transition:all 0.3s;
-}
-.hc-dot.active{background:#fff;width:24px;border-radius:4px}
-.hc-arrow{
-  position:absolute;top:50%;transform:translateY(-50%);
-  z-index:10;background:rgba(0,0,0,0.25);border:1px solid rgba(255,255,255,0.2);
-  color:#fff;width:40px;height:40px;border-radius:50%;
-  cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;
-  transition:all 0.2s;
-}
-.hc-arrow:hover{background:rgba(0,0,0,0.5)}
-.hc-arrow.prev{left:1rem}.hc-arrow.next{right:1rem}
-.hc-progress{position:absolute;bottom:0;left:0;height:3px;background:var(--gold2);z-index:10;width:0}
-.hc-progress.run{width:100%;transition:width 5s linear}
-@media(max-width:480px){.hc-arrow{display:none}}
+.btn-deck:hover{background:rgba(255,255,255,0.18);border-color:rgba(255,255,255,0.5)}
 
-/* ── SECTIONS ── */
-.sec{padding:3.5rem 1.5rem}
-.sec-center{max-width:960px;margin:0 auto}
-.sec-header{border-bottom:2px solid var(--border);padding-bottom:0.75rem;margin-bottom:2rem}
+/* countdown box */
+.hero-countdown{
+  background:rgba(255,255,255,0.08);backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,0.15);border-radius:var(--radius-lg);
+  padding:1.75rem;
+}
+@media(max-width:900px){.hero-countdown{display:none}}
+.cd-title{
+  font-family:'Kanit',sans-serif;font-size:0.75rem;font-weight:700;
+  letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.55);
+  margin-bottom:1rem;text-align:center;
+}
+.cd-blocks{display:flex;gap:0.5rem;justify-content:center;margin-bottom:1.25rem}
+.cd-block{
+  background:rgba(255,255,255,0.1);border-radius:10px;
+  padding:0.875rem 1rem;text-align:center;min-width:64px;
+  border:1px solid rgba(255,255,255,0.1);
+}
+.cd-num{
+  font-family:'Bebas Neue',sans-serif;font-size:2.5rem;
+  color:var(--gold2);line-height:1;display:block;
+}
+.cd-label{font-size:0.65rem;color:rgba(255,255,255,0.45);letter-spacing:0.1em;display:block;margin-top:2px}
+.cd-sep{font-size:1.8rem;color:rgba(255,255,255,0.25);align-self:center;font-weight:300;padding-bottom:12px}
+.cd-event-info{text-align:center}
+.cd-date{
+  font-family:'Kanit',sans-serif;font-weight:700;font-size:0.9rem;color:#fff;margin-bottom:0.25rem;
+}
+.cd-venue{font-size:0.78rem;color:rgba(255,255,255,0.5)}
+.cd-reserve{
+  display:block;text-align:center;margin-top:1.25rem;
+  background:var(--gold);color:var(--navy);
+  font-family:'Kanit',sans-serif;font-weight:800;font-size:0.875rem;
+  padding:11px;border-radius:8px;transition:all 0.2s;
+}
+.cd-reserve:hover{background:var(--gold2)}
+
+/* hero dots */
+.hero-dots{
+  position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);
+  z-index:5;display:flex;gap:7px;
+}
+.hero-dot{
+  width:8px;height:8px;border-radius:50%;
+  background:rgba(255,255,255,0.3);border:none;cursor:pointer;padding:0;transition:all 0.3s;
+}
+.hero-dot.active{background:var(--gold2);width:24px;border-radius:4px}
+.hero-progress{position:absolute;bottom:0;left:0;height:3px;background:var(--gold);z-index:5;width:0}
+.hero-progress.run{width:100%;transition:width 5s linear}
+
+/* ══ SECTION BASE ══ */
+.sec{padding:5rem 2rem}
+@media(max-width:640px){.sec{padding:3.5rem 1.25rem}}
+.sec-inner{max-width:1200px;margin:0 auto}
+.sec-tag{
+  font-family:'Kanit',sans-serif;font-size:0.68rem;font-weight:700;
+  letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--gold3);margin-bottom:0.5rem;
+}
 .sec-title{
   font-family:'Kanit',sans-serif;font-weight:900;
-  font-size:clamp(1.25rem,3vw,1.75rem);color:var(--text);
+  font-size:clamp(1.5rem,3.5vw,2.25rem);color:var(--navy);line-height:1.2;margin-bottom:0.75rem;
 }
-.sec-title span{color:var(--navy)}
+.sec-title span{color:var(--gold3)}
+.sec-desc{font-size:0.9375rem;color:var(--sub);max-width:620px;line-height:1.75}
+.sec-header-center{text-align:center;margin-bottom:3rem}
+.sec-header-center .sec-desc{margin:0 auto}
 
-/* ── ABOUT ── */
-#about-team{background:#fff}
-.about-grid{display:grid;grid-template-columns:280px 1fr;gap:2rem;align-items:start}
-@media(max-width:700px){.about-grid{grid-template-columns:1fr}}
-.about-img-wrap{border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.1)}
-.about-img-wrap img{width:100%;height:220px;object-fit:cover}
-.about-tagline{
-  font-family:'Kanit',sans-serif;font-weight:600;font-size:1rem;
-  color:var(--sub);margin-bottom:1.25rem;line-height:1.6;
+/* ══ EVENT HIGHLIGHTS ══ */
+#highlights{background:var(--off-white);border-bottom:1px solid var(--border)}
+.hl-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
+@media(max-width:900px){.hl-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.hl-grid{grid-template-columns:1fr 1fr}}
+.hl-card{
+  background:#fff;border:1.5px solid var(--border);border-radius:var(--radius);
+  padding:1.5rem 1.25rem;display:flex;align-items:center;gap:1rem;
+  transition:all 0.25s;
 }
-.partner-logos{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:1.5rem}
-.partner-logos img{height:40px;object-fit:contain;filter:grayscale(20%)}
-.about-quote{
-  background:#f1f5f9;border-left:4px solid var(--navy);
-  padding:1rem 1.25rem;border-radius:0 8px 8px 0;
-  font-family:'Kanit',sans-serif;font-style:italic;
-  font-size:0.9375rem;color:var(--text);margin-bottom:1.25rem;line-height:1.7;
+.hl-card:hover{box-shadow:var(--shadow);border-color:var(--navy);transform:translateY(-2px)}
+.hl-icon{
+  width:52px;height:52px;border-radius:12px;
+  background:var(--navy);display:flex;align-items:center;justify-content:center;
+  font-size:1.5rem;flex-shrink:0;
 }
-.about-quote strong{font-style:normal;color:var(--navy)}
+.hl-num{
+  font-family:'Kanit',sans-serif;font-weight:900;font-size:1.25rem;
+  color:var(--navy);line-height:1;
+}
+.hl-label{font-size:0.78rem;color:var(--sub);font-family:'Kanit',sans-serif;margin-top:2px}
 
-/* ── FLOOR PLAN & PACKAGES ── */
-#booth-section{background:var(--bg)}
-.booth-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start}
-@media(max-width:700px){.booth-grid{grid-template-columns:1fr}}
-.floor-img{border-radius:12px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.12)}
-.floor-img img{width:100%;object-fit:cover}
-.pkg-table{display:flex;flex-direction:column;gap:0.75rem}
-.pkg-row{
+/* ══ WHY EXHIBIT ══ */
+#why{background:#fff}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+@media(max-width:900px){.why-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.why-grid{grid-template-columns:1fr}}
+.why-card{
+  border:1.5px solid var(--border);border-radius:var(--radius-lg);
+  overflow:hidden;transition:all 0.3s;background:#fff;
+}
+.why-card:hover{box-shadow:var(--shadow-lg);border-color:var(--navy);transform:translateY(-4px)}
+.why-img{
+  height:140px;background:var(--off-white);
+  display:flex;align-items:center;justify-content:center;
+  font-size:3.5rem;border-bottom:1px solid var(--border);
+  background:linear-gradient(135deg,#EEF2FF,#DBEAFE);
+}
+.why-body{padding:1.25rem}
+.why-heading{
+  font-family:'Kanit',sans-serif;font-weight:800;font-size:0.9375rem;
+  color:var(--navy);margin-bottom:0.375rem;
+}
+.why-text{font-size:0.8125rem;color:var(--sub);line-height:1.6}
+
+/* ══ VENUE ══ */
+#venue{background:var(--off-white)}
+.venue-wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+@media(max-width:768px){.venue-wrap{grid-template-columns:1fr}}
+.venue-img-wrap{
+  border-radius:var(--radius-lg);overflow:hidden;
+  box-shadow:var(--shadow-lg);position:relative;
+}
+.venue-img-wrap img{width:100%;height:320px;object-fit:cover}
+.venue-img-badge{
+  position:absolute;bottom:1rem;left:1rem;right:1rem;
+  background:rgba(15,42,68,0.9);backdrop-filter:blur(12px);
+  color:#fff;font-family:'Kanit',sans-serif;font-size:0.8125rem;font-weight:600;
+  padding:10px 16px;border-radius:10px;text-align:center;
+  border:1px solid rgba(255,255,255,0.1);
+}
+.venue-stats{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.75rem 0}
+.venue-stat{
+  background:#fff;border:1.5px solid var(--border);border-radius:var(--radius);
+  padding:1rem;text-align:center;
+}
+.venue-stat-num{
+  font-family:'Kanit',sans-serif;font-weight:900;font-size:1.5rem;
+  color:var(--navy);line-height:1;margin-bottom:0.25rem;
+}
+.venue-stat-lbl{font-size:0.75rem;color:var(--sub)}
+
+/* ══ FLOOR PLAN ══ */
+#floorplan{background:#fff}
+.fp-wrap{
+  background:var(--off-white);border:1.5px solid var(--border);
+  border-radius:var(--radius-lg);overflow:hidden;
+  box-shadow:var(--shadow);
+}
+.fp-header{
+  background:var(--navy);color:#fff;padding:1rem 1.5rem;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.fp-header-title{
+  font-family:'Kanit',sans-serif;font-weight:700;font-size:0.9rem;
+}
+.fp-img{position:relative}
+.fp-img img{
+  width:100%;max-height:500px;object-fit:contain;
+  background:#f1f5f9;display:block;
+}
+.fp-zoom-btn{
+  position:absolute;top:1rem;right:1rem;
+  background:rgba(255,255,255,0.9);color:var(--navy);
+  font-family:'Kanit',sans-serif;font-size:0.75rem;font-weight:700;
+  padding:6px 14px;border-radius:8px;border:1px solid var(--border);
+  cursor:pointer;transition:all 0.2s;
+}
+.fp-zoom-btn:hover{background:var(--navy);color:#fff}
+.fp-legend{
+  display:flex;gap:1rem;padding:1rem 1.5rem;
+  background:#fff;border-top:1px solid var(--border);flex-wrap:wrap;
+}
+.fp-leg-item{
+  display:flex;align-items:center;gap:6px;
+  font-family:'Kanit',sans-serif;font-size:0.78rem;color:var(--sub);
+}
+.fp-leg-dot{width:12px;height:12px;border-radius:3px;flex-shrink:0}
+.fp-cta{
+  padding:1.25rem 1.5rem;text-align:center;border-top:1px solid var(--border);
+}
+.btn-floorplan{
   background:var(--navy);color:#fff;
-  border-radius:10px;padding:1rem 1.25rem;
-  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  font-family:'Kanit',sans-serif;font-weight:700;font-size:0.875rem;
+  padding:11px 28px;border-radius:8px;display:inline-flex;align-items:center;gap:7px;
+  transition:all 0.2s;
 }
-.pkg-row.premium{background:var(--navy2)}
-.pkg-name{font-family:'Kanit',sans-serif;font-weight:700;font-size:1rem}
-.pkg-price{font-family:'Kanit',sans-serif;font-weight:900;font-size:1.15rem;color:var(--gold2);white-space:nowrap}
-.pkg-fomo{
-  font-family:'Kanit',sans-serif;font-weight:700;font-size:0.9375rem;
-  color:var(--red);text-align:center;padding:0.5rem 0;
-}
-.pkg-includes{margin-top:0.5rem}
-.pkg-include-item{
-  display:flex;align-items:center;gap:8px;
-  font-size:0.875rem;color:var(--sub);padding:4px 0;
-  font-family:'Sarabun',sans-serif;
-}
-.pkg-include-item::before{content:'✓';color:var(--navy);font-weight:700}
+.btn-floorplan:hover{background:var(--navy2);transform:translateY(-1px)}
 
-/* ── WHY JOIN ── */
-#why-join{background:#fff}
-.why-icons{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-bottom:2rem}
-@media(max-width:600px){.why-icons{grid-template-columns:repeat(2,1fr)}}
-.why-item{text-align:center;padding:1.5rem 1rem}
-.why-icon-big{font-size:2.5rem;margin-bottom:0.5rem}
-.why-num{
+/* ══ PARTNERS ══ */
+#partners{background:var(--off-white)}
+.partner-logos-row{
+  display:flex;align-items:center;justify-content:center;
+  gap:2rem;flex-wrap:wrap;margin-top:2rem;
+}
+.partner-logo-item{
+  background:#fff;border:1.5px solid var(--border);border-radius:var(--radius);
+  padding:1.25rem 2rem;display:flex;align-items:center;justify-content:center;
+  min-width:140px;height:80px;transition:all 0.25s;
+}
+.partner-logo-item:hover{box-shadow:var(--shadow);border-color:var(--navy);transform:translateY(-2px)}
+.partner-logo-item img{max-height:44px;object-fit:contain;margin:0 auto}
+.partners-community{
+  margin-top:2.5rem;padding:1.75rem;
+  background:#fff;border:1.5px solid var(--border);border-radius:var(--radius-lg);
+  display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem;
+}
+@media(max-width:640px){.partners-community{grid-template-columns:1fr}}
+.community-item{text-align:center;padding:1rem}
+.community-flag{font-size:2rem;margin-bottom:0.5rem}
+.community-title{
+  font-family:'Kanit',sans-serif;font-weight:700;font-size:0.875rem;
+  color:var(--navy);margin-bottom:0.25rem;
+}
+.community-desc{font-size:0.78rem;color:var(--sub)}
+
+/* ══ BOOTH PACKAGES ══ */
+#packages{background:#fff}
+.pkg-wrap{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+@media(max-width:640px){.pkg-wrap{grid-template-columns:1fr}}
+
+/* dark package card */
+.pkg-dark{
+  background:#1a1a2e;border:1.5px solid rgba(255,255,255,0.08);
+  border-radius:var(--radius-lg);overflow:hidden;
+  display:flex;flex-direction:column;position:relative;transition:all 0.3s;
+}
+.pkg-dark:hover{transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,0.35)}
+.pkg-dark.featured-pkg{border-color:rgba(212,175,55,0.5)}
+.pkg-dark.featured-pkg::before{
+  content:'★ แนะนำ';
+  position:absolute;top:0;right:1.25rem;
+  background:var(--gold);color:var(--navy);
+  font-family:'Kanit',sans-serif;font-size:0.7rem;font-weight:800;
+  padding:4px 14px;border-radius:0 0 10px 10px;
+}
+.pkg-top{
+  padding:1.5rem;
+  background:linear-gradient(135deg,#1E3A8A,#162d6e);
+}
+.pkg-dark.shock .pkg-top{background:linear-gradient(135deg,#78350f,#92400e)}
+.pkg-dark.zone-b .pkg-top{background:linear-gradient(135deg,#1E3A8A,#1a3270)}
+.pkg-dark.zone-c .pkg-top{background:linear-gradient(135deg,#374151,#1f2937)}
+.pkg-pill{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:4px 12px;border-radius:99px;margin-bottom:0.875rem;
+  font-family:'Kanit',sans-serif;font-size:0.72rem;font-weight:700;
+}
+.pill-navy{background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.9)}
+.pill-amber{background:rgba(251,191,36,0.2);color:#fbbf24}
+.pkg-zone-name{font-family:'Kanit',sans-serif;font-weight:900;font-size:1.125rem;color:#fff;margin-bottom:0.25rem}
+.pkg-zone-sub{font-family:'Sarabun',sans-serif;font-size:0.8rem;color:rgba(255,255,255,0.5);margin-bottom:1rem}
+.price-split{
+  display:grid;grid-template-columns:1fr 1px 1fr;
+  background:rgba(0,0,0,0.2);border-radius:10px;overflow:hidden;
+}
+.price-col{padding:0.875rem 1rem}
+.price-divider{background:rgba(255,255,255,0.08)}
+.price-lbl{
+  font-family:'Kanit',sans-serif;font-size:0.6rem;font-weight:700;
+  letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:4px;
+}
+.price-managed-lbl{
+  font-family:'Kanit',sans-serif;font-size:0.6rem;font-weight:700;
+  letter-spacing:0.12em;text-transform:uppercase;
+  color:rgba(212,175,55,0.8);margin-bottom:4px;
+  display:flex;align-items:center;gap:4px;
+}
+.price-managed-lbl::after{content:'★';font-size:0.55rem}
+.price-amount{
+  font-family:'Bebas Neue',sans-serif;font-size:1.875rem;color:#fff;
+  letter-spacing:0.02em;line-height:1;
+}
+.price-amount.gold{color:#fbbf24}
+.pkg-body{padding:1.25rem 1.5rem;flex:1;display:flex;flex-direction:column;gap:0.5rem}
+.feat-line{
+  display:flex;align-items:flex-start;gap:8px;
+  font-family:'Sarabun',sans-serif;font-size:0.8125rem;color:rgba(255,255,255,0.72);
+}
+.feat-diamond{color:var(--gold);flex-shrink:0;font-size:0.72rem;margin-top:3px}
+.feat-star{color:var(--gold);flex-shrink:0}
+.feat-line strong{color:#fbbf24}
+.pkg-footer{padding:0 1.5rem 1.5rem;margin-top:auto}
+.pkg-btn{
+  display:block;text-align:center;padding:12px;border-radius:9px;
+  font-family:'Kanit',sans-serif;font-weight:800;font-size:0.9rem;
+  transition:all 0.2s;
+}
+.pkg-btn-red{background:#D32F2F;color:#fff}
+.pkg-btn-red:hover{background:#b71c1c;transform:translateY(-1px)}
+.pkg-btn-amber{background:linear-gradient(90deg,#d97706,#f59e0b);color:#fff}
+.pkg-btn-amber:hover{filter:brightness(1.1);transform:translateY(-1px)}
+.pkg-btn-outline{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,0.25)}
+.pkg-btn-outline:hover{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.5)}
+
+/* ══ FINAL CTA ══ */
+#final-cta{
+  background:var(--navy);position:relative;overflow:hidden;
+}
+#final-cta::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 80% at 50% 50%, rgba(212,175,55,0.08), transparent);
+}
+.fcta-inner{
+  position:relative;z-index:1;max-width:760px;margin:0 auto;
+  text-align:center;padding:5rem 2rem;
+}
+.fcta-badge{
+  display:inline-flex;align-items:center;gap:7px;
+  background:rgba(212,175,55,0.15);border:1px solid rgba(212,175,55,0.35);
+  color:var(--gold2);font-family:'Kanit',sans-serif;font-size:0.72rem;font-weight:700;
+  letter-spacing:0.15em;text-transform:uppercase;padding:6px 16px;border-radius:99px;
+  margin-bottom:1.5rem;
+}
+.fcta-title{
   font-family:'Kanit',sans-serif;font-weight:900;
-  font-size:2.5rem;color:var(--navy);line-height:1;margin-bottom:0.25rem;
+  font-size:clamp(1.75rem,4vw,2.75rem);color:#fff;line-height:1.15;margin-bottom:1rem;
 }
-.why-label{font-family:'Kanit',sans-serif;font-size:0.875rem;font-weight:600;color:var(--sub)}
-.why-quote-bar{
-  background:#f1f5f9;border-radius:10px;
-  padding:1.25rem 1.5rem;text-align:center;
-  font-family:'Kanit',sans-serif;font-size:0.9375rem;
-  color:var(--text);font-style:italic;line-height:1.7;
-  border:1px solid var(--border);
+.fcta-title span{color:var(--gold2)}
+.fcta-sub{
+  font-size:1rem;color:rgba(255,255,255,0.65);margin-bottom:2rem;
+  font-family:'Kanit',sans-serif;line-height:1.6;
 }
-.why-quote-bar strong{font-style:normal;color:var(--navy)}
+.fcta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-fcta-gold{
+  background:var(--gold);color:var(--navy);
+  font-family:'Kanit',sans-serif;font-weight:800;font-size:1rem;
+  padding:14px 32px;border-radius:10px;
+  box-shadow:0 4px 20px rgba(212,175,55,0.4);transition:all 0.25s;
+  display:inline-flex;align-items:center;gap:8px;
+}
+.btn-fcta-gold:hover{background:var(--gold2);transform:translateY(-2px)}
+.btn-fcta-ghost{
+  background:rgba(255,255,255,0.08);color:#fff;
+  border:1.5px solid rgba(255,255,255,0.25);
+  font-family:'Kanit',sans-serif;font-weight:700;font-size:1rem;
+  padding:13px 28px;border-radius:10px;transition:all 0.25s;
+  display:inline-flex;align-items:center;gap:8px;
+}
+.btn-fcta-ghost:hover{background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.4)}
+.fcta-slots{
+  margin-top:2.5rem;display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap;
+}
+.fcta-slot-bar{
+  height:6px;width:200px;background:rgba(255,255,255,0.12);border-radius:99px;overflow:hidden;
+}
+.fcta-slot-fill{height:100%;width:72%;background:linear-gradient(90deg,var(--gold),var(--gold2));border-radius:99px}
+.fcta-slot-text{font-family:'Kanit',sans-serif;font-size:0.82rem;color:rgba(255,255,255,0.55)}
+.fcta-slot-text strong{color:var(--gold2)}
 
-/* ── COUNTDOWN + REGISTER ── */
-#register{background:var(--bg)}
-.reg-wrap{
-  background:#fff;border-radius:16px;border:1px solid var(--border);
-  box-shadow:0 4px 24px rgba(0,0,0,0.06);overflow:hidden;
+/* ══ REGISTER FORM ══ */
+#register{background:var(--off-white)}
+.reg-card{
+  max-width:720px;margin:0 auto;
+  background:#fff;border:1.5px solid var(--border);border-radius:var(--radius-lg);
+  overflow:hidden;box-shadow:var(--shadow);
 }
-.reg-header{
-  background:var(--navy);color:#fff;
-  padding:1.25rem 1.5rem;
+.reg-card-top{
+  background:var(--navy);padding:1.5rem 2rem;
   display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;
 }
-.reg-header-title{font-family:'Kanit',sans-serif;font-weight:900;font-size:1.2rem}
-.countdown-inline{display:flex;align-items:center;gap:0.5rem}
-.cd-unit{
-  background:rgba(255,255,255,0.15);border-radius:8px;
-  padding:6px 10px;text-align:center;min-width:52px;
-}
-.cd-num{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:#fbbf24;line-height:1;display:block}
-.cd-label{font-size:0.6rem;color:rgba(255,255,255,0.6);letter-spacing:0.08em;display:block}
-.cd-sep{font-size:1.4rem;color:rgba(255,255,255,0.4);font-weight:700}
+.reg-card-title{font-family:'Kanit',sans-serif;font-weight:800;font-size:1.1rem;color:#fff}
+.countdown-row{display:flex;align-items:center;gap:6px}
+.cd-mini{background:rgba(255,255,255,0.12);border-radius:6px;padding:5px 8px;text-align:center;min-width:44px}
+.cd-mini-num{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:var(--gold2);line-height:1;display:block}
+.cd-mini-lbl{font-size:0.55rem;color:rgba(255,255,255,0.5);display:block;letter-spacing:0.08em}
+.cd-mini-sep{font-size:1.1rem;color:rgba(255,255,255,0.3)}
 .reg-urgency{
-  background:linear-gradient(90deg,#fef3c7,#fff);
-  padding:0.75rem 1.5rem;
-  font-family:'Kanit',sans-serif;font-size:0.875rem;color:#92400e;
-  display:flex;align-items:center;gap:8px;
-  border-bottom:1px solid var(--border);
+  background:#fffbeb;border-bottom:1px solid #fde68a;padding:0.75rem 2rem;
+  font-family:'Kanit',sans-serif;font-size:0.82rem;color:#92400e;
+  display:flex;align-items:center;gap:7px;
 }
-.reg-form-grid{
-  display:grid;grid-template-columns:1fr 1fr;gap:1rem;
-  padding:1.5rem;
+.reg-body{padding:1.75rem 2rem}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.875rem}
+@media(max-width:560px){.form-grid{grid-template-columns:1fr}}
+.form-input{
+  width:100%;padding:11px 14px;border:1.5px solid var(--border);border-radius:8px;
+  font-family:'Sarabun',sans-serif;font-size:0.9375rem;color:var(--text);
+  background:#fff;outline:none;transition:border-color 0.2s;
 }
-@media(max-width:600px){.reg-form-grid{grid-template-columns:1fr}}
-.reg-input{
-  width:100%;padding:12px 14px;
-  border:1.5px solid var(--border);border-radius:8px;
-  font-family:'Sarabun',sans-serif;font-size:0.9375rem;
-  color:var(--text);background:#fff;
-  transition:border-color 0.2s;outline:none;
-}
-.reg-input:focus{border-color:var(--navy)}
-.reg-submit{
-  grid-column:1/-1;
-  background:var(--red);color:#fff;
+.form-input:focus{border-color:var(--navy)}
+.form-input.span-2{grid-column:1/-1}
+.form-submit{
+  grid-column:1/-1;background:#D32F2F;color:#fff;
   font-family:'Kanit',sans-serif;font-weight:800;font-size:1rem;
-  padding:14px;border-radius:8px;border:none;
-  cursor:pointer;width:100%;
-  box-shadow:0 4px 16px rgba(211,47,47,0.35);
-  transition:all 0.25s;display:flex;align-items:center;justify-content:center;gap:8px;
+  padding:14px;border-radius:8px;border:none;cursor:pointer;
+  box-shadow:0 4px 16px rgba(211,47,47,0.3);transition:all 0.25s;width:100%;
 }
-.reg-submit:hover{background:var(--red2);transform:translateY(-1px)}
+.form-submit:hover{background:#b71c1c;transform:translateY(-1px)}
+.form-privacy{
+  grid-column:1/-1;font-size:0.72rem;color:var(--sub);text-align:center;margin-top:0.25rem;
+}
+.form-privacy a{color:var(--navy);text-decoration:underline}
 
-/* ── FOOTER ── */
-.event-footer{
-  background:var(--navy);color:rgba(255,255,255,0.65);
-  padding:2.5rem 1.5rem;text-align:center;
+/* ══ FOOTER ══ */
+.site-footer{background:var(--navy3);padding:3.5rem 2rem 2rem}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-top{
+  display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:3rem;
+  padding-bottom:2.5rem;margin-bottom:2rem;border-bottom:1px solid rgba(255,255,255,0.07);
 }
-.event-footer-logo{
-  font-family:'Bebas Neue',sans-serif;font-size:2rem;
-  letter-spacing:0.1em;color:#fff;margin-bottom:0.5rem;
+@media(max-width:768px){.footer-top{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.footer-top{grid-template-columns:1fr}}
+.footer-brand{}
+.footer-logo-txt{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:0.08em;color:#fff;margin-bottom:0.375rem}
+.footer-logo-txt span{color:var(--gold2)}
+.footer-tagline{font-size:0.8rem;color:rgba(255,255,255,0.4);margin-bottom:1.25rem}
+.footer-col-title{font-family:'Kanit',sans-serif;font-size:0.68rem;font-weight:700;
+  letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:0.875rem}
+.footer-col-item{
+  font-size:0.8rem;color:rgba(255,255,255,0.5);line-height:1.9;font-family:'Sarabun',sans-serif;
 }
-.event-footer-logo span{color:var(--gold2)}
-.event-footer-addr{font-size:0.875rem;margin-bottom:1rem;line-height:1.8}
-.event-footer-social{display:flex;gap:1rem;justify-content:center;margin-bottom:1rem}
-.social-btn{
-  width:38px;height:38px;border-radius:50%;
-  background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);
-  display:flex;align-items:center;justify-content:center;font-size:1rem;
-  transition:all 0.2s;color:#fff;
+.footer-col-item a{color:rgba(255,255,255,0.6)}
+.footer-col-item strong{color:rgba(255,255,255,0.8);font-weight:600}
+.footer-bottom{
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;
+  font-size:0.72rem;color:rgba(255,255,255,0.25);
 }
-.social-btn:hover{background:rgba(255,255,255,0.25);transform:translateY(-2px)}
-.event-footer-links{font-size:0.75rem}
-.event-footer-links a{color:rgba(255,255,255,0.4);margin:0 0.5rem}
+.footer-bottom a{color:rgba(255,255,255,0.4)}
 
-/* ── STICKY CTA ── */
-.sticky-wrap{
-  position:fixed;bottom:1.25rem;right:1.25rem;z-index:999;
+/* ══ STICKY CTA ══ */
+.sticky-cta{
+  position:fixed;bottom:1.25rem;right:1.25rem;z-index:500;
   display:flex;flex-direction:column;gap:0.625rem;align-items:flex-end;
 }
 .sticky-btn{
   font-family:'Kanit',sans-serif;font-weight:700;font-size:0.875rem;
-  padding:11px 20px;border-radius:50px;
-  display:inline-flex;align-items:center;gap:8px;min-height:48px;
-  box-shadow:0 4px 20px rgba(0,0,0,0.25);transition:all 0.25s;
+  padding:11px 20px;border-radius:50px;display:inline-flex;align-items:center;gap:8px;
+  min-height:48px;box-shadow:0 4px 20px rgba(0,0,0,0.25);transition:all 0.25s;
 }
 .sticky-btn:hover{transform:translateY(-2px)}
-.sticky-btn.red{background:var(--red);color:#fff}
-.sticky-btn.line{background:#06C755;color:#fff}
+.sticky-btn.gold{background:var(--gold);color:var(--navy)}
+.sticky-btn.line-btn{background:#06C755;color:#fff}
 
-/* ── REVEAL ── */
-.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease}
+/* ══ SCROLL REVEAL ══ */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity 0.65s ease,transform 0.65s ease}
 .reveal.in{opacity:1;transform:none}
-.d1{transition-delay:0.1s}.d2{transition-delay:0.2s}.d3{transition-delay:0.3s}
-
-/* ── DATA-LANG ── */
-[data-lang]{display:none}[data-lang].active{display:inline}
-div[data-lang]:not(.active){display:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
 </style>
 </head>
 <body>
 
-<!-- ══ NAV (sticky + backdrop-filter) ══ -->
-<nav id="mainNav">
-  <a href="/" style="text-decoration:none"><div class="nav-logo">VITH <span>HUB</span></div></a>
+<!-- ANNOUNCE BAR -->
+<div class="announce-bar">
+  <span class="announce-dot"></span>
+  <span data-lang="th" class="active">🎯 Phase 1: <strong>25–29 มีนาคม 2026</strong> · Big C เวียงจันทน์ — <a href="#register">จองบูธด่วน เหลือเพียง 15 ที่!</a></span>
+  <span data-lang="en">🎯 Phase 1: <strong>25–29 March 2026</strong> · Big C Vientiane — <a href="#register">Only 15 booths left!</a></span>
+</div>
 
-  <!-- Phase Switcher Tab -->
-  <div class="phase-switcher">
-    <button class="phase-tab active" id="tab-p1" onclick="switchPhase(1)">
-      <span class="phase-tab-dot phase-dot-gold"></span>
-      <span class="phase-tab-text">Phase 1 · <em>มีนาคม</em></span>
-    </button>
-    <button class="phase-tab" id="tab-p2" onclick="switchPhase(2)">
-      <span class="phase-tab-dot phase-dot-red"></span>
-      <span class="phase-tab-text">Phase 2 · <em>พฤษภาคม</em></span>
-    </button>
-  </div>
-
-  <div class="nav-right">
-    <div class="nav-slots-badge">
-      <span class="urgency-dot"></span>
-      <span data-lang="th" class="active">🔥 เหลือ <strong>19</strong> บูท</span>
-      <span data-lang="la">🔥 ເຫຼືອ <strong>19</strong> ທີ່</span>
-      <span data-lang="en">🔥 <strong>19</strong> left</span>
+<!-- NAV -->
+<nav class="top-nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo-link"><div class="nav-logo-txt">VITH<span>HUB</span></div></a>
+    <div class="nav-links">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/about" class="nav-link">About</a>
+      <a href="#packages" class="nav-link active">Exhibit</a>
+      <a href="#floorplan" class="nav-link">Floor Plan</a>
+      <a href="#partners" class="nav-link">Partners</a>
+      <a href="#register" class="nav-link">Contact</a>
     </div>
-    <div class="lang-switcher">
-      <button class="lang-btn active" onclick="setLang('th')">TH</button>
-      <button class="lang-btn" onclick="setLang('la')">LAO</button>
-      <button class="lang-btn" onclick="setLang('en')">EN</button>
+    <div class="nav-actions">
+      <div class="lang-wrap">
+        <button onclick="setLang('th')" class="lang-btn active">TH</button>
+        <button onclick="setLang('la')" class="lang-btn">LAO</button>
+        <button onclick="setLang('en')" class="lang-btn">EN</button>
+      </div>
+      <a href="/salesdeck" target="_blank" class="btn-nav-deck">📋 Sales Deck</a>
+      <a href="#register" class="btn-nav-reserve">จองบูธ</a>
     </div>
-    <a href="/about" class="btn-nav" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.8);margin-right:0.4rem">🌐 About</a><a href="/salesdeck" target="_blank" class="btn-nav" style="background:rgba(245,158,11,0.15);border:1px solid rgba(245,158,11,0.4);color:#fbbf24;margin-right:0.4rem">📋 Sales Deck</a><a href="/membership" class="btn-nav" style="background:linear-gradient(90deg,#92400e,#b45309);color:#fbbf24;border:none;margin-right:0.4rem">🚀 จบงานแล้วไปไหน?</a>
-    <a href="#contact" class="btn-nav pulse-btn">
-      <span data-lang="th" class="active">จองด่วน!</span>
-      <span data-lang="la">ຈອງດ່ວນ!</span>
-      <span data-lang="en">Book Now!</span>
-    </a>
   </div>
 </nav>
 
-<!-- ══ HERO CAROUSEL ══ -->
-<section class="hero-carousel" id="heroCarousel">
-  <div class="hc-slide active"></div>
-  <div class="hc-slide"></div>
-  <div class="hc-slide"></div>
-  <div class="hc-slide"></div>
-  <div class="hc-slide"></div>
-  <div class="hc-slide"></div>
-
-  <div class="hc-content">
-    <div class="hc-inner">
-      <div class="hc-eyebrow">🏛️ Mekong Business Connect 2026</div>
-      <h1 class="hc-title">
-        VITH HUB <span>2026</span>
+<!-- ══ 1. HERO ══ -->
+<section class="hero">
+  <div class="hero-slides">
+    <div class="hero-slide active"></div>
+    <div class="hero-slide"></div>
+    <div class="hero-slide"></div>
+    <div class="hero-slide"></div>
+    <div class="hero-slide"></div>
+    <div class="hero-slide"></div>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-eyebrow">🏛️ Mekong Business Connect 2026</div>
+      <h1 class="hero-title">
+        <span data-lang="th" class="active">VITH HUB<br><span>SME Showcase</span> 2026</span>
+        <span data-lang="en">VITH HUB<br><span>SME Showcase</span> 2026</span>
       </h1>
-      <p class="hc-sub">
-        <span data-lang="th" class="active">เชื่อม SME ไทยสู่ลูกค้าต่างชาติ<br>ในลาว–จีน–รัสเซีย</span>
-        <span data-lang="la">ເຊື່ອມ SME ໄທສູ່ລູກຄ້າຕ່າງຊາດ<br>ໃນລາວ–ຈີນ–ລັດເຊຍ</span>
-        <span data-lang="en">Connect Thai SMEs to International Buyers<br>in Laos–China–Russia</span>
+      <p class="hero-sub">
+        <span data-lang="th" class="active">เชื่อม SME ไทยกับผู้ซื้อและผู้บริโภคในเวียงจันทน์<br>ณ Big C เวียงจันทน์ สปป.ลาว</span>
+        <span data-lang="en">Connecting Thai SMEs with buyers and consumers in Vientiane, Laos</span>
       </p>
-      <div class="hc-date">
-        📅 <span data-lang="th" class="active">25–29 มีนาคม 2026</span>
-        <span data-lang="la">25–29 ມີນາ 2026</span>
-        <span data-lang="en">March 25–29, 2026</span>
-        &nbsp;|&nbsp; 📍 Big C เวียงจันทน์, ลาว
+      <div class="hero-stats">
+        <div class="hero-stat"><span class="hero-stat-icon">🏪</span>36 Curated Booths</div>
+        <div class="hero-stat"><span class="hero-stat-icon">📐</span>1,000 sqm</div>
+        <div class="hero-stat"><span class="hero-stat-icon">🤝</span>Retail + B2B Exposure</div>
       </div>
-      <div class="hc-btns">
-        <a href="#register" class="btn-red">
-          <span data-lang="th" class="active">ลงทะเบียนแสดงความสนใจ</span>
-          <span data-lang="la">ລົງທະບຽນ</span>
-          <span data-lang="en">Register Interest</span>
+      <div class="hero-btns">
+        <a href="#register" class="btn-reserve">
+          <span data-lang="th" class="active">🚀 จองบูธตอนนี้</span>
+          <span data-lang="en">🚀 Reserve Your Booth</span>
         </a>
-        <a href="#booth-section" class="btn-gold">
-          <span data-lang="th" class="active">ดูแพ็กเกจบูท</span>
-          <span data-lang="en">View Booth Packages</span>
+        <a href="/salesdeck" target="_blank" class="btn-deck">
+          📋 <span data-lang="th" class="active">ดาวน์โหลด Event Deck</span>
+          <span data-lang="en">Download Event Deck</span>
         </a>
+      </div>
+    </div>
+    <!-- Countdown box -->
+    <div class="hero-countdown">
+      <div class="cd-title">⏱ เวลาที่เหลือก่อนงาน</div>
+      <div class="cd-blocks">
+        <div class="cd-block"><span class="cd-num" id="uDays">00</span><span class="cd-label">วัน</span></div>
+        <span class="cd-sep">:</span>
+        <div class="cd-block"><span class="cd-num" id="uHours">00</span><span class="cd-label">ชม.</span></div>
+        <span class="cd-sep">:</span>
+        <div class="cd-block"><span class="cd-num" id="uMins">00</span><span class="cd-label">นาที</span></div>
+        <span class="cd-sep">:</span>
+        <div class="cd-block"><span class="cd-num" id="uSecs">00</span><span class="cd-label">วิ</span></div>
+      </div>
+      <div class="cd-event-info">
+        <div class="cd-date">📅 25–29 มีนาคม 2026</div>
+        <div class="cd-venue">📍 Big C เวียงจันทน์, สปป.ลาว</div>
+      </div>
+      <a href="#register" class="cd-reserve">จองบูธก่อนเต็ม →</a>
+    </div>
+  </div>
+  <div class="hero-dots" id="heroDots"></div>
+  <div class="hero-progress" id="heroProgress"></div>
+</section>
+
+<!-- ══ 2. EVENT HIGHLIGHTS ══ -->
+<section id="highlights" class="sec" style="padding:2.5rem 2rem">
+  <div class="sec-inner">
+    <div class="sec-header-center reveal">
+      <div class="sec-tag">Event Highlights</div>
+      <h2 class="sec-title" style="font-size:1.5rem">ภาพรวมงาน VITH HUB SME Showcase 2026</h2>
+    </div>
+    <div class="hl-grid reveal d1">
+      <div class="hl-card">
+        <div class="hl-icon">📐</div>
+        <div><div class="hl-num">1,000 sqm</div><div class="hl-label">Exhibition Area</div></div>
+      </div>
+      <div class="hl-card">
+        <div class="hl-icon">🏪</div>
+        <div><div class="hl-num">36</div><div class="hl-label">Premium Curated Booths</div></div>
+      </div>
+      <div class="hl-card">
+        <div class="hl-icon">🤝</div>
+        <div><div class="hl-num">Retail</div><div class="hl-label">+ B2B Opportunities</div></div>
+      </div>
+      <div class="hl-card">
+        <div class="hl-icon">🏬</div>
+        <div><div class="hl-num">Big C</div><div class="hl-label">Located Inside Vientiane</div></div>
       </div>
     </div>
   </div>
-
-  <button class="hc-arrow prev" onclick="hcMove(-1)">‹</button>
-  <button class="hc-arrow next" onclick="hcMove(1)">›</button>
-  <div class="hc-dots" id="hcDots"></div>
-  <div class="hc-progress" id="hcProgress"></div>
 </section>
 
-<!-- ══ 2. ABOUT / ทีมงาน ══ -->
-<section class="sec" id="about-team">
-  <div class="sec-center">
-    <div class="sec-header reveal">
-      <h2 class="sec-title">เกี่ยวกับเรา</h2>
+<!-- ══ 3. WHY EXHIBIT ══ -->
+<section id="why" class="sec">
+  <div class="sec-inner">
+    <div class="sec-header-center reveal">
+      <div class="sec-tag">Why Exhibit</div>
+      <h2 class="sec-title">
+        <span data-lang="th" class="active">ทำไมต้องมา<span>แสดงสินค้ากับเรา?</span></span>
+        <span data-lang="en">Why Exhibit <span>with VITH HUB?</span></span>
+      </h2>
     </div>
-    <div class="about-grid">
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-img">🏪</div>
+        <div class="why-body">
+          <div class="why-heading">Retail Exposure</div>
+          <div class="why-text">แสดงสินค้าให้กับนักช้อปและผู้บริโภคที่เดินในห้างทุกวัน ทำเลใจกลาง Big C เวียงจันทน์</div>
+        </div>
+      </div>
+      <div class="why-card reveal d1">
+        <div class="why-img">🤝</div>
+        <div class="why-body">
+          <div class="why-heading">B2B Opportunities</div>
+          <div class="why-text">พบผู้นำเข้า ผู้จัดจำหน่าย และ distributor จากลาว จีน และภูมิภาค Mekong โดยตรง</div>
+        </div>
+      </div>
+      <div class="why-card reveal d2">
+        <div class="why-img">🚀</div>
+        <div class="why-body">
+          <div class="why-heading">Market Entry</div>
+          <div class="why-text">ทดสอบตลาดลาวด้วยต้นทุนต่ำ ไม่ต้องลงทุนเปิดสาขา ลด risk ก่อนขยายธุรกิจ</div>
+        </div>
+      </div>
+      <div class="why-card reveal d3">
+        <div class="why-img">🌏</div>
+        <div class="why-body">
+          <div class="why-heading">Brand Visibility</div>
+          <div class="why-text">สร้าง brand awareness สู่ผู้บริโภคต่างชาติ เพิ่ม international audience ให้แบรนด์ไทย</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 4. VENUE ══ -->
+<section id="venue" class="sec">
+  <div class="sec-inner">
+    <div class="venue-wrap">
       <div class="reveal">
-        <div class="about-img-wrap">
-          <img src="images/team.jpg" alt="ทีมงาน VITH HUB" loading="lazy"
-            onerror="this.parentElement.style.background='#1E3A8A';this.style.display='none'">
+        <div class="venue-img-wrap">
+          <img src="images/hero-bigc.png" alt="Big C Vientiane — VITH HUB Venue" loading="lazy"
+            onerror="this.src='images/indoor-01.jpg'">
+          <div class="venue-img-badge">📍 Prime Retail Location in the Heart of Vientiane</div>
         </div>
       </div>
       <div class="reveal d1">
-        <p class="about-tagline">
-          ทีมงานที่มีประสบการณ์ เชื่อม SMEs ไทยสู่ตลาดสากล
-        </p>
-        <div class="partner-logos">
-          <img src="images/Big_C.png" alt="Big C">
-          <img src="images/LITSE.png" alt="LITSE">
-          <img src="images/VITH.png" alt="VITH Hub">
-          <img src="images/RB99.png" alt="RB99">
+        <div class="sec-tag">Venue</div>
+        <h2 class="sec-title">Big C <span>Vientiane</span></h2>
+        <p class="sec-desc">ห้างค้าปลีกอันดับ 1 ในเวียงจันทน์ สปป.ลาว แหล่งรวมนักช้อปและผู้บริโภคชาวลาว ไทย จีน และนานาชาติ หลายหมื่นรายต่อสัปดาห์ — ทำเลที่ดีที่สุดสำหรับการแสดงสินค้า</p>
+        <div class="venue-stats">
+          <div class="venue-stat"><div class="venue-stat-num">10,000+</div><div class="venue-stat-lbl">ผู้เข้าชม/สัปดาห์</div></div>
+          <div class="venue-stat"><div class="venue-stat-num">#1</div><div class="venue-stat-lbl">Retail in Laos</div></div>
+          <div class="venue-stat"><div class="venue-stat-num">200</div><div class="venue-stat-lbl">ตร.ม. Showroom</div></div>
+          <div class="venue-stat"><div class="venue-stat-num">6</div><div class="venue-stat-lbl">International Chambers</div></div>
         </div>
-        <div class="about-quote">
-          "เราพร้อมนำธุรกิจไทยสู่ตลาดลาวเละจีน" – ทีม <strong>VITH HUB</strong>
-        </div>
-        <a href="#register" class="btn-red" style="display:inline-flex">
-          <span data-lang="th" class="active">จองบูธด่วน!</span>
-          <span data-lang="en">Book Booth Now!</span>
-        </a>
+        <a href="#floorplan" class="btn-floorplan">📐 View Full Floor Plan</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══ 3. FLOOR PLAN & BOOTH PACKAGES ══ -->
-<section class="sec" id="booth-section" style="background:#0f172a;padding:4rem 1.5rem">
-
-<style>
-/* ── BOOTH SECTION REDESIGN ── */
-.booth-wrap{max-width:1100px;margin:0 auto}
-.booth-header{text-align:center;margin-bottom:2.5rem}
-.booth-eyebrow{font-family:'Kanit',sans-serif;font-size:0.72rem;font-weight:700;
-  letter-spacing:0.2em;text-transform:uppercase;color:#f59e0b;margin-bottom:0.5rem}
-.booth-title{font-family:'Kanit',sans-serif;font-weight:900;
-  font-size:clamp(1.5rem,3.5vw,2.25rem);color:#fff;line-height:1.2}
-.booth-title span{color:#f59e0b}
-
-/* Floor plan — LARGE */
-.floor-plan-wrap{
-  position:relative;background:#fff;border:1.5px solid #e2e8f0;
-  border-radius:16px;overflow:hidden;
-  box-shadow:0 8px 40px rgba(30,58,138,0.1);
-  margin-bottom:2.5rem;
-}
-.floor-plan-wrap img{
-  width:100%;max-height:520px;object-fit:contain;
-  display:block;background:#f1f5f9;
-}
-.floor-plan-badge{
-  position:absolute;top:1rem;left:1rem;
-  background:rgba(30,58,138,0.9);backdrop-filter:blur(8px);
-  color:#fff;font-family:'Kanit',sans-serif;font-size:0.75rem;font-weight:700;
-  padding:6px 14px;border-radius:99px;letter-spacing:0.05em;
-}
-.floor-plan-zoom{
-  position:absolute;top:1rem;right:1rem;
-  background:rgba(255,255,255,0.9);backdrop-filter:blur(8px);
-  color:#1E3A8A;font-family:'Kanit',sans-serif;font-size:0.75rem;font-weight:700;
-  padding:6px 12px;border-radius:99px;cursor:pointer;border:1px solid #e2e8f0;
-  transition:all 0.2s;
-}
-.floor-plan-zoom:hover{background:#1E3A8A;color:#fff}
-
-/* Zone legend */
-.zone-legend{
-  display:flex;gap:0.75rem;padding:1rem 1.25rem;
-  background:#f8fafc;border-top:1px solid #e2e8f0;flex-wrap:wrap;
-}
-.zone-dot{
-  display:flex;align-items:center;gap:6px;
-  font-family:'Kanit',sans-serif;font-size:0.78rem;font-weight:600;color:#4a5568;
-}
-.zone-dot::before{
-  content:'';width:12px;height:12px;border-radius:3px;flex-shrink:0;
-}
-.zone-a::before{background:#1E3A8A}
-.zone-b::before{background:#1a3270}
-.zone-c::before{background:#0f2044}
-.zone-vip::before{background:#f59e0b}
-
-/* Package cards grid — 2x2 dark style */
-.pkg-grid{
-  display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-bottom:2rem;
-}
-@media(max-width:640px){.pkg-grid{grid-template-columns:1fr}}
-
-.pkg-card{
-  background:#1a1a2e;border:1.5px solid rgba(255,255,255,0.08);border-radius:16px;
-  overflow:hidden;transition:all 0.3s;display:flex;flex-direction:column;
-  position:relative;
-}
-.pkg-card:hover{transform:translateY(-3px);box-shadow:0 16px 48px rgba(0,0,0,0.4)}
-.pkg-card.featured{border-color:rgba(245,158,11,0.5)}
-.pkg-card.featured::after{
-  content:'★ แนะนำ';position:absolute;top:0;right:1.25rem;
-  background:#f59e0b;color:#1a0a00;
-  font-family:'Kanit',sans-serif;font-size:0.72rem;font-weight:800;
-  padding:4px 14px;border-radius:0 0 10px 10px;
-}
-.pkg-card.shock-card{border-color:rgba(251,146,60,0.4)}
-
-.pkg-card-header{padding:1.25rem 1.5rem 1rem}
-.pkg-zone-pill{
-  display:inline-flex;align-items:center;gap:6px;
-  padding:5px 14px;border-radius:99px;margin-bottom:0.75rem;
-  font-family:'Kanit',sans-serif;font-size:0.78rem;font-weight:700;
-}
-.pill-red{background:#7f1d1d;color:#fca5a5}
-.pill-orange{background:#78350f;color:#fcd34d}
-.pill-blue{background:#1e3a8a;color:#93c5fd}
-.pill-gray{background:#374151;color:#d1d5db}
-
-.pkg-zone-desc{font-family:'Sarabun',sans-serif;font-size:0.8125rem;color:rgba(255,255,255,0.45);margin-bottom:1rem}
-
-.pkg-price-row{
-  display:grid;grid-template-columns:1fr auto 1fr;
-  background:rgba(255,255,255,0.04);border-radius:10px;
-  overflow:hidden;margin-bottom:1rem;
-}
-.pkg-price-col{padding:0.875rem 1rem}
-.pkg-price-col.divider{width:1px;background:rgba(255,255,255,0.08);padding:0}
-.pkg-price-col-label{
-  font-family:'Kanit',sans-serif;font-size:0.62rem;font-weight:700;
-  letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:0.25rem;
-}
-.pkg-price-amount{
-  font-family:'Bebas Neue',sans-serif;font-size:1.75rem;color:#fff;letter-spacing:0.02em;line-height:1;
-}
-.pkg-price-amount.gold{color:#fbbf24}
-.pkg-managed-label{
-  display:flex;align-items:center;gap:5px;
-  font-family:'Kanit',sans-serif;font-size:0.62rem;font-weight:700;
-  color:rgba(245,158,11,0.8);letter-spacing:0.1em;text-transform:uppercase;
-  margin-bottom:0.25rem;
-}
-.pkg-managed-label::after{content:'★';font-size:0.6rem}
-
-.pkg-feat-list{padding:0 1.5rem 0.75rem;display:flex;flex-direction:column;gap:0.5rem}
-.pkg-feat2{
-  display:flex;align-items:flex-start;gap:8px;
-  font-family:'Sarabun',sans-serif;font-size:0.8125rem;color:rgba(255,255,255,0.7);
-  line-height:1.4;
-}
-.pkg-feat2 .diamond{color:#f59e0b;flex-shrink:0;font-size:0.7rem;margin-top:3px}
-.pkg-feat2 .star{color:#f59e0b;flex-shrink:0;font-size:0.8rem;margin-top:2px}
-.pkg-feat2 strong{color:#fbbf24}
-
-.pkg-book-btn2{
-  display:block;margin:0 1.5rem 1.5rem;text-align:center;
-  font-family:'Kanit',sans-serif;font-weight:800;font-size:0.9375rem;
-  padding:13px;border-radius:10px;text-decoration:none;
-  transition:all 0.2s;letter-spacing:0.02em;margin-top:auto;
-}
-.btn-book-red{background:#D32F2F;color:#fff;box-shadow:0 4px 16px rgba(211,47,47,0.4)}
-.btn-book-red:hover{background:#b71c1c;transform:translateY(-1px)}
-.btn-book-orange{background:linear-gradient(90deg,#ea580c,#f97316);color:#fff;box-shadow:0 4px 16px rgba(234,88,12,0.4)}
-.btn-book-orange:hover{filter:brightness(1.1);transform:translateY(-1px)}
-.btn-book-outline{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,0.25)}
-.btn-book-outline:hover{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.5)}
-
-.fomo-bar{
-  background:linear-gradient(90deg,#fef3c7,#fff7e6);
-  border:1.5px solid #fcd34d;border-radius:10px;
-  padding:1rem 1.5rem;
-  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;
-}
-.fomo-text{
-  font-family:'Kanit',sans-serif;font-weight:800;font-size:0.9375rem;color:#92400e;
-  display:flex;align-items:center;gap:8px;
-}
-.fomo-slots{
-  font-family:'Bebas Neue',sans-serif;font-size:2rem;color:#D32F2F;
-  line-height:1;margin:0 4px;
-}
-</style>
-
-  <div class="booth-wrap">
-    <div class="booth-header reveal">
-      <div class="booth-eyebrow">🏪 Booth Packages</div>
-      <h2 class="booth-title">แผนผังบูธ & <span>แพ็กเกจ</span></h2>
+<!-- ══ 5. FLOOR PLAN ══ -->
+<section id="floorplan" class="sec" style="background:var(--off-white)">
+  <div class="sec-inner">
+    <div class="sec-header-center reveal">
+      <div class="sec-tag">Floor Plan</div>
+      <h2 class="sec-title">แผนผัง<span>บูธ</span></h2>
+      <p class="sec-desc">เลือกตำแหน่งบูธที่ดีที่สุดสำหรับแบรนด์คุณ แต่ละ Zone ออกแบบมาเพื่อ traffic และกลุ่มลูกค้าที่ต่างกัน</p>
     </div>
-
-    <!-- ── LARGE FLOOR PLAN ── -->
-    <div class="floor-plan-wrap reveal">
-      <div class="floor-plan-badge">📐 Floor Plan — Big C Vientiane</div>
-      <button class="floor-plan-zoom" onclick="this.closest('.floor-plan-wrap').querySelector('img').requestFullscreen?.() || this.closest('.floor-plan-wrap').querySelector('img').webkitRequestFullscreen?.()">🔍 ขยาย</button>
-      <img src="images/floor-plan.png" alt="VITH HUB Floor Plan Big C Vientiane 2026" loading="lazy"
-        onerror="this.src='images/indoor-01.jpg';this.style.minHeight='300px'">
-      <div class="zone-legend">
-        <div class="zone-dot zone-a">Zone A — Shock & Standard</div>
-        <div class="zone-dot zone-b">Zone B — Standard</div>
-        <div class="zone-dot zone-c">Zone C — Standard</div>
-        <div class="zone-dot zone-vip">พื้นที่ B2B Matching</div>
+    <div class="fp-wrap reveal d1">
+      <div class="fp-header">
+        <div class="fp-header-title">📐 Floor Plan — VITH HUB SME Showcase 2026 · Big C Vientiane</div>
+        <span style="font-size:0.75rem;color:rgba(255,255,255,0.5)">25–29 มีนาคม 2026</span>
+      </div>
+      <div class="fp-img">
+        <img src="images/floor-plan.png" alt="VITH HUB Floor Plan Big C Vientiane 2026" loading="lazy"
+          onerror="this.src='images/indoor-01.jpg';this.style.minHeight='280px'">
+        <button class="fp-zoom-btn" onclick="document.querySelector('.fp-img img').requestFullscreen?.()">🔍 ขยาย</button>
+      </div>
+      <div class="fp-legend">
+        <div class="fp-leg-item"><div class="fp-leg-dot" style="background:#1E3A8A"></div>Zone A · Super Prime</div>
+        <div class="fp-leg-item"><div class="fp-leg-dot" style="background:#ea580c"></div>Shock Sale Zone</div>
+        <div class="fp-leg-item"><div class="fp-leg-dot" style="background:#1a3270"></div>Zone B · Thai Brands</div>
+        <div class="fp-leg-item"><div class="fp-leg-dot" style="background:#374151"></div>Zone C · Mini Hub</div>
+        <div class="fp-leg-item"><div class="fp-leg-dot" style="background:#D4AF37"></div>Stage & Networking Area</div>
+      </div>
+      <div class="fp-cta">
+        <a href="#register" class="btn-floorplan">📐 View Full Floor Plan &amp; Reserve Booth →</a>
       </div>
     </div>
+  </div>
+</section>
 
-    <!-- ── PACKAGE CARDS ── -->
-    <div class="pkg-grid reveal d1">
+<!-- ══ 6. PARTNERS ══ -->
+<section id="partners" class="sec">
+  <div class="sec-inner">
+    <div class="sec-header-center reveal">
+      <div class="sec-tag">Our Network</div>
+      <h2 class="sec-title">Partner <span>Network</span></h2>
+      <p class="sec-desc">พันธมิตรหลักและหอการค้านานาชาติที่ร่วมมือกับ VITH HUB</p>
+    </div>
+    <div class="partner-logos-row reveal d1">
+      <div class="partner-logo-item"><img src="images/Big_C.png" alt="Big C Vientiane — Venue Partner VITH HUB" loading="lazy"></div>
+      <div class="partner-logo-item"><img src="images/LITSE.png" alt="LITSE Lao Government Partner VITH HUB" loading="lazy"></div>
+      <div class="partner-logo-item"><img src="images/VITH.png" alt="VITH Hub Organizer" loading="lazy"></div>
+      <div class="partner-logo-item"><img src="images/RB99.png" alt="Royal Bridge 99 Logistics Partner" loading="lazy"></div>
+      <div class="partner-logo-item"><img src="images/BP.jpg" alt="Boualapha Agri Partner Laos" loading="lazy"></div>
+    </div>
+    <div class="partners-community reveal d2">
+      <div class="community-item">
+        <div class="community-flag">🇱🇦</div>
+        <div class="community-title">Venue Partner</div>
+        <div class="community-desc">Big C Vientiane — อันดับ 1 Retail Laos · Laos Government · LNCCI</div>
+      </div>
+      <div class="community-item" style="border-left:1px solid var(--border);border-right:1px solid var(--border)">
+        <div class="community-flag">🇹🇭</div>
+        <div class="community-title">Business Community</div>
+        <div class="community-desc">Thai SMEs · Royal Bridge 99 · Thai Business Association Laos</div>
+      </div>
+      <div class="community-item">
+        <div class="community-flag">🌏</div>
+        <div class="community-title">International Buyers</div>
+        <div class="community-desc">Lao distributors · Chinese buyers · Regional importers · 6 Chambers</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 7. BOOTH PACKAGES ══ -->
+<section id="packages" class="sec" style="background:#0f172a">
+  <div class="sec-inner">
+    <div class="sec-header-center reveal">
+      <div class="sec-tag" style="color:var(--gold2)">Booth Packages</div>
+      <h2 class="sec-title" style="color:#fff">แพ็กเกจ<span>บูธ</span></h2>
+      <p class="sec-desc" style="color:rgba(255,255,255,0.55);margin:0 auto">เลือก Zone ที่เหมาะกับแบรนด์และงบประมาณของคุณ · ทุก package รวม 0% Commission</p>
+    </div>
+    <div class="pkg-wrap reveal d1">
 
       <!-- Zone A Super Prime -->
-      <div class="pkg-card">
-        <div class="pkg-card-header">
-          <div class="pkg-zone-pill pill-red">🔥 Zone A · Super Prime</div>
-          <div class="pkg-zone-desc">หน้าทางเข้าหลัก + ติดเวที​กิจกรรม</div>
-          <div class="pkg-price-row">
-            <div class="pkg-price-col">
-              <div class="pkg-price-col-label">Space Only</div>
-              <div class="pkg-price-amount">฿12,000</div>
-            </div>
-            <div class="pkg-price-col divider"></div>
-            <div class="pkg-price-col">
-              <div class="pkg-managed-label">Full Managed</div>
-              <div class="pkg-price-amount gold">฿17,500</div>
-            </div>
+      <div class="pkg-dark">
+        <div class="pkg-top">
+          <div class="pkg-pill pill-navy">🔥 Zone A · Super Prime</div>
+          <div class="pkg-zone-name">Super Prime Booth</div>
+          <div class="pkg-zone-sub">หน้าทางเข้าหลัก + ติดเวที​กิจกรรม</div>
+          <div class="price-split">
+            <div class="price-col"><div class="price-lbl">Space Only</div><div class="price-amount">฿12,000</div></div>
+            <div class="price-divider"></div>
+            <div class="price-col"><div class="price-managed-lbl">Full Managed</div><div class="price-amount gold">฿17,500</div></div>
           </div>
         </div>
-        <div class="pkg-feat-list">
-          <div class="pkg-feat2"><span class="diamond">◆</span>Traffic สูงสุดในงาน — เห็นจากทุกมุม</div>
-          <div class="pkg-feat2"><span class="diamond">◆</span>ขนส่งฟรี 100 KG (ไทย → เวียงจันทน์)</div>
-          <div class="pkg-feat2"><span class="star">★</span><span><strong>Full Managed:</strong> พนักงาน Dedicated 1 คน</span></div>
-          <div class="pkg-feat2"><span class="star">★</span><span><strong>Full Managed:</strong> ฉลากลาว + รายงานทุกวัน</span></div>
+        <div class="pkg-body">
+          <div class="feat-line"><span class="feat-diamond">◆</span>Traffic สูงสุดในงาน — เห็นจากทุกมุม</div>
+          <div class="feat-line"><span class="feat-diamond">◆</span>ขนส่งฟรี 100 KG (ไทย → เวียงจันทน์)</div>
+          <div class="feat-line"><span class="feat-star">★</span><span><strong>Full Managed:</strong> พนักงาน Dedicated 1 คน</span></div>
+          <div class="feat-line"><span class="feat-star">★</span><span><strong>Full Managed:</strong> ฉลากลาว + รายงานทุกวัน</span></div>
         </div>
-        <a href="#register" class="pkg-book-btn2 btn-book-red">จอง Zone A</a>
+        <div class="pkg-footer"><a href="#register" class="pkg-btn pkg-btn-red">จอง Zone A</a></div>
       </div>
 
       <!-- Shock Sale -->
-      <div class="pkg-card shock-card">
-        <div class="pkg-card-header">
-          <div class="pkg-zone-pill pill-orange">⚡ Shock Sale · 8 บล็อก</div>
-          <div class="pkg-zone-desc">จุดกึ่งกลางทางเดินหลัก คนผ่าน 2 ทิศทาง</div>
-          <div class="pkg-price-row">
-            <div class="pkg-price-col">
-              <div class="pkg-price-col-label">Space Only</div>
-              <div class="pkg-price-amount">฿10,000</div>
-            </div>
-            <div class="pkg-price-col divider"></div>
-            <div class="pkg-price-col">
-              <div class="pkg-managed-label">Full Managed</div>
-              <div class="pkg-price-amount gold">฿15,000</div>
-            </div>
+      <div class="pkg-dark shock">
+        <div class="pkg-top">
+          <div class="pkg-pill pill-amber">⚡ Shock Sale · 8 บล็อก</div>
+          <div class="pkg-zone-name">Shock Sale Zone</div>
+          <div class="pkg-zone-sub">จุดกึ่งกลางทางเดินหลัก คนผ่าน 2 ทิศทาง</div>
+          <div class="price-split">
+            <div class="price-col"><div class="price-lbl">Space Only</div><div class="price-amount">฿10,000</div></div>
+            <div class="price-divider"></div>
+            <div class="price-col"><div class="price-managed-lbl">Full Managed</div><div class="price-amount gold">฿15,000</div></div>
           </div>
         </div>
-        <div class="pkg-feat-list">
-          <div class="pkg-feat2"><span class="diamond">◆</span>เหมาะสินค้า Flash Sale / โปรโมชั่นสด</div>
-          <div class="pkg-feat2"><span class="diamond">◆</span>ขนส่งฟรี 100 KG (ไทย → เวียงจันทน์)</div>
-          <div class="pkg-feat2"><span class="star">★</span><span><strong>Full Managed:</strong> พนักงาน Dedicated 1 คน</span></div>
-          <div class="pkg-feat2"><span class="star">★</span><span><strong>Full Managed:</strong> ฉลากลาว + รายงานทุกวัน</span></div>
+        <div class="pkg-body">
+          <div class="feat-line"><span class="feat-diamond">◆</span>เหมาะสินค้า Flash Sale / โปรโมชั่นสด</div>
+          <div class="feat-line"><span class="feat-diamond">◆</span>ขนส่งฟรี 100 KG (ไทย → เวียงจันทน์)</div>
+          <div class="feat-line"><span class="feat-star">★</span><span><strong>Full Managed:</strong> พนักงาน Dedicated 1 คน</span></div>
+          <div class="feat-line"><span class="feat-star">★</span><span><strong>Full Managed:</strong> ฉลากลาว + รายงานทุกวัน</span></div>
         </div>
-        <a href="#register" class="pkg-book-btn2 btn-book-orange">จอง Shock Sale</a>
+        <div class="pkg-footer"><a href="#register" class="pkg-btn pkg-btn-amber">จอง Shock Sale</a></div>
       </div>
 
-      <!-- Zone B Thai Brands -->
-      <div class="pkg-card featured">
-        <div class="pkg-card-header">
-          <div class="pkg-zone-pill pill-blue">🧴 Zone B · Thai Brands</div>
-          <div class="pkg-zone-desc">โซนสินค้าไลฟ์สไตล์และบิวตี้ไทย</div>
-          <div class="pkg-price-row">
-            <div class="pkg-price-col">
-              <div class="pkg-price-col-label">Space Only</div>
-              <div class="pkg-price-amount">฿7,000</div>
-            </div>
-            <div class="pkg-price-col divider"></div>
-            <div class="pkg-price-col">
-              <div class="pkg-managed-label">Full Managed</div>
-              <div class="pkg-price-amount gold">฿12,000</div>
-            </div>
+      <!-- Zone B -->
+      <div class="pkg-dark zone-b featured-pkg">
+        <div class="pkg-top">
+          <div class="pkg-pill pill-navy">🧴 Zone B · Thai Brands</div>
+          <div class="pkg-zone-name">Thai Brands Zone</div>
+          <div class="pkg-zone-sub">โซนสินค้าไลฟ์สไตล์และบิวตี้ไทย</div>
+          <div class="price-split">
+            <div class="price-col"><div class="price-lbl">Space Only</div><div class="price-amount">฿7,000</div></div>
+            <div class="price-divider"></div>
+            <div class="price-col"><div class="price-managed-lbl">Full Managed</div><div class="price-amount gold">฿12,000</div></div>
           </div>
         </div>
-        <div class="pkg-feat-list">
-          <div class="pkg-feat2"><span class="diamond">◆</span>กลุ่มเป้าหมายตรง — ลูกค้าสนใจสินค้าไทย</div>
-          <div class="pkg-feat2"><span class="diamond">◆</span>ขนส่งฟรี 100 KG (ไทย → เวียงจันทน์)</div>
-          <div class="pkg-feat2"><span class="star">★</span><span><strong>Full Managed:</strong> พนักงาน Shared + รายงานทุกวัน</span></div>
-          <div class="pkg-feat2"><span class="star">★</span><span><strong>Full Managed:</strong> 1 Influencer + ฉลากลาว</span></div>
+        <div class="pkg-body">
+          <div class="feat-line"><span class="feat-diamond">◆</span>กลุ่มเป้าหมายตรง — ลูกค้าสนใจสินค้าไทย</div>
+          <div class="feat-line"><span class="feat-diamond">◆</span>ขนส่งฟรี 100 KG (ไทย → เวียงจันทน์)</div>
+          <div class="feat-line"><span class="feat-star">★</span><span><strong>Full Managed:</strong> พนักงาน Shared + รายงานทุกวัน</span></div>
+          <div class="feat-line"><span class="feat-star">★</span><span><strong>Full Managed:</strong> 1 Influencer + ฉลากลาว</span></div>
         </div>
-        <a href="#register" class="pkg-book-btn2 btn-book-red">จองด่วน — ที่เหลือน้อย</a>
+        <div class="pkg-footer"><a href="#register" class="pkg-btn pkg-btn-red">จองด่วน — ที่เหลือน้อย</a></div>
       </div>
 
-      <!-- Zone C Mini Hub -->
-      <div class="pkg-card">
-        <div class="pkg-card-header">
-          <div class="pkg-zone-pill pill-gray">🚗 Zone C · Mini Hub</div>
-          <div class="pkg-zone-desc">ใกล้จุด Drive Thru + ลิฟต์ ดักลูกค้าขาเข้า</div>
-          <div class="pkg-price-row">
-            <div class="pkg-price-col">
-              <div class="pkg-price-col-label">Space Only</div>
-              <div class="pkg-price-amount">฿5,000</div>
-            </div>
-            <div class="pkg-price-col divider"></div>
-            <div class="pkg-price-col">
-              <div class="pkg-managed-label">Full Managed</div>
-              <div class="pkg-price-amount gold">฿10,000</div>
-            </div>
+      <!-- Zone C -->
+      <div class="pkg-dark zone-c">
+        <div class="pkg-top">
+          <div class="pkg-pill pill-navy">🚗 Zone C · Mini Hub</div>
+          <div class="pkg-zone-name">Mini Hub Zone</div>
+          <div class="pkg-zone-sub">ใกล้จุด Drive Thru + ลิฟต์ ดักลูกค้าขาเข้า</div>
+          <div class="price-split">
+            <div class="price-col"><div class="price-lbl">Space Only</div><div class="price-amount">฿5,000</div></div>
+            <div class="price-divider"></div>
+            <div class="price-col"><div class="price-managed-lbl">Full Managed</div><div class="price-amount gold">฿10,000</div></div>
           </div>
         </div>
-        <div class="pkg-feat-list">
-          <div class="pkg-feat2"><span class="diamond">◆</span>ราคาประหยัดที่สุด — เหมาะทดลองตลาดลาว</div>
-          <div class="pkg-feat2"><span class="diamond">◆</span>ขนส่งฟรี 100 KG (ไทย → เวียงจันทน์)</div>
-          <div class="pkg-feat2"><span class="star">★</span><span><strong>Full Managed:</strong> พนักงาน Shared + รายงานทุกวัน</span></div>
-          <div class="pkg-feat2"><span class="star">★</span><span><strong>Full Managed:</strong> ฉลากลาว + ภาษีนำเข้า</span></div>
+        <div class="pkg-body">
+          <div class="feat-line"><span class="feat-diamond">◆</span>ราคาประหยัดที่สุด — เหมาะทดลองตลาดลาว</div>
+          <div class="feat-line"><span class="feat-diamond">◆</span>ขนส่งฟรี 100 KG (ไทย → เวียงจันทน์)</div>
+          <div class="feat-line"><span class="feat-star">★</span><span><strong>Full Managed:</strong> พนักงาน Shared + รายงานทุกวัน</span></div>
+          <div class="feat-line"><span class="feat-star">★</span><span><strong>Full Managed:</strong> ฉลากลาว + ภาษีนำเข้า</span></div>
         </div>
-        <a href="#register" class="pkg-book-btn2 btn-book-outline">จอง Zone C</a>
+        <div class="pkg-footer"><a href="#register" class="pkg-btn pkg-btn-outline">จอง Zone C</a></div>
       </div>
 
-    </div>
-
-<!-- ── WHAT'S INCLUDED ── -->
-    <div class="includes-bar reveal d2">
-      <div class="inc-item">
-        <div class="inc-icon">🚚</div>
-        <div class="inc-label">ขนส่งฟรี 100 KG</div>
-        <div class="inc-sub">ไทย → เวียงจันทน์</div>
-      </div>
-      <div class="inc-item">
-        <div class="inc-icon">👥</div>
-        <div class="inc-label">Lao Staff</div>
-        <div class="inc-sub">ดูแลบูธตลอด 5 วัน</div>
-      </div>
-      <div class="inc-item">
-        <div class="inc-icon">🤝</div>
-        <div class="inc-label">B2B Matching</div>
-        <div class="inc-sub">กับผู้ซื้อต่างชาติ</div>
-      </div>
-      <div class="inc-item">
-        <div class="inc-icon">0%</div>
-        <div class="inc-label">Commission</div>
-        <div class="inc-sub">ยอดขายเป็นของคุณทั้งหมด</div>
-      </div>
-    </div>
-
-    <!-- ── FOMO ── -->
-    <div class="fomo-bar reveal">
-      <div class="fomo-text">
-        🔥 เหลือเพียง <span class="fomo-slots">15</span> บูธเท่านั้น! อย่ารอช้า
-      </div>
-      <a href="#register" class="btn-red" style="white-space:nowrap">จองบูธเลย →</a>
-    </div>
-
-  </div>
-</section>
-
-<!-- ══ 4. WHY JOIN ══ -->
-<section class="sec" id="why-join">
-  <div class="sec-center">
-    <div class="sec-header reveal">
-      <h2 class="sec-title">ทำไมต้องเข้าร่วม?</h2>
-    </div>
-    <div class="why-icons reveal d1">
-      <div class="why-item">
-        <div class="why-num">0%</div>
-        <div class="why-label">ค่าคอมมิชชั่น</div>
-      </div>
-      <div class="why-item">
-        <div class="why-icon-big">🤝</div>
-        <div class="why-label">พบลูกค้าต่างชาติ</div>
-      </div>
-      <div class="why-item">
-        <div class="why-icon-big">📊</div>
-        <div class="why-label">B2B Matching</div>
-      </div>
-      <div class="why-item">
-        <img src="images/Big_C.png" alt="Big C" style="height:44px;object-fit:contain;margin:0 auto 0.5rem">
-        <div class="why-label">สถานที่ Big C เวียงจันทน์</div>
-      </div>
-    </div>
-    <div class="why-quote-bar reveal d2">
-      "<strong>VITH HUB</strong> พร้อมช่วยนำ SMEs ไทยสู่ตลาดลาว" – <em>Thai Trade Center Laos</em>
     </div>
   </div>
 </section>
 
-<!-- ══ 5. ROADMAP / TIMELINE ══ -->
-<!-- ══ ROADMAP (UPGRADED) ══ -->
-<section id="roadmap" class="section-pad" style="background:var(--surface);border-top:1px solid var(--border)">
-  <div class="section-center">
-    <div class="reveal">
-      <div class="section-eyebrow">🗺️ Future Roadmap</div>
-      <h2 class="section-title"><span data-lang="th" class="active">2 Phase · 2 ระดับของโอกาส<br><em>เลือก Entry Point ที่ใช่สำหรับคุณ</em></span><span data-lang="la">2 Phase · 2 ລະດັບໂອກາດ<br><em>ເລືອກ Entry Point ທີ່ໃຊ່</em></span><span data-lang="en">2 Phases · 2 Levels of Opportunity<br><em>Choose your perfect entry point</em></span></h2>
+<!-- ══ 8. FINAL CTA ══ -->
+<section id="final-cta">
+  <div class="fcta-inner reveal">
+    <div class="fcta-badge"><span class="announce-dot"></span> Limited Availability</div>
+    <h2 class="fcta-title">
+      <span data-lang="th" class="active"><span>Limited Booths</span> Available!</span>
+      <span data-lang="en"><span>Limited Booths</span> Available!</span>
+    </h2>
+    <p class="fcta-sub">
+      <span data-lang="th" class="active">จองพื้นที่ตอนนี้เพื่อเชื่อมธุรกิจไทยของคุณกับผู้ซื้อในเวียงจันทน์<br>เหลือเพียง <strong style="color:var(--gold2)">15 บูธ</strong> เท่านั้น!</span>
+      <span data-lang="en">Secure your space now and connect with buyers in Vientiane!<br>Only <strong style="color:var(--gold2)">15 booths</strong> remaining!</span>
+    </p>
+    <div class="fcta-btns">
+      <a href="#register" class="btn-fcta-gold">🚀 Reserve Your Booth</a>
+      <a href="https://line.me/ti/p/@cef8930n" target="_blank" class="btn-fcta-ghost">
+        <svg width="18" height="18" viewBox="0 0 48 48"><path d="M24 4C13 4 4 11.8 4 21.5c0 5.5 3.1 10.4 7.9 13.7-.3 1.2-1.1 4.3-1.3 5 0 0-.1.3.2.4.2.1.5 0 .5 0 .7-.1 8.5-5.6 9.8-6.5.9.1 1.9.2 2.9.2 11 0 20-7.8 20-17.3S35 4 24 4z" fill="white"/></svg>
+        Contact Us via LINE
+      </a>
     </div>
-    <div class="roadmap-grid reveal">
-
-      <!-- Phase 1 -->
-      <div class="roadmap-card rm-phase1">
-        <div class="rm-phase-tag rm-tag-gold">Phase 1 · March 2026</div>
-        <div class="rm-phase-title">
-          <span data-lang="th" class="active">Market Entry<br><strong>& Sandbox</strong></span>
-          <span data-lang="la">Market Entry<br><strong>& Sandbox</strong></span>
-          <span data-lang="en">Market Entry<br><strong>& Sandbox</strong></span>
-        </div>
-        <div class="rm-date">📅 <span data-lang="th" class="active">25–29 มีนาคม 2026 · 5 วัน</span><span data-lang="la">25–29 ມີນາ 2026 · 5 ວັນ</span><span data-lang="en">Mar 25–29, 2026 · 5 Days</span></div>
-        <ul class="rm-list">
-          <li>
-            <span class="rm-icon rm-icon-blue">🧪</span>
-            <div><strong><span data-lang="th" class="active">ทดสอบตลาดจริง</span><span data-lang="la">ທົດສອບຕະຫຼາດຈິງ</span><span data-lang="en">Real Market Testing</span></strong><br>
-            <span data-lang="th" class="active">วัดผลยอดขาย สินค้าประเภทไหนขายดีในลาว ก่อนลงทุนเพิ่ม</span><span data-lang="la">ວັດຜົນຍອດຂາຍ ສິນຄ້າໃດຂາຍດີ</span><span data-lang="en">Measure which products sell best in Laos before scaling.</span></div>
-          </li>
-          <li>
-            <span class="rm-icon rm-icon-gold">📊</span>
-            <div><strong><span data-lang="th" class="active">เก็บข้อมูลผู้บริโภคชาวลาว</span><span data-lang="la">ເກັບຂໍ້ມູນຜູ້ບໍລິໂພກລາວ</span><span data-lang="en">Lao Consumer Data Collection</span></strong><br>
-            <span data-lang="th" class="active">Real-time Market Intelligence เพื่อวางแผนการเข้าตลาดจีน-รัสเซีย</span><span data-lang="la">Market Intelligence ສຳລັບວາງແຜນຕະຫຼາດຈີນ-ລັດເຊຍ</span><span data-lang="en">Consumer insights to plan China & Russia market entry strategy.</span></div>
-          </li>
-          <li>
-            <span class="rm-icon rm-icon-red">🚚</span>
-            <div><strong><span data-lang="th" class="active">พิสูจน์ระบบ Logistics 100%</span><span data-lang="la">ພິສູດລະບົບ Logistics 100%</span><span data-lang="en">100% Logistics System Proof</span></strong><br>
-            <span data-lang="th" class="active">ทดสอบเส้นทางขนส่งไทย-ลาว ก่อนเปิดเส้นทางรถไฟจีน</span><span data-lang="la">ທົດສອບການຂົນສົ່ງ ກ່ອນເປີດ Railway ຈີນ</span><span data-lang="en">Test Thai-Lao logistics before activating the China Railway route.</span></div>
-          </li>
-        </ul>
-        <div class="rm-value-box">
-          <span class="rm-value-label"><span data-lang="th" class="active">มูลค่าที่ได้</span><span data-lang="la">ມູນຄ່າທີ່ໄດ້</span><span data-lang="en">Value Delivered</span></span>
-          <span class="rm-value-num">฿5K–17.5K</span>
-          <span class="rm-value-sub"><span data-lang="th" class="active">ลงทุน · คืนทุน 2–3 วัน</span><span data-lang="la">ລົງທຶນ · ຄືນທຶນ 2–3 ວັນ</span><span data-lang="en">Investment · Break-even 2–3 days</span></span>
-        </div>
-        <a href="#packages" class="rm-cta rm-cta-gold"><span data-lang="th" class="active">🎯 จอง Phase 1 ตอนนี้</span><span data-lang="la">🎯 ຈອງ Phase 1</span><span data-lang="en">🎯 Book Phase 1 Now</span></a>
-      </div>
-
-      <!-- Phase 2 -->
-      <div class="roadmap-card rm-phase2">
-        <div class="rm-badge-new"><span data-lang="th" class="active">🚀 ยกระดับ Global</span><span data-lang="la">🚀 ລະດັບ Global</span><span data-lang="en">🚀 Go Global</span></div>
-        <div class="rm-phase-tag rm-tag-red">Phase 2 · May 2026</div>
-        <div class="rm-phase-title">
-          <span data-lang="th" class="active">Global Connection<br><strong>& Grand Opening</strong></span>
-          <span data-lang="la">Global Connection<br><strong>& Grand Opening</strong></span>
-          <span data-lang="en">Global Connection<br><strong>& Grand Opening</strong></span>
-        </div>
-        <div class="rm-date">📅 <span data-lang="th" class="active">พฤษภาคม 2026 · 7 วัน · ระดับนานาชาติ</span><span data-lang="la">ພຶດ 2026 · 7 ວັນ · ສາກົນ</span><span data-lang="en">May 2026 · 7 Days · International Scale</span></div>
-        <ul class="rm-list">
-          <li>
-            <span class="rm-icon rm-icon-blue">🤝</span>
-            <div><strong><span data-lang="th" class="active">B2B Matching · นักลงทุนจีน-รัสเซีย</span><span data-lang="la">B2B Matching · ຈີນ-ລັດເຊຍ</span><span data-lang="en">B2B Matching — Chinese & Russian Investors</span></strong><br>
-            <span data-lang="th" class="active">เชิญนักลงทุนและคู่ค้าจากจีนและรัสเซียเข้าชมสินค้าและเครือข่าย VITH Hub</span><span data-lang="la">ເຊີນນັກລົງທຶນຈາກຈີນ-ລັດເຊຍ ເຂົ້າຊົມສິນຄ້າ VITH Hub</span><span data-lang="en">Chinese & Russian investors invited to view products & negotiate trade deals at VITH Hub.</span></div>
-          </li>
-          <li>
-            <span class="rm-icon rm-icon-gold">🚄</span>
-            <div><strong><span data-lang="th" class="active">เปิดเส้นทางรถไฟลาว-จีน สู่คุนหมิง</span><span data-lang="la">ເປີດ Railway ລາວ-ຈີນ ສູ່ຄຸນໝິງ</span><span data-lang="en">Activate Laos-China Railway → Kunming</span></strong><br>
-            <span data-lang="th" class="active">สินค้าที่พิสูจน์ตลาดใน Phase 1 ขึ้นรถไฟกระจายสู่จีนและรัสเซียได้เลย</span><span data-lang="la">ສິນຄ້າທີ່ພິສູດໃນ Phase 1 ຂຶ້ນລົດໄຟກະຈາຍຈີນ-ລັດເຊຍ</span><span data-lang="en">Products proven in Phase 1 ship via Railway directly to China & Russia buyers.</span></div>
-          </li>
-          <li>
-            <span class="rm-icon rm-icon-purple">🌍</span>
-            <div><strong><span data-lang="th" class="active">Hub นานาชาติ — ไม่ใช่แค่ขายของ</span><span data-lang="la">Hub ສາກົນ — ບໍ່ພຽງຂາຍສິນຄ້າ</span><span data-lang="en">International Trade Hub — Beyond Retail</span></strong><br>
-            <span data-lang="th" class="active">สมาคมแฟรนไชส์ + SME ภาคเหนือ + Influencer ลาว + TikTok/FB Campaign ระดับ International</span><span data-lang="la">Franchise + SME + Influencer ລາວ + TikTok/FB International</span><span data-lang="en">Franchise assoc. + Northern SMEs + Lao Influencers + International TikTok/FB Campaign.</span></div>
-          </li>
-        </ul>
-        <div class="rm-value-box rm-value-global">
-          <span class="rm-value-label"><span data-lang="th" class="active">ศักยภาพตลาด</span><span data-lang="la">ທ່າແຮງຕະຫຼາດ</span><span data-lang="en">Market Potential</span></span>
-          <span class="rm-value-num rm-num-red">10K+</span>
-          <span class="rm-value-sub"><span data-lang="th" class="active">ผู้เข้าร่วม + นักธุรกิจจีน-รัสเซีย</span><span data-lang="la">ຜູ້ເຂົ້າ + ນັກທຸລະກິດຈີນ-ລັດເຊຍ</span><span data-lang="en">Attendees + Chinese & Russian trade partners</span></span>
-        </div>
-        <a href="#bundle" class="rm-cta rm-cta-red"><span data-lang="th" class="active">💎 จอง Bundle 2 Phase — ได้ทั้ง 2 ตลาด</span><span data-lang="la">💎 Bundle 2 Phase</span><span data-lang="en">💎 Book Bundle — Access Both Markets</span></a>
-      </div>
-    </div>
-
-    <!-- Scarcity counter -->
-    <div class="rm-scarcity reveal">
-      <div class="rm-scarcity-inner">
-        <span class="rm-scarcity-dot"></span>
-        <span class="rm-scarcity-text">
-          <strong><span data-lang="th" class="active">เหลือเพียง 19 บูทสุดท้าย</span><span data-lang="la">ເຫຼືອ 19 ທີ່ສຸດທ້າຍ</span><span data-lang="en">Only 19 booths left</span></strong>
-          <span data-lang="th" class="active"> สำหรับโควตาผู้ประกอบการส่งออกระดับนานาชาติ — จองก่อนปิดรับ!</span>
-          <span data-lang="la"> ສຳລັບໂຄວຕ້ານັກທຸລະກິດສ່ງອອກ</span>
-          <span data-lang="en"> in the international export entrepreneur quota — reserve before registration closes!</span>
-        </span>
-        <a href="#contact" class="rm-scarcity-cta"><span data-lang="th" class="active">จองเลย →</span><span data-lang="la">ຈອງ →</span><span data-lang="en">Book Now →</span></a>
-      </div>
+    <div class="fcta-slots">
+      <div class="fcta-slot-bar"><div class="fcta-slot-fill"></div></div>
+      <div class="fcta-slot-text"><strong>21/36</strong> บูธถูกจองแล้ว · เหลือ <strong>15</strong> ที่</div>
     </div>
   </div>
 </section>
 
-<!-- ══ 6. REGISTER + COUNTDOWN ══ -->
-<section class="sec" id="register">
-  <div class="sec-center">
-    <div class="reveal">
-      <div class="reg-wrap">
-        <div class="reg-header">
-          <div class="reg-header-title">จองบูธล่วงหน้า!</div>
-          <div class="countdown-inline">
-            <div class="cd-unit">
-              <span class="cd-num" id="uDays">00</span>
-              <span class="cd-label">วัน</span>
-            </div>
-            <span class="cd-sep">:</span>
-            <div class="cd-unit">
-              <span class="cd-num" id="uHours">00</span>
-              <span class="cd-label">ชม.</span>
-            </div>
-            <span class="cd-sep">:</span>
-            <div class="cd-unit">
-              <span class="cd-num" id="uMins">00</span>
-              <span class="cd-label">นาที</span>
-            </div>
-            <span class="cd-sep">:</span>
-            <div class="cd-unit">
-              <span class="cd-num" id="uSecs">00</span>
-              <span class="cd-label">วิ</span>
-            </div>
-          </div>
+<!-- ══ REGISTER FORM ══ -->
+<section id="register" class="sec">
+  <div class="sec-inner">
+    <div class="sec-header-center reveal" style="margin-bottom:2rem">
+      <div class="sec-tag">Register</div>
+      <h2 class="sec-title">จองบูธ<span>ล่วงหน้า</span></h2>
+    </div>
+    <div class="reg-card reveal d1">
+      <div class="reg-card-top">
+        <div class="reg-card-title">📋 จองบูธ VITH HUB SME Showcase 2026</div>
+        <div class="countdown-row">
+          <div class="cd-mini"><span class="cd-mini-num" id="rDays">00</span><span class="cd-mini-lbl">วัน</span></div>
+          <span class="cd-mini-sep">:</span>
+          <div class="cd-mini"><span class="cd-mini-num" id="rHours">00</span><span class="cd-mini-lbl">ชม.</span></div>
+          <span class="cd-mini-sep">:</span>
+          <div class="cd-mini"><span class="cd-mini-num" id="rMins">00</span><span class="cd-mini-lbl">นาที</span></div>
+          <span class="cd-mini-sep">:</span>
+          <div class="cd-mini"><span class="cd-mini-num" id="rSecs">00</span><span class="cd-mini-lbl">วิ</span></div>
         </div>
-        <div class="reg-urgency">
-          ⚡ เหลือเพียง <strong style="font-size:1.3rem;margin:0 4px" id="slotsLeft">15</strong> วันก่อนถึงงาน!
-        </div>
-        <div class="reg-form-grid" id="regForm">
-          <input class="reg-input" id="r-name" placeholder="ชื่อผู้จองบูถ" type="text">
-          <input class="reg-input" id="r-phone" placeholder="เบอร์ติดต่อ 📱" type="tel">
-          <input class="reg-input" id="r-email" placeholder="อีเมล" type="email">
-          <select class="reg-input" id="r-pkg">
-            <option value="">เลือกประเภทบูถ</option>
-            <option value="zone-a-shock">Zone A Shock ฿12,000</option>
-            <option value="zone-a-std">Zone A Standard ฿17,500</option>
-            <option value="zone-b-std">Zone B Standard ฿14,500</option>
-            <option value="zone-c-std">Zone C Standard ฿11,500</option>
-            <option value="bundle">Bundle Phase 1+2</option>
+      </div>
+      <div class="reg-urgency">⚡ เหลือเพียง <strong style="font-size:1.2rem;margin:0 4px">15</strong> บูธเท่านั้น — จองก่อนเต็ม!</div>
+      <div class="reg-body">
+        <div class="form-grid" id="regForm">
+          <input class="form-input" id="r-name" placeholder="ชื่อผู้ติดต่อ / บริษัท" type="text">
+          <input class="form-input" id="r-phone" placeholder="เบอร์โทรศัพท์ 📱" type="tel">
+          <input class="form-input" id="r-email" placeholder="อีเมล" type="email">
+          <select class="form-input" id="r-pkg">
+            <option value="">เลือกแพ็กเกจบูธ</option>
+            <option>Zone A — Super Prime (Space Only ฿12,000)</option>
+            <option>Zone A — Super Prime (Full Managed ฿17,500)</option>
+            <option>Shock Sale (Space Only ฿10,000)</option>
+            <option>Shock Sale (Full Managed ฿15,000)</option>
+            <option>Zone B — Thai Brands (Space Only ฿7,000)</option>
+            <option>Zone B — Thai Brands (Full Managed ฿12,000)</option>
+            <option>Zone C — Mini Hub (Space Only ฿5,000)</option>
+            <option>Zone C — Mini Hub (Full Managed ฿10,000)</option>
           </select>
-          <button class="reg-submit" onclick="submitReg()">
-            🚀 ลงทะเบียนตอนนี้!
-          </button>
+          <textarea class="form-input span-2" id="r-note" placeholder="สินค้าที่ต้องการนำมาแสดง / ข้อความเพิ่มเติม" rows="3" style="resize:vertical"></textarea>
+          <button class="form-submit" onclick="submitRegForm()">🚀 ลงทะเบียนจองบูธตอนนี้!</button>
+          <div class="form-privacy">การส่งข้อมูลถือว่าคุณยอมรับ <a href="/privacy">Privacy Policy</a> ของ VITH HUB</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══ 7. FOOTER ══ -->
-<footer class="event-footer">
-  <div style="max-width:960px;margin:0 auto">
-
-    <!-- Logo -->
-    <div style="text-align:center;margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,0.1)">
-      <div class="event-footer-logo">VITH<span>HUB</span></div>
-      <p style="font-size:0.78rem;color:rgba(255,255,255,0.4);letter-spacing:0.12em;text-transform:uppercase;margin-top:0.25rem">Gateway for Thai SMEs to International Markets</p>
-    </div>
-
-    <!-- 2-column contacts -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,0.08)">
-
-      <!-- Thailand -->
+<!-- ══ FOOTER ══ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo-txt">VITH<span>HUB</span></div>
+        <div class="footer-tagline">Gateway for Thai SMEs to International Markets</div>
+        <div style="display:flex;gap:0.5rem;margin-top:0.75rem">
+          <a href="/" style="font-size:0.78rem;color:rgba(255,255,255,0.45)">Home</a>
+          <span style="color:rgba(255,255,255,0.2)">·</span>
+          <a href="/about" style="font-size:0.78rem;color:rgba(255,255,255,0.45)">Partners</a>
+          <span style="color:rgba(255,255,255,0.2)">·</span>
+          <a href="/membership" style="font-size:0.78rem;color:rgba(255,255,255,0.45)">Founder Member</a>
+          <span style="color:rgba(255,255,255,0.2)">·</span>
+          <a href="/salesdeck" style="font-size:0.78rem;color:rgba(255,255,255,0.45)">Sales Deck</a>
+        </div>
+      </div>
       <div>
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:0.875rem">
-          <span style="font-size:1.2rem">🇹🇭</span>
-          <span style="font-family:'Kanit',sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#f59e0b">Thailand Partner</span>
-        </div>
-        <div style="font-family:'Kanit',sans-serif;font-weight:800;font-size:0.9375rem;color:#fff;margin-bottom:0.625rem;line-height:1.4">
-          Royal Bridge 99<br>Limited Partnership
-        </div>
-        <div style="font-size:0.8125rem;color:rgba(255,255,255,0.5);line-height:2;font-family:'Sarabun',sans-serif">
-          📍 211 Moo 3, T.Ban Chan, A.Muang<br>
-          &nbsp;&nbsp;&nbsp;&nbsp;Udon Thani 41000, Thailand<br>
-          📞 <a href="tel:+66855907666" style="color:rgba(255,255,255,0.65)">+66 85 590 7666</a>
+        <div class="footer-col-title">🇹🇭 Thailand Partner</div>
+        <div class="footer-col-item">
+          <strong>Royal Bridge 99 Ltd. Partnership</strong><br>
+          211 Moo 3, T.Ban Chan, A.Muang<br>
+          Udon Thani 41000, Thailand<br>
+          <a href="tel:+66855907666">+66 85 590 7666</a>
         </div>
       </div>
-
-      <!-- Laos -->
       <div>
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:0.875rem">
-          <span style="font-size:1.2rem">🇱🇦</span>
-          <span style="font-family:'Kanit',sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#f59e0b">Lao Partner</span>
-        </div>
-        <div style="font-family:'Kanit',sans-serif;font-weight:800;font-size:0.9375rem;color:#fff;margin-bottom:0.625rem;line-height:1.4">
-          Boualapha Khao-Khaoak<br>Agricultural Development Co., Ltd.
-        </div>
-        <div style="font-size:0.8125rem;color:rgba(255,255,255,0.5);line-height:2;font-family:'Sarabun',sans-serif">
-          🏢 Business Code: 17-00000261<br>
-          🧾 Tax ID: 111516312900<br>
-          📞 <a href="tel:+8562056605450" style="color:rgba(255,255,255,0.65)">+856 20 56605450</a>
+        <div class="footer-col-title">🇱🇦 Lao Partner</div>
+        <div class="footer-col-item">
+          <strong>Boualapha Khao-Khaoak Agri. Dev.</strong><br>
+          Business: 17-00000261<br>
+          Tax ID: 111516312900<br>
+          <a href="tel:+8562056605450">+856 20 56605450</a>
         </div>
       </div>
-
     </div>
-
-    <!-- Social + nav -->
-    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.25rem;margin-bottom:1.5rem">
-      <div style="display:flex;gap:0.625rem">
-        <a href="#" style="width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;color:#fff;font-size:0.875rem;font-weight:700;transition:all 0.2s">f</a>
-        <a href="#" style="width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;color:#fff;font-size:0.75rem;font-weight:700;transition:all 0.2s">ig</a>
-        <a href="#" style="width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;color:#fff;font-size:0.7rem;font-weight:700;transition:all 0.2s">in</a>
-        <a href="#" style="width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;color:#fff;transition:all 0.2s">▶</a>
-      </div>
-      <div style="display:flex;gap:1.25rem;flex-wrap:wrap">
-        <a href="/" style="font-size:0.8125rem;color:rgba(255,255,255,0.45)">หน้าหลัก</a>
-        <a href="/about" style="font-size:0.8125rem;color:rgba(255,255,255,0.45)">Partners</a>
-        <a href="/membership" style="font-size:0.8125rem;color:rgba(255,255,255,0.45)">Founder Member</a>
-        <a href="/salesdeck" style="font-size:0.8125rem;color:rgba(255,255,255,0.45)">Sales Deck</a>
-      </div>
+    <div class="footer-bottom">
+      <span>© 2026 VITH HUB · vithhub.asia · All rights reserved</span>
+      <span><a href="/privacy">Privacy Policy</a> · <a href="/terms">Terms & Conditions</a></span>
     </div>
-
-    <div style="text-align:center;font-size:0.72rem;color:rgba(255,255,255,0.2)">
-      © 2026 VITH HUB · vithhub.asia · All rights reserved
-    </div>
-
   </div>
 </footer>
 
 <!-- STICKY CTA -->
-<div class="sticky-wrap">
-  <a href="#register" class="sticky-btn red">
-    📋 <span><span data-lang="th" class="active">จองบูธ<br><strong>Register Now</strong></span><span data-lang="en">Book Booth<br><strong>Register Now</strong></span></span>
-  </a>
-  <a href="https://line.me/ti/p/@cef8930n" class="sticky-btn line" target="_blank">
-    <svg width="18" height="18" viewBox="0 0 48 48"><path d="M24 4C13 4 4 11.8 4 21.5c0 5.5 3.1 10.4 7.9 13.7-.3 1.2-1.1 4.3-1.3 5 0 0-.1.3.2.4.2.1.5 0 .5 0 .7-.1 8.5-5.6 9.8-6.5.9.1 1.9.2 2.9.2 11 0 20-7.8 20-17.3S35 4 24 4z" fill="white"/></svg>
+<div class="sticky-cta">
+  <a href="#register" class="sticky-btn gold">📋 จองบูธ</a>
+  <a href="https://line.me/ti/p/@cef8930n" class="sticky-btn line-btn" target="_blank">
+    <svg width="16" height="16" viewBox="0 0 48 48"><path d="M24 4C13 4 4 11.8 4 21.5c0 5.5 3.1 10.4 7.9 13.7-.3 1.2-1.1 4.3-1.3 5 0 0-.1.3.2.4.2.1.5 0 .5 0 .7-.1 8.5-5.6 9.8-6.5.9.1 1.9.2 2.9.2 11 0 20-7.8 20-17.3S35 4 24 4z" fill="white"/></svg>
     LINE
   </a>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// ── PHASE SWITCHER ──
-function switchPhase(phase) {
-  // อัพเดต tab active
-  document.querySelectorAll('.phase-tab').forEach(t => t.classList.remove('active'));
-  const activeTab = document.getElementById('tab-p' + phase);
-  if(activeTab) activeTab.classList.add('active');
-
-  window._currentPhase = phase;
-
-  // scroll ไป section ที่เกี่ยวข้อง
-  if(phase === 1) {
-    const target = document.getElementById('booth-section');
-    if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
-  } else {
-    // หา Phase 2 ใน roadmap
-    const target = document.getElementById('roadmap') || document.querySelector('.rm-phase2');
-    if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
-  }
-
-  // flash highlight
-  const highlight = phase === 1
-    ? document.getElementById('booth-section')
-    : document.querySelector('.rm-phase2');
-  if(highlight) {
-    highlight.style.transition = 'box-shadow 0.3s';
-    highlight.style.boxShadow = '0 0 0 3px rgba(245,158,11,0.5)';
-    setTimeout(() => { highlight.style.boxShadow = ''; }, 1200);
-  }
-}
-window._currentPhase = 1;
-
-// ── CAROUSEL ──
+<script>
+// ── HERO CAROUSEL ──
 (function(){
-  const slides = document.querySelectorAll('.hc-slide');
-  const dotsWrap = document.getElementById('hcDots');
-  const prog = document.getElementById('hcProgress');
-  const DURATION = 5000;
-  let cur = 0, timer = null;
-
-  slides.forEach((_,i) => {
+  const slides = document.querySelectorAll('.hero-slide');
+  const dots = document.getElementById('heroDots');
+  const prog = document.getElementById('heroProgress');
+  const DUR = 5000;
+  let cur = 0, timer;
+  slides.forEach((_,i)=>{
     const d = document.createElement('button');
-    d.className = 'hc-dot' + (i===0?' active':'');
-    d.onclick = () => goTo(i);
-    dotsWrap.appendChild(d);
+    d.className = 'hero-dot'+(i===0?' active':'');
+    d.onclick = ()=>goTo(i);
+    dots.appendChild(d);
   });
-
-  function goTo(n) {
+  function goTo(n){
     slides[cur].classList.remove('active');
-    dotsWrap.children[cur].classList.remove('active');
-    cur = (n + slides.length) % slides.length;
+    dots.children[cur].classList.remove('active');
+    cur = (n+slides.length)%slides.length;
     slides[cur].classList.add('active');
-    dotsWrap.children[cur].classList.add('active');
+    dots.children[cur].classList.add('active');
     prog.classList.remove('run');
-    prog.style.transition='none'; prog.style.width='0';
-    requestAnimationFrame(() => requestAnimationFrame(() => {
-      prog.style.transition=''; prog.classList.add('run');
+    prog.style.transition='none';prog.style.width='0';
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{
+      prog.style.transition='';prog.classList.add('run');
     }));
     clearTimeout(timer);
-    timer = setTimeout(() => goTo(cur+1), DURATION);
+    timer = setTimeout(()=>goTo(cur+1),DUR);
   }
-  window.hcMove = d => goTo(cur+d);
-
-  const el = document.getElementById('heroCarousel');
-  el.addEventListener('mouseenter', () => clearTimeout(timer));
-  el.addEventListener('mouseleave', () => { timer = setTimeout(() => goTo(cur+1), DURATION); });
+  const el = document.querySelector('.hero');
+  el.addEventListener('mouseenter',()=>clearTimeout(timer));
+  el.addEventListener('mouseleave',()=>{timer=setTimeout(()=>goTo(cur+1),DUR);});
   let tx=0;
-  el.addEventListener('touchstart', e => { tx=e.touches[0].clientX; }, {passive:true});
-  el.addEventListener('touchend', e => {
-    const dx = e.changedTouches[0].clientX - tx;
-    if(Math.abs(dx)>50) goTo(cur+(dx<0?1:-1));
-  }, {passive:true});
+  el.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;},{passive:true});
+  el.addEventListener('touchend',e=>{
+    const dx=e.changedTouches[0].clientX-tx;
+    if(Math.abs(dx)>50)goTo(cur+(dx<0?1:-1));
+  },{passive:true});
   goTo(0);
 })();
 
 // ── COUNTDOWN ──
 const EVENT_DATE = new Date('2026-03-25T00:00:00+07:00');
-function updateCD() {
+function updateCD(){
   const diff = EVENT_DATE - new Date();
   if(diff<=0) return;
   const pad = v => String(Math.floor(v)).padStart(2,'0');
-  const d=Math.floor(diff/86400000), h=Math.floor((diff%86400000)/3600000),
-        m=Math.floor((diff%3600000)/60000), s=Math.floor((diff%60000)/1000);
-  const g = id => document.getElementById(id);
-  if(g('uDays'))  g('uDays').textContent  = pad(d);
-  if(g('uHours')) g('uHours').textContent = pad(h);
-  if(g('uMins'))  g('uMins').textContent  = pad(m);
-  if(g('uSecs'))  g('uSecs').textContent  = pad(s);
-  if(g('popupDays'))  g('popupDays').textContent  = pad(d);
-  if(g('popupHours')) g('popupHours').textContent = pad(h);
-  if(g('popupMins'))  g('popupMins').textContent  = pad(m);
-  if(g('popupSecs'))  g('popupSecs').textContent  = pad(s);
-}
-updateCD(); setInterval(updateCD, 1000);
-
-// ── LANGUAGE ──
-function setLang(lang) {
-  document.querySelectorAll('[data-lang]').forEach(el => {
-    el.classList.toggle('active', el.dataset.lang === lang);
+  const d=Math.floor(diff/86400000),h=Math.floor((diff%86400000)/3600000),
+        m=Math.floor((diff%3600000)/60000),s=Math.floor((diff%60000)/1000);
+  ['u','r'].forEach(pfx=>{
+    const g=id=>document.getElementById(pfx+id);
+    if(g('Days'))g('Days').textContent=pad(d);
+    if(g('Hours'))g('Hours').textContent=pad(h);
+    if(g('Mins'))g('Mins').textContent=pad(m);
+    if(g('Secs'))g('Secs').textContent=pad(s);
   });
-  document.querySelectorAll('.lang-btn').forEach(btn => {
+}
+updateCD(); setInterval(updateCD,1000);
+
+// ── LANG ──
+function setLang(lang){
+  document.querySelectorAll('[data-lang]').forEach(el=>{
+    el.classList.toggle('active',el.dataset.lang===lang);
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn=>{
     btn.classList.toggle('active',
-      btn.textContent.toLowerCase()===lang || (lang==='la'&&btn.textContent==='LAO'));
+      btn.textContent.toLowerCase()===lang||(lang==='la'&&btn.textContent==='LAO'));
   });
+  localStorage.setItem('vith-lang',lang);
 }
+document.addEventListener('DOMContentLoaded',()=>{
+  const s=localStorage.getItem('vith-lang');
+  if(['th','la','en'].includes(s))setLang(s);
+});
 
-// ── REGISTER FORM ──
-function submitReg() {
-  const name  = (document.getElementById('r-name')||{}).value?.trim()||'';
-  const phone = (document.getElementById('r-phone')||{}).value?.trim()||'';
-  const email = (document.getElementById('r-email')||{}).value?.trim()||'';
-  const pkg   = (document.getElementById('r-pkg')||{}).value||'';
-  if(!name||!phone){ alert('กรุณากรอกชื่อและเบอร์ติดต่อ'); return; }
-  const msg = encodeURIComponent('สนใจจองบูถ VITH Hub\nชื่อ: '+name+'\nเบอร์: '+phone+'\nอีเมล: '+email+'\nแพ็กเกจ: '+pkg);
-  document.getElementById('regForm').innerHTML =
-    '<div style="grid-column:1/-1;text-align:center;padding:2rem">' +
-    '<div style="font-size:3rem;margin-bottom:0.75rem">🎉</div>' +
-    '<div style="font-family:Kanit,sans-serif;font-size:1.5rem;font-weight:900;color:#1E3A8A;margin-bottom:0.5rem">ขอบคุณมากครับ!</div>' +
-    '<p style="color:#4a5568;margin-bottom:1.25rem">ทีมงานจะติดต่อกลับภายใน 24 ชั่วโมง</p>' +
+// ── REGISTER ──
+function submitRegForm(){
+  const name=(document.getElementById('r-name')||{}).value?.trim()||'';
+  const phone=(document.getElementById('r-phone')||{}).value?.trim()||'';
+  const email=(document.getElementById('r-email')||{}).value?.trim()||'';
+  const pkg=(document.getElementById('r-pkg')||{}).value||'';
+  const note=(document.getElementById('r-note')||{}).value?.trim()||'';
+  if(!name||!phone){alert('กรุณากรอกชื่อและเบอร์ติดต่อ');return;}
+  const msg=encodeURIComponent('สนใจจองบูถ VITH Hub\nชื่อ: '+name+'\nเบอร์: '+phone+'\nอีเมล: '+email+'\nแพ็กเกจ: '+pkg+'\nหมายเหตุ: '+note);
+  document.getElementById('regForm').innerHTML=
+    '<div style="grid-column:1/-1;text-align:center;padding:2.5rem 1rem">'+
+    '<div style="font-size:3rem;margin-bottom:1rem">🎉</div>'+
+    '<div style="font-family:Kanit,sans-serif;font-size:1.5rem;font-weight:900;color:#0F2A44;margin-bottom:0.5rem">ขอบคุณมากครับ!</div>'+
+    '<p style="color:#4a5568;margin-bottom:1.5rem;font-family:Kanit,sans-serif">ทีมงานจะติดต่อกลับภายใน 24 ชั่วโมง</p>'+
     '<a href="https://line.me/ti/p/@cef8930n?text='+msg+'" target="_blank" '+
-    'style="display:inline-flex;align-items:center;gap:8px;background:#06C755;color:#fff;padding:12px 28px;border-radius:8px;font-family:Kanit,sans-serif;font-weight:700">💬 ส่งข้อมูลผ่าน LINE</a>' +
-    '</div>';
+    'style="display:inline-flex;align-items:center;gap:8px;background:#06C755;color:#fff;'+
+    'padding:12px 28px;border-radius:9px;font-family:Kanit,sans-serif;font-weight:700;font-size:0.9375rem">'+
+    '💬 ยืนยันผ่าน LINE</a></div>';
 }
 
 // ── REVEAL ──
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in'); });
-}, {threshold:0.08});
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-
-// ── INIT LANG ──
-document.addEventListener('DOMContentLoaded', () => {
-  const saved = localStorage.getItem('vith-lang');
-  setLang(['th','la','en'].includes(saved) ? saved : 'th');
-});
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});
+},{threshold:0.07});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 </script>
 </body>
 </html>
