@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Floor Plan — Mekong Agritech Expo 2026 | vithhub.asia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600;700;800;900&family=Sarabun:wght@400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Sarabun','Kanit',sans-serif;background:#F4F6F8;color:#1a202c;overflow-x:hidden}
+a{text-decoration:none}
+:root{
+  --navy:#0B1F3B;--navy2:#1a3a5c;
+  --green:#2F7D32;--green-light:#E8F5E9;
+  --gold:#D4AF37;--gold2:#e8c94a;
+  --gray:#F4F6F8;--gray2:#edf0f4;
+  --border:#DDE3ED;--sub:#4a5568;
+  --G:#E8A000;--H:#E05080;--A:#D4B800;--B:#7C5CBF;--C:#E0704A;
+  --reserved:#A0AEC0;--selected:#2F7D32;
+}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:300;height:64px;background:rgba(255,255,255,0.96);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);box-shadow:0 1px 12px rgba(11,31,59,0.06)}
+.nav-in{max-width:1400px;margin:0 auto;height:100%;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:0.1em;color:var(--navy)}
+.nav-logo span{color:var(--green)}
+.nav-tag{font-family:'Kanit',sans-serif;font-size:0.75rem;font-weight:700;color:var(--sub);border-left:1.5px solid var(--border);padding-left:1rem;margin-left:0.5rem}
+.nav-back{display:inline-flex;align-items:center;gap:6px;font-family:'Kanit',sans-serif;font-size:0.8rem;font-weight:700;color:var(--navy);padding:7px 16px;border-radius:8px;border:1.5px solid var(--border);transition:all 0.2s}
+.nav-back:hover{border-color:var(--navy);background:var(--gray)}
+.btn-nav-cta{background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);font-family:'Kanit',sans-serif;font-weight:800;font-size:0.82rem;padding:9px 20px;border-radius:30px;transition:all 0.2s}
+.btn-nav-cta:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(212,175,55,0.4)}
+
+/* HEADER */
+.page-header{background:linear-gradient(135deg,var(--navy),var(--navy2));padding:1.75rem 1.5rem;text-align:center;color:#fff}
+.eyebrow{font-family:'Kanit',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.35rem}
+.page-title{font-family:'Kanit',sans-serif;font-weight:900;font-size:clamp(1.4rem,3vw,2rem);color:#fff;margin-bottom:0.3rem}
+.page-title span{color:var(--gold2)}
+.page-sub{font-size:0.8rem;color:rgba(255,255,255,0.5);margin-bottom:1.125rem}
+.legend-row{display:flex;gap:0.875rem;justify-content:center;flex-wrap:wrap}
+.leg{display:flex;align-items:center;gap:5px;font-family:'Kanit',sans-serif;font-size:0.68rem;color:rgba(255,255,255,0.75)}
+.leg-sq{width:11px;height:11px;border-radius:3px;flex-shrink:0}
+
+/* LAYOUT */
+.page-body{max-width:1400px;margin:0 auto;padding:1.25rem;display:grid;grid-template-columns:1fr 305px;gap:1.25rem;align-items:start}
+@media(max-width:1060px){.page-body{grid-template-columns:1fr}}
+
+/* FLOOR CARD */
+.floor-card{background:#fff;border-radius:16px;border:1.5px solid var(--border);overflow:hidden;box-shadow:0 2px 16px rgba(11,31,59,0.07)}
+.floor-tabs{display:flex;border-bottom:1.5px solid var(--border)}
+.ftab{flex:1;padding:1rem 1.25rem;border:none;cursor:pointer;background:transparent;font-family:'Kanit',sans-serif;font-weight:700;font-size:0.875rem;color:var(--sub);transition:all 0.2s;border-bottom:3px solid transparent;display:flex;align-items:center;justify-content:center;gap:7px}
+.ftab:hover{background:var(--gray);color:var(--navy)}
+.ftab.active{color:var(--navy);border-bottom-color:var(--navy);background:rgba(11,31,59,0.025)}
+.tc{font-size:0.62rem;font-weight:800;padding:2px 8px;border-radius:99px;background:#e2e8f0;color:var(--sub)}
+.ftab.active .tc{background:var(--navy);color:#fff}
+
+/* SVG */
+.fp-wrap{padding:1rem 0.75rem;background:#f8fafc;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.fp-svg{display:block;min-width:600px}
+
+/* booth */
+.booth{cursor:pointer}
+.booth rect.br{stroke:rgba(255,255,255,0.6);stroke-width:1.5;transition:filter 0.15s;rx:5}
+.booth text{font-family:'Kanit',sans-serif;font-weight:800;font-size:12px;text-anchor:middle;dominant-baseline:middle;pointer-events:none;fill:#1a1a1a}
+.booth:hover rect.br{filter:brightness(1.2) drop-shadow(0 2px 6px rgba(0,0,0,0.3))}
+.booth.reserved{cursor:not-allowed}
+.booth.reserved rect.br{fill:var(--reserved)!important}
+.booth.reserved text{fill:#fff!important;opacity:0.7}
+.booth.reserved:hover rect.br{filter:none}
+.booth.selected rect.br{fill:var(--selected)!important;filter:drop-shadow(0 0 6px rgba(47,125,50,0.55))}
+.booth.selected text{fill:#fff!important}
+
+/* legend bar */
+.fp-legend{display:flex;gap:0.875rem;flex-wrap:wrap;padding:0.625rem 0.875rem;background:#fff;border-top:1px solid var(--border);align-items:center}
+.fl-item{display:flex;align-items:center;gap:4px;font-family:'Kanit',sans-serif;font-size:0.68rem;color:var(--sub)}
+.fl-sq{width:11px;height:11px;border-radius:3px;flex-shrink:0}
+.fl-note{font-size:0.65rem;color:#9ca3af;margin-left:auto;font-style:italic}
+
+/* SIDEBAR */
+.booth-panel{background:#fff;border-radius:16px;border:1.5px solid var(--border);overflow:hidden;box-shadow:0 2px 14px rgba(11,31,59,0.07);margin-bottom:1rem}
+.ph{padding:0.875rem 1.125rem;background:var(--navy);color:#fff;display:flex;align-items:center;gap:9px}
+.ph-title{font-family:'Kanit',sans-serif;font-weight:800;font-size:0.875rem}
+.ph-sub{font-size:0.65rem;color:rgba(255,255,255,0.4);margin-top:1px}
+.pb{padding:1rem 1.125rem}
+.empty-state{text-align:center;padding:1.5rem 0.5rem}
+.empty-icon{font-size:2.25rem;opacity:0.22;margin-bottom:0.5rem}
+.empty-txt{font-family:'Kanit',sans-serif;font-size:0.8rem;color:var(--sub);line-height:1.6}
+.bd-zone{font-family:'Kanit',sans-serif;font-size:0.58rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--sub);margin-bottom:0.2rem}
+.bd-num{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:var(--navy);line-height:1;margin-bottom:0.25rem}
+.bd-badge{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:99px;font-family:'Kanit',sans-serif;font-size:0.65rem;font-weight:700;margin-bottom:0.875rem}
+.av-b{background:var(--green-light);color:var(--green)}
+.sel-b{background:#dcfce7;color:#15803d}
+.res-b{background:#f3f4f6;color:#9ca3af}
+.bd-rows{display:flex;flex-direction:column;gap:0.35rem;margin-bottom:0.875rem}
+.bd-row{display:flex;align-items:center;gap:6px;font-family:'Sarabun',sans-serif;font-size:0.78rem;color:var(--sub)}
+.bd-row strong{color:var(--navy);font-weight:700}
+.price-box{background:var(--gray);border-radius:9px;padding:0.75rem;margin-bottom:0.875rem}
+.p-grid{display:grid;grid-template-columns:1fr 1px 1fr}
+.pg-col{padding:0.3rem 0.5rem}
+.pg-div{background:var(--border)}
+.pg-lbl{font-family:'Kanit',sans-serif;font-size:0.55rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--sub);margin-bottom:2px}
+.pg-lbl.mg{color:var(--green)}
+.pg-price{font-family:'Bebas Neue',sans-serif;font-size:1.375rem;color:var(--navy);line-height:1}
+.pg-price.mg{color:var(--green)}
+.btn-add{display:block;width:100%;text-align:center;background:var(--green);color:#fff;font-family:'Kanit',sans-serif;font-weight:800;font-size:0.875rem;padding:11px;border-radius:30px;border:none;cursor:pointer;transition:all 0.2s;margin-bottom:0.5rem}
+.btn-add:hover{background:#1b5e20;transform:translateY(-1px)}
+.btn-remove{display:block;width:100%;text-align:center;background:#fee2e2;color:#dc2626;font-family:'Kanit',sans-serif;font-weight:800;font-size:0.875rem;padding:11px;border-radius:30px;border:none;cursor:pointer;transition:all 0.2s;margin-bottom:0.5rem}
+.btn-remove:hover{background:#fecaca}
+.btn-line-sm{display:flex;width:100%;align-items:center;justify-content:center;gap:6px;background:#06C755;color:#fff;font-family:'Kanit',sans-serif;font-weight:700;font-size:0.8rem;padding:9px;border-radius:30px;transition:all 0.2s}
+.btn-line-sm:hover{background:#05a548}
+
+/* SELECTED LIST */
+.sel-card{background:#fff;border-radius:16px;border:1.5px solid var(--border);overflow:hidden;box-shadow:0 2px 14px rgba(11,31,59,0.07)}
+.sc-head{padding:0.875rem 1.125rem;background:var(--gray);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.sc-title{font-family:'Kanit',sans-serif;font-weight:800;font-size:0.875rem;color:var(--navy)}
+.sc-cnt{background:var(--navy);color:#fff;font-family:'Kanit',sans-serif;font-size:0.62rem;font-weight:800;padding:2px 7px;border-radius:99px}
+.sc-body{padding:0.75rem}
+.sc-empty{font-size:0.75rem;color:var(--sub);text-align:center;padding:0.5rem 0;font-family:'Kanit',sans-serif}
+.sc-item{display:flex;align-items:center;justify-content:space-between;padding:0.45rem 0;border-bottom:1px solid var(--gray2)}
+.sc-item:last-child{border-bottom:none}
+.sci-l{display:flex;align-items:center;gap:7px}
+.sci-num{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;color:var(--navy);line-height:1;min-width:36px}
+.sci-info{font-family:'Kanit',sans-serif;font-size:0.67rem;color:var(--sub)}
+.sci-rm{background:none;border:none;cursor:pointer;color:#d1d5db;font-size:0.95rem;padding:2px 4px;transition:color 0.2s}
+.sci-rm:hover{color:#ef4444}
+.sc-total{padding:0.7rem 1rem;background:var(--gray);border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.sc-total-lbl{font-family:'Kanit',sans-serif;font-size:0.72rem;font-weight:700;color:var(--sub)}
+.sc-total-price{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:var(--navy)}
+.btn-checkout{display:block;width:calc(100% - 1.75rem);margin:0.75rem 0.875rem;text-align:center;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);font-family:'Kanit',sans-serif;font-weight:800;font-size:0.9375rem;padding:12px;border-radius:30px;border:none;cursor:pointer;transition:all 0.2s;box-shadow:0 4px 12px rgba(212,175,55,0.3)}
+.btn-checkout:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(212,175,55,0.38)}
+.btn-checkout:disabled{opacity:0.35;cursor:not-allowed;transform:none}
+
+/* MODAL */
+.overlay{position:fixed;inset:0;background:rgba(10,24,41,0.72);backdrop-filter:blur(6px);z-index:500;display:flex;align-items:center;justify-content:center;padding:1rem;opacity:0;pointer-events:none;transition:opacity 0.25s}
+.overlay.open{opacity:1;pointer-events:all}
+.modal{background:#fff;border-radius:20px;width:100%;max-width:500px;box-shadow:0 24px 80px rgba(0,0,0,0.25);overflow:hidden;transform:translateY(14px) scale(0.98);transition:transform 0.25s}
+.overlay.open .modal{transform:none}
+.modal-top{background:var(--navy);padding:1.25rem 1.625rem;display:flex;align-items:flex-start;justify-content:space-between;gap:1rem}
+.modal-title{font-family:'Kanit',sans-serif;font-weight:900;font-size:1.125rem;color:#fff}
+.modal-sub-t{font-size:0.68rem;color:rgba(255,255,255,0.4);margin-top:2px;font-family:'Kanit',sans-serif}
+.modal-x{background:rgba(255,255,255,0.1);border:none;color:#fff;width:28px;height:28px;border-radius:7px;cursor:pointer;font-size:0.9rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.2s}
+.modal-x:hover{background:rgba(255,255,255,0.2)}
+.modal-body{padding:1.375rem 1.625rem}
+.m-summary{background:var(--gray);border-radius:10px;padding:0.75rem 0.875rem;margin-bottom:1.125rem;display:flex;align-items:center;gap:0.875rem;flex-wrap:wrap}
+.ms-num{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--navy);line-height:1}
+.ms-info{flex:1}
+.ms-zone{font-family:'Kanit',sans-serif;font-size:0.58rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--sub)}
+.ms-name{font-family:'Kanit',sans-serif;font-weight:800;font-size:0.82rem;color:var(--navy)}
+.pkg-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-bottom:1.125rem}
+.pkg-opt{border:2px solid var(--border);border-radius:9px;padding:0.7rem;cursor:pointer;transition:all 0.2s;text-align:center}
+.pkg-opt:hover{border-color:var(--green)}
+.pkg-opt.active{border-color:var(--green);background:var(--green-light)}
+.pkg-opt-t{font-family:'Kanit',sans-serif;font-weight:800;font-size:0.75rem;color:var(--navy)}
+.pkg-opt-p{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--green)}
+.pkg-opt-n{font-size:0.6rem;color:var(--sub)}
+.m-form{display:flex;flex-direction:column;gap:0.55rem}
+.m-input{width:100%;padding:10px 12px;border:1.5px solid var(--border);border-radius:9px;font-family:'Sarabun',sans-serif;font-size:0.9375rem;color:#1a202c;background:#fff;outline:none;transition:border-color 0.2s}
+.m-input:focus{border-color:var(--green)}
+.m-row2{display:grid;grid-template-columns:1fr 1fr;gap:0.55rem}
+.btn-confirm{background:var(--green);color:#fff;font-family:'Kanit',sans-serif;font-weight:800;font-size:0.9375rem;padding:12px;border-radius:30px;border:none;cursor:pointer;box-shadow:0 4px 14px rgba(47,125,50,0.25);transition:all 0.2s}
+.btn-confirm:hover{background:#1b5e20;transform:translateY(-1px)}
+.m-priv{font-size:0.62rem;color:var(--sub);text-align:center}
+.m-priv a{color:var(--navy);text-decoration:underline}
+.modal-success{text-align:center;padding:0.5rem 0}
+.suc-icon{font-size:3.25rem;margin-bottom:0.625rem}
+.suc-title{font-family:'Kanit',sans-serif;font-weight:900;font-size:1.3rem;color:var(--navy);margin-bottom:0.35rem}
+.suc-sub{font-size:0.82rem;color:var(--sub);margin-bottom:1.25rem;line-height:1.6}
+.btn-line-confirm{display:inline-flex;align-items:center;gap:6px;background:#06C755;color:#fff;font-family:'Kanit',sans-serif;font-weight:800;font-size:0.875rem;padding:11px 24px;border-radius:30px;transition:all 0.2s}
+.btn-line-confirm:hover{background:#05a548}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-in">
+    <div style="display:flex;align-items:center">
+      <a href="/"><div class="nav-logo">VITH<span>HUB</span></div></a>
+      <div class="nav-tag">Floor Plan · Mekong Agritech Expo 2026</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:0.625rem">
+      <a href="/event" class="nav-back">← กลับ</a>
+      <a href="#" onclick="openModal();return false" class="btn-nav-cta">🌾 จองบูถ</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<div class="page-header">
+  <div class="eyebrow">Interactive Floor Plan</div>
+  <h1 class="page-title">เลือก<span>บูถ</span>ของคุณ</h1>
+  <div class="page-sub">Big C Vientiane · 27–31 พฤษภาคม 2026 · 59 บูถ</div>
+  <div class="legend-row">
+    <div class="leg"><div class="leg-sq" style="background:#E8A000"></div>G — Agritech</div>
+    <div class="leg"><div class="leg-sq" style="background:#E05080"></div>H — Dry Food</div>
+    <div class="leg"><div class="leg-sq" style="background:#D4B800"></div>A — Coffee Bakery</div>
+    <div class="leg"><div class="leg-sq" style="background:#7C5CBF"></div>B — Beauty</div>
+    <div class="leg"><div class="leg-sq" style="background:#E0704A"></div>C — Food &amp; Drinks</div>
+    <div class="leg"><div class="leg-sq" style="background:#A0AEC0"></div>Reserved</div>
+    <div class="leg"><div class="leg-sq" style="background:#2F7D32"></div>Selected</div>
+  </div>
+</div>
+
+<!-- BODY -->
+<div class="page-body">
+<div class="floor-card">
+  <div class="floor-tabs">
+    <button class="ftab active" onclick="switchFloor('g',this)">🌾 G Floor — Agritech <span class="tc" id="tc-g">34 บูถ</span></button>
+    <button class="ftab" onclick="switchFloor('f1',this)">🏪 Floor 1 — Franchise <span class="tc" id="tc-f1">25 บูถ</span></button>
+  </div>
+
+  <!-- ══════════ G FLOOR ══════════ -->
+  <div id="floor-g">
+    <div class="fp-wrap">
+      <!--
+        Exact layout from G_Floor.png:
+        Row 1:  G9  G8  G7  G6  G5  G4  G3  G2  G1   (left→right)
+        [Agritech Area label]
+        Row 2:  G18 G17 G16 G15 G14 G13 G12 G11 G10
+        Row 3:  H8  H7  H6  H5  H4  H3  H2  H1
+        [Dry food & Agriculture label]
+        Row 4:  H16 H15 H14 H13 H12 H11 H10 H9
+        [Loading dock / exit at bottom]
+      -->
+      <svg class="fp-svg" viewBox="0 0 830 490" xmlns="http://www.w3.org/2000/svg">
+        <!-- bg -->
+        <rect width="830" height="490" fill="#EEF2F7" rx="8"/>
+
+        <!-- Agritech zone bg (blue) -->
+        <rect x="8" y="8" width="814" height="222" fill="#3B82F6" rx="7" opacity="0.14"/>
+        <!-- label -->
+        <text x="415" y="130" text-anchor="middle" font-family="Kanit,sans-serif" font-weight="700" font-size="13" fill="#1E40AF" opacity="0.7">Agritech Area</text>
+
+        <!-- Dry food zone bg (light blue) -->
+        <rect x="8" y="248" width="814" height="186" fill="#38BDF8" rx="7" opacity="0.1"/>
+        <!-- label -->
+        <text x="415" y="352" text-anchor="middle" font-family="Kanit,sans-serif" font-weight="700" font-size="13" fill="#0369A1" opacity="0.6">Dry food &amp; Agriculture</text>
+
+        <!-- ─── G ROW 1: G9→G1 (9 booths, left to right) ─── -->
+        <!-- booth width=84, gap=6, start x=12 -->
+        <g class="booth" id="b-G9" onclick="sel('G9','Agritech Zone G · 2F','2.5×4m',18000,23500)"><rect class="br" x="12" y="16" width="84" height="94" fill="#E8A000"/><text x="54" y="67">G9</text></g>
+        <g class="booth" id="b-G8" onclick="sel('G8','Agritech Zone G · 2F','2.5×4m',18000,23500)"><rect class="br" x="102" y="16" width="84" height="94" fill="#E8A000"/><text x="144" y="67">G8</text></g>
+        <g class="booth" id="b-G7" onclick="sel('G7','Agritech Zone G · 2F','2.5×4m',18000,23500)"><rect class="br" x="192" y="16" width="84" height="94" fill="#E8A000"/><text x="234" y="67">G7</text></g>
+        <g class="booth" id="b-G6" onclick="sel('G6','Agritech Zone G · 2F','2.5×4m',18000,23500)"><rect class="br" x="282" y="16" width="84" height="94" fill="#E8A000"/><text x="324" y="67">G6</text></g>
+        <g class="booth" id="b-G5" onclick="sel('G5','Agritech Zone G · 2F','2.5×4m',18000,23500)"><rect class="br" x="372" y="16" width="84" height="94" fill="#E8A000"/><text x="414" y="67">G5</text></g>
+        <g class="booth" id="b-G4" onclick="sel('G4','Agritech Zone G · 2F','2.5×4m',18000,23500)"><rect class="br" x="462" y="16" width="84" height="94" fill="#E8A000"/><text x="504" y="67">G4</text></g>
+        <g class="booth" id="b-G3" onclick="sel('G3','Agritech Zone G · 2F','2.5×4m',18000,23500)"><rect class="br" x="552" y="16" width="84" height="94" fill="#E8A000"/><text x="594" y="67">G3</text></g>
+        <g class="booth" id="b-G2" onclick="sel('G2','Agritech Zone G · 2F','2.5×4m',18000,23500)"><rect class="br" x="642" y="16" width="84" height="94" fill="#E8A000"/><text x="684" y="67">G2</text></g>
+        <g class="booth" id="b-G1" onclick="sel('G1','Agritech Zone G · 2F','2.5×4m',18000,23500)"><rect class="br" x="732" y="16" width="86" height="94" fill="#E8A000"/><text x="775" y="67">G1</text></g>
+
+        <!-- ─── G ROW 2: G18→G10 ─── -->
+        <g class="booth" id="b-G18" onclick="sel('G18','Agritech Zone G · 2F','2.5×4m',18000,23500)"><rect class="br" x="12" y="120" width="84" height="94" fill="#E8A000"/><text x="54" y="171">G18</text></g>
+        <g class="booth" id="b-G17" onclick="sel('G17','Agritech Zone G · 2F','2.5×4m',18000,23500)"><rect class="br" x="102" y="120" width="84" height="94" fill="#E8A000"/><text x="144" y="171">G17</text></g>
+        <g class="booth" id="b-G16" onclick="sel('G16','Agritech Zone G · 2F','2.5×4m',18000,23500)"><rect class="br" x="192" y="120" width="84" height="94" fill="#E8A000"/><text x="234" y="171">G16</text></g>
+        <g class="booth" id="b-G15" onclick="sel('G15','Agritech Zone G · 2F','2.5×4m',18000,23500)"><rect class="br" x="282" y="120" width="84" height="94" fill="#E8A000"/><text x="324" y="171">G15</text></g>
+        <g class="booth" id="b-G14" onclick="sel('G14','Agritech Zone G · 2F','2.5×4m',18000,23500)"><rect class="br" x="372" y="120" width="84" height="94" fill="#E8A000"/><text x="414" y="171">G14</text></g>
+        <g class="booth" id="b-G13" onclick="sel('G13','Agritech Zone G · 2F','2.5×4m',18000,23500)"><rect class="br" x="462" y="120" width="84" height="94" fill="#E8A000"/><text x="504" y="171">G13</text></g>
+        <g class="booth" id="b-G12" onclick="sel('G12','Agritech Zone G · 2F','2.5×4m',18000,23500)"><rect class="br" x="552" y="120" width="84" height="94" fill="#E8A000"/><text x="594" y="171">G12</text></g>
+        <g class="booth" id="b-G11" onclick="sel('G11','Agritech Zone G · 2F','2.5×4m',18000,23500)"><rect class="br" x="642" y="120" width="84" height="94" fill="#E8A000"/><text x="684" y="171">G11</text></g>
+        <g class="booth" id="b-G10" onclick="sel('G10','Agritech Zone G · 2F','2.5×4m',18000,23500)"><rect class="br" x="732" y="120" width="86" height="94" fill="#E8A000"/><text x="775" y="171">G10</text></g>
+
+        <!-- ─── H ROW 1: H8→H1 (8 booths) ─── -->
+        <!-- booth width=98, gap=6, start x=12 -->
+        <g class="booth" id="b-H8" onclick="sel('H8','Dry Food &amp; Agri Zone H · GF','2.5×3m',12000,18000)"><rect class="br" x="12" y="256" width="96" height="72" fill="#E05080"/><text x="60" y="296">H8</text></g>
+        <g class="booth" id="b-H7" onclick="sel('H7','Dry Food &amp; Agri Zone H · GF','2.5×3m',12000,18000)"><rect class="br" x="114" y="256" width="96" height="72" fill="#E05080"/><text x="162" y="296">H7</text></g>
+        <g class="booth" id="b-H6" onclick="sel('H6','Dry Food &amp; Agri Zone H · GF','2.5×3m',12000,18000)"><rect class="br" x="216" y="256" width="96" height="72" fill="#E05080"/><text x="264" y="296">H6</text></g>
+        <g class="booth" id="b-H5" onclick="sel('H5','Dry Food &amp; Agri Zone H · GF','2.5×3m',12000,18000)"><rect class="br" x="318" y="256" width="96" height="72" fill="#E05080"/><text x="366" y="296">H5</text></g>
+        <g class="booth" id="b-H4" onclick="sel('H4','Dry Food &amp; Agri Zone H · GF','2.5×3m',12000,18000)"><rect class="br" x="420" y="256" width="96" height="72" fill="#E05080"/><text x="468" y="296">H4</text></g>
+        <g class="booth" id="b-H3" onclick="sel('H3','Dry Food &amp; Agri Zone H · GF','2.5×3m',12000,18000)"><rect class="br" x="522" y="256" width="96" height="72" fill="#E05080"/><text x="570" y="296">H3</text></g>
+        <g class="booth" id="b-H2" onclick="sel('H2','Dry Food &amp; Agri Zone H · GF','2.5×3m',12000,18000)"><rect class="br" x="624" y="256" width="96" height="72" fill="#E05080"/><text x="672" y="296">H2</text></g>
+        <g class="booth" id="b-H1" onclick="sel('H1','Dry Food &amp; Agri Zone H · GF','2.5×3m',12000,18000)"><rect class="br" x="720" y="256" width="98" height="72" fill="#E05080"/><text x="769" y="296">H1</text></g>
+
+        <!-- ─── H ROW 2: H16→H9 ─── -->
+        <g class="booth" id="b-H16" onclick="sel('H16','Dry Food &amp; Agri Zone H · GF','2.5×3m',12000,18000)"><rect class="br" x="12" y="360" width="96" height="72" fill="#E05080"/><text x="60" y="400">H16</text></g>
+        <g class="booth" id="b-H15" onclick="sel('H15','Dry Food &amp; Agri Zone H · GF','2.5×3m',12000,18000)"><rect class="br" x="114" y="360" width="96" height="72" fill="#E05080"/><text x="162" y="400">H15</text></g>
+        <g class="booth" id="b-H14" onclick="sel('H14','Dry Food &amp; Agri Zone H · GF','2.5×3m',12000,18000)"><rect class="br" x="216" y="360" width="96" height="72" fill="#E05080"/><text x="264" y="400">H14</text></g>
+        <g class="booth" id="b-H13" onclick="sel('H13','Dry Food &amp; Agri Zone H · GF','2.5×3m',12000,18000)"><rect class="br" x="318" y="360" width="96" height="72" fill="#E05080"/><text x="366" y="400">H13</text></g>
+        <g class="booth" id="b-H12" onclick="sel('H12','Dry Food &amp; Agri Zone H · GF','2.5×3m',12000,18000)"><rect class="br" x="420" y="360" width="96" height="72" fill="#E05080"/><text x="468" y="400">H12</text></g>
+        <g class="booth" id="b-H11" onclick="sel('H11','Dry Food &amp; Agri Zone H · GF','2.5×3m',12000,18000)"><rect class="br" x="522" y="360" width="96" height="72" fill="#E05080"/><text x="570" y="400">H11</text></g>
+        <g class="booth" id="b-H10" onclick="sel('H10','Dry Food &amp; Agri Zone H · GF','2.5×3m',12000,18000)"><rect class="br" x="624" y="360" width="96" height="72" fill="#E05080"/><text x="672" y="400">H10</text></g>
+        <g class="booth" id="b-H9" onclick="sel('H9','Dry Food &amp; Agri Zone H · GF','2.5×3m',12000,18000)"><rect class="br" x="720" y="360" width="98" height="72" fill="#E05080"/><text x="769" y="400">H9</text></g>
+
+        <!-- Loading dock bar -->
+        <rect x="200" y="446" width="420" height="12" fill="#94A3B8" rx="4"/>
+        <text x="415" y="455" text-anchor="middle" font-family="Kanit,sans-serif" font-size="8" fill="#64748B" font-weight="600">LOADING DOCK / EXIT</text>
+
+        <!-- Fruit dryer / Rice milling label (from original plan) -->
+        <text x="415" y="478" text-anchor="middle" font-family="Kanit,sans-serif" font-size="9" fill="#94A3B8">Fruit dryer · Rice milling machine</text>
+      </svg>
+    </div>
+    <div class="fp-legend">
+      <div class="fl-item"><div class="fl-sq" style="background:#E8A000"></div>G Zone 2.5×4m (฿18,000)</div>
+      <div class="fl-item"><div class="fl-sq" style="background:#E05080"></div>H Zone 2.5×3m (฿12,000)</div>
+      <div class="fl-item"><div class="fl-sq" style="background:#A0AEC0"></div>Reserved</div>
+      <div class="fl-item"><div class="fl-sq" style="background:#2F7D32"></div>Selected</div>
+      <div class="fl-note">คลิกบูถเพื่อดูราคา</div>
+    </div>
+  </div>
+
+  <!-- ══════════ FLOOR 1 ══════════ -->
+  <div id="floor-f1" style="display:none">
+    <div class="fp-wrap">
+      <!--
+        Floor 1 — exact layout (Floor_1.png):
+        ViewBox 1120×310 to fit full hall width
+
+        LEFT SIDE (outside hall):
+          Top:    Sponsor (green 120×110)
+          Bottom: Entrance (gray 120×110)
+
+        HALL (x=140 to x=1080, y=14 to y=296):
+          TOP ROW (y=22, h=110):
+            A1(148) A2(220) A3(292)  [gap 364-390]  A4(390)  STAGE(470-590)  B1(598) B2(654) B3(710) B4(766) B5(822)  C1(878) C2(922) C3(966) C4(1010)
+          BOTTOM ROW (y=182, h=110):
+            A5(148) A6(220) A7(292)  [gap 364-390]  A8(390) A9(462) A10(534) A11(606) A12(678)  [OpenSpace 740-840]  [Elevator 850-950]  C8(724) C7(772) C6(820) C5(868) — actually bottom right
+          BOTTOM RIGHT cluster (y=182):
+            C8(836) C7(884) C6(932) C5(980)  [DriveThru top, Logistic bottom on right edge]
+
+        Actually from image: bottom-right has C8 C7 C6 C5 in their own section separate from A-row
+        They are stacked right of the open space area at y=182
+        Right edge: [DriveThru top y=22] [Logistic bottom y=182]
+
+        Plan:
+        - Top: A1-A3 | A4 | STAGE | B1-B5 | C1-C4 | DriveThru
+        - Bottom: A5-A7 | A8-A12 | OpenSpace | C8-C5 | Elevator | Logistic
+        
+        Width breakdown (viewBox=1130):
+          Sponsor/Entrance: 8-132 (w=124)
+          Hall start: 140
+          A1-A3: 140,212,284 (w=66 each, gap=6)
+          Gap: 356-390
+          A4: 390 (w=76)
+          Stage: 474-590 (w=116)
+          B1-B5: 598,652,706,760,814 (w=48 each, gap=6)
+          C1-C4: 870,918,966,1014 (w=42 each, gap=6)
+          DriveThru: 1062-1086 (w=24 rotated label)
+          Hall end: 1088
+          
+          Bottom:
+          A5-A7: 140,212,284 (same as A1-A3)
+          A8-A12: 390,456,522,588,654 (w=60)
+          OpenSpace: 724-822 (w=98)
+          C8-C5: 830,872,914,956 (w=36 each, gap=6) [bottom right]
+          Elevator: 1000-1058
+          Logistic: right edge bottom (same as DriveThru but bottom)
+      -->
+      <svg class="fp-svg" viewBox="0 0 1130 310" xmlns="http://www.w3.org/2000/svg">
+        <rect width="1130" height="310" fill="#EEF2F7" rx="8"/>
+
+        <!-- hall bg -->
+        <rect x="140" y="14" width="964" height="282" fill="#BAE6FD" rx="7" opacity="0.25"/>
+
+        <!-- zone area sub-labels -->
+        <text x="290" y="258" text-anchor="middle" font-family="Kanit,sans-serif" font-weight="700" font-size="9.5" fill="#92400E" opacity="0.65">Coffee Bakery &amp; Service</text>
+        <text x="700" y="96" text-anchor="middle" font-family="Kanit,sans-serif" font-weight="700" font-size="9.5" fill="#5B21B6" opacity="0.65">Beauty and Wellness</text>
+        <text x="950" y="96" text-anchor="middle" font-family="Kanit,sans-serif" font-weight="700" font-size="9.5" fill="#C2410C" opacity="0.65">Food &amp; Drinks</text>
+
+        <!-- SPONSOR -->
+        <rect x="8" y="18" width="124" height="110" fill="#16A34A" rx="6" opacity="0.88"/>
+        <text x="70" y="74" text-anchor="middle" font-family="Kanit,sans-serif" font-weight="800" font-size="13" fill="#fff">Sponsor</text>
+
+        <!-- ENTRANCE -->
+        <rect x="8" y="182" width="124" height="110" fill="#6B7280" rx="6" opacity="0.75"/>
+        <text x="70" y="240" text-anchor="middle" font-family="Kanit,sans-serif" font-weight="800" font-size="12" fill="#fff">ENTRANCE</text>
+
+        <!-- STAGE -->
+        <rect x="474" y="22" width="116" height="110" fill="#06B6D4" rx="6" opacity="0.88"/>
+        <text x="532" y="80" text-anchor="middle" font-family="Kanit,sans-serif" font-weight="900" font-size="15" fill="#fff">STAGE</text>
+
+        <!-- OPEN SPACE (bottom center) -->
+        <rect x="724" y="182" width="98" height="110" fill="#A7F3D0" rx="6" opacity="0.85"/>
+        <text x="773" y="239" text-anchor="middle" font-family="Kanit,sans-serif" font-weight="700" font-size="10" fill="#065F46">Open Space</text>
+
+        <!-- ELEVATOR -->
+        <rect x="1000" y="182" width="58" height="110" fill="#E0E7FF" rx="5" opacity="0.9"/>
+        <text x="1029" y="239" text-anchor="middle" font-family="Kanit,sans-serif" font-weight="700" font-size="9" fill="#4338CA">Elevator</text>
+
+        <!-- DRIVE THRU (top-right) -->
+        <rect x="1066" y="22" width="56" height="110" fill="#7DD3FC" rx="5" opacity="0.75"/>
+        <text x="1094" y="78" text-anchor="middle" font-family="Kanit,sans-serif" font-weight="700" font-size="8.5" fill="#0369A1" transform="rotate(-90,1094,78)">Drive Thru</text>
+
+        <!-- LOGISTIC (bottom-right) -->
+        <rect x="1066" y="182" width="56" height="110" fill="#D1FAE5" rx="5" opacity="0.85"/>
+        <text x="1094" y="238" text-anchor="middle" font-family="Kanit,sans-serif" font-weight="700" font-size="8.5" fill="#065F46" transform="rotate(-90,1094,238)">Logistic</text>
+
+        <!-- ─── TOP ROW ─── -->
+        <!-- A1 A2 A3 (w=66 h=110) -->
+        <g class="booth" id="b-A1" onclick="sel('A1','Zone A · Coffee Bakery · 1F','3×3m',12000,18000)"><rect class="br" x="148" y="22" width="66" height="110" fill="#D4B800"/><text x="181" y="80">A1</text></g>
+        <g class="booth" id="b-A2" onclick="sel('A2','Zone A · Coffee Bakery · 1F','3×3m',12000,18000)"><rect class="br" x="220" y="22" width="66" height="110" fill="#D4B800"/><text x="253" y="80">A2</text></g>
+        <g class="booth" id="b-A3" onclick="sel('A3','Zone A · Coffee Bakery · 1F','3×3m',12000,18000)"><rect class="br" x="292" y="22" width="66" height="110" fill="#D4B800"/><text x="325" y="80">A3</text></g>
+        <!-- A4 (w=74 before stage) -->
+        <g class="booth" id="b-A4" onclick="sel('A4','Zone A · Coffee Bakery · 1F','3×3m',12000,18000)"><rect class="br" x="390" y="22" width="76" height="110" fill="#D4B800"/><text x="428" y="80">A4</text></g>
+        <!-- B1-B5 after stage (w=48 h=110 gap=6) -->
+        <g class="booth" id="b-B1" onclick="sel('B1','Zone B · Beauty &amp; Wellness · 1F','2×2m',9000,14000)"><rect class="br" x="598" y="22" width="48" height="110" fill="#7C5CBF"/><text x="622" y="80" fill="#fff">B1</text></g>
+        <g class="booth" id="b-B2" onclick="sel('B2','Zone B · Beauty &amp; Wellness · 1F','2×2m',9000,14000)"><rect class="br" x="652" y="22" width="48" height="110" fill="#7C5CBF"/><text x="676" y="80" fill="#fff">B2</text></g>
+        <g class="booth" id="b-B3" onclick="sel('B3','Zone B · Beauty &amp; Wellness · 1F','2×2m',9000,14000)"><rect class="br" x="706" y="22" width="48" height="110" fill="#7C5CBF"/><text x="730" y="80" fill="#fff">B3</text></g>
+        <g class="booth" id="b-B4" onclick="sel('B4','Zone B · Beauty &amp; Wellness · 1F','2×2m',9000,14000)"><rect class="br" x="760" y="22" width="48" height="110" fill="#7C5CBF"/><text x="784" y="80" fill="#fff">B4</text></g>
+        <g class="booth" id="b-B5" onclick="sel('B5','Zone B · Beauty &amp; Wellness · 1F','2×2m',9000,14000)"><rect class="br" x="814" y="22" width="48" height="110" fill="#7C5CBF"/><text x="838" y="80" fill="#fff">B5</text></g>
+        <!-- C1-C4 top (w=42 h=110 gap=4) -->
+        <g class="booth" id="b-C1" onclick="sel('C1','Zone C · Food &amp; Drinks · 1F','2×2m',9000,14000)"><rect class="br" x="870" y="22" width="46" height="110" fill="#E0704A"/><text x="893" y="80" fill="#fff">C1</text></g>
+        <g class="booth" id="b-C2" onclick="sel('C2','Zone C · Food &amp; Drinks · 1F','2×2m',9000,14000)"><rect class="br" x="922" y="22" width="46" height="110" fill="#E0704A"/><text x="945" y="80" fill="#fff">C2</text></g>
+        <g class="booth" id="b-C3" onclick="sel('C3','Zone C · Food &amp; Drinks · 1F','2×2m',9000,14000)"><rect class="br" x="974" y="22" width="46" height="110" fill="#E0704A"/><text x="997" y="80" fill="#fff">C3</text></g>
+        <g class="booth" id="b-C4" onclick="sel('C4','Zone C · Food &amp; Drinks · 1F','2×2m',9000,14000)"><rect class="br" x="1022" y="22" width="36" height="110" fill="#E0704A"/><text x="1040" y="80" fill="#fff">C4</text></g>
+
+        <!-- ─── BOTTOM ROW ─── -->
+        <!-- A5 A6 A7 (w=66 h=110) -->
+        <g class="booth" id="b-A5" onclick="sel('A5','Zone A · Coffee Bakery · 1F','3×3m',12000,18000)"><rect class="br" x="148" y="182" width="66" height="110" fill="#D4B800"/><text x="181" y="240">A5</text></g>
+        <g class="booth" id="b-A6" onclick="sel('A6','Zone A · Coffee Bakery · 1F','3×3m',12000,18000)"><rect class="br" x="220" y="182" width="66" height="110" fill="#D4B800"/><text x="253" y="240">A6</text></g>
+        <g class="booth" id="b-A7" onclick="sel('A7','Zone A · Coffee Bakery · 1F','3×3m',12000,18000)"><rect class="br" x="292" y="182" width="66" height="110" fill="#D4B800"/><text x="325" y="240">A7</text></g>
+        <!-- A8-A12 (w=60 h=110 gap=4) after same gap as top -->
+        <g class="booth" id="b-A8" onclick="sel('A8','Zone A · Coffee Bakery · 1F','3×3m',12000,18000)"><rect class="br" x="390" y="182" width="60" height="110" fill="#D4B800"/><text x="420" y="240">A8</text></g>
+        <g class="booth" id="b-A9" onclick="sel('A9','Zone A · Coffee Bakery · 1F','3×3m',12000,18000)"><rect class="br" x="456" y="182" width="60" height="110" fill="#D4B800"/><text x="486" y="240">A9</text></g>
+        <g class="booth" id="b-A10" onclick="sel('A10','Zone A · Coffee Bakery · 1F','3×3m',12000,18000)"><rect class="br" x="522" y="182" width="60" height="110" fill="#D4B800"/><text x="552" y="240">A10</text></g>
+        <g class="booth" id="b-A11" onclick="sel('A11','Zone A · Coffee Bakery · 1F','3×3m',12000,18000)"><rect class="br" x="588" y="182" width="60" height="110" fill="#D4B800"/><text x="618" y="240">A11</text></g>
+        <g class="booth" id="b-A12" onclick="sel('A12','Zone A · Coffee Bakery · 1F','3×3m',12000,18000)"><rect class="br" x="654" y="182" width="62" height="110" fill="#D4B800"/><text x="685" y="240">A12</text></g>
+        <!-- C8-C5 bottom (w=40 h=110 gap=4, order L→R = C8 C7 C6 C5 per image) -->
+        <g class="booth" id="b-C8" onclick="sel('C8','Zone C · Food &amp; Drinks · 1F','2×2m',9000,14000)"><rect class="br" x="830" y="182" width="40" height="110" fill="#E0704A"/><text x="850" y="240" fill="#fff">C8</text></g>
+        <g class="booth" id="b-C7" onclick="sel('C7','Zone C · Food &amp; Drinks · 1F','2×2m',9000,14000)"><rect class="br" x="876" y="182" width="40" height="110" fill="#E0704A"/><text x="896" y="240" fill="#fff">C7</text></g>
+        <g class="booth" id="b-C6" onclick="sel('C6','Zone C · Food &amp; Drinks · 1F','2×2m',9000,14000)"><rect class="br" x="922" y="182" width="40" height="110" fill="#E0704A"/><text x="942" y="240" fill="#fff">C6</text></g>
+        <g class="booth" id="b-C5" onclick="sel('C5','Zone C · Food &amp; Drinks · 1F','2×2m',9000,14000)"><rect class="br" x="968" y="182" width="28" height="110" fill="#E0704A"/><text x="982" y="240" fill="#fff">C5</text></g>
+      </svg>
+    </div>
+    <div class="fp-legend">
+      <div class="fl-item"><div class="fl-sq" style="background:#D4B800"></div>A Zone 3×3m (฿12,000)</div>
+      <div class="fl-item"><div class="fl-sq" style="background:#7C5CBF"></div>B Zone 2×2m (฿9,000)</div>
+      <div class="fl-item"><div class="fl-sq" style="background:#E0704A"></div>C Zone 2×2m (฿9,000)</div>
+      <div class="fl-item"><div class="fl-sq" style="background:#A0AEC0"></div>Reserved</div>
+      <div class="fl-item"><div class="fl-sq" style="background:#2F7D32"></div>Selected</div>
+      <div class="fl-note">คลิกบูถเพื่อดูราคา</div>
+    </div>
+  </div>
+
+</div><!-- end floor-card -->
+
+<!-- SIDEBAR -->
+<div>
+  <div class="booth-panel">
+    <div class="ph">
+      <span style="font-size:1.1rem">🏪</span>
+      <div><div class="ph-title">รายละเอียดบูถ</div><div class="ph-sub">คลิกบูถบน Floor Plan</div></div>
+    </div>
+    <div class="pb" id="boothDetail">
+      <div class="empty-state">
+        <div class="empty-icon">👆</div>
+        <div class="empty-txt">คลิกบูถบน Floor Plan<br>เพื่อดูราคาและรายละเอียด</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sel-card">
+    <div class="sc-head">
+      <div class="sc-title">บูถที่เลือก</div>
+      <div class="sc-cnt" id="selCount">0</div>
+    </div>
+    <div class="sc-body" id="selList"><div class="sc-empty">ยังไม่ได้เลือกบูถ</div></div>
+    <div class="sc-total">
+      <div class="sc-total-lbl">Space Only รวม</div>
+      <div class="sc-total-price" id="selTotal">฿0</div>
+    </div>
+    <button class="btn-checkout" id="checkoutBtn" onclick="openModal()" disabled>🌾 จองบูถที่เลือก</button>
+  </div>
+</div>
+
+</div><!-- end page-body -->
+
+<!-- MODAL -->
+<div class="overlay" id="overlay" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <div class="modal-top">
+      <div>
+        <div class="modal-title" id="mTitle">จองบูถ</div>
+        <div class="modal-sub-t">Mekong Agritech Expo 2026 · Big C Vientiane</div>
+      </div>
+      <button class="modal-x" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-body" id="mBody"></div>
+  </div>
+</div>
+
+<script>
+// ── RESERVED ──
+// G Floor: 12 reserved out of 34 (G rows random)
+const RES = new Set(['G2','G5','G9','G13','G16','G18','H3','H6','H10','H14','H1','H9',
+                     'A2','A6','A10','B2','B4','B5','C1','C3','A4','A11']);
+
+let current = null;
+let selected = {};
+let pkg = 'space';
+
+function initReserved(){
+  RES.forEach(id=>{
+    const el=document.getElementById('b-'+id);
+    if(el) el.classList.add('reserved');
+  });
+  updateCounts();
+}
+
+function updateCounts(){
+  const gCount = 34 - [...RES].filter(id=>/^[GH]/.test(id)).length - Object.keys(selected).filter(id=>/^[GH]/.test(id)).length;
+  const fCount = 25 - [...RES].filter(id=>/^[ABC]/.test(id)).length - Object.keys(selected).filter(id=>/^[ABC]/.test(id)).length;
+  document.getElementById('tc-g').textContent = gCount + ' ว่าง';
+  document.getElementById('tc-f1').textContent = fCount + ' ว่าง';
+}
+
+function switchFloor(floor, btn){
+  document.querySelectorAll('.ftab').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('floor-g').style.display = floor==='g'?'block':'none';
+  document.getElementById('floor-f1').style.display = floor==='f1'?'block':'none';
+}
+
+function sel(id, zone, size, price, managed){
+  const el = document.getElementById('b-'+id);
+  if(!el||el.classList.contains('reserved')) return;
+  current = {id, zone, size, price, managed};
+  renderDetail(current);
+}
+
+function renderDetail(b){
+  if(!b){
+    document.getElementById('boothDetail').innerHTML='<div class="empty-state"><div class="empty-icon">👆</div><div class="empty-txt">คลิกบูถเพื่อดูรายละเอียด</div></div>';
+    return;
+  }
+  const isSel = !!selected[b.id];
+  document.getElementById('boothDetail').innerHTML = `
+    <div>
+      <div class="bd-zone">${b.zone}</div>
+      <div class="bd-num">Booth ${b.id}</div>
+      <div class="bd-badge ${isSel?'sel-b':'av-b'}">${isSel?'★ เลือกแล้ว':'✓ ว่าง'}</div>
+      <div class="bd-rows">
+        <div class="bd-row">📐 <span>ขนาด <strong>${b.size}</strong></span></div>
+        <div class="bd-row">🚚 <span>ขนส่งฟรี Nong Khai→Vientiane</span></div>
+        <div class="bd-row">💯 <span>Commission <strong>0%</strong></span></div>
+        <div class="bd-row">🏷️ <span>Label ภาษาลาวฟรี (Full Managed)</span></div>
+      </div>
+      <div class="price-box">
+        <div class="p-grid">
+          <div class="pg-col"><div class="pg-lbl">Space Only</div><div class="pg-price">฿${b.price.toLocaleString()}</div></div>
+          <div class="pg-div"></div>
+          <div class="pg-col"><div class="pg-lbl mg">Full Managed ★</div><div class="pg-price mg">฿${b.managed.toLocaleString()}</div></div>
+        </div>
+      </div>
+      ${isSel
+        ? `<button class="btn-remove" onclick="desel('${b.id}')">✕ ยกเลิกการเลือก</button>`
+        : `<button class="btn-add" onclick="addSel('${b.id}')">+ เลือกบูถนี้</button>`
+      }
+      <a href="https://line.me/ti/p/@cef8930n" target="_blank" class="btn-line-sm">💬 สอบถาม LINE</a>
+    </div>`;
+}
+
+function addSel(id){
+  if(!current||current.id!==id) return;
+  selected[id]={...current};
+  document.getElementById('b-'+id).classList.add('selected');
+  renderDetail(current);
+  renderSelList();
+}
+
+function desel(id){
+  delete selected[id];
+  const el=document.getElementById('b-'+id);
+  if(el) el.classList.remove('selected');
+  if(current&&current.id===id) renderDetail(current);
+  renderSelList();
+}
+
+function renderSelList(){
+  const ids=Object.keys(selected);
+  document.getElementById('selCount').textContent=ids.length;
+  document.getElementById('checkoutBtn').disabled=ids.length===0;
+  updateCounts();
+  if(!ids.length){
+    document.getElementById('selList').innerHTML='<div class="sc-empty">ยังไม่ได้เลือกบูถ</div>';
+    document.getElementById('selTotal').textContent='฿0';
+    return;
+  }
+  let total=0, html='';
+  ids.forEach(id=>{
+    const b=selected[id];
+    total+=b.price;
+    html+=`<div class="sc-item">
+      <div class="sci-l">
+        <div class="sci-num">${b.id}</div>
+        <div><div class="sci-info">${b.zone}</div><div class="sci-info">${b.size} · ฿${b.price.toLocaleString()}</div></div>
+      </div>
+      <button class="sci-rm" onclick="desel('${id}')">✕</button>
+    </div>`;
+  });
+  document.getElementById('selList').innerHTML=html;
+  document.getElementById('selTotal').textContent='฿'+total.toLocaleString();
+}
+
+function openModal(){
+  const ids=Object.keys(selected);
+  const boothStr=ids.length?ids.join(', '):'—';
+  const totalSp=ids.reduce((s,id)=>s+selected[id].price,0);
+  const totalMg=ids.reduce((s,id)=>s+selected[id].managed,0);
+  document.getElementById('mTitle').textContent='จองบูถ · '+boothStr;
+  document.getElementById('mBody').innerHTML=`
+    <div class="m-summary">
+      <div class="ms-num">${ids.length||'?'}</div>
+      <div class="ms-info">
+        <div class="ms-zone">บูถที่เลือก</div>
+        <div class="ms-name">${boothStr}</div>
+      </div>
+    </div>
+    <div style="margin-bottom:1rem">
+      <div style="font-family:Kanit,sans-serif;font-size:0.68rem;font-weight:700;color:var(--sub);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.45rem">เลือกแพ็กเกจ</div>
+      <div class="pkg-grid">
+        <div class="pkg-opt active" id="po-sp" onclick="setPkg('space')">
+          <div class="pkg-opt-t">Space Only</div>
+          <div class="pkg-opt-p">฿${totalSp.toLocaleString()}</div>
+          <div class="pkg-opt-n">จัดเองทั้งหมด</div>
+        </div>
+        <div class="pkg-opt" id="po-mg" onclick="setPkg('managed')">
+          <div class="pkg-opt-t">Full Managed ★</div>
+          <div class="pkg-opt-p">฿${totalMg.toLocaleString()}</div>
+          <div class="pkg-opt-n">Staff + รายงานทุกวัน</div>
+        </div>
+      </div>
+    </div>
+    <div class="m-form">
+      <div class="m-row2">
+        <input id="m-name" class="m-input" placeholder="ชื่อ / บริษัท *" type="text">
+        <input id="m-tel" class="m-input" placeholder="เบอร์โทร *" type="tel">
+      </div>
+      <input id="m-email" class="m-input" placeholder="อีเมล" type="email">
+      <input id="m-product" class="m-input" placeholder="สินค้าที่จะนำมาแสดง" type="text">
+      <button class="btn-confirm" onclick="confirmBook('${boothStr}')">✅ ยืนยันการจอง</button>
+      <div class="m-priv">ส่งข้อมูลถือว่ายอมรับ <a href="/privacy">Privacy Policy</a> · 🔒 ปลอดภัย</div>
+    </div>`;
+  document.getElementById('overlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+
+function setPkg(p){
+  pkg=p;
+  document.getElementById('po-sp').classList.toggle('active',p==='space');
+  document.getElementById('po-mg').classList.toggle('active',p==='managed');
+}
+
+function closeModal(){
+  document.getElementById('overlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+function confirmBook(booths){
+  const name=document.getElementById('m-name')?.value?.trim()||'';
+  const tel=document.getElementById('m-tel')?.value?.trim()||'';
+  if(!name||!tel){alert('กรุณากรอกชื่อและเบอร์ติดต่อครับ');return}
+  const pkgLabel=pkg==='managed'?'Full Managed':'Space Only';
+  const msg=encodeURIComponent(`สนใจจองบูถ Mekong Agritech Expo 2026\nบูถ: ${booths}\nแพ็กเกจ: ${pkgLabel}\nชื่อ: ${name}\nเบอร์: ${tel}`);
+  document.getElementById('mBody').innerHTML=`
+    <div class="modal-success">
+      <div class="suc-icon">🌾</div>
+      <div class="suc-title">จองสำเร็จ!</div>
+      <div class="suc-sub">ขอบคุณมากครับ ทีมงานจะติดต่อกลับภายใน 24 ชั่วโมง</div>
+      <a href="https://line.me/ti/p/@cef8930n?text=${msg}" target="_blank" class="btn-line-confirm">💬 ยืนยันผ่าน LINE</a>
+    </div>`;
+}
+
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+initReserved();
+</script>
+</body>
+</html>
