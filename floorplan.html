@@ -3,170 +3,178 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Floor Plan — Mekong Agritech Expo 2026 | vithhub.asia</title>
+<title>Floor Plan — VITH HUB 2026 · Mekong Global Gateway | vithhub.asia</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600;700;800;900&family=Sarabun:wght@400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600;700;800;900&family=Sarabun:wght@400;500;600&family=Cormorant+Garamond:wght@700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Sarabun','Kanit',sans-serif;background:#F4F6F8;color:#1a202c;overflow-x:hidden}
-a{text-decoration:none}
+body{font-family:'Sarabun','Kanit',sans-serif;background:#F0EDE8;color:#0B1F3B;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
 :root{
-  --navy:#0B1F3B;--navy2:#1a3a5c;
-  --green:#2F7D32;--green-light:#E8F5E9;
-  --gold:#D4AF37;--gold2:#e8c94a;
-  --gray:#F4F6F8;--gray2:#edf0f4;
-  --border:#DDE3ED;--sub:#4a5568;
-  --G:#E8A000;--H:#E05080;--A:#D4B800;--B:#7C5CBF;--C:#E0704A;
-  --reserved:#A0AEC0;--selected:#2F7D32;
+  --navy:#0B1F3B;--navy2:#162d5a;--navyL:#0d2545;
+  --gold:#C9A227;--gold2:#E4BC4A;--goldDk:#9B7A10;
+  --offwhite:#F7F5F0;--gray:#F0EDE8;--border:#DDD8CC;--sub:#4a5c78;
+  /* Zone colours matching the real floor plan */
+  --zA:#2563EB;   /* A zone — Franchise Premium (blue) */
+  --zB:#EC4899;   /* B standard booth (pink/magenta) */
+  --zP:#A855F7;   /* P premium booth (purple) */
+  --zC:#EC4899;   /* C dry food zone (pink) */
+  --zD1:#F59E0B;  /* D Food Center Thai (amber) */
+  --zD2:#F97316;  /* D Food Center Lao (orange) */
+  --zSp:#16A34A;  /* Sponsor (green) */
+  --zPav:#9CA3AF; /* Pavilion (grey) */
+  --zStage:#EF4444; /* Main Stage (red) */
+  --reserved:#94A3B8;
+  --selected:#15803d;
 }
 
-/* NAV */
-.nav{position:sticky;top:0;z-index:300;height:64px;background:rgba(255,255,255,0.96);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);box-shadow:0 1px 12px rgba(11,31,59,0.06)}
-.nav-in{max-width:1400px;margin:0 auto;height:100%;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
-.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:0.1em;color:var(--navy)}
-.nav-logo span{color:var(--green)}
-.nav-tag{font-family:'Kanit',sans-serif;font-size:0.75rem;font-weight:700;color:var(--sub);border-left:1.5px solid var(--border);padding-left:1rem;margin-left:0.5rem}
-.nav-back{display:inline-flex;align-items:center;gap:6px;font-family:'Kanit',sans-serif;font-size:0.8rem;font-weight:700;color:var(--navy);padding:7px 16px;border-radius:8px;border:1.5px solid var(--border);transition:all 0.2s}
-.nav-back:hover{border-color:var(--navy);background:var(--gray)}
-.btn-nav-cta{background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);font-family:'Kanit',sans-serif;font-weight:800;font-size:0.82rem;padding:9px 20px;border-radius:30px;transition:all 0.2s}
-.btn-nav-cta:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(212,175,55,0.4)}
+/* ── NAV ── */
+.nav{position:sticky;top:0;z-index:400;height:60px;background:rgba(11,31,59,.97);backdrop-filter:blur(20px);border-bottom:1px solid rgba(201,162,39,.2)}
+.nav-in{max-width:1500px;margin:0 auto;height:100%;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.nav-logo{font-family:'Kanit',sans-serif;font-size:1.25rem;font-weight:900;letter-spacing:.08em;color:#fff}
+.nav-logo span{color:var(--gold2)}
+.nav-tag{font-family:'Kanit',sans-serif;font-size:.68rem;font-weight:600;color:rgba(255,255,255,.4);border-left:1px solid rgba(255,255,255,.12);padding-left:.875rem;margin-left:.625rem}
+.nav-back{font-family:'Kanit',sans-serif;font-size:.8rem;font-weight:700;color:rgba(255,255,255,.7);padding:6px 14px;border-radius:8px;border:1px solid rgba(255,255,255,.15);transition:all .2s}
+.nav-back:hover{color:#fff;border-color:rgba(255,255,255,.35)}
+.btn-nav-cta{background:linear-gradient(135deg,var(--goldDk),var(--gold));color:var(--navy);font-family:'Kanit',sans-serif;font-weight:800;font-size:.82rem;padding:8px 20px;border-radius:30px;transition:all .2s}
+.btn-nav-cta:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(201,162,39,.4)}
 
-/* HEADER */
-.page-header{background:linear-gradient(135deg,var(--navy),var(--navy2));padding:1.75rem 1.5rem;text-align:center;color:#fff}
-.eyebrow{font-family:'Kanit',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.35rem}
-.page-title{font-family:'Kanit',sans-serif;font-weight:900;font-size:clamp(1.4rem,3vw,2rem);color:#fff;margin-bottom:0.3rem}
+/* ── HEADER ── */
+.page-header{background:linear-gradient(135deg,var(--navy),var(--navy2));padding:1.5rem 1.5rem 1.25rem;text-align:center;color:#fff;border-bottom:1px solid rgba(201,162,39,.15)}
+.eyebrow{font-family:'Kanit',sans-serif;font-size:.6rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:.3rem}
+.page-title{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(1.5rem,3.5vw,2.25rem);color:#fff;margin-bottom:.2rem}
 .page-title span{color:var(--gold2)}
-.page-sub{font-size:0.8rem;color:rgba(255,255,255,0.5);margin-bottom:1.125rem}
-.legend-row{display:flex;gap:0.875rem;justify-content:center;flex-wrap:wrap}
-.leg{display:flex;align-items:center;gap:5px;font-family:'Kanit',sans-serif;font-size:0.68rem;color:rgba(255,255,255,0.75)}
-.leg-sq{width:11px;height:11px;border-radius:3px;flex-shrink:0}
+.page-sub{font-family:'Kanit',sans-serif;font-size:.78rem;color:rgba(255,255,255,.45);margin-bottom:1rem}
+.legend-row{display:flex;gap:.625rem;justify-content:center;flex-wrap:wrap}
+.leg{display:flex;align-items:center;gap:5px;font-family:'Kanit',sans-serif;font-size:.65rem;color:rgba(255,255,255,.7)}
+.leg-sq{width:10px;height:10px;border-radius:2px;flex-shrink:0}
 
-/* LAYOUT */
-.page-body{max-width:1400px;margin:0 auto;padding:1.25rem;display:grid;grid-template-columns:1fr 305px;gap:1.25rem;align-items:start}
-@media(max-width:1060px){.page-body{grid-template-columns:1fr}}
+/* ── LAYOUT ── */
+.page-body{max-width:1500px;margin:0 auto;padding:1.25rem;display:grid;grid-template-columns:1fr 300px;gap:1.25rem;align-items:start}
+@media(max-width:1100px){.page-body{grid-template-columns:1fr}}
 
-/* FLOOR CARD */
-.floor-card{background:#fff;border-radius:16px;border:1.5px solid var(--border);overflow:hidden;box-shadow:0 2px 16px rgba(11,31,59,0.07)}
-.floor-tabs{display:flex;border-bottom:1.5px solid var(--border)}
-.ftab{flex:1;padding:1rem 1.25rem;border:none;cursor:pointer;background:transparent;font-family:'Kanit',sans-serif;font-weight:700;font-size:0.875rem;color:var(--sub);transition:all 0.2s;border-bottom:3px solid transparent;display:flex;align-items:center;justify-content:center;gap:7px}
-.ftab:hover{background:var(--gray);color:var(--navy)}
-.ftab.active{color:var(--navy);border-bottom-color:var(--navy);background:rgba(11,31,59,0.025)}
-.tc{font-size:0.62rem;font-weight:800;padding:2px 8px;border-radius:99px;background:#e2e8f0;color:var(--sub)}
-.ftab.active .tc{background:var(--navy);color:#fff}
+/* ── FLOOR CARD ── */
+.floor-card{background:#fff;border-radius:16px;border:1.5px solid var(--border);overflow:hidden;box-shadow:0 4px 24px rgba(11,31,59,.1)}
+.floor-header{padding:1rem 1.25rem;background:var(--navy);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem}
+.fh-title{font-family:'Kanit',sans-serif;font-size:.88rem;font-weight:700;color:#fff}
+.fh-count{font-family:'Kanit',sans-serif;font-size:.72rem;color:var(--gold2);font-weight:600}
+.fh-hint{font-family:'Kanit',sans-serif;font-size:.65rem;color:rgba(255,255,255,.35);font-style:italic}
 
-/* SVG */
-.fp-wrap{padding:1rem 0.75rem;background:#f8fafc;overflow-x:auto;-webkit-overflow-scrolling:touch}
-.fp-svg{display:block;min-width:600px}
+/* ── SVG WRAP ── */
+.fp-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;background:#f1f5fb;padding:.875rem}
+.fp-svg{display:block;min-width:900px}
 
-/* booth */
+/* ── Booth styles ── */
 .booth{cursor:pointer}
-.booth rect.br{stroke:rgba(255,255,255,0.6);stroke-width:1.5;transition:filter 0.15s;rx:5}
-.booth text{font-family:'Kanit',sans-serif;font-weight:800;font-size:12px;text-anchor:middle;dominant-baseline:middle;pointer-events:none;fill:#1a1a1a}
-.booth:hover rect.br{filter:brightness(1.2) drop-shadow(0 2px 6px rgba(0,0,0,0.3))}
+.booth rect{transition:filter .15s;rx:4}
+.booth text{font-family:'Kanit',sans-serif;font-weight:800;font-size:11px;text-anchor:middle;dominant-baseline:middle;pointer-events:none;fill:#fff}
+.booth text.dark{fill:#1a1a1a}
+.booth:hover rect{filter:brightness(1.18) drop-shadow(0 2px 5px rgba(0,0,0,.28))}
 .booth.reserved{cursor:not-allowed}
-.booth.reserved rect.br{fill:var(--reserved)!important}
-.booth.reserved text{fill:#fff!important;opacity:0.7}
-.booth.reserved:hover rect.br{filter:none}
-.booth.selected rect.br{fill:var(--selected)!important;filter:drop-shadow(0 0 6px rgba(47,125,50,0.55))}
-.booth.selected text{fill:#fff!important}
+.booth.reserved rect{fill:var(--reserved)!important}
+.booth.reserved:hover rect{filter:none}
+.booth.selected rect{filter:drop-shadow(0 0 7px rgba(21,128,61,.6))}
+.booth.selected rect{fill:var(--selected)!important}
+/* non-booth static elements */
+.static-label{font-family:'Kanit',sans-serif;font-weight:700;text-anchor:middle;dominant-baseline:middle;pointer-events:none}
 
-/* legend bar */
-.fp-legend{display:flex;gap:0.875rem;flex-wrap:wrap;padding:0.625rem 0.875rem;background:#fff;border-top:1px solid var(--border);align-items:center}
-.fl-item{display:flex;align-items:center;gap:4px;font-family:'Kanit',sans-serif;font-size:0.68rem;color:var(--sub)}
-.fl-sq{width:11px;height:11px;border-radius:3px;flex-shrink:0}
-.fl-note{font-size:0.65rem;color:#9ca3af;margin-left:auto;font-style:italic}
+/* ── LEGEND BAR ── */
+.fp-legend{display:flex;gap:.75rem;flex-wrap:wrap;padding:.75rem 1rem;background:#fff;border-top:1px solid var(--border);align-items:center}
+.fl-item{display:flex;align-items:center;gap:4px;font-family:'Kanit',sans-serif;font-size:.68rem;color:var(--sub)}
+.fl-sq{width:10px;height:10px;border-radius:2px;flex-shrink:0}
+.fl-note{margin-left:auto;font-size:.62rem;color:#aaa;font-style:italic}
 
-/* SIDEBAR */
-.booth-panel{background:#fff;border-radius:16px;border:1.5px solid var(--border);overflow:hidden;box-shadow:0 2px 14px rgba(11,31,59,0.07);margin-bottom:1rem}
-.ph{padding:0.875rem 1.125rem;background:var(--navy);color:#fff;display:flex;align-items:center;gap:9px}
-.ph-title{font-family:'Kanit',sans-serif;font-weight:800;font-size:0.875rem}
-.ph-sub{font-size:0.65rem;color:rgba(255,255,255,0.4);margin-top:1px}
-.pb{padding:1rem 1.125rem}
-.empty-state{text-align:center;padding:1.5rem 0.5rem}
-.empty-icon{font-size:2.25rem;opacity:0.22;margin-bottom:0.5rem}
-.empty-txt{font-family:'Kanit',sans-serif;font-size:0.8rem;color:var(--sub);line-height:1.6}
-.bd-zone{font-family:'Kanit',sans-serif;font-size:0.58rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--sub);margin-bottom:0.2rem}
-.bd-num{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:var(--navy);line-height:1;margin-bottom:0.25rem}
-.bd-badge{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:99px;font-family:'Kanit',sans-serif;font-size:0.65rem;font-weight:700;margin-bottom:0.875rem}
-.av-b{background:var(--green-light);color:var(--green)}
-.sel-b{background:#dcfce7;color:#15803d}
+/* ── SIDEBAR ── */
+.booth-panel{background:#fff;border-radius:14px;border:1.5px solid var(--border);overflow:hidden;box-shadow:0 2px 14px rgba(11,31,59,.07);margin-bottom:1rem}
+.ph{padding:.825rem 1rem;background:var(--navy);color:#fff;display:flex;align-items:center;gap:8px}
+.ph-title{font-family:'Kanit',sans-serif;font-weight:800;font-size:.85rem}
+.ph-sub{font-size:.6rem;color:rgba(255,255,255,.4);margin-top:1px}
+.pb{padding:.875rem 1rem}
+.empty-state{text-align:center;padding:1.5rem .5rem}
+.empty-icon{font-size:2rem;opacity:.2;margin-bottom:.4rem}
+.empty-txt{font-family:'Kanit',sans-serif;font-size:.78rem;color:var(--sub);line-height:1.6}
+.bd-zone{font-family:'Kanit',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--sub);margin-bottom:.2rem}
+.bd-num{font-family:'Cormorant Garamond',serif;font-size:2.25rem;font-weight:700;color:var(--navy);line-height:1;margin-bottom:.25rem}
+.bd-badge{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:99px;font-family:'Kanit',sans-serif;font-size:.63rem;font-weight:700;margin-bottom:.75rem}
+.av-b{background:#dcfce7;color:#15803d}
+.sel-b{background:#fef9c3;color:#854d0e}
 .res-b{background:#f3f4f6;color:#9ca3af}
-.bd-rows{display:flex;flex-direction:column;gap:0.35rem;margin-bottom:0.875rem}
-.bd-row{display:flex;align-items:center;gap:6px;font-family:'Sarabun',sans-serif;font-size:0.78rem;color:var(--sub)}
-.bd-row strong{color:var(--navy);font-weight:700}
-.price-box{background:var(--gray);border-radius:9px;padding:0.75rem;margin-bottom:0.875rem}
+.bd-rows{display:flex;flex-direction:column;gap:.3rem;margin-bottom:.75rem}
+.bd-row{display:flex;align-items:center;gap:6px;font-family:'Sarabun',sans-serif;font-size:.77rem;color:var(--sub)}
+.bd-row strong{color:var(--navy)}
+.price-box{background:var(--gray);border-radius:9px;padding:.7rem;margin-bottom:.75rem}
 .p-grid{display:grid;grid-template-columns:1fr 1px 1fr}
-.pg-col{padding:0.3rem 0.5rem}
+.pg-col{padding:.25rem .5rem}
 .pg-div{background:var(--border)}
-.pg-lbl{font-family:'Kanit',sans-serif;font-size:0.55rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--sub);margin-bottom:2px}
-.pg-lbl.mg{color:var(--green)}
-.pg-price{font-family:'Bebas Neue',sans-serif;font-size:1.375rem;color:var(--navy);line-height:1}
-.pg-price.mg{color:var(--green)}
-.btn-add{display:block;width:100%;text-align:center;background:var(--green);color:#fff;font-family:'Kanit',sans-serif;font-weight:800;font-size:0.875rem;padding:11px;border-radius:30px;border:none;cursor:pointer;transition:all 0.2s;margin-bottom:0.5rem}
-.btn-add:hover{background:#1b5e20;transform:translateY(-1px)}
-.btn-remove{display:block;width:100%;text-align:center;background:#fee2e2;color:#dc2626;font-family:'Kanit',sans-serif;font-weight:800;font-size:0.875rem;padding:11px;border-radius:30px;border:none;cursor:pointer;transition:all 0.2s;margin-bottom:0.5rem}
+.pg-lbl{font-family:'Kanit',sans-serif;font-size:.52rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--sub);margin-bottom:2px}
+.pg-lbl.gd{color:var(--goldDk)}
+.pg-price{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--navy);line-height:1}
+.pg-price.gd{color:var(--goldDk)}
+.btn-add{display:block;width:100%;text-align:center;background:linear-gradient(135deg,var(--goldDk),var(--gold));color:var(--navy);font-family:'Kanit',sans-serif;font-weight:800;font-size:.875rem;padding:10px;border-radius:30px;border:none;cursor:pointer;transition:all .2s;margin-bottom:.5rem}
+.btn-add:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(201,162,39,.35)}
+.btn-remove{display:block;width:100%;text-align:center;background:#fee2e2;color:#dc2626;font-family:'Kanit',sans-serif;font-weight:800;font-size:.875rem;padding:10px;border-radius:30px;border:none;cursor:pointer;transition:all .2s;margin-bottom:.5rem}
 .btn-remove:hover{background:#fecaca}
-.btn-line-sm{display:flex;width:100%;align-items:center;justify-content:center;gap:6px;background:#06C755;color:#fff;font-family:'Kanit',sans-serif;font-weight:700;font-size:0.8rem;padding:9px;border-radius:30px;transition:all 0.2s}
+.btn-line-sm{display:flex;width:100%;align-items:center;justify-content:center;gap:6px;background:#06C755;color:#fff;font-family:'Kanit',sans-serif;font-weight:700;font-size:.78rem;padding:9px;border-radius:30px;transition:all .2s}
 .btn-line-sm:hover{background:#05a548}
 
-/* SELECTED LIST */
-.sel-card{background:#fff;border-radius:16px;border:1.5px solid var(--border);overflow:hidden;box-shadow:0 2px 14px rgba(11,31,59,0.07)}
-.sc-head{padding:0.875rem 1.125rem;background:var(--gray);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
-.sc-title{font-family:'Kanit',sans-serif;font-weight:800;font-size:0.875rem;color:var(--navy)}
-.sc-cnt{background:var(--navy);color:#fff;font-family:'Kanit',sans-serif;font-size:0.62rem;font-weight:800;padding:2px 7px;border-radius:99px}
-.sc-body{padding:0.75rem}
-.sc-empty{font-size:0.75rem;color:var(--sub);text-align:center;padding:0.5rem 0;font-family:'Kanit',sans-serif}
-.sc-item{display:flex;align-items:center;justify-content:space-between;padding:0.45rem 0;border-bottom:1px solid var(--gray2)}
+/* ── SELECTED LIST ── */
+.sel-card{background:#fff;border-radius:14px;border:1.5px solid var(--border);overflow:hidden;box-shadow:0 2px 14px rgba(11,31,59,.07)}
+.sc-head{padding:.75rem 1rem;background:var(--gray);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.sc-title{font-family:'Kanit',sans-serif;font-weight:800;font-size:.85rem;color:var(--navy)}
+.sc-cnt{background:var(--navy);color:#fff;font-family:'Kanit',sans-serif;font-size:.6rem;font-weight:800;padding:2px 7px;border-radius:99px}
+.sc-body{padding:.6rem .875rem}
+.sc-empty{font-size:.72rem;color:var(--sub);text-align:center;padding:.5rem 0;font-family:'Kanit',sans-serif}
+.sc-item{display:flex;align-items:center;justify-content:space-between;padding:.4rem 0;border-bottom:1px solid var(--gray)}
 .sc-item:last-child{border-bottom:none}
 .sci-l{display:flex;align-items:center;gap:7px}
-.sci-num{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;color:var(--navy);line-height:1;min-width:36px}
-.sci-info{font-family:'Kanit',sans-serif;font-size:0.67rem;color:var(--sub)}
-.sci-rm{background:none;border:none;cursor:pointer;color:#d1d5db;font-size:0.95rem;padding:2px 4px;transition:color 0.2s}
+.sci-num{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;color:var(--navy);min-width:40px}
+.sci-info{font-family:'Kanit',sans-serif;font-size:.64rem;color:var(--sub)}
+.sci-rm{background:none;border:none;cursor:pointer;color:#d1d5db;font-size:.9rem;padding:2px 4px;border-radius:4px;transition:color .2s}
 .sci-rm:hover{color:#ef4444}
-.sc-total{padding:0.7rem 1rem;background:var(--gray);border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
-.sc-total-lbl{font-family:'Kanit',sans-serif;font-size:0.72rem;font-weight:700;color:var(--sub)}
-.sc-total-price{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:var(--navy)}
-.btn-checkout{display:block;width:calc(100% - 1.75rem);margin:0.75rem 0.875rem;text-align:center;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);font-family:'Kanit',sans-serif;font-weight:800;font-size:0.9375rem;padding:12px;border-radius:30px;border:none;cursor:pointer;transition:all 0.2s;box-shadow:0 4px 12px rgba(212,175,55,0.3)}
-.btn-checkout:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(212,175,55,0.38)}
-.btn-checkout:disabled{opacity:0.35;cursor:not-allowed;transform:none}
+.sc-total{padding:.625rem .875rem;background:var(--gray);border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.sc-total-lbl{font-family:'Kanit',sans-serif;font-size:.7rem;font-weight:700;color:var(--sub)}
+.sc-total-price{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:var(--navy)}
+.btn-checkout{display:block;width:calc(100% - 1.5rem);margin:.75rem .75rem;text-align:center;background:linear-gradient(135deg,var(--goldDk),var(--gold));color:var(--navy);font-family:'Kanit',sans-serif;font-weight:800;font-size:.9rem;padding:11px;border-radius:30px;border:none;cursor:pointer;transition:all .2s;box-shadow:0 3px 12px rgba(201,162,39,.3)}
+.btn-checkout:hover{transform:translateY(-1px);box-shadow:0 5px 18px rgba(201,162,39,.38)}
+.btn-checkout:disabled{opacity:.32;cursor:not-allowed;transform:none}
 
-/* MODAL */
-.overlay{position:fixed;inset:0;background:rgba(10,24,41,0.72);backdrop-filter:blur(6px);z-index:500;display:flex;align-items:center;justify-content:center;padding:1rem;opacity:0;pointer-events:none;transition:opacity 0.25s}
+/* ── MODAL ── */
+.overlay{position:fixed;inset:0;background:rgba(7,15,29,.75);backdrop-filter:blur(6px);z-index:600;display:flex;align-items:center;justify-content:center;padding:1rem;opacity:0;pointer-events:none;transition:opacity .25s}
 .overlay.open{opacity:1;pointer-events:all}
-.modal{background:#fff;border-radius:20px;width:100%;max-width:500px;box-shadow:0 24px 80px rgba(0,0,0,0.25);overflow:hidden;transform:translateY(14px) scale(0.98);transition:transform 0.25s}
+.modal{background:#fff;border-radius:20px;width:100%;max-width:500px;box-shadow:0 24px 80px rgba(0,0,0,.25);overflow:hidden;transform:translateY(14px) scale(.98);transition:transform .25s}
 .overlay.open .modal{transform:none}
-.modal-top{background:var(--navy);padding:1.25rem 1.625rem;display:flex;align-items:flex-start;justify-content:space-between;gap:1rem}
-.modal-title{font-family:'Kanit',sans-serif;font-weight:900;font-size:1.125rem;color:#fff}
-.modal-sub-t{font-size:0.68rem;color:rgba(255,255,255,0.4);margin-top:2px;font-family:'Kanit',sans-serif}
-.modal-x{background:rgba(255,255,255,0.1);border:none;color:#fff;width:28px;height:28px;border-radius:7px;cursor:pointer;font-size:0.9rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.2s}
-.modal-x:hover{background:rgba(255,255,255,0.2)}
-.modal-body{padding:1.375rem 1.625rem}
-.m-summary{background:var(--gray);border-radius:10px;padding:0.75rem 0.875rem;margin-bottom:1.125rem;display:flex;align-items:center;gap:0.875rem;flex-wrap:wrap}
-.ms-num{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--navy);line-height:1}
+.modal-top{background:var(--navy);padding:1.125rem 1.5rem;display:flex;align-items:flex-start;justify-content:space-between;gap:1rem}
+.modal-title{font-family:'Kanit',sans-serif;font-weight:900;font-size:1.05rem;color:#fff}
+.modal-sub-t{font-size:.65rem;color:rgba(255,255,255,.38);margin-top:2px;font-family:'Kanit',sans-serif}
+.modal-x{background:rgba(255,255,255,.1);border:none;color:#fff;width:28px;height:28px;border-radius:7px;cursor:pointer;font-size:.9rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s}
+.modal-x:hover{background:rgba(255,255,255,.2)}
+.modal-body{padding:1.25rem 1.5rem}
+.m-summary{background:var(--gray);border-radius:10px;padding:.7rem .875rem;margin-bottom:1rem;display:flex;align-items:center;gap:.875rem;flex-wrap:wrap}
+.ms-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:var(--navy);line-height:1}
 .ms-info{flex:1}
-.ms-zone{font-family:'Kanit',sans-serif;font-size:0.58rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--sub)}
-.ms-name{font-family:'Kanit',sans-serif;font-weight:800;font-size:0.82rem;color:var(--navy)}
-.pkg-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-bottom:1.125rem}
-.pkg-opt{border:2px solid var(--border);border-radius:9px;padding:0.7rem;cursor:pointer;transition:all 0.2s;text-align:center}
-.pkg-opt:hover{border-color:var(--green)}
-.pkg-opt.active{border-color:var(--green);background:var(--green-light)}
-.pkg-opt-t{font-family:'Kanit',sans-serif;font-weight:800;font-size:0.75rem;color:var(--navy)}
-.pkg-opt-p{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--green)}
-.pkg-opt-n{font-size:0.6rem;color:var(--sub)}
-.m-form{display:flex;flex-direction:column;gap:0.55rem}
-.m-input{width:100%;padding:10px 12px;border:1.5px solid var(--border);border-radius:9px;font-family:'Sarabun',sans-serif;font-size:0.9375rem;color:#1a202c;background:#fff;outline:none;transition:border-color 0.2s}
-.m-input:focus{border-color:var(--green)}
-.m-row2{display:grid;grid-template-columns:1fr 1fr;gap:0.55rem}
-.btn-confirm{background:var(--green);color:#fff;font-family:'Kanit',sans-serif;font-weight:800;font-size:0.9375rem;padding:12px;border-radius:30px;border:none;cursor:pointer;box-shadow:0 4px 14px rgba(47,125,50,0.25);transition:all 0.2s}
-.btn-confirm:hover{background:#1b5e20;transform:translateY(-1px)}
-.m-priv{font-size:0.62rem;color:var(--sub);text-align:center}
+.ms-zone{font-family:'Kanit',sans-serif;font-size:.56rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--sub)}
+.ms-name{font-family:'Kanit',sans-serif;font-weight:800;font-size:.8rem;color:var(--navy)}
+.mpkg-grid{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-bottom:1rem}
+.pkg-opt{border:2px solid var(--border);border-radius:9px;padding:.65rem;cursor:pointer;transition:all .2s;text-align:center}
+.pkg-opt:hover{border-color:var(--gold)}
+.pkg-opt.active{border-color:var(--gold);background:rgba(201,162,39,.07)}
+.pkg-opt-t{font-family:'Kanit',sans-serif;font-weight:800;font-size:.72rem;color:var(--navy)}
+.pkg-opt-p{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--goldDk)}
+.pkg-opt-n{font-size:.58rem;color:var(--sub)}
+.m-form{display:flex;flex-direction:column;gap:.5rem}
+.m-input{width:100%;padding:9px 12px;border:1.5px solid var(--border);border-radius:9px;font-family:'Sarabun',sans-serif;font-size:.9375rem;color:#1a202c;background:#fff;outline:none;transition:border-color .2s}
+.m-input:focus{border-color:var(--gold)}
+.m-row2{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
+.btn-confirm{background:linear-gradient(135deg,var(--goldDk),var(--gold));color:var(--navy);font-family:'Kanit',sans-serif;font-weight:800;font-size:.9375rem;padding:11px;border-radius:30px;border:none;cursor:pointer;box-shadow:0 3px 12px rgba(201,162,39,.3);transition:all .2s}
+.btn-confirm:hover{transform:translateY(-1px);box-shadow:0 5px 18px rgba(201,162,39,.4)}
+.m-priv{font-size:.6rem;color:var(--sub);text-align:center}
 .m-priv a{color:var(--navy);text-decoration:underline}
-.modal-success{text-align:center;padding:0.5rem 0}
-.suc-icon{font-size:3.25rem;margin-bottom:0.625rem}
-.suc-title{font-family:'Kanit',sans-serif;font-weight:900;font-size:1.3rem;color:var(--navy);margin-bottom:0.35rem}
-.suc-sub{font-size:0.82rem;color:var(--sub);margin-bottom:1.25rem;line-height:1.6}
-.btn-line-confirm{display:inline-flex;align-items:center;gap:6px;background:#06C755;color:#fff;font-family:'Kanit',sans-serif;font-weight:800;font-size:0.875rem;padding:11px 24px;border-radius:30px;transition:all 0.2s}
+.modal-success{text-align:center;padding:.5rem 0}
+.suc-icon{font-size:3rem;margin-bottom:.5rem}
+.suc-title{font-family:'Kanit',sans-serif;font-weight:900;font-size:1.25rem;color:var(--navy);margin-bottom:.35rem}
+.suc-sub{font-size:.8rem;color:var(--sub);margin-bottom:1.125rem;line-height:1.65}
+.btn-line-confirm{display:inline-flex;align-items:center;gap:6px;background:#06C755;color:#fff;font-family:'Kanit',sans-serif;font-weight:800;font-size:.875rem;padding:11px 24px;border-radius:30px;transition:all .2s}
 .btn-line-confirm:hover{background:#05a548}
 </style>
 </head>
@@ -177,11 +185,11 @@ a{text-decoration:none}
   <div class="nav-in">
     <div style="display:flex;align-items:center">
       <a href="/"><div class="nav-logo">VITH<span>HUB</span></div></a>
-      <div class="nav-tag">Floor Plan · Mekong Agritech Expo 2026</div>
+      <div class="nav-tag">Floor Plan · Mekong Global Gateway 2026</div>
     </div>
-    <div style="display:flex;align-items:center;gap:0.625rem">
-      <a href="/event" class="nav-back">← กลับ</a>
-      <a href="#" onclick="openModal();return false" class="btn-nav-cta">🌾 จองบูถ</a>
+    <div style="display:flex;align-items:center;gap:.625rem">
+      <a href="/event" class="nav-back">← กลับ Event</a>
+      <a href="#" onclick="openModal();return false" class="btn-nav-cta">✦ จองบูถ</a>
     </div>
   </div>
 </nav>
@@ -190,260 +198,372 @@ a{text-decoration:none}
 <div class="page-header">
   <div class="eyebrow">Interactive Floor Plan</div>
   <h1 class="page-title">เลือก<span>บูถ</span>ของคุณ</h1>
-  <div class="page-sub">Big C Vientiane · 27–31 พฤษภาคม 2026 · 59 บูถ</div>
+  <div class="page-sub">Big C Vientiane · 28 พ.ค. – 1 มิ.ย. 2026 · 70 บูถ</div>
   <div class="legend-row">
-    <div class="leg"><div class="leg-sq" style="background:#E8A000"></div>G — Agritech</div>
-    <div class="leg"><div class="leg-sq" style="background:#E05080"></div>H — Dry Food</div>
-    <div class="leg"><div class="leg-sq" style="background:#D4B800"></div>A — Coffee Bakery</div>
-    <div class="leg"><div class="leg-sq" style="background:#7C5CBF"></div>B — Beauty</div>
-    <div class="leg"><div class="leg-sq" style="background:#E0704A"></div>C — Food &amp; Drinks</div>
-    <div class="leg"><div class="leg-sq" style="background:#A0AEC0"></div>Reserved</div>
-    <div class="leg"><div class="leg-sq" style="background:#2F7D32"></div>Selected</div>
+    <div class="leg"><div class="leg-sq" style="background:#2563EB"></div>A — Franchise Premium</div>
+    <div class="leg"><div class="leg-sq" style="background:#EC4899"></div>B/C — Standard Booth</div>
+    <div class="leg"><div class="leg-sq" style="background:#A855F7"></div>P — Premium Booth</div>
+    <div class="leg"><div class="leg-sq" style="background:#F59E0B"></div>D — Food Center Thai</div>
+    <div class="leg"><div class="leg-sq" style="background:#F97316"></div>D — Food Center Lao</div>
+    <div class="leg"><div class="leg-sq" style="background:#94A3B8"></div>Reserved</div>
+    <div class="leg"><div class="leg-sq" style="background:#15803d"></div>Selected</div>
   </div>
 </div>
 
 <!-- BODY -->
 <div class="page-body">
+<div>
 <div class="floor-card">
-  <div class="floor-tabs">
-    <button class="ftab active" onclick="switchFloor('g',this)">🌾 G Floor — Agritech <span class="tc" id="tc-g">34 บูถ</span></button>
-    <button class="ftab" onclick="switchFloor('f1',this)">🏪 Floor 1 — Franchise <span class="tc" id="tc-f1">25 บูถ</span></button>
+  <div class="floor-header">
+    <div class="fh-title">📐 VITH HUB 2026 — Big C Vientiane Exhibition Hall</div>
+    <div class="fh-count" id="avCount">70 บูถ</div>
+    <div class="fh-hint">คลิกบูถเพื่อเลือก · เทาหมายถึง Reserved</div>
   </div>
 
-  <!-- ══════════ G FLOOR ══════════ -->
-  <div id="floor-g">
-    <div class="fp-wrap">
-      <!--
-        Exact layout from G_Floor.png:
-        Row 1:  G9  G8  G7  G6  G5  G4  G3  G2  G1   (left→right)
-        [Agritech Area label]
-        Row 2:  G18 G17 G16 G15 G14 G13 G12 G11 G10
-        Row 3:  H8  H7  H6  H5  H4  H3  H2  H1
-        [Dry food & Agriculture label]
-        Row 4:  H16 H15 H14 H13 H12 H11 H10 H9
-        [Loading dock / exit at bottom]
-      -->
-      <svg class="fp-svg" viewBox="0 0 830 490" xmlns="http://www.w3.org/2000/svg">
-        <!-- bg -->
-        <rect width="830" height="490" fill="#EEF2F7" rx="8"/>
+  <div class="fp-wrap">
+  <!--
+    Layout based on Lay_Out_VITH2.jpg (single floor, Big C Vientiane)
+    Coordinate system: viewBox="0 0 1200 780"
+    
+    ZONES (left to right, top to bottom):
+    ┌─────────────────────────────────────────────────────────────────────┐
+    │ [Entrance] [Go Hall Exhibition] [Design Entrance] [Social Stop]     │
+    ├──────┬─────────────────────────────────────────────────────────────┤
+    │SpA   │SpB  [Retail Entry Desk]   [PAVILION]         Nation Booths  │
+    ├──────┤                                                              │
+    │A01   │A07  [Main Walk Away 5m]                     Nation Booths   │
+    │A02   │A08   B03 B02 B01 │P02 P01                                   │
+    │A03 Fr│A09   B04 B05 B06 │P04 P03  [Cultural/Nation Booths]         │
+    │A04 Pr│A10              │                                           │
+    │A05 em│A11   B09 B08 B07│P06 P05  [VITH HUB CUBE]                  │
+    │A06   │      B10 B11 B12│P08 P08  [Rest points]                     │
+    │      │                 │         Main Walk Away 5m                 │
+    │[Main │      B15 B14 B13│B19 B20 B21 B22  [Lao Pavilion]           │
+    │ Stage│      B16 B17 B18│B23 B24 B25 B26  [Lao Booth x5]           │
+    │[Net  │      C01 C02 C03│C04 C05 C06 C07  D01..D06                  │
+    │ Area]│      C12 C13 C14│C11 C10 C09 C08  D11..D16  Food Ctr Thai  │
+    │[Mtg  │ C15 C16 C17 C18 C19 C20 C21       D17..D22  Food Ctr Lao   │
+    │Coffee│                                                              │
+    └──────┴──────────────────────────────────────────────────────────────┘
+    
+    Column widths: Left sidebar=130, Main hall start=140, walk=40, right side=240
+    Booth size: A=44w×50h, B/C=40w×40h, P=54w×44h, D=52w×38h
+  -->
+  <svg class="fp-svg" id="mainSVG" viewBox="0 0 1200 780" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="1200" height="780" fill="#E8ECF2" rx="6"/>
 
-        <!-- Agritech zone bg (blue) -->
-        <rect x="8" y="8" width="814" height="222" fill="#3B82F6" rx="7" opacity="0.14"/>
-        <!-- label -->
-        <text x="415" y="130" text-anchor="middle" font-family="Kanit,sans-serif" font-weight="700" font-size="13" fill="#1E40AF" opacity="0.7">Agritech Area</text>
+    <!-- ═══ TOP ENTRANCE STRIP ═══ -->
+    <rect x="0" y="0" width="1200" height="52" fill="#374151" opacity=".9" rx="0"/>
+    <!-- Register label top -->
+    <rect x="200" y="2" width="80" height="20" fill="#6B7280" rx="3"/>
+    <text x="240" y="14" class="static-label" font-size="9" fill="#fff">Register</text>
+    <!-- Go Hall Exhibition -->
+    <rect x="160" y="24" width="280" height="26" fill="#6B7280" rx="4" opacity=".9"/>
+    <text x="300" y="40" class="static-label" font-size="10" fill="#fff">Go Hall Exhibition</text>
+    <!-- Design Entrance (yellow) -->
+    <rect x="446" y="24" width="140" height="26" fill="#F59E0B" rx="4"/>
+    <text x="516" y="40" class="static-label" font-size="10" fill="#1a1a1a">Design Entrance</text>
+    <!-- Social Stop -->
+    <rect x="594" y="24" width="90" height="26" fill="#374151" rx="4" opacity=".7"/>
+    <text x="639" y="35" class="static-label" font-size="7.5" fill="#fff">Social Stop</text>
+    <text x="639" y="44" class="static-label" font-size="7" fill="rgba(255,255,255,.6)">Photo · Light sign</text>
+    <!-- Main Entrance arrow -->
+    <rect x="0" y="52" width="130" height="40" fill="#374151" opacity=".7"/>
+    <text x="65" y="76" class="static-label" font-size="9" fill="#fff">← Main Entrance</text>
 
-        <!-- Dry food zone bg (light blue) -->
-        <rect x="8" y="248" width="814" height="186" fill="#38BDF8" rx="7" opacity="0.1"/>
-        <!-- label -->
-        <text x="415" y="352" text-anchor="middle" font-family="Kanit,sans-serif" font-weight="700" font-size="13" fill="#0369A1" opacity="0.6">Dry food &amp; Agriculture</text>
+    <!-- ═══ LEFT SIDEBAR: Sponsor A, A-zones, Main Stage, Network ═══ -->
+    <!-- Sponsor A -->
+    <rect x="0" y="92" width="64" height="70" fill="#16A34A" rx="5" opacity=".92"/>
+    <text x="32" y="120" class="static-label" font-size="9" fill="#fff">Sponsor</text>
+    <text x="32" y="132" class="static-label" font-size="8" fill="rgba(255,255,255,.8)">A</text>
 
-        <!-- ─── G ROW 1: G9→G1 (9 booths, left to right) ─── -->
-        <!-- booth width=84, gap=6, start x=12 -->
-        <g class="booth" id="b-G9" onclick="sel('G9','Agritech Zone G · 2F','2.5×4m',18000,23500)"><rect class="br" x="12" y="16" width="84" height="94" fill="#E8A000"/><text x="54" y="67">G9</text></g>
-        <g class="booth" id="b-G8" onclick="sel('G8','Agritech Zone G · 2F','2.5×4m',18000,23500)"><rect class="br" x="102" y="16" width="84" height="94" fill="#E8A000"/><text x="144" y="67">G8</text></g>
-        <g class="booth" id="b-G7" onclick="sel('G7','Agritech Zone G · 2F','2.5×4m',18000,23500)"><rect class="br" x="192" y="16" width="84" height="94" fill="#E8A000"/><text x="234" y="67">G7</text></g>
-        <g class="booth" id="b-G6" onclick="sel('G6','Agritech Zone G · 2F','2.5×4m',18000,23500)"><rect class="br" x="282" y="16" width="84" height="94" fill="#E8A000"/><text x="324" y="67">G6</text></g>
-        <g class="booth" id="b-G5" onclick="sel('G5','Agritech Zone G · 2F','2.5×4m',18000,23500)"><rect class="br" x="372" y="16" width="84" height="94" fill="#E8A000"/><text x="414" y="67">G5</text></g>
-        <g class="booth" id="b-G4" onclick="sel('G4','Agritech Zone G · 2F','2.5×4m',18000,23500)"><rect class="br" x="462" y="16" width="84" height="94" fill="#E8A000"/><text x="504" y="67">G4</text></g>
-        <g class="booth" id="b-G3" onclick="sel('G3','Agritech Zone G · 2F','2.5×4m',18000,23500)"><rect class="br" x="552" y="16" width="84" height="94" fill="#E8A000"/><text x="594" y="67">G3</text></g>
-        <g class="booth" id="b-G2" onclick="sel('G2','Agritech Zone G · 2F','2.5×4m',18000,23500)"><rect class="br" x="642" y="16" width="84" height="94" fill="#E8A000"/><text x="684" y="67">G2</text></g>
-        <g class="booth" id="b-G1" onclick="sel('G1','Agritech Zone G · 2F','2.5×4m',18000,23500)"><rect class="br" x="732" y="16" width="86" height="94" fill="#E8A000"/><text x="775" y="67">G1</text></g>
+    <!-- Sponsor B -->
+    <rect x="66" y="92" width="64" height="70" fill="#16A34A" rx="5" opacity=".85"/>
+    <text x="98" y="120" class="static-label" font-size="9" fill="#fff">Sponsor</text>
+    <text x="98" y="132" class="static-label" font-size="8" fill="rgba(255,255,255,.8)">B</text>
 
-        <!-- ─── G ROW 2: G18→G10 ─── -->
-        <g class="booth" id="b-G18" onclick="sel('G18','Agritech Zone G · 2F','2.5×4m',18000,23500)"><rect class="br" x="12" y="120" width="84" height="94" fill="#E8A000"/><text x="54" y="171">G18</text></g>
-        <g class="booth" id="b-G17" onclick="sel('G17','Agritech Zone G · 2F','2.5×4m',18000,23500)"><rect class="br" x="102" y="120" width="84" height="94" fill="#E8A000"/><text x="144" y="171">G17</text></g>
-        <g class="booth" id="b-G16" onclick="sel('G16','Agritech Zone G · 2F','2.5×4m',18000,23500)"><rect class="br" x="192" y="120" width="84" height="94" fill="#E8A000"/><text x="234" y="171">G16</text></g>
-        <g class="booth" id="b-G15" onclick="sel('G15','Agritech Zone G · 2F','2.5×4m',18000,23500)"><rect class="br" x="282" y="120" width="84" height="94" fill="#E8A000"/><text x="324" y="171">G15</text></g>
-        <g class="booth" id="b-G14" onclick="sel('G14','Agritech Zone G · 2F','2.5×4m',18000,23500)"><rect class="br" x="372" y="120" width="84" height="94" fill="#E8A000"/><text x="414" y="171">G14</text></g>
-        <g class="booth" id="b-G13" onclick="sel('G13','Agritech Zone G · 2F','2.5×4m',18000,23500)"><rect class="br" x="462" y="120" width="84" height="94" fill="#E8A000"/><text x="504" y="171">G13</text></g>
-        <g class="booth" id="b-G12" onclick="sel('G12','Agritech Zone G · 2F','2.5×4m',18000,23500)"><rect class="br" x="552" y="120" width="84" height="94" fill="#E8A000"/><text x="594" y="171">G12</text></g>
-        <g class="booth" id="b-G11" onclick="sel('G11','Agritech Zone G · 2F','2.5×4m',18000,23500)"><rect class="br" x="642" y="120" width="84" height="94" fill="#E8A000"/><text x="684" y="171">G11</text></g>
-        <g class="booth" id="b-G10" onclick="sel('G10','Agritech Zone G · 2F','2.5×4m',18000,23500)"><rect class="br" x="732" y="120" width="86" height="94" fill="#E8A000"/><text x="775" y="171">G10</text></g>
+    <!-- Franchise Premium label area (light blue bg) -->
+    <rect x="0" y="164" width="130" height="340" fill="#BFDBFE" rx="5" opacity=".5"/>
+    <text x="50" y="336" class="static-label" font-size="9" fill="#1E40AF" opacity=".8">Franchise</text>
+    <text x="50" y="348" class="static-label" font-size="9" fill="#1E40AF" opacity=".8">Premium</text>
+    <!-- +0.00 level -->
+    <text x="50" y="278" class="static-label" font-size="9" fill="#374151" opacity=".7">+0.00</text>
 
-        <!-- ─── H ROW 1: H8→H1 (8 booths) ─── -->
-        <!-- booth width=98, gap=6, start x=12 -->
-        <g class="booth" id="b-H8" onclick="sel('H8','Dry Food &amp; Agri Zone H · GF','2.5×3m',12000,18000)"><rect class="br" x="12" y="256" width="96" height="72" fill="#E05080"/><text x="60" y="296">H8</text></g>
-        <g class="booth" id="b-H7" onclick="sel('H7','Dry Food &amp; Agri Zone H · GF','2.5×3m',12000,18000)"><rect class="br" x="114" y="256" width="96" height="72" fill="#E05080"/><text x="162" y="296">H7</text></g>
-        <g class="booth" id="b-H6" onclick="sel('H6','Dry Food &amp; Agri Zone H · GF','2.5×3m',12000,18000)"><rect class="br" x="216" y="256" width="96" height="72" fill="#E05080"/><text x="264" y="296">H6</text></g>
-        <g class="booth" id="b-H5" onclick="sel('H5','Dry Food &amp; Agri Zone H · GF','2.5×3m',12000,18000)"><rect class="br" x="318" y="256" width="96" height="72" fill="#E05080"/><text x="366" y="296">H5</text></g>
-        <g class="booth" id="b-H4" onclick="sel('H4','Dry Food &amp; Agri Zone H · GF','2.5×3m',12000,18000)"><rect class="br" x="420" y="256" width="96" height="72" fill="#E05080"/><text x="468" y="296">H4</text></g>
-        <g class="booth" id="b-H3" onclick="sel('H3','Dry Food &amp; Agri Zone H · GF','2.5×3m',12000,18000)"><rect class="br" x="522" y="256" width="96" height="72" fill="#E05080"/><text x="570" y="296">H3</text></g>
-        <g class="booth" id="b-H2" onclick="sel('H2','Dry Food &amp; Agri Zone H · GF','2.5×3m',12000,18000)"><rect class="br" x="624" y="256" width="96" height="72" fill="#E05080"/><text x="672" y="296">H2</text></g>
-        <g class="booth" id="b-H1" onclick="sel('H1','Dry Food &amp; Agri Zone H · GF','2.5×3m',12000,18000)"><rect class="br" x="720" y="256" width="98" height="72" fill="#E05080"/><text x="769" y="296">H1</text></g>
+    <!-- A Zone Booths (A01–A11) two columns -->
+    <!-- Left column A01-A06 -->
+    <g class="booth" id="b-A01" onclick="sel('A01','Zone A · Franchise Premium','3×3m',12000,18000)"><rect x="2" y="166" width="44" height="50" fill="#2563EB"/><text x="24" y="194">A01</text></g>
+    <g class="booth" id="b-A02" onclick="sel('A02','Zone A · Franchise Premium','3×3m',12000,18000)"><rect x="2" y="218" width="44" height="50" fill="#2563EB"/><text x="24" y="246">A02</text></g>
+    <g class="booth" id="b-A03" onclick="sel('A03','Zone A · Franchise Premium','3×3m',12000,18000)"><rect x="2" y="270" width="44" height="50" fill="#2563EB"/><text x="24" y="298">A03</text></g>
+    <g class="booth" id="b-A04" onclick="sel('A04','Zone A · Franchise Premium','3×3m',12000,18000)"><rect x="2" y="322" width="44" height="50" fill="#2563EB"/><text x="24" y="350">A04</text></g>
+    <g class="booth" id="b-A05" onclick="sel('A05','Zone A · Franchise Premium','3×3m',12000,18000)"><rect x="2" y="374" width="44" height="50" fill="#2563EB"/><text x="24" y="402">A05</text></g>
+    <g class="booth" id="b-A06" onclick="sel('A06','Zone A · Franchise Premium','3×3m',12000,18000)"><rect x="2" y="426" width="44" height="50" fill="#2563EB"/><text x="24" y="454">A06</text></g>
+    <!-- Right column A07-A11 -->
+    <g class="booth" id="b-A07" onclick="sel('A07','Zone A · Franchise Premium','3×3m',12000,18000)"><rect x="84" y="166" width="44" height="50" fill="#2563EB"/><text x="106" y="194">A07</text></g>
+    <g class="booth" id="b-A08" onclick="sel('A08','Zone A · Franchise Premium','3×3m',12000,18000)"><rect x="84" y="218" width="44" height="50" fill="#2563EB"/><text x="106" y="246">A08</text></g>
+    <g class="booth" id="b-A09" onclick="sel('A09','Zone A · Franchise Premium','3×3m',12000,18000)"><rect x="84" y="270" width="44" height="50" fill="#2563EB"/><text x="106" y="298">A09</text></g>
+    <g class="booth" id="b-A10" onclick="sel('A10','Zone A · Franchise Premium','3×3m',12000,18000)"><rect x="84" y="322" width="44" height="50" fill="#2563EB"/><text x="106" y="350">A10</text></g>
+    <g class="booth" id="b-A11" onclick="sel('A11','Zone A · Franchise Premium','3×3m',12000,18000)"><rect x="84" y="374" width="44" height="50" fill="#2563EB"/><text x="106" y="402">A11</text></g>
 
-        <!-- ─── H ROW 2: H16→H9 ─── -->
-        <g class="booth" id="b-H16" onclick="sel('H16','Dry Food &amp; Agri Zone H · GF','2.5×3m',12000,18000)"><rect class="br" x="12" y="360" width="96" height="72" fill="#E05080"/><text x="60" y="400">H16</text></g>
-        <g class="booth" id="b-H15" onclick="sel('H15','Dry Food &amp; Agri Zone H · GF','2.5×3m',12000,18000)"><rect class="br" x="114" y="360" width="96" height="72" fill="#E05080"/><text x="162" y="400">H15</text></g>
-        <g class="booth" id="b-H14" onclick="sel('H14','Dry Food &amp; Agri Zone H · GF','2.5×3m',12000,18000)"><rect class="br" x="216" y="360" width="96" height="72" fill="#E05080"/><text x="264" y="400">H14</text></g>
-        <g class="booth" id="b-H13" onclick="sel('H13','Dry Food &amp; Agri Zone H · GF','2.5×3m',12000,18000)"><rect class="br" x="318" y="360" width="96" height="72" fill="#E05080"/><text x="366" y="400">H13</text></g>
-        <g class="booth" id="b-H12" onclick="sel('H12','Dry Food &amp; Agri Zone H · GF','2.5×3m',12000,18000)"><rect class="br" x="420" y="360" width="96" height="72" fill="#E05080"/><text x="468" y="400">H12</text></g>
-        <g class="booth" id="b-H11" onclick="sel('H11','Dry Food &amp; Agri Zone H · GF','2.5×3m',12000,18000)"><rect class="br" x="522" y="360" width="96" height="72" fill="#E05080"/><text x="570" y="400">H11</text></g>
-        <g class="booth" id="b-H10" onclick="sel('H10','Dry Food &amp; Agri Zone H · GF','2.5×3m',12000,18000)"><rect class="br" x="624" y="360" width="96" height="72" fill="#E05080"/><text x="672" y="400">H10</text></g>
-        <g class="booth" id="b-H9" onclick="sel('H9','Dry Food &amp; Agri Zone H · GF','2.5×3m',12000,18000)"><rect class="br" x="720" y="360" width="98" height="72" fill="#E05080"/><text x="769" y="400">H9</text></g>
+    <!-- Main Stage (red) -->
+    <rect x="2" y="480" width="126" height="60" fill="#EF4444" rx="5" opacity=".9"/>
+    <text x="65" y="512" class="static-label" font-size="10" fill="#fff">Main Stage</text>
 
-        <!-- Loading dock bar -->
-        <rect x="200" y="446" width="420" height="12" fill="#94A3B8" rx="4"/>
-        <text x="415" y="455" text-anchor="middle" font-family="Kanit,sans-serif" font-size="8" fill="#64748B" font-weight="600">LOADING DOCK / EXIT</text>
+    <!-- Network Area -->
+    <rect x="2" y="546" width="126" height="50" fill="#6B7280" rx="5" opacity=".5"/>
+    <text x="65" y="575" class="static-label" font-size="9" fill="#fff">Network Area</text>
 
-        <!-- Fruit dryer / Rice milling label (from original plan) -->
-        <text x="415" y="478" text-anchor="middle" font-family="Kanit,sans-serif" font-size="9" fill="#94A3B8">Fruit dryer · Rice milling machine</text>
-      </svg>
-    </div>
-    <div class="fp-legend">
-      <div class="fl-item"><div class="fl-sq" style="background:#E8A000"></div>G Zone 2.5×4m (฿18,000)</div>
-      <div class="fl-item"><div class="fl-sq" style="background:#E05080"></div>H Zone 2.5×3m (฿12,000)</div>
-      <div class="fl-item"><div class="fl-sq" style="background:#A0AEC0"></div>Reserved</div>
-      <div class="fl-item"><div class="fl-sq" style="background:#2F7D32"></div>Selected</div>
-      <div class="fl-note">คลิกบูถเพื่อดูราคา</div>
-    </div>
+    <!-- Meeting / Coffee Corner -->
+    <rect x="2" y="598" width="126" height="80" fill="#A7F3D0" rx="5" opacity=".7"/>
+    <text x="65" y="628" class="static-label" font-size="9" fill="#065F46">Meeting</text>
+    <text x="65" y="641" class="static-label" font-size="9" fill="#065F46">Coffee Corner</text>
+
+    <!-- Logistic (bottom left) -->
+    <rect x="2" y="740" width="126" height="36" fill="#D1FAE5" rx="5" opacity=".8"/>
+    <text x="65" y="762" class="static-label" font-size="9" fill="#065F46">LOGISTIC</text>
+
+    <!-- ═══ MAIN HALL BG ═══ -->
+    <!-- Pink/magenta hall background -->
+    <rect x="132" y="92" width="700" height="640" fill="#FBCFE8" rx="6" opacity=".35"/>
+
+    <!-- Retail Entry Desk (green, between Sponsor B and Pavilion) -->
+    <rect x="132" y="92" width="46" height="120" fill="#16A34A" rx="5" opacity=".92"/>
+    <text x="155" y="140" class="static-label" font-size="7.5" fill="#fff">Retail</text>
+    <text x="155" y="152" class="static-label" font-size="7.5" fill="#fff">Entry</text>
+    <text x="155" y="164" class="static-label" font-size="7.5" fill="#fff">Desk</text>
+    <!-- Small label below -->
+    <text x="155" y="178" class="static-label" font-size="6" fill="#065F46" opacity=".8">Big C Consult</text>
+
+    <!-- PAVILION (grey, center top) -->
+    <rect x="182" y="92" width="280" height="120" fill="#9CA3AF" rx="6" opacity=".7"/>
+    <text x="322" y="157" class="static-label" font-size="14" fill="#fff">Pavilion</text>
+
+    <!-- Main Walk Away label (horizontal) -->
+    <text x="410" y="228" class="static-label" font-size="9" fill="#9D174D" opacity=".8">— Main Walk Away 5 m. —</text>
+
+    <!-- Main Walk Away (vertical, right of B-left section) -->
+    <rect x="392" y="232" width="18" height="430" fill="#F9A8D4" rx="3" opacity=".5"/>
+    <text x="401" y="448" class="static-label" font-size="8" fill="#9D174D" transform="rotate(-90,401,448)">Main Walk Away 5m</text>
+
+    <!-- ═══ B ZONE — left cluster (B01-B18) ═══ -->
+    <!-- Row 1: B03 B02 B01 -->
+    <g class="booth" id="b-B01" onclick="sel('B01','Zone B · Standard Booth','2.5×3m',12000,18000)"><rect x="352" y="232" width="40" height="40" fill="#EC4899"/><text x="372" y="254">B01</text></g>
+    <g class="booth" id="b-B02" onclick="sel('B02','Zone B · Standard Booth','2.5×3m',12000,18000)"><rect x="310" y="232" width="40" height="40" fill="#EC4899"/><text x="330" y="254">B02</text></g>
+    <g class="booth" id="b-B03" onclick="sel('B03','Zone B · Standard Booth','2.5×3m',12000,18000)"><rect x="268" y="232" width="40" height="40" fill="#EC4899"/><text x="288" y="254">B03</text></g>
+    <!-- Row 2: B04 B05 B06 -->
+    <g class="booth" id="b-B04" onclick="sel('B04','Zone B · Standard Booth','2.5×3m',12000,18000)"><rect x="268" y="274" width="40" height="40" fill="#EC4899"/><text x="288" y="296">B04</text></g>
+    <g class="booth" id="b-B05" onclick="sel('B05','Zone B · Standard Booth','2.5×3m',12000,18000)"><rect x="310" y="274" width="40" height="40" fill="#EC4899"/><text x="330" y="296">B05</text></g>
+    <g class="booth" id="b-B06" onclick="sel('B06','Zone B · Standard Booth','2.5×3m',12000,18000)"><rect x="352" y="274" width="40" height="40" fill="#EC4899"/><text x="372" y="296">B06</text></g>
+    <!-- Row 3: B09 B08 B07 -->
+    <g class="booth" id="b-B07" onclick="sel('B07','Zone B · Standard Booth','2.5×3m',12000,18000)"><rect x="352" y="322" width="40" height="40" fill="#EC4899"/><text x="372" y="344">B07</text></g>
+    <g class="booth" id="b-B08" onclick="sel('B08','Zone B · Standard Booth','2.5×3m',12000,18000)"><rect x="310" y="322" width="40" height="40" fill="#EC4899"/><text x="330" y="344">B08</text></g>
+    <g class="booth" id="b-B09" onclick="sel('B09','Zone B · Standard Booth','2.5×3m',12000,18000)"><rect x="268" y="322" width="40" height="40" fill="#EC4899"/><text x="288" y="344">B09</text></g>
+    <!-- Row 4: B10 B11 B12 -->
+    <g class="booth" id="b-B10" onclick="sel('B10','Zone B · Standard Booth','2.5×3m',12000,18000)"><rect x="268" y="364" width="40" height="40" fill="#EC4899"/><text x="288" y="386">B10</text></g>
+    <g class="booth" id="b-B11" onclick="sel('B11','Zone B · Standard Booth','2.5×3m',12000,18000)"><rect x="310" y="364" width="40" height="40" fill="#EC4899"/><text x="330" y="386">B11</text></g>
+    <g class="booth" id="b-B12" onclick="sel('B12','Zone B · Standard Booth','2.5×3m',12000,18000)"><rect x="352" y="364" width="40" height="40" fill="#EC4899"/><text x="372" y="386">B12</text></g>
+    <!-- Standard Booth label -->
+    <text x="310" y="412" class="static-label" font-size="8" fill="#9D174D" opacity=".8">Standard Booth</text>
+    <!-- Row 5: B15 B14 B13 -->
+    <g class="booth" id="b-B13" onclick="sel('B13','Zone B · Standard Booth','2.5×3m',12000,18000)"><rect x="352" y="420" width="40" height="40" fill="#EC4899"/><text x="372" y="442">B13</text></g>
+    <g class="booth" id="b-B14" onclick="sel('B14','Zone B · Standard Booth','2.5×3m',12000,18000)"><rect x="310" y="420" width="40" height="40" fill="#EC4899"/><text x="330" y="442">B14</text></g>
+    <g class="booth" id="b-B15" onclick="sel('B15','Zone B · Standard Booth','2.5×3m',12000,18000)"><rect x="268" y="420" width="40" height="40" fill="#EC4899"/><text x="288" y="442">B15</text></g>
+    <!-- Row 6: B16 B17 B18 -->
+    <g class="booth" id="b-B16" onclick="sel('B16','Zone B · Standard Booth','2.5×3m',12000,18000)"><rect x="268" y="462" width="40" height="40" fill="#EC4899"/><text x="288" y="484">B16</text></g>
+    <g class="booth" id="b-B17" onclick="sel('B17','Zone B · Standard Booth','2.5×3m',12000,18000)"><rect x="310" y="462" width="40" height="40" fill="#EC4899"/><text x="330" y="484">B17</text></g>
+    <g class="booth" id="b-B18" onclick="sel('B18','Zone B · Standard Booth','2.5×3m',12000,18000)"><rect x="352" y="462" width="40" height="40" fill="#EC4899"/><text x="372" y="484">B18</text></g>
+    <text x="310" y="510" class="static-label" font-size="8" fill="#9D174D" opacity=".8">Standard Booth</text>
+
+    <!-- ═══ PREMIUM ZONE P01-P08 (right of vertical walkway) ═══ -->
+    <!-- Zone label -->
+    <text x="495" y="228" class="static-label" font-size="9" fill="#7E22CE" opacity=".85">Premium Zone</text>
+    <!-- Row 1: P02 P01 -->
+    <g class="booth" id="b-P01" onclick="sel('P01','Premium Zone · P Booth','3×3m',18000,24000)"><rect x="502" y="232" width="54" height="44" fill="#A855F7"/><text x="529" y="256">P01</text></g>
+    <g class="booth" id="b-P02" onclick="sel('P02','Premium Zone · P Booth','3×3m',18000,24000)"><rect x="446" y="232" width="54" height="44" fill="#A855F7"/><text x="473" y="256">P02</text></g>
+    <!-- Row 2: P04 P03 -->
+    <g class="booth" id="b-P03" onclick="sel('P03','Premium Zone · P Booth','3×3m',18000,24000)"><rect x="502" y="278" width="54" height="44" fill="#A855F7"/><text x="529" y="302">P03</text></g>
+    <g class="booth" id="b-P04" onclick="sel('P04','Premium Zone · P Booth','3×3m',18000,24000)"><rect x="446" y="278" width="54" height="44" fill="#A855F7"/><text x="473" y="302">P04</text></g>
+    <!-- Row 3: P06 P05 -->
+    <g class="booth" id="b-P05" onclick="sel('P05','Premium Zone · P Booth','3×3m',18000,24000)"><rect x="502" y="330" width="54" height="44" fill="#A855F7"/><text x="529" y="354">P05</text></g>
+    <g class="booth" id="b-P06" onclick="sel('P06','Premium Zone · P Booth','3×3m',18000,24000)"><rect x="446" y="330" width="54" height="44" fill="#A855F7"/><text x="473" y="354">P06</text></g>
+    <!-- Row 4: P08 P08 (P07 P08) -->
+    <g class="booth" id="b-P07" onclick="sel('P07','Premium Zone · P Booth','3×3m',18000,24000)"><rect x="502" y="376" width="54" height="44" fill="#A855F7"/><text x="529" y="400">P07</text></g>
+    <g class="booth" id="b-P08" onclick="sel('P08','Premium Zone · P Booth','3×3m',18000,24000)"><rect x="446" y="376" width="54" height="44" fill="#A855F7"/><text x="473" y="400">P08</text></g>
+    <text x="474" y="428" class="static-label" font-size="8" fill="#7E22CE" opacity=".8">Standard Booth</text>
+
+    <!-- ═══ B RIGHT CLUSTER B19-B26 ═══ -->
+    <!-- Row 1: B19 B20 B21 B22 -->
+    <g class="booth" id="b-B19" onclick="sel('B19','Zone B · Standard Booth','2.5×3m',12000,18000)"><rect x="418" y="420" width="40" height="40" fill="#EC4899"/><text x="438" y="442">B19</text></g>
+    <g class="booth" id="b-B20" onclick="sel('B20','Zone B · Standard Booth','2.5×3m',12000,18000)"><rect x="460" y="420" width="40" height="40" fill="#EC4899"/><text x="480" y="442">B20</text></g>
+    <g class="booth" id="b-B21" onclick="sel('B21','Zone B · Standard Booth','2.5×3m',12000,18000)"><rect x="502" y="420" width="40" height="40" fill="#EC4899"/><text x="522" y="442">B21</text></g>
+    <g class="booth" id="b-B22" onclick="sel('B22','Zone B · Standard Booth','2.5×3m',12000,18000)"><rect x="544" y="420" width="40" height="40" fill="#EC4899"/><text x="564" y="442">B22</text></g>
+    <!-- Row 2: B23 B24 B25 B26 -->
+    <g class="booth" id="b-B23" onclick="sel('B23','Zone B · Standard Booth','2.5×3m',12000,18000)"><rect x="418" y="462" width="40" height="40" fill="#EC4899"/><text x="438" y="484">B23</text></g>
+    <g class="booth" id="b-B24" onclick="sel('B24','Zone B · Standard Booth','2.5×3m',12000,18000)"><rect x="460" y="462" width="40" height="40" fill="#EC4899"/><text x="480" y="484">B24</text></g>
+    <g class="booth" id="b-B25" onclick="sel('B25','Zone B · Standard Booth','2.5×3m',12000,18000)"><rect x="502" y="462" width="40" height="40" fill="#EC4899"/><text x="522" y="484">B25</text></g>
+    <g class="booth" id="b-B26" onclick="sel('B26','Zone B · Standard Booth','2.5×3m',12000,18000)"><rect x="544" y="462" width="40" height="40" fill="#EC4899"/><text x="564" y="484">B26</text></g>
+    <text x="485" y="510" class="static-label" font-size="8" fill="#9D174D" opacity=".8">Standard Booth</text>
+
+    <!-- ═══ C ZONE (Food Dry Zone) ═══ -->
+    <!-- C01-C03 / C12-C14 -->
+    <text x="200" y="520" class="static-label" font-size="8" fill="#9D174D" opacity=".8">Standard Booth · Food Dry Zone</text>
+    <g class="booth" id="b-C01" onclick="sel('C01','Zone C · Food Dry Zone','2×2m',9000,14000)"><rect x="140" y="526" width="38" height="38" fill="#EC4899"/><text x="159" y="547">C01</text></g>
+    <g class="booth" id="b-C02" onclick="sel('C02','Zone C · Food Dry Zone','2×2m',9000,14000)"><rect x="180" y="526" width="38" height="38" fill="#EC4899"/><text x="199" y="547">C02</text></g>
+    <g class="booth" id="b-C03" onclick="sel('C03','Zone C · Food Dry Zone','2×2m',9000,14000)"><rect x="220" y="526" width="38" height="38" fill="#EC4899"/><text x="239" y="547">C03</text></g>
+    <g class="booth" id="b-C12" onclick="sel('C12','Zone C · Food Dry Zone','2×2m',9000,14000)"><rect x="140" y="566" width="38" height="38" fill="#EC4899"/><text x="159" y="587">C12</text></g>
+    <g class="booth" id="b-C13" onclick="sel('C13','Zone C · Food Dry Zone','2×2m',9000,14000)"><rect x="180" y="566" width="38" height="38" fill="#EC4899"/><text x="199" y="587">C13</text></g>
+    <g class="booth" id="b-C14" onclick="sel('C14','Zone C · Food Dry Zone','2×2m',9000,14000)"><rect x="220" y="566" width="38" height="38" fill="#EC4899"/><text x="239" y="587">C14</text></g>
+    <!-- C04-C07 / C08-C11 -->
+    <text x="455" y="520" class="static-label" font-size="8" fill="#9D174D" opacity=".8">Standard Booth · Food Dry Zone</text>
+    <g class="booth" id="b-C04" onclick="sel('C04','Zone C · Food Dry Zone','2×2m',9000,14000)"><rect x="416" y="526" width="38" height="38" fill="#EC4899"/><text x="435" y="547">C04</text></g>
+    <g class="booth" id="b-C05" onclick="sel('C05','Zone C · Food Dry Zone','2×2m',9000,14000)"><rect x="456" y="526" width="38" height="38" fill="#EC4899"/><text x="475" y="547">C05</text></g>
+    <g class="booth" id="b-C06" onclick="sel('C06','Zone C · Food Dry Zone','2×2m',9000,14000)"><rect x="496" y="526" width="38" height="38" fill="#EC4899"/><text x="515" y="547">C06</text></g>
+    <g class="booth" id="b-C07" onclick="sel('C07','Zone C · Food Dry Zone','2×2m',9000,14000)"><rect x="536" y="526" width="38" height="38" fill="#EC4899"/><text x="555" y="547">C07</text></g>
+    <g class="booth" id="b-C11" onclick="sel('C11','Zone C · Food Dry Zone','2×2m',9000,14000)"><rect x="416" y="566" width="38" height="38" fill="#EC4899"/><text x="435" y="587">C11</text></g>
+    <g class="booth" id="b-C10" onclick="sel('C10','Zone C · Food Dry Zone','2×2m',9000,14000)"><rect x="456" y="566" width="38" height="38" fill="#EC4899"/><text x="475" y="587">C10</text></g>
+    <g class="booth" id="b-C09" onclick="sel('C09','Zone C · Food Dry Zone','2×2m',9000,14000)"><rect x="496" y="566" width="38" height="38" fill="#EC4899"/><text x="515" y="587">C09</text></g>
+    <g class="booth" id="b-C08" onclick="sel('C08','Zone C · Food Dry Zone','2×2m',9000,14000)"><rect x="536" y="566" width="38" height="38" fill="#EC4899"/><text x="555" y="587">C08</text></g>
+    <!-- Bottom row C15-C21 -->
+    <g class="booth" id="b-C15" onclick="sel('C15','Zone C · Food Dry Zone','2×2m',9000,14000)"><rect x="140" y="614" width="38" height="38" fill="#EC4899"/><text x="159" y="635">C15</text></g>
+    <g class="booth" id="b-C16" onclick="sel('C16','Zone C · Food Dry Zone','2×2m',9000,14000)"><rect x="180" y="614" width="38" height="38" fill="#EC4899"/><text x="199" y="635">C16</text></g>
+    <g class="booth" id="b-C17" onclick="sel('C17','Zone C · Food Dry Zone','2×2m',9000,14000)"><rect x="220" y="614" width="38" height="38" fill="#EC4899"/><text x="239" y="635">C17</text></g>
+    <g class="booth" id="b-C18" onclick="sel('C18','Zone C · Food Dry Zone','2×2m',9000,14000)"><rect x="260" y="614" width="38" height="38" fill="#EC4899"/><text x="279" y="635">C18</text></g>
+    <g class="booth" id="b-C19" onclick="sel('C19','Zone C · Food Dry Zone','2×2m',9000,14000)"><rect x="300" y="614" width="38" height="38" fill="#EC4899"/><text x="319" y="635">C19</text></g>
+    <g class="booth" id="b-C20" onclick="sel('C20','Zone C · Food Dry Zone','2×2m',9000,14000)"><rect x="380" y="614" width="38" height="38" fill="#EC4899"/><text x="399" y="635">C20</text></g>
+    <g class="booth" id="b-C21" onclick="sel('C21','Zone C · Food Dry Zone','2×2m',9000,14000)"><rect x="420" y="614" width="38" height="38" fill="#EC4899"/><text x="439" y="635">C21</text></g>
+    <!-- DN TO label -->
+    <text x="345" y="668" class="static-label" font-size="8" fill="#374151" opacity=".6">DN TO →</text>
+
+    <!-- ═══ RIGHT SECTION: Nation Booths + D Zone ═══ -->
+    <!-- Vertical walk -->
+    <rect x="588" y="92" width="16" height="570" fill="#F9A8D4" rx="3" opacity=".5"/>
+    <text x="596" y="378" class="static-label" font-size="8" fill="#9D174D" transform="rotate(-90,596,378)">Main Walk Away 5m</text>
+
+    <!-- Nation Booth areas (right of walk) -->
+    <rect x="608" y="92" width="72" height="100" fill="#E2E8F0" rx="5" opacity=".8"/>
+    <text x="644" y="144" class="static-label" font-size="9" fill="#374151">Nation</text>
+    <text x="644" y="156" class="static-label" font-size="9" fill="#374151">Booth</text>
+    <rect x="608" y="198" width="72" height="100" fill="#E2E8F0" rx="5" opacity=".8"/>
+    <text x="644" y="250" class="static-label" font-size="9" fill="#374151">Nation</text>
+    <text x="644" y="262" class="static-label" font-size="9" fill="#374151">Booth</text>
+    <!-- Cultural Show -->
+    <rect x="608" y="304" width="50" height="70" fill="#FDE68A" rx="5" opacity=".8"/>
+    <text x="633" y="334" class="static-label" font-size="7.5" fill="#92400E">Cultural</text>
+    <text x="633" y="345" class="static-label" font-size="7.5" fill="#92400E">Show</text>
+    <!-- Nation booths top right row -->
+    <rect x="664" y="304" width="60" height="70" fill="#E2E8F0" rx="5" opacity=".8"/>
+    <text x="694" y="341" class="static-label" font-size="9" fill="#374151">Nation Booth</text>
+    <rect x="730" y="304" width="60" height="70" fill="#E2E8F0" rx="5" opacity=".8"/>
+    <text x="760" y="341" class="static-label" font-size="9" fill="#374151">Nation Booth</text>
+    <rect x="796" y="304" width="60" height="70" fill="#E2E8F0" rx="5" opacity=".8"/>
+    <text x="826" y="341" class="static-label" font-size="9" fill="#374151">Nation Booth</text>
+
+    <!-- VITH HUB CUBE -->
+    <rect x="608" y="378" width="40" height="30" fill="#0B1F3B" rx="4" opacity=".85"/>
+    <text x="628" y="395" class="static-label" font-size="6.5" fill="#E4BC4A">VITH HUB</text>
+    <text x="628" y="404" class="static-label" font-size="6.5" fill="#E4BC4A">CUBE</text>
+
+    <!-- Main Walk Away 5m (horizontal, lower section) -->
+    <rect x="608" y="410" width="430" height="14" fill="#F9A8D4" rx="3" opacity=".4"/>
+    <text x="823" y="420" class="static-label" font-size="8" fill="#9D174D" opacity=".7">Main Walk Away 5 m.</text>
+    <!-- Rest points -->
+    <rect x="660" y="380" width="50" height="28" fill="#D1FAE5" rx="3" opacity=".7"/>
+    <text x="685" y="396" class="static-label" font-size="7" fill="#065F46">Rest point</text>
+    <rect x="720" y="380" width="50" height="28" fill="#D1FAE5" rx="3" opacity=".7"/>
+    <text x="745" y="396" class="static-label" font-size="7" fill="#065F46">Rest point</text>
+    <rect x="780" y="380" width="50" height="28" fill="#D1FAE5" rx="3" opacity=".7"/>
+    <text x="805" y="396" class="static-label" font-size="7" fill="#065F46">Rest point</text>
+
+    <!-- Lao Pavilion -->
+    <rect x="608" y="426" width="80" height="60" fill="#FEF3C7" rx="5" opacity=".9"/>
+    <text x="648" y="453" class="static-label" font-size="8.5" fill="#92400E">Lao</text>
+    <text x="648" y="465" class="static-label" font-size="8.5" fill="#92400E">Pavilion</text>
+
+    <!-- Lao Booths x5 -->
+    <rect x="694" y="426" width="44" height="60" fill="#FDE68A" rx="4" opacity=".85"/>
+    <text x="716" y="458" class="static-label" font-size="8" fill="#92400E">Lao</text>
+    <rect x="740" y="426" width="44" height="60" fill="#FDE68A" rx="4" opacity=".85"/>
+    <text x="762" y="458" class="static-label" font-size="8" fill="#92400E">Lao</text>
+    <rect x="786" y="426" width="44" height="60" fill="#FDE68A" rx="4" opacity=".85"/>
+    <text x="808" y="458" class="static-label" font-size="8" fill="#92400E">Lao</text>
+    <rect x="832" y="426" width="44" height="60" fill="#FDE68A" rx="4" opacity=".85"/>
+    <text x="854" y="458" class="static-label" font-size="8" fill="#92400E">Lao</text>
+    <rect x="878" y="426" width="44" height="60" fill="#FDE68A" rx="4" opacity=".85"/>
+    <text x="900" y="458" class="static-label" font-size="8" fill="#92400E">Lao</text>
+
+    <!-- ═══ D ZONE — FOOD CENTER THAI (D01-D16) ═══ -->
+    <!-- Food bg -->
+    <rect x="606" y="488" width="432" height="130" fill="#FEF9C3" rx="5" opacity=".7"/>
+    <text x="822" y="502" class="static-label" font-size="9" fill="#92400E" font-weight="800">FOOD CENTER THAI</text>
+
+    <!-- Row D01-D06 -->
+    <g class="booth" id="b-D01" onclick="sel('D01','Food Center Thai · Zone D','2×2m',9000,13000)"><rect x="608" y="506" width="50" height="38" fill="#F59E0B"/><text x="633" y="527" class="dark">D01</text></g>
+    <g class="booth" id="b-D02" onclick="sel('D02','Food Center Thai · Zone D','2×2m',9000,13000)"><rect x="660" y="506" width="50" height="38" fill="#F59E0B"/><text x="685" y="527" class="dark">D02</text></g>
+    <g class="booth" id="b-D03" onclick="sel('D03','Food Center Thai · Zone D','2×2m',9000,13000)"><rect x="712" y="506" width="50" height="38" fill="#F59E0B"/><text x="737" y="527" class="dark">D03</text></g>
+    <g class="booth" id="b-D04" onclick="sel('D04','Food Center Thai · Zone D','2×2m',9000,13000)"><rect x="764" y="506" width="50" height="38" fill="#F59E0B"/><text x="789" y="527" class="dark">D04</text></g>
+    <g class="booth" id="b-D05" onclick="sel('D05','Food Center Thai · Zone D','2×2m',9000,13000)"><rect x="816" y="506" width="50" height="38" fill="#F59E0B"/><text x="841" y="527" class="dark">D05</text></g>
+    <g class="booth" id="b-D06" onclick="sel('D06','Food Center Thai · Zone D','2×2m',9000,13000)"><rect x="868" y="506" width="50" height="38" fill="#F59E0B"/><text x="893" y="527" class="dark">D06</text></g>
+    <!-- Row D07-D16 (reversed order D16-D07 from right) -->
+    <g class="booth" id="b-D07" onclick="sel('D07','Food Center Thai · Zone D','2×2m',9000,13000)"><rect x="918" y="506" width="50" height="38" fill="#FBBF24"/><text x="943" y="527" class="dark">D07</text></g>
+    <g class="booth" id="b-D16" onclick="sel('D16','Food Center Thai · Zone D','2×2m',9000,13000)"><rect x="968" y="506" width="50" height="38" fill="#FBBF24"/><text x="993" y="527" class="dark">D16</text></g>
+    <!-- Second row D08-D15 -->
+    <g class="booth" id="b-D08" onclick="sel('D08','Food Center Thai · Zone D','2×2m',9000,13000)"><rect x="918" y="546" width="50" height="38" fill="#F59E0B"/><text x="943" y="567" class="dark">D08</text></g>
+    <g class="booth" id="b-D09" onclick="sel('D09','Food Center Thai · Zone D','2×2m',9000,13000)"><rect x="866" y="546" width="50" height="38" fill="#F59E0B"/><text x="891" y="567" class="dark">D09</text></g>
+    <g class="booth" id="b-D10" onclick="sel('D10','Food Center Thai · Zone D','2×2m',9000,13000)"><rect x="814" y="546" width="50" height="38" fill="#F59E0B"/><text x="839" y="567" class="dark">D10</text></g>
+    <g class="booth" id="b-D11" onclick="sel('D11','Food Center Thai · Zone D','2×2m',9000,13000)"><rect x="608" y="546" width="50" height="38" fill="#F59E0B"/><text x="633" y="567" class="dark">D11</text></g>
+    <g class="booth" id="b-D12" onclick="sel('D12','Food Center Thai · Zone D','2×2m',9000,13000)"><rect x="660" y="546" width="50" height="38" fill="#F59E0B"/><text x="685" y="567" class="dark">D12</text></g>
+    <g class="booth" id="b-D13" onclick="sel('D13','Food Center Thai · Zone D','2×2m',9000,13000)"><rect x="712" y="546" width="50" height="38" fill="#F59E0B"/><text x="737" y="567" class="dark">D13</text></g>
+    <g class="booth" id="b-D14" onclick="sel('D14','Food Center Thai · Zone D','2×2m',9000,13000)"><rect x="762" y="546" width="50" height="38" fill="#F59E0B"/><text x="787" y="567" class="dark">D14</text></g>
+    <g class="booth" id="b-D15" onclick="sel('D15','Food Center Thai · Zone D','2×2m',9000,13000)"><rect x="968" y="546" width="50" height="38" fill="#FBBF24"/><text x="993" y="567" class="dark">D15</text></g>
+
+    <!-- ═══ D ZONE — FOOD CENTER LAO (D17-D22) ═══ -->
+    <rect x="606" y="620" width="432" height="80" fill="#FED7AA" rx="5" opacity=".7"/>
+    <text x="822" y="634" class="static-label" font-size="9" fill="#7C2D12" font-weight="800">FOOD CENTER LAO</text>
+    <g class="booth" id="b-D17" onclick="sel('D17','Food Center Lao · Zone D','2×2m',9000,13000)"><rect x="608" y="638" width="54" height="40" fill="#F97316"/><text x="635" y="660">D17</text></g>
+    <g class="booth" id="b-D18" onclick="sel('D18','Food Center Lao · Zone D','2×2m',9000,13000)"><rect x="664" y="638" width="54" height="40" fill="#F97316"/><text x="691" y="660">D18</text></g>
+    <g class="booth" id="b-D19" onclick="sel('D19','Food Center Lao · Zone D','2×2m',9000,13000)"><rect x="720" y="638" width="54" height="40" fill="#F97316"/><text x="747" y="660">D19</text></g>
+    <g class="booth" id="b-D20" onclick="sel('D20','Food Center Lao · Zone D','2×2m',9000,13000)"><rect x="776" y="638" width="54" height="40" fill="#F97316"/><text x="803" y="660">D20</text></g>
+    <g class="booth" id="b-D21" onclick="sel('D21','Food Center Lao · Zone D','2×2m',9000,13000)"><rect x="832" y="638" width="54" height="40" fill="#F97316"/><text x="859" y="660">D21</text></g>
+    <g class="booth" id="b-D22" onclick="sel('D22','Food Center Lao · Zone D','2×2m',9000,13000)"><rect x="888" y="638" width="54" height="40" fill="#F97316"/><text x="915" y="660">D22</text></g>
+
+    <!-- ═══ FAR RIGHT: Inner Road / UP FR labels ═══ -->
+    <rect x="1038" y="0" width="162" height="780" fill="#E2E8F0" rx="0" opacity=".5"/>
+    <text x="1119" y="30" class="static-label" font-size="8" fill="#374151" opacity=".6">INNER ROAD</text>
+    <text x="1119" y="750" class="static-label" font-size="8" fill="#374151" opacity=".6">UP FR.</text>
+    <!-- footpath strip -->
+    <rect x="1038" y="60" width="162" height="30" fill="#D1D5DB" opacity=".5"/>
+    <text x="1119" y="78" class="static-label" font-size="7" fill="#374151" opacity=".6">F2 FOOTPATH +0.55</text>
+
+  </svg>
   </div>
 
-  <!-- ══════════ FLOOR 1 ══════════ -->
-  <div id="floor-f1" style="display:none">
-    <div class="fp-wrap">
-      <!--
-        Floor 1 — exact layout (Floor_1.png):
-        ViewBox 1120×310 to fit full hall width
-
-        LEFT SIDE (outside hall):
-          Top:    Sponsor (green 120×110)
-          Bottom: Entrance (gray 120×110)
-
-        HALL (x=140 to x=1080, y=14 to y=296):
-          TOP ROW (y=22, h=110):
-            A1(148) A2(220) A3(292)  [gap 364-390]  A4(390)  STAGE(470-590)  B1(598) B2(654) B3(710) B4(766) B5(822)  C1(878) C2(922) C3(966) C4(1010)
-          BOTTOM ROW (y=182, h=110):
-            A5(148) A6(220) A7(292)  [gap 364-390]  A8(390) A9(462) A10(534) A11(606) A12(678)  [OpenSpace 740-840]  [Elevator 850-950]  C8(724) C7(772) C6(820) C5(868) — actually bottom right
-          BOTTOM RIGHT cluster (y=182):
-            C8(836) C7(884) C6(932) C5(980)  [DriveThru top, Logistic bottom on right edge]
-
-        Actually from image: bottom-right has C8 C7 C6 C5 in their own section separate from A-row
-        They are stacked right of the open space area at y=182
-        Right edge: [DriveThru top y=22] [Logistic bottom y=182]
-
-        Plan:
-        - Top: A1-A3 | A4 | STAGE | B1-B5 | C1-C4 | DriveThru
-        - Bottom: A5-A7 | A8-A12 | OpenSpace | C8-C5 | Elevator | Logistic
-        
-        Width breakdown (viewBox=1130):
-          Sponsor/Entrance: 8-132 (w=124)
-          Hall start: 140
-          A1-A3: 140,212,284 (w=66 each, gap=6)
-          Gap: 356-390
-          A4: 390 (w=76)
-          Stage: 474-590 (w=116)
-          B1-B5: 598,652,706,760,814 (w=48 each, gap=6)
-          C1-C4: 870,918,966,1014 (w=42 each, gap=6)
-          DriveThru: 1062-1086 (w=24 rotated label)
-          Hall end: 1088
-          
-          Bottom:
-          A5-A7: 140,212,284 (same as A1-A3)
-          A8-A12: 390,456,522,588,654 (w=60)
-          OpenSpace: 724-822 (w=98)
-          C8-C5: 830,872,914,956 (w=36 each, gap=6) [bottom right]
-          Elevator: 1000-1058
-          Logistic: right edge bottom (same as DriveThru but bottom)
-      -->
-      <svg class="fp-svg" viewBox="0 0 1130 310" xmlns="http://www.w3.org/2000/svg">
-        <rect width="1130" height="310" fill="#EEF2F7" rx="8"/>
-
-        <!-- hall bg -->
-        <rect x="140" y="14" width="964" height="282" fill="#BAE6FD" rx="7" opacity="0.25"/>
-
-        <!-- zone area sub-labels -->
-        <text x="290" y="258" text-anchor="middle" font-family="Kanit,sans-serif" font-weight="700" font-size="9.5" fill="#92400E" opacity="0.65">Coffee Bakery &amp; Service</text>
-        <text x="700" y="96" text-anchor="middle" font-family="Kanit,sans-serif" font-weight="700" font-size="9.5" fill="#5B21B6" opacity="0.65">Beauty and Wellness</text>
-        <text x="950" y="96" text-anchor="middle" font-family="Kanit,sans-serif" font-weight="700" font-size="9.5" fill="#C2410C" opacity="0.65">Food &amp; Drinks</text>
-
-        <!-- SPONSOR -->
-        <rect x="8" y="18" width="124" height="110" fill="#16A34A" rx="6" opacity="0.88"/>
-        <text x="70" y="74" text-anchor="middle" font-family="Kanit,sans-serif" font-weight="800" font-size="13" fill="#fff">Sponsor</text>
-
-        <!-- ENTRANCE -->
-        <rect x="8" y="182" width="124" height="110" fill="#6B7280" rx="6" opacity="0.75"/>
-        <text x="70" y="240" text-anchor="middle" font-family="Kanit,sans-serif" font-weight="800" font-size="12" fill="#fff">ENTRANCE</text>
-
-        <!-- STAGE -->
-        <rect x="474" y="22" width="116" height="110" fill="#06B6D4" rx="6" opacity="0.88"/>
-        <text x="532" y="80" text-anchor="middle" font-family="Kanit,sans-serif" font-weight="900" font-size="15" fill="#fff">STAGE</text>
-
-        <!-- OPEN SPACE (bottom center) -->
-        <rect x="724" y="182" width="98" height="110" fill="#A7F3D0" rx="6" opacity="0.85"/>
-        <text x="773" y="239" text-anchor="middle" font-family="Kanit,sans-serif" font-weight="700" font-size="10" fill="#065F46">Open Space</text>
-
-        <!-- ELEVATOR -->
-        <rect x="1000" y="182" width="58" height="110" fill="#E0E7FF" rx="5" opacity="0.9"/>
-        <text x="1029" y="239" text-anchor="middle" font-family="Kanit,sans-serif" font-weight="700" font-size="9" fill="#4338CA">Elevator</text>
-
-        <!-- DRIVE THRU (top-right) -->
-        <rect x="1066" y="22" width="56" height="110" fill="#7DD3FC" rx="5" opacity="0.75"/>
-        <text x="1094" y="78" text-anchor="middle" font-family="Kanit,sans-serif" font-weight="700" font-size="8.5" fill="#0369A1" transform="rotate(-90,1094,78)">Drive Thru</text>
-
-        <!-- LOGISTIC (bottom-right) -->
-        <rect x="1066" y="182" width="56" height="110" fill="#D1FAE5" rx="5" opacity="0.85"/>
-        <text x="1094" y="238" text-anchor="middle" font-family="Kanit,sans-serif" font-weight="700" font-size="8.5" fill="#065F46" transform="rotate(-90,1094,238)">Logistic</text>
-
-        <!-- ─── TOP ROW ─── -->
-        <!-- A1 A2 A3 (w=66 h=110) -->
-        <g class="booth" id="b-A1" onclick="sel('A1','Zone A · Coffee Bakery · 1F','3×3m',12000,18000)"><rect class="br" x="148" y="22" width="66" height="110" fill="#D4B800"/><text x="181" y="80">A1</text></g>
-        <g class="booth" id="b-A2" onclick="sel('A2','Zone A · Coffee Bakery · 1F','3×3m',12000,18000)"><rect class="br" x="220" y="22" width="66" height="110" fill="#D4B800"/><text x="253" y="80">A2</text></g>
-        <g class="booth" id="b-A3" onclick="sel('A3','Zone A · Coffee Bakery · 1F','3×3m',12000,18000)"><rect class="br" x="292" y="22" width="66" height="110" fill="#D4B800"/><text x="325" y="80">A3</text></g>
-        <!-- A4 (w=74 before stage) -->
-        <g class="booth" id="b-A4" onclick="sel('A4','Zone A · Coffee Bakery · 1F','3×3m',12000,18000)"><rect class="br" x="390" y="22" width="76" height="110" fill="#D4B800"/><text x="428" y="80">A4</text></g>
-        <!-- B1-B5 after stage (w=48 h=110 gap=6) -->
-        <g class="booth" id="b-B1" onclick="sel('B1','Zone B · Beauty &amp; Wellness · 1F','2×2m',9000,14000)"><rect class="br" x="598" y="22" width="48" height="110" fill="#7C5CBF"/><text x="622" y="80" fill="#fff">B1</text></g>
-        <g class="booth" id="b-B2" onclick="sel('B2','Zone B · Beauty &amp; Wellness · 1F','2×2m',9000,14000)"><rect class="br" x="652" y="22" width="48" height="110" fill="#7C5CBF"/><text x="676" y="80" fill="#fff">B2</text></g>
-        <g class="booth" id="b-B3" onclick="sel('B3','Zone B · Beauty &amp; Wellness · 1F','2×2m',9000,14000)"><rect class="br" x="706" y="22" width="48" height="110" fill="#7C5CBF"/><text x="730" y="80" fill="#fff">B3</text></g>
-        <g class="booth" id="b-B4" onclick="sel('B4','Zone B · Beauty &amp; Wellness · 1F','2×2m',9000,14000)"><rect class="br" x="760" y="22" width="48" height="110" fill="#7C5CBF"/><text x="784" y="80" fill="#fff">B4</text></g>
-        <g class="booth" id="b-B5" onclick="sel('B5','Zone B · Beauty &amp; Wellness · 1F','2×2m',9000,14000)"><rect class="br" x="814" y="22" width="48" height="110" fill="#7C5CBF"/><text x="838" y="80" fill="#fff">B5</text></g>
-        <!-- C1-C4 top (w=42 h=110 gap=4) -->
-        <g class="booth" id="b-C1" onclick="sel('C1','Zone C · Food &amp; Drinks · 1F','2×2m',9000,14000)"><rect class="br" x="870" y="22" width="46" height="110" fill="#E0704A"/><text x="893" y="80" fill="#fff">C1</text></g>
-        <g class="booth" id="b-C2" onclick="sel('C2','Zone C · Food &amp; Drinks · 1F','2×2m',9000,14000)"><rect class="br" x="922" y="22" width="46" height="110" fill="#E0704A"/><text x="945" y="80" fill="#fff">C2</text></g>
-        <g class="booth" id="b-C3" onclick="sel('C3','Zone C · Food &amp; Drinks · 1F','2×2m',9000,14000)"><rect class="br" x="974" y="22" width="46" height="110" fill="#E0704A"/><text x="997" y="80" fill="#fff">C3</text></g>
-        <g class="booth" id="b-C4" onclick="sel('C4','Zone C · Food &amp; Drinks · 1F','2×2m',9000,14000)"><rect class="br" x="1022" y="22" width="36" height="110" fill="#E0704A"/><text x="1040" y="80" fill="#fff">C4</text></g>
-
-        <!-- ─── BOTTOM ROW ─── -->
-        <!-- A5 A6 A7 (w=66 h=110) -->
-        <g class="booth" id="b-A5" onclick="sel('A5','Zone A · Coffee Bakery · 1F','3×3m',12000,18000)"><rect class="br" x="148" y="182" width="66" height="110" fill="#D4B800"/><text x="181" y="240">A5</text></g>
-        <g class="booth" id="b-A6" onclick="sel('A6','Zone A · Coffee Bakery · 1F','3×3m',12000,18000)"><rect class="br" x="220" y="182" width="66" height="110" fill="#D4B800"/><text x="253" y="240">A6</text></g>
-        <g class="booth" id="b-A7" onclick="sel('A7','Zone A · Coffee Bakery · 1F','3×3m',12000,18000)"><rect class="br" x="292" y="182" width="66" height="110" fill="#D4B800"/><text x="325" y="240">A7</text></g>
-        <!-- A8-A12 (w=60 h=110 gap=4) after same gap as top -->
-        <g class="booth" id="b-A8" onclick="sel('A8','Zone A · Coffee Bakery · 1F','3×3m',12000,18000)"><rect class="br" x="390" y="182" width="60" height="110" fill="#D4B800"/><text x="420" y="240">A8</text></g>
-        <g class="booth" id="b-A9" onclick="sel('A9','Zone A · Coffee Bakery · 1F','3×3m',12000,18000)"><rect class="br" x="456" y="182" width="60" height="110" fill="#D4B800"/><text x="486" y="240">A9</text></g>
-        <g class="booth" id="b-A10" onclick="sel('A10','Zone A · Coffee Bakery · 1F','3×3m',12000,18000)"><rect class="br" x="522" y="182" width="60" height="110" fill="#D4B800"/><text x="552" y="240">A10</text></g>
-        <g class="booth" id="b-A11" onclick="sel('A11','Zone A · Coffee Bakery · 1F','3×3m',12000,18000)"><rect class="br" x="588" y="182" width="60" height="110" fill="#D4B800"/><text x="618" y="240">A11</text></g>
-        <g class="booth" id="b-A12" onclick="sel('A12','Zone A · Coffee Bakery · 1F','3×3m',12000,18000)"><rect class="br" x="654" y="182" width="62" height="110" fill="#D4B800"/><text x="685" y="240">A12</text></g>
-        <!-- C8-C5 bottom (w=40 h=110 gap=4, order L→R = C8 C7 C6 C5 per image) -->
-        <g class="booth" id="b-C8" onclick="sel('C8','Zone C · Food &amp; Drinks · 1F','2×2m',9000,14000)"><rect class="br" x="830" y="182" width="40" height="110" fill="#E0704A"/><text x="850" y="240" fill="#fff">C8</text></g>
-        <g class="booth" id="b-C7" onclick="sel('C7','Zone C · Food &amp; Drinks · 1F','2×2m',9000,14000)"><rect class="br" x="876" y="182" width="40" height="110" fill="#E0704A"/><text x="896" y="240" fill="#fff">C7</text></g>
-        <g class="booth" id="b-C6" onclick="sel('C6','Zone C · Food &amp; Drinks · 1F','2×2m',9000,14000)"><rect class="br" x="922" y="182" width="40" height="110" fill="#E0704A"/><text x="942" y="240" fill="#fff">C6</text></g>
-        <g class="booth" id="b-C5" onclick="sel('C5','Zone C · Food &amp; Drinks · 1F','2×2m',9000,14000)"><rect class="br" x="968" y="182" width="28" height="110" fill="#E0704A"/><text x="982" y="240" fill="#fff">C5</text></g>
-      </svg>
-    </div>
-    <div class="fp-legend">
-      <div class="fl-item"><div class="fl-sq" style="background:#D4B800"></div>A Zone 3×3m (฿12,000)</div>
-      <div class="fl-item"><div class="fl-sq" style="background:#7C5CBF"></div>B Zone 2×2m (฿9,000)</div>
-      <div class="fl-item"><div class="fl-sq" style="background:#E0704A"></div>C Zone 2×2m (฿9,000)</div>
-      <div class="fl-item"><div class="fl-sq" style="background:#A0AEC0"></div>Reserved</div>
-      <div class="fl-item"><div class="fl-sq" style="background:#2F7D32"></div>Selected</div>
-      <div class="fl-note">คลิกบูถเพื่อดูราคา</div>
-    </div>
+  <!-- Legend bar -->
+  <div class="fp-legend">
+    <div class="fl-item"><div class="fl-sq" style="background:#2563EB"></div>A — Franchise Premium (3×3m)</div>
+    <div class="fl-item"><div class="fl-sq" style="background:#EC4899"></div>B/C — Standard Booth (2.5×3m / 2×2m)</div>
+    <div class="fl-item"><div class="fl-sq" style="background:#A855F7"></div>P — Premium Booth (3×3m)</div>
+    <div class="fl-item"><div class="fl-sq" style="background:#F59E0B"></div>D — Food Center Thai</div>
+    <div class="fl-item"><div class="fl-sq" style="background:#F97316"></div>D — Food Center Lao</div>
+    <div class="fl-item"><div class="fl-sq" style="background:#16A34A"></div>Sponsor / Retail Entry Desk</div>
+    <div class="fl-item"><div class="fl-sq" style="background:#94A3B8"></div>Reserved</div>
+    <div class="fl-note">คลิกบูถเพื่อดูราคาและจอง</div>
   </div>
-
-</div><!-- end floor-card -->
+</div>
+</div>
 
 <!-- SIDEBAR -->
 <div>
   <div class="booth-panel">
     <div class="ph">
-      <span style="font-size:1.1rem">🏪</span>
-      <div><div class="ph-title">รายละเอียดบูถ</div><div class="ph-sub">คลิกบูถบน Floor Plan</div></div>
+      <div>
+        <div class="ph-title">📐 รายละเอียดบูถ</div>
+        <div class="ph-sub">คลิกบูถบน Floor Plan</div>
+      </div>
     </div>
     <div class="pb" id="boothDetail">
       <div class="empty-state">
         <div class="empty-icon">👆</div>
-        <div class="empty-txt">คลิกบูถบน Floor Plan<br>เพื่อดูราคาและรายละเอียด</div>
+        <div class="empty-txt">คลิกบูถที่ต้องการ<br>เพื่อดูรายละเอียดและราคา</div>
       </div>
     </div>
   </div>
@@ -458,10 +578,9 @@ a{text-decoration:none}
       <div class="sc-total-lbl">Space Only รวม</div>
       <div class="sc-total-price" id="selTotal">฿0</div>
     </div>
-    <button class="btn-checkout" id="checkoutBtn" onclick="openModal()" disabled>🌾 จองบูถที่เลือก</button>
+    <button class="btn-checkout" id="checkoutBtn" onclick="openModal()" disabled>✦ จองบูถที่เลือก</button>
   </div>
 </div>
-
 </div><!-- end page-body -->
 
 <!-- MODAL -->
@@ -470,7 +589,7 @@ a{text-decoration:none}
     <div class="modal-top">
       <div>
         <div class="modal-title" id="mTitle">จองบูถ</div>
-        <div class="modal-sub-t">Mekong Agritech Expo 2026 · Big C Vientiane</div>
+        <div class="modal-sub-t">VITH HUB 2026 · Mekong Global Gateway · Big C Vientiane</div>
       </div>
       <button class="modal-x" onclick="closeModal()">✕</button>
     </div>
@@ -479,10 +598,14 @@ a{text-decoration:none}
 </div>
 
 <script>
-// ── RESERVED ──
-// G Floor: 12 reserved out of 34 (G rows random)
-const RES = new Set(['G2','G5','G9','G13','G16','G18','H3','H6','H10','H14','H1','H9',
-                     'A2','A6','A10','B2','B4','B5','C1','C3','A4','A11']);
+// ── RESERVED booths (pre-filled) ──
+const RES = new Set([
+  'A02','A06','A09','A11',
+  'B02','B05','B09','B13','B20','B24',
+  'P01','P04','P07',
+  'C01','C05','C10','C14','C18',
+  'D03','D06','D11','D14','D19','D22'
+]);
 
 let current = null;
 let selected = {};
@@ -493,27 +616,20 @@ function initReserved(){
     const el=document.getElementById('b-'+id);
     if(el) el.classList.add('reserved');
   });
-  updateCounts();
+  updateCount();
 }
 
-function updateCounts(){
-  const gCount = 34 - [...RES].filter(id=>/^[GH]/.test(id)).length - Object.keys(selected).filter(id=>/^[GH]/.test(id)).length;
-  const fCount = 25 - [...RES].filter(id=>/^[ABC]/.test(id)).length - Object.keys(selected).filter(id=>/^[ABC]/.test(id)).length;
-  document.getElementById('tc-g').textContent = gCount + ' ว่าง';
-  document.getElementById('tc-f1').textContent = fCount + ' ว่าง';
-}
-
-function switchFloor(floor, btn){
-  document.querySelectorAll('.ftab').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  document.getElementById('floor-g').style.display = floor==='g'?'block':'none';
-  document.getElementById('floor-f1').style.display = floor==='f1'?'block':'none';
+function updateCount(){
+  const total=70;
+  const res=RES.size;
+  const sel=Object.keys(selected).length;
+  document.getElementById('avCount').textContent=(total-res-sel)+' บูถว่าง / '+total;
 }
 
 function sel(id, zone, size, price, managed){
-  const el = document.getElementById('b-'+id);
+  const el=document.getElementById('b-'+id);
   if(!el||el.classList.contains('reserved')) return;
-  current = {id, zone, size, price, managed};
+  current={id,zone,size,price,managed};
   renderDetail(current);
 }
 
@@ -522,28 +638,29 @@ function renderDetail(b){
     document.getElementById('boothDetail').innerHTML='<div class="empty-state"><div class="empty-icon">👆</div><div class="empty-txt">คลิกบูถเพื่อดูรายละเอียด</div></div>';
     return;
   }
-  const isSel = !!selected[b.id];
-  document.getElementById('boothDetail').innerHTML = `
+  const isSel=!!selected[b.id];
+  document.getElementById('boothDetail').innerHTML=`
     <div>
       <div class="bd-zone">${b.zone}</div>
       <div class="bd-num">Booth ${b.id}</div>
       <div class="bd-badge ${isSel?'sel-b':'av-b'}">${isSel?'★ เลือกแล้ว':'✓ ว่าง'}</div>
       <div class="bd-rows">
         <div class="bd-row">📐 <span>ขนาด <strong>${b.size}</strong></span></div>
-        <div class="bd-row">🚚 <span>ขนส่งฟรี Nong Khai→Vientiane</span></div>
+        <div class="bd-row">🚚 <span>ขนส่งฟรี หนองคาย → เวียงจันทน์</span></div>
         <div class="bd-row">💯 <span>Commission <strong>0%</strong></span></div>
-        <div class="bd-row">🏷️ <span>Label ภาษาลาวฟรี (Full Managed)</span></div>
+        <div class="bd-row">🏷️ <span>Label ลาวฟรี (Full Managed)</span></div>
+        <div class="bd-row">🌐 <span>B2B Matching included</span></div>
       </div>
       <div class="price-box">
         <div class="p-grid">
           <div class="pg-col"><div class="pg-lbl">Space Only</div><div class="pg-price">฿${b.price.toLocaleString()}</div></div>
           <div class="pg-div"></div>
-          <div class="pg-col"><div class="pg-lbl mg">Full Managed ★</div><div class="pg-price mg">฿${b.managed.toLocaleString()}</div></div>
+          <div class="pg-col"><div class="pg-lbl gd">Full Managed ★</div><div class="pg-price gd">฿${b.managed.toLocaleString()}</div></div>
         </div>
       </div>
       ${isSel
-        ? `<button class="btn-remove" onclick="desel('${b.id}')">✕ ยกเลิกการเลือก</button>`
-        : `<button class="btn-add" onclick="addSel('${b.id}')">+ เลือกบูถนี้</button>`
+        ?`<button class="btn-remove" onclick="desel('${b.id}')">✕ ยกเลิกการเลือก</button>`
+        :`<button class="btn-add" onclick="addSel('${b.id}')">✦ เลือกบูถนี้</button>`
       }
       <a href="https://line.me/ti/p/@cef8930n" target="_blank" class="btn-line-sm">💬 สอบถาม LINE</a>
     </div>`;
@@ -569,13 +686,13 @@ function renderSelList(){
   const ids=Object.keys(selected);
   document.getElementById('selCount').textContent=ids.length;
   document.getElementById('checkoutBtn').disabled=ids.length===0;
-  updateCounts();
+  updateCount();
   if(!ids.length){
     document.getElementById('selList').innerHTML='<div class="sc-empty">ยังไม่ได้เลือกบูถ</div>';
     document.getElementById('selTotal').textContent='฿0';
     return;
   }
-  let total=0, html='';
+  let total=0,html='';
   ids.forEach(id=>{
     const b=selected[id];
     total+=b.price;
@@ -601,13 +718,13 @@ function openModal(){
     <div class="m-summary">
       <div class="ms-num">${ids.length||'?'}</div>
       <div class="ms-info">
-        <div class="ms-zone">บูถที่เลือก</div>
+        <div class="ms-zone">บูถที่เลือก — VITH HUB 2026</div>
         <div class="ms-name">${boothStr}</div>
       </div>
     </div>
-    <div style="margin-bottom:1rem">
-      <div style="font-family:Kanit,sans-serif;font-size:0.68rem;font-weight:700;color:var(--sub);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.45rem">เลือกแพ็กเกจ</div>
-      <div class="pkg-grid">
+    <div style="margin-bottom:.875rem">
+      <div style="font-family:Kanit,sans-serif;font-size:.65rem;font-weight:700;color:var(--sub);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.4rem">เลือกแพ็กเกจ</div>
+      <div class="mpkg-grid">
         <div class="pkg-opt active" id="po-sp" onclick="setPkg('space')">
           <div class="pkg-opt-t">Space Only</div>
           <div class="pkg-opt-p">฿${totalSp.toLocaleString()}</div>
@@ -627,7 +744,13 @@ function openModal(){
       </div>
       <input id="m-email" class="m-input" placeholder="อีเมล" type="email">
       <input id="m-product" class="m-input" placeholder="สินค้าที่จะนำมาแสดง" type="text">
-      <button class="btn-confirm" onclick="confirmBook('${boothStr}')">✅ ยืนยันการจอง</button>
+      <select id="m-interest" class="m-input">
+        <option value="">ความสนใจ / Business Interest</option>
+        <option value="bigc">🏪 Big C Distribution</option>
+        <option value="global">🌐 Global Trade</option>
+        <option value="both">✦ Both (Double Opportunity)</option>
+      </select>
+      <button class="btn-confirm" onclick="confirmBook('${boothStr}')">✦ ยืนยันการจอง</button>
       <div class="m-priv">ส่งข้อมูลถือว่ายอมรับ <a href="/privacy">Privacy Policy</a> · 🔒 ปลอดภัย</div>
     </div>`;
   document.getElementById('overlay').classList.add('open');
@@ -648,12 +771,15 @@ function closeModal(){
 function confirmBook(booths){
   const name=document.getElementById('m-name')?.value?.trim()||'';
   const tel=document.getElementById('m-tel')?.value?.trim()||'';
+  const interest=document.getElementById('m-interest')?.value||'';
   if(!name||!tel){alert('กรุณากรอกชื่อและเบอร์ติดต่อครับ');return}
   const pkgLabel=pkg==='managed'?'Full Managed':'Space Only';
-  const msg=encodeURIComponent(`สนใจจองบูถ Mekong Agritech Expo 2026\nบูถ: ${booths}\nแพ็กเกจ: ${pkgLabel}\nชื่อ: ${name}\nเบอร์: ${tel}`);
+  const msg=encodeURIComponent(
+    `สนใจจองบูถ VITH HUB 2026 — Mekong Global Gateway\nบูถ: ${booths}\nแพ็กเกจ: ${pkgLabel}\nชื่อ: ${name}\nเบอร์: ${tel}\nความสนใจ: ${interest}`
+  );
   document.getElementById('mBody').innerHTML=`
     <div class="modal-success">
-      <div class="suc-icon">🌾</div>
+      <div class="suc-icon">✦</div>
       <div class="suc-title">จองสำเร็จ!</div>
       <div class="suc-sub">ขอบคุณมากครับ ทีมงานจะติดต่อกลับภายใน 24 ชั่วโมง</div>
       <a href="https://line.me/ti/p/@cef8930n?text=${msg}" target="_blank" class="btn-line-confirm">💬 ยืนยันผ่าน LINE</a>
