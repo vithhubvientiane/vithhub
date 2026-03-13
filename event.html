@@ -3,10 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-<title>VITH HUB 2026 — Mekong Global Gateway | Grow Big C · Go Global</title>
-<meta name="description" content="VITH HUB 2026: Mekong Global Gateway — Thailand Brands สู่ชั้นวาง Big C Laos และ Global Trade · 28 พ.ค.–1 มิ.ย. 2026 · Big C Vientiane · Grow Big C · Go Global">
-<meta property="og:title" content="VITH HUB 2026 — Mekong Global Gateway | Grow Big C · Go Global">
-<meta property="og:description" content="Gateway for Thai Brands to Enter Big C Laos and Global Trade Networks · 28 May–1 June 2026 · Big C Vientiane">
+<title>Mekong Growth Expo 2026 | Big C Vientiane</title>
+<meta name="description" content="Mekong Growth Expo 2026 — Thailand Brands สู่ชั้นวาง Big C Laos และ Global Trade · 28 พ.ค.–1 มิ.ย. 2026 · Big C Vientiane · Grow Big C · Go Global">
+<meta property="og:title" content="Mekong Growth Expo 2026">
+<meta property="og:description" content="Grow Big C — Go Global. Thai Brands Expansion Expo in Vientiane">
+<meta property="og:type" content="website">
 <meta property="og:image" content="images/hero-bigc.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -97,6 +98,11 @@ div[data-lang].active,p[data-lang].active,h1[data-lang].active,li[data-lang].act
 .mob-item{font-family:'Kanit',sans-serif;font-size:.9rem;font-weight:600;color:var(--navy);padding:10px 14px;border-radius:8px}
 .mob-item:hover{background:var(--gray)}
 
+/* PULSE ANIMATIONS */
+@keyframes pulse-cta{0%,100%{transform:scale(1);box-shadow:0 4px 24px rgba(234,88,12,.55)}50%{transform:scale(1.045);box-shadow:0 8px 36px rgba(234,88,12,.8)}}
+@keyframes pulse-line{0%,100%{box-shadow:0 4px 20px rgba(6,199,85,.4)}50%{box-shadow:0 8px 32px rgba(6,199,85,.75)}}
+@keyframes shimmer{0%{background-position:200% center}100%{background-position:-200% center}}
+
 /* ─────────────────────────────
    §1 HERO
 ───────────────────────────── */
@@ -114,19 +120,25 @@ div[data-lang].active,p[data-lang].active,h1[data-lang].active,li[data-lang].act
 .hero-badge{display:inline-flex;align-items:center;gap:8px;font-family:'Kanit',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold2);padding:6px 16px;border-radius:20px;border:1px solid rgba(201,162,39,.38);background:rgba(201,162,39,.07);margin-bottom:1.75rem;animation:fadeUp .8s .2s both}
 .badge-dot{width:7px;height:7px;border-radius:50%;background:var(--gold2);animation:blk 1.4s infinite;flex-shrink:0}
 
-.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(3.5rem,6.5vw,6rem);font-weight:700;color:#fff;line-height:.92;letter-spacing:-.02em;margin-bottom:.625rem;animation:fadeUp .8s .3s both}
+.hero-title{font-family:'Kanit',sans-serif;font-weight:900;font-size:clamp(2.6rem,6.5vw,72px);letter-spacing:-1.5px;line-height:1.05;background:linear-gradient(90deg,#fff 0%,#D4AF37 40%,#F5D680 55%,#D4AF37 70%,#fff 100%);background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-shadow:none;filter:drop-shadow(0 2px 18px rgba(212,175,55,.35));margin-bottom:.5rem;animation:fadeUp .8s .3s both,shimmer 4s linear 1.5s infinite}
 .hero-title .gold{color:transparent;background:linear-gradient(90deg,var(--gold),var(--gold2),var(--gold3));-webkit-background-clip:text;background-clip:text}
 
 .hero-tagline{font-family:'Kanit',sans-serif;font-size:clamp(1rem,2.2vw,1.5rem);font-weight:700;color:rgba(255,255,255,.8);letter-spacing:.1em;margin-bottom:1.25rem;animation:fadeUp .8s .4s both;text-transform:uppercase}
 
 .hero-divider{width:48px;height:2px;background:linear-gradient(90deg,var(--gold),transparent);margin-bottom:1.5rem;animation:fadeUp .8s .45s both}
 
-.hero-subtitle{font-size:1.05rem;color:rgba(255,255,255,.85);line-height:1.75;margin-bottom:2rem;animation:fadeUp .8s .5s both;max-width:520px}
+.hero-subtitle{font-family:'Kanit',sans-serif;font-size:clamp(1.4rem,3.5vw,32px);font-weight:700;margin-top:14px;color:rgba(255,255,255,.92);line-height:1.25;margin-bottom:.75rem;animation:fadeUp .8s .4s both}
+.hero-subtitle .red{color:#ed1c24;font-weight:900}
+.hero-subtitle .global{color:#fff;font-weight:700}
 
-.hero-meta{display:flex;flex-wrap:wrap;align-items:center;gap:.875rem;margin-bottom:2.5rem;animation:fadeUp .8s .55s both}
+.hero-hook{font-size:20px;margin-top:15px;color:#FFD700;font-weight:600;animation:fadeUp .8s .45s both}
+
+.hero-event-info{margin-top:20px;font-size:18px;display:flex;gap:20px;flex-wrap:wrap;font-family:'Kanit',sans-serif;font-weight:600;color:rgba(255,255,255,.8);animation:fadeUp .8s .5s both}
+.hero-limited{margin-top:10px;font-family:'Kanit',sans-serif;font-size:.85rem;font-weight:700;color:var(--gold2);letter-spacing:.05em;animation:fadeUp .8s .52s both}
 .hm-item{display:flex;align-items:center;gap:6px;font-family:'Kanit',sans-serif;font-size:.82rem;font-weight:600;color:rgba(255,255,255,.7)}
 .hm-sep{width:4px;height:4px;border-radius:50%;background:rgba(201,162,39,.4)}
 
+.btn-cta-pulse{font-family:'Kanit',sans-serif;font-size:1rem;font-weight:800;background:linear-gradient(135deg,#c2410c,#ea580c,#f97316);color:#fff;padding:15px 32px;border-radius:12px;display:inline-flex;align-items:center;gap:9px;animation:pulse-cta 2.2s ease-in-out infinite;text-decoration:none;letter-spacing:.02em}
 .hero-btns{display:flex;flex-wrap:wrap;gap:.875rem;animation:fadeUp .8s .62s both}
 
 /* Hero countdown card */
@@ -307,7 +319,10 @@ div[data-lang].active,p[data-lang].active,h1[data-lang].active,li[data-lang].act
 .pkg-zone-badge{font-family:'Kanit',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:10px;display:inline-block;margin-bottom:.75rem}
 .pkg-name{font-family:'Cormorant Garamond',serif;font-size:1.75rem;font-weight:700;color:var(--navy);margin-bottom:.25rem;line-height:1.15}
 .pkg-size-note{font-family:'Kanit',sans-serif;font-size:.78rem;color:var(--sub);margin-bottom:1.25rem}
-.price-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:2.5rem;font-weight:800;color:var(--gold2);line-height:1;text-shadow:0 2px 10px rgba(201,162,39,0.3)}
+/* LIMITED badge on package cards */
+.pkg-limited-badge{position:absolute;top:2.8rem;right:1.25rem;background:#ed1c24;color:#fff;font-family:'Kanit',sans-serif;font-size:.58rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:4px 10px;border-radius:20px;box-shadow:0 2px 10px rgba(237,28,36,.4)}
+.pkg-card.featured .pkg-limited-badge{top:3.5rem}
+.price-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:3rem;font-weight:800;color:var(--goldDk);line-height:1;text-shadow:0 2px 12px rgba(201,162,39,.35)}
 .price-unit{font-family:'Kanit',sans-serif;font-size:.82rem;font-weight:600;color:var(--sub)}
 .price-avail{font-family:'Kanit',sans-serif;font-size:.72rem;font-weight:700;color:var(--goldDk);margin-top:.375rem}
 .pkg-body{padding:1.5rem 2rem;flex:1}
@@ -463,6 +478,11 @@ div[data-lang].active,p[data-lang].active,h1[data-lang].active,li[data-lang].act
   .wyg-bar-div{display:none}
   .alliances-grid{gap:1rem}
   .why-cards-col{grid-template-columns:1fr}
+  /* Founder card mobile */
+  .founder-card [style*="grid-template-columns:1.2fr"]{display:flex!important;flex-direction:column}
+  /* Map mobile — scale to fit */
+  .fp-img-wrap{max-height:320px!important}
+  .fp-img-wrap img{min-width:100%!important;max-width:none;height:auto}
 }
 @media(max-width:480px){
   .urgency-inner{grid-template-columns:1fr 1fr}
@@ -496,16 +516,16 @@ div[data-lang].active,p[data-lang].active,h1[data-lang].active,li[data-lang].act
 <!-- ANNOUNCE BAR -->
 <div class="announce-bar">
   <div class="a-dot"></div>
-  <span data-lang="th" class="active">🌐 <strong>VITH HUB 2026: Mekong Global Gateway</strong> · 28 พ.ค.–1 มิ.ย. · Big C เวียงจันทน์ — <a href="#register">บูทเหลือจำกัด จองด่วน!</a></span>
-  <span data-lang="en">🌐 <strong>VITH HUB 2026: Mekong Global Gateway</strong> · May 28–Jun 1 · Big C Vientiane — <a href="#register">Limited booths — Register now!</a></span>
+  <span data-lang="th" class="active">🌐 <strong>Mekong Growth Expo 2026</strong> · 28 พ.ค.–1 มิ.ย. · Big C เวียงจันทน์ — <a href="#register">บูทเหลือจำกัด จองด่วน!</a></span>
+  <span data-lang="en">🌐 <strong>Mekong Growth Expo 2026</strong> · May 28–Jun 1 · Big C Vientiane — <a href="#register">Limited booths — Register now!</a></span>
 </div>
 
 <!-- FLOAT CTA -->
 <div class="float-cta">
   <a href="#register" class="float-btn float-gold">✦ จองบูท</a>
-  <a href="https://line.me/ti/p/@cef8930n" target="_blank" class="float-btn float-line">
-    <svg width="14" height="14" viewBox="0 0 48 48"><path d="M24 4C13 4 4 11.8 4 21.5c0 5.5 3.1 10.4 7.9 13.7-.3 1.2-1.1 4.3-1.3 5 0 0-.1.3.2.4.2.1.5 0 .5 0 .7-.1 8.5-5.6 9.8-6.5.9.1 1.9.2 2.9.2 11 0 20-7.8 20-17.3S35 4 24 4z" fill="white"/></svg>
-    LINE
+  <a href="https://line.me/ti/p/@cef8930n" target="_blank" class="float-line-main">
+    <svg width="16" height="16" viewBox="0 0 48 48"><path d="M24 4C13 4 4 11.8 4 21.5c0 5.5 3.1 10.4 7.9 13.7-.3 1.2-1.1 4.3-1.3 5 0 0-.1.3.2.4.2.1.5 0 .5 0 .7-.1 8.5-5.6 9.8-6.5.9.1 1.9.2 2.9.2 11 0 20-7.8 20-17.3S35 4 24 4z" fill="white"/></svg>
+    Add LINE
   </a>
 </div>
 
@@ -513,8 +533,8 @@ div[data-lang].active,p[data-lang].active,h1[data-lang].active,li[data-lang].act
 <nav class="top-nav" id="mainNav">
   <div class="nav-inner">
     <a href="/" style="text-decoration:none">
-      <div class="nav-logo-main">VITH<span>HUB</span> <span style="font-size:.7em;color:var(--sub);font-weight:600">2026</span></div>
-      <div class="nav-logo-sub">Mekong Global Gateway</div>
+      <div class="nav-logo-main">MEKONG<span style="color:var(--gold)"> EXPO</span> <span style="font-size:.7em;color:var(--sub);font-weight:600">2026</span></div>
+      <div class="nav-logo-sub">Grow Big C — Go Global</div>
     </a>
     <div class="nav-menu">
       <a href="#opportunity" class="nav-item">Opportunity</a>
@@ -550,7 +570,7 @@ div[data-lang].active,p[data-lang].active,h1[data-lang].active,li[data-lang].act
      §1 HERO
 ══════════════════════════════════════ -->
 <section class="hero" id="hero">
-  <div class="hero-bg"><img src="images/hero-bigc.webp" alt="VITH HUB 2026 — Mekong Global Gateway at Big C Vientiane" loading="eager"></div>
+  <div class="hero-bg"><img src="images/hero-bigc.webp" alt="Mekong Growth Expo 2026 at Big C Vientiane" loading="eager"></div>
   <div class="hero-overlay"></div>
   <div class="hero-grid-pattern"></div>
   <div class="hero-glow"></div>
@@ -565,33 +585,26 @@ div[data-lang].active,p[data-lang].active,h1[data-lang].active,li[data-lang].act
         <span data-lang="en">International Trade Hub · Vientiane, Laos</span>
       </div>
 
-      <h1 class="hero-title">
-        VITH HUB<br><span class="gold">2026</span>
-      </h1>
+      <h1 class="hero-title">VITH HUB 2026:<br>MEKONG GROWTH EXPO</h1>
 
-      <div class="hero-tagline">Mekong Global Gateway</div>
-      <div class="hero-divider"></div>
+      <h2 class="hero-subtitle">Grow <span class="red">Big C</span> — <span class="global">Go Global</span></h2>
 
-      <p class="hero-subtitle">
-        <span data-lang="th" class="active"><strong style="color:rgba(255,255,255,.88)">Grow Big C — Go Global</strong><br>Gateway สำหรับแบรนด์ไทยสู่ชั้นวาง Big C Laos<br>และเครือข่ายการค้านานาชาติ</span>
-        <span data-lang="en"><strong style="color:rgba(255,255,255,.88)">Grow Big C — Go Global</strong><br>Gateway for Thai Brands to Enter<br>Big C Laos and Global Trade Networks</span>
-      </p>
+      <p class="hero-hook">Thai Brands • Global Buyers • Mekong Market Access</p>
 
-      <div class="hero-meta">
-        <div class="hm-item">📍 Big C Vientiane, Laos</div>
-        <div class="hm-sep"></div>
-        <div class="hm-item">📅 28 May – 1 June 2026</div>
-        <div class="hm-sep"></div>
-        <div class="hm-item">🏢 70 Exhibition Booths</div>
+      <div class="hero-event-info">
+        <span>📅 28 May – 1 June 2026</span>
+        <span>📍 Big C Vientiane, Laos</span>
+        <span>🏪 60+ Exhibition Booths</span>
       </div>
+      <div class="hero-limited">⚡ Limited Exhibition Booths Available</div>
 
-      <div class="hero-btns">
+      <div class="hero-btns" style="margin-top:2rem">
         <div>
-          <a href="#register" class="btn-primary" style="background:linear-gradient(135deg,var(--goldDk),var(--gold),var(--gold2));box-shadow:0 4px 24px rgba(201,162,39,.5)">✦ Reserve Your Booth Now</a>
-          <div class="btn-micro">🔥 70 Booths Only — Limited Space Available</div>
+          <a href="#register" class="btn-cta-pulse">📅 จองทำเลทองก่อนใคร</a>
+          <div class="btn-micro">🔥 60+ Booths — Limited Space Available</div>
         </div>
+        <a href="#register" class="btn-ghost">📦 Exhibit With Us</a>
         <a href="floorplan.html" target="_blank" class="btn-ghost">📐 Floor Plan</a>
-        <a href="#" class="btn-ghost">📋 Event Deck</a>
       </div>
     </div>
 
@@ -609,7 +622,7 @@ div[data-lang].active,p[data-lang].active,h1[data-lang].active,li[data-lang].act
         <div class="hc-row">📍 Big C Vientiane, สปป.ลาว</div>
         <div class="hc-row">📅 28 พ.ค. – 1 มิ.ย. 2026</div>
         <div class="hc-row">🌐 5+ Countries · CLMV + GMS</div>
-        <div class="hc-row">🏢 <strong style="color:var(--gold2)">70</strong> Exhibition Booths</div>
+        <div class="hc-row">🏪 <strong style="color:var(--gold2)">60+</strong> Exhibition Booths</div>
       </div>
       <a href="#register" class="hc-reserve">✦ Reserve Your Booth →</a>
     </div>
@@ -619,7 +632,7 @@ div[data-lang].active,p[data-lang].active,h1[data-lang].active,li[data-lang].act
   <div class="hero-stats">
     <div class="hero-stats-inner">
       <div class="hs-item">
-        <div class="hs-num" data-count="70"></div>
+        <div class="hs-num" data-count="60"></div>
         <div class="hs-lbl"><strong>Exhibition Booths</strong>4 Curated Zones</div>
       </div>
       <div class="hs-div"></div>
@@ -734,7 +747,7 @@ div[data-lang].active,p[data-lang].active,h1[data-lang].active,li[data-lang].act
             <span data-lang="en">Located at the heart of the Mekong economic corridor, Vientiane connects Thailand, China, Vietnam, and the wider ASEAN region.</span>
           </p>
           <p>
-            <span data-lang="th" class="active">Big C Vientiane คือ Distribution Hub หลักสำหรับสินค้าไทยที่นำเข้าสู่ลาวและตลาดเพื่อนบ้าน — งาน VITH HUB 2026 ใช้ประโยชน์จากโอกาสนี้อย่างเต็มที่</span>
+            <span data-lang="th" class="active">Big C Vientiane คือ Distribution Hub หลักสำหรับสินค้าไทยที่นำเข้าสู่ลาวและตลาดเพื่อนบ้าน — งาน Mekong Growth Expo 2026 ใช้ประโยชน์จากโอกาสนี้อย่างเต็มที่</span>
             <span data-lang="en">Big C Vientiane serves as a key distribution hub for imported Thai products entering Laos and neighboring markets.</span>
           </p>
         </div>
@@ -804,12 +817,12 @@ div[data-lang].active,p[data-lang].active,h1[data-lang].active,li[data-lang].act
 
     <div class="fp-container reveal d1">
       <div class="fp-top">
-        <div class="fp-top-title">📐 VITH HUB 2026 — Floor Plan · Big C Vientiane</div>
+        <div class="fp-top-title">📐 Mekong Growth Expo 2026 — Floor Plan · Big C Vientiane</div>
         <div class="fp-top-date">📅 28 พ.ค. – 1 มิ.ย. 2026 · 70 Exhibition Booths</div>
       </div>
 
-      <div class="fp-img-wrap" id="fpWrap" style="position:relative;max-height:600px;overflow:auto;-webkit-overflow-scrolling:touch">
-        <img src="images/Lay_Out_VITH2.webp" alt="VITH HUB 2026 Floor Plan" class="fp-img" loading="lazy"
+      <div class="fp-img-wrap" id="fpWrap" style="position:relative;max-height:600px;overflow:auto;-webkit-overflow-scrolling:touch;touch-action:pan-x pan-y">
+        <img src="images/Lay_Out_VITH2.webp" alt="Mekong Growth Expo 2026 Floor Plan" class="fp-img" loading="lazy"
           style="min-width:700px"
           onerror="this.style.display='none';document.getElementById('fp-fallback').style.display='flex'">
         <div id="fp-fallback" style="display:none;height:400px;background:linear-gradient(135deg,#0B1F3B,#0d2545);align-items:center;justify-content:center;flex-direction:column;gap:1rem">
@@ -843,7 +856,7 @@ div[data-lang].active,p[data-lang].active,h1[data-lang].active,li[data-lang].act
           <div class="hs-pin hs-pin-navy" style="left:23%;top:30%" onclick="showHS('RE',this)">
             <div class="hs-pin-circle" style="background:#10B981;font-size:.55rem"><span class="hs-pin-pulse" style="background:rgba(16,185,129,.25)"></span>🏪</div>
           </div>
-          <!-- International Lounge / VITH HUB CUBE -->
+          <!-- International Lounge / MEKONG EXPO CUBE -->
           <div class="hs-pin hs-pin-gold" style="left:65%;top:55%" onclick="showHS('IL',this)">
             <div class="hs-pin-circle" style="font-size:.6rem"><span class="hs-pin-pulse"></span>✦</div>
           </div>
@@ -898,7 +911,7 @@ div[data-lang].active,p[data-lang].active,h1[data-lang].active,li[data-lang].act
         </div>
         <div class="hs-popup" id="hs-popup-IL">
           <button class="popup-close" onclick="closeHS('IL')">×</button>
-          <div class="popup-badge gold">VITH HUB CUBE</div>
+          <div class="popup-badge gold">MEKONG EXPO CUBE</div>
           <div class="popup-hd">Global Business Matching Center</div>
           <div class="popup-sub">International Business Lounge</div>
           <div class="popup-txt">1-on-1 Business Matching · พบ Buyer จาก 🇨🇳 China · 🇷🇺 Russia · 🇻🇳 Vietnam · 🇪🇺 Europe · นัดล่วงหน้าได้ตลอดงาน</div>
@@ -991,6 +1004,7 @@ div[data-lang].active,p[data-lang].active,h1[data-lang].active,li[data-lang].act
       <!-- PREMIUM -->
       <div class="pkg-card featured reveal">
         <div class="pkg-ribbon">⭐ Most Prestigious</div>
+        <div class="pkg-limited-badge">LIMITED 20 SLOTS</div>
         <div class="pkg-header-block has-ribbon">
           <div class="pkg-zone-badge" style="background:rgba(201,162,39,.1);color:var(--goldDk);border:1px solid rgba(201,162,39,.2)">⭐ Premium Zone P</div>
           <div class="pkg-name">Premium Booth</div>
@@ -1075,9 +1089,50 @@ div[data-lang].active,p[data-lang].active,h1[data-lang].active,li[data-lang].act
       </div>
     </div>
 
+    <!-- FOUNDER MEMBER CARD ฿39,000 -->
+    <div class="pkg-card founder-card reveal d4" style="margin-top:1.5rem;border:2px solid #D4AF37;background:linear-gradient(135deg,#0B1F3B 0%,#0d2545 60%,#071529 100%);color:#fff;position:relative;overflow:hidden">
+      <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(212,175,55,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(212,175,55,.05) 1px,transparent 1px);background-size:40px 40px;pointer-events:none"></div>
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,#D4AF37,#F5D680,#D4AF37,transparent)"></div>
+      <div class="pkg-limited-badge" style="top:1.5rem;right:1.5rem;background:linear-gradient(135deg,#9B7A10,#D4AF37);color:#0B1F3B;font-size:.65rem;padding:5px 14px">🌟 LIMITED 20 SLOTS</div>
+
+      <div style="display:grid;grid-template-columns:1.2fr 1fr 1fr;align-items:start;position:relative;z-index:1">
+        <!-- Header -->
+        <div style="padding:2rem 2rem 1.5rem;border-bottom:1px solid rgba(212,175,55,.2);border-right:1px solid rgba(212,175,55,.15)">
+          <div style="font-family:'Kanit',sans-serif;font-size:.6rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#D4AF37;margin-bottom:.75rem;display:inline-flex;align-items:center;gap:6px;background:rgba(212,175,55,.1);padding:4px 12px;border-radius:20px;border:1px solid rgba(212,175,55,.3)">✦ Founder Member</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:#fff;margin-bottom:.25rem;line-height:1.15">Founder Package</div>
+          <div style="font-family:'Kanit',sans-serif;font-size:.78rem;color:rgba(255,255,255,.5);margin-bottom:1.25rem">แพ็กเกจพิเศษสำหรับ Early Adopter · All-in-One</div>
+          <div>
+            <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:3.5rem;font-weight:800;background:linear-gradient(90deg,#C9A227,#F5D680,#C9A227);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1;filter:drop-shadow(0 2px 12px rgba(212,175,55,.4))">฿39,000</span>
+            <span style="font-family:'Kanit',sans-serif;font-size:.82rem;font-weight:600;color:rgba(255,255,255,.4)"> / แพ็กเกจ</span>
+          </div>
+          <div style="font-family:'Kanit',sans-serif;font-size:.72rem;font-weight:700;color:#ed1c24;margin-top:.5rem;display:flex;align-items:center;gap:5px">🔥 เหลือเพียง 20 สิทธิ์เท่านั้น</div>
+          <a href="#register" style="margin-top:1.5rem;display:flex;align-items:center;justify-content:center;gap:7px;background:linear-gradient(135deg,#9B7A10,#C9A227,#F5D680);color:#0B1F3B;font-family:'Kanit',sans-serif;font-size:.9rem;font-weight:800;padding:13px 20px;border-radius:10px;text-decoration:none;box-shadow:0 4px 20px rgba(212,175,55,.4);transition:all .25s">✦ จองสิทธิ์ Founder →</a>
+        </div>
+        <!-- Features col 1 -->
+        <div style="padding:2rem;border-right:1px solid rgba(212,175,55,.15)">
+          <div style="font-family:'Kanit',sans-serif;font-size:.6rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:rgba(212,175,55,.6);margin-bottom:1rem">สิทธิพิเศษที่รวมอยู่</div>
+          <div class="pkg-feat" style="color:rgba(255,255,255,.75)"><span class="pf-check" style="color:#D4AF37">✦</span>Premium Booth 3×6m — Zone P (ตำแหน่งกลางงาน)</div>
+          <div class="pkg-feat" style="color:rgba(255,255,255,.75)"><span class="pf-check" style="color:#D4AF37">✦</span>Priority Business Matching — 1-on-1 กับ Buyer จาก 5+ ประเทศ</div>
+          <div class="pkg-feat" style="color:rgba(255,255,255,.75)"><span class="pf-check" style="color:#D4AF37">✦</span>Big C Laos Consultation โดยตรง (ฟรีทั้ง 5 วัน)</div>
+          <div class="pkg-feat" style="color:rgba(255,255,255,.75)"><span class="pf-check" style="color:#D4AF37">✦</span>ขนส่งฟรี 200 kg หนองคาย → เวียงจันทน์</div>
+          <div class="pkg-feat" style="color:rgba(255,255,255,.75)"><span class="pf-check" style="color:#D4AF37">✦</span>Dedicated Staff + Daily Report ครบ 5 วัน</div>
+        </div>
+        <!-- Features col 2 -->
+        <div style="padding:2rem">
+          <div style="font-family:'Kanit',sans-serif;font-size:.6rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:rgba(212,175,55,.6);margin-bottom:1rem">โบนัสพิเศษ Founder Only</div>
+          <div class="pkg-feat" style="color:rgba(255,255,255,.75)"><span class="pf-check" style="color:#F5D680">★</span>Logo บนสื่อประชาสัมพันธ์ทั้งหมด (Online + Offline)</div>
+          <div class="pkg-feat" style="color:rgba(255,255,255,.75)"><span class="pf-check" style="color:#F5D680">★</span>Main Stage Speaking Slot (10 นาที)</div>
+          <div class="pkg-feat" style="color:rgba(255,255,255,.75)"><span class="pf-check" style="color:#F5D680">★</span>VIP Networking Dinner — คืนวันที่ 28 พ.ค.</div>
+          <div class="pkg-feat" style="color:rgba(255,255,255,.75)"><span class="pf-check" style="color:#F5D680">★</span>Post-Event Buyer Report + Contact List</div>
+          <div class="pkg-feat" style="color:rgba(255,255,255,.75)"><span class="pf-check" style="color:#F5D680">★</span>0% Commission ตลอดงานและ Follow-up Period</div>
+          <div style="margin-top:1rem;padding:.75rem 1rem;background:rgba(237,28,36,.1);border:1px solid rgba(237,28,36,.25);border-radius:10px;font-family:'Kanit',sans-serif;font-size:.72rem;font-weight:700;color:#fc8181">⚡ มูลค่ารวม ฿55,000+ — ราคา Founder เพียง ฿39,000</div>
+        </div>
+      </div>
+    </div>
+
     <!-- Pricing Summary -->
     <div class="price-summary reveal d3">
-      <div class="psb-item"><div class="psb-num">70</div><div class="psb-lbl">Total Booths</div></div>
+      <div class="psb-item"><div class="psb-num">60+</div><div class="psb-lbl">Total Booths</div></div>
       <div class="psb-div"></div>
       <div class="psb-item"><div class="psb-num gold">฿12K</div><div class="psb-lbl">เริ่มต้น</div></div>
       <div class="psb-div"></div>
@@ -1120,7 +1175,7 @@ div[data-lang].active,p[data-lang].active,h1[data-lang].active,li[data-lang].act
       <div class="wyg-card reveal"><div class="wyg-icon-wrap" style="background:rgba(11,31,59,.07)">🏪</div><div class="wyg-title">Big C Distribution Consultation</div><p class="wyg-desc">พูดคุยกับทีม Category Management ของ Big C Laos โดยตรง รับคำแนะนำการวางสินค้า ฉลาก และ Logistics ข้ามพรมแดนทันที</p><div class="wyg-tags"><span class="wyg-tag navy">Category Desk</span><span class="wyg-tag navy">ฉลากลาว</span><span class="wyg-tag navy">Import Guide</span></div></div>
       <div class="wyg-card reveal d1"><div class="wyg-icon-wrap" style="background:rgba(201,162,39,.1)">🤝</div><div class="wyg-title">1-on-1 Business Matching</div><p class="wyg-desc">ระบบนัดหมายล่วงหน้ากับ Buyer, Distributor และ Investor จาก 5+ ประเทศ — จีน รัสเซีย เวียดนาม ยุโรป ลาว</p><div class="wyg-tags"><span class="wyg-tag gold">🇨🇳 China</span><span class="wyg-tag gold">🇷🇺 Russia</span><span class="wyg-tag gold">🇻🇳 Vietnam</span><span class="wyg-tag gold">🇪🇺 EU</span></div></div>
       <div class="wyg-card reveal d2"><div class="wyg-icon-wrap" style="background:rgba(124,58,237,.1)">🎤</div><div class="wyg-title">Main Stage &amp; Product Launch</div><p class="wyg-desc">เวทีกลางสำหรับ Keynote, Product Launch และ Mekong Trade Award 2026 — เพิ่ม Visibility ให้แบรนด์ต่อผู้เข้าชม 3,000+ คน</p><div class="wyg-tags"><span class="wyg-tag">Keynote</span><span class="wyg-tag">Product Launch</span><span class="wyg-tag">Award</span></div></div>
-      <div class="wyg-card reveal d1"><div class="wyg-icon-wrap" style="background:rgba(5,150,105,.1)">🌐</div><div class="wyg-title">Nation Booth &amp; Cultural Show</div><p class="wyg-desc">พื้นที่ Nation Booth จาก 6+ ประเทศ พร้อม Cultural Show สร้างบรรยากาศ International Trade Hub</p><div class="wyg-tags"><span class="wyg-tag">6+ Nations</span><span class="wyg-tag">Cultural Show</span><span class="wyg-tag">VITH HUB Cube</span></div></div>
+      <div class="wyg-card reveal d1"><div class="wyg-icon-wrap" style="background:rgba(5,150,105,.1)">🌐</div><div class="wyg-title">Nation Booth &amp; Cultural Show</div><p class="wyg-desc">พื้นที่ Nation Booth จาก 6+ ประเทศ พร้อม Cultural Show สร้างบรรยากาศ International Trade Hub</p><div class="wyg-tags"><span class="wyg-tag">6+ Nations</span><span class="wyg-tag">Cultural Show</span><span class="wyg-tag">MEKONG EXPO Cube</span></div></div>
       <div class="wyg-card reveal d2"><div class="wyg-icon-wrap" style="background:rgba(234,88,12,.1)">🍱</div><div class="wyg-title">Food Center Thai &amp; Lao</div><p class="wyg-desc">Food Center แยก Thai และ Lao — Traffic ผู้เข้าชมหนาแน่นตลอดวัน เหมาะทดสอบสินค้า Food &amp; Beverage กับกลุ่มเป้าหมายจริง</p><div class="wyg-tags"><span class="wyg-tag">Food Center Thai</span><span class="wyg-tag">Food Center Lao</span></div></div>
       <div class="wyg-card reveal d3"><div class="wyg-icon-wrap" style="background:rgba(59,130,246,.1)">☕</div><div class="wyg-title">Network Area &amp; Coffee Corner</div><p class="wyg-desc">พื้นที่ Meeting และ Coffee Corner สำหรับต่อยอดการสนทนาธุรกิจแบบ Informal — Rest Point ตลอดงาน 5 วัน</p><div class="wyg-tags"><span class="wyg-tag">Meeting Room</span><span class="wyg-tag">Coffee Corner</span></div></div>
     </div>
@@ -1152,24 +1207,25 @@ div[data-lang].active,p[data-lang].active,h1[data-lang].active,li[data-lang].act
       <div class="urg-count" style="color:var(--gold2)"><span data-count="5">0</span><span style="font-size:1.5rem"> / 8</span></div>
       <div class="urg-label">บูทที่ว่างเหลืออยู่</div>
       <div class="urg-bar"><div class="urg-fill" style="width:62%;background:linear-gradient(90deg,var(--goldDk),var(--gold2))"></div></div>
+      <div style="font-family:'Kanit',sans-serif;font-size:.65rem;font-weight:700;color:#ed1c24;margin-top:.625rem">🔥 เกือบเต็มแล้ว!</div>
     </div>
     <div class="urg-slot reveal d1">
       <div class="urg-zone" style="color:#818CF8">🏪 Standard Zone B</div>
-      <div class="urg-count" style="color:#818CF8"><span data-count="22">0</span><span style="font-size:1.5rem"> / 26</span></div>
+      <div class="urg-count" style="color:#818CF8"><span data-count="14">0</span><span style="font-size:1.5rem"> / 20</span></div>
       <div class="urg-label">บูทที่ว่างเหลืออยู่</div>
-      <div class="urg-bar"><div class="urg-fill" style="width:85%;background:linear-gradient(90deg,#4f46e5,#818CF8)"></div></div>
+      <div class="urg-bar"><div class="urg-fill" style="width:70%;background:linear-gradient(90deg,#4f46e5,#818CF8)"></div></div>
     </div>
     <div class="urg-slot reveal d2">
       <div class="urg-zone" style="color:#60a5fa">☕ Franchise Zone A</div>
-      <div class="urg-count" style="color:#60a5fa"><span data-count="9">0</span><span style="font-size:1.5rem"> / 11</span></div>
+      <div class="urg-count" style="color:#60a5fa"><span data-count="7">0</span><span style="font-size:1.5rem"> / 12</span></div>
       <div class="urg-label">บูทที่ว่างเหลืออยู่</div>
-      <div class="urg-bar"><div class="urg-fill" style="width:82%;background:linear-gradient(90deg,#1d4ed8,#60a5fa)"></div></div>
+      <div class="urg-bar"><div class="urg-fill" style="width:58%;background:linear-gradient(90deg,#1d4ed8,#60a5fa)"></div></div>
     </div>
     <div class="urg-slot reveal d3">
       <div class="urg-zone" style="color:#fb923c">🍱 Food Zone C/D</div>
-      <div class="urg-count" style="color:#fb923c"><span data-count="29">0</span><span style="font-size:1.5rem"> / 35</span></div>
+      <div class="urg-count" style="color:#fb923c"><span data-count="18">0</span><span style="font-size:1.5rem"> / 22</span></div>
       <div class="urg-label">บูทที่ว่างเหลืออยู่</div>
-      <div class="urg-bar"><div class="urg-fill" style="width:83%;background:linear-gradient(90deg,#c2410c,#fb923c)"></div></div>
+      <div class="urg-bar"><div class="urg-fill" style="width:82%;background:linear-gradient(90deg,#c2410c,#fb923c)"></div></div>
     </div>
   </div>
   <div style="text-align:center;margin-top:2.5rem" class="reveal">
@@ -1188,7 +1244,7 @@ div[data-lang].active,p[data-lang].active,h1[data-lang].active,li[data-lang].act
     <div class="reg-wrap reveal d1">
       <div class="reg-card">
         <div class="reg-top">
-          <div class="reg-top-title">🌐 VITH HUB 2026 — Mekong Global Gateway · Booth Registration</div>
+          <div class="reg-top-title">🌐 Mekong Growth Expo 2026 · Booth Registration</div>
           <div class="reg-cd">
             <div class="rcd-box"><span class="rcd-n" id="rDays">76</span><span class="rcd-l">DAY</span></div>
             <span class="rcd-sep">:</span>
@@ -1197,7 +1253,7 @@ div[data-lang].active,p[data-lang].active,h1[data-lang].active,li[data-lang].act
             <div class="rcd-box"><span class="rcd-n" id="rMins">32</span><span class="rcd-l">MIN</span></div>
           </div>
         </div>
-        <div class="reg-alert">✦ เหลือเพียง <strong style="margin:0 4px;font-size:1.1rem">52</strong> บูท จาก 70 — จองก่อนได้สิทธิ์เลือก Zone ก่อน!</div>
+        <div class="reg-alert">✦ เหลือเพียง <strong style="margin:0 4px;font-size:1.1rem">Limited</strong> บูท — จองก่อนได้สิทธิ์เลือก Zone ก่อน!</div>
         <div class="reg-body">
           <div class="form-grid" id="regForm">
             <input class="f-input" id="r-name" placeholder="ชื่อผู้ติดต่อ / Company *" type="text" required>
@@ -1228,8 +1284,8 @@ div[data-lang].active,p[data-lang].active,h1[data-lang].active,li[data-lang].act
               <option>🍱 Food Pavilion — Zone C/D (฿12,000) · 2×3m</option>
             </select>
             <textarea class="f-input span2" id="r-note" placeholder="สินค้าที่ต้องการนำมาแสดง / หมายเหตุเพิ่มเติม" rows="3" style="resize:vertical"></textarea>
-            <button class="f-submit span2" onclick="submitReg()">✦ ลงทะเบียนจองบูท — VITH HUB 2026 Mekong Global Gateway</button>
-            <div class="f-note span2">🔥 <strong style="color:var(--goldDk)">70 Booths Only</strong> — Limited Space · ทีมงานติดต่อกลับภายใน 24 ชั่วโมง<br>ส่งข้อมูลถือว่ายอมรับ <a href="/privacy">Privacy Policy</a> · ข้อมูลของคุณปลอดภัย 🔒</div>
+            <button class="f-submit span2" onclick="submitReg()">✦ ลงทะเบียนจองบูท — Mekong Growth Expo 2026</button>
+            <div class="f-note span2">🔥 <strong style="color:var(--goldDk)">60+ Booths</strong> — Limited Space · ทีมงานติดต่อกลับภายใน 24 ชั่วโมง<br>ส่งข้อมูลถือว่ายอมรับ <a href="/privacy">Privacy Policy</a> · ข้อมูลของคุณปลอดภัย 🔒</div>
           </div>
         </div>
       </div>
@@ -1242,8 +1298,8 @@ div[data-lang].active,p[data-lang].active,h1[data-lang].active,li[data-lang].act
   <div class="footer-inner">
     <div class="footer-top">
       <div>
-        <div class="footer-brand">VITH<span>HUB</span></div>
-        <div class="footer-brand-sub">Mekong Global Gateway · 2026</div>
+        <div class="footer-brand">MEKONG<span style="color:var(--gold)">EXPO</span></div>
+        <div class="footer-brand-sub">Grow Big C — Go Global · 2026</div>
         <p class="footer-tagline">Thailand Brands to Big C Laos &amp; Global Markets<br>Grow Big C · Go Global</p>
         <div class="footer-social">
           <a href="https://facebook.com" class="f-social" target="_blank">f</a>
@@ -1283,7 +1339,7 @@ div[data-lang].active,p[data-lang].active,h1[data-lang].active,li[data-lang].act
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 VITH HUB · vithhub.asia · Mekong Global Gateway</span>
+      <span>© 2026 Mekong Growth Expo · mekonggrowthexpo.com</span>
       <span><a href="/privacy">Privacy Policy</a> · <a href="/terms">Terms</a></span>
     </div>
   </div>
@@ -1408,7 +1464,7 @@ function submitReg(){
   const note=(document.getElementById('r-note')||{}).value?.trim()||'';
   if(!name||!phone){alert('กรุณากรอกชื่อและเบอร์ติดต่อครับ');return;}
   const msg=encodeURIComponent(
-    'สนใจจองบูท VITH HUB 2026 — Mekong Global Gateway\n'+
+    'สนใจจองบูท Mekong Growth Expo 2026\n'+
     'ชื่อ: '+name+'\nเบอร์: '+phone+'\nอีเมล: '+email+
     '\nประเทศ: '+country+'\nประเภทสินค้า: '+category+
     '\nแพ็กเกจ: '+pkg+'\nความสนใจ: '+interest+'\nหมายเหตุ: '+note
