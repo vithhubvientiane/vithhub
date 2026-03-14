@@ -478,8 +478,8 @@ div[data-lang].active,p[data-lang].active,h1[data-lang].active,li[data-lang].act
   .wyg-bar-div{display:none}
   .alliances-grid{gap:1rem}
   .why-cards-col{grid-template-columns:1fr}
-  /* Founder card mobile */
-  .founder-card [style*="grid-template-columns:1.2fr"]{display:flex!important;flex-direction:column}
+  /* Zone P card mobile */
+  .zone-p-card [style*="grid-template-columns:1.2fr"]{display:flex!important;flex-direction:column}
   /* Map mobile — scale to fit */
   .fp-img-wrap{max-height:320px!important}
   .fp-img-wrap img{min-width:100%!important;max-width:none;height:auto}
@@ -509,6 +509,13 @@ div[data-lang].active,p[data-lang].active,h1[data-lang].active,li[data-lang].act
   .we-text, .why-text, .zone-desc { font-size:1.05rem; }
   .sec-title  { font-size:clamp(1.75rem,5vw,2.5rem); }
 }
+/* ── DETAILS TOGGLE ── */
+.details-btn{background:none;border:1px solid var(--gold);color:var(--goldDk);padding:8px 16px;border-radius:20px;cursor:pointer;font-family:'Kanit',sans-serif;font-size:.82rem;font-weight:600;margin-top:12px;transition:all .3s;display:inline-flex;align-items:center;gap:6px}
+.details-btn:hover{background:var(--gold);color:var(--navy)}
+.pkg-details{display:none;margin-top:14px;font-size:.875rem;color:var(--sub);text-align:left;border-top:1px solid var(--border);padding-top:14px;line-height:1.7}
+.pkg-details p+p{margin-top:8px}
+.pkg-tagline{font-family:'Kanit',sans-serif;font-size:.82rem;font-weight:600;color:var(--goldDk);background:rgba(201,162,39,.08);border-left:3px solid var(--gold);padding:8px 12px;border-radius:0 8px 8px 0;margin-bottom:10px;line-height:1.5}
+
 </style>
 </head>
 <body>
@@ -632,23 +639,35 @@ div[data-lang].active,p[data-lang].active,h1[data-lang].active,li[data-lang].act
   <div class="hero-stats">
     <div class="hero-stats-inner">
       <div class="hs-item">
-        <div class="hs-num" data-count="60"></div>
-        <div class="hs-lbl"><strong>Exhibition Booths</strong>4 Curated Zones</div>
+        <div style="font-size:1.5rem;color:var(--gold2);margin-right:.5rem;filter:drop-shadow(0 0 8px rgba(228,188,74,.6))">🏪</div>
+        <div>
+          <div class="hs-num" data-count="60"></div>
+          <div class="hs-lbl"><strong>Exhibition Booths</strong>4 Curated Zones</div>
+        </div>
       </div>
       <div class="hs-div"></div>
       <div class="hs-item">
-        <div class="hs-num">3,000<span style="font-size:1.5rem">+</span></div>
-        <div class="hs-lbl"><strong>Visitors</strong>Buyers · Traders · Investors</div>
+        <div style="font-size:1.5rem;color:var(--gold2);margin-right:.5rem;filter:drop-shadow(0 0 8px rgba(228,188,74,.6))">👥</div>
+        <div>
+          <div class="hs-num">3,000<span style="font-size:1.5rem">+</span></div>
+          <div class="hs-lbl"><strong>Visitors</strong>Buyers · Traders · Investors</div>
+        </div>
       </div>
       <div class="hs-div"></div>
       <div class="hs-item">
-        <div class="hs-num" data-count="4" data-suffix="+"></div>
-        <div class="hs-lbl"><strong>International Markets</strong>China · Russia · Vietnam · Europe</div>
+        <div style="font-size:1.5rem;color:var(--gold2);margin-right:.5rem;filter:drop-shadow(0 0 8px rgba(228,188,74,.6))">🌏</div>
+        <div>
+          <div class="hs-num" data-count="5" data-suffix="+"></div>
+          <div class="hs-lbl"><strong>International Markets</strong>China · Russia · Vietnam · Europe</div>
+        </div>
       </div>
       <div class="hs-div"></div>
       <div class="hs-item">
-        <div class="hs-num">1</div>
-        <div class="hs-lbl"><strong>Strategic Gateway</strong>Big C Vientiane</div>
+        <div style="font-size:1.5rem;color:var(--gold2);margin-right:.5rem;filter:drop-shadow(0 0 8px rgba(228,188,74,.6))">✦</div>
+        <div>
+          <div class="hs-num">Big<span style="font-size:1.5rem"> C</span></div>
+          <div class="hs-lbl"><strong>Strategic Gateway</strong>Vientiane, Laos</div>
+        </div>
       </div>
     </div>
   </div>
@@ -1001,48 +1020,67 @@ div[data-lang].active,p[data-lang].active,h1[data-lang].active,li[data-lang].act
 
     <div class="pkg-grid">
 
-      <!-- PREMIUM -->
+      <!-- PREMIUM / MAIN SPONSOR -->
       <div class="pkg-card featured reveal">
-        <div class="pkg-ribbon">⭐ Most Prestigious</div>
-        <div class="pkg-limited-badge">LIMITED 20 SLOTS</div>
+        <div class="pkg-ribbon">⭐ Main Sponsor — Most Prestigious</div>
+        <div class="pkg-limited-badge">LIMITED 2 SLOTS</div>
         <div class="pkg-header-block has-ribbon">
-          <div class="pkg-zone-badge" style="background:rgba(201,162,39,.1);color:var(--goldDk);border:1px solid rgba(201,162,39,.2)">⭐ Premium Zone P</div>
-          <div class="pkg-name">Premium Booth</div>
-          <div class="pkg-size-note">แบรนด์ใหญ่ / Sponsor · 3×6m · ตำแหน่งกลางงาน</div>
-          <div><span class="price-num">฿25,000</span> <span class="price-unit">/ บูท</span></div>
-          <div class="price-avail">🔥 เหลือเพียง 8 บูท</div>
+          <div class="pkg-zone-badge" style="background:rgba(201,162,39,.1);color:var(--goldDk);border:1px solid rgba(201,162,39,.2)">⭐ Main Sponsor · Zone P</div>
+          <div class="pkg-name">Main Sponsor</div>
+          <div class="pkg-size-note">แบรนด์ใหญ่ · บูทหน้าห้าง + Zone P 3×6m</div>
+          <div><span class="price-num">฿150,000</span> <span class="price-unit">/ แพ็กเกจ</span></div>
+          <div class="price-avail">🔥 เหลือเพียง 2 สิทธิ์</div>
+          <div class="pkg-tagline">ครองพื้นที่ดีที่สุด พร้อมสถานะพาร์ทเนอร์หลักของงาน</div>
         </div>
         <div class="pkg-body">
-          <div class="pkg-feat"><span class="pf-check">✓</span>Premium Zone กลางงาน — Main Walk Away · Traffic สูงสุด</div>
+          <div class="pkg-feat"><span class="pf-check">✓</span>บูทหน้าห้าง (Entrance) + Premium Zone P กลางงาน</div>
           <div class="pkg-feat"><span class="pf-check">✓</span>พื้นที่ 3×6m + ป้าย Premium Brand Signage ขนาดใหญ่</div>
           <div class="pkg-feat"><span class="pf-check">✓</span>Priority Business Matching + Big C Consultation</div>
-          <div class="pkg-feat"><span class="pf-check">✓</span>Dedicated Staff + Daily Report</div>
-          <div class="pkg-feat"><span class="pf-check">✓</span>ขนส่งฟรี 150 kg หนองคาย → เวียงจันทน์</div>
-          <div class="pkg-feat"><span class="pf-check">✓</span>0% Commission ตลอดงาน</div>
+          <div class="pkg-feat"><span class="pf-check">✓</span>Logo บนสื่อประชาสัมพันธ์ทั้งหมด (Online + Offline)</div>
+          <div class="pkg-feat"><span class="pf-check">✓</span>Main Stage Speaking Slot (10 นาที) + VIP Networking Dinner</div>
+          <div class="pkg-feat"><span class="pf-check">✓</span>ขนส่งฟรี 200 kg · Dedicated Staff · Daily Report</div>
+          <button class="details-btn" onclick="toggleDetails(this)">▸ ดูรายละเอียดแพ็กเกจ</button>
+          <div class="pkg-details">
+            <p><strong>เหมาะสำหรับ:</strong> แบรนด์ใหญ่ที่ต้องการครองพื้นที่และสร้างภาพลักษณ์ในฐานะ Leader ของงาน</p>
+            <p><strong>จุดเด่น:</strong> เป็น "เจ้าของงาน" ในสายตาลูกค้าลาวและ Buyer นานาชาติ — Logo ปรากฏในทุก Touch Point ของงาน</p>
+            <p><strong>รวมมูลค่า:</strong> บูทหน้าห้าง + Zone P + สื่อทั้งหมด + Speaking + Dinner + ขนส่ง ≈ ฿250,000+</p>
+          </div>
         </div>
         <div class="pkg-footer">
-          <a href="#register" class="pkg-btn pkg-btn-gold">✦ Reserve Premium →</a>
+          <a href="#register" class="pkg-btn pkg-btn-gold">✦ สนใจ Sponsor Package →</a>
         </div>
       </div>
 
-      <!-- STANDARD -->
+      <!-- ACCELERATOR 90 วัน -->
       <div class="pkg-card reveal d1">
+        <div class="pkg-limited-badge" style="top:1rem;right:1rem">🚀 26 SLOTS</div>
         <div class="pkg-header-block">
-          <div class="pkg-zone-badge" style="background:rgba(99,102,241,.08);color:#6366f1;border:1px solid rgba(99,102,241,.2)">🏪 Standard Booth · Zone B</div>
-          <div class="pkg-name">Standard Booth</div>
-          <div class="pkg-size-note">SME / สินค้าไทย · 3×3m · ใจกลางงาน</div>
-          <div><span class="price-num">฿15,000</span> <span class="price-unit">/ บูท</span></div>
-          <div class="price-avail">เหลือ 26 บูท</div>
+          <div class="pkg-zone-badge" style="background:rgba(99,102,241,.08);color:#6366f1;border:1px solid rgba(99,102,241,.2)">🚀 Accelerator · Zone B</div>
+          <div class="pkg-name">Accelerator 90 วัน</div>
+          <div class="pkg-size-note">SME ไทย · 3×3m · เหมาจ่าย 90 วัน</div>
+          <div>
+            <span class="price-num">฿39,000</span>
+            <span class="price-unit">/ แพ็กเกจ</span>
+            <span style="font-family:'Kanit',sans-serif;font-size:.75rem;color:rgba(11,31,59,.3);text-decoration:line-through;margin-left:6px">฿59,000</span>
+          </div>
+          <div class="price-avail" style="color:#ed1c24">⚡ จำกัด 26 รายเท่านั้น</div>
+          <div class="pkg-tagline">แพ็กเกจเดียวที่ทำให้สินค้าคุณอยู่บนเชลฟ์ Big C ได้จริง</div>
         </div>
         <div class="pkg-body">
-          <div class="pkg-feat"><span class="pf-check">✓</span>โซน B — Standard Booth ใจกลางงาน Traffic ดี</div>
-          <div class="pkg-feat"><span class="pf-check">✓</span>โต๊ะ 1 + เก้าอี้ 2 + ป้ายชื่อ + ไฟส่องสินค้า</div>
-          <div class="pkg-feat"><span class="pf-check">✓</span>B2B Matching + Big C Consultation included</div>
-          <div class="pkg-feat"><span class="pf-check">✓</span>ขนส่งฟรี 100 kg หนองคาย → เวียงจันทน์</div>
-          <div class="pkg-feat"><span class="pf-check">✓</span>0% Commission ตลอดงาน</div>
+          <div class="pkg-feat"><span class="pf-check">✓</span>บูท Zone B 3×3m + Big C Shelf Test จริง</div>
+          <div class="pkg-feat"><span class="pf-check">✓</span>B2B Matching 1-on-1 ตลอด 90 วัน</div>
+          <div class="pkg-feat"><span class="pf-check">✓</span>Market Consultation CLMV ครบวงจร</div>
+          <div class="pkg-feat"><span class="pf-check">✓</span>ขนส่งฟรี 100 kg + ลด 15% ตลอด 90 วัน</div>
+          <div class="pkg-feat"><span class="pf-check">✓</span>Buyer Report + Contact List ฉบับเต็ม</div>
+          <button class="details-btn" onclick="toggleDetails(this)">▸ ดูรายละเอียดแพ็กเกจ</button>
+          <div class="pkg-details">
+            <p><strong>เหมาะสำหรับ:</strong> SME ไทยที่ต้องการปักหลักในลาวระยะยาว แต่ไม่มีเวลาดำเนินการเอง</p>
+            <p><strong>จุดเด่น:</strong> ดูแลครบวงจร — ขนส่ง, ขึ้นเชลฟ์ Big C, B2B Matching, Consultation CLMV ทั้งหมดใน 90 วัน</p>
+            <p><strong>หลังจบ 90 วัน:</strong> รับ Buyer Report + สามารถ upgrade สู่ Showroom ถาวรได้เลย</p>
+          </div>
         </div>
         <div class="pkg-footer">
-          <a href="#register" class="pkg-btn pkg-btn-navy">Reserve Standard →</a>
+          <a href="membership.html" class="pkg-btn pkg-btn-navy">🚀 จองสิทธิ์ Accelerator →</a>
         </div>
       </div>
 
@@ -1052,8 +1090,9 @@ div[data-lang].active,p[data-lang].active,h1[data-lang].active,li[data-lang].act
           <div class="pkg-zone-badge" style="background:rgba(59,130,246,.08);color:#3b82f6;border:1px solid rgba(59,130,246,.2)">☕ Franchise Zone · Zone A</div>
           <div class="pkg-name">Franchise Zone</div>
           <div class="pkg-size-note">Franchise / Business Opportunity · 2×3m</div>
-          <div><span class="price-num">฿18,000</span> <span class="price-unit">/ บูท</span></div>
+          <div><span class="price-num">฿25,000</span> <span class="price-unit">/ บูท</span></div>
           <div class="price-avail">เหลือ 11 บูท</div>
+          <div class="pkg-tagline">ทำเลทองสำหรับหาผู้ร่วมลงทุนขยายสาขาในลาว</div>
         </div>
         <div class="pkg-body">
           <div class="pkg-feat"><span class="pf-check">✓</span>โซน A — ออกแบบสำหรับ Franchise &amp; F&amp;B ติด Entrance</div>
@@ -1061,6 +1100,11 @@ div[data-lang].active,p[data-lang].active,h1[data-lang].active,li[data-lang].act
           <div class="pkg-feat"><span class="pf-check">✓</span>Local Partner Matching — หาตัวแทนลาว</div>
           <div class="pkg-feat"><span class="pf-check">✓</span>ขนส่งฟรี 100 kg หนองคาย → เวียงจันทน์</div>
           <div class="pkg-feat"><span class="pf-check">✓</span>0% Commission ตลอดงาน</div>
+          <button class="details-btn" onclick="toggleDetails(this)">▸ ดูรายละเอียดแพ็กเกจ</button>
+          <div class="pkg-details">
+            <p><strong>เหมาะสำหรับ:</strong> ธุรกิจ Franchise / F&B ที่ต้องการหาผู้ร่วมลงทุนหรือตัวแทน (Master Franchise) ในลาว</p>
+            <p><strong>จุดเด่น:</strong> ทำเลติด Entrance — ทุกคนที่เข้างานเห็นบูทคุณก่อนเลย พร้อม Local Partner Matching โดยตรง</p>
+          </div>
         </div>
         <div class="pkg-footer">
           <a href="#register" class="pkg-btn" style="background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;width:100%;justify-content:center;border:none;cursor:pointer;display:flex;align-items:center;gap:6px;border-radius:10px;font-family:'Kanit',sans-serif;font-size:.9rem;font-weight:800;padding:12px;transition:all .25s">Reserve Franchise →</a>
@@ -1077,62 +1121,73 @@ div[data-lang].active,p[data-lang].active,h1[data-lang].active,li[data-lang].act
         <div class="pkg-size-note">ร้านอาหาร / เครื่องดื่ม / FMCG · 2×3m</div>
         <div><span class="price-num">฿12,000</span> <span class="price-unit">/ บูท</span></div>
         <div class="price-avail" style="color:#10B981">ราคาเข้าถึงง่ายที่สุด · เหลือ 35 บูท</div>
+        <div class="pkg-tagline" style="margin-top:8px">เริ่มต้นทดสอบตลาดลาวในราคาที่คุ้มค่าที่สุด</div>
       </div>
       <div class="pkg-body" style="border-right:1px solid var(--border)">
         <div class="pkg-feat"><span class="pf-check">✓</span>โซน C/D — Food Center Thai &amp; Lao · Traffic จากผู้เข้าชม 10K+</div>
         <div class="pkg-feat"><span class="pf-check">✓</span>พื้นที่ 2×3m + ไฟ + โต๊ะ เก้าอี้ลูกค้า</div>
         <div class="pkg-feat"><span class="pf-check">✓</span>ขนส่งฟรี 50 kg หนองคาย → เวียงจันทน์</div>
         <div class="pkg-feat"><span class="pf-check">✓</span>เหมาะทดลองตลาดลาวครั้งแรกในราคาเข้าถึงได้</div>
+        <button class="details-btn" onclick="toggleDetails(this)">▸ ดูรายละเอียดแพ็กเกจ</button>
+        <div class="pkg-details">
+          <p><strong>เหมาะสำหรับ:</strong> แม่ค้าออนไลน์, สินค้า Food & FMCG ที่อยากทดสอบตลาดลาวครั้งแรกในราคาต่ำสุด</p>
+          <p><strong>จุดเด่น:</strong> ทำเลโซน Food Center — ลูกค้าเดินผ่านตลอดวัน เหมาะสำหรับสินค้าที่ลูกค้าซื้อได้ทันที</p>
+        </div>
       </div>
       <div class="pkg-footer" style="padding:2rem;align-self:stretch;display:flex;align-items:center">
         <a href="#register" class="pkg-btn" style="background:linear-gradient(135deg,#065f46,#059669);color:#fff;width:100%;justify-content:center;border:none;cursor:pointer;display:flex;align-items:center;gap:6px;border-radius:10px;font-family:'Kanit',sans-serif;font-size:.9rem;font-weight:800;padding:12px;transition:all .25s">Reserve Food Pavilion →</a>
       </div>
     </div>
 
-    <!-- FOUNDER MEMBER CARD ฿39,000 -->
-    <div class="pkg-card founder-card reveal d4" style="margin-top:1.5rem;border:2px solid #D4AF37;background:linear-gradient(135deg,#0B1F3B 0%,#0d2545 60%,#071529 100%);color:#fff;position:relative;overflow:hidden">
+    <!-- ZONE P: PREMIUM (พื้นที่เปล่า 3x6m) -->
+    <div class="pkg-card reveal d4" style="margin-top:1.5rem;border:2px solid #D4AF37;background:linear-gradient(135deg,#0B1F3B 0%,#0d2545 60%,#071529 100%);color:#fff;position:relative;overflow:hidden">
       <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(212,175,55,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(212,175,55,.05) 1px,transparent 1px);background-size:40px 40px;pointer-events:none"></div>
       <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,#D4AF37,#F5D680,#D4AF37,transparent)"></div>
-      <div class="pkg-limited-badge" style="top:1.5rem;right:1.5rem;background:linear-gradient(135deg,#9B7A10,#D4AF37);color:#0B1F3B;font-size:.65rem;padding:5px 14px">🌟 LIMITED 20 SLOTS</div>
+      <div class="pkg-limited-badge" style="top:1.5rem;right:1.5rem;background:linear-gradient(135deg,#9B7A10,#D4AF37);color:#0B1F3B;font-size:.65rem;padding:5px 14px">⭐ LIMITED 6 บูท</div>
 
       <div style="display:grid;grid-template-columns:1.2fr 1fr 1fr;align-items:start;position:relative;z-index:1">
         <!-- Header -->
         <div style="padding:2rem 2rem 1.5rem;border-bottom:1px solid rgba(212,175,55,.2);border-right:1px solid rgba(212,175,55,.15)">
-          <div style="font-family:'Kanit',sans-serif;font-size:.6rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#D4AF37;margin-bottom:.75rem;display:inline-flex;align-items:center;gap:6px;background:rgba(212,175,55,.1);padding:4px 12px;border-radius:20px;border:1px solid rgba(212,175,55,.3)">✦ Founder Member</div>
-          <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:#fff;margin-bottom:.25rem;line-height:1.15">Founder Package</div>
-          <div style="font-family:'Kanit',sans-serif;font-size:.78rem;color:rgba(255,255,255,.5);margin-bottom:1.25rem">แพ็กเกจพิเศษสำหรับ Early Adopter · All-in-One</div>
+          <div style="font-family:'Kanit',sans-serif;font-size:.6rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#D4AF37;margin-bottom:.75rem;display:inline-flex;align-items:center;gap:6px;background:rgba(212,175,55,.1);padding:4px 12px;border-radius:20px;border:1px solid rgba(212,175,55,.3)">⭐ Zone P · Premium</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:#fff;margin-bottom:.25rem;line-height:1.15">Premium Zone P</div>
+          <div style="font-family:'Kanit',sans-serif;font-size:.78rem;color:rgba(255,255,255,.5);margin-bottom:1.25rem">พื้นที่เปล่า 3×6m · 18 ตร.ม. · ออกแบบเองได้ทุกอย่าง</div>
           <div>
-            <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:3.5rem;font-weight:800;background:linear-gradient(90deg,#C9A227,#F5D680,#C9A227);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1;filter:drop-shadow(0 2px 12px rgba(212,175,55,.4))">฿39,000</span>
-            <span style="font-family:'Kanit',sans-serif;font-size:.82rem;font-weight:600;color:rgba(255,255,255,.4)"> / แพ็กเกจ</span>
+            <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:3.5rem;font-weight:800;background:linear-gradient(90deg,#C9A227,#F5D680,#C9A227);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1;filter:drop-shadow(0 2px 12px rgba(212,175,55,.4))">฿50,000</span>
+            <span style="font-family:'Kanit',sans-serif;font-size:.82rem;font-weight:600;color:rgba(255,255,255,.4)"> / 5 วัน</span>
           </div>
-          <div style="font-family:'Kanit',sans-serif;font-size:.72rem;font-weight:700;color:#ed1c24;margin-top:.5rem;display:flex;align-items:center;gap:5px">🔥 เหลือเพียง 20 สิทธิ์เท่านั้น</div>
-          <a href="#register" style="margin-top:1.5rem;display:flex;align-items:center;justify-content:center;gap:7px;background:linear-gradient(135deg,#9B7A10,#C9A227,#F5D680);color:#0B1F3B;font-family:'Kanit',sans-serif;font-size:.9rem;font-weight:800;padding:13px 20px;border-radius:10px;text-decoration:none;box-shadow:0 4px 20px rgba(212,175,55,.4);transition:all .25s">✦ จองสิทธิ์ Founder →</a>
+          <div style="font-family:'Kanit',sans-serif;font-size:.72rem;font-weight:700;color:#ed1c24;margin-top:.5rem;display:flex;align-items:center;gap:5px">🔥 เหลือเพียง 6 บูทเท่านั้น</div>
+          <div style="font-family:'Kanit',sans-serif;font-size:.82rem;font-weight:600;color:var(--gold2);background:rgba(212,175,55,.08);border-left:3px solid #D4AF37;padding:8px 12px;border-radius:0 8px 8px 0;margin-top:.875rem;line-height:1.5">พื้นที่กว้าง 2× — จัดดิสเพลย์ได้อลังการ สร้างภาพลักษณ์แบรนด์ระดับนานาชาติ</div>
+          <a href="#register" style="margin-top:1.5rem;display:flex;align-items:center;justify-content:center;gap:7px;background:linear-gradient(135deg,#9B7A10,#C9A227,#F5D680);color:#0B1F3B;font-family:'Kanit',sans-serif;font-size:.9rem;font-weight:800;padding:13px 20px;border-radius:10px;text-decoration:none;box-shadow:0 4px 20px rgba(212,175,55,.4);transition:all .25s">✦ จองบูท Zone P →</a>
         </div>
-        <!-- Features col 1 -->
+        <!-- เหมาะสำหรับ -->
         <div style="padding:2rem;border-right:1px solid rgba(212,175,55,.15)">
-          <div style="font-family:'Kanit',sans-serif;font-size:.6rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:rgba(212,175,55,.6);margin-bottom:1rem">สิทธิพิเศษที่รวมอยู่</div>
-          <div class="pkg-feat" style="color:rgba(255,255,255,.75)"><span class="pf-check" style="color:#D4AF37">✦</span>Premium Booth 3×6m — Zone P (ตำแหน่งกลางงาน)</div>
-          <div class="pkg-feat" style="color:rgba(255,255,255,.75)"><span class="pf-check" style="color:#D4AF37">✦</span>Priority Business Matching — 1-on-1 กับ Buyer จาก 5+ ประเทศ</div>
-          <div class="pkg-feat" style="color:rgba(255,255,255,.75)"><span class="pf-check" style="color:#D4AF37">✦</span>Big C Laos Consultation โดยตรง (ฟรีทั้ง 5 วัน)</div>
-          <div class="pkg-feat" style="color:rgba(255,255,255,.75)"><span class="pf-check" style="color:#D4AF37">✦</span>ขนส่งฟรี 200 kg หนองคาย → เวียงจันทน์</div>
-          <div class="pkg-feat" style="color:rgba(255,255,255,.75)"><span class="pf-check" style="color:#D4AF37">✦</span>Dedicated Staff + Daily Report ครบ 5 วัน</div>
+          <div style="font-family:'Kanit',sans-serif;font-size:.6rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:rgba(212,175,55,.6);margin-bottom:1rem">เหมาะสำหรับ</div>
+          <div class="pkg-feat" style="color:rgba(255,255,255,.75)"><span class="pf-check" style="color:#D4AF37">✦</span>แบรนด์พรีเมียมที่มีทีมงานและดีไซน์บูทของตัวเองอยู่แล้ว</div>
+          <div class="pkg-feat" style="color:rgba(255,255,255,.75)"><span class="pf-check" style="color:#D4AF37">✦</span>หอการค้าจังหวัดที่ต้องการพื้นที่รวม Pavilion</div>
+          <div class="pkg-feat" style="color:rgba(255,255,255,.75)"><span class="pf-check" style="color:#D4AF37">✦</span>กลุ่มคลัสเตอร์ OTOP เกรดส่งออกที่ต้องพื้นที่โชว์สินค้าขนาดใหญ่</div>
+          <div class="pkg-feat" style="color:rgba(255,255,255,.75)"><span class="pf-check" style="color:#D4AF37">✦</span>แบรนด์ที่ต้องการความเป็นเอกลักษณ์ ไม่ใช้ Layout มาตรฐาน</div>
+          <button class="details-btn" onclick="toggleDetails(this)" style="border-color:rgba(212,175,55,.5);color:#D4AF37;margin-top:1rem">▸ ดูรายละเอียดแพ็กเกจ</button>
+          <div class="pkg-details" style="border-top-color:rgba(212,175,55,.2);color:rgba(255,255,255,.6)">
+            <p><strong style="color:#fff">พื้นที่:</strong> 3×6m = 18 ตร.ม. — ใหญ่กว่าบูทมาตรฐาน 2 เท่า ตำแหน่งกลางงาน</p>
+            <p><strong style="color:#fff">หมายเหตุ:</strong> พื้นที่เปล่า ไม่รวมโครงสร้างบูท ลูกค้าออกแบบและสร้างเองได้ทั้งหมด</p>
+          </div>
         </div>
-        <!-- Features col 2 -->
+        <!-- จุดเด่น -->
         <div style="padding:2rem">
-          <div style="font-family:'Kanit',sans-serif;font-size:.6rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:rgba(212,175,55,.6);margin-bottom:1rem">โบนัสพิเศษ Founder Only</div>
-          <div class="pkg-feat" style="color:rgba(255,255,255,.75)"><span class="pf-check" style="color:#F5D680">★</span>Logo บนสื่อประชาสัมพันธ์ทั้งหมด (Online + Offline)</div>
-          <div class="pkg-feat" style="color:rgba(255,255,255,.75)"><span class="pf-check" style="color:#F5D680">★</span>Main Stage Speaking Slot (10 นาที)</div>
-          <div class="pkg-feat" style="color:rgba(255,255,255,.75)"><span class="pf-check" style="color:#F5D680">★</span>VIP Networking Dinner — คืนวันที่ 28 พ.ค.</div>
-          <div class="pkg-feat" style="color:rgba(255,255,255,.75)"><span class="pf-check" style="color:#F5D680">★</span>Post-Event Buyer Report + Contact List</div>
-          <div class="pkg-feat" style="color:rgba(255,255,255,.75)"><span class="pf-check" style="color:#F5D680">★</span>0% Commission ตลอดงานและ Follow-up Period</div>
-          <div style="margin-top:1rem;padding:.75rem 1rem;background:rgba(237,28,36,.1);border:1px solid rgba(237,28,36,.25);border-radius:10px;font-family:'Kanit',sans-serif;font-size:.72rem;font-weight:700;color:#fc8181">⚡ มูลค่ารวม ฿55,000+ — ราคา Founder เพียง ฿39,000</div>
+          <div style="font-family:'Kanit',sans-serif;font-size:.6rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:rgba(212,175,55,.6);margin-bottom:1rem">จุดเด่นที่ต้องนำเสนอ</div>
+          <div class="pkg-feat" style="color:rgba(255,255,255,.75)"><span class="pf-check" style="color:#F5D680">★</span>18 ตร.ม. — ใหญ่กว่าบูทปกติ 2 เท่า จัดดิสเพลย์ได้อลังการ</div>
+          <div class="pkg-feat" style="color:rgba(255,255,255,.75)"><span class="pf-check" style="color:#F5D680">★</span>ตำแหน่งกลางงาน — Traffic สูงสุด เห็นได้จากทุกทิศ</div>
+          <div class="pkg-feat" style="color:rgba(255,255,255,.75)"><span class="pf-check" style="color:#F5D680">★</span>ดึงดูดสายตา สร้างภาพลักษณ์แบรนด์ระดับมืออาชีพ</div>
+          <div class="pkg-feat" style="color:rgba(255,255,255,.75)"><span class="pf-check" style="color:#F5D680">★</span>ราคาคุ้มค่าสำหรับงานแสดงสินค้าระดับนานาชาติ</div>
+          <div class="pkg-feat" style="color:rgba(255,255,255,.75)"><span class="pf-check" style="color:#F5D680">★</span>Priority B2B Matching + Big C Consultation</div>
+          <div style="margin-top:1rem;padding:.75rem 1rem;background:rgba(212,175,55,.08);border:1px solid rgba(212,175,55,.2);border-radius:10px;font-family:'Kanit',sans-serif;font-size:.72rem;font-weight:700;color:#F5D680">⭐ งานแสดงสินค้าระดับนานาชาติ ฿50,000 / 5 วัน = ฿10,000/วัน เท่านั้น</div>
         </div>
       </div>
     </div>
 
     <!-- Pricing Summary -->
     <div class="price-summary reveal d3">
-      <div class="psb-item"><div class="psb-num">60+</div><div class="psb-lbl">Total Booths</div></div>
+      <div class="psb-item"><div class="psb-num">5</div><div class="psb-lbl">Package Types</div></div>
       <div class="psb-div"></div>
       <div class="psb-item"><div class="psb-num gold">฿12K</div><div class="psb-lbl">เริ่มต้น</div></div>
       <div class="psb-div"></div>
@@ -1203,29 +1258,30 @@ div[data-lang].active,p[data-lang].active,h1[data-lang].active,li[data-lang].act
   </div>
   <div class="urgency-inner sec-inner">
     <div class="urg-slot reveal">
-      <div class="urg-zone" style="color:var(--gold2)">⭐ Premium Zone P</div>
-      <div class="urg-count" style="color:var(--gold2)"><span data-count="5">0</span><span style="font-size:1.5rem"> / 8</span></div>
-      <div class="urg-label">บูทที่ว่างเหลืออยู่</div>
-      <div class="urg-bar"><div class="urg-fill" style="width:62%;background:linear-gradient(90deg,var(--goldDk),var(--gold2))"></div></div>
+      <div class="urg-zone" style="color:#fbbf24">🏛️ Main Sponsor</div>
+      <div class="urg-count" style="color:#fbbf24"><span data-count="2">0</span><span style="font-size:1.5rem"> / 2</span></div>
+      <div class="urg-label">สิทธิ์คงเหลือ</div>
+      <div class="urg-bar"><div class="urg-fill" style="width:100%;background:linear-gradient(90deg,#92400e,#fbbf24)"></div></div>
       <div style="font-family:'Kanit',sans-serif;font-size:.65rem;font-weight:700;color:#ed1c24;margin-top:.625rem">🔥 เกือบเต็มแล้ว!</div>
     </div>
     <div class="urg-slot reveal d1">
-      <div class="urg-zone" style="color:#818CF8">🏪 Standard Zone B</div>
-      <div class="urg-count" style="color:#818CF8"><span data-count="14">0</span><span style="font-size:1.5rem"> / 20</span></div>
+      <div class="urg-zone" style="color:var(--gold2)">⭐ Zone P Premium</div>
+      <div class="urg-count" style="color:var(--gold2)"><span data-count="6">0</span><span style="font-size:1.5rem"> / 6</span></div>
       <div class="urg-label">บูทที่ว่างเหลืออยู่</div>
-      <div class="urg-bar"><div class="urg-fill" style="width:70%;background:linear-gradient(90deg,#4f46e5,#818CF8)"></div></div>
+      <div class="urg-bar"><div class="urg-fill" style="width:100%;background:linear-gradient(90deg,var(--goldDk),var(--gold2))"></div></div>
+      <div style="font-family:'Kanit',sans-serif;font-size:.65rem;font-weight:700;color:#ed1c24;margin-top:.625rem">🔥 เกือบเต็มแล้ว!</div>
     </div>
     <div class="urg-slot reveal d2">
-      <div class="urg-zone" style="color:#60a5fa">☕ Franchise Zone A</div>
-      <div class="urg-count" style="color:#60a5fa"><span data-count="7">0</span><span style="font-size:1.5rem"> / 12</span></div>
-      <div class="urg-label">บูทที่ว่างเหลืออยู่</div>
-      <div class="urg-bar"><div class="urg-fill" style="width:58%;background:linear-gradient(90deg,#1d4ed8,#60a5fa)"></div></div>
+      <div class="urg-zone" style="color:#818CF8">🚀 Accelerator Zone B</div>
+      <div class="urg-count" style="color:#818CF8"><span data-count="26">0</span><span style="font-size:1.5rem"> / 26</span></div>
+      <div class="urg-label">สิทธิ์คงเหลือ</div>
+      <div class="urg-bar"><div class="urg-fill" style="width:100%;background:linear-gradient(90deg,#4f46e5,#818CF8)"></div></div>
     </div>
     <div class="urg-slot reveal d3">
-      <div class="urg-zone" style="color:#fb923c">🍱 Food Zone C/D</div>
-      <div class="urg-count" style="color:#fb923c"><span data-count="18">0</span><span style="font-size:1.5rem"> / 22</span></div>
+      <div class="urg-zone" style="color:#60a5fa">☕ Franchise Zone A</div>
+      <div class="urg-count" style="color:#60a5fa"><span data-count="11">0</span><span style="font-size:1.5rem"> / 11</span></div>
       <div class="urg-label">บูทที่ว่างเหลืออยู่</div>
-      <div class="urg-bar"><div class="urg-fill" style="width:82%;background:linear-gradient(90deg,#c2410c,#fb923c)"></div></div>
+      <div class="urg-bar"><div class="urg-fill" style="width:100%;background:linear-gradient(90deg,#1d4ed8,#60a5fa)"></div></div>
     </div>
   </div>
   <div style="text-align:center;margin-top:2.5rem" class="reveal">
@@ -1278,10 +1334,11 @@ div[data-lang].active,p[data-lang].active,h1[data-lang].active,li[data-lang].act
             </select>
             <select class="f-input span2" id="r-pkg">
               <option value="">เลือกแพ็กเกจบูท</option>
-              <option>⭐ Premium Booth — Zone P (฿25,000) · 3×6m</option>
-              <option>☕ Franchise Zone — Zone A (฿18,000) · 2×3m</option>
-              <option>🏪 Standard Booth — Zone B (฿15,000) · 3×3m</option>
-              <option>🍱 Food Pavilion — Zone C/D (฿12,000) · 2×3m</option>
+              <option>🏛️ Main Sponsor Package (฿150,000) · บูทหน้าห้าง + Zone P</option>
+              <option>⭐ Zone P: Premium (฿50,000) · 3×6m พื้นที่เปล่า · 5 วัน</option>
+              <option>🚀 Accelerator 90 วัน (฿39,000) · Zone B 3×3m · Managed Service</option>
+              <option>☕ Franchise Zone (฿25,000) · Zone A 2×3m · 5 วัน</option>
+              <option>🍱 Food Pavilion (฿12,000) · Zone C/D 2×3m · 5 วัน</option>
             </select>
             <textarea class="f-input span2" id="r-note" placeholder="สินค้าที่ต้องการนำมาแสดง / หมายเหตุเพิ่มเติม" rows="3" style="resize:vertical"></textarea>
             <button class="f-submit span2" onclick="submitReg()">✦ ลงทะเบียนจองบูท — Mekong Growth Expo 2026</button>
@@ -1483,6 +1540,13 @@ function submitReg(){
     '</div>';
   const t=document.getElementById('toast');
   if(t){t.classList.add('show');setTimeout(()=>t.classList.remove('show'),4500);}
+}
+// ── DETAILS TOGGLE ──
+function toggleDetails(btn){
+  const details=btn.nextElementSibling;
+  const isVisible=details.style.display==='block';
+  details.style.display=isVisible?'none':'block';
+  btn.textContent=isVisible?'▸ ดูรายละเอียดแพ็กเกจ':'▾ ปิดรายละเอียด';
 }
 </script>
 </body>
