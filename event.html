@@ -350,14 +350,16 @@ div[data-lang].active,p[data-lang].active,h1[data-lang].active,li[data-lang].act
 ───────────────────────────── */
 .alliances-sec{padding:5rem 2rem;background:var(--navy)}
 .alliances-inner{max-width:1200px;margin:0 auto}
-.alliances-grid{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:1.5rem;margin-top:2.5rem}
-.alliance-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:1.25rem 2rem;display:flex;flex-direction:column;align-items:center;gap:.625rem;transition:all .25s;cursor:default}
-.alliance-card:hover{background:rgba(255,255,255,.09);border-color:rgba(201,162,39,.25);transform:translateY(-3px)}
-.al-logo{height:40px;display:flex;align-items:center;justify-content:center}
-.al-logo img{height:100%;width:auto;object-fit:contain;filter:brightness(10);opacity:.55;transition:all .25s}
-.alliance-card:hover .al-logo img{opacity:.8}
-.al-text{font-family:'Kanit',sans-serif;font-size:.9rem;font-weight:800;color:rgba(255,255,255,.5);letter-spacing:.1em}
-.al-name{font-family:'Kanit',sans-serif;font-size:.68rem;color:rgba(255,255,255,.4);text-align:center}
+.alliances-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1.25rem;margin-top:2.5rem;align-items:center;justify-items:center;padding:1rem 0}
+.alliance-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:1.5rem 1.75rem;display:flex;flex-direction:column;align-items:center;gap:.75rem;transition:all .3s;cursor:default;width:100%}
+.alliance-card:hover{background:rgba(255,255,255,.1);border-color:rgba(201,162,39,.35);transform:translateY(-4px);box-shadow:0 8px 28px rgba(0,0,0,.25)}
+.al-logo{height:55px;width:100%;display:flex;align-items:center;justify-content:center}
+.al-logo img{height:55px;width:auto;max-width:120px;object-fit:contain;filter:grayscale(.8) brightness(1.2);opacity:.8;transition:all .3s ease}
+.alliance-card:hover .al-logo img{filter:grayscale(0) brightness(1);opacity:1;transform:scale(1.08)}
+.al-logo svg{height:55px;width:auto;max-width:120px;filter:grayscale(.8) brightness(1.2);opacity:.8;transition:all .3s ease}
+.alliance-card:hover .al-logo svg{filter:grayscale(0) brightness(1);opacity:1;transform:scale(1.08)}
+.al-text{font-family:'Kanit',sans-serif;font-size:.9rem;font-weight:800;color:rgba(255,255,255,.65);letter-spacing:.1em}
+.al-name{font-family:'Kanit',sans-serif;font-size:.72rem;color:rgba(255,255,255,.45);text-align:center}
 
 /* ─────────────────────────────
    WHAT YOU GET (new zones section)
@@ -683,12 +685,12 @@ div[data-lang].active,p[data-lang].active,h1[data-lang].active,li[data-lang].act
   <div class="trust-inner reveal">
     <div class="trust-lbl">Strategic Partners</div>
     <div class="trust-logos">
-      <div class="trust-logo"><img src="images/Big-C.webp" alt="Big C Laos" loading="lazy"></div>
-      <div class="trust-logo"><img src="images/LITSE.webp" alt="LITSE" loading="lazy"></div>
-      <div class="trust-logo"><img src="images/VITH.webp" alt="VITH" loading="lazy"></div>
-      <div class="trust-logo"><img src="images/RB99.webp" alt="Royal Bridge 99" loading="lazy"></div>
-      <div class="trust-logo"><img src="images/BP.webp" alt="Boualapha" loading="lazy" onerror="this.parentNode.innerHTML='<span class=trust-logo-text>BP</span>'"></div>
-      <div class="trust-logo"><div class="trust-logo-text">ITACC</div></div>
+      <div class="trust-logo"><img src="images/Big_C.svg" alt="Big C Laos" loading="lazy" onerror="this.onerror=null;this.src='images/Big-C.webp'"></div>
+      <div class="trust-logo"><img src="images/LITSE.svg" alt="LITSE" loading="lazy" onerror="this.onerror=null;this.src='images/LITSE.webp'"></div>
+      <div class="trust-logo"><img src="images/VITH.svg" alt="VITH" loading="lazy" onerror="this.onerror=null;this.src='images/VITH.webp'"></div>
+      <div class="trust-logo"><img src="images/RB99.svg" alt="Royal Bridge 99" loading="lazy" onerror="this.onerror=null;this.src='images/RB99.webp'"></div>
+      <div class="trust-logo"><img src="images/5.svg" alt="Boualapha" loading="lazy" onerror="this.onerror=null;this.src='images/BP.webp';this.onerror=function(){this.parentNode.innerHTML='<span class=trust-logo-text>BP</span>'}"></div>
+      <div class="trust-logo"><img src="images/ITACC.svg" alt="ITACC" loading="lazy" onerror="this.onerror=null;this.src='images/ITACC.webp';this.onerror=function(){this.parentNode.innerHTML='<div class=trust-logo-text>ITACC</div>'}"></div>
     </div>
   </div>
 </div>
@@ -1208,12 +1210,30 @@ div[data-lang].active,p[data-lang].active,h1[data-lang].active,li[data-lang].act
       <h2 class="sec-title" style="color:#fff">Strategic <span style="color:var(--gold2)">Alliances</span></h2>
     </div>
     <div class="alliances-grid reveal d1">
-      <div class="alliance-card"><div class="al-logo"><img src="images/Big-C.webp" alt="Big C Laos" loading="lazy" onerror="this.parentNode.innerHTML='<div class=al-text>BIG C</div>'"></div><div class="al-name">Big C Laos</div></div>
-      <div class="alliance-card"><div class="al-logo"><img src="images/LITSE.webp" alt="LITSE" loading="lazy" onerror="this.parentNode.innerHTML='<div class=al-text>LITSE</div>'"></div><div class="al-name">Lao Gov. Trade</div></div>
-      <div class="alliance-card"><div class="al-logo"><img src="images/VITH.webp" alt="VITH" loading="lazy" onerror="this.parentNode.innerHTML='<div class=al-text>VITH</div>'"></div><div class="al-name">VITH Organization</div></div>
-      <div class="alliance-card"><div class="al-logo"><img src="images/RB99.webp" alt="Royal Bridge 99" loading="lazy" onerror="this.parentNode.innerHTML='<div class=al-text>RB99</div>'"></div><div class="al-name">Royal Bridge 99</div></div>
-      <div class="alliance-card"><div class="al-logo"><div class="al-text">ITACC</div></div><div class="al-name">Trade Council</div></div>
-      <div class="alliance-card"><div class="al-logo"><img src="images/BP.webp" alt="BP" loading="lazy" onerror="this.parentNode.innerHTML='<div class=al-text>BP</div>'"></div><div class="al-name">Boualapha Agri</div></div>
+      <div class="alliance-card">
+        <div class="al-logo"><img src="images/Big_C.svg" alt="Big C Laos" loading="lazy" onerror="this.onerror=null;this.src='images/Big-C.webp';this.onerror=function(){this.parentNode.innerHTML='<div class=al-text>BIG C</div>'}"></div>
+        <div class="al-name">Big C Laos</div>
+      </div>
+      <div class="alliance-card">
+        <div class="al-logo"><img src="images/LITSE.svg" alt="LITSE" loading="lazy" onerror="this.onerror=null;this.src='images/LITSE.webp';this.onerror=function(){this.parentNode.innerHTML='<div class=al-text>LITSE</div>'}"></div>
+        <div class="al-name">Lao Gov. Trade</div>
+      </div>
+      <div class="alliance-card">
+        <div class="al-logo"><img src="images/VITH.svg" alt="VITH" loading="lazy" onerror="this.onerror=null;this.src='images/VITH.webp';this.onerror=function(){this.parentNode.innerHTML='<div class=al-text>VITH</div>'}"></div>
+        <div class="al-name">VITH Organization</div>
+      </div>
+      <div class="alliance-card">
+        <div class="al-logo"><img src="images/RB99.svg" alt="Royal Bridge 99" loading="lazy" onerror="this.onerror=null;this.src='images/RB99.webp';this.onerror=function(){this.parentNode.innerHTML='<div class=al-text>RB99</div>'}"></div>
+        <div class="al-name">Royal Bridge 99</div>
+      </div>
+      <div class="alliance-card">
+        <div class="al-logo"><img src="images/ITACC.svg" alt="ITACC" loading="lazy" onerror="this.onerror=null;this.src='images/ITACC.webp';this.onerror=function(){this.parentNode.innerHTML='<div class=al-text>ITACC</div>'}"></div>
+        <div class="al-name">Trade Council</div>
+      </div>
+      <div class="alliance-card">
+        <div class="al-logo"><img src="images/5.svg" alt="Boualapha" loading="lazy" onerror="this.onerror=null;this.src='images/BP.webp';this.onerror=function(){this.parentNode.innerHTML='<div class=al-text>BP</div>'}"></div>
+        <div class="al-name">Boualapha Agri</div>
+      </div>
     </div>
   </div>
 </section>
