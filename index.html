@@ -2,1032 +2,556 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VITH HUB — Mekong Growth Expo 2026 | Grow Big C · Go Global</title>
-<meta name="description" content="VITH HUB แพลตฟอร์มความร่วมมือรัฐ-เอกชน Business Matching และ Managed Showroom เชื่อมธุรกิจไทยสู่ลาว จีน รัสเซีย ผ่าน Big C เวียงจันทน์ · Mekong Growth Expo 28 พ.ค.–1 มิ.ย. 2026">
-<meta property="og:title" content="VITH HUB — Mekong Growth Expo 2026 | Grow Big C · Go Global">
-<meta property="og:description" content="Grow Big C — Go Global. Thai Brands Expansion Expo at Big C Vientiane · 28 May–1 June 2026">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>VITH HUB — Mekong Trade Gateway Platform</title>
+<meta name="description" content="VITH HUB คือ Mekong Trade Gateway Platform เชื่อมสินค้าไทยสู่ตลาดลาว เวียดนาม จีน และ Global Buyers ผ่าน Expo · Accelerator · Membership">
+<meta property="og:title" content="VITH HUB — Mekong Trade Gateway">
+<meta property="og:description" content="Gateway For Thai Brands To Enter Laos And Global Markets">
 <meta property="og:type" content="website">
-<meta property="og:image" content="images/hero-bigc.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kanit:wght@400;500;600;700;800;900&family=Noto+Sans+Thai:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/vith-design.css">
 <style>
-/* ── Reset & Base ── */
-*{margin:0;padding:0;box-sizing:border-box}
-html{font-size:16px;scroll-behavior:smooth}
-body{font-family:'Noto Sans Thai','Kanit',sans-serif;color:#1a202c;background:#fff;overflow-x:hidden}
-img{max-width:100%;display:block}
-a{text-decoration:none}
-
-/* ── Variables ── */
+/* ── INDEX PAGE SPECIFIC STYLES ── */
 :root{
-  --navy:#0d1b3e;
-  --navy2:#1E3A8A;
-  --navy3:#162d6e;
-  --gold:#D4A017;
-  --gold2:#fbbf24;
-  --red:#E31E24;
-  --white:#fff;
-  --bg:#f8fafc;
-  --text:#1a202c;
-  --sub:#4a5568;
-  --border:#e2e8f0;
-  --radius:12px;
+  --navy:#0f172a; --navy2:#1e293b; --navy3:#020617;
+  --gold:#EAB308; --gold2:#FCD34D; --gold3:#FEF3C7; --goldDk:#A16207;
+  --sub:rgba(255,255,255,.58); --subl:rgba(255,255,255,.35);
+  --border:rgba(255,255,255,.08); --borderG:rgba(234,179,8,.2);
 }
+body{ background:#0f172a; color:#fff; }
+@keyframes floatLogo{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes glow{0%,100%{filter:drop-shadow(0 0 20px rgba(234,179,8,.3))}50%{filter:drop-shadow(0 0 40px rgba(234,179,8,.6))}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(234,179,8,.4)}70%{box-shadow:0 0 0 10px rgba(234,179,8,0)}}
+@keyframes orbitDot{0%{transform:rotate(0deg) translateX(90px) rotate(0deg)}100%{transform:rotate(360deg) translateX(90px) rotate(-360deg)}}
 
-/* ── NAV ── */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:200;
-  background:rgba(255,255,255,0.97);backdrop-filter:blur(20px);
-  border-bottom:1px solid var(--border);
-  padding:0.75rem 2rem;
-  display:flex;align-items:center;justify-content:space-between;gap:1rem;
-  box-shadow:0 1px 12px rgba(0,0,0,0.06);
-}
-.nav-logo{
-  font-family:'Bebas Neue',sans-serif;font-size:1.75rem;
-  letter-spacing:0.1em;color:var(--navy2);white-space:nowrap;
-}
-.nav-logo span{color:var(--gold)}
-.nav-links{display:flex;align-items:center;gap:0.5rem}
-.nav-link{
-  font-family:'Kanit',sans-serif;font-size:0.82rem;font-weight:600;
-  color:var(--navy2);padding:7px 14px;border-radius:8px;
-  border:1px solid transparent;transition:all 0.2s;min-height:36px;
-  display:inline-flex;align-items:center;gap:5px;
-}
-.nav-link:hover{border-color:rgba(30,58,138,0.2);background:rgba(30,58,138,0.05)}
-.nav-link.primary{
-  background:linear-gradient(90deg,#92400e,#b45309);
-  color:#fbbf24;border-color:transparent;
-}
-.nav-link.primary:hover{opacity:0.9}
-.lang-group{display:flex;gap:3px}
-.lang-btn{
-  font-family:'Kanit',sans-serif;font-size:0.72rem;font-weight:700;
-  padding:5px 9px;border-radius:6px;
-  border:1px solid rgba(30,58,138,0.2);background:transparent;
-  color:var(--navy2);cursor:pointer;transition:all 0.2s;
-}
-.lang-btn.active{background:var(--navy2);color:#fff;border-color:var(--navy2)}
+/* TICKER */
+.ticker{height:36px;background:linear-gradient(90deg,var(--goldDk),var(--gold),var(--gold2),var(--gold),var(--goldDk));background-size:200% auto;animation:shimmer 5s linear infinite;overflow:hidden;display:flex;align-items:center}
+.ticker-track{display:flex;white-space:nowrap;animation:ticker 30s linear infinite}
+.ticker-item{font-family:'Inter',sans-serif;font-size:12px;font-weight:700;color:var(--navy);padding:0 28px;letter-spacing:.06em;flex-shrink:0}
 
-/* ── HERO ── */
-.hero{
-  position:relative;min-height:95vh;
-  display:flex;align-items:center;overflow:hidden;
-}
-.hero-bg{position:absolute;inset:0}
-.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center}
-.hero-overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(135deg,
-    rgba(8,15,40,0.88) 0%,
-    rgba(20,50,120,0.72) 55%,
-    rgba(8,15,40,0.82) 100%);
-}
-.hero-inner{
-  position:relative;z-index:2;
-  max-width:900px;margin:0 auto;
-  padding:7rem 2rem 5rem;
-  text-align:center;
-}
-.hero-badge{
-  display:inline-flex;align-items:center;gap:8px;
-  background:rgba(212,160,23,0.15);border:1px solid rgba(212,160,23,0.45);
-  color:#fbbf24;font-family:'Kanit',sans-serif;
-  font-size:0.72rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;
-  padding:7px 20px;border-radius:99px;margin-bottom:1.75rem;
-  animation:fadeSlideDown 0.8s ease both;
-}
-.hero-tagline{
-  font-family:'Kanit',sans-serif;font-weight:400;
-  font-size:clamp(1rem,2.5vw,1.2rem);
-  color:rgba(255,255,255,0.65);
-  letter-spacing:0.15em;text-transform:uppercase;
-  margin-bottom:0.75rem;
-  animation:fadeSlideDown 0.8s 0.1s ease both;
-}
-.hero-title{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:clamp(3.2rem,11vw,7.5rem);
-  color:#fff;letter-spacing:0.03em;line-height:0.95;
-  margin-bottom:0.5rem;
-  animation:fadeSlideDown 0.8s 0.15s ease both;
-}
-.hero-title .gold{
-  background:linear-gradient(90deg,#D4A017,#fde68a,#D4A017);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-}
-.hero-subtitle{
-  font-family:'Kanit',sans-serif;font-weight:500;
-  font-size:clamp(1rem,2.5vw,1.35rem);color:rgba(255,255,255,0.78);
-  margin-bottom:1rem;letter-spacing:0.05em;
-  animation:fadeSlideDown 0.8s 0.2s ease both;
-}
-.hero-desc{
-  font-size:0.9375rem;color:rgba(255,255,255,0.6);
-  max-width:580px;margin:0 auto 2.25rem;line-height:1.8;
-  animation:fadeSlideDown 0.8s 0.25s ease both;
-}
-.hero-pills{
-  display:flex;gap:0.625rem;justify-content:center;flex-wrap:wrap;
-  margin-bottom:2.5rem;
-  animation:fadeSlideDown 0.8s 0.3s ease both;
-}
-.hero-pill{
-  background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.18);
-  color:rgba(255,255,255,0.75);font-family:'Kanit',sans-serif;
-  font-size:0.78rem;font-weight:600;padding:6px 14px;border-radius:99px;
-}
-.hero-btns{
-  display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;
-  margin-bottom:3rem;
-  animation:fadeSlideDown 0.8s 0.35s ease both;
-}
-.btn-primary{
-  background:linear-gradient(90deg,#D4A017,#fbbf24);color:#1a0a00;
-  font-family:'Kanit',sans-serif;font-weight:800;font-size:1rem;
-  padding:14px 32px;border-radius:var(--radius);
-  display:inline-flex;align-items:center;gap:8px;min-height:52px;
-  box-shadow:0 6px 28px rgba(212,160,23,0.45);transition:all 0.25s;
-}
-.btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(212,160,23,0.6)}
-.btn-outline{
-  background:transparent;border:2px solid rgba(255,255,255,0.4);
-  color:#fff;font-family:'Kanit',sans-serif;font-weight:700;font-size:1rem;
-  padding:13px 28px;border-radius:var(--radius);
-  display:inline-flex;align-items:center;gap:8px;min-height:52px;
-  transition:all 0.25s;
-}
-.btn-outline:hover{border-color:#fff;background:rgba(255,255,255,0.1)}
-.btn-gold-outline{
-  background:transparent;border:2px solid rgba(212,160,23,0.6);
-  color:#fbbf24;font-family:'Kanit',sans-serif;font-weight:700;font-size:1rem;
-  padding:13px 28px;border-radius:var(--radius);
-  display:inline-flex;align-items:center;gap:8px;min-height:52px;
-  transition:all 0.25s;
-}
-.btn-gold-outline:hover{border-color:#fbbf24;background:rgba(212,160,23,0.12)}
-.hero-stats{
-  display:flex;align-items:center;justify-content:center;gap:0;
-  background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);
-  border-radius:18px;overflow:hidden;max-width:580px;margin:0 auto;
-  animation:fadeSlideDown 0.8s 0.4s ease both;
-}
-.h-stat{padding:1.125rem 1.75rem;text-align:center;flex:1}
-.h-stat+.h-stat{border-left:1px solid rgba(255,255,255,0.08)}
-.h-stat-num{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;color:#fbbf24;line-height:1}
-.h-stat-label{font-size:0.68rem;color:rgba(255,255,255,0.45);letter-spacing:0.1em;margin-top:2px}
+/* NAVBAR */
+.navbar{position:sticky;top:0;z-index:900;height:64px;background:rgba(15,23,42,.94);backdrop-filter:blur(24px) saturate(1.5);-webkit-backdrop-filter:blur(24px) saturate(1.5);border-bottom:1px solid rgba(234,179,8,.18);transition:all .25s}
+.navbar.scrolled{background:rgba(2,6,23,.97);box-shadow:0 2px 24px rgba(0,0,0,.3)}
+.navbar-inner{max-width:1200px;margin:0 auto;height:64px;padding:0 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.navbar-logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.logo-mark{width:36px;height:36px;border-radius:9px;background:linear-gradient(135deg,var(--goldDk),var(--gold),var(--gold2));display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1rem;color:var(--navy3);flex-shrink:0;box-shadow:0 2px 12px rgba(234,179,8,.3)}
+.logo-text{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.1rem;font-weight:800;color:#fff;letter-spacing:-.01em;line-height:1}
+.logo-text span{color:var(--gold2)}
+.logo-sub{font-family:'Inter',sans-serif;font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--subl);display:block;margin-top:2px}
+.logo-stack{display:flex;flex-direction:column}
+.navbar-links{display:flex;align-items:center;gap:2px}
+.nav-a{font-family:'Inter',sans-serif;font-size:13.5px;font-weight:500;color:var(--sub);padding:7px 13px;border-radius:8px;transition:all .25s;white-space:nowrap}
+.nav-a:hover,.nav-a.active{color:#fff;background:rgba(255,255,255,.08)}
+.navbar-right{display:flex;align-items:center;gap:10px}
+.btn-nav{font-family:'Plus Jakarta Sans',sans-serif;font-size:13.5px;font-weight:700;background:linear-gradient(135deg,var(--goldDk),var(--gold),var(--gold2));color:var(--navy);padding:9px 20px;border-radius:8px;border:none;display:inline-flex;align-items:center;gap:6px;transition:all .25s;box-shadow:0 2px 10px rgba(234,179,8,.25);text-decoration:none;letter-spacing:-.01em}
+.btn-nav:hover{transform:translateY(-1px);box-shadow:0 8px 32px rgba(234,179,8,.3)}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:6px;cursor:pointer}
+.hamburger span{display:block;width:22px;height:2px;background:rgba(255,255,255,.8);border-radius:2px;transition:all .25s}
+.mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(2,6,23,.99);backdrop-filter:blur(20px);padding:20px;border-bottom:1px solid rgba(234,179,8,.2);flex-direction:column;gap:4px;z-index:898;box-shadow:0 16px 40px rgba(0,0,0,.3)}
+.mobile-menu.open{display:flex}
+.mob-link{font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:600;color:rgba(255,255,255,.65);padding:11px 14px;border-radius:8px}
+.mob-cta{font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:700;background:linear-gradient(135deg,var(--goldDk),var(--gold));color:var(--navy3);padding:13px 20px;border-radius:8px;text-align:center;margin-top:10px}
 
-/* ── SECTIONS ── */
-.section{padding:5rem 2rem}
-.section-center{max-width:1080px;margin:0 auto}
-.s-eyebrow{
-  font-family:'Kanit',sans-serif;font-size:0.72rem;font-weight:700;
-  letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);
-  margin-bottom:0.75rem;
-}
-.s-title{
-  font-family:'Kanit',sans-serif;font-weight:900;
-  font-size:clamp(1.6rem,4vw,2.6rem);
-  color:var(--navy);line-height:1.2;margin-bottom:0.75rem;
-}
-.s-title em{font-style:normal;color:var(--navy2)}
-.s-sub{
-  font-size:0.9375rem;color:var(--sub);
-  max-width:580px;line-height:1.75;
-}
+/* BUTTONS */
+.btn-primary{font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:700;background:linear-gradient(135deg,var(--goldDk),var(--gold),var(--gold2));color:var(--navy3);padding:14px 28px;border-radius:12px;border:none;display:inline-flex;align-items:center;gap:8px;transition:all .25s;box-shadow:0 4px 16px rgba(234,179,8,.28);text-decoration:none;letter-spacing:-.01em;cursor:pointer}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(234,179,8,.35)}
+.btn-ghost{font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:600;color:rgba(255,255,255,.75);background:rgba(255,255,255,.06);padding:13px 24px;border-radius:12px;border:1px solid rgba(255,255,255,.15);display:inline-flex;align-items:center;gap:8px;transition:all .25s;text-decoration:none;backdrop-filter:blur(8px)}
+.btn-ghost:hover{color:#fff;background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.3);transform:translateY(-1px)}
+.btn-lg{padding:16px 36px;font-size:16px}
 
-/* ── ABOUT ── */
-#about{background:#fff;border-bottom:1px solid var(--border)}
-.about-grid{
-  display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;
-}
-@media(max-width:720px){.about-grid{grid-template-columns:1fr;gap:2.5rem}}
-.about-text{font-size:0.9375rem;color:var(--sub);line-height:1.8;margin-bottom:1rem}
-.about-pills{display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:1.25rem}
-.about-pill{
-  background:rgba(30,58,138,0.07);border:1px solid rgba(30,58,138,0.15);
-  color:var(--navy2);font-family:'Kanit',sans-serif;font-size:0.8rem;font-weight:600;
-  padding:5px 14px;border-radius:99px;
-}
-.about-img{border-radius:20px;overflow:hidden;box-shadow:0 12px 48px rgba(0,0,0,0.1)}
-.about-img img{width:100%;height:300px;object-fit:cover}
+/* HERO */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;background:linear-gradient(135deg,#0f172a,#1e293b,#020617)}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 55% at 15% 45%,rgba(234,179,8,.07) 0%,transparent 55%),radial-gradient(ellipse 55% 70% at 80% 20%,rgba(30,58,138,.5) 0%,transparent 50%);pointer-events:none}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(234,179,8,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(234,179,8,.04) 1px,transparent 1px);background-size:64px 64px;pointer-events:none}
+.hero-orb{position:absolute;right:5%;top:50%;transform:translateY(-50%);width:340px;height:340px;pointer-events:none}
+.orb-core{position:absolute;top:50%;left:50%;width:110px;height:110px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,var(--gold) 0%,var(--goldDk) 55%,transparent 100%);animation:glow 5s ease-in-out infinite,floatLogo 6s ease-in-out infinite;box-shadow:0 0 60px rgba(234,179,8,.4),0 0 120px rgba(234,179,8,.12)}
+.orb-ring{position:absolute;inset:0;border-radius:50%;border:1px solid rgba(234,179,8,.15)}
+.orb-ring2{position:absolute;inset:30px;border-radius:50%;border:1px solid rgba(234,179,8,.07)}
+.orb-dot{position:absolute;top:50%;left:50%;width:8px;height:8px;border-radius:50%;margin:-4px 0 0 -4px}
+.orb-d1{background:var(--gold2);animation:orbitDot 8s linear infinite}
+.orb-d2{background:rgba(255,255,255,.6);animation:orbitDot 12s linear infinite;animation-delay:-4s}
+.orb-tag{position:absolute;font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;color:var(--subl)}
+.orb-tag-th{bottom:-32px;left:50%;transform:translateX(-50%)}
+.orb-tag-la{top:-32px;left:50%;transform:translateX(-50%);color:var(--gold2)}
+.orb-tag-cn{right:-50px;top:50%;transform:translateY(-50%);color:rgba(96,165,250,.7)}
+.orb-tag-gl{left:-46px;top:50%;transform:translateY(-50%)}
+.hero-inner{position:relative;z-index:10;max-width:1200px;width:100%;margin:0 auto;padding:0 20px}
+.hero-content{max-width:660px;padding:120px 0 100px}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold2);padding:6px 14px;border:1px solid var(--borderG);border-radius:20px;background:rgba(234,179,8,.07);margin-bottom:28px;animation:fadeUp .7s .1s both}
+.hero-dot{width:5px;height:5px;border-radius:50%;background:var(--gold2);flex-shrink:0;animation:pulse 2s infinite}
+.hero-h1{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(40px,5.5vw,72px);font-weight:800;color:#fff;line-height:1.05;letter-spacing:-.035em;margin-bottom:20px;animation:fadeUp .7s .2s both}
+.hero-h1 .gradient{background:linear-gradient(90deg,var(--gold),var(--gold2),#fef9c3,var(--gold2),var(--gold));background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 6s linear 1s infinite}
+.hero-sub{font-family:'Plus Jakarta Sans',sans-serif;font-size:22px;font-weight:600;color:rgba(255,255,255,.7);line-height:1.4;margin-bottom:16px;animation:fadeUp .7s .3s both}
+.hero-body{font-family:'Inter',sans-serif;font-size:16px;color:rgba(255,255,255,.5);line-height:1.75;max-width:520px;margin-bottom:40px;animation:fadeUp .7s .35s both}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;animation:fadeUp .7s .4s both}
+.hero-metrics{display:flex;gap:40px;flex-wrap:wrap;margin-top:56px;padding-top:40px;border-top:1px solid rgba(255,255,255,.08);animation:fadeUp .7s .5s both}
+.hm-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:40px;font-weight:800;color:#fff;line-height:1;letter-spacing:-.03em;margin-bottom:4px}
+.hm-num em{font-style:normal;color:var(--gold2)}
+.hm-lbl{font-family:'Inter',sans-serif;font-size:12px;color:var(--subl);letter-spacing:.04em}
 
-/* ── EVENT TEASER ── */
-#event-teaser{
-  background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);
-  text-align:center;
-}
-.et-title{
-  font-family:'Bebas Neue',sans-serif;font-size:clamp(2.2rem,6vw,4.5rem);
-  color:#fff;letter-spacing:0.04em;margin-bottom:0.5rem;
-}
-.et-title span{color:var(--gold2)}
-.et-sub{color:rgba(255,255,255,0.6);font-size:0.9375rem;
-  max-width:540px;margin:0 auto 2.5rem;line-height:1.7}
-.et-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  gap:1.25rem;margin-bottom:2.5rem;
-}
-@media(max-width:640px){.et-grid{grid-template-columns:1fr}}
-.et-card{
-  background:rgba(255,255,255,0.06);
-  border:1px solid rgba(255,255,255,0.1);
-  border-top:3px solid var(--gold);
-  border-radius:16px;padding:1.5rem 1.25rem;text-align:left;
-}
-.et-icon{font-size:1.75rem;margin-bottom:0.625rem}
-.et-name{font-family:'Kanit',sans-serif;font-weight:700;color:#fff;
-  font-size:0.9375rem;margin-bottom:0.375rem}
-.et-desc{font-size:0.8125rem;color:rgba(255,255,255,0.5);line-height:1.6}
-.et-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-.btn-et{
-  background:linear-gradient(90deg,#D4A017,#fbbf24);color:#1a0a00;
-  font-family:'Kanit',sans-serif;font-weight:800;font-size:1rem;
-  padding:14px 32px;border-radius:var(--radius);
-  display:inline-flex;align-items:center;gap:8px;min-height:52px;
-  box-shadow:0 6px 24px rgba(212,160,23,0.4);transition:all 0.25s;
-}
-.btn-et:hover{transform:translateY(-2px)}
-.btn-et-ghost{
-  background:transparent;border:2px solid rgba(255,255,255,0.3);color:#fff;
-  font-family:'Kanit',sans-serif;font-weight:700;font-size:1rem;
-  padding:13px 28px;border-radius:var(--radius);
-  display:inline-flex;align-items:center;gap:8px;min-height:52px;
-  transition:all 0.25s;
-}
-.btn-et-ghost:hover{border-color:#fff}
+/* TRUST */
+.trust-sec{padding:72px 20px;background:linear-gradient(180deg,#0f172a,#1e293b)}
+.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:48px}
+.trust-card{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:16px;padding:32px;transition:all .25s;position:relative;overflow:hidden}
+.trust-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold2),transparent);opacity:0;transition:opacity .35s}
+.trust-card:hover{background:rgba(255,255,255,.06);border-color:var(--borderG);transform:translateY(-4px)}
+.trust-card:hover::before{opacity:1}
+.trust-icon{font-size:2.25rem;margin-bottom:20px;display:block;animation:floatLogo 5s ease-in-out infinite}
+.trust-card:nth-child(2) .trust-icon{animation-delay:.8s}
+.trust-card:nth-child(3) .trust-icon{animation-delay:1.6s}
+.trust-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:22px;font-weight:700;color:#fff;margin-bottom:10px;letter-spacing:-.015em}
+.trust-desc{font-family:'Inter',sans-serif;font-size:15px;color:var(--sub);line-height:1.7}
 
-/* ── WHY ── */
-#why{background:var(--bg)}
-.why-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.5rem;
-}
-@media(max-width:720px){.why-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:480px){.why-grid{grid-template-columns:1fr}}
-.why-card{
-  background:#fff;border:1px solid var(--border);border-radius:16px;
-  padding:1.5rem;transition:all 0.25s;
-}
-.why-card:hover{box-shadow:0 8px 32px rgba(30,58,138,0.1);transform:translateY(-3px);border-color:rgba(30,58,138,0.2)}
-.why-icon{font-size:2rem;margin-bottom:0.75rem}
-.why-name{font-family:'Kanit',sans-serif;font-weight:700;color:var(--navy);
-  font-size:1rem;margin-bottom:0.375rem}
-.why-desc{font-size:0.8125rem;color:var(--sub);line-height:1.65}
+/* WHAT IS VITH */
+.vith-sec{padding:80px 20px;background:#0f172a}
+.sec-eyebrow{font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--goldDk);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.sec-eyebrow::before{content:'';width:24px;height:2px;background:var(--gold);border-radius:2px;flex-shrink:0}
+.sec-eyebrow.center{justify-content:center}.sec-eyebrow.center::before{display:none}
+.sec-h2{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(26px,3.5vw,40px);font-weight:700;color:#fff;line-height:1.2;letter-spacing:-.025em;margin-bottom:16px}
+.sec-h2 em{font-style:italic;opacity:.45;font-weight:600}
+.sec-lead{font-family:'Inter',sans-serif;font-size:17px;color:var(--sub);line-height:1.75;max-width:560px}
+.sec-lead.center{margin:0 auto;text-align:center}
+.vith-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
+.vith-card{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:16px;padding:32px;transition:all .25s;cursor:default;position:relative;overflow:hidden}
+.vith-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent);transform:scaleX(0);transform-origin:center;transition:transform .35s}
+.vith-card:hover{background:rgba(255,255,255,.07);border-color:var(--borderG);transform:translateY(-4px)}
+.vith-card:hover::after{transform:scaleX(1)}
+.vc-icon{width:52px;height:52px;border-radius:12px;background:rgba(234,179,8,.1);border:1px solid var(--borderG);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:24px}
+.vc-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:64px;font-weight:800;color:rgba(234,179,8,.06);position:absolute;top:16px;right:20px;line-height:1;letter-spacing:-.04em}
+.vc-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;font-weight:700;color:#fff;margin-bottom:8px;letter-spacing:-.01em}
+.vc-desc{font-family:'Inter',sans-serif;font-size:15px;color:var(--sub);line-height:1.7}
+.vc-link{display:inline-flex;align-items:center;gap:5px;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;color:var(--gold2);margin-top:20px;transition:gap .2s}
+.vc-link:hover{gap:10px}
 
-/* ── TRADE MAP ── */
-#connectivity{
-  background:linear-gradient(160deg,#0f1f4a 0%,#1a3a7a 30%,#0d2448 60%,#162040 100%);
-  border-top:1px solid rgba(99,149,255,0.15);
-  border-bottom:1px solid rgba(99,149,255,0.15);
-  position:relative;overflow:hidden;
-}
-/* animated aurora layers */
-#connectivity::before{
-  content:'';position:absolute;inset:0;
-  background:
-    radial-gradient(ellipse 70% 50% at 20% 60%, rgba(212,160,23,0.08) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 70% at 80% 30%, rgba(79,142,247,0.1) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 40% at 50% 80%, rgba(30,58,138,0.2) 0%, transparent 70%);
-  animation:auroraShift 8s ease-in-out infinite alternate;
-  pointer-events:none;
-}
-/* floating dot particles */
-#connectivity::after{
-  content:'';position:absolute;inset:0;
-  background-image:
-    radial-gradient(circle, rgba(255,255,255,0.35) 1px, transparent 1px),
-    radial-gradient(circle, rgba(212,160,23,0.25) 1px, transparent 1px);
-  background-size:80px 80px, 130px 130px;
-  background-position:0 0, 40px 40px;
-  animation:particleDrift 20s linear infinite;
-  pointer-events:none;opacity:0.6;
-}
-@keyframes auroraShift{
-  0%{opacity:0.6;transform:scale(1) rotate(0deg)}
-  100%{opacity:1;transform:scale(1.08) rotate(2deg)}
-}
-@keyframes particleDrift{
-  0%{transform:translate(0,0)}
-  100%{transform:translate(-80px,-80px)}
-}
-#connectivity .section{position:relative;z-index:1}
-#connectivity .s-eyebrow{
-  color:#fbbf24;
-  text-shadow:0 0 20px rgba(251,191,36,0.5);
-}
-#connectivity .s-title{
-  color:#fff;
-  text-shadow:0 2px 20px rgba(30,58,138,0.4);
-}
-#connectivity .s-sub{color:rgba(255,255,255,0.7)}
-/* map container glow frame */
-.map-frame{
-  position:relative;border-radius:20px;overflow:hidden;
-  box-shadow:
-    0 0 0 1px rgba(99,149,255,0.2),
-    0 8px 40px rgba(30,58,138,0.4),
-    0 0 80px rgba(212,160,23,0.06);
-}
-.map-frame::before{
-  content:'';position:absolute;inset:0;border-radius:20px;
-  background:linear-gradient(135deg,rgba(212,160,23,0.06),transparent 40%,rgba(79,142,247,0.04));
-  pointer-events:none;z-index:2;
-}
-/* animated route paths */
-.route-animated{
-  stroke-dashoffset:0;
-  animation:routePulse 3s ease-in-out infinite;
-}
-@keyframes routePulse{
-  0%,100%{opacity:1}50%{opacity:0.5}
-}
+/* PROGRAMS */
+.programs-sec{padding:80px 20px;background:linear-gradient(180deg,#0f172a,#020617);position:relative;overflow:hidden}
+.programs-sec::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:500px;background:radial-gradient(ellipse,rgba(234,179,8,.06) 0%,transparent 65%);pointer-events:none}
+.prog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px;position:relative;z-index:1}
+.prog-card{border-radius:24px;overflow:hidden;position:relative;transition:all .25s;display:flex;flex-direction:column;min-height:420px}
+.prog-card:hover{transform:translateY(-6px);box-shadow:0 24px 64px rgba(0,0,0,.4)}
+.pc-expo{background:linear-gradient(145deg,#0f1e3d,#1a3560)}
+.pc-expo .pc-top-line{background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent)}
+.pc-acc{background:linear-gradient(145deg,#1c1200,#3d2d00);border:1px solid rgba(234,179,8,.3)}
+.pc-acc .pc-top-line{background:linear-gradient(90deg,transparent,var(--gold),var(--gold2),var(--gold),transparent)}
+.pc-mem{background:linear-gradient(145deg,#060f1f,#0f172a)}
+.pc-mem .pc-top-line{background:linear-gradient(90deg,transparent,rgba(99,149,255,.35),transparent)}
+.pc-top-line{position:absolute;top:0;left:0;right:0;height:3px}
+.pc-inner{padding:36px;flex:1;display:flex;flex-direction:column;position:relative;z-index:1}
+.pc-watermark{position:absolute;bottom:12px;right:20px;font-family:'Plus Jakarta Sans',sans-serif;font-size:100px;font-weight:800;line-height:1;pointer-events:none;user-select:none;letter-spacing:-.04em}
+.pc-expo .pc-watermark{color:rgba(255,255,255,.04)}
+.pc-acc .pc-watermark{color:rgba(234,179,8,.06)}
+.pc-mem .pc-watermark{color:rgba(255,255,255,.03)}
+.pc-badge{font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border-radius:20px;display:inline-block;margin-bottom:24px}
+.pc-expo .pc-badge{background:rgba(255,255,255,.07);color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.1)}
+.pc-acc .pc-badge{background:rgba(234,179,8,.15);color:var(--gold2);border:1px solid var(--borderG)}
+.pc-mem .pc-badge{background:rgba(99,149,255,.08);color:rgba(99,149,255,.7);border:1px solid rgba(99,149,255,.18)}
+.pc-icon{font-size:2.25rem;margin-bottom:20px;display:block;animation:floatLogo 6s ease-in-out infinite}
+.pc-acc .pc-icon{animation:floatLogo 5s ease-in-out infinite,glow 5s ease-in-out infinite}
+.pc-card-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:28px;font-weight:800;color:#fff;margin-bottom:8px;line-height:1.15;letter-spacing:-.025em}
+.pc-price{font-family:'Inter',sans-serif;font-size:14px;font-weight:600;margin-bottom:16px}
+.pc-expo .pc-price{color:rgba(255,255,255,.5)}
+.pc-acc .pc-price{color:var(--gold2)}
+.pc-mem .pc-price{color:rgba(99,149,255,.7)}
+.pc-desc{font-family:'Inter',sans-serif;font-size:14px;color:rgba(255,255,255,.52);line-height:1.7;flex:1;margin-bottom:28px}
+.pc-btn{font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:700;padding:11px 24px;border-radius:12px;display:inline-flex;align-items:center;gap:7px;transition:all .25s;align-self:flex-start;text-decoration:none;border:none;cursor:pointer}
+.pc-expo .pc-btn{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.15)}
+.pc-expo .pc-btn:hover{background:rgba(255,255,255,.14)}
+.pc-acc .pc-btn{background:linear-gradient(135deg,var(--goldDk),var(--gold));color:var(--navy3);box-shadow:0 4px 16px rgba(234,179,8,.3)}
+.pc-acc .pc-btn:hover{transform:translateY(-1px);box-shadow:0 8px 28px rgba(234,179,8,.4)}
+.pc-mem .pc-btn{background:rgba(99,149,255,.12);color:rgba(150,180,255,.9);border:1px solid rgba(99,149,255,.25)}
+.pc-mem .pc-btn:hover{background:rgba(99,149,255,.2)}
 
-/* ── PARTNERS ── */
-#partners{background:#fff}
-.partners-strategic{
-  display:flex;gap:1.5rem;flex-wrap:wrap;
-  justify-content:center;margin-bottom:3rem;
-}
-.partner-card{
-  background:var(--bg);border:1.5px solid var(--border);
-  border-radius:16px;padding:1.5rem 1.75rem;
-  display:flex;flex-direction:column;align-items:center;gap:0.625rem;
-  min-width:160px;transition:all 0.25s;
-}
-.partner-card:hover{border-color:var(--navy2);box-shadow:0 8px 28px rgba(30,58,138,0.1)}
-.partner-card img{height:52px;object-fit:contain}
-.partner-name{font-family:'Kanit',sans-serif;font-weight:700;
-  color:var(--navy);font-size:0.875rem}
-.partner-role{font-size:0.75rem;color:var(--sub)}
-.chambers-row{
-  display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;
-}
-.chamber-pill{
-  background:var(--bg);border:1.5px solid var(--border);
-  border-radius:12px;padding:0.875rem 1.25rem;
-  display:flex;align-items:center;gap:0.75rem;
-  transition:all 0.25s;
-}
-.chamber-pill:hover{border-color:var(--navy2);background:#fff}
-.chamber-pill .flag{font-size:1.5rem}
-.chamber-pill .info{}
-.chamber-pill .cn{font-family:'Kanit',sans-serif;font-weight:700;
-  color:var(--navy);font-size:0.82rem}
-.chamber-pill .cr{font-size:0.72rem;color:var(--sub)}
+/* HOW IT WORKS */
+.how-sec{padding:80px 20px;background:linear-gradient(180deg,#020617,#0f172a)}
+.how-flow{display:flex;align-items:flex-start;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:56px}
+.how-step{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;width:160px}
+.how-dot{width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,.04);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1.5rem;transition:all .25s}
+.how-step:hover .how-dot{border-color:var(--borderG);background:rgba(234,179,8,.08);transform:scale(1.1)}
+.how-center .how-dot{background:rgba(234,179,8,.12);border-color:rgba(234,179,8,.35)}
+.how-num{font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--goldDk)}
+.how-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:700;color:#fff;line-height:1.3}
+.how-desc{font-family:'Inter',sans-serif;font-size:13px;color:var(--sub);line-height:1.5}
 
-/* ── FOUNDER BANNER ── */
-#founder-banner{
-  background:linear-gradient(135deg,#0f0500,#7c2d12,#0f0500);
-  padding:5rem 2rem;text-align:center;
-}
-.fb-badge{
-  display:inline-flex;align-items:center;gap:6px;
-  background:rgba(245,158,11,0.15);border:1px solid rgba(245,158,11,0.4);
-  color:#fbbf24;font-family:'Kanit',sans-serif;font-size:0.7rem;font-weight:700;
-  letter-spacing:0.15em;padding:5px 16px;border-radius:99px;margin-bottom:1rem;
-}
-.fb-title{
-  font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,7vw,5rem);
-  color:#fff;letter-spacing:0.04em;line-height:1;margin-bottom:0.5rem;
-}
-.fb-title span{color:var(--gold2)}
-.fb-sub{color:rgba(255,255,255,0.6);font-size:0.9375rem;
-  max-width:500px;margin:0 auto 2rem;line-height:1.7}
-.fb-stats{
-  display:flex;gap:3rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem;
-}
-.fb-num{font-family:'Bebas Neue',sans-serif;font-size:3rem;color:#fbbf24;line-height:1}
-.fb-label{font-size:0.72rem;color:rgba(255,255,255,0.4);letter-spacing:0.1em}
-.btn-founder{
-  background:linear-gradient(90deg,#D4A017,#fbbf24);color:#1a0a00;
-  font-family:'Kanit',sans-serif;font-weight:800;font-size:1.05rem;
-  padding:15px 40px;border-radius:var(--radius);
-  display:inline-flex;align-items:center;gap:8px;min-height:54px;
-  box-shadow:0 8px 32px rgba(212,160,23,0.5);transition:all 0.25s;
-}
-.btn-founder:hover{transform:translateY(-3px);box-shadow:0 14px 44px rgba(212,160,23,0.65)}
+/* ACCELERATOR OFFER */
+.acc-offer-sec{padding:80px 20px;background:radial-gradient(ellipse 80% 60% at 50% 50%,rgba(234,179,8,.09) 0%,transparent 65%),linear-gradient(135deg,#050d1a,#0f172a,#07122a)}
+.acc-offer-inner{max-width:580px;margin:0 auto;text-align:center}
+.acc-offer-card{background:rgba(255,255,255,.04);border:1px solid rgba(234,179,8,.2);border-radius:24px;padding:40px;position:relative;overflow:hidden;margin-top:48px}
+.acc-offer-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),var(--gold2),var(--gold),transparent)}
+.acc-tag{font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--subl);margin-bottom:20px;display:flex;align-items:center;justify-content:center;gap:8px}
+.acc-price{font-family:'Plus Jakarta Sans',sans-serif;font-size:72px;font-weight:800;color:#fff;line-height:1;letter-spacing:-.04em}
+.currency{font-size:.65em;vertical-align:.1em}
+.acc-original{font-family:'Inter',sans-serif;font-size:16px;color:rgba(255,255,255,.3);text-decoration:line-through;margin-top:4px}
+.acc-period{font-family:'Inter',sans-serif;font-size:14px;color:var(--sub);margin-top:8px;margin-bottom:28px}
+.acc-slots{display:flex;align-items:center;justify-content:center;gap:16px;padding:16px 20px;background:rgba(234,179,8,.06);border:1px solid rgba(234,179,8,.15);border-radius:12px;margin-bottom:24px}
+.acc-slots-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:48px;font-weight:800;color:var(--gold2);line-height:1}
+.acc-slots-lbl{font-family:'Inter',sans-serif;font-size:13px;color:var(--sub);text-align:left;line-height:1.5}
 
-/* ── FOOTER ── */
-footer{
-  background:var(--navy);color:rgba(255,255,255,0.5);
-  padding:3.5rem 2rem;
-}
-.footer-inner{max-width:1080px;margin:0 auto}
-.footer-top{
-  display:flex;align-items:flex-start;justify-content:space-between;
-  gap:2rem;flex-wrap:wrap;margin-bottom:2rem;
-  padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,0.07);
-}
-.footer-brand{}
-.footer-logo{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;
-  letter-spacing:0.1em;color:#fff;margin-bottom:0.375rem}
-.footer-logo span{color:var(--gold2)}
-.footer-tagline{font-size:0.8125rem;color:rgba(255,255,255,0.4);line-height:1.5}
-.footer-nav{display:flex;gap:3rem;flex-wrap:wrap}
-.footer-col{}
-.footer-col-title{font-family:'Kanit',sans-serif;font-size:0.75rem;font-weight:700;
-  letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.35);
-  margin-bottom:0.75rem}
-.footer-col a{display:block;font-size:0.875rem;color:rgba(255,255,255,0.55);
-  margin-bottom:0.5rem;transition:color 0.2s}
-.footer-col a:hover{color:#fbbf24}
-.footer-bottom{
-  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;
-}
-.footer-contact{font-size:0.875rem}
-.footer-contact a{color:rgba(255,255,255,0.55);transition:color 0.2s}
-.footer-contact a:hover{color:#fbbf24}
-.footer-copy{font-size:0.75rem;color:rgba(255,255,255,0.25)}
+/* PARTNERS */
+.partners-sec{padding:64px 20px;background:#0f172a;border-top:1px solid var(--border)}
+.partner-lbl{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--subl);text-align:center;margin-bottom:40px}
+.partner-logos{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:16px}
+.partner-card{height:52px;padding:0 28px;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:10px;display:flex;align-items:center;justify-content:center;transition:all .25s}
+.partner-card:hover{background:rgba(255,255,255,.08);border-color:var(--borderG)}
+.partner-card img{height:28px;width:auto;opacity:.65;filter:grayscale(1) brightness(1.5);transition:all .25s}
+.partner-card:hover img{opacity:.9;filter:grayscale(.2) brightness(1.2)}
+.partner-text{font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:800;color:rgba(255,255,255,.55);letter-spacing:.06em}
 
-/* ── STICKY CTA ── */
-.sticky-wrap{
-  position:fixed;bottom:1.25rem;right:1.25rem;z-index:999;
-  display:flex;flex-direction:column;gap:0.625rem;align-items:flex-end;
-}
-.sticky-btn{
-  font-family:'Kanit',sans-serif;font-weight:700;font-size:0.875rem;
-  padding:11px 20px;border-radius:50px;
-  display:inline-flex;align-items:center;gap:8px;min-height:48px;
-  box-shadow:0 4px 20px rgba(0,0,0,0.25);transition:all 0.25s;
-}
-.sticky-btn:hover{transform:translateY(-2px)}
-.sticky-btn.event{background:linear-gradient(90deg,#E31E24,#c01017);color:#fff}
-.sticky-btn.line{background:#06C755;color:#fff}
+/* CTA FINAL */
+.cta-final{padding:80px 20px;text-align:center;background:radial-gradient(ellipse 80% 60% at 50% 50%,rgba(30,58,138,.25) 0%,transparent 60%),#0f172a}
+.cta-final-inner{max-width:640px;margin:0 auto}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:36px}
 
-/* ── ANIMATIONS ── */
-@keyframes pulse-cta{0%,100%{transform:scale(1);box-shadow:0 6px 28px rgba(234,88,12,.55)}50%{transform:scale(1.04);box-shadow:0 10px 40px rgba(234,88,12,.8)}}
-@keyframes fadeSlideDown{
-  from{opacity:0;transform:translateY(-16px)}
-  to{opacity:1;transform:none}
-}
-.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease}
-.reveal.in{opacity:1;transform:none}
-.d1{transition-delay:0.1s}.d2{transition-delay:0.2s}.d3{transition-delay:0.3s}
+/* FOOTER */
+.footer{background:#020617;padding:56px 20px 24px;border-top:1px solid var(--border)}
+.footer-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid var(--border)}
+.footer-brand{font-family:'Plus Jakarta Sans',sans-serif;font-size:24px;font-weight:800;color:#fff;margin-bottom:12px}
+.footer-brand span{color:var(--gold2)}
+.footer-tagline{font-family:'Inter',sans-serif;font-size:13px;color:var(--subl);line-height:1.7;margin-bottom:24px}
+.f-social-row{display:flex;gap:10px}
+.f-soc{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.06);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:700;color:var(--sub);transition:all .25s}
+.f-soc:hover{background:rgba(255,255,255,.12);color:#fff}
+.footer-col-h{font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;color:rgba(255,255,255,.8);margin-bottom:16px;letter-spacing:.04em}
+.footer-col{display:flex;flex-direction:column;gap:10px}
+.footer-col a{font-family:'Inter',sans-serif;font-size:13px;color:var(--subl);transition:color .2s}
+.footer-col a:hover{color:var(--gold2)}
+.footer-bottom{max-width:1200px;margin:24px auto 0;display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:flex-start}
+.footer-copy{font-family:'Inter',sans-serif;font-size:12px;color:rgba(255,255,255,.25)}
+.footer-disc{font-family:'Inter',sans-serif;font-size:12px;color:rgba(255,255,255,.2);max-width:600px;line-height:1.6}
 
-/* ── DATA-LANG ── */
-[data-lang]{display:none}
-[data-lang].active{display:inline}
-[data-lang="th"].active,[data-lang="la"].active,[data-lang="en"].active{display:inline}
-span[data-lang]:not(.active){display:none}
-div[data-lang]:not(.active){display:none}
+/* FLOAT */
+.float-wrap{position:fixed;bottom:24px;right:24px;z-index:800;display:flex;flex-direction:column;gap:8px}
+.float-btn{font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;padding:11px 20px;border-radius:30px;display:flex;align-items:center;gap:7px;box-shadow:0 4px 20px rgba(0,0,0,.25);transition:all .25s;white-space:nowrap;text-decoration:none;border:none;cursor:pointer}
+.float-btn:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,.3)}
+.fb-apply{background:linear-gradient(135deg,var(--goldDk),var(--gold));color:var(--navy3);animation:pulse 3s infinite}
+.fb-line{background:#06C755;color:#fff}
 
-/* ── MOBILE ── */
-@media(max-width:600px){
-  nav{padding:0.625rem 1rem}
-  .nav-links .nav-link:not(.primary){display:none}
-  .hero-stats{flex-wrap:wrap}
-  .h-stat{min-width:40%}
-  .h-stat+.h-stat{border-left:none;border-top:1px solid rgba(255,255,255,0.08)}
-}
+@media(max-width:1024px){.trust-grid,.vith-cards,.prog-grid{grid-template-columns:repeat(2,1fr)}.hero-orb{display:none}}
+@media(max-width:768px){.navbar-links,.navbar-right .btn-nav{display:none}.hamburger{display:flex}.footer-grid{grid-template-columns:1fr 1fr;gap:32px}.trust-grid,.vith-cards,.prog-grid{grid-template-columns:1fr}}
+@media(max-width:480px){.hero-metrics{gap:24px}.footer-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 
-<!-- ══ NAV ══ -->
-<nav>
-  <a href="/" style="text-decoration:none">
-    <div class="nav-logo">VITH<span>HUB</span></div>
-    <div style="font-family:'Kanit',sans-serif;font-size:.52rem;font-weight:600;color:#4a5568;letter-spacing:.15em;text-transform:uppercase">Grow Big C — Go Global</div>
-  </a>
-  <div class="nav-links">
-    <div class="lang-group">
-      <button class="lang-btn active" onclick="setLang('th')">TH</button>
-      <button class="lang-btn" onclick="setLang('la')">LAO</button>
-      <button class="lang-btn" onclick="setLang('en')">EN</button>
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="ticker-item">🇹🇭 Thai Brands → Laos Market</span>
+    <span class="ticker-item">✦ Big C Vientiane Partner</span>
+    <span class="ticker-item">✦ 90 Day Accelerator Program</span>
+    <span class="ticker-item">✦ 0% Commission Model</span>
+    <span class="ticker-item">✦ Only 26 Slots Available</span>
+    <span class="ticker-item">🌏 CLMV · Mekong · Global</span>
+    <span class="ticker-item">🇹🇭 Thai Brands → Laos Market</span>
+    <span class="ticker-item">✦ Big C Vientiane Partner</span>
+    <span class="ticker-item">✦ 90 Day Accelerator Program</span>
+    <span class="ticker-item">✦ 0% Commission Model</span>
+    <span class="ticker-item">✦ Only 26 Slots Available</span>
+    <span class="ticker-item">🌏 CLMV · Mekong · Global</span>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="vithNav">
+  <div class="navbar-inner">
+    <a href="/" class="navbar-logo">
+      <div class="logo-mark">V</div>
+      <div class="logo-stack">
+        <div class="logo-text">VITH<span>HUB</span></div>
+        <span class="logo-sub">Mekong Gateway</span>
+      </div>
+    </a>
+    <div class="navbar-links">
+      <a href="/" class="nav-a active">Home</a>
+      <a href="/pages/gateway.html" class="nav-a">Gateway</a>
+      <a href="/pages/accelerator.html" class="nav-a">Accelerator</a>
+      <a href="/pages/event.html" class="nav-a">Expo</a>
+      <a href="/pages/membership.html" class="nav-a">Membership</a>
+      <a href="/pages/about.html" class="nav-a">About</a>
     </div>
-    <a href="/about" class="nav-link">🌐 Partners</a>
-    <a href="/event" class="nav-link">📅 Event</a>
-    <a href="/membership" class="nav-link primary">👑 Founder</a>
+    <div class="navbar-right">
+      <a href="/pages/accelerator.html" class="btn-nav">Join Program →</a>
+      <button class="hamburger" onclick="toggleNav()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </nav>
 
-<!-- ══ HERO ══ -->
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="navMobile">
+  <a href="/" class="mob-link">Home</a>
+  <a href="/pages/gateway.html" class="mob-link">Gateway</a>
+  <a href="/pages/accelerator.html" class="mob-link">Accelerator</a>
+  <a href="/pages/event.html" class="mob-link">Expo 2026</a>
+  <a href="/pages/membership.html" class="mob-link">Membership</a>
+  <a href="/pages/about.html" class="mob-link">About</a>
+  <a href="/pages/accelerator.html" class="mob-cta">Join Accelerator →</a>
+</div>
+
+<!-- §1 HERO -->
 <section class="hero">
-  <div class="hero-bg">
-    <img src="images/hero-bigc.png" alt="Big C Vientiane — VITH HUB" fetchpriority="high">
+  <div class="hero-grid"></div>
+  <div class="hero-orb">
+    <div class="orb-ring"></div>
+    <div class="orb-ring2"></div>
+    <div class="orb-core"></div>
+    <div class="orb-dot orb-d1"></div>
+    <div class="orb-dot orb-d2"></div>
+    <span class="orb-tag orb-tag-la">🇱🇦 Laos</span>
+    <span class="orb-tag orb-tag-th">🇹🇭 Thailand</span>
+    <span class="orb-tag orb-tag-cn">🇨🇳 China</span>
+    <span class="orb-tag orb-tag-gl">🌏 Global</span>
   </div>
-  <div class="hero-overlay"></div>
   <div class="hero-inner">
-    <div class="hero-badge">
-      🏛️ <span data-lang="th" class="active">ความร่วมมือรัฐ-เอกชน ไทย-ลาว · 28 พ.ค.–1 มิ.ย. 2026</span>
-      <span data-lang="la">ຮ່ວມມືລັດ-ເອກະຊົນ ໄທ-ລາວ · 28 ພ.ຄ.–1 ມິ.ຖ. 2026</span>
-      <span data-lang="en">Thailand–Laos PPP · 28 May–1 June 2026</span>
-    </div>
-    <div class="hero-tagline">
-      <span data-lang="th" class="active">International Trade · Business Networking · Investment</span>
-      <span data-lang="la">ການຄ້າສາກົນ · ເຄືອຂ່າຍທຸລະກິດ</span>
-      <span data-lang="en">International Trade · Business Networking · Investment</span>
-    </div>
-    <h1 class="hero-title">
-      <span data-lang="th" class="active">VITH HUB 2026<br><span class="gold">MEKONG GROWTH EXPO</span></span>
-      <span data-lang="la">VITH HUB 2026<br><span class="gold">MEKONG GROWTH EXPO</span></span>
-      <span data-lang="en">VITH HUB 2026<br><span class="gold">MEKONG GROWTH EXPO</span></span>
-    </h1>
-    <p class="hero-subtitle">
-      <span data-lang="th" class="active">Grow <span style="color:#ed1c24;font-weight:800">Big C</span> — Go Global · Thai Brands สู่ชั้นวาง Big C Laos และตลาดโลก</span>
-      <span data-lang="la">Grow <span style="color:#ed1c24;font-weight:800">Big C</span> — Go Global · ແບຣນໄທສູ່ Big C Laos</span>
-      <span data-lang="en">Grow <span style="color:#ed1c24;font-weight:800">Big C</span> — Go Global · Thai Brands to Big C Laos &amp; Global Markets</span>
-    </p>
-    <div class="hero-pills">
-      <span class="hero-pill">📅 28 May – 1 June 2026</span>
-      <span class="hero-pill">📍 Big C Vientiane, Laos</span>
-      <span class="hero-pill">🏪 60+ Exhibition Booths</span>
-      <span class="hero-pill">0% Commission</span>
-    </div>
-    <div class="hero-btns">
-      <a href="/event" class="btn-primary" style="background:linear-gradient(135deg,#c2410c,#ea580c,#f97316);box-shadow:0 6px 28px rgba(234,88,12,.45);animation:pulse-cta 2.2s ease-in-out infinite">
-        📅 <span data-lang="th" class="active">จองทำเลทองก่อนใคร</span>
-        <span data-lang="la">ຈອງທຳເລທອງ</span>
-        <span data-lang="en">Apply for a Booth</span>
-      </a>
-      <a href="/event" class="btn-gold-outline">
-        📦 <span data-lang="th" class="active">Exhibit With Us</span>
-        <span data-lang="la">ຈັດສະແດງກັບພວກເຮົາ</span>
-        <span data-lang="en">Exhibit With Us</span>
-      </a>
-      <a href="/membership" class="btn-outline">
-        👑 <span data-lang="th" class="active">Founder Member</span>
-        <span data-lang="la">Founder Member</span>
-        <span data-lang="en">Founder Member</span>
-      </a>
-    </div>
-    <div class="hero-stats">
-      <div class="h-stat">
-        <div class="h-stat-num">60+</div>
-        <div class="h-stat-label">Exhibition Booths</div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="hero-dot"></span>
+        Mekong Trade Gateway Platform
       </div>
-      <div class="h-stat">
-        <div class="h-stat-num">0%</div>
-        <div class="h-stat-label">Commission</div>
+      <h1 class="hero-h1">
+        Gateway For<br>
+        <span class="gradient">Thai Brands</span><br>
+        To Enter Laos
+      </h1>
+      <div class="hero-sub">Entering Laos And Global Markets</div>
+      <p class="hero-body">เชื่อมสินค้าไทยสู่ตลาดลาว · Big C Vientiane · CLMV Region · Global Buyers — ผ่าน Expo, Accelerator และ Membership Platform</p>
+      <div class="hero-btns">
+        <a href="/pages/accelerator.html" class="btn-primary btn-lg">Join Accelerator Now →</a>
+        <a href="/pages/gateway.html" class="btn-ghost btn-lg">Explore Gateway</a>
       </div>
-      <div class="h-stat">
-        <div class="h-stat-num">5</div>
-        <div class="h-stat-label">Countries</div>
-      </div>
-      <div class="h-stat">
-        <div class="h-stat-num">20</div>
-        <div class="h-stat-label">Founder Slots</div>
+      <div class="hero-metrics">
+        <div><div class="hm-num">26<em>+</em></div><div class="hm-lbl">Brand Slots</div></div>
+        <div><div class="hm-num">90<em>D</em></div><div class="hm-lbl">Program Duration</div></div>
+        <div><div class="hm-num">0<em>%</em></div><div class="hm-lbl">Commission</div></div>
+        <div><div class="hm-num">5<em>+</em></div><div class="hm-lbl">Countries</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══ ABOUT ══ -->
-<section class="section" id="about">
-  <div class="section-center about-grid">
+<!-- §2 TRUST -->
+<section class="trust-sec">
+  <div class="container">
+    <div style="text-align:center" class="reveal">
+      <div class="sec-eyebrow center">Why VITH HUB</div>
+      <h2 class="sec-h2" style="text-align:center">Trade Platform + <em>Expo Platform + Market Gateway</em></h2>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-card reveal d1">
+        <span class="trust-icon">🎪</span>
+        <div class="trust-title">Expo Platform</div>
+        <p class="trust-desc">5-day Expo Launch ใน Big C Vientiane — พื้นที่ 200+ ตร.ม. บูทพรีเมียม สำหรับแบรนด์ไทยที่ต้องการเปิดตัวในลาว</p>
+      </div>
+      <div class="trust-card reveal d2">
+        <span class="trust-icon">🚀</span>
+        <div class="trust-title">Accelerator Program</div>
+        <p class="trust-desc">90 วันครบวงจร — ทีมงานดูแลทุกขั้นตอน Showroom · Retail Shelf · B2B Matching · Market Report ไม่ต้องบินไปเวียงจันทน์เอง</p>
+      </div>
+      <div class="trust-card reveal d3">
+        <span class="trust-icon">🌏</span>
+        <div class="trust-title">Market Gateway</div>
+        <p class="trust-desc">ประตูสู่ CLMV + China + Global Markets — ผ่าน Railway Laos-China, B2B Network และ Mekong Trade Alliance</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- §3 WHAT IS VITH -->
+<section class="vith-sec">
+  <div class="container">
     <div class="reveal">
-      <div class="s-eyebrow">🏛️ About VITH Hub</div>
-      <h2 class="s-title">
-        <span data-lang="th" class="active">ยกระดับธุรกิจไทย<br><em>สู่ตลาดโลก</em></span>
-        <span data-lang="en">Elevating Thai Business<br><em>to the World Stage</em></span>
-        <span data-lang="la">ຍົກລະດັບທຸລະກິດໄທ<br><em>ສູ່ຕະຫຼາດໂລກ</em></span>
-      </h2>
-      <p class="about-text">
-        <span data-lang="th" class="active"><strong>VITH Hub</strong> คือกลุ่มความร่วมมือระหว่างภาครัฐและเอกชนของไทย ลาว และนานาชาติ เพื่อร่วมกันผลักดันการแลกเปลี่ยนสินค้า การค้า การตลาด และเทคโนโลยีสมัยใหม่ระหว่างกัน</span>
-        <span data-lang="en"><strong>VITH Hub</strong> is a boutique business platform connecting Thai SMEs with international buyers and investors in Laos and the Mekong region.</span>
-        <span data-lang="la"><strong>VITH Hub</strong> ແມ່ນແພລດຟອມທຸລະກິດທີ່ເຊື່ອມ SME ໄທກັບຜູ້ຊື້ສາກົນໃນລາວ ແລະ ພາກພື້ນເມຄອງ</span>
-      </p>
-      <p class="about-text">
-        <span data-lang="th" class="active">โดยอาศัย <strong>Big C เวียงจันทน์</strong> เป็น Showroom และ Distribution Hub — จุดพบกันระหว่างสินค้าไทยคุณภาพสูงกับตลาดลาวและเส้นทางการค้าสู่จีน รัสเซีย และยุโรป</span>
-        <span data-lang="en">Based in Vientiane, we create a gateway for Thai entrepreneurs to new markets through curated exhibitions, B2B matchmaking, and networking events.</span>
-        <span data-lang="la">ຕັ້ງຢູ່ວຽງຈັນ, ພວກເຮົາສ້າງທາງເຂົ້າສູ່ຕະຫຼາດໃໝ່ ຜ່ານ B2B Matching ແລະ ກິດຈະກຳເຄືອຂ່າຍ</span>
-      </p>
-      <div class="about-pills">
-        <span class="about-pill">🤝 รัฐ-เอกชน</span>
-        <span class="about-pill">🌏 ไทย-ลาว-จีน-รัสเซีย</span>
-        <span class="about-pill">📦 Managed Showroom</span>
-        <span class="about-pill">0% Commission</span>
-      </div>
+      <div class="sec-eyebrow">What Is VITH HUB</div>
+      <h2 class="sec-h2">ไม่ใช่แค่ Expo — <em>คือ Mekong Trade Platform</em></h2>
+      <p class="sec-lead">VITH HUB คือแพลตฟอร์มเดียวที่รวม Expo + Accelerator + Membership เข้าไว้ด้วยกัน เพื่อให้สินค้าไทยสามารถ scale สู่ตลาด Mekong ได้จริง</p>
     </div>
-    <div class="reveal d2">
-      <div class="about-img">
-        <img src="images/indoor-01.jpg" alt="VITH HUB Showroom" loading="lazy" onerror="this.src='images/hero-bigc.png'">
+    <div class="vith-cards">
+      <div class="vith-card reveal d1">
+        <div class="vc-icon">🎯</div>
+        <div class="vc-num">01</div>
+        <div class="vc-title">Market Testing</div>
+        <p class="vc-desc">ทดสอบสินค้าใน Big C Vientiane — ข้อมูลยอดขายจริง ความต้องการจริง ก่อนลงทุนเต็มที่</p>
+        <a href="/pages/accelerator.html" class="vc-link">Learn More →</a>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ EVENT TEASER ══ -->
-<section class="section" id="event-teaser">
-  <div class="section-center" style="text-align:center">
-    <div class="reveal">
-      <div class="s-eyebrow" style="color:var(--gold2)">📅 VITH HUB 2026: MEKONG GROWTH EXPO</div>
-      <h2 class="et-title">Grow <span style="color:#ed1c24">Big C</span> — <span>Go Global</span></h2>
-      <p class="et-sub">28 พ.ค. – 1 มิ.ย. 2026 · Big C Vientiane, สปป.ลาว<br>60+ Exhibition Booths · B2B Matching · Thai Brands • Global Buyers • Mekong Market Access</p>
-    </div>
-    <div class="et-grid reveal d1">
-      <div class="et-card">
-        <div class="et-icon">🏪</div>
-        <div class="et-name">60+ Exhibition Booths</div>
-        <div class="et-desc">4 Zones — Premium · Standard · Franchise · Food Pavilion · ตำแหน่งกลาง Big C Vientiane</div>
+      <div class="vith-card reveal d2">
+        <div class="vc-icon">🤝</div>
+        <div class="vc-num">02</div>
+        <div class="vc-title">B2B Matching</div>
+        <p class="vc-desc">เชื่อมกับ Distributors, Importers, Buyers ใน Laos, Vietnam, China และทั่ว CLMV Region</p>
+        <a href="/pages/gateway.html" class="vc-link">Explore Gateway →</a>
       </div>
-      <div class="et-card">
-        <div class="et-icon">🤝</div>
-        <div class="et-name">Business Matching 1-on-1</div>
-        <div class="et-desc">พบ Buyer, Distributor &amp; Investor จาก 5+ ประเทศ — จีน รัสเซีย เวียดนาม ยุโรป ลาว</div>
-      </div>
-      <div class="et-card">
-        <div class="et-icon">🌏</div>
-        <div class="et-name">Big C Distribution Access</div>
-        <div class="et-desc">คำปรึกษาจากทีม Big C Laos โดยตรง — Import Regulations · ฉลากลาว · Distribution ทั่วลาว</div>
-      </div>
-    </div>
-    <div class="et-btns reveal">
-      <a href="/event" class="btn-et">📅 จองทำเลทองก่อนใคร</a>
-      <a href="/event" class="btn-et-ghost">📦 Exhibit With Us</a>
-    </div>
-  </div>
-</section>
-
-<!-- ══ WHY VITH HUB ══ -->
-<section class="section" id="why" style="background:var(--bg)">
-  <div class="section-center">
-    <div class="reveal" style="text-align:center;margin-bottom:0.5rem">
-      <div class="s-eyebrow">✨ Why Choose Us</div>
-      <h2 class="s-title" style="text-align:center">
-        <span data-lang="th" class="active">ระบบที่ออกแบบมา<br><em>เพื่อนักธุรกิจไทย</em></span>
-        <span data-lang="en">A System Designed<br><em>for Thai Entrepreneurs</em></span>
-        <span data-lang="la">ລະບົບທີ່ອອກແບບ<br><em>ສຳລັບນັກທຸລະກິດໄທ</em></span>
-      </h2>
-    </div>
-    <div class="why-grid reveal d1">
-      <div class="why-card">
-        <div class="why-icon">🏪</div>
-        <div class="why-name"><span data-lang="th" class="active">Showroom 200 ตร.ม.</span><span data-lang="en">200 sqm Showroom</span></div>
-        <div class="why-desc"><span data-lang="th" class="active">พื้นที่จัดแสดงถาวรใจกลาง Big C เวียงจันทน์ มีลูกค้า Traffic สูงทุกวัน</span><span data-lang="en">Permanent display in Big C Vientiane with high daily foot traffic</span></div>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">👥</div>
-        <div class="why-name"><span data-lang="th" class="active">Lao Staff Full-time</span><span data-lang="en">Full-time Lao Staff</span></div>
-        <div class="why-desc"><span data-lang="th" class="active">ทีมงานลาวดูแลหน้าร้านทุกวัน คุณไม่ต้องบินไปเองทุกครั้ง</span><span data-lang="en">Our Lao team manages your booth daily — no need to fly over yourself</span></div>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">🚚</div>
-        <div class="why-name"><span data-lang="th" class="active">ขนส่งฟรี 100 KG/เดือน</span><span data-lang="en">Free 100 KG Shipping</span></div>
-        <div class="why-desc"><span data-lang="th" class="active">ส่งสินค้าจากโรงงานไทยถึง Showroom เวียงจันทน์ ฟรีทุกเดือน</span><span data-lang="en">Free monthly shipping from Thai factory to Vientiane Showroom</span></div>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">💰</div>
-        <div class="why-name"><span data-lang="th" class="active">0% Commission</span><span data-lang="en">Zero Commission</span></div>
-        <div class="why-desc"><span data-lang="th" class="active">รายได้ทั้งหมดเป็นของคุณ เราคิดค่าบริการรายเดือนคงที่เท่านั้น</span><span data-lang="en">100% of revenue stays with you — flat monthly fee only</span></div>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">🤝</div>
-        <div class="why-name"><span data-lang="th" class="active">B2B Matching</span><span data-lang="en">B2B Matching</span></div>
-        <div class="why-desc"><span data-lang="th" class="active">จับคู่กับผู้ซื้อชาวลาว จีน รัสเซียผ่านเครือข่ายหอการค้า 6 ประเทศ</span><span data-lang="en">Match with Lao, Chinese & Russian buyers through 6-country chamber network</span></div>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">📦</div>
-        <div class="why-name"><span data-lang="th" class="active">คลังสินค้า 1 พาเลท</span><span data-lang="en">1 Pallet Storage</span></div>
-        <div class="why-desc"><span data-lang="th" class="active">พื้นที่เก็บสินค้าฟรี 1 พาเลท/เดือน ส่วนเกิน 25 บาท/KG</span><span data-lang="en">Free 1 pallet storage monthly, additional at only 25 THB/KG</span></div>
+      <div class="vith-card reveal d3">
+        <div class="vc-icon">📊</div>
+        <div class="vc-num">03</div>
+        <div class="vc-title">Market Intelligence</div>
+        <p class="vc-desc">รับ Market Report ฉบับสมบูรณ์ — Consumer Data, Competitor Analysis, Distribution Network</p>
+        <a href="/pages/membership.html" class="vc-link">Join Network →</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══ TRADE ROUTE MAP ══ -->
-<section class="section" id="connectivity">
-  <div class="section-center">
-    <div class="reveal" style="text-align:center;margin-bottom:2rem">
-      <div class="s-eyebrow">🌐 Strategic Trade Routes</div>
-      <h2 class="s-title">
-        <span data-lang="th" class="active">จุดเชื่อมโยง<br><em style="color:#fff;font-style:normal">ไทย · ลาว · จีน · รัสเซีย</em></span>
-        <span data-lang="en">The Trade Crossroads of<br><em style="color:#fff;font-style:normal">Thailand · Laos · China · Russia</em></span>
-      </h2>
-      <p class="s-sub" style="margin:0 auto;color:rgba(255,255,255,0.55);text-align:center">
-        <span data-lang="th" class="active">สินค้าไทยจากโรงงาน ผ่าน VITH Hub เวียงจันทน์ ขึ้นรถไฟลาว-จีน เชื่อมคุนหมิง กระจายทั่วยุโรปและรัสเซีย</span>
-        <span data-lang="en">Thai products flow through VITH Hub, connect via Laos-China Railway to Kunming, then reach buyers across Europe and Russia.</span>
-      </p>
+<!-- §4 PROGRAMS -->
+<section class="programs-sec">
+  <div class="container">
+    <div style="text-align:center" class="reveal">
+      <div class="sec-eyebrow center">Our Programs</div>
+      <h2 class="sec-h2" style="text-align:center">Choose Your <em>Market Entry Path</em></h2>
     </div>
-    <div class="reveal d1 map-frame">
-      <svg viewBox="0 0 900 440" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:900px;display:block;margin:0 auto">
-        <defs>
-          <!-- grid pattern -->
-          <pattern id="mapGrid" x="0" y="0" width="45" height="45" patternUnits="userSpaceOnUse">
-            <path d="M45 0H0V45" stroke="rgba(99,149,255,0.07)" stroke-width="1"/>
-          </pattern>
-          <!-- diagonal lines texture -->
-          <pattern id="diag" x="0" y="0" width="12" height="12" patternUnits="userSpaceOnUse">
-            <path d="M0 12L12 0" stroke="rgba(255,255,255,0.025)" stroke-width="1"/>
-          </pattern>
-          <!-- arrow markers -->
-          <marker id="arrowGold" markerWidth="10" markerHeight="10" refX="8" refY="3.5" orient="auto">
-            <path d="M0,0 L0,7 L10,3.5 z" fill="#F5C842"/>
-          </marker>
-          <marker id="arrowRed" markerWidth="10" markerHeight="10" refX="8" refY="3.5" orient="auto">
-            <path d="M0,0 L0,7 L10,3.5 z" fill="#ff6b7a"/>
-          </marker>
-          <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="8" refY="3.5" orient="auto">
-            <path d="M0,0 L0,7 L10,3.5 z" fill="#60a5fa"/>
-          </marker>
-          <marker id="arrowGreen" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
-            <path d="M0,0 L0,8 L8,4 z" fill="#34d399"/>
-          </marker>
-          <!-- glow filters -->
-          <filter id="glowGold" x="-40%" y="-40%" width="180%" height="180%">
-            <feGaussianBlur stdDeviation="4" result="blur"/>
-            <feMerge><feMergeNode in="blur"/><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-          </filter>
-          <filter id="glowBlue" x="-40%" y="-40%" width="180%" height="180%">
-            <feGaussianBlur stdDeviation="5" result="blur"/>
-            <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.37  0 0 0 0 0.64  0 0 0 0 1  0 0 0 0.8 0" result="coloredBlur"/>
-            <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
-          </filter>
-          <filter id="glowHub" x="-60%" y="-60%" width="220%" height="220%">
-            <feGaussianBlur stdDeviation="8" result="blur"/>
-            <feColorMatrix in="blur" type="matrix" values="0 0 0 0 1  0 0 0 0 0.76  0 0 0 0 0  0 0 0 1 0" result="coloredBlur"/>
-            <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
-          </filter>
-          <filter id="glowNode">
-            <feGaussianBlur stdDeviation="3" result="blur"/>
-            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-          </filter>
-          <!-- radial for hub glow bg -->
-          <radialGradient id="hubGlow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stop-color="#F5C842" stop-opacity="0.25"/>
-            <stop offset="100%" stop-color="#F5C842" stop-opacity="0"/>
-          </radialGradient>
-          <radialGradient id="thGlow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stop-color="#ff6b7a" stop-opacity="0.2"/>
-            <stop offset="100%" stop-color="#ff6b7a" stop-opacity="0"/>
-          </radialGradient>
-          <radialGradient id="cnGlow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stop-color="#60a5fa" stop-opacity="0.2"/>
-            <stop offset="100%" stop-color="#60a5fa" stop-opacity="0"/>
-          </radialGradient>
-          <radialGradient id="ruGlow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stop-color="#c084fc" stop-opacity="0.2"/>
-            <stop offset="100%" stop-color="#c084fc" stop-opacity="0"/>
-          </radialGradient>
-          <!-- node bg gradient -->
-          <linearGradient id="nodeBg" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#1e3a6e"/>
-            <stop offset="100%" stop-color="#0f2244"/>
-          </linearGradient>
-          <linearGradient id="hubBg" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#e8a800"/>
-            <stop offset="100%" stop-color="#c47f00"/>
-          </linearGradient>
-        </defs>
-
-        <!-- Background -->
-        <rect width="900" height="440" fill="url(#nodeBg)"/>
-        <rect width="900" height="440" fill="url(#mapGrid)"/>
-        <rect width="900" height="440" fill="url(#diag)"/>
-
-        <!-- subtle horizon line -->
-        <line x1="0" y1="360" x2="900" y2="360" stroke="rgba(99,149,255,0.06)" stroke-width="1"/>
-
-        <!-- glow halos around nodes -->
-        <ellipse cx="155" cy="290" rx="75" ry="55" fill="url(#thGlow)"/>
-        <ellipse cx="420" cy="210" rx="90" ry="70" fill="url(#hubGlow)"/>
-        <ellipse cx="635" cy="150" rx="65" ry="50" fill="url(#cnGlow)"/>
-        <ellipse cx="810" cy="115" rx="70" ry="55" fill="url(#ruGlow)"/>
-
-        <!-- region borders (subtle) -->
-        <ellipse cx="155" cy="290" rx="72" ry="48" fill="rgba(255,107,122,0.07)" stroke="rgba(255,107,122,0.2)" stroke-width="1" stroke-dasharray="4,3"/>
-        <ellipse cx="420" cy="210" rx="78" ry="52" fill="rgba(245,200,66,0.06)" stroke="rgba(245,200,66,0.22)" stroke-width="1.5" stroke-dasharray="5,3"/>
-        <ellipse cx="635" cy="150" rx="60" ry="42" fill="rgba(96,165,250,0.07)" stroke="rgba(96,165,250,0.2)" stroke-width="1" stroke-dasharray="4,3"/>
-        <ellipse cx="810" cy="115" rx="62" ry="48" fill="rgba(192,132,252,0.07)" stroke="rgba(192,132,252,0.2)" stroke-width="1" stroke-dasharray="4,3"/>
-
-        <!-- ── TRADE ROUTE LINES ── -->
-        <!-- Road: Thailand → VITH Hub -->
-        <path d="M170,290 C240,275 320,250 388,218" stroke="rgba(255,107,122,0.25)" stroke-width="5" fill="none"/>
-        <path d="M170,290 C240,275 320,250 388,218" stroke="#ff6b7a" stroke-width="2" stroke-dasharray="8,5" fill="none" marker-end="url(#arrowRed)" filter="url(#glowGold)">
-          <animate attributeName="stroke-dashoffset" from="0" to="-26" dur="1.5s" repeatCount="indefinite"/>
-        </path>
-
-        <!-- Railway: VITH Hub → Kunming -->
-        <path d="M452,210 C510,192 570,170 612,158" stroke="rgba(245,200,66,0.2)" stroke-width="6" fill="none"/>
-        <path d="M452,210 C510,192 570,170 612,158" stroke="#F5C842" stroke-width="2.5" stroke-dasharray="10,4" fill="none" marker-end="url(#arrowGold)" filter="url(#glowGold)">
-          <animate attributeName="stroke-dashoffset" from="0" to="-28" dur="1.2s" repeatCount="indefinite"/>
-        </path>
-
-        <!-- Global: Kunming → Russia/Europe -->
-        <path d="M660,148 C720,132 760,118 792,118" stroke="rgba(96,165,250,0.2)" stroke-width="5" fill="none"/>
-        <path d="M660,148 C720,132 760,118 792,118" stroke="#60a5fa" stroke-width="2" stroke-dasharray="8,5" fill="none" marker-end="url(#arrowBlue)" filter="url(#glowBlue)">
-          <animate attributeName="stroke-dashoffset" from="0" to="-26" dur="1.8s" repeatCount="indefinite"/>
-        </path>
-
-        <!-- Local: VITH Hub → Lao Market (down) -->
-        <path d="M420,228 C420,260 420,285 420,308" stroke="rgba(52,211,153,0.25)" stroke-width="4" fill="none"/>
-        <path d="M420,228 C420,260 420,285 420,308" stroke="#34d399" stroke-width="1.8" stroke-dasharray="6,4" fill="none" marker-end="url(#arrowGreen)">
-          <animate attributeName="stroke-dashoffset" from="0" to="-20" dur="1s" repeatCount="indefinite"/>
-        </path>
-
-        <!-- ── NODES ── -->
-        <!-- Thailand -->
-        <circle cx="155" cy="290" r="28" fill="url(#nodeBg)" stroke="rgba(255,107,122,0.5)" stroke-width="1.5" filter="url(#glowNode)"/>
-        <circle cx="155" cy="290" r="14" fill="#7f1d1d"/>
-        <circle cx="155" cy="290" r="8" fill="#ff6b7a"/>
-        <!-- pulse ring Thailand -->
-        <circle cx="155" cy="290" r="22" fill="none" stroke="#ff6b7a" stroke-width="1" opacity="0.6">
-          <animate attributeName="r" values="18;30;18" dur="3s" repeatCount="indefinite"/>
-          <animate attributeName="opacity" values="0.6;0;0.6" dur="3s" repeatCount="indefinite"/>
-        </circle>
-        <text x="155" y="330" text-anchor="middle" font-family="Kanit,sans-serif" font-size="12" font-weight="700" fill="#fca5a5">🇹🇭 Thailand</text>
-        <text x="155" y="345" text-anchor="middle" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.4)">Factory / Origin</text>
-
-        <!-- VITH Hub (center star) -->
-        <circle cx="420" cy="210" r="44" fill="url(#hubGlow)" filter="url(#glowHub)"/>
-        <circle cx="420" cy="210" r="36" fill="rgba(245,200,66,0.12)" stroke="#F5C842" stroke-width="2"/>
-        <!-- pulse ring Hub -->
-        <circle cx="420" cy="210" r="38" fill="none" stroke="#F5C842" stroke-width="1.5" opacity="0.7">
-          <animate attributeName="r" values="36;52;36" dur="2.5s" repeatCount="indefinite"/>
-          <animate attributeName="opacity" values="0.7;0;0.7" dur="2.5s" repeatCount="indefinite"/>
-        </circle>
-        <circle cx="420" cy="210" r="22" fill="url(#hubBg)"/>
-        <circle cx="420" cy="210" r="22" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
-        <text x="420" y="206" text-anchor="middle" font-family="Bebas Neue,sans-serif" font-size="8" fill="#1a0a00" letter-spacing="0.1em">MEKONG</text>
-        <text x="420" y="218" text-anchor="middle" font-family="Bebas Neue,sans-serif" font-size="8" fill="rgba(0,0,0,0.6)">EXPO 2026</text>
-        <text x="420" y="262" text-anchor="middle" font-family="Kanit,sans-serif" font-size="13" font-weight="800" fill="#fde68a" filter="url(#glowGold)">🌟 VITH HUB</text>
-        <text x="420" y="278" text-anchor="middle" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.6)">Big C Vientiane 🇱🇦</text>
-        <text x="420" y="291" text-anchor="middle" font-family="sans-serif" font-size="9" fill="rgba(245,200,66,0.65)">Distribution Hub</text>
-
-        <!-- Lao Market (below hub) -->
-        <circle cx="420" cy="325" r="16" fill="rgba(52,211,153,0.1)" stroke="#34d399" stroke-width="1.2"/>
-        <circle cx="420" cy="325" r="7" fill="#065f46"/>
-        <circle cx="420" cy="325" r="4" fill="#34d399"/>
-        <text x="420" y="352" text-anchor="middle" font-family="Kanit,sans-serif" font-size="11" font-weight="600" fill="#6ee7b7">🛍️ Lao Market</text>
-        <text x="420" y="365" text-anchor="middle" font-family="sans-serif" font-size="9" fill="rgba(255,255,255,0.35)">Local Distribution</text>
-
-        <!-- Kunming -->
-        <circle cx="635" cy="150" r="28" fill="url(#nodeBg)" stroke="rgba(96,165,250,0.5)" stroke-width="1.5" filter="url(#glowNode)"/>
-        <circle cx="635" cy="150" r="14" fill="#1e3a8a"/>
-        <circle cx="635" cy="150" r="8" fill="#60a5fa"/>
-        <circle cx="635" cy="150" r="22" fill="none" stroke="#60a5fa" stroke-width="1" opacity="0.5">
-          <animate attributeName="r" values="18;28;18" dur="3.5s" repeatCount="indefinite"/>
-          <animate attributeName="opacity" values="0.5;0;0.5" dur="3.5s" repeatCount="indefinite"/>
-        </circle>
-        <text x="635" y="144" text-anchor="middle" font-family="Bebas Neue,sans-serif" font-size="16" fill="#fff">昆明</text>
-        <text x="635" y="155" text-anchor="middle" font-family="sans-serif" font-size="8" fill="rgba(255,255,255,0.5)">KUNMING</text>
-        <text x="635" y="190" text-anchor="middle" font-family="Kanit,sans-serif" font-size="12" font-weight="700" fill="#93c5fd">🇨🇳 Kunming</text>
-        <text x="635" y="204" text-anchor="middle" font-family="sans-serif" font-size="9" fill="rgba(255,255,255,0.4)">Laos-China Railway</text>
-
-        <!-- Russia & Europe -->
-        <circle cx="810" cy="115" r="26" fill="url(#nodeBg)" stroke="rgba(192,132,252,0.5)" stroke-width="1.5" filter="url(#glowNode)"/>
-        <circle cx="810" cy="115" r="13" fill="#3b0764"/>
-        <circle cx="810" cy="115" r="7" fill="#c084fc"/>
-        <circle cx="810" cy="115" r="20" fill="none" stroke="#c084fc" stroke-width="1" opacity="0.5">
-          <animate attributeName="r" values="16;26;16" dur="4s" repeatCount="indefinite"/>
-          <animate attributeName="opacity" values="0.5;0;0.5" dur="4s" repeatCount="indefinite"/>
-        </circle>
-        <text x="810" y="154" text-anchor="middle" font-family="Kanit,sans-serif" font-size="11" font-weight="700" fill="#d8b4fe">🇷🇺 Russia</text>
-        <text x="810" y="168" text-anchor="middle" font-family="Kanit,sans-serif" font-size="11" font-weight="700" fill="#d8b4fe">🇪🇺 Europe</text>
-        <text x="810" y="182" text-anchor="middle" font-family="sans-serif" font-size="9" fill="rgba(255,255,255,0.35)">End Buyers</text>
-
-        <!-- ── LEGEND ── -->
-        <rect x="24" y="24" width="210" height="126" rx="12" fill="rgba(8,16,36,0.88)" stroke="rgba(99,149,255,0.3)" stroke-width="1"/>
-        <text x="44" y="50" font-family="Kanit,sans-serif" font-size="11" font-weight="800" fill="rgba(255,255,255,0.9)" letter-spacing="0.1em">TRADE ROUTES</text>
-        <line x1="44" y1="64" x2="78" y2="64" stroke="#ff6b7a" stroke-width="2" stroke-dasharray="6,4"/>
-        <text x="86" y="68" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.6)">Road Logistics</text>
-        <line x1="44" y1="82" x2="78" y2="82" stroke="#F5C842" stroke-width="2.5" stroke-dasharray="8,4"/>
-        <text x="86" y="86" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.6)">Laos-China Railway</text>
-        <line x1="44" y1="100" x2="78" y2="100" stroke="#60a5fa" stroke-width="2" stroke-dasharray="6,4"/>
-        <text x="86" y="104" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.6)">Global Distribution</text>
-        <line x1="44" y1="118" x2="78" y2="118" stroke="#34d399" stroke-width="1.8" stroke-dasharray="5,4"/>
-        <text x="86" y="122" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.6)">Local Lao Market</text>
-        <text x="44" y="140" font-family="sans-serif" font-size="9" fill="rgba(255,255,255,0.25)">● Animated live routes</text>
-      </svg>
-    </div>
-  </div>
-</section>
-
-<!-- ══ PARTNERS & CHAMBERS ══ -->
-<section class="section" id="partners">
-  <div class="section-center">
-    <div class="reveal" style="text-align:center;margin-bottom:2.5rem">
-      <div class="s-eyebrow">🌟 Our Partners & Chambers</div>
-      <h2 class="s-title" style="text-align:center">Proudly Working With</h2>
-    </div>
-    <!-- Strategic -->
-    <div class="partners-strategic reveal d1">
-      <div class="partner-card">
-        <img src="images/Big_C.png" alt="Big C Vientiane">
-        <div class="partner-name">Big C Vientiane</div>
-        <div class="partner-role">Main Venue Partner</div>
-      </div>
-      <div class="partner-card">
-        <img src="images/LITSE.png" alt="LITSE">
-        <div class="partner-name">LITSE</div>
-        <div class="partner-role">Lao State Agency</div>
-      </div>
-      <div class="partner-card">
-        <img src="images/VITH.png" alt="VITH Hub">
-        <div class="partner-name">VITH Hub</div>
-        <div class="partner-role">Main Organizer</div>
-      </div>
-      <div class="partner-card">
-        <img src="images/RB99.png" alt="RB99">
-        <div class="partner-name">RB99</div>
-        <div class="partner-role">Logistics Partner</div>
-      </div>
-    </div>
-    <!-- Chambers -->
-    <div style="text-align:center;margin-bottom:1.25rem">
-      <div class="s-eyebrow">🌐 International Chambers</div>
-    </div>
-    <div class="chambers-row reveal d2">
-      <div class="chamber-pill"><span class="flag">🇱🇦</span><div class="info"><div class="cn">LNCCI</div><div class="cr">Lao National Chamber</div></div></div>
-      <div class="chamber-pill"><span class="flag">🇹🇭</span><div class="info"><div class="cn">Thai Business Assoc.</div><div class="cr">Thailand</div></div></div>
-      <div class="chamber-pill"><span class="flag">🇪🇺</span><div class="info"><div class="cn">ECCIL</div><div class="cr">European Chamber</div></div></div>
-      <div class="chamber-pill"><span class="flag">🇨🇳</span><div class="info"><div class="cn">Chinese Chamber</div><div class="cr">China · Laos</div></div></div>
-      <div class="chamber-pill"><span class="flag">🇦🇺</span><div class="info"><div class="cn">AustCham</div><div class="cr">Australia · Laos</div></div></div>
-      <div class="chamber-pill"><span class="flag">🇰🇷</span><div class="info"><div class="cn">Korean Chamber</div><div class="cr">Korea · Laos</div></div></div>
-    </div>
-    <div style="text-align:center;margin-top:2rem">
-      <a href="/about" style="font-family:'Kanit',sans-serif;font-size:0.875rem;color:var(--navy2);font-weight:700;border-bottom:2px solid var(--gold);padding-bottom:2px">ดูพันธมิตรทั้งหมด →</a>
-    </div>
-  </div>
-</section>
-
-<!-- ══ FOUNDER BANNER ══ -->
-<section id="founder-banner">
-  <div style="max-width:720px;margin:0 auto;text-align:center" class="reveal">
-    <div class="fb-badge">👑 LIMITED 20 SLOTS ONLY</div>
-    <h2 class="fb-title">Founder <span>Member</span><br>Annual Showroom</h2>
-    <p class="fb-sub">
-      <span data-lang="th" class="active">มีหน้าร้านที่ลาวตลอดทั้งปี พร้อม B2B Matching + Lao Staff + Logistics<br>ส่วนลด 15% ทุกเดือน · ไม่รับ % ยอดขาย</span>
-      <span data-lang="en">Your own Laos storefront all year — B2B Matching, Lao Staff, Logistics included. 15% discount monthly. Zero commission.</span>
-    </p>
-    <div class="fb-stats">
-      <div><div class="fb-num">฿39,000</div><div class="fb-label">ต่อปี / Per Year</div></div>
-      <div><div class="fb-num">20</div><div class="fb-label">LIMITED Slots Only</div></div>
-      <div><div class="fb-num">0%</div><div class="fb-label">Commission</div></div>
-    </div>
-    <a href="/membership" class="btn-founder">👑 สมัคร Founder Member — LIMITED 20 SLOTS</a>
-  </div>
-</section>
-
-<!-- ══ FOOTER ══ -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <div class="footer-logo">VITH<span>HUB</span></div>
-        <div class="footer-tagline">Grow Big C — Go Global<br>Thai Brands to Big C Laos &amp; Global Markets<br>vithhub.asia</div>
-      </div>
-      <div class="footer-nav">
-        <div class="footer-col">
-          <div class="footer-col-title">Platform</div>
-          <a href="/">หน้าแรก</a>
-          <a href="/about">Partners & Alliance</a>
-          <a href="/event">Event 2026</a>
-          <a href="/membership">Founder Member</a>
+    <div class="prog-grid">
+      <div class="prog-card pc-expo reveal d1">
+        <div class="pc-top-line"></div>
+        <div class="pc-inner">
+          <div class="pc-badge">Expo 2026</div>
+          <span class="pc-icon">🎪</span>
+          <div class="pc-card-title">VITH Expo<br>2026</div>
+          <div class="pc-price">From ฿8,900 · 5 วัน · Big C</div>
+          <div class="pc-desc">บูทแสดงสินค้า 5 วันใน Big C Vientiane — เปิดตัวแบรนด์ไทยต่อผู้บริโภคลาวและ B2B Buyers</div>
+          <a href="/pages/event.html" class="pc-btn">See Expo →</a>
         </div>
-        <div class="footer-col">
-          <div class="footer-col-title">Resources</div>
-          <a href="/salesdeck" target="_blank">Sales Deck</a>
-          <a href="/event#floorplan">Floor Plan</a>
-          <a href="/event#timeline">Timeline</a>
+        <div class="pc-watermark">01</div>
+      </div>
+      <div class="prog-card pc-acc reveal d2">
+        <div class="pc-top-line"></div>
+        <div class="pc-inner">
+          <div class="pc-badge">⭐ Most Popular</div>
+          <span class="pc-icon">🚀</span>
+          <div class="pc-card-title">Accelerator<br>90 Day Program</div>
+          <div class="pc-price">฿39,000 · 90 วัน · 0% Commission</div>
+          <div class="pc-desc">โปรแกรม 90 วันครบวงจร — Expo Launch · Managed Showroom · Big C Shelf Test · B2B Matching · Market Report</div>
+          <a href="/pages/accelerator.html" class="pc-btn">Apply Now →</a>
         </div>
-        <div class="footer-col">
-          <div class="footer-col-title">Contact</div>
-          <a href="/cdn-cgi/l/email-protection#05736c716d6d7067736c606b716c646b60456268646c692b666a68"><span class="__cf_email__" data-cfemail="a6d0cfd2ceced3c4d0cfc3c8d2cfc7c8c3e6c1cbc7cfca88c5c9cb">[email&#160;protected]</span></a>
-          <a href="https://line.me/ti/p/@cef8930n" target="_blank">LINE: @cef8930n</a>
+        <div class="pc-watermark">02</div>
+      </div>
+      <div class="prog-card pc-mem reveal d3">
+        <div class="pc-top-line"></div>
+        <div class="pc-inner">
+          <div class="pc-badge">Business Network</div>
+          <span class="pc-icon">🏛️</span>
+          <div class="pc-card-title">Membership</div>
+          <div class="pc-price">Annual · Community</div>
+          <div class="pc-desc">เข้าร่วม VITH Business Network — Networking Events, Market Access, Business Matching ใน Mekong Region</div>
+          <a href="/pages/membership.html" class="pc-btn">Join →</a>
         </div>
+        <div class="pc-watermark">03</div>
       </div>
     </div>
-    <div class="footer-bottom">
-      <div class="footer-contact">
-        📧 <a href="/cdn-cgi/l/email-protection#60160914080815021609050e1409010e0520070d01090c4e030f0d"><span class="__cf_email__" data-cfemail="eb9d829f83839e899d828e859f828a858eab8c868a8287c5888486">[email&#160;protected]</span></a>
-        &nbsp;·&nbsp;
-        📱 <a href="https://line.me/ti/p/@cef8930n">LINE @cef8930n</a>
-      </div>
-      <div class="footer-copy">© 2026 VITH HUB · Mekong Growth Expo 2026 · vithhub.asia</div>
+  </div>
+</section>
+
+<!-- §5 HOW IT WORKS -->
+<section class="how-sec">
+  <div class="container">
+    <div style="text-align:center" class="reveal">
+      <div class="sec-eyebrow center">How It Works</div>
+      <h2 class="sec-h2" style="text-align:center">5 ขั้นตอนสู่ตลาด Mekong</h2>
     </div>
+    <div class="how-flow">
+      <div class="how-step reveal d1"><div class="how-dot">📝</div><div class="how-num">Step 1</div><div class="how-title">Apply Program</div><div class="how-desc">สมัครออนไลน์</div></div>
+      <div class="how-step reveal d2"><div class="how-dot">🎪</div><div class="how-num">Step 2</div><div class="how-title">Join Expo Launch</div><div class="how-desc">เปิดตัวสินค้า 5 วัน</div></div>
+      <div class="how-step how-center reveal d3"><div class="how-dot">🛒</div><div class="how-num">Step 3</div><div class="how-title">Retail Shelf Testing</div><div class="how-desc">ขึ้นเชลฟ์ Big C จริง</div></div>
+      <div class="how-step reveal d4"><div class="how-dot">🤝</div><div class="how-num">Step 4</div><div class="how-title">Meet Buyers</div><div class="how-desc">B2B Matching 5+ ประเทศ</div></div>
+      <div class="how-step reveal d5"><div class="how-dot">🌏</div><div class="how-num">Step 5</div><div class="how-title">Expand Distribution</div><div class="how-desc">ขยายตลาด CLMV</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- §6 ACCELERATOR OFFER -->
+<section class="acc-offer-sec">
+  <div class="acc-offer-inner">
+    <div class="reveal" style="text-align:center">
+      <div class="sec-eyebrow center" style="color:var(--gold2);justify-content:center">90 Day Accelerator</div>
+      <h2 class="sec-h2" style="text-align:center">Complete Market Entry Program</h2>
+    </div>
+    <div class="acc-offer-card reveal d1">
+      <div class="acc-tag"><span style="width:5px;height:5px;border-radius:50%;background:var(--gold2);display:inline-block"></span> Mekong Gateway Accelerator · Zone B</div>
+      <div class="acc-price"><span class="currency">฿</span>39,000</div>
+      <div class="acc-original">฿59,000</div>
+      <div class="acc-period">เหมาจ่าย 90 วัน · ไม่มีค่าคอมมิชชัน</div>
+      <div class="acc-slots">
+        <div class="acc-slots-num">26</div>
+        <div class="acc-slots-lbl"><strong>Only 26 Brands</strong><br>Limited slots — จองก่อนได้เลือกก่อน</div>
+      </div>
+      <a href="/pages/accelerator.html" class="btn-primary" style="margin:0 auto;justify-content:center;animation:pulse 3s infinite">Apply Now →</a>
+      <p style="font-family:'Inter',sans-serif;font-size:12px;color:rgba(255,255,255,.25);margin-top:16px;line-height:1.6;text-align:center">🔒 ทีมงานติดต่อกลับภายใน 24 ชั่วโมง · ไม่รับ % ยอดขายใดๆ</p>
+    </div>
+  </div>
+</section>
+
+<!-- §7 PARTNERS -->
+<section class="partners-sec">
+  <div class="container">
+    <div class="partner-lbl reveal">Strategic Partners &amp; Alliance</div>
+    <div class="partner-logos reveal d1">
+      <div class="partner-card"><span class="partner-text">BIG C</span></div>
+      <div class="partner-card"><span class="partner-text">LITSE</span></div>
+      <div class="partner-card"><span class="partner-text">VITH</span></div>
+      <div class="partner-card"><span class="partner-text">RB99</span></div>
+      <div class="partner-card"><span class="partner-text">ITACC</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- §8 CTA FINAL -->
+<section class="cta-final">
+  <div class="cta-final-inner">
+    <div class="sec-eyebrow center reveal" style="color:var(--gold2);justify-content:center">Get Started Today</div>
+    <h2 class="sec-h2 reveal d1" style="font-size:clamp(32px,5vw,56px);text-align:center">Join Mekong Gateway</h2>
+    <p class="sec-lead center reveal d2" style="font-size:16px">เริ่มเส้นทางสู่ตลาด Mekong วันนี้ — รับเพียง 26 บริษัทต่อรอบ</p>
+    <div class="cta-btns reveal d3">
+      <a href="/pages/accelerator.html" class="btn-primary btn-lg">Join Accelerator Now →</a>
+      <a href="/pages/event.html" class="btn-ghost" style="padding:14px 28px">Explore Expo</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">VITH<span>HUB</span></div>
+      <p class="footer-tagline">Mekong Trade Gateway Platform<br>Connecting Thai Brands to Laos &amp; Global Markets<br>vithhub.asia</p>
+      <div class="f-social-row">
+        <a href="https://facebook.com" class="f-soc" target="_blank">f</a>
+        <a href="https://line.me/ti/p/@cef8930n" class="f-soc" target="_blank">L</a>
+        <a href="https://wa.me/66855907666" class="f-soc" target="_blank">W</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-h">Programs</div>
+      <a href="/pages/accelerator.html">Accelerator 90D</a>
+      <a href="/pages/event.html">Expo Booths</a>
+      <a href="/pages/membership.html">Membership</a>
+      <a href="/pages/gateway.html">Mekong Gateway</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-h">Resources</div>
+      <a href="/pages/floorplan.html">Floor Plan</a>
+      <a href="/pages/event.html#packages">Booth Pricing</a>
+      <a href="/pages/about.html">About Us</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-h">Contact</div>
+      <a href="https://line.me/ti/p/@cef8930n" target="_blank">LINE: @cef8930n</a>
+      <a href="https://wa.me/66855907666" target="_blank">WhatsApp</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 VITH HUB · Mekong Trade Gateway · vithhub.asia</div>
+    <div class="footer-disc">*VITH HUB เป็นแพลตฟอร์มสนับสนุนการเข้าสู่ตลาด (Market Entry Platform) ไม่รับประกันยอดขายหรือผลกำไร มิได้ทำหน้าที่เป็นตัวแทนจำหน่าย (Distributor)</div>
   </div>
 </footer>
 
-<!-- ══ STICKY CTA ══ -->
-<div class="sticky-wrap">
-  <a href="/event" class="sticky-btn event">
-    📋 <span><span data-lang="th" class="active">จองพื้นที่<br><strong>Register Now</strong></span><span data-lang="en">Book Booth<br><strong>Register Now</strong></span></span>
-  </a>
-  <a href="https://line.me/ti/p/@cef8930n" class="sticky-btn line" target="_blank">
-    <svg width="18" height="18" viewBox="0 0 48 48"><path d="M24 4C13 4 4 11.8 4 21.5c0 5.5 3.1 10.4 7.9 13.7-.3 1.2-1.1 4.3-1.3 5 0 0-.1.3.2.4.2.1.5 0 .5 0 .7-.1 8.5-5.6 9.8-6.5.9.1 1.9.2 2.9.2 11 0 20-7.8 20-17.3S35 4 24 4z" fill="white"/></svg>
-    Add LINE
+<!-- FLOAT CTA -->
+<div class="float-wrap">
+  <a href="/pages/accelerator.html" class="float-btn fb-apply">✦ Join Accelerator</a>
+  <a href="https://line.me/ti/p/@cef8930n" target="_blank" class="float-btn fb-line">
+    <svg width="16" height="16" viewBox="0 0 48 48"><path d="M24 4C13 4 4 11.8 4 21.5c0 5.5 3.1 10.4 7.9 13.7-.3 1.2-1.1 4.3-1.3 5 0 0-.1.3.2.4.2.1.5 0 .5 0 .7-.1 8.5-5.6 9.8-6.5.9.1 1.9.2 2.9.2 11 0 20-7.8 20-17.3S35 4 24 4z" fill="white"/></svg>
+    LINE
   </a>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-function setLang(lang) {
-  document.querySelectorAll('[data-lang]').forEach(el => {
-    el.classList.toggle('active', el.dataset.lang === lang);
-  });
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.classList.toggle('active',
-      btn.textContent.toLowerCase() === lang ||
-      (lang === 'la' && btn.textContent === 'LAO'));
-  });
-}
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
-}, { threshold: 0.08 });
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-</script>
+<script src="/assets/js/main.js"></script>
 </body>
 </html>
