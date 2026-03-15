@@ -3,18 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Mekong Trade Gateway — VITH HUB | Thailand → Laos → Global Markets</title>
+<title>VITH HUB — Mekong Trade Gateway | Thailand → Laos → Global Markets</title>
 <meta name="description" content="ทำไมลาวคือโอกาสใหม่ของสินค้าไทย — Big C Vientiane, Laos-China Railway, CLMV Market Access ผ่าน VITH HUB Platform">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/vith-design.css">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-html{font-size:16px;scroll-behavior:smooth}
-body{font-family:'Inter','Noto Sans Thai',system-ui,sans-serif;background:#0B1F3B;color:#fff;overflow-x:hidden;line-height:1.5}
-img{max-width:100%;display:block}
-a{text-decoration:none;color:inherit}
-button{cursor:pointer;font-family:inherit}
 :root{
   --navy:#0B1F3B;--navy2:#0d2545;--navy3:#071529;--navyL:#1a3560;
   --gold:#C9A227;--gold2:#E4BC4A;--gold3:#F5D680;--goldDk:#9B7A10;
@@ -23,338 +18,289 @@ button{cursor:pointer;font-family:inherit}
   --border:rgba(255,255,255,.08);--borderG:rgba(201,162,39,.2);
   --max:1200px;--r:10px;--rL:18px;--rXL:28px;
 }
-@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
-@keyframes shimmer{0%{background-position:200% center}100%{background-position:-200% center}}
-@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+body{background:#0B1F3B;color:#fff;}
 @keyframes draw{from{stroke-dashoffset:800}to{stroke-dashoffset:0}}
 @keyframes pulse-dot{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.6);opacity:.5}}
-.reveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
-.reveal.in{opacity:1;transform:none}
-.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
 
-/* ── NAV (shared) ── */
-.vith-nav{position:fixed;top:0;left:0;right:0;z-index:900;height:64px;transition:all .3s}
-.vith-nav::before{content:'';position:absolute;inset:0;background:rgba(11,31,59,.92);backdrop-filter:blur(24px);border-bottom:1px solid rgba(201,162,39,.2);transition:all .3s}
-.vith-nav.scrolled::before{background:rgba(7,21,41,.97);box-shadow:0 2px 30px rgba(0,0,0,.3)}
-.vith-nav-inner{position:relative;z-index:1;max-width:var(--max);margin:0 auto;height:64px;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
-.vith-logo{display:flex;align-items:center;gap:.625rem}
-.vith-logo-mark{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,var(--goldDk),var(--gold));display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:.95rem;color:var(--navy);flex-shrink:0}
-.vith-logo-text{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.05rem;font-weight:800;color:#fff;letter-spacing:.05em}
-.vith-logo-text em{font-style:normal;color:var(--gold2)}
-.vith-logo-sub{font-family:'Inter','Noto Sans Thai',sans-serif;font-size:.45rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--subl)}
-.vith-logo-wrap{display:flex;flex-direction:column}
-.vith-nav-links{display:flex;align-items:center;gap:.125rem}
-.vn-link{font-family:'Inter','Noto Sans Thai',sans-serif;font-size:.78rem;font-weight:500;color:var(--sub);padding:7px 12px;border-radius:8px;transition:all .2s;white-space:nowrap}
-.vn-link:hover,.vn-link.active{color:#fff;background:rgba(255,255,255,.07)}
-.vith-nav-right{display:flex;align-items:center;gap:.625rem}
-.vn-cta{font-family:'Inter','Noto Sans Thai',sans-serif;font-size:.78rem;font-weight:700;background:linear-gradient(135deg,var(--goldDk),var(--gold),var(--gold2));color:var(--navy);padding:8px 18px;border-radius:8px;transition:all .25s;white-space:nowrap}
-.vn-cta:hover{transform:translateY(-1px);box-shadow:0 4px 20px rgba(201,162,39,.4)}
-.vn-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:6px;cursor:pointer}
-.vn-hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px}
-.vn-mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(7,21,41,.98);backdrop-filter:blur(20px);padding:1.5rem 2rem;border-bottom:1px solid var(--borderG);flex-direction:column;gap:.375rem;z-index:898}
-.vn-mobile-menu.open{display:flex}
-.vnm-link{font-family:'Inter','Noto Sans Thai',sans-serif;font-size:.9rem;font-weight:600;color:var(--sub);padding:10px 12px;border-radius:8px}
-.vnm-cta{font-family:'Inter','Noto Sans Thai',sans-serif;font-size:.9rem;font-weight:700;background:linear-gradient(135deg,var(--goldDk),var(--gold));color:var(--navy);padding:12px 20px;border-radius:8px;text-align:center;margin-top:.5rem}
+/* NAV */
+.gw-nav{position:fixed;top:0;left:0;right:0;z-index:900;height:64px;transition:all .3s}
+.gw-nav::before{content:'';position:absolute;inset:0;background:rgba(11,31,59,.92);backdrop-filter:blur(24px);border-bottom:1px solid rgba(201,162,39,.2);transition:all .3s}
+.gw-nav.scrolled::before{background:rgba(7,21,41,.97);box-shadow:0 2px 30px rgba(0,0,0,.3)}
+.gw-nav-inner{position:relative;z-index:1;max-width:1200px;margin:0 auto;height:64px;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.gw-logo{display:flex;align-items:center;gap:.625rem;text-decoration:none}
+.gw-logo-mark{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,var(--goldDk),var(--gold));display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:.95rem;color:var(--navy);flex-shrink:0}
+.gw-logo-text{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.05rem;font-weight:800;color:#fff;letter-spacing:.05em}
+.gw-logo-text em{font-style:normal;color:var(--gold2)}
+.gw-nav-links{display:flex;align-items:center;gap:.125rem}
+.gw-nav-link{font-family:'Inter',sans-serif;font-size:.78rem;font-weight:500;color:var(--sub);padding:7px 12px;border-radius:8px;transition:all .2s;white-space:nowrap;text-decoration:none}
+.gw-nav-link:hover,.gw-nav-link.active{color:#fff;background:rgba(255,255,255,.07)}
+.gw-nav-cta{font-family:'Inter',sans-serif;font-size:.78rem;font-weight:700;background:linear-gradient(135deg,var(--goldDk),var(--gold),var(--gold2));color:var(--navy);padding:8px 18px;border-radius:8px;transition:all .25s;white-space:nowrap;text-decoration:none}
+.gw-nav-cta:hover{transform:translateY(-1px);box-shadow:0 4px 20px rgba(201,162,39,.4)}
+.gw-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:6px;cursor:pointer}
+.gw-hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px}
+.gw-mobile{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(7,21,41,.98);backdrop-filter:blur(20px);padding:1.5rem 2rem;border-bottom:1px solid var(--borderG);flex-direction:column;gap:.375rem;z-index:898}
+.gw-mobile.open{display:flex}
+.gw-mob-link{font-family:'Inter',sans-serif;font-size:.9rem;font-weight:600;color:var(--sub);padding:10px 12px;border-radius:8px;text-decoration:none}
+.gw-mob-cta{font-family:'Inter',sans-serif;font-size:.9rem;font-weight:700;background:linear-gradient(135deg,var(--goldDk),var(--gold));color:var(--navy);padding:12px 20px;border-radius:8px;text-align:center;margin-top:.5rem;text-decoration:none}
 
-/* ── SECTION UTILS ── */
-.sec-inner{max-width:var(--max);margin:0 auto}
-.sec-eyebrow{font-family:'Inter','Noto Sans Thai',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.875rem;display:flex;align-items:center;gap:8px}
-.sec-eyebrow::before{content:'';width:20px;height:1.5px;background:var(--gold)}
-.sec-h2{font-family:'Plus Jakarta Sans','Noto Sans Thai',sans-serif;font-size:clamp(2rem,4vw,3rem);color:#fff;line-height:1.1;letter-spacing:-.02em;margin-bottom:1rem}
-.sec-h2 em{font-style:italic;color:rgba(255,255,255,.4)}
-.sec-lead{font-family:'Inter','Noto Sans Thai',sans-serif;font-size:.975rem;color:var(--sub);line-height:1.75;max-width:560px}
+/* TICKER */
+.gw-ticker{background:linear-gradient(90deg,var(--goldDk),var(--gold),var(--goldDk));background-size:200% auto;overflow:hidden;height:34px;display:flex;align-items:center}
+.gw-ticker-track{display:flex;white-space:nowrap;animation:ticker 30s linear infinite}
+.gw-t-item{font-family:'Inter',sans-serif;font-size:.7rem;font-weight:700;color:var(--navy);padding:0 2.5rem;letter-spacing:.06em}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* SECTION UTILS */
+.gw-sec{padding:80px 2rem}
+.gw-inner{max-width:1200px;margin:0 auto}
+.gw-eyebrow{font-family:'Inter',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.875rem;display:flex;align-items:center;gap:8px}
+.gw-eyebrow::before{content:'';width:20px;height:1.5px;background:var(--gold)}
+.gw-h2{font-family:'Plus Jakarta Sans','Noto Sans Thai',sans-serif;font-size:clamp(2rem,4vw,3rem);color:#fff;line-height:1.1;letter-spacing:-.02em;margin-bottom:1rem}
+.gw-h2 em{font-style:italic;color:rgba(255,255,255,.4)}
+.gw-lead{font-family:'Inter','Noto Sans Thai',sans-serif;font-size:.975rem;color:var(--sub);line-height:1.75;max-width:560px}
 .center-block{text-align:center}
-.center-block .sec-eyebrow{justify-content:center}
-.center-block .sec-eyebrow::before{display:none}
-.center-block .sec-lead{margin:0 auto}
+.center-block .gw-eyebrow{justify-content:center}
+.center-block .gw-eyebrow::before{display:none}
+.center-block .gw-lead{margin:0 auto}
 
-/* ── BUTTONS ── */
-.btn-gold{font-family:'Inter','Noto Sans Thai',sans-serif;font-size:.92rem;font-weight:700;background:linear-gradient(135deg,var(--goldDk),var(--gold),var(--gold2));color:var(--navy);padding:13px 26px;border-radius:var(--r);display:inline-flex;align-items:center;gap:8px;transition:all .25s;box-shadow:0 4px 20px rgba(201,162,39,.35)}
-.btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(201,162,39,.5)}
-.btn-ghost{font-family:'Inter','Noto Sans Thai',sans-serif;font-size:.92rem;font-weight:600;color:rgba(255,255,255,.7);padding:12px 22px;border-radius:var(--r);border:1px solid rgba(255,255,255,.15);display:inline-flex;align-items:center;gap:8px;transition:all .25s}
-.btn-ghost:hover{color:#fff;border-color:rgba(255,255,255,.35)}
+/* BUTTONS */
+.gw-btn-gold{font-family:'Inter',sans-serif;font-size:.92rem;font-weight:700;background:linear-gradient(135deg,var(--goldDk),var(--gold),var(--gold2));color:var(--navy);padding:13px 26px;border-radius:var(--r);display:inline-flex;align-items:center;gap:8px;transition:all .25s;box-shadow:0 4px 20px rgba(201,162,39,.35);text-decoration:none}
+.gw-btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(201,162,39,.5)}
+.gw-btn-ghost{font-family:'Inter',sans-serif;font-size:.92rem;font-weight:600;color:rgba(255,255,255,.7);padding:12px 22px;border-radius:var(--r);border:1px solid rgba(255,255,255,.15);display:inline-flex;align-items:center;gap:8px;transition:all .25s;text-decoration:none}
+.gw-btn-ghost:hover{color:#fff;border-color:rgba(255,255,255,.35)}
 
-/* ── TICKER ── */
-.ticker{background:linear-gradient(90deg,var(--goldDk),var(--gold),var(--goldDk));background-size:200% auto;overflow:hidden;height:34px;display:flex;align-items:center}
-.ticker-track{display:flex;white-space:nowrap;animation:ticker 30s linear infinite}
-.t-item{font-family:'Inter','Noto Sans Thai',sans-serif;font-size:.7rem;font-weight:700;color:var(--navy);padding:0 2.5rem;letter-spacing:.06em}
+/* HERO */
+.gw-hero{position:relative;min-height:90vh;display:flex;align-items:center;overflow:hidden;background:var(--navy3);padding-top:98px}
+.gw-hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(7,21,41,.97) 0%,rgba(11,31,59,.82) 100%)}
+.gw-hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(201,162,39,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(201,162,39,.04) 1px,transparent 1px);background-size:64px 64px;pointer-events:none}
+.gw-hero-inner{position:relative;z-index:10;max-width:1200px;width:100%;margin:0 auto;padding:56px 2rem 6rem;text-align:center}
+.gw-hero-badge{display:inline-flex;align-items:center;gap:8px;font-family:'Inter',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold2);padding:6px 16px;border:1px solid var(--borderG);border-radius:20px;background:rgba(201,162,39,.07);margin-bottom:1.75rem;animation:fadeUp .7s .1s both}
+.gw-hero-h1{font-family:'Plus Jakarta Sans','Noto Sans Thai',sans-serif;font-size:clamp(2.75rem,6vw,5.5rem);color:#fff;line-height:1.06;letter-spacing:-.025em;margin-bottom:1.25rem;animation:fadeUp .7s .2s both}
+.gw-hero-h1 .accent{background:linear-gradient(90deg,var(--gold),var(--gold2),var(--gold3),var(--gold2),var(--gold));background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 5s linear 1s infinite}
+@keyframes shimmer{0%{background-position:200% center}100%{background-position:-200% center}}
+.gw-hero-sub{font-family:'Inter',sans-serif;font-size:1rem;color:var(--sub);line-height:1.75;max-width:580px;margin:0 auto 2.5rem;animation:fadeUp .7s .3s both}
+.gw-hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;animation:fadeUp .7s .4s both}
+.gw-hero-route{margin-top:56px;padding-top:3rem;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:center;gap:.5rem;flex-wrap:wrap;animation:fadeUp .7s .5s both}
+.gw-route-node{font-family:'Inter',sans-serif;font-size:.82rem;font-weight:600;color:rgba(255,255,255,.8);padding:7px 16px;border-radius:20px;border:1px solid var(--border);background:rgba(255,255,255,.04)}
+.gw-route-node.active{background:rgba(201,162,39,.12);border-color:var(--borderG);color:var(--gold2)}
+.gw-route-arrow{color:var(--borderG);font-size:1rem}
 
-/* ── HERO ── */
-.hero{position:relative;min-height:90vh;display:flex;align-items:center;overflow:hidden;background:var(--navy3);padding-top:98px}
-.hero-bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.1;filter:saturate(.4)}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(7,21,41,.97) 0%,rgba(11,31,59,.82) 100%)}
-.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(201,162,39,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(201,162,39,.04) 1px,transparent 1px);background-size:64px 64px;pointer-events:none}
-.hero-inner{position:relative;z-index:10;max-width:var(--max);width:100%;margin:0 auto;padding:56px 2rem 6rem;text-align:center}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;font-family:'Inter','Noto Sans Thai',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold2);padding:6px 16px;border:1px solid var(--borderG);border-radius:20px;background:rgba(201,162,39,.07);margin-bottom:1.75rem;animation:fadeUp .7s .1s both}
-.hero-h1{font-family:'Plus Jakarta Sans','Noto Sans Thai',sans-serif;font-size:clamp(2.75rem,6vw,5.5rem);color:#fff;line-height:1.06;letter-spacing:-.025em;margin-bottom:1.25rem;animation:fadeUp .7s .2s both}
-.hero-h1 .accent{background:linear-gradient(90deg,var(--gold),var(--gold2),var(--gold3),var(--gold2),var(--gold));background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 5s linear 1s infinite}
-.hero-sub{font-family:'Inter','Noto Sans Thai',sans-serif;font-size:1rem;color:var(--sub);line-height:1.75;max-width:580px;margin:0 auto 2.5rem;animation:fadeUp .7s .3s both}
-.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;animation:fadeUp .7s .4s both}
-.hero-route{margin-top:56px;padding-top:3rem;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:center;gap:.5rem;flex-wrap:wrap;animation:fadeUp .7s .5s both}
-.route-node{font-family:'Inter','Noto Sans Thai',sans-serif;font-size:.82rem;font-weight:600;color:rgba(255,255,255,.8);padding:7px 16px;border-radius:20px;border:1px solid var(--border);background:rgba(255,255,255,.04)}
-.route-node.active{background:rgba(201,162,39,.12);border-color:var(--borderG);color:var(--gold2)}
-.route-arrow{color:var(--borderG);font-size:1rem}
+/* WHY LAOS */
+.gw-why{padding:80px 2rem;background:linear-gradient(180deg,#0B1F3B,#0d2545)}
+.gw-why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px}
+.gw-why-card{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:var(--rL);padding:2rem;transition:all .3s;position:relative;overflow:hidden}
+.gw-why-card:hover{background:rgba(255,255,255,.07);border-color:var(--borderG);transform:translateY(-4px)}
+.gw-why-icon{font-size:2.25rem;margin-bottom:1.25rem}
+.gw-why-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:3.5rem;color:rgba(201,162,39,.12);position:absolute;top:1rem;right:1.5rem;line-height:1}
+.gw-why-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:1rem;font-weight:700;color:#fff;margin-bottom:.5rem}
+.gw-why-desc{font-family:'Inter','Noto Sans Thai',sans-serif;font-size:.875rem;color:var(--sub);line-height:1.7}
+.gw-why-stat{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.5rem;color:var(--gold2);margin-top:.875rem}
 
-/* ── WHY LAOS ── */
-.why-sec{padding:80px 2rem;background:linear-gradient(180deg,#0B1F3B,#0d2545)}
-.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px}
-.why-card{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:var(--rL);padding:2rem;transition:all .3s}
-.why-card:hover{background:rgba(255,255,255,.07);border-color:var(--borderG);transform:translateY(-4px)}
-.why-icon{font-size:2.25rem;margin-bottom:1.25rem}
-.why-num{font-family:'Plus Jakarta Sans','Noto Sans Thai',sans-serif;font-size:3.5rem;color:rgba(201,162,39,.12);position:absolute;top:1rem;right:1.5rem;line-height:1}
-.why-card{position:relative;overflow:hidden}
-.why-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:1rem;font-weight:700;color:#fff;margin-bottom:.5rem}
-.why-desc{font-family:'Inter','Noto Sans Thai',sans-serif;font-size:.875rem;color:var(--sub);line-height:1.7}
-.why-stat{font-family:'Plus Jakarta Sans','Noto Sans Thai',sans-serif;font-size:1.5rem;color:var(--gold2);margin-top:.875rem}
+/* BIG C SECTION */
+.gw-bigc{padding:80px 2rem;background:radial-gradient(ellipse 80% 60% at 15% 40%, rgba(201,162,39,.07) 0%, transparent 55%), linear-gradient(135deg,#050d1a 0%,#0B1F3B 45%,#0d2d54 80%,#071529 100%)}
+.gw-bigc-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;margin-top:56px}
+.gw-bigc-visual{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:var(--rXL);padding:2.5rem;position:relative;overflow:hidden}
+.gw-bigc-visual::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold2),transparent)}
+.gw-bigc-mini-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1.5rem}
+.gw-bigc-mini-stat{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:12px;padding:1rem;text-align:center}
+.gw-bcms-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.75rem;color:#fff;line-height:1}
+.gw-bcms-num span{color:var(--gold2)}
+.gw-bcms-lbl{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--subl);margin-top:.25rem}
 
-/* ── WHY BIG C ── */
-.bigc-sec{padding:80px 2rem;background:radial-gradient(ellipse 80% 60% at 15% 40%, rgba(201,162,39,.07) 0%, transparent 55%), radial-gradient(ellipse 60% 80% at 85% 20%, rgba(26,53,96,.7) 0%, transparent 50%), linear-gradient(135deg,#050d1a 0%,#0B1F3B 45%,#0d2d54 80%,#071529 100%)}
-.bigc-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;margin-top:56px}
-.bigc-visual{position:relative}
-.bigc-main-card{background:linear-gradient(145deg,#0B1F3B,#162d5a);border:2px solid var(--borderG);border-radius:var(--rXL);padding:2.5rem;position:relative;overflow:hidden}
-.bigc-main-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
-.bigc-logo-placeholder{font-family:'Plus Jakarta Sans',sans-serif;font-size:2rem;font-weight:800;color:var(--gold2);margin-bottom:1rem;letter-spacing:.05em}
-.bigc-tagline{font-family:'Inter','Noto Sans Thai',sans-serif;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--subl);margin-bottom:1.5rem}
-.bigc-stat-row{display:grid;grid-template-columns:1fr 1fr;gap:.875rem;margin-top:1.5rem}
-.bigc-mini-stat{background:rgba(255,255,255,.04);border-radius:var(--r);padding:1rem;border:1px solid var(--border)}
-.bcms-num{font-family:'Plus Jakarta Sans','Noto Sans Thai',sans-serif;font-size:1.75rem;color:#fff;line-height:1}
-.bcms-num span{color:var(--gold2)}
-.bcms-lbl{font-family:'Inter','Noto Sans Thai',sans-serif;font-size:.68rem;color:var(--subl);margin-top:.2rem}
-.bigc-cards{display:flex;flex-direction:column;gap:1rem}
-.bigc-card{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:var(--rL);padding:1.5rem;display:flex;align-items:flex-start;gap:1rem;transition:all .3s}
-.bigc-card:hover{background:rgba(255,255,255,.07);border-color:var(--borderG);transform:translateX(4px)}
-.bc-icon{width:44px;height:44px;border-radius:var(--r);background:rgba(201,162,39,.1);display:flex;align-items:center;justify-content:center;font-size:1.25rem;flex-shrink:0}
-.bc-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:.9rem;font-weight:600;color:#fff;margin-bottom:.25rem}
-.bc-desc{font-family:'Inter','Noto Sans Thai',sans-serif;font-size:.82rem;color:var(--sub);line-height:1.6}
+/* FLOW */
+.gw-flow{padding:80px 2rem;background:var(--navy3)}
+.gw-flow-steps{display:flex;align-items:flex-start;justify-content:center;gap:.5rem;flex-wrap:wrap;margin-top:56px}
+.gw-fs-step{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;width:150px}
+.gw-fs-dot{width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,.04);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1.5rem;transition:all .25s}
+.gw-fs-step:hover .gw-fs-dot{border-color:var(--borderG);background:rgba(201,162,39,.08);transform:scale(1.1)}
+.gw-fs-center .gw-fs-dot{background:rgba(201,162,39,.12);border-color:rgba(201,162,39,.35)}
+.gw-fs-arrow{color:var(--borderG);font-size:1.5rem;align-self:center;margin-top:-20px}
+.gw-fs-label{font-family:'Plus Jakarta Sans',sans-serif;font-size:.875rem;font-weight:700;color:#fff;line-height:1.3}
+.gw-fs-sub{font-family:'Inter',sans-serif;font-size:.75rem;color:var(--subl)}
 
-/* ── TRADE MAP SVG ── */
-.map-sec{padding:80px 2rem;background:linear-gradient(160deg,#071529,#0B1F3B,#071529)}
-.map-frame{background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:var(--rXL);overflow:hidden;position:relative;margin-top:56px}
-.map-frame::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,162,39,.04),transparent 50%);pointer-events:none;z-index:2}
+/* CTA */
+.gw-cta{padding:80px 2rem;background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(201,162,39,.12) 0%,transparent 65%),var(--navy3);text-align:center}
 
-/* ── FLOW SECTION ── */
-.flow-sec{padding:80px 2rem;background:radial-gradient(ellipse 80% 60% at 15% 40%, rgba(201,162,39,.07) 0%, transparent 55%), radial-gradient(ellipse 60% 80% at 85% 20%, rgba(26,53,96,.7) 0%, transparent 50%), linear-gradient(135deg,#050d1a 0%,#0B1F3B 45%,#0d2d54 80%,#071529 100%)}
-.flow-steps{display:flex;gap:0;max-width:900px;margin:3rem auto 0;align-items:center}
-.fs-step{flex:1;text-align:center}
-.fs-dot{width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,.04);border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:1.4rem;transition:all .3s}
-.fs-step:hover .fs-dot{border-color:var(--borderG);background:rgba(201,162,39,.08)}
-.fs-label{font-family:'Inter','Noto Sans Thai',sans-serif;font-size:.78rem;font-weight:600;color:#fff;line-height:1.3}
-.fs-sub{font-family:'Inter','Noto Sans Thai',sans-serif;font-size:.68rem;color:var(--subl);margin-top:.2rem}
-.fs-arrow{font-size:1.5rem;color:var(--borderG);padding:0 .5rem;margin-bottom:1.5rem;flex-shrink:0}
-.fs-center .fs-dot{border-color:var(--borderG);background:rgba(201,162,39,.12);box-shadow:0 0 40px rgba(201,162,39,.2)}
-.fs-center .fs-label{color:var(--gold2)}
+/* FOOTER */
+.gw-footer{background:var(--navy3);padding:2.5rem 2rem;border-top:1px solid rgba(255,255,255,.06)}
+.gw-footer-inner{max-width:1200px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:1.25rem;text-align:center}
+.gw-footer-logo{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.25rem;font-weight:800;color:#fff}
+.gw-footer-logo em{font-style:normal;color:var(--gold2)}
+.gw-footer-links{display:flex;flex-wrap:wrap;gap:.25rem;justify-content:center}
+.gw-footer-link{font-family:'Inter',sans-serif;font-size:.82rem;color:rgba(255,255,255,.3);padding:5px 12px;border-radius:6px;text-decoration:none;transition:color .2s}
+.gw-footer-link:hover{color:rgba(255,255,255,.7)}
+.gw-footer-copy{font-family:'Inter',sans-serif;font-size:.75rem;color:rgba(255,255,255,.2)}
+.gw-footer-disclaimer{font-family:'Inter',sans-serif;font-size:.72rem;color:rgba(255,255,255,.15);max-width:800px;margin-top:.5rem;line-height:1.6;text-align:center}
 
-/* ── CTA ── */
-.cta-sec{padding:7rem 2rem;background:var(--navy);text-align:center;position:relative;overflow:hidden}
-.cta-sec::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(ellipse,rgba(201,162,39,.07) 0%,transparent 65%);pointer-events:none}
+/* FLOAT */
+.gw-float{position:fixed;bottom:24px;right:24px;z-index:800;display:flex;flex-direction:column;gap:8px}
+.gw-float-btn{font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;padding:11px 20px;border-radius:30px;display:flex;align-items:center;gap:7px;box-shadow:0 4px 20px rgba(0,0,0,.25);transition:all .25s;white-space:nowrap;text-decoration:none;border:none;cursor:pointer}
+.gw-float-btn:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,.3)}
+.gw-float-apply{background:linear-gradient(135deg,var(--goldDk),var(--gold));color:var(--navy)}
+.gw-float-line{background:#06C755;color:#fff}
 
-/* ── FOOTER ── */
-.site-footer{background:var(--navy3);border-top:1px solid var(--border);padding:3rem 2rem}
-.footer-inner{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
-.footer-logo{font-family:'Plus Jakarta Sans',sans-serif;font-size:1rem;font-weight:800;color:#fff;letter-spacing:.04em}
-.footer-logo em{font-style:normal;color:var(--gold2)}
-.footer-links{display:flex;gap:24px;flex-wrap:wrap}
-.footer-link{font-family:'Inter','Noto Sans Thai',sans-serif;font-size:.78rem;color:var(--subl);transition:color .2s}
-.footer-link:hover{color:var(--gold2)}
-.footer-copy{font-family:'Inter','Noto Sans Thai',sans-serif;font-size:.68rem;color:rgba(255,255,255,.2)}
-.footer-disclaimer{font-family:'Inter','Noto Sans Thai',sans-serif;font-size:.65rem;color:rgba(255,255,255,.15);max-width:var(--max);margin:1rem auto 0;text-align:center;padding:1rem 2rem;border-top:1px solid var(--border)}
-
-/* ── FLOAT ── */
-.float-cta{position:fixed;bottom:1.5rem;right:1.5rem;z-index:800;display:flex;flex-direction:column;gap:.5rem}
-.float-btn{font-family:'Inter','Noto Sans Thai',sans-serif;font-size:.8rem;font-weight:700;padding:11px 18px;border-radius:30px;display:flex;align-items:center;gap:7px;box-shadow:0 4px 20px rgba(0,0,0,.3);transition:all .25s;white-space:nowrap;text-decoration:none}
-.float-btn:hover{transform:translateY(-2px)}
-.float-apply{background:linear-gradient(135deg,var(--goldDk),var(--gold));color:var(--navy)}
-.float-line{background:#06C755;color:#fff}
-
-/* RESPONSIVE */
-@media(max-width:1024px){
-  .bigc-layout{grid-template-columns:1fr;gap:3rem}
-  .why-grid{grid-template-columns:1fr 1fr}
-}
-@media(max-width:768px){
-  .vith-nav-links{display:none}
-  .vn-hamburger{display:flex}
-  .why-grid{grid-template-columns:1fr}
-  .flow-steps{flex-wrap:wrap;gap:24px;justify-content:center}
-  .fs-arrow{display:none}
-}
+@media(max-width:900px){.gw-bigc-layout{grid-template-columns:1fr}.gw-why-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.gw-nav-links,.gw-nav-cta{display:none}.gw-hamburger{display:flex}.gw-why-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 
-<div class="ticker">
-  <div class="ticker-track">
-    <span class="t-item">🌏 Thailand → Laos → China → Global</span>
-    <span class="t-item">·</span>
-    <span class="t-item">🚂 รถไฟลาว-จีน เวียงจันทน์ → คุนหมิง 10 ชม.</span>
-    <span class="t-item">·</span>
-    <span class="t-item">🛒 Big C — ค้าปลีกอันดับ 1 ใน สปป.ลาว</span>
-    <span class="t-item">·</span>
-    <span class="t-item">🇹🇭 ผู้บริโภคลาวนิยมสินค้าไทย</span>
-    <span class="t-item">·</span>
-    <span class="t-item">🌏 Thailand → Laos → China → Global</span>
-    <span class="t-item">·</span>
-    <span class="t-item">🚂 รถไฟลาว-จีน เวียงจันทน์ → คุนหมิง 10 ชม.</span>
-    <span class="t-item">·</span>
-    <span class="t-item">🛒 Big C — ค้าปลีกอันดับ 1 ใน สปป.ลาว</span>
-    <span class="t-item">·</span>
-    <span class="t-item">🇹🇭 ผู้บริโภคลาวนิยมสินค้าไทย</span>
-    <span class="t-item">·</span>
+<!-- TICKER -->
+<div class="gw-ticker">
+  <div class="gw-ticker-track">
+    <span class="gw-t-item">🌏 Thailand → Laos → China → CLMV</span>
+    <span class="gw-t-item">✦ Laos GDP Growth 4.5%+ YoY</span>
+    <span class="gw-t-item">✦ Laos-China Railway Open</span>
+    <span class="gw-t-item">✦ Big C Vientiane #1 Retail</span>
+    <span class="gw-t-item">✦ 7M+ Consumer Market</span>
+    <span class="gw-t-item">🌏 Thailand → Laos → China → CLMV</span>
+    <span class="gw-t-item">✦ Laos GDP Growth 4.5%+ YoY</span>
+    <span class="gw-t-item">✦ Laos-China Railway Open</span>
+    <span class="gw-t-item">✦ Big C Vientiane #1 Retail</span>
+    <span class="gw-t-item">✦ 7M+ Consumer Market</span>
   </div>
 </div>
 
-<nav class="vith-nav" id="vithNav">
-  <div class="vith-nav-inner">
-    <a href="/" class="vith-logo">
-      <div class="vith-logo-mark">V</div>
-      <div class="vith-logo-wrap">
-        <div class="vith-logo-text">VITH<em>HUB</em></div>
-        <span class="vith-logo-sub">Mekong Trade Platform</span>
-      </div>
+<!-- NAV -->
+<nav class="gw-nav" id="vithNav">
+  <div class="gw-nav-inner">
+    <a href="/" class="gw-logo">
+      <div class="gw-logo-mark">V</div>
+      <div class="gw-logo-text">VITH<em>HUB</em></div>
     </a>
-    <div class="vith-nav-links">
-      <a href="/" class="vn-link">Home</a>
-      <a href="/gateway" class="vn-link active">Mekong Gateway</a>
-      <a href="/accelerator" class="vn-link">Accelerator</a>
-      <a href="/event" class="vn-link">Expo</a>
-      <a href="/membership" class="vn-link">Membership</a>
-      <a href="/floorplan" class="vn-link">Floorplan</a>
+    <div class="gw-nav-links">
+      <a href="/" class="gw-nav-link">Home</a>
+      <a href="/pages/gateway.html" class="gw-nav-link active">Gateway</a>
+      <a href="/pages/accelerator.html" class="gw-nav-link">Accelerator</a>
+      <a href="/pages/event.html" class="gw-nav-link">Expo</a>
+      <a href="/pages/membership.html" class="gw-nav-link">Membership</a>
+      <a href="/pages/about.html" class="gw-nav-link">About</a>
     </div>
-    <div class="vith-nav-right">
-      <a href="/accelerator" class="vn-cta">Apply Accelerator</a>
-      <button class="vn-hamburger" id="navHam" onclick="toggleNav()"><span></span><span></span><span></span></button>
+    <div style="display:flex;align-items:center;gap:.625rem">
+      <a href="/pages/accelerator.html" class="gw-nav-cta">Join Accelerator →</a>
+      <button class="gw-hamburger" onclick="document.getElementById('gwMobile').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-  </div>
-  <div class="vn-mobile-menu" id="navMobile">
-    <a href="/" class="vnm-link">Home</a>
-    <a href="/gateway" class="vnm-link">Mekong Gateway</a>
-    <a href="/accelerator" class="vnm-link">Accelerator</a>
-    <a href="/event" class="vnm-link">Expo</a>
-    <a href="/membership" class="vnm-link">Membership</a>
-    <a href="/floorplan" class="vnm-link">Floorplan</a>
-    <a href="/accelerator" class="vnm-cta">Apply Accelerator →</a>
   </div>
 </nav>
 
+<div class="gw-mobile" id="gwMobile">
+  <a href="/" class="gw-mob-link">Home</a>
+  <a href="/pages/gateway.html" class="gw-mob-link">Gateway</a>
+  <a href="/pages/accelerator.html" class="gw-mob-link">Accelerator</a>
+  <a href="/pages/event.html" class="gw-mob-link">Expo</a>
+  <a href="/pages/membership.html" class="gw-mob-link">Membership</a>
+  <a href="/pages/accelerator.html" class="gw-mob-cta">Apply Accelerator →</a>
+</div>
+
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-bg"><img src="images/hero-bigc.webp" alt="Vientiane" loading="eager"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-grid"></div>
-  <div class="hero-inner">
-    <div class="hero-badge">🌏 Strategic Gateway · Mekong Economic Corridor</div>
-    <h1 class="hero-h1">
-      MEKONG TRADE GATEWAY<br>
-      <span class="accent">Thailand → Laos → Global Markets</span>
+<section class="gw-hero">
+  <div class="gw-hero-overlay"></div>
+  <div class="gw-hero-grid"></div>
+  <div class="gw-hero-inner">
+    <div class="gw-hero-badge">✦ Mekong Trade Gateway Platform</div>
+    <h1 class="gw-hero-h1">
+      <span class="accent">Gateway</span> For<br>
+      Thai Brands
     </h1>
-    <p class="hero-sub">โอกาสใหม่ของสินค้าไทยผ่านตลาดลาวและ Modern Trade — เวียงจันทน์คือจุดเชื่อมต่อที่ดีที่สุดในภูมิภาค Mekong</p>
-    <div class="hero-btns">
-      <a href="/accelerator" class="btn-gold">Apply Accelerator →</a>
-      <a href="/event" class="btn-ghost">View Expo</a>
+    <p class="gw-hero-sub">Entering Laos And Global Markets — ประตูสู่ตลาด CLMV ผ่าน Big C Vientiane, Laos-China Railway และ Mekong Trade Alliance</p>
+    <div class="gw-hero-btns">
+      <a href="/pages/accelerator.html" class="gw-btn-gold">Join Accelerator →</a>
+      <a href="#why-laos" class="gw-btn-ghost">ทำไมต้องลาว?</a>
     </div>
-    <div class="hero-route">
-      <div class="route-node">🇹🇭 Thai SME</div>
-      <div class="route-arrow">→</div>
-      <div class="route-node active">🌟 VITH HUB</div>
-      <div class="route-arrow">→</div>
-      <div class="route-node">🛒 Big C Shelf</div>
-      <div class="route-arrow">→</div>
-      <div class="route-node">🤝 B2B Buyer</div>
-      <div class="route-arrow">→</div>
-      <div class="route-node">🌏 CLMV + Global</div>
+    <div class="gw-hero-route">
+      <span class="gw-route-node">🇹🇭 Thailand</span>
+      <span class="gw-route-arrow">→</span>
+      <span class="gw-route-node active">🌟 VITH HUB</span>
+      <span class="gw-route-arrow">→</span>
+      <span class="gw-route-node active">🇱🇦 Laos</span>
+      <span class="gw-route-arrow">→</span>
+      <span class="gw-route-node">🇻🇳 Vietnam</span>
+      <span class="gw-route-arrow">→</span>
+      <span class="gw-route-node">🇨🇳 China</span>
+      <span class="gw-route-arrow">→</span>
+      <span class="gw-route-node">🌏 Global</span>
     </div>
   </div>
 </section>
 
 <!-- WHY LAOS -->
-<section class="why-sec" id="why">
-  <div class="sec-inner">
-    <div class="reveal">
-      <div class="sec-eyebrow">Why Laos</div>
-      <h2 class="sec-h2">ทำไมลาว<em> คือโอกาส</em></h2>
-      <p class="sec-lead">ตลาดลาวอยู่ห่างจากไทยแค่สะพานข้ามโขง แต่คือประตูสู่ตลาดที่ใหญ่กว่ามาก</p>
+<section class="gw-why" id="why-laos">
+  <div class="gw-inner">
+    <div class="center-block reveal">
+      <div class="gw-eyebrow">Why Laos</div>
+      <h2 class="gw-h2">ทำไมลาวคือ <em>โอกาสใหม่ของสินค้าไทย</em></h2>
+      <p class="gw-lead">ลาวกำลังก้าวเป็นศูนย์กลางการค้า Mekong — ตลาดที่เปิดกว้าง ราคาพรีเมียม และสินค้าไทยมีข้อได้เปรียบสูงสุด</p>
     </div>
-    <div class="why-grid">
-      <div class="why-card reveal d1">
-        <div class="why-num">01</div>
-        <div class="why-icon">🇹🇭</div>
-        <div class="why-title">Thai Product Trust</div>
-        <div class="why-desc">ผู้บริโภคลาวมีความเชื่อมั่นในสินค้าไทยสูงมาก — คุณภาพดี ราคาเหมาะสม และใกล้ชิดทางวัฒนธรรม สินค้าไทยได้เปรียบคู่แข่งจากทุกประเทศในตลาดลาว</div>
-        <div class="why-stat">Trust Factor #1</div>
+    <div class="gw-why-grid">
+      <div class="gw-why-card reveal d1">
+        <span class="gw-why-icon">📈</span>
+        <div class="gw-why-num">01</div>
+        <div class="gw-why-title">GDP Growing 4.5%+ YoY</div>
+        <p class="gw-why-desc">เศรษฐกิจลาวเติบโตต่อเนื่อง ชนชั้นกลางขยายตัว กำลังซื้อสูงขึ้น</p>
+        <div class="gw-why-stat">4.5%+ Growth</div>
       </div>
-      <div class="why-card reveal d2">
-        <div class="why-num">02</div>
-        <div class="why-icon">📈</div>
-        <div class="why-title">Fast Growing Market</div>
-        <div class="why-desc">เศรษฐกิจลาวเติบโตต่อเนื่อง ชนชั้นกลางขยายตัว ความต้องการสินค้า Consumer Goods, F&B และ Cosmetics พุ่งสูงตาม GDP ที่เติบโต</div>
-        <div class="why-stat">GDP Growth+</div>
+      <div class="gw-why-card reveal d2">
+        <span class="gw-why-icon">🛤️</span>
+        <div class="gw-why-num">02</div>
+        <div class="gw-why-title">Laos-China Railway Open</div>
+        <p class="gw-why-desc">เส้นทางรถไฟสายใหม่เชื่อมลาวกับจีน — Logistics Hub ของ CLMV</p>
+        <div class="gw-why-stat">Gateway To China</div>
       </div>
-      <div class="why-card reveal d3">
-        <div class="why-num">03</div>
-        <div class="why-icon">🗺️</div>
-        <div class="why-title">Strategic Location</div>
-        <div class="why-desc">เวียงจันทน์อยู่ใจกลาง CLMV — เชื่อมไทย จีน เวียดนาม กัมพูชา เมียนมาร์ ผ่านโครงข่าย Land Bridge และรถไฟลาว-จีนที่ไปคุนหมิงใน 10 ชั่วโมง</div>
-        <div class="why-stat">CLMV Hub</div>
+      <div class="gw-why-card reveal d3">
+        <span class="gw-why-icon">🇹🇭</span>
+        <div class="gw-why-num">03</div>
+        <div class="gw-why-title">Thai Brand Trust</div>
+        <p class="gw-why-desc">สินค้าไทยได้รับความเชื่อมั่นสูงสุดในลาว — Brand Equity ที่สร้างมาหลายทศวรรษ</p>
+        <div class="gw-why-stat">High Trust Market</div>
+      </div>
+      <div class="gw-why-card reveal d4">
+        <span class="gw-why-icon">💰</span>
+        <div class="gw-why-num">04</div>
+        <div class="gw-why-title">Premium Pricing</div>
+        <p class="gw-why-desc">สินค้าไทยขายได้ราคาพรีเมียม 20–40% สูงกว่าราคาในไทย</p>
+        <div class="gw-why-stat">+20–40% Margin</div>
+      </div>
+      <div class="gw-why-card reveal d5">
+        <span class="gw-why-icon">🌏</span>
+        <div class="gw-why-num">05</div>
+        <div class="gw-why-title">CLMV Springboard</div>
+        <p class="gw-why-desc">ลาวเป็นจุดเริ่มต้นสู่ Vietnam, Cambodia, Myanmar และ Southern China</p>
+        <div class="gw-why-stat">5+ Countries</div>
+      </div>
+      <div class="gw-why-card reveal d6">
+        <span class="gw-why-icon">🏙️</span>
+        <div class="gw-why-num">06</div>
+        <div class="gw-why-title">Urbanization Wave</div>
+        <p class="gw-why-desc">เวียงจันทน์กำลังขยายตัวเร็ว ผู้บริโภครุ่นใหม่ต้องการสินค้าคุณภาพสูง</p>
+        <div class="gw-why-stat">7M+ Population</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHY BIG C -->
-<section class="bigc-sec" id="bigc">
-  <div class="sec-inner">
-    <div class="bigc-layout">
-      <div class="reveal">
-        <div class="sec-eyebrow">Why Big C Vientiane</div>
-        <h2 class="sec-h2">ทำเล<em> ที่ดีที่สุด</em></h2>
-        <p class="sec-lead" style="margin-bottom:2.5rem">Big C เวียงจันทน์คือ Modern Trade อันดับ 1 ของลาว — ทุกสินค้าที่เข้าถึง Big C เข้าถึงลูกค้าลาวและ Buyer นานาชาติได้ทันที</p>
-        <div class="bigc-cards">
-          <div class="bigc-card">
-            <div class="bc-icon">🏬</div>
-            <div>
-              <div class="bc-title">Central Retail Group</div>
-              <div class="bc-desc">Modern Trade ใหญ่ที่สุดในลาว — เครือข่ายที่เชื่อถือได้และมีฐานลูกค้าประจำขนาดใหญ่</div>
-            </div>
-          </div>
-          <div class="bigc-card">
-            <div class="bc-icon">👥</div>
-            <div>
-              <div class="bc-title">High Traffic Daily</div>
-              <div class="bc-desc">ลูกค้าเข้า Big C เวียงจันทน์ทุกวัน ทั้งชาวลาว นักท่องเที่ยว และ Business Traveler จากจีน รัสเซีย และยุโรป</div>
-            </div>
-          </div>
-          <div class="bigc-card">
-            <div class="bc-icon">🚛</div>
-            <div>
-              <div class="bc-title">Retail Distribution Network</div>
-              <div class="bc-desc">สินค้าที่ขึ้นเชลฟ์ Big C เข้าถึงระบบกระจายสินค้าทั่วลาว และสร้าง Brand Recognition ในตลาด CLMV</div>
-            </div>
-          </div>
-        </div>
+<!-- BIG C SECTION -->
+<section class="gw-bigc">
+  <div class="gw-inner">
+    <div class="reveal">
+      <div class="gw-eyebrow">Strategic Partner</div>
+      <h2 class="gw-h2">Big C Vientiane — <em>ช่องทางหลักสู่ผู้บริโภคลาว</em></h2>
+      <p class="gw-lead">ห้างค้าปลีกที่ใหญ่ที่สุดและเชื่อถือได้มากที่สุดในลาว — VITH HUB มี Partnership พิเศษสำหรับแบรนด์ไทย</p>
+    </div>
+    <div class="gw-bigc-layout">
+      <div class="reveal d1">
+        <p style="font-family:'Inter','Noto Sans Thai',sans-serif;font-size:.975rem;color:var(--sub);line-height:1.8;margin-bottom:1.5rem">Big C Vientiane เป็น Anchor Retail ที่ใหญ่ที่สุดในลาว — ดึงดูดผู้บริโภคระดับกลาง-สูง, Expats และ Business Buyers มากกว่า 50,000 คน/วัน</p>
+        <p style="font-family:'Inter','Noto Sans Thai',sans-serif;font-size:.975rem;color:var(--sub);line-height:1.8;margin-bottom:2rem">ผ่าน VITH HUB แบรนด์ไทยสามารถเข้าถึง Shelf Space โดยตรง โดยไม่ต้องผ่าน Distributor หลายชั้น — ยอดขายตรงถึงมือคุณ 100%</p>
+        <a href="/pages/accelerator.html" class="gw-btn-gold">Join Accelerator →</a>
       </div>
-      <div class="bigc-visual reveal d2">
-        <div class="bigc-main-card">
-          <div class="bigc-logo-placeholder">BIG C</div>
-          <div class="bigc-tagline">Vientiane, สปป.ลาว · ค้าปลีกอันดับ 1</div>
-          <p style="font-family:'Inter','Noto Sans Thai',sans-serif;font-size:.875rem;color:var(--sub);line-height:1.7">พันธมิตรหลักของ VITH HUB — พื้นที่ Showroom 200 ตร.ม. และ Retail Shelf สำหรับ Accelerator Program พร้อม Category Management Team ที่ให้คำปรึกษาโดยตรง</p>
-          <div class="bigc-stat-row">
-            <div class="bigc-mini-stat">
-              <div class="bcms-num">#<span>1</span></div>
-              <div class="bcms-lbl">Retail in Laos</div>
-            </div>
-            <div class="bigc-mini-stat">
-              <div class="bcms-num">200<span>+</span></div>
-              <div class="bcms-lbl">ตร.ม. Showroom</div>
-            </div>
-            <div class="bigc-mini-stat">
-              <div class="bcms-num">5<span>วัน</span></div>
-              <div class="bcms-lbl">Expo Duration</div>
-            </div>
-            <div class="bigc-mini-stat">
-              <div class="bcms-num">0<span>%</span></div>
-              <div class="bcms-lbl">Commission</div>
-            </div>
-          </div>
+      <div class="gw-bigc-visual reveal d2">
+        <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.25rem;font-weight:800;color:#fff;margin-bottom:.5rem">Big C Vientiane</div>
+        <div style="font-family:'Inter',sans-serif;font-size:.85rem;color:var(--subl);margin-bottom:1.5rem">Mekong Gateway Accelerator · Strategic Retail Partner</div>
+        <div class="gw-bigc-mini-stats">
+          <div class="gw-bigc-mini-stat"><div class="gw-bcms-num">#<span>1</span></div><div class="gw-bcms-lbl">Retail in Laos</div></div>
+          <div class="gw-bigc-mini-stat"><div class="gw-bcms-num">200<span>+</span></div><div class="gw-bcms-lbl">ตร.ม. Showroom</div></div>
+          <div class="gw-bigc-mini-stat"><div class="gw-bcms-num">5<span>วัน</span></div><div class="gw-bcms-lbl">Expo Duration</div></div>
+          <div class="gw-bigc-mini-stat"><div class="gw-bcms-num">0<span>%</span></div><div class="gw-bcms-lbl">Commission</div></div>
         </div>
       </div>
     </div>
@@ -362,92 +308,67 @@ button{cursor:pointer;font-family:inherit}
 </section>
 
 <!-- HOW VITH WORKS -->
-<section class="flow-sec" id="how">
-  <div class="sec-inner">
+<section class="gw-flow">
+  <div class="gw-inner">
     <div class="center-block reveal">
-      <div class="sec-eyebrow">How VITH Works</div>
-      <h2 class="sec-h2">เส้นทาง<em> Thai SME → Global Market</em></h2>
+      <div class="gw-eyebrow">How VITH Works</div>
+      <h2 class="gw-h2">เส้นทาง <em>Thai SME → Global Market</em></h2>
     </div>
-    <div class="flow-steps">
-      <div class="fs-step reveal d1">
-        <div class="fs-dot">🏭</div>
-        <div class="fs-label">Thai SME</div>
-        <div class="fs-sub">ผู้ประกอบการไทย</div>
-      </div>
-      <div class="fs-arrow">→</div>
-      <div class="fs-step reveal d2">
-        <div class="fs-dot">🎪</div>
-        <div class="fs-label">Expo Launch</div>
-        <div class="fs-sub">เปิดตัวใน 5 วัน</div>
-      </div>
-      <div class="fs-arrow">→</div>
-      <div class="fs-step fs-center reveal d3">
-        <div class="fs-dot">🌟</div>
-        <div class="fs-label">VITH HUB</div>
-        <div class="fs-sub">Big C Vientiane</div>
-      </div>
-      <div class="fs-arrow">→</div>
-      <div class="fs-step reveal d4">
-        <div class="fs-dot">🛒</div>
-        <div class="fs-label">Big C Shelf Test</div>
-        <div class="fs-sub">วางขายจริง</div>
-      </div>
-      <div class="fs-arrow">→</div>
-      <div class="fs-step reveal d4">
-        <div class="fs-dot">🤝</div>
-        <div class="fs-label">Distributor</div>
-        <div class="fs-sub">& Global Buyer</div>
-      </div>
+    <div class="gw-flow-steps">
+      <div class="gw-fs-step reveal d1"><div class="gw-fs-dot">🏭</div><div class="gw-fs-label">Thai SME</div><div class="gw-fs-sub">ผู้ประกอบการไทย</div></div>
+      <div class="gw-fs-arrow reveal d1">→</div>
+      <div class="gw-fs-step reveal d2"><div class="gw-fs-dot">🎪</div><div class="gw-fs-label">Expo Launch</div><div class="gw-fs-sub">เปิดตัวใน 5 วัน</div></div>
+      <div class="gw-fs-arrow reveal d2">→</div>
+      <div class="gw-fs-step gw-fs-center reveal d3"><div class="gw-fs-dot">🌟</div><div class="gw-fs-label">VITH HUB</div><div class="gw-fs-sub">Big C Vientiane</div></div>
+      <div class="gw-fs-arrow reveal d3">→</div>
+      <div class="gw-fs-step reveal d4"><div class="gw-fs-dot">🛒</div><div class="gw-fs-label">Big C Shelf Test</div><div class="gw-fs-sub">วางขายจริง</div></div>
+      <div class="gw-fs-arrow reveal d4">→</div>
+      <div class="gw-fs-step reveal d4"><div class="gw-fs-dot">🤝</div><div class="gw-fs-label">Distributor</div><div class="gw-fs-sub">& Global Buyer</div></div>
     </div>
     <div style="text-align:center;margin-top:56px" class="reveal d3">
-      <a href="/accelerator" class="btn-gold">Join Accelerator →</a>
+      <a href="/pages/accelerator.html" class="gw-btn-gold">Join Accelerator →</a>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
-<section class="cta-sec">
+<section class="gw-cta">
   <div style="max-width:640px;margin:0 auto;position:relative;z-index:1">
-    <div style="font-family:'Inter','Noto Sans Thai',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold2);margin-bottom:1.5rem" class="reveal">✦ เริ่มต้นได้เลยวันนี้</div>
+    <div class="gw-eyebrow" style="justify-content:center;margin-bottom:1.5rem" class="reveal">✦ เริ่มต้นได้เลยวันนี้</div>
     <h2 style="font-family:'Plus Jakarta Sans','Noto Sans Thai',sans-serif;font-size:clamp(2.5rem,5vw,4rem);color:#fff;line-height:1.1;letter-spacing:-.025em;margin-bottom:1rem" class="reveal d1">นำสินค้าของคุณ<br><em style="font-style:italic;color:var(--gold2)">สู่ตลาด Mekong</em></h2>
-    <p style="font-family:'Inter','Noto Sans Thai',sans-serif;font-size:.975rem;color:var(--sub);line-height:1.75;margin-bottom:2.5rem" class="reveal d2">Accelerator Program 90 วัน — รับเพียง 26 บริษัทเท่านั้น<br>ทีมงานดูแลทุกขั้นตอน คุณไม่ต้องบินไปเวียงจันทน์เอง</p>
+    <p style="font-family:'Inter','Noto Sans Thai',sans-serif;font-size:.975rem;color:var(--sub);line-height:1.75;margin-bottom:2.5rem" class="reveal d2">Accelerator Program 90 วัน — รับเพียง 26 บริษัทเท่านั้น</p>
     <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap" class="reveal d3">
-      <a href="/accelerator" class="btn-gold">Apply Accelerator Now →</a>
-      <a href="/event" class="btn-ghost">ดูบูท Expo</a>
+      <a href="/pages/accelerator.html" class="gw-btn-gold">Apply Accelerator Now →</a>
+      <a href="/pages/event.html" class="gw-btn-ghost">ดูบูท Expo</a>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-logo">VITH<em>HUB</em></div>
-    <div class="footer-links">
-      <a href="/" class="footer-link">Home</a>
-      <a href="/gateway" class="footer-link">Gateway</a>
-      <a href="/accelerator" class="footer-link">Accelerator</a>
-      <a href="/event" class="footer-link">Expo</a>
-      <a href="/membership" class="footer-link">Membership</a>
+<footer class="gw-footer">
+  <div class="gw-footer-inner">
+    <div class="gw-footer-logo">VITH<em>HUB</em></div>
+    <div class="gw-footer-links">
+      <a href="/" class="gw-footer-link">Home</a>
+      <a href="/pages/gateway.html" class="gw-footer-link">Gateway</a>
+      <a href="/pages/accelerator.html" class="gw-footer-link">Accelerator</a>
+      <a href="/pages/event.html" class="gw-footer-link">Expo</a>
+      <a href="/pages/membership.html" class="gw-footer-link">Membership</a>
     </div>
-    <div class="footer-copy">© 2026 VITH HUB · vithhub.asia</div>
+    <div class="gw-footer-copy">© 2026 VITH HUB · vithhub.asia</div>
+    <p class="gw-footer-disclaimer">*VITH HUB เป็นแพลตฟอร์มสนับสนุนการเข้าสู่ตลาด (Market Entry Platform) ไม่รับประกันยอดขายหรือผลกำไร มิได้ทำหน้าที่เป็นตัวแทนจำหน่าย (Distributor)</p>
   </div>
-  <p class="footer-disclaimer">*VITH HUB เป็นแพลตฟอร์มสนับสนุนการเข้าสู่ตลาด (Market Entry Platform) ไม่รับประกันยอดขายหรือผลกำไร มิได้ทำหน้าที่เป็นตัวแทนจำหน่าย (Distributor)</p>
 </footer>
 
 <!-- FLOAT -->
-<div class="float-cta">
-  <a href="/accelerator" class="float-btn float-apply">✦ Apply Accelerator</a>
-  <a href="https://line.me/ti/p/@cef8930n" target="_blank" class="float-btn float-line">
+<div class="gw-float">
+  <a href="/pages/accelerator.html" class="gw-float-btn gw-float-apply">✦ Apply Accelerator</a>
+  <a href="https://line.me/ti/p/@cef8930n" target="_blank" class="gw-float-btn gw-float-line">
     <svg width="16" height="16" viewBox="0 0 48 48"><path d="M24 4C13 4 4 11.8 4 21.5c0 5.5 3.1 10.4 7.9 13.7-.3 1.2-1.1 4.3-1.3 5 0 0-.1.3.2.4.2.1.5 0 .5 0 .7-.1 8.5-5.6 9.8-6.5.9.1 1.9.2 2.9.2 11 0 20-7.8 20-17.3S35 4 24 4z" fill="white"/></svg>
     LINE
   </a>
 </div>
 
-<script>
-window.addEventListener('scroll',()=>{document.getElementById('vithNav').classList.toggle('scrolled',window.scrollY>20)});
-function toggleNav(){document.getElementById('navMobile').classList.toggle('open')}
-const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}})},{rootMargin:'0px 0px -40px 0px',threshold:0});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-</script>
+<script src="/assets/js/main.js"></script>
 </body>
 </html>
