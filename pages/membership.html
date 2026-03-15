@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/vith-design.css">
+
 <style>
 /* ════════════════════════════════════════
    VITH HUB — MEMBERSHIP PAGE
@@ -62,11 +62,11 @@ button { cursor: pointer; font-family: inherit; }
 @keyframes count-up { from { opacity:0; transform:scale(.85) } to { opacity:1; transform:scale(1) } }
 @keyframes draw-line { from { transform:scaleX(0) } to { transform:scaleX(1) } }
 
-.reveal { opacity:0; transform:translateY(24px); transition:opacity .65s cubic-bezier(.4,0,.2,1), transform .65s cubic-bezier(.4,0,.2,1); }
+.reveal { opacity:1; transform:none; /*was:opacity:0;translateY(24px)*/ transition:opacity .65s cubic-bezier(.4,0,.2,1), transform .65s cubic-bezier(.4,0,.2,1); }
 .reveal.in { opacity:1; transform:none; }
-.rl { opacity:0; transform:translateX(-28px); transition:opacity .65s ease, transform .65s ease; }
+.rl { opacity:1; transform:none; /*was hidden*/ transition:opacity .65s ease, transform .65s ease; }
 .rl.in { opacity:1; transform:none; }
-.rr { opacity:0; transform:translateX(28px); transition:opacity .65s ease, transform .65s ease; }
+.rr { opacity:1; transform:none; /*was hidden*/ transition:opacity .65s ease, transform .65s ease; }
 .rr.in { opacity:1; transform:none; }
 .d1 { transition-delay:.1s } .d2 { transition-delay:.2s } .d3 { transition-delay:.3s }
 .d4 { transition-delay:.4s } .d5 { transition-delay:.5s } .d6 { transition-delay:.6s }
@@ -385,7 +385,7 @@ button { cursor: pointer; font-family: inherit; }
   border-radius: 20px;
   background: rgba(201,162,39,.07);
   margin-bottom: 32px;
-  animation: fadeUp .7s .1s both;
+  animation: fadeUp .7s .1s forwards;
 }
 .hero-badge-dot { width:5px; height:5px; border-radius:50%; background:var(--gold2); animation:pulse-gold 2s infinite; }
 
@@ -397,7 +397,7 @@ button { cursor: pointer; font-family: inherit; }
   line-height: 1.04;
   letter-spacing: -.035em;
   margin-bottom: 24px;
-  animation: fadeUp .7s .2s both;
+  animation: fadeUp .7s .2s forwards;
 }
 .hero-h1 .gold-text {
   background: linear-gradient(90deg, var(--gold), var(--gold2), var(--gold3), var(--gold2), var(--gold));
@@ -414,7 +414,7 @@ button { cursor: pointer; font-family: inherit; }
   color: rgba(255,255,255,.65);
   line-height: 1.45;
   margin-bottom: 16px;
-  animation: fadeUp .7s .3s both;
+  animation: fadeUp .7s .3s forwards;
 }
 .hero-body {
   font-family: 'Inter', 'Noto Sans Thai', sans-serif;
@@ -422,9 +422,9 @@ button { cursor: pointer; font-family: inherit; }
   line-height: 1.8;
   max-width: 540px;
   margin-bottom: 40px;
-  animation: fadeUp .7s .35s both;
+  animation: fadeUp .7s .35s forwards;
 }
-.hero-btns { display:flex; gap:12px; flex-wrap:wrap; animation: fadeUp .7s .4s both; }
+.hero-btns { display:flex; gap:12px; flex-wrap:wrap; animation: fadeUp .7s .4s forwards; }
 
 /* Stats bar */
 .hero-stats {
@@ -433,7 +433,7 @@ button { cursor: pointer; font-family: inherit; }
   margin-top: 56px;
   padding-top: 40px;
   border-top: 1px solid rgba(255,255,255,.08);
-  animation: fadeUp .7s .5s both;
+  animation: fadeUp .7s .5s forwards;
 }
 .hero-stat {
   flex: 1;
@@ -1330,6 +1330,11 @@ button { cursor: pointer; font-family: inherit; }
   .m-footer-grid { grid-template-columns:1fr; }
   .m-float { bottom:16px; right:16px; }
 }
+
+/* PREVIEW FIX: ensure hero content visible */
+.hero-badge, .hero-h1, .hero-sub, .hero-body, .hero-btns, .hero-stats {
+  opacity: 1 !important;
+}
 </style>
 </head>
 <body>
@@ -1978,14 +1983,37 @@ button { cursor: pointer; font-family: inherit; }
   </a>
 </div>
 
-<script src="/assets/js/main.js"></script>
+
 <script>
-// FAQ accordion
-function toggleFaq(el) {
+// Nav scroll
+(function(){
+  const nav = document.getElementById('vithNav');
+  if(!nav) return;
+  window.addEventListener('scroll', ()=>{
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  });
+})();
+
+// Mobile menu
+function toggleNav(){
+  const m = document.getElementById('mMobile');
+  if(m) m.classList.toggle('open');
+}
+
+// Reveal on scroll
+(function(){
+  const obs = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); }});
+  }, {rootMargin:'0px 0px -40px 0px', threshold:0});
+  document.querySelectorAll('.reveal,.rl,.rr').forEach(el=>obs.observe(el));
+})();
+
+// FAQ
+function toggleFaq(el){
   const item = el.parentElement;
   const wasOpen = item.classList.contains('open');
-  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
-  if (!wasOpen) item.classList.add('open');
+  document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
+  if(!wasOpen) item.classList.add('open');
 }
 </script>
 </body>
