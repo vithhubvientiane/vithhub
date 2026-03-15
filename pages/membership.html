@@ -1,1 +1,1992 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>VITH HUB — Membership | Gateway For Thai Brands To Mekong Markets</title>
+<meta name="description" content="Join VITH HUB Membership — เชื่อมแบรนด์ไทยกับตลาด Laos, CLMV และ Global Markets ผ่าน Business Network, Expo Platform และ Distribution Access">
+<meta property="og:title" content="VITH HUB Membership — Mekong Trade Network">
+<meta property="og:description" content="Gateway For Thai Brands Entering Laos And Mekong Markets">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/vith-design.css">
+<style>
+/* ════════════════════════════════════════
+   VITH HUB — MEMBERSHIP PAGE
+   Aesthetic: Luxury Trade Platform
+   Navy + Gold, Dense data, Dramatic reveals
+════════════════════════════════════════ */
 
+:root {
+  --navy:    #0B1F3B;
+  --navy2:   #0d2545;
+  --navy3:   #071529;
+  --navyL:   #1a3560;
+  --gold:    #C9A227;
+  --gold2:   #E4BC4A;
+  --gold3:   #F5D680;
+  --goldDk:  #9B7A10;
+  --red:     #e5141e;
+  --white:   #ffffff;
+  --sub:     rgba(255,255,255,.55);
+  --subl:    rgba(255,255,255,.32);
+  --border:  rgba(255,255,255,.08);
+  --borderG: rgba(201,162,39,.22);
+  --max:     1200px;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: 'Inter', 'Noto Sans Thai', system-ui, sans-serif;
+  background: var(--navy3);
+  color: #fff;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+button { cursor: pointer; font-family: inherit; }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp   { from { opacity:0; transform:translateY(28px) } to { opacity:1; transform:none } }
+@keyframes fadeIn   { from { opacity:0 } to { opacity:1 } }
+@keyframes shimmer  { 0% { background-position:200% center } 100% { background-position:-200% center } }
+@keyframes ticker   { 0% { transform:translateX(0) } 100% { transform:translateX(-50%) } }
+@keyframes floatY   { 0%,100% { transform:translateY(0) } 50% { transform:translateY(-10px) } }
+@keyframes pulse-gold { 0%,100% { box-shadow:0 4px 20px rgba(201,162,39,.35) } 50% { box-shadow:0 8px 40px rgba(201,162,39,.65),0 0 0 6px rgba(201,162,39,.07) } }
+@keyframes orb-spin { 0% { transform:rotate(0deg) } 100% { transform:rotate(360deg) } }
+@keyframes glow-in  { from { opacity:0; filter:blur(12px) } to { opacity:1; filter:blur(0) } }
+@keyframes count-up { from { opacity:0; transform:scale(.85) } to { opacity:1; transform:scale(1) } }
+@keyframes draw-line { from { transform:scaleX(0) } to { transform:scaleX(1) } }
+
+.reveal { opacity:0; transform:translateY(24px); transition:opacity .65s cubic-bezier(.4,0,.2,1), transform .65s cubic-bezier(.4,0,.2,1); }
+.reveal.in { opacity:1; transform:none; }
+.rl { opacity:0; transform:translateX(-28px); transition:opacity .65s ease, transform .65s ease; }
+.rl.in { opacity:1; transform:none; }
+.rr { opacity:0; transform:translateX(28px); transition:opacity .65s ease, transform .65s ease; }
+.rr.in { opacity:1; transform:none; }
+.d1 { transition-delay:.1s } .d2 { transition-delay:.2s } .d3 { transition-delay:.3s }
+.d4 { transition-delay:.4s } .d5 { transition-delay:.5s } .d6 { transition-delay:.6s }
+
+/* ── TICKER ── */
+.ticker {
+  height: 36px;
+  background: linear-gradient(90deg, var(--goldDk), var(--gold), var(--gold2), var(--gold), var(--goldDk));
+  background-size: 200% auto;
+  animation: shimmer 6s linear infinite;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.ticker-track { display:flex; white-space:nowrap; animation: ticker 36s linear infinite; }
+.ticker-item {
+  font-family: 'Inter', sans-serif;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--navy);
+  padding: 0 32px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+.ticker-dot { display:inline-block; width:4px; height:4px; border-radius:50%; background:var(--navy); vertical-align:middle; margin-right:8px; opacity:.5; }
+
+/* ── NAV ── */
+.m-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 900;
+  height: 64px;
+  transition: all .3s;
+}
+.m-nav::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(7,21,41,.94);
+  backdrop-filter: blur(24px) saturate(1.4);
+  -webkit-backdrop-filter: blur(24px) saturate(1.4);
+  border-bottom: 1px solid var(--borderG);
+  transition: all .3s;
+}
+.m-nav.scrolled::before {
+  background: rgba(5,14,28,.98);
+  box-shadow: 0 2px 28px rgba(0,0,0,.3);
+}
+.m-nav-inner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--max);
+  margin: 0 auto;
+  height: 64px;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.m-logo { display:flex; align-items:center; gap:10px; flex-shrink:0; }
+.m-logo-mark {
+  width: 34px; height: 34px;
+  border-radius: 9px;
+  background: linear-gradient(135deg, var(--goldDk), var(--gold), var(--gold2));
+  display: flex; align-items:center; justify-content:center;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800; font-size: 1rem;
+  color: var(--navy3);
+  box-shadow: 0 2px 10px rgba(201,162,39,.3);
+}
+.m-logo-wrap { display:flex; flex-direction:column; }
+.m-logo-name {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.05rem; font-weight: 800;
+  color: #fff; letter-spacing: -.01em; line-height:1;
+}
+.m-logo-name em { font-style:normal; color:var(--gold2); }
+.m-logo-sub {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px; font-weight: 500;
+  letter-spacing: .14em; text-transform: uppercase;
+  color: var(--subl); margin-top: 2px;
+}
+.m-nav-links { display:flex; align-items:center; gap:2px; }
+.m-nav-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px; font-weight: 500;
+  color: var(--sub);
+  padding: 7px 12px;
+  border-radius: 8px;
+  transition: all .2s;
+  white-space: nowrap;
+}
+.m-nav-link:hover { color:#fff; background:rgba(255,255,255,.08); }
+.m-nav-link.active { color:#fff; font-weight:600; }
+.m-nav-right { display:flex; align-items:center; gap:10px; }
+.m-nav-cta {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13px; font-weight: 700;
+  background: linear-gradient(135deg, var(--goldDk), var(--gold), var(--gold2));
+  color: var(--navy3);
+  padding: 9px 20px;
+  border-radius: 8px;
+  transition: all .25s;
+  white-space: nowrap;
+  box-shadow: 0 2px 10px rgba(201,162,39,.25);
+}
+.m-nav-cta:hover { transform:translateY(-1px); box-shadow:0 6px 24px rgba(201,162,39,.4); }
+.m-hamburger {
+  display: none;
+  flex-direction: column; gap: 5px;
+  background: none; border: none; padding: 6px; cursor: pointer;
+}
+.m-hamburger span { display:block; width:22px; height:2px; background:rgba(255,255,255,.8); border-radius:2px; }
+.m-mobile {
+  display: none;
+  position: fixed;
+  top: 64px; left: 0; right: 0;
+  background: rgba(5,14,28,.99);
+  backdrop-filter: blur(20px);
+  padding: 20px;
+  border-bottom: 1px solid var(--borderG);
+  flex-direction: column; gap: 4px;
+  z-index: 898;
+  box-shadow: 0 16px 40px rgba(0,0,0,.3);
+}
+.m-mobile.open { display:flex; }
+.m-mob-link {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 15px; font-weight: 600;
+  color: rgba(255,255,255,.6);
+  padding: 11px 14px; border-radius: 8px;
+}
+.m-mob-cta {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 15px; font-weight: 700;
+  background: linear-gradient(135deg, var(--goldDk), var(--gold));
+  color: var(--navy3);
+  padding: 13px 20px; border-radius: 8px;
+  text-align: center; margin-top: 8px;
+}
+
+/* ── BUTTONS ── */
+.btn-gold {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 15px; font-weight: 700;
+  background: linear-gradient(135deg, var(--goldDk), var(--gold), var(--gold2));
+  color: var(--navy3);
+  padding: 14px 32px;
+  border-radius: 10px;
+  border: none;
+  display: inline-flex; align-items:center; gap:8px;
+  transition: all .25s;
+  box-shadow: 0 4px 20px rgba(201,162,39,.3);
+  cursor: pointer;
+}
+.btn-gold:hover { transform:translateY(-2px); box-shadow:0 10px 36px rgba(201,162,39,.5); }
+.btn-gold.lg { padding: 16px 40px; font-size: 16px; }
+.btn-ghost {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 15px; font-weight: 600;
+  color: rgba(255,255,255,.7);
+  padding: 13px 28px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.15);
+  display: inline-flex; align-items:center; gap:8px;
+  transition: all .25s;
+  background: rgba(255,255,255,.04);
+  backdrop-filter: blur(8px);
+}
+.btn-ghost:hover { color:#fff; border-color:rgba(255,255,255,.3); background:rgba(255,255,255,.08); transform:translateY(-1px); }
+
+/* ── LAYOUT ── */
+.container { max-width:var(--max); margin:0 auto; padding:0 2rem; }
+.section { padding: 96px 2rem; }
+.section-sm { padding: 64px 2rem; }
+
+/* ══════════════════════════════════════
+   §1 HERO
+══════════════════════════════════════ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--navy3);
+  padding-top: 100px;
+}
+/* Layered depth */
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 75% 60% at 10% 50%, rgba(201,162,39,.08) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 80% at 85% 15%, rgba(26,53,96,.6) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 50% at 70% 85%, rgba(7,21,41,.9) 0%, transparent 50%);
+  pointer-events: none;
+}
+.hero-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(201,162,39,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,162,39,.035) 1px, transparent 1px);
+  background-size: 72px 72px;
+  pointer-events: none;
+}
+/* Diagonal accent line */
+.hero-slash {
+  position: absolute;
+  top: -10%; right: 15%;
+  width: 1px; height: 130%;
+  background: linear-gradient(to bottom, transparent 0%, rgba(201,162,39,.15) 30%, rgba(201,162,39,.08) 70%, transparent 100%);
+  transform: rotate(12deg);
+  pointer-events: none;
+}
+.hero-slash2 {
+  position: absolute;
+  top: -10%; right: 30%;
+  width: 1px; height: 130%;
+  background: linear-gradient(to bottom, transparent 0%, rgba(255,255,255,.04) 40%, transparent 100%);
+  transform: rotate(12deg);
+  pointer-events: none;
+}
+/* Orb */
+.hero-orb-wrap {
+  position: absolute;
+  right: 4%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 420px;
+  height: 420px;
+  pointer-events: none;
+}
+.hero-orb {
+  position: absolute; inset: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(201,162,39,.1);
+  animation: orb-spin 40s linear infinite;
+}
+.hero-orb2 {
+  position: absolute;
+  inset: 50px;
+  border-radius: 50%;
+  border: 1px solid rgba(201,162,39,.06);
+  animation: orb-spin 28s linear infinite reverse;
+}
+.hero-orb-core {
+  position: absolute;
+  top:50%; left:50%;
+  width:130px; height:130px;
+  transform: translate(-50%,-50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201,162,39,.4) 0%, rgba(201,162,39,.15) 40%, transparent 70%);
+  animation: floatY 7s ease-in-out infinite;
+  filter: blur(2px);
+}
+.hero-orb-ring {
+  position: absolute;
+  top:50%; left:50%;
+  width:80px; height:80px;
+  transform: translate(-50%,-50%);
+  border-radius: 50%;
+  border: 2px solid rgba(201,162,39,.5);
+  animation: floatY 7s ease-in-out infinite;
+  box-shadow: 0 0 40px rgba(201,162,39,.25), inset 0 0 20px rgba(201,162,39,.1);
+}
+/* Orbit dots */
+.orb-sat {
+  position: absolute;
+  top:50%; left:50%;
+  width:8px; height:8px;
+  border-radius:50%;
+  margin:-4px;
+}
+.orb-s1 { background:var(--gold2); animation:orb-spin 10s linear infinite; transform-origin:-90px 0; margin-top:-90px; }
+.orb-s2 { background:rgba(255,255,255,.5); animation:orb-spin 16s linear infinite reverse; transform-origin:110px 0; margin-left:110px; }
+.orb-s3 { background:var(--gold); animation:orb-spin 22s linear infinite; transform-origin:0 -130px; margin-top:-130px; }
+/* Country tags */
+.orb-label {
+  position: absolute;
+  font-family: 'Inter', sans-serif;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: .12em; text-transform: uppercase;
+  white-space: nowrap;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid var(--border);
+  color: var(--sub);
+}
+.orb-la { top:-20px; left:50%; transform:translateX(-50%); color:var(--gold2); border-color:var(--borderG); background:rgba(201,162,39,.08); }
+.orb-th { bottom:-20px; left:50%; transform:translateX(-50%); }
+.orb-cn { right:-60px; top:50%; transform:translateY(-50%); color:rgba(96,165,250,.8); }
+.orb-gl { left:-70px; top:50%; transform:translateY(-50%); }
+
+/* Hero content */
+.hero-inner {
+  position: relative; z-index:10;
+  max-width: var(--max); width:100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.hero-content { max-width: 680px; padding: 80px 0 80px; }
+
+.hero-badge {
+  display: inline-flex; align-items:center; gap:8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px; font-weight: 600;
+  letter-spacing: .14em; text-transform: uppercase;
+  color: var(--gold2);
+  padding: 6px 14px;
+  border: 1px solid var(--borderG);
+  border-radius: 20px;
+  background: rgba(201,162,39,.07);
+  margin-bottom: 32px;
+  animation: fadeUp .7s .1s both;
+}
+.hero-badge-dot { width:5px; height:5px; border-radius:50%; background:var(--gold2); animation:pulse-gold 2s infinite; }
+
+.hero-h1 {
+  font-family: 'Plus Jakarta Sans', 'Noto Sans Thai', sans-serif;
+  font-size: clamp(40px, 5.5vw, 72px);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.04;
+  letter-spacing: -.035em;
+  margin-bottom: 24px;
+  animation: fadeUp .7s .2s both;
+}
+.hero-h1 .gold-text {
+  background: linear-gradient(90deg, var(--gold), var(--gold2), var(--gold3), var(--gold2), var(--gold));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 5s linear 1s infinite;
+}
+
+.hero-sub {
+  font-family: 'Plus Jakarta Sans', 'Noto Sans Thai', sans-serif;
+  font-size: 20px; font-weight: 600;
+  color: rgba(255,255,255,.65);
+  line-height: 1.45;
+  margin-bottom: 16px;
+  animation: fadeUp .7s .3s both;
+}
+.hero-body {
+  font-family: 'Inter', 'Noto Sans Thai', sans-serif;
+  font-size: 16px; color: rgba(255,255,255,.48);
+  line-height: 1.8;
+  max-width: 540px;
+  margin-bottom: 40px;
+  animation: fadeUp .7s .35s both;
+}
+.hero-btns { display:flex; gap:12px; flex-wrap:wrap; animation: fadeUp .7s .4s both; }
+
+/* Stats bar */
+.hero-stats {
+  display: flex;
+  gap: 0;
+  margin-top: 56px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255,255,255,.08);
+  animation: fadeUp .7s .5s both;
+}
+.hero-stat {
+  flex: 1;
+  padding: 0 28px 0 0;
+  border-right: 1px solid rgba(255,255,255,.07);
+}
+.hero-stat:last-child { border-right:none; padding-right:0; }
+.hero-stat:first-child { padding-left:0; }
+.hs-num {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 38px; font-weight: 800;
+  color: #fff; line-height:1; letter-spacing:-.04em;
+  margin-bottom: 4px;
+}
+.hs-num em { font-style:normal; color:var(--gold2); }
+.hs-lbl {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px; color: var(--subl);
+  letter-spacing: .04em; line-height:1.4;
+}
+
+/* ══════════════════════════════════════
+   §2 PROBLEM
+══════════════════════════════════════ */
+.problem-sec {
+  padding: 96px 2rem;
+  background: linear-gradient(180deg, var(--navy3), #0d1f3a);
+  position: relative;
+  overflow: hidden;
+}
+.problem-sec::before {
+  content: 'THE PROBLEM';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(60px,12vw,160px);
+  font-weight: 900;
+  color: rgba(255,255,255,.015);
+  white-space: nowrap;
+  letter-spacing: -.05em;
+  pointer-events: none;
+  user-select: none;
+}
+.prob-eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px; font-weight: 600;
+  letter-spacing: .16em; text-transform:uppercase;
+  color: rgba(229,20,30,.8);
+  margin-bottom: 12px;
+  display: flex; align-items:center; gap:10px;
+}
+.prob-eyebrow::before { content:''; width:20px; height:2px; background:rgba(229,20,30,.6); border-radius:2px; }
+.prob-h2 {
+  font-family: 'Plus Jakarta Sans', 'Noto Sans Thai', sans-serif;
+  font-size: clamp(26px, 3.5vw, 42px);
+  font-weight: 700; color:#fff;
+  line-height: 1.2; letter-spacing:-.025em;
+  margin-bottom: 16px;
+}
+.prob-lead {
+  font-family: 'Inter', 'Noto Sans Thai', sans-serif;
+  font-size: 17px; color: var(--sub);
+  line-height: 1.75; max-width: 540px;
+  margin-bottom: 56px;
+}
+.prob-cards {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 1.5rem;
+}
+.prob-card {
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 16px;
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+  transition: all .3s;
+}
+.prob-card::before {
+  content: '';
+  position: absolute; top:0; left:0; right:0; height:3px;
+  background: linear-gradient(90deg, transparent, rgba(229,20,30,.6), transparent);
+  opacity: 0; transition:opacity .3s;
+}
+.prob-card:hover { transform:translateY(-4px); background:rgba(255,255,255,.05); border-color:rgba(229,20,30,.18); }
+.prob-card:hover::before { opacity:1; }
+.prob-card-num {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 72px; font-weight: 900;
+  color: rgba(229,20,30,.06);
+  position: absolute; top:12px; right:20px;
+  line-height:1; letter-spacing:-.04em;
+  pointer-events:none;
+}
+.prob-icon { font-size: 2rem; margin-bottom: 20px; display:block; }
+.prob-title {
+  font-family: 'Plus Jakarta Sans', 'Noto Sans Thai', sans-serif;
+  font-size: 19px; font-weight: 700;
+  color: #fff; margin-bottom: 10px; letter-spacing:-.01em;
+}
+.prob-desc {
+  font-family: 'Inter', 'Noto Sans Thai', sans-serif;
+  font-size: 14px; color: var(--sub); line-height:1.7;
+}
+.prob-tag {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: .1em; text-transform:uppercase;
+  color: rgba(229,20,30,.7);
+  background: rgba(229,20,30,.08);
+  border: 1px solid rgba(229,20,30,.18);
+  padding: 3px 10px; border-radius:20px;
+  margin-top: 16px;
+}
+
+/* ══════════════════════════════════════
+   §3 SOLUTION
+══════════════════════════════════════ */
+.solution-sec {
+  padding: 96px 2rem;
+  background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(201,162,39,.07) 0%, transparent 65%),
+              linear-gradient(135deg, #0a1929 0%, #0B1F3B 50%, #0d2545 100%);
+  position: relative;
+}
+.sol-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.sol-eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px; font-weight: 600;
+  letter-spacing: .16em; text-transform:uppercase;
+  color: var(--gold2);
+  margin-bottom: 12px;
+  display: flex; align-items:center; gap:10px;
+}
+.sol-eyebrow::before { content:''; width:20px; height:2px; background:var(--gold); border-radius:2px; }
+.sol-h2 {
+  font-family: 'Plus Jakarta Sans', 'Noto Sans Thai', sans-serif;
+  font-size: clamp(26px, 3.5vw, 42px);
+  font-weight: 700; color:#fff;
+  line-height: 1.2; letter-spacing:-.025em; margin-bottom:16px;
+}
+.sol-h2 em { font-style:italic; color:rgba(255,255,255,.35); font-weight:600; }
+.sol-lead {
+  font-family: 'Inter', 'Noto Sans Thai', sans-serif;
+  font-size: 16px; color: var(--sub); line-height:1.8; margin-bottom:36px;
+}
+.sol-points { display:flex; flex-direction:column; gap:16px; }
+.sol-point {
+  display: flex; align-items:flex-start; gap:14px;
+  padding: 18px 20px;
+  background: rgba(255,255,255,.03);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: all .25s;
+}
+.sol-point:hover { background:rgba(255,255,255,.05); border-color:var(--borderG); }
+.sol-point-icon {
+  width: 40px; height:40px;
+  border-radius:10px;
+  background: rgba(201,162,39,.12);
+  border: 1px solid var(--borderG);
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.1rem; flex-shrink:0;
+}
+.sol-point-title {
+  font-family: 'Plus Jakarta Sans', 'Noto Sans Thai', sans-serif;
+  font-size: 15px; font-weight:700; color:#fff; margin-bottom:4px;
+}
+.sol-point-desc {
+  font-family: 'Inter', 'Noto Sans Thai', sans-serif;
+  font-size: 13px; color:var(--sub); line-height:1.6;
+}
+
+/* Solution visual */
+.sol-visual {
+  position: relative;
+}
+.sol-platform-card {
+  background: rgba(255,255,255,.04);
+  border: 1px solid var(--borderG);
+  border-radius: 24px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+.sol-platform-card::before {
+  content:'';
+  position:absolute; top:0; left:0; right:0; height:3px;
+  background: linear-gradient(90deg, transparent, var(--gold), var(--gold2), var(--gold), transparent);
+}
+.sol-platform-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 11px; font-weight: 700;
+  letter-spacing:.16em; text-transform:uppercase;
+  color:var(--subl); margin-bottom:24px;
+}
+.sol-pillars { display:flex; flex-direction:column; gap:12px; margin-bottom:24px; }
+.sol-pillar {
+  display: flex; align-items:center; gap:12px;
+  padding: 14px 16px;
+  background:rgba(255,255,255,.04);
+  border-radius:10px;
+  border: 1px solid var(--border);
+}
+.sol-pillar-icon { font-size:1.2rem; flex-shrink:0; }
+.sol-pillar-name {
+  font-family: 'Plus Jakarta Sans', 'Noto Sans Thai', sans-serif;
+  font-size:14px; font-weight:700; color:#fff;
+}
+.sol-pillar-tag {
+  margin-left:auto;
+  font-family:'Inter',sans-serif;
+  font-size:10px; font-weight:700;
+  letter-spacing:.1em; text-transform:uppercase;
+  color:var(--gold2);
+  background:rgba(201,162,39,.1);
+  border:1px solid var(--borderG);
+  padding:3px 10px; border-radius:20px;
+}
+.sol-divider { height:1px; background:var(--border); margin:16px 0; }
+.sol-route-row {
+  display:flex; align-items:center; gap:8px; flex-wrap:wrap;
+}
+.sol-route-node {
+  font-family:'Inter',sans-serif;
+  font-size:12px; font-weight:600;
+  color:rgba(255,255,255,.6);
+  padding:5px 12px;
+  border-radius:20px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.03);
+}
+.sol-route-node.active { background:rgba(201,162,39,.1); border-color:var(--borderG); color:var(--gold2); }
+.sol-route-arrow { color:var(--borderG); font-size:.9rem; }
+
+/* ══════════════════════════════════════
+   §4 BENEFITS
+══════════════════════════════════════ */
+.benefits-sec {
+  padding: 96px 2rem;
+  background: linear-gradient(180deg, var(--navy2), var(--navy3));
+}
+.benefits-header { text-align:center; margin-bottom:64px; }
+.benefits-eyebrow {
+  font-family:'Inter',sans-serif;
+  font-size:11px; font-weight:600;
+  letter-spacing:.16em; text-transform:uppercase;
+  color:var(--goldDk);
+  margin-bottom:12px;
+  display:flex; align-items:center; justify-content:center; gap:10px;
+}
+.benefits-h2 {
+  font-family:'Plus Jakarta Sans','Noto Sans Thai',sans-serif;
+  font-size:clamp(26px,3.5vw,42px);
+  font-weight:700; color:#fff;
+  line-height:1.2; letter-spacing:-.025em; margin-bottom:14px;
+}
+.benefits-h2 em { font-style:italic; color:rgba(255,255,255,.35); font-weight:600; }
+.benefits-lead {
+  font-family:'Inter',sans-serif;
+  font-size:17px; color:var(--sub); line-height:1.75;
+  max-width:560px; margin:0 auto;
+}
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 20px;
+}
+.benefit-card {
+  background: rgba(255,255,255,.03);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+}
+.benefit-card::after {
+  content:'';
+  position:absolute; bottom:0; left:0; right:0; height:3px;
+  background:linear-gradient(90deg, transparent, var(--gold2), transparent);
+  transform:scaleX(0); transform-origin:center;
+  transition:transform .35s;
+}
+.benefit-card:hover { background:rgba(255,255,255,.06); border-color:var(--borderG); transform:translateY(-4px); }
+.benefit-card:hover::after { transform:scaleX(1); }
+.benefit-icon-wrap {
+  width:52px; height:52px;
+  border-radius:12px;
+  background:rgba(201,162,39,.1);
+  border:1px solid var(--borderG);
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.4rem;
+  margin-bottom:20px;
+  transition: all .3s;
+  animation: floatY 5s ease-in-out infinite;
+}
+.benefit-card:nth-child(2) .benefit-icon-wrap { animation-delay:.5s; }
+.benefit-card:nth-child(3) .benefit-icon-wrap { animation-delay:1s; }
+.benefit-card:nth-child(4) .benefit-icon-wrap { animation-delay:1.5s; }
+.benefit-card:nth-child(5) .benefit-icon-wrap { animation-delay:2s; }
+.benefit-card:nth-child(6) .benefit-icon-wrap { animation-delay:2.5s; }
+.benefit-card:hover .benefit-icon-wrap { background:rgba(201,162,39,.18); }
+.benefit-title {
+  font-family:'Plus Jakarta Sans','Noto Sans Thai',sans-serif;
+  font-size:17px; font-weight:700; color:#fff; margin-bottom:8px; letter-spacing:-.01em;
+}
+.benefit-desc {
+  font-family:'Inter','Noto Sans Thai',sans-serif;
+  font-size:14px; color:var(--sub); line-height:1.7; margin-bottom:16px;
+}
+.benefit-tags { display:flex; flex-wrap:wrap; gap:6px; }
+.btag {
+  font-family:'Inter',sans-serif;
+  font-size:10px; font-weight:600;
+  letter-spacing:.08em; text-transform:uppercase;
+  padding:3px 10px; border-radius:20px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.1);
+  color:rgba(255,255,255,.5);
+}
+.btag.gold { background:rgba(201,162,39,.1); border-color:var(--borderG); color:var(--gold2); }
+
+/* ══════════════════════════════════════
+   §5 MARKET OPPORTUNITY
+══════════════════════════════════════ */
+.market-sec {
+  padding: 96px 2rem;
+  background: radial-gradient(ellipse 90% 70% at 80% 30%, rgba(201,162,39,.1) 0%, transparent 55%),
+              linear-gradient(135deg, #040d1a 0%, var(--navy3) 60%, #0a1628 100%);
+  position: relative;
+  overflow:hidden;
+}
+.market-bg-text {
+  position:absolute;
+  bottom:-30px; right:-20px;
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:clamp(100px,20vw,260px);
+  font-weight:900;
+  color:rgba(201,162,39,.025);
+  line-height:1;
+  letter-spacing:-.05em;
+  pointer-events:none; user-select:none;
+}
+.market-layout {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:start;
+}
+.market-eyebrow {
+  font-family:'Inter',sans-serif;
+  font-size:11px; font-weight:600;
+  letter-spacing:.16em; text-transform:uppercase;
+  color:var(--gold2); margin-bottom:12px;
+  display:flex; align-items:center; gap:10px;
+}
+.market-eyebrow::before { content:''; width:20px; height:2px; background:var(--gold); border-radius:2px; }
+.market-h2 {
+  font-family:'Plus Jakarta Sans','Noto Sans Thai',sans-serif;
+  font-size:clamp(26px,3.5vw,42px);
+  font-weight:700; color:#fff;
+  line-height:1.2; letter-spacing:-.025em; margin-bottom:16px;
+}
+.market-h2 em { font-style:italic; color:var(--gold2); }
+.market-lead {
+  font-family:'Inter','Noto Sans Thai',sans-serif;
+  font-size:16px; color:var(--sub); line-height:1.8; margin-bottom:40px;
+}
+.market-stats-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.mstat-card {
+  background:rgba(255,255,255,.04);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:20px 22px;
+  transition:all .25s;
+}
+.mstat-card:hover { border-color:var(--borderG); background:rgba(201,162,39,.05); }
+.mstat-num {
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:2.5rem; font-weight:800;
+  color:var(--gold2); line-height:1;
+  letter-spacing:-.04em; margin-bottom:4px;
+}
+.mstat-num span { font-size:1.4rem; }
+.mstat-lbl {
+  font-family:'Inter',sans-serif;
+  font-size:12px; color:var(--subl); line-height:1.4;
+}
+
+/* Market opportunity right panel */
+.market-right { display:flex; flex-direction:column; gap:20px; }
+.market-oppty {
+  background:rgba(255,255,255,.03);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:28px;
+  transition:all .3s;
+  position:relative;
+  overflow:hidden;
+}
+.market-oppty::before {
+  content:'';
+  position:absolute; top:0; left:0; right:0; height:2px;
+  background:linear-gradient(90deg, transparent, var(--gold2), transparent);
+  opacity:0; transition:opacity .3s;
+}
+.market-oppty:hover { background:rgba(255,255,255,.06); border-color:var(--borderG); }
+.market-oppty:hover::before { opacity:1; }
+.market-oppty-icon { font-size:2rem; margin-bottom:14px; display:block; }
+.market-oppty-title {
+  font-family:'Plus Jakarta Sans','Noto Sans Thai',sans-serif;
+  font-size:18px; font-weight:700; color:#fff; margin-bottom:8px; letter-spacing:-.01em;
+}
+.market-oppty-desc {
+  font-family:'Inter','Noto Sans Thai',sans-serif;
+  font-size:14px; color:var(--sub); line-height:1.7;
+}
+.market-badge {
+  display:inline-flex; align-items:center; gap:6px;
+  font-family:'Inter',sans-serif;
+  font-size:10px; font-weight:700;
+  letter-spacing:.1em; text-transform:uppercase;
+  color:var(--gold2);
+  background:rgba(201,162,39,.1);
+  border:1px solid var(--borderG);
+  padding:3px 10px; border-radius:20px; margin-top:12px;
+}
+
+/* ══════════════════════════════════════
+   §6 PRICING
+══════════════════════════════════════ */
+.pricing-sec {
+  padding: 96px 2rem;
+  background: linear-gradient(180deg, var(--navy3), #050e1c);
+  position:relative; overflow:hidden;
+}
+.pricing-sec::before {
+  content:'';
+  position:absolute; top:50%; left:50%;
+  transform:translate(-50%,-50%);
+  width:800px; height:600px;
+  background:radial-gradient(ellipse, rgba(201,162,39,.06) 0%, transparent 65%);
+  pointer-events:none;
+}
+.pricing-header { text-align:center; margin-bottom:64px; position:relative; z-index:1; }
+.pricing-eyebrow {
+  font-family:'Inter',sans-serif;
+  font-size:11px; font-weight:600;
+  letter-spacing:.16em; text-transform:uppercase;
+  color:var(--goldDk); margin-bottom:12px;
+  display:flex; align-items:center; justify-content:center; gap:10px;
+}
+.pricing-h2 {
+  font-family:'Plus Jakarta Sans','Noto Sans Thai',sans-serif;
+  font-size:clamp(26px,3.5vw,42px);
+  font-weight:700; color:#fff;
+  line-height:1.2; letter-spacing:-.025em; margin-bottom:14px;
+}
+.pricing-h2 em { font-style:italic; color:rgba(255,255,255,.35); }
+.pricing-lead {
+  font-family:'Inter',sans-serif;
+  font-size:16px; color:var(--sub); line-height:1.7; max-width:500px; margin:0 auto;
+}
+.pricing-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+  max-width:920px;
+  margin:0 auto;
+  position:relative; z-index:1;
+}
+.price-card {
+  border-radius:24px;
+  padding:2.5rem;
+  position:relative;
+  overflow:hidden;
+  transition:all .35s;
+}
+/* Standard */
+.price-card.standard {
+  background:rgba(255,255,255,.04);
+  border:1px solid var(--border);
+}
+.price-card.standard:hover { border-color:rgba(255,255,255,.18); transform:translateY(-4px); }
+/* Business / Featured */
+.price-card.featured {
+  background:linear-gradient(145deg, rgba(201,162,39,.1), rgba(201,162,39,.04));
+  border:1px solid var(--borderG);
+  box-shadow:0 0 0 1px rgba(201,162,39,.08), 0 32px 80px rgba(201,162,39,.12);
+}
+.price-card.featured:hover { transform:translateY(-6px); box-shadow:0 0 0 1px rgba(201,162,39,.15), 0 40px 100px rgba(201,162,39,.2); }
+.price-card.featured::before {
+  content:'';
+  position:absolute; top:0; left:0; right:0; height:3px;
+  background:linear-gradient(90deg, transparent, var(--gold), var(--gold2), var(--gold), transparent);
+}
+.price-popular {
+  position:absolute;
+  top:20px; right:20px;
+  font-family:'Inter',sans-serif;
+  font-size:10px; font-weight:700;
+  letter-spacing:.12em; text-transform:uppercase;
+  background:linear-gradient(135deg,var(--goldDk),var(--gold));
+  color:var(--navy3);
+  padding:4px 12px; border-radius:20px;
+}
+.price-tier {
+  font-family:'Inter',sans-serif;
+  font-size:11px; font-weight:700;
+  letter-spacing:.16em; text-transform:uppercase;
+  color:var(--subl); margin-bottom:20px;
+}
+.featured .price-tier { color:var(--gold2); }
+.price-name {
+  font-family:'Plus Jakarta Sans','Noto Sans Thai',sans-serif;
+  font-size:26px; font-weight:800; color:#fff;
+  letter-spacing:-.02em; margin-bottom:6px;
+}
+.price-tagline {
+  font-family:'Inter','Noto Sans Thai',sans-serif;
+  font-size:14px; color:var(--sub); margin-bottom:28px; line-height:1.5;
+}
+.price-amount-row { display:flex; align-items:baseline; gap:8px; margin-bottom:6px; }
+.price-currency { font-family:'Plus Jakarta Sans',sans-serif; font-size:22px; font-weight:700; color:var(--subl); }
+.featured .price-currency { color:var(--gold2); }
+.price-amount {
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:60px; font-weight:900; color:#fff;
+  line-height:1; letter-spacing:-.04em;
+}
+.featured .price-amount { color:#fff; }
+.price-period {
+  font-family:'Inter',sans-serif;
+  font-size:13px; color:var(--subl); margin-bottom:28px;
+}
+.price-divider { height:1px; background:var(--border); margin:24px 0; }
+.featured .price-divider { background:rgba(201,162,39,.15); }
+.price-features { display:flex; flex-direction:column; gap:12px; margin-bottom:28px; }
+.price-feature {
+  display:flex; align-items:flex-start; gap:10px;
+  font-family:'Inter','Noto Sans Thai',sans-serif;
+  font-size:14px; color:rgba(255,255,255,.65); line-height:1.5;
+}
+.pf-check { color:var(--gold2); font-size:12px; flex-shrink:0; margin-top:2px; }
+.standard .pf-check { color:rgba(255,255,255,.4); }
+.price-cta-btn {
+  width:100%;
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:15px; font-weight:700;
+  padding:14px;
+  border-radius:10px;
+  border:none;
+  cursor:pointer;
+  transition:all .25s;
+  display:flex; align-items:center; justify-content:center; gap:8px;
+}
+.standard .price-cta-btn {
+  background:rgba(255,255,255,.07);
+  color:#fff;
+  border:1px solid rgba(255,255,255,.15);
+}
+.standard .price-cta-btn:hover { background:rgba(255,255,255,.12); border-color:rgba(255,255,255,.25); }
+.featured .price-cta-btn {
+  background:linear-gradient(135deg,var(--goldDk),var(--gold),var(--gold2));
+  color:var(--navy3);
+  box-shadow:0 4px 20px rgba(201,162,39,.3);
+  animation:pulse-gold 3s ease-in-out infinite;
+}
+.featured .price-cta-btn:hover { transform:translateY(-1px); box-shadow:0 8px 36px rgba(201,162,39,.5); }
+.price-note {
+  font-family:'Inter',sans-serif;
+  font-size:12px; color:rgba(255,255,255,.2);
+  text-align:center; margin-top:12px; line-height:1.5;
+}
+
+/* ══════════════════════════════════════
+   §7 HOW IT WORKS
+══════════════════════════════════════ */
+.how-sec {
+  padding:96px 2rem;
+  background:linear-gradient(180deg, #050e1c, var(--navy2));
+}
+.how-eyebrow {
+  font-family:'Inter',sans-serif;
+  font-size:11px; font-weight:600;
+  letter-spacing:.16em; text-transform:uppercase;
+  color:var(--goldDk); margin-bottom:12px;
+  display:flex; align-items:center; justify-content:center; gap:10px;
+}
+.how-h2 {
+  font-family:'Plus Jakarta Sans','Noto Sans Thai',sans-serif;
+  font-size:clamp(26px,3.5vw,42px);
+  font-weight:700; color:#fff;
+  line-height:1.2; letter-spacing:-.025em;
+  text-align:center; margin-bottom:64px;
+}
+.how-h2 em { font-style:italic; color:rgba(255,255,255,.35); }
+.how-steps {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:0;
+  position:relative;
+}
+.how-steps::before {
+  content:'';
+  position:absolute;
+  top:44px; left:12.5%; right:12.5%;
+  height:1px;
+  background:linear-gradient(90deg, transparent, var(--borderG), var(--gold2), var(--borderG), transparent);
+  animation:draw-line 1.5s ease .5s both;
+  transform-origin:left;
+}
+.how-step {
+  display:flex; flex-direction:column; align-items:center;
+  text-align:center; gap:16px;
+  padding:0 20px;
+  position:relative; z-index:1;
+}
+.how-dot-wrap {
+  width:88px; height:88px;
+  border-radius:50%;
+  background:rgba(255,255,255,.03);
+  border:1px solid var(--border);
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.75rem;
+  transition:all .35s;
+  position:relative;
+}
+.how-step:nth-child(2) .how-dot-wrap,
+.how-step:nth-child(3) .how-dot-wrap {
+  background:rgba(201,162,39,.07);
+  border-color:var(--borderG);
+}
+.how-step:hover .how-dot-wrap { border-color:var(--gold2); background:rgba(201,162,39,.12); transform:scale(1.08); }
+.how-step-num {
+  position:absolute;
+  top:-8px; right:-8px;
+  width:24px; height:24px;
+  border-radius:50%;
+  background:var(--gold);
+  color:var(--navy3);
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:11px; font-weight:800;
+  display:flex; align-items:center; justify-content:center;
+}
+.how-step-title {
+  font-family:'Plus Jakarta Sans','Noto Sans Thai',sans-serif;
+  font-size:16px; font-weight:700; color:#fff; line-height:1.3;
+}
+.how-step-desc {
+  font-family:'Inter','Noto Sans Thai',sans-serif;
+  font-size:13px; color:var(--sub); line-height:1.6;
+}
+
+/* ══════════════════════════════════════
+   §8 SOCIAL PROOF
+══════════════════════════════════════ */
+.proof-sec {
+  padding:80px 2rem;
+  background:var(--navy3);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+}
+.proof-inner { display:grid; grid-template-columns:1fr 2fr; gap:80px; align-items:center; }
+.proof-left-label {
+  font-family:'Inter',sans-serif;
+  font-size:11px; font-weight:600;
+  letter-spacing:.14em; text-transform:uppercase;
+  color:var(--subl); margin-bottom:24px;
+  display:flex; align-items:center; gap:10px;
+}
+.proof-left-label::before { content:''; width:20px; height:2px; background:rgba(255,255,255,.2); border-radius:2px; }
+.proof-h3 {
+  font-family:'Plus Jakarta Sans','Noto Sans Thai',sans-serif;
+  font-size:clamp(22px,3vw,34px);
+  font-weight:700; color:#fff; line-height:1.25; letter-spacing:-.02em;
+}
+.proof-h3 em { font-style:italic; color:var(--gold2); }
+.proof-logos {
+  display:flex; align-items:center; flex-wrap:wrap; gap:12px;
+}
+.proof-logo-card {
+  height:52px; padding:0 24px;
+  background:rgba(255,255,255,.04);
+  border:1px solid var(--border);
+  border-radius:10px;
+  display:flex; align-items:center; justify-content:center;
+  transition:all .25s;
+}
+.proof-logo-card:hover { background:rgba(255,255,255,.08); border-color:var(--borderG); }
+.proof-logo-text {
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:14px; font-weight:800;
+  color:rgba(255,255,255,.5); letter-spacing:.06em;
+}
+
+/* ══════════════════════════════════════
+   §9 FINAL CTA
+══════════════════════════════════════ */
+.cta-sec {
+  padding:100px 2rem;
+  text-align:center;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 50%, rgba(201,162,39,.1) 0%, transparent 60%),
+    linear-gradient(135deg, #040d1a 0%, var(--navy3) 50%, #071224 100%);
+  position:relative; overflow:hidden;
+}
+.cta-sec::before {
+  content:'';
+  position:absolute; inset:0;
+  background-image:linear-gradient(rgba(201,162,39,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,162,39,.025) 1px, transparent 1px);
+  background-size:80px 80px;
+  pointer-events:none;
+}
+.cta-inner { position:relative; z-index:1; max-width:680px; margin:0 auto; }
+.cta-eyebrow {
+  font-family:'Inter',sans-serif;
+  font-size:11px; font-weight:600;
+  letter-spacing:.16em; text-transform:uppercase;
+  color:var(--gold2); margin-bottom:20px;
+  display:flex; align-items:center; justify-content:center; gap:10px;
+}
+.cta-h2 {
+  font-family:'Plus Jakarta Sans','Noto Sans Thai',sans-serif;
+  font-size:clamp(32px,5vw,60px);
+  font-weight:800; color:#fff;
+  line-height:1.08; letter-spacing:-.035em; margin-bottom:20px;
+}
+.cta-h2 em { font-style:italic; color:var(--gold2); }
+.cta-sub {
+  font-family:'Inter','Noto Sans Thai',sans-serif;
+  font-size:17px; color:var(--sub); line-height:1.75;
+  margin-bottom:40px; max-width:520px; margin-left:auto; margin-right:auto;
+}
+.cta-btns { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+
+/* ══════════════════════════════════════
+   §10 FAQ
+══════════════════════════════════════ */
+.faq-sec {
+  padding:80px 2rem;
+  background:linear-gradient(180deg, #050e1c, var(--navy3));
+}
+.faq-wrap { max-width:720px; margin:0 auto; }
+.faq-eyebrow {
+  font-family:'Inter',sans-serif;
+  font-size:11px; font-weight:600;
+  letter-spacing:.16em; text-transform:uppercase;
+  color:var(--goldDk); margin-bottom:12px;
+  display:flex; align-items:center; gap:10px;
+}
+.faq-eyebrow::before { content:''; width:20px; height:2px; background:var(--gold); border-radius:2px; }
+.faq-h2 {
+  font-family:'Plus Jakarta Sans','Noto Sans Thai',sans-serif;
+  font-size:clamp(22px,3vw,32px);
+  font-weight:700; color:#fff; line-height:1.25; letter-spacing:-.02em;
+  margin-bottom:40px;
+}
+.faq-list { display:flex; flex-direction:column; gap:0; }
+.faq-item { border-bottom:1px solid var(--border); }
+.faq-q {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:20px 0; cursor:pointer; gap:16px;
+}
+.faq-q-text {
+  font-family:'Plus Jakarta Sans','Noto Sans Thai',sans-serif;
+  font-size:16px; font-weight:600; color:#fff; line-height:1.4;
+}
+.faq-icon {
+  width:30px; height:30px; border-radius:50%;
+  border:1.5px solid var(--border);
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.2rem; color:var(--sub);
+  flex-shrink:0; transition:all .25s;
+}
+.faq-item.open .faq-icon {
+  background:linear-gradient(135deg,var(--goldDk),var(--gold));
+  border-color:var(--gold);
+  color:var(--navy3);
+  transform:rotate(45deg);
+}
+.faq-a {
+  font-family:'Inter','Noto Sans Thai',sans-serif;
+  font-size:14.5px; color:var(--sub); line-height:1.75;
+  padding:0 40px 20px 0;
+  display:none;
+}
+.faq-item.open .faq-a { display:block; }
+
+/* ══════════════════════════════════════
+   FOOTER
+══════════════════════════════════════ */
+.m-footer {
+  background:var(--navy3);
+  padding:56px 2rem 28px;
+  border-top:1px solid var(--border);
+}
+.m-footer-grid {
+  max-width:var(--max); margin:0 auto;
+  display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:48px;
+  padding-bottom:48px;
+  border-bottom:1px solid var(--border);
+}
+.m-footer-brand {
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:24px; font-weight:800; color:#fff; margin-bottom:12px;
+}
+.m-footer-brand em { font-style:normal; color:var(--gold2); }
+.m-footer-tagline {
+  font-family:'Inter',sans-serif;
+  font-size:13px; color:var(--subl); line-height:1.7; margin-bottom:24px;
+}
+.m-footer-socials { display:flex; gap:10px; }
+.m-footer-soc {
+  width:36px; height:36px; border-radius:8px;
+  background:rgba(255,255,255,.06); border:1px solid var(--border);
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Plus Jakarta Sans',sans-serif; font-size:14px; font-weight:700;
+  color:var(--sub); transition:all .25s;
+}
+.m-footer-soc:hover { background:rgba(255,255,255,.12); color:#fff; }
+.m-footer-col-h {
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:13px; font-weight:700;
+  color:rgba(255,255,255,.8); margin-bottom:16px; letter-spacing:.04em;
+}
+.m-footer-col { display:flex; flex-direction:column; gap:10px; }
+.m-footer-col a {
+  font-family:'Inter',sans-serif;
+  font-size:13px; color:var(--subl); transition:color .2s;
+}
+.m-footer-col a:hover { color:var(--gold2); }
+.m-footer-bottom {
+  max-width:var(--max); margin:28px auto 0;
+  display:flex; flex-wrap:wrap; gap:16px; justify-content:space-between; align-items:start;
+}
+.m-footer-copy { font-family:'Inter',sans-serif; font-size:12px; color:rgba(255,255,255,.25); }
+.m-footer-disc { font-family:'Inter',sans-serif; font-size:12px; color:rgba(255,255,255,.18); max-width:600px; line-height:1.6; }
+
+/* ── FLOAT CTA ── */
+.m-float {
+  position:fixed;
+  bottom:24px; right:24px;
+  z-index:800;
+  display:flex; flex-direction:column; gap:8px;
+}
+.m-float-btn {
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:13px; font-weight:700;
+  padding:11px 20px; border-radius:30px;
+  display:flex; align-items:center; gap:7px;
+  box-shadow:0 4px 20px rgba(0,0,0,.25);
+  transition:all .25s;
+  white-space:nowrap; text-decoration:none; border:none; cursor:pointer;
+}
+.m-float-btn:hover { transform:translateY(-2px); box-shadow:0 8px 28px rgba(0,0,0,.3); }
+.mfb-apply { background:linear-gradient(135deg,var(--goldDk),var(--gold)); color:var(--navy3); animation:pulse-gold 3s ease-in-out infinite; }
+.mfb-line { background:#06C755; color:#fff; }
+
+/* ── RESPONSIVE ── */
+@media (max-width:1024px) {
+  .sol-layout { grid-template-columns:1fr; gap:48px; }
+  .market-layout { grid-template-columns:1fr; gap:48px; }
+  .proof-inner { grid-template-columns:1fr; gap:40px; }
+  .pricing-grid { grid-template-columns:1fr; max-width:480px; }
+}
+@media (max-width:900px) {
+  .benefits-grid { grid-template-columns:repeat(2,1fr); }
+  .how-steps { grid-template-columns:repeat(2,1fr); gap:40px; }
+  .how-steps::before { display:none; }
+}
+@media (max-width:768px) {
+  .m-nav-links, .m-nav-cta { display:none; }
+  .m-hamburger { display:flex; }
+  .prob-cards { grid-template-columns:1fr; }
+  .benefits-grid { grid-template-columns:1fr; }
+  .market-stats-grid { grid-template-columns:1fr; }
+  .m-footer-grid { grid-template-columns:1fr 1fr; gap:32px; }
+  .hero-stats { flex-direction:column; gap:24px; }
+  .hero-stat { border-right:none; padding-right:0; padding-bottom:16px; border-bottom:1px solid rgba(255,255,255,.07); }
+  .hero-stat:last-child { border-bottom:none; padding-bottom:0; }
+}
+@media (max-width:480px) {
+  .how-steps { grid-template-columns:1fr; }
+  .m-footer-grid { grid-template-columns:1fr; }
+  .m-float { bottom:16px; right:16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="ticker-dot"></span>VITH HUB Membership 2026</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Thai Brands → Laos Market</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Big C Vientiane Partner</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>CLMV Trade Network</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>0% Commission Model</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Mekong Gateway Platform</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>VITH HUB Membership 2026</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Thai Brands → Laos Market</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Big C Vientiane Partner</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>CLMV Trade Network</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>0% Commission Model</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Mekong Gateway Platform</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="m-nav" id="vithNav">
+  <div class="m-nav-inner">
+    <a href="/" class="m-logo">
+      <div class="m-logo-mark">V</div>
+      <div class="m-logo-wrap">
+        <div class="m-logo-name">VITH<em>HUB</em></div>
+        <span class="m-logo-sub">Mekong Gateway</span>
+      </div>
+    </a>
+    <div class="m-nav-links">
+      <a href="/" class="m-nav-link">Home</a>
+      <a href="/pages/gateway.html" class="m-nav-link">Gateway</a>
+      <a href="/pages/accelerator.html" class="m-nav-link">Accelerator</a>
+      <a href="/pages/event.html" class="m-nav-link">Expo</a>
+      <a href="/pages/membership.html" class="m-nav-link active">Membership</a>
+      <a href="/pages/about.html" class="m-nav-link">About</a>
+    </div>
+    <div class="m-nav-right">
+      <a href="#pricing" class="m-nav-cta">Apply Membership →</a>
+      <button class="m-hamburger" onclick="document.getElementById('mMobile').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="m-mobile" id="mMobile">
+  <a href="/" class="m-mob-link">Home</a>
+  <a href="/pages/gateway.html" class="m-mob-link">Gateway</a>
+  <a href="/pages/accelerator.html" class="m-mob-link">Accelerator</a>
+  <a href="/pages/event.html" class="m-mob-link">Expo 2026</a>
+  <a href="/pages/membership.html" class="m-mob-link">Membership</a>
+  <a href="/pages/about.html" class="m-mob-link">About</a>
+  <a href="#pricing" class="m-mob-cta">Apply Membership →</a>
+</div>
+
+<!-- ═══════════════════════════════════
+     §1 HERO
+═══════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-slash"></div>
+  <div class="hero-slash2"></div>
+  <div class="hero-orb-wrap">
+    <div class="hero-orb"></div>
+    <div class="hero-orb2"></div>
+    <div class="hero-orb-core"></div>
+    <div class="hero-orb-ring"></div>
+    <div class="orb-sat orb-s1"></div>
+    <div class="orb-sat orb-s2"></div>
+    <div class="orb-sat orb-s3"></div>
+    <span class="orb-label orb-la">🇱🇦 Laos</span>
+    <span class="orb-label orb-th">🇹🇭 Thailand</span>
+    <span class="orb-label orb-cn">🇨🇳 China</span>
+    <span class="orb-label orb-gl">🌏 Global</span>
+  </div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        VITH HUB Business Network · 2026
+      </div>
+      <h1 class="hero-h1">
+        Join <span class="gold-text">VITH HUB</span><br>
+        Membership
+      </h1>
+      <div class="hero-sub">
+        Gateway For Thai Brands<br>Entering Laos And Mekong Markets
+      </div>
+      <p class="hero-body">
+        เชื่อมแบรนด์ไทยกับ Distributors, Buyers และ Retail Chains ใน Laos, CLMV และ Global Markets — ผ่าน Business Network ที่แข็งแกร่งที่สุดใน Mekong Region
+      </p>
+      <div class="hero-btns">
+        <a href="#pricing" class="btn-gold lg">Apply Membership →</a>
+        <a href="/pages/event.html" class="btn-ghost">Explore Expo</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hs-num">7<em>M+</em></div>
+          <div class="hs-lbl">Consumer Market<br>Laos Population</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hs-num">5<em>+</em></div>
+          <div class="hs-lbl">Countries<br>CLMV Network</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hs-num">0<em>%</em></div>
+          <div class="hs-lbl">Commission<br>Flat Fee Only</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hs-num">90<em>D</em></div>
+          <div class="hs-lbl">Accelerator<br>Program</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     §2 PROBLEM
+═══════════════════════════════════ -->
+<section class="problem-sec">
+  <div class="container">
+    <div class="reveal">
+      <div class="prob-eyebrow">The Problem</div>
+      <h2 class="prob-h2">ทำไมสินค้าไทยยังไม่เข้าสู่<br>ตลาด Mekong</h2>
+      <p class="prob-lead">แบรนด์ไทยมีสินค้าดี แต่ขาดเครือข่ายและช่องทางที่ถูกต้องในการเข้าตลาดลาวและ CLMV Region</p>
+    </div>
+    <div class="prob-cards">
+      <div class="prob-card reveal d1">
+        <div class="prob-card-num">01</div>
+        <span class="prob-icon">🚫</span>
+        <div class="prob-title">ไม่มีเครือข่าย Local</div>
+        <p class="prob-desc">บริษัทไทยส่วนใหญ่ไม่มี Partner ที่เชื่อถือได้ในลาว — การหา Distributor โดยตรงใช้เวลาและต้นทุนสูง</p>
+        <span class="prob-tag">Pain Point #1</span>
+      </div>
+      <div class="prob-card reveal d2">
+        <div class="prob-card-num">02</div>
+        <span class="prob-icon">🏪</span>
+        <div class="prob-title">เข้า Retail ยาก</div>
+        <p class="prob-desc">การวางสินค้าใน Big C Laos และ Modern Trade ต้องการ Local Relationship และ Compliance ที่ซับซ้อน</p>
+        <span class="prob-tag">Pain Point #2</span>
+      </div>
+      <div class="prob-card reveal d3">
+        <div class="prob-card-num">03</div>
+        <span class="prob-icon">📊</span>
+        <div class="prob-title">ขาด Market Intelligence</div>
+        <p class="prob-desc">ไม่รู้ Consumer Behavior, Pricing Strategy และ Regulatory Requirements ที่แตกต่างจากตลาดไทย</p>
+        <span class="prob-tag">Pain Point #3</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     §3 SOLUTION
+═══════════════════════════════════ -->
+<section class="solution-sec">
+  <div class="container">
+    <div class="sol-layout">
+      <div class="rl">
+        <div class="sol-eyebrow">The Solution</div>
+        <h2 class="sol-h2">VITH HUB <em>เชื่อมทุกอย่าง<br>ไว้ในที่เดียว</em></h2>
+        <p class="sol-lead">Platform เดียวที่รวม Business Network + Market Access + Expo Platform เพื่อให้แบรนด์ไทยเข้าสู่ตลาด Mekong ได้จริง — ไม่ใช่แค่ข้อมูล</p>
+        <div class="sol-points">
+          <div class="sol-point">
+            <div class="sol-point-icon">🤝</div>
+            <div>
+              <div class="sol-point-title">Business Network</div>
+              <p class="sol-point-desc">เชื่อมกับ Distributors, Buyers, Importers และ Investors ทั่ว Laos, Vietnam และ CLMV</p>
+            </div>
+          </div>
+          <div class="sol-point">
+            <div class="sol-point-icon">🏪</div>
+            <div>
+              <div class="sol-point-title">Retail Market Access</div>
+              <p class="sol-point-desc">โอกาสวางสินค้าใน Big C Vientiane และ Modern Trade Chains ใน Laos</p>
+            </div>
+          </div>
+          <div class="sol-point">
+            <div class="sol-point-icon">🎪</div>
+            <div>
+              <div class="sol-point-title">Expo Platform Priority</div>
+              <p class="sol-point-desc">สิทธิ์ก่อนใครในการจอง Booth VITH Expo — เวที B2B ที่ใหญ่ที่สุดในลาว</p>
+            </div>
+          </div>
+          <div class="sol-point">
+            <div class="sol-point-icon">📈</div>
+            <div>
+              <div class="sol-point-title">Market Intelligence</div>
+              <p class="sol-point-desc">รับ Market Reports, Trend Analysis และ Consumer Insight จาก Local Team</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rr">
+        <div class="sol-platform-card">
+          <div class="sol-platform-title">VITH HUB Platform Architecture</div>
+          <div class="sol-pillars">
+            <div class="sol-pillar">
+              <span class="sol-pillar-icon">🌏</span>
+              <div>
+                <div class="sol-pillar-name">Trade Platform</div>
+              </div>
+              <span class="sol-pillar-tag">Core</span>
+            </div>
+            <div class="sol-pillar">
+              <span class="sol-pillar-icon">🎪</span>
+              <div>
+                <div class="sol-pillar-name">Expo Platform</div>
+              </div>
+              <span class="sol-pillar-tag">2026</span>
+            </div>
+            <div class="sol-pillar">
+              <span class="sol-pillar-icon">🚀</span>
+              <div>
+                <div class="sol-pillar-name">Accelerator Program</div>
+              </div>
+              <span class="sol-pillar-tag">90 วัน</span>
+            </div>
+            <div class="sol-pillar">
+              <span class="sol-pillar-icon">🏛️</span>
+              <div>
+                <div class="sol-pillar-name">Membership Network</div>
+              </div>
+              <span class="sol-pillar-tag">Annual</span>
+            </div>
+          </div>
+          <div class="sol-divider"></div>
+          <div style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--subl);margin-bottom:12px;">Trade Route</div>
+          <div class="sol-route-row">
+            <span class="sol-route-node active">🇹🇭 TH</span>
+            <span class="sol-route-arrow">→</span>
+            <span class="sol-route-node active">VITH HUB</span>
+            <span class="sol-route-arrow">→</span>
+            <span class="sol-route-node active">🇱🇦 LA</span>
+            <span class="sol-route-arrow">→</span>
+            <span class="sol-route-node">🇻🇳 VN</span>
+            <span class="sol-route-arrow">→</span>
+            <span class="sol-route-node">🇨🇳 CN</span>
+            <span class="sol-route-arrow">→</span>
+            <span class="sol-route-node">🌏 Global</span>
+          </div>
+          <div class="sol-divider"></div>
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:28px;font-weight:800;color:#fff;line-height:1;letter-spacing:-.04em">฿39K</div>
+              <div style="font-family:'Inter',sans-serif;font-size:11px;color:var(--subl);margin-top:3px;">Accelerator Entry</div>
+            </div>
+            <div style="text-align:right">
+              <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:28px;font-weight:800;color:var(--gold2);line-height:1;letter-spacing:-.04em">26</div>
+              <div style="font-family:'Inter',sans-serif;font-size:11px;color:var(--subl);margin-top:3px;">Slots Only</div>
+            </div>
+            <div style="text-align:right">
+              <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:28px;font-weight:800;color:rgba(255,255,255,.5);line-height:1;letter-spacing:-.04em">0%</div>
+              <div style="font-family:'Inter',sans-serif;font-size:11px;color:var(--subl);margin-top:3px;">Commission</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     §4 BENEFITS
+═══════════════════════════════════ -->
+<section class="benefits-sec">
+  <div class="container">
+    <div class="benefits-header reveal">
+      <div class="benefits-eyebrow">Membership Benefits</div>
+      <h2 class="benefits-h2">สิ่งที่คุณจะได้รับ<br><em>ในฐานะ Member</em></h2>
+      <p class="benefits-lead">ครบทุกสิ่งที่แบรนด์ไทยต้องการในการเข้าตลาด Mekong — ตั้งแต่ Network ถึง Market Intelligence</p>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-card reveal d1">
+        <div class="benefit-icon-wrap">🤝</div>
+        <div class="benefit-title">Cross-Border Trade Network</div>
+        <p class="benefit-desc">เข้าถึงเครือข่าย Buyers, Distributors และ Trade Partners ทั่ว Laos, Vietnam, Cambodia และ Southern China</p>
+        <div class="benefit-tags">
+          <span class="btag gold">Laos</span>
+          <span class="btag gold">CLMV</span>
+          <span class="btag">China</span>
+        </div>
+      </div>
+      <div class="benefit-card reveal d2">
+        <div class="benefit-icon-wrap">🏪</div>
+        <div class="benefit-title">Market Entry Support</div>
+        <p class="benefit-desc">คำแนะนำ Regulatory Compliance, Pricing Strategy และ Distribution Channel ที่เหมาะกับแต่ละตลาด</p>
+        <div class="benefit-tags">
+          <span class="btag">Compliance</span>
+          <span class="btag gold">Strategy</span>
+        </div>
+      </div>
+      <div class="benefit-card reveal d3">
+        <div class="benefit-icon-wrap">🎪</div>
+        <div class="benefit-title">Expo Priority Access</div>
+        <p class="benefit-desc">สิทธิ์จอง Booth ก่อนใครใน VITH Expo — เวที B2B Matching กับ 5+ ประเทศ ที่ Big C Vientiane</p>
+        <div class="benefit-tags">
+          <span class="btag gold">Priority</span>
+          <span class="btag">B2B</span>
+        </div>
+      </div>
+      <div class="benefit-card reveal d4">
+        <div class="benefit-icon-wrap">💰</div>
+        <div class="benefit-title">Investor Access</div>
+        <p class="benefit-desc">เชื่อมกับ Strategic Investors, Venture Capital และ Corporate Partners ที่สนใจ Mekong Market</p>
+        <div class="benefit-tags">
+          <span class="btag">Investors</span>
+          <span class="btag gold">Partners</span>
+        </div>
+      </div>
+      <div class="benefit-card reveal d5">
+        <div class="benefit-icon-wrap">📡</div>
+        <div class="benefit-title">Brand Visibility</div>
+        <p class="benefit-desc">โปรไฟล์แบรนด์บน VITH HUB Platform — ถูก Discover โดย Regional Buyers และ Media Partners</p>
+        <div class="benefit-tags">
+          <span class="btag gold">Visibility</span>
+          <span class="btag">Media</span>
+        </div>
+      </div>
+      <div class="benefit-card reveal d6">
+        <div class="benefit-icon-wrap">📊</div>
+        <div class="benefit-title">Market Intelligence Reports</div>
+        <p class="benefit-desc">รับ Monthly Market Reports, Consumer Trend และ Competitor Analysis จาก Local Research Team</p>
+        <div class="benefit-tags">
+          <span class="btag gold">Reports</span>
+          <span class="btag">Insights</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     §5 MARKET OPPORTUNITY
+═══════════════════════════════════ -->
+<section class="market-sec">
+  <div class="market-bg-text">LAOS</div>
+  <div class="container">
+    <div class="market-layout">
+      <div class="rl">
+        <div class="market-eyebrow">Market Opportunity</div>
+        <h2 class="market-h2">ตลาด Mekong กำลัง<em>เปิดกว้าง<br>รอสินค้าไทย</em></h2>
+        <p class="market-lead">Retail Chains ในลาวกำลังมองหาสินค้าไทยอย่างจริงจัง — นี่คือโอกาสที่ไม่เคยมีมาก่อน</p>
+        <div class="market-stats-grid">
+          <div class="mstat-card reveal d1">
+            <div class="mstat-num">7<span>M+</span></div>
+            <div class="mstat-lbl">Population Laos</div>
+          </div>
+          <div class="mstat-card reveal d2">
+            <div class="mstat-num">4.5<span>%</span></div>
+            <div class="mstat-lbl">GDP Growth YoY</div>
+          </div>
+          <div class="mstat-card reveal d3">
+            <div class="mstat-num">+40<span>%</span></div>
+            <div class="mstat-lbl">Thai Brand Premium</div>
+          </div>
+          <div class="mstat-card reveal d4">
+            <div class="mstat-num">5<span>+</span></div>
+            <div class="mstat-lbl">Countries CLMV</div>
+          </div>
+        </div>
+      </div>
+      <div class="market-right rr">
+        <div class="market-oppty">
+          <span class="market-oppty-icon">🏪</span>
+          <div class="market-oppty-title">Big C Vientiane</div>
+          <p class="market-oppty-desc">Retail Chain ที่ใหญ่ที่สุดและเชื่อถือได้มากที่สุดในลาว — กำลังมองหา Thai Brands คุณภาพสูงเพื่อเติมเต็ม Shelf Space พิเศษ</p>
+          <span class="market-badge">✦ VITH HUB Strategic Partner</span>
+        </div>
+        <div class="market-oppty">
+          <span class="market-oppty-icon">🛤️</span>
+          <div class="market-oppty-title">Laos-China Railway Hub</div>
+          <p class="market-oppty-desc">เส้นทางรถไฟสายใหม่ทำให้ลาวกลายเป็น Logistics Hub ที่เชื่อม ASEAN กับ Southern China — สินค้าไทยสามารถเข้าสู่ตลาดจีนผ่านลาว</p>
+          <span class="market-badge">✦ China Market Gateway</span>
+        </div>
+        <div class="market-oppty">
+          <span class="market-oppty-icon">🌏</span>
+          <div class="market-oppty-title">CLMV Region Expansion</div>
+          <p class="market-oppty-desc">Laos คือจุดเริ่มต้นสู่ Vietnam, Cambodia และ Myanmar — แบรนด์ที่ Establish ในลาวก่อนจะได้เปรียบสูงในการ Scale ต่อ</p>
+          <span class="market-badge">✦ Regional Scale Opportunity</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     §6 PRICING
+═══════════════════════════════════ -->
+<section class="pricing-sec" id="pricing">
+  <div class="container">
+    <div class="pricing-header reveal">
+      <div class="pricing-eyebrow">Membership Plans</div>
+      <h2 class="pricing-h2">เลือก Plan ที่<em> เหมาะกับคุณ</em></h2>
+      <p class="pricing-lead">ไม่ว่าจะเริ่มต้นหรือต้องการ Scale — VITH HUB มี Plan สำหรับทุก Stage</p>
+    </div>
+    <div class="pricing-grid">
+
+      <!-- Standard -->
+      <div class="price-card standard reveal d1">
+        <div class="price-tier">Standard</div>
+        <div class="price-name">Network Member</div>
+        <p class="price-tagline">สำหรับแบรนด์ที่ต้องการเชื่อมกับตลาด Mekong</p>
+        <div class="price-amount-row">
+          <span class="price-currency">$</span>
+          <div class="price-amount">300</div>
+        </div>
+        <div class="price-period">/ ปี · ต่ออายุรายปี</div>
+        <div class="price-divider"></div>
+        <div class="price-features">
+          <div class="price-feature"><span class="pf-check">✓</span> เข้าถึง VITH Business Network</div>
+          <div class="price-feature"><span class="pf-check">✓</span> Monthly Market Insights Reports</div>
+          <div class="price-feature"><span class="pf-check">✓</span> Community Networking Events</div>
+          <div class="price-feature"><span class="pf-check">✓</span> Brand Profile บน VITH HUB Platform</div>
+          <div class="price-feature"><span class="pf-check">✓</span> Access to Member Directory</div>
+          <div class="price-feature"><span class="pf-check" style="color:rgba(255,255,255,.2)">—</span> <span style="color:rgba(255,255,255,.3)">Expo Priority Access</span></div>
+          <div class="price-feature"><span class="pf-check" style="color:rgba(255,255,255,.2)">—</span> <span style="color:rgba(255,255,255,.3)">Partner Introductions</span></div>
+        </div>
+        <button class="price-cta-btn" onclick="window.location.href='#contact'">Apply Standard →</button>
+        <div class="price-note">🔒 ทีมงานติดต่อกลับภายใน 48 ชั่วโมง</div>
+      </div>
+
+      <!-- Business / Featured -->
+      <div class="price-card featured reveal d2">
+        <span class="price-popular">⭐ Most Popular</span>
+        <div class="price-tier">Business</div>
+        <div class="price-name">Business Member</div>
+        <p class="price-tagline">สำหรับแบรนด์ที่พร้อม Scale สู่ตลาด Mekong จริงจัง</p>
+        <div class="price-amount-row">
+          <span class="price-currency">$</span>
+          <div class="price-amount">900</div>
+        </div>
+        <div class="price-period">/ ปี · ต่ออายุรายปี</div>
+        <div class="price-divider"></div>
+        <div class="price-features">
+          <div class="price-feature"><span class="pf-check">✓</span> ทุกอย่างใน Standard Membership</div>
+          <div class="price-feature"><span class="pf-check">✓</span> <strong style="color:#fff">Expo Priority Access</strong> — จองก่อนใคร</div>
+          <div class="price-feature"><span class="pf-check">✓</span> Partner & Distributor Introductions</div>
+          <div class="price-feature"><span class="pf-check">✓</span> Distribution Channel Opportunities</div>
+          <div class="price-feature"><span class="pf-check">✓</span> B2B Matching Sessions (Quarterly)</div>
+          <div class="price-feature"><span class="pf-check">✓</span> Investor Connect Program</div>
+          <div class="price-feature"><span class="pf-check">✓</span> 10% Discount on Accelerator Program</div>
+        </div>
+        <button class="price-cta-btn" onclick="window.location.href='#contact'">Apply Business Now →</button>
+        <div class="price-note">🔒 ทีมงานติดต่อกลับภายใน 24 ชั่วโมง</div>
+      </div>
+
+    </div>
+    <!-- Accelerator upsell -->
+    <div style="max-width:920px;margin:24px auto 0;background:rgba(201,162,39,.05);border:1px solid var(--borderG);border-radius:16px;padding:24px 28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;position:relative;z-index:1" class="reveal d3">
+      <div>
+        <div style="font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold2);margin-bottom:6px;">🚀 Want Faster Results?</div>
+        <div style="font-family:'Plus Jakarta Sans','Noto Sans Thai',sans-serif;font-size:17px;font-weight:700;color:#fff;">Accelerator 90 Day Program — นำสินค้าเข้าลาวใน 90 วัน</div>
+        <div style="font-family:'Inter',sans-serif;font-size:13px;color:var(--sub);margin-top:4px;">Big C Shelf Test · B2B Matching · Market Report · ฿39,000 · 0% Commission</div>
+      </div>
+      <a href="/pages/accelerator.html" class="btn-gold" style="flex-shrink:0">See Accelerator →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     §7 HOW IT WORKS
+═══════════════════════════════════ -->
+<section class="how-sec">
+  <div class="container">
+    <div style="text-align:center" class="reveal">
+      <div class="how-eyebrow">How It Works</div>
+      <h2 class="how-h2">3 ขั้นตอน สู่ตลาด <em>Mekong</em></h2>
+    </div>
+    <div class="how-steps">
+      <div class="how-step reveal d1">
+        <div class="how-dot-wrap">
+          <div class="how-step-num">1</div>
+          📝
+        </div>
+        <div class="how-step-title">Apply &<br>Onboard</div>
+        <p class="how-step-desc">สมัคร Membership ออนไลน์ ทีมงานติดต่อภายใน 24 ชั่วโมง — เริ่ม Onboarding ทันที</p>
+      </div>
+      <div class="how-step reveal d2">
+        <div class="how-dot-wrap">
+          <div class="how-step-num">2</div>
+          🤝
+        </div>
+        <div class="how-step-title">Connect to<br>Network</div>
+        <p class="how-step-desc">เข้าถึง Member Directory, Networking Events และ B2B Matching กับ Partners ทั่ว CLMV</p>
+      </div>
+      <div class="how-step reveal d3">
+        <div class="how-dot-wrap">
+          <div class="how-step-num">3</div>
+          🌏
+        </div>
+        <div class="how-step-title">Explore &<br>Market</div>
+        <p class="how-step-desc">ร่วม Expo, Pitch ต่อ Distributors และ เริ่มวางสินค้าใน Laos ผ่านช่องทาง VITH HUB</p>
+      </div>
+      <div class="how-step reveal d4">
+        <div class="how-dot-wrap">
+          <div class="how-step-num">4</div>
+          🚀
+        </div>
+        <div class="how-step-title">Scale &<br>Expand</div>
+        <p class="how-step-desc">Upgrade สู่ Accelerator Program หรือ Expand ต่อไป Vietnam, Cambodia และ China</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     §8 SOCIAL PROOF
+═══════════════════════════════════ -->
+<section class="proof-sec">
+  <div class="container">
+    <div class="proof-inner">
+      <div class="rl">
+        <div class="proof-left-label">Strategic Partners</div>
+        <h3 class="proof-h3">พันธมิตรที่แข็งแกร่ง<br><em>ในทุก Market</em></h3>
+      </div>
+      <div class="proof-logos rr">
+        <div class="proof-logo-card"><span class="proof-logo-text">BIG C</span></div>
+        <div class="proof-logo-card"><span class="proof-logo-text">LITSE</span></div>
+        <div class="proof-logo-card"><span class="proof-logo-text">VITH</span></div>
+        <div class="proof-logo-card"><span class="proof-logo-text">RB99</span></div>
+        <div class="proof-logo-card"><span class="proof-logo-text">ITACC</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     §9 CTA
+═══════════════════════════════════ -->
+<section class="cta-sec" id="contact">
+  <div class="cta-inner">
+    <div class="cta-eyebrow reveal">✦ เริ่มต้นได้เลยวันนี้</div>
+    <h2 class="cta-h2 reveal d1">Join The<br><em>VITH HUB Network</em></h2>
+    <p class="cta-sub reveal d2">เชื่อมแบรนด์ไทยกับตลาด Mekong — ผ่าน Business Network ที่แข็งแกร่งที่สุดในภูมิภาค</p>
+    <div class="cta-btns reveal d3">
+      <a href="#pricing" class="btn-gold lg">Apply Membership Now →</a>
+      <a href="https://line.me/ti/p/@cef8930n" target="_blank" class="btn-ghost">
+        <svg width="16" height="16" viewBox="0 0 48 48"><path d="M24 4C13 4 4 11.8 4 21.5c0 5.5 3.1 10.4 7.9 13.7-.3 1.2-1.1 4.3-1.3 5 0 0-.1.3.2.4.2.1.5 0 .5 0 .7-.1 8.5-5.6 9.8-6.5.9.1 1.9.2 2.9.2 11 0 20-7.8 20-17.3S35 4 24 4z" fill="currentColor"/></svg>
+        สอบถามผ่าน LINE
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     §10 FAQ
+═══════════════════════════════════ -->
+<section class="faq-sec">
+  <div class="container">
+    <div class="faq-wrap">
+      <div class="reveal">
+        <div class="faq-eyebrow">FAQ</div>
+        <h2 class="faq-h2">คำถามที่พบบ่อย</h2>
+      </div>
+      <div class="faq-list reveal d1">
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span class="faq-q-text">Membership แตกต่างจาก Accelerator อย่างไร?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-a">Membership คือการเข้าร่วม Business Network ระยะยาว (รายปี) — เหมาะสำหรับแบรนด์ที่ต้องการ Build Connections และ Market Intelligence ก่อน Accelerator คือโปรแกรม 90 วันที่ลงมือทำจริง — Expo, Shelf Testing, B2B Matching พร้อม Team ดูแล ทั้งสองสิ่งนี้ทำงานร่วมกันได้ Member ได้ 10% Discount สำหรับ Accelerator</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span class="faq-q-text">ต้องมีประสบการณ์ Export มาก่อนไหม?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-a">ไม่จำเป็น VITH HUB เหมาะสำหรับทั้งแบรนด์ที่เคย Export แล้วและแบรนด์ที่เพิ่งเริ่มต้น ทีมงานจะช่วย Guide ตั้งแต่ Compliance, Pricing, Packaging ไปจนถึง Distribution Strategy</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span class="faq-q-text">สินค้าประเภทไหนที่เหมาะกับตลาดลาว?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-a">สินค้าที่ได้รับความนิยมสูงได้แก่: อาหารและเครื่องดื่ม, ผลิตภัณฑ์ดูแลผิวและความงาม, ของใช้ในบ้านคุณภาพสูง, สินค้า Health & Wellness และผลิตภัณฑ์เกษตรแปรรูป ผู้บริโภคลาวเชื่อมั่นในสินค้าไทยสูงมาก</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span class="faq-q-text">Membership ช่วยเรื่อง Customs และ Import Duty อย่างไร?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-a">VITH HUB มี Local Partner ที่ช่วยด้าน Customs Clearance และให้ข้อมูล Import Regulations ล่าสุด รวมถึง AFTA Tax Benefits ที่สินค้าไทยสามารถใช้ได้ในการนำเข้าลาว ทีมงานจะ Connect คุณกับ Licensed Customs Broker</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span class="faq-q-text">ต่ออายุ Membership อย่างไร และมีเงื่อนไขอะไรบ้าง?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-a">Membership ต่ออายุทุกปี ไม่มีสัญญาผูกมัดระยะยาว — ยกเลิกได้ก่อนครบปีด้วยการแจ้ง 30 วันล่วงหน้า Member ที่ต่ออายุจะได้ Early Bird Pricing และสิทธิ์พิเศษสำหรับ Expo Booth ในรอบถัดไป</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="m-footer">
+  <div class="m-footer-grid">
+    <div>
+      <div class="m-footer-brand">VITH<em>HUB</em></div>
+      <p class="m-footer-tagline">Mekong Trade Gateway Platform<br>Connecting Thai Brands to Laos &amp; Global Markets<br>vithhub.asia</p>
+      <div class="m-footer-socials">
+        <a href="https://facebook.com" class="m-footer-soc" target="_blank">f</a>
+        <a href="https://line.me/ti/p/@cef8930n" class="m-footer-soc" target="_blank">L</a>
+        <a href="https://wa.me/66855907666" class="m-footer-soc" target="_blank">W</a>
+      </div>
+    </div>
+    <div class="m-footer-col">
+      <div class="m-footer-col-h">Programs</div>
+      <a href="/pages/accelerator.html">Accelerator 90D</a>
+      <a href="/pages/event.html">Expo Booths</a>
+      <a href="/pages/membership.html">Membership</a>
+      <a href="/pages/gateway.html">Mekong Gateway</a>
+    </div>
+    <div class="m-footer-col">
+      <div class="m-footer-col-h">Resources</div>
+      <a href="/pages/floorplan.html">Floor Plan</a>
+      <a href="/pages/event.html#packages">Booth Pricing</a>
+      <a href="/pages/about.html">About Us</a>
+    </div>
+    <div class="m-footer-col">
+      <div class="m-footer-col-h">Contact</div>
+      <a href="https://line.me/ti/p/@cef8930n" target="_blank">LINE: @cef8930n</a>
+      <a href="https://wa.me/66855907666" target="_blank">WhatsApp</a>
+    </div>
+  </div>
+  <div class="m-footer-bottom">
+    <div class="m-footer-copy">© 2026 VITH HUB · Mekong Trade Gateway · vithhub.asia</div>
+    <div class="m-footer-disc">*VITH HUB เป็นแพลตฟอร์มสนับสนุนการเข้าสู่ตลาด (Market Entry Platform) ไม่รับประกันยอดขายหรือผลกำไร มิได้ทำหน้าที่เป็นตัวแทนจำหน่าย (Distributor)</div>
+  </div>
+</footer>
+
+<!-- FLOAT CTA -->
+<div class="m-float">
+  <a href="#pricing" class="m-float-btn mfb-apply">✦ Apply Membership</a>
+  <a href="https://line.me/ti/p/@cef8930n" target="_blank" class="m-float-btn mfb-line">
+    <svg width="16" height="16" viewBox="0 0 48 48"><path d="M24 4C13 4 4 11.8 4 21.5c0 5.5 3.1 10.4 7.9 13.7-.3 1.2-1.1 4.3-1.3 5 0 0-.1.3.2.4.2.1.5 0 .5 0 .7-.1 8.5-5.6 9.8-6.5.9.1 1.9.2 2.9.2 11 0 20-7.8 20-17.3S35 4 24 4z" fill="white"/></svg>
+    LINE
+  </a>
+</div>
+
+<script src="/assets/js/main.js"></script>
+<script>
+// FAQ accordion
+function toggleFaq(el) {
+  const item = el.parentElement;
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  if (!wasOpen) item.classList.add('open');
+}
+</script>
+</body>
+</html>
