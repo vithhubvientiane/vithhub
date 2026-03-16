@@ -3,18 +3,20 @@
    Global JS for all pages
 ═══════════════════════════════════════ */
 
-/* ── Navbar scroll effect ── */
+/* ── Navbar scroll effect (supports id="vithNav" and id="mainNav") ── */
 (function() {
-  const nav = document.getElementById('vithNav');
+  const nav = document.getElementById('vithNav') || document.getElementById('mainNav');
   if (!nav) return;
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 20);
-  });
+  }, { passive: true });
 })();
 
-/* ── Mobile menu ── */
+/* ── Mobile menu (supports navMobile, mMobile, mobileMenu) ── */
 function toggleNav() {
-  const menu = document.getElementById('navMobile');
+  const menu = document.getElementById('navMobile')
+             || document.getElementById('mMobile')
+             || document.getElementById('mobileMenu');
   if (menu) menu.classList.toggle('open');
 }
 
