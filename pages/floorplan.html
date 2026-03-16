@@ -106,124 +106,6 @@ nav{position:sticky;top:0;z-index:400;height:60px;background:rgba(8,17,31,.96);b
 .hs-body{font-size:.78rem;color:#475569;line-height:1.65}
 
 @media(max-width:600px){.side-panel{position:static}.nav-r .btn-back{display:none}}
-
-/* ── STICKY CTA ── */
-.sticky-cta{
-  position:fixed;right:1.25rem;bottom:1.5rem;z-index:500;
-  display:flex;flex-direction:column;align-items:flex-end;gap:.5rem;
-  opacity:0;transform:translateY(14px);pointer-events:none;
-  transition:opacity .3s,transform .3s;
-}
-.sticky-cta.show{opacity:1;transform:translateY(0);pointer-events:auto}
-.sticky-btn{
-  font-family:'Kanit',sans-serif;font-size:.85rem;font-weight:800;
-  background:linear-gradient(135deg,var(--goldDk),var(--gold));
-  color:#0B1F3B;padding:12px 20px;border-radius:14px;
-  text-decoration:none;display:flex;align-items:center;gap:7px;
-  box-shadow:0 8px 28px rgba(201,162,39,.45);
-  transition:all .2s;white-space:nowrap;border:none;cursor:pointer;
-}
-.sticky-btn:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(201,162,39,.55)}
-.sticky-badge{
-  font-family:'Kanit',sans-serif;font-size:.62rem;font-weight:700;
-  background:rgba(8,17,31,.92);color:rgba(255,255,255,.5);
-  padding:4px 10px;border-radius:8px;border:1px solid var(--border);
-  backdrop-filter:blur(10px);
-}
-.sticky-pulse{
-  width:10px;height:10px;border-radius:50%;background:#34d399;
-  box-shadow:0 0 0 0 rgba(52,211,153,.5);
-  animation:pulse 2s infinite;flex-shrink:0;
-}
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(52,211,153,.5)}70%{box-shadow:0 0 0 8px rgba(52,211,153,0)}100%{box-shadow:0 0 0 0 rgba(52,211,153,0)}}
-
-/* ── HELP CTA STRIP ── */
-.help-strip{
-  max-width:1400px;margin:0 auto 0;padding:0 1.25rem 1.5rem;
-}
-.help-card{
-  background:linear-gradient(135deg,rgba(201,162,39,.08),rgba(201,162,39,.03));
-  border:1px solid rgba(201,162,39,.2);border-radius:16px;
-  padding:1.25rem 1.75rem;
-  display:flex;align-items:center;justify-content:space-between;gap:1.5rem;
-  flex-wrap:wrap;
-}
-.help-left{display:flex;align-items:center;gap:.875rem}
-.help-icon{font-size:1.75rem;flex-shrink:0}
-.help-text strong{display:block;font-family:'Kanit',sans-serif;font-size:.92rem;font-weight:800;color:#fff;margin-bottom:.15rem}
-.help-text span{font-family:'Kanit',sans-serif;font-size:.75rem;color:rgba(255,255,255,.4)}
-.help-btns{display:flex;gap:.625rem;flex-wrap:wrap}
-.help-btn{
-  font-family:'Kanit',sans-serif;font-size:.8rem;font-weight:700;
-  padding:9px 16px;border-radius:10px;text-decoration:none;
-  display:flex;align-items:center;gap:6px;transition:all .2s;border:none;cursor:pointer;
-}
-.help-btn-line{background:#06c755;color:#fff}
-.help-btn-line:hover{background:#04a545;transform:translateY(-1px)}
-.help-btn-wa{background:#25d366;color:#fff}
-.help-btn-wa:hover{background:#1dba57;transform:translateY(-1px)}
-.help-btn-email{background:rgba(255,255,255,.07);color:rgba(255,255,255,.75);border:1px solid var(--border)}
-.help-btn-email:hover{background:rgba(255,255,255,.12);color:#fff}
-
-/* ── PARTNER LOGOS ── */
-.partners-section{
-  border-top:1px solid var(--border);
-  padding:2rem 1.5rem 2.25rem;
-  background:linear-gradient(180deg,transparent,rgba(255,255,255,.01));
-}
-.partners-inner{max-width:1100px;margin:0 auto;text-align:center}
-.partners-label{
-  font-family:'Kanit',sans-serif;font-size:.62rem;font-weight:700;
-  letter-spacing:.2em;text-transform:uppercase;
-  color:rgba(255,255,255,.22);margin-bottom:1.5rem;
-}
-.partners-grid{
-  display:flex;align-items:center;justify-content:center;
-  gap:0;flex-wrap:wrap;
-}
-.partner-logo{
-  flex:0 0 auto;padding:1rem 1.5rem;display:flex;flex-direction:column;
-  align-items:center;justify-content:center;gap:.35rem;
-  border-right:1px solid rgba(255,255,255,.07);
-  transition:opacity .2s;opacity:.55;cursor:default;
-}
-.partner-logo:last-child{border-right:none}
-.partner-logo:hover{opacity:.9}
-.partner-icon{font-size:1.5rem;line-height:1}
-.partner-name{
-  font-family:'Kanit',sans-serif;font-size:.65rem;font-weight:700;
-  color:rgba(255,255,255,.7);letter-spacing:.06em;text-transform:uppercase;
-  white-space:nowrap;
-}
-.partner-type{
-  font-family:'Kanit',sans-serif;font-size:.55rem;
-  color:rgba(255,255,255,.28);
-}
-
-/* ── FLOW BREADCRUMB in page header ── */
-.flow-trail{
-  display:flex;align-items:center;justify-content:center;gap:0;
-  margin-bottom:1.1rem;
-}
-.flow-step{
-  font-family:'Kanit',sans-serif;font-size:.7rem;font-weight:700;
-  padding:5px 12px;border-radius:8px;
-  color:rgba(255,255,255,.35);
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.07);
-  text-decoration:none;transition:all .2s;
-}
-.flow-step:hover{color:#fff;border-color:rgba(255,255,255,.2)}
-.flow-step.active{color:var(--gold2);background:rgba(201,162,39,.1);border-color:rgba(201,162,39,.3)}
-.flow-arrow{font-size:.65rem;color:rgba(255,255,255,.18);margin:0 .35rem}
-
-@media(max-width:600px){
-  .sticky-cta{right:.75rem;bottom:1rem}
-  .help-card{flex-direction:column;align-items:flex-start}
-  .partners-grid{gap:0}
-  .partner-logo{padding:.75rem 1rem}
-  .flow-trail{display:none}
-}
 </style>
 </head>
 <body>
@@ -235,24 +117,14 @@ nav{position:sticky;top:0;z-index:400;height:60px;background:rgba(8,17,31,.96);b
       <div class="nav-sub">Interactive Floor Plan · Big C Vientiane</div>
     </div>
     <div class="nav-r">
-      <a href="event.html" class="btn-back">← Back</a>
-      <a href="event.html#register" class="btn-res">✦ Reserve Booth</a>
+      <a href="/pages/event.html" class="btn-back">← Back</a>
+      <a href="/pages/event.html#register" class="btn-res">✦ Reserve Booth</a>
     </div>
   </div>
 </nav>
 
 <div class="page-hd">
   <div class="eyebrow">VITH HUB 2026 · Mekong Global Gateway · Big C Vientiane</div>
-  <!-- Flow trail: Event → Floorplan → Booth -->
-  <div class="flow-trail">
-    <a href="event.html" class="flow-step">📅 Event</a>
-    <span class="flow-arrow">→</span>
-    <span class="flow-step active">🗺️ Floor Plan</span>
-    <span class="flow-arrow">→</span>
-    <span class="flow-step">🏪 Choose Booth</span>
-    <span class="flow-arrow">→</span>
-    <span class="flow-step">✦ Reserve</span>
-  </div>
   <div class="page-title">Exhibition <span>Floor Plan</span></div>
   <div class="page-sub">📅 28 May – 1 June 2026 &nbsp;·&nbsp; Zone A/B/P/C/D/N · คลิกบูทเพื่อดูราคาและจอง</div>
   <div class="legend-row">
@@ -673,92 +545,13 @@ nav{position:sticky;top:0;z-index:400;height:60px;background:rgba(8,17,31,.96);b
           <div class="avail-lbl"><span>🍱 Food C/D</span><span>28 / 35 available</span></div>
           <div class="avail-bar"><div class="avail-fill" style="width:80%"></div></div>
         </div>
-        <a href="event.html#register" class="btn-book" style="margin-top:.875rem">✦ Reserve Your Booth →</a>
+        <a href="/pages/event.html#register" class="btn-book" style="margin-top:.875rem">✦ Reserve Your Booth →</a>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ── HELP CTA STRIP ── -->
-<div class="help-strip">
-  <div class="help-card">
-    <div class="help-left">
-      <div class="help-icon">💬</div>
-      <div class="help-text">
-        <strong>Need help choosing the right booth?</strong>
-        <span>ทีมงานพร้อมช่วยเลือกบูทที่เหมาะสมกับธุรกิจของคุณ · Talk to our team</span>
-      </div>
-    </div>
-    <div class="help-btns">
-      <a href="https://line.me/ti/p/vithhub" class="help-btn help-btn-line" target="_blank">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-        LINE
-      </a>
-      <a href="https://wa.me/66800000000?text=Hi%20VITH%20HUB%20I%20need%20help%20choosing%20a%20booth" class="help-btn help-btn-wa" target="_blank">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        WhatsApp
-      </a>
-      <a href="mailto:sales@vithhub.asia?subject=Booth Enquiry – VITH HUB 2026" class="help-btn help-btn-email">
-        ✉️ Email Us
-      </a>
-    </div>
-  </div>
-</div>
-
-<!-- ── PARTNER & MEDIA LOGOS ── -->
-<div class="partners-section">
-  <div class="partners-inner">
-    <div class="partners-label">Official Partners & Supported By</div>
-    <div class="partners-grid">
-      <div class="partner-logo">
-        <div class="partner-icon">🛒</div>
-        <div class="partner-name">Big C</div>
-        <div class="partner-type">Venue Partner</div>
-      </div>
-      <div class="partner-logo">
-        <div class="partner-icon">🇹🇭</div>
-        <div class="partner-name">Thai Trade Center</div>
-        <div class="partner-type">Trade Partner</div>
-      </div>
-      <div class="partner-logo">
-        <div class="partner-icon">🇱🇦</div>
-        <div class="partner-name">Lao Chamber</div>
-        <div class="partner-type">Chamber of Commerce</div>
-      </div>
-      <div class="partner-logo">
-        <div class="partner-icon">🏛️</div>
-        <div class="partner-name">LITSE Market</div>
-        <div class="partner-type">Co-organizer</div>
-      </div>
-      <div class="partner-logo">
-        <div class="partner-icon">🚢</div>
-        <div class="partner-name">Mekong Logistics</div>
-        <div class="partner-type">Logistics Partner</div>
-      </div>
-      <div class="partner-logo">
-        <div class="partner-icon">📰</div>
-        <div class="partner-name">Business Today</div>
-        <div class="partner-type">Media Partner</div>
-      </div>
-      <div class="partner-logo">
-        <div class="partner-icon">📡</div>
-        <div class="partner-name">Lao PDR Media</div>
-        <div class="partner-type">Media Partner</div>
-      </div>
-    </div>
-    <div style="margin-top:1.5rem;font-family:'Kanit',sans-serif;font-size:.68rem;color:rgba(255,255,255,.18);text-align:center">
-      📅 28 May – 1 June 2026 &nbsp;·&nbsp; Big C Vientiane, Laos PDR &nbsp;·&nbsp; Mekong Global Gateway
-    </div>
-  </div>
-</div>
-
-<!-- ── STICKY CTA ── -->
-<div class="sticky-cta" id="stickyCTA">
-  <div class="sticky-badge"><span class="sticky-pulse" style="display:inline-block;vertical-align:middle;margin-right:5px"></span>Booths filling fast</div>
-  <a href="#" class="sticky-btn" id="stickyBtn" onclick="scrollToMap(event)">
-    🏪 Book a Booth
-  </a>
-</div>
+<!-- HOTSPOT POPUPS -->
 <div class="hs-pop" id="hs-retail">
   <button class="hs-close" onclick="closeHS('retail')">×</button>
   <div class="hs-badge">RETAIL ENTRY DESK</div>
@@ -816,10 +609,6 @@ function sel(id, zoneName, size, price, isReserved=false){
   const z=id[0];
   const col=ZONE_COLOR[z]||'#818CF8';
 
-  // Update sticky CTA
-  const sBtn = document.getElementById('stickyBtn');
-  if(sBtn) sBtn.innerHTML = `✦ Book Booth ${id}`;
-
   document.getElementById('selPanel').innerHTML=`
     <div class="sel-zone-badge" style="background:${col}22;color:${col};border:1px solid ${col}44">${zoneName}</div>
     <div class="sel-num" style="color:${col}">Booth ${id}</div>
@@ -834,8 +623,8 @@ function sel(id, zoneName, size, price, isReserved=false){
         <div class="sel-pb-val" style="color:#10B981;font-size:.95rem">0%</div>
       </div>
     </div>
-    <a href="booth.html?booth=${id}" class="btn-book">✦ Reserve Booth ${id}</a>
-    <a href="booth.html?booth=${id}" style="display:block;text-align:center;margin-top:.5rem;font-family:'Kanit',sans-serif;font-size:.68rem;color:rgba(201,162,39,.5);text-decoration:none">→ View Full Details</a>`;
+    <a href="/pages/booth.html?booth=${id}" class="btn-book">✦ Reserve Booth ${id}</a>
+    <a href="/pages/booth.html?booth=${id}" style="display:block;text-align:center;margin-top:.5rem;font-family:'Kanit',sans-serif;font-size:.68rem;color:rgba(201,162,39,.5);text-decoration:none">→ View Full Details</a>`;
 }
 
 function showHS(id, e){
@@ -858,27 +647,6 @@ setTimeout(()=>{
     setTimeout(()=>el.style.width=w, 150);
   });
 },400);
-
-// ── STICKY CTA ──
-const stickyCTA = document.getElementById('stickyCTA');
-let ctaVisible = false;
-window.addEventListener('scroll', ()=>{
-  const scrolled = window.scrollY > 220;
-  if(scrolled !== ctaVisible){
-    ctaVisible = scrolled;
-    stickyCTA.classList.toggle('show', ctaVisible);
-  }
-});
-
-function scrollToMap(e){
-  e.preventDefault();
-  // If a booth is selected, go straight to its detail page
-  if(sel_id){
-    window.location.href = 'booth.html?booth=' + sel_id;
-  } else {
-    document.getElementById('fpWrap').scrollIntoView({behavior:'smooth', block:'center'});
-  }
-}
 </script>
 </body>
 </html>
