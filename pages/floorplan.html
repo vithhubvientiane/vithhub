@@ -272,7 +272,7 @@ a{text-decoration:none;color:inherit}
   overflow:hidden;
   position:relative;
   cursor:grab;
-  touch-action:none;
+  touch-action:pan-y pinch-zoom;
   user-select:none;
   border-radius:8px;
   background:#0b1120;
@@ -896,6 +896,7 @@ fpWrap.addEventListener('touchstart', e => {
 
 fpWrap.addEventListener('touchmove', e => {
   if(e.touches.length === 2){
+    /* pinch-to-zoom: prevent default only for 2-finger gesture */
     e.preventDefault();
     const dist = Math.hypot(
       e.touches[0].clientX - e.touches[1].clientX,
@@ -910,10 +911,12 @@ fpWrap.addEventListener('touchmove', e => {
     }
     lastDist = dist;
   } else if(e.touches.length === 1 && isDragging){
+    /* single-finger pan inside the map — allow natural page scroll when not dragging */
     panX = startPanX + (e.touches[0].clientX - startX);
     panY = startPanY + (e.touches[0].clientY - startY);
     applyTransform();
   }
+  /* do NOT call e.preventDefault() on single-touch — lets page scroll work */
 }, {passive:false});
 
 fpWrap.addEventListener('touchend', () => {
