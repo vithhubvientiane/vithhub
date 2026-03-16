@@ -370,7 +370,7 @@ a{text-decoration:none;color:inherit}
   <div class="legend-row">
     <div class="leg"><div class="leg-sq" style="background:#B45309"></div>⭐ Premium P ฿25K</div>
     <div class="leg"><div class="leg-sq" style="background:#0369A1"></div>Franchise A ฿18K</div>
-    <div class="leg"><div class="leg-sq" style="background:#065F46"></div>🌿 New Product N ฿15K</div>
+    <div class="leg"><div class="leg-sq" style="background:#065F46"></div>🌏 Nation Booth N ฿15K</div>
     <div class="leg"><div class="leg-sq" style="background:#4338CA"></div>Standard B ฿15K</div>
     <div class="leg"><div class="leg-sq" style="background:#C2410C"></div>Food Dry C ฿12K</div>
     <div class="leg"><div class="leg-sq" style="background:#A16207"></div>Food Center D ฿12K</div>
@@ -467,7 +467,7 @@ a{text-decoration:none;color:inherit}
 
             <!-- NEW PRODUCT ZONE N -->
             <div class="zone zone-new">
-              <h3>New Product Zone (N) <span class="zh-badge">฿15K</span></h3>
+              <h3>Nation Booth Zone (N) <span class="zh-badge">฿15K</span></h3>
               <div class="booth-grid">
                 <div class="booth new" data-booth="N01" data-zone="N" data-price="฿15K" data-size="3×3m"></div>
                 <div class="booth new" data-booth="N02" data-zone="N" data-price="฿15K" data-size="3×3m"></div>
@@ -477,6 +477,9 @@ a{text-decoration:none;color:inherit}
                 <div class="booth new" data-booth="N06" data-zone="N" data-price="฿15K" data-size="3×3m"></div>
                 <div class="booth new" data-booth="N07" data-zone="N" data-price="฿15K" data-size="3×3m"></div>
                 <div class="booth new" data-booth="N08" data-zone="N" data-price="฿15K" data-size="3×3m"></div>
+                <div class="booth new" data-booth="N09" data-zone="N" data-price="฿15K" data-size="3×3m"></div>
+                <div class="booth new" data-booth="N10" data-zone="N" data-price="฿15K" data-size="3×3m"></div>
+                <div class="booth new" data-booth="N11" data-zone="N" data-price="฿15K" data-size="3×3m"></div>
               </div>
             </div>
 
@@ -600,7 +603,7 @@ a{text-decoration:none;color:inherit}
       <div class="panel-body">
         <div class="price-row"><div class="pz-dot" style="background:#B45309"></div><div class="pz-name">⭐ Premium P (3×6m)</div><div class="pz-val" style="color:#B45309">฿25,000</div></div>
         <div class="price-row"><div class="pz-dot" style="background:#0369A1"></div><div class="pz-name">☕ Franchise A (2×3m)</div><div class="pz-val">฿18,000</div></div>
-        <div class="price-row"><div class="pz-dot" style="background:#065F46"></div><div class="pz-name">🌿 New Product N (3×3m)</div><div class="pz-val">฿15,000</div></div>
+        <div class="price-row"><div class="pz-dot" style="background:#065F46"></div><div class="pz-name">🌏 Nation Booth N (3×3m)</div><div class="pz-val">฿15,000</div></div>
         <div class="price-row"><div class="pz-dot" style="background:#4338CA"></div><div class="pz-name">🏪 Standard B (3×3m)</div><div class="pz-val">฿15,000</div></div>
         <div class="price-row"><div class="pz-dot" style="background:#C2410C"></div><div class="pz-name">🍱 Food Dry C (2×3m)</div><div class="pz-val">฿12,000</div></div>
         <div class="price-row"><div class="pz-dot" style="background:#A16207"></div><div class="pz-name">🍽️ Food Center D (2×3m)</div><div class="pz-val">฿12,000</div></div>
@@ -615,7 +618,7 @@ a{text-decoration:none;color:inherit}
       <div class="panel-body">
         <div class="avail-item"><div class="avail-lbl"><span>⭐ Premium P</span><span id="av-P">—</span></div><div class="avail-bar"><div class="avail-fill" id="avb-P"></div></div></div>
         <div class="avail-item"><div class="avail-lbl"><span>☕ Franchise A</span><span id="av-A">—</span></div><div class="avail-bar"><div class="avail-fill" id="avb-A"></div></div></div>
-        <div class="avail-item"><div class="avail-lbl"><span>🌿 New Product N</span><span id="av-N">—</span></div><div class="avail-bar"><div class="avail-fill" id="avb-N" style="background:linear-gradient(90deg,#16a34a,#4ade80)"></div></div></div>
+        <div class="avail-item"><div class="avail-lbl"><span>🌏 Nation Booth N</span><span id="av-N">—</span></div><div class="avail-bar"><div class="avail-fill" id="avb-N" style="background:linear-gradient(90deg,#16a34a,#4ade80)"></div></div></div>
         <div class="avail-item"><div class="avail-lbl"><span>🏪 Standard B</span><span id="av-B">—</span></div><div class="avail-bar"><div class="avail-fill" id="avb-B"></div></div></div>
         <div class="avail-item"><div class="avail-lbl"><span>🍱 Food Dry C</span><span id="av-C">—</span></div><div class="avail-bar"><div class="avail-fill" id="avb-C"></div></div></div>
         <div class="avail-item"><div class="avail-lbl"><span>🍽️ Food Center D</span><span id="av-D">—</span></div><div class="avail-bar"><div class="avail-fill" id="avb-D"></div></div></div>
@@ -636,55 +639,13 @@ a{text-decoration:none;color:inherit}
   <div class="tt-hint" id="ttHint"></div>
 </div>
 
+<script src="booth-data.js"></script>
 <script>
 /* ════════════════════════════════════════════════════════════
    VITH HUB FLOORPLAN — v3
    Features: JSON status, Zoom+Pan, Highlight, Search, Sold
+   BOOTH_DATA loaded from booth-data.js (shared source of truth)
 ════════════════════════════════════════════════════════════ */
-
-/* ──────────────────────────────────────────────────────────
-   BOOTH DATA JSON  ← แก้ตรงนี้เพื่ออัพเดทสถานะ
-   status: 'available' | 'reserved' | 'sold'
-   (จะ fetch จาก API ได้ในอนาคต — ดู loadStatus())
-────────────────────────────────────────────────────────── */
-const BOOTH_DATA = {
-  A01:{status:'available'},A02:{status:'available'},A03:{status:'available'},A04:{status:'available'},
-  A05:{status:'reserved'}, A06:{status:'available'},A07:{status:'available'},A08:{status:'available'},
-  A09:{status:'available'},A10:{status:'available'},A11:{status:'reserved'},
-
-  B01:{status:'available'},B02:{status:'available'},B03:{status:'available'},B04:{status:'available'},
-  B05:{status:'available'},B06:{status:'reserved'}, B07:{status:'available'},B08:{status:'available'},
-  B09:{status:'available'},B10:{status:'reserved'}, B11:{status:'available'},B12:{status:'available'},
-  B13:{status:'available'},B14:{status:'available'},B15:{status:'available'},B16:{status:'available'},
-  B17:{status:'reserved'}, B18:{status:'available'},B19:{status:'available'},B20:{status:'available'},
-  B21:{status:'available'},B22:{status:'reserved'}, B23:{status:'available'},B24:{status:'reserved'},
-  B25:{status:'available'},B26:{status:'sold'},
-
-  P01:{status:'available'},P02:{status:'available'},P03:{status:'available'},P04:{status:'reserved'},
-  P05:{status:'available'},P06:{status:'available'},P07:{status:'sold'},    P08:{status:'available'},
-
-  C01:{status:'available'},C02:{status:'available'},C03:{status:'available'},C04:{status:'available'},
-  C05:{status:'available'},C06:{status:'available'},C07:{status:'reserved'}, C08:{status:'available'},
-  C09:{status:'available'},C10:{status:'available'},C11:{status:'available'},C12:{status:'available'},
-  C13:{status:'available'},C14:{status:'reserved'}, C15:{status:'available'},C16:{status:'available'},
-  C17:{status:'available'},C18:{status:'available'},C19:{status:'reserved'}, C20:{status:'available'},
-  C21:{status:'available'},
-
-  N01:{status:'available'},N02:{status:'available'},N03:{status:'available'},N04:{status:'available'},
-  N05:{status:'available'},N06:{status:'available'},N07:{status:'available'},N08:{status:'available'},
-
-  D01:{status:'available'},D02:{status:'available'},D03:{status:'available'},D04:{status:'reserved'},
-  D05:{status:'available'},D06:{status:'available'},D07:{status:'available'},D08:{status:'available'},
-  D09:{status:'available'},D10:{status:'available'},D11:{status:'reserved'}, D12:{status:'available'},
-  D13:{status:'available'},D14:{status:'available'},D15:{status:'available'},D16:{status:'available'},
-  D17:{status:'available'},D18:{status:'available'},D19:{status:'reserved'}, D20:{status:'available'},
-  D21:{status:'sold'},     D22:{status:'available'},
-};
-
-/* Zone metadata */
-const ZONE_NAMES = {A:'Franchise Zone A',B:'Standard Booth B',P:'Premium Zone P',N:'New Product Zone N',C:'Food Dry Zone C',D:'Food Center D'};
-const ZONE_PRICE = {A:18000,B:15000,P:25000,N:15000,C:12000,D:12000};
-const ZONE_COLOR = {A:'#1d4ed8',B:'#6d28d9',P:'#b45309',N:'#047857',C:'#c2410c',D:'#4d7c0f'};
 
 /* ── loadStatus: fetch from API/DB (ถ้ามี) ─────────────────
    เมื่อมี backend ให้ uncomment และใส่ URL จริง
