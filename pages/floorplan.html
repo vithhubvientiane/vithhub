@@ -10,97 +10,137 @@
 /* ── RESET ── */
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Plus Jakarta Sans','Kanit',sans-serif;background:#f4f6fb;margin:0;padding:0}
+body{
+  font-family:'Plus Jakarta Sans','Kanit',system-ui,sans-serif;
+  background:#0b1120;
+  color:#e5e7eb;
+  margin:0;padding:0;
+}
 a{text-decoration:none;color:inherit}
 
 /* ── TOKENS ── */
 :root{
-  --navy:#0B1F3B;
   --gold:#C9A227;--gold2:#E4BC4A;--goldDk:#9B7A10;
-  --available-bg:#F0FDF4;--available-border:#86EFAC;--available-text:#15803D;
-  --reserved-bg:#FFFBEB; --reserved-border:#FCD34D; --reserved-text:#92400E;
-  --sold-bg:#FEF2F2;     --sold-border:#FCA5A5;     --sold-text:#991B1B;
-  --shadow:0 2px 8px rgba(0,0,0,.07);
-  --shadow-md:0 4px 16px rgba(0,0,0,.1);
+  --available-bg:rgba(16,185,129,.18);--available-border:#10B981;--available-text:#6EE7B7;
+  --reserved-bg:rgba(245,158,11,.15); --reserved-border:#F59E0B; --reserved-text:#FCD34D;
+  --sold-bg:rgba(239,68,68,.15);      --sold-border:#EF4444;     --sold-text:#FCA5A5;
+  --shadow:0 2px 14px rgba(0,0,0,.4);
 }
 
 /* ── NAV ── */
-.nav{background:var(--navy);height:56px;display:flex;align-items:center;padding:0 1.5rem;gap:1rem;position:sticky;top:0;z-index:100;border-bottom:2px solid var(--gold)}
+.nav{background:rgba(7,12,26,.98);height:56px;display:flex;align-items:center;padding:0 1.5rem;gap:1rem;position:sticky;top:0;z-index:100;border-bottom:2px solid var(--gold)}
 .nav-logo{font-family:'Kanit',sans-serif;font-size:1.15rem;font-weight:900;color:#fff;letter-spacing:.06em;line-height:1}
 .nav-logo span{color:var(--gold2)}
-.nav-sub{font-size:.5rem;color:rgba(255,255,255,.35);letter-spacing:.15em;text-transform:uppercase;display:block;margin-top:2px}
+.nav-sub{font-size:.5rem;color:rgba(255,255,255,.32);letter-spacing:.15em;text-transform:uppercase;display:block;margin-top:2px}
 .nav-r{margin-left:auto;display:flex;gap:.625rem;align-items:center}
-.btn-back{font-family:'Kanit',sans-serif;font-size:.78rem;font-weight:700;color:rgba(255,255,255,.6);padding:6px 14px;border-radius:6px;border:1px solid rgba(255,255,255,.2);transition:.15s}
+.btn-back{font-family:'Kanit',sans-serif;font-size:.78rem;font-weight:700;color:rgba(255,255,255,.55);padding:6px 14px;border-radius:6px;border:1px solid rgba(255,255,255,.18);transition:.15s}
 .btn-back:hover{color:#fff;border-color:rgba(255,255,255,.5)}
-.btn-res{font-family:'Kanit',sans-serif;font-size:.82rem;font-weight:800;background:linear-gradient(135deg,var(--goldDk),var(--gold));color:var(--navy);padding:7px 18px;border-radius:6px;transition:.15s}
-.btn-res:hover{box-shadow:0 3px 14px rgba(201,162,39,.45);transform:translateY(-1px)}
+.btn-res{font-family:'Kanit',sans-serif;font-size:.82rem;font-weight:800;background:linear-gradient(135deg,var(--goldDk),var(--gold));color:#0b1120;padding:7px 18px;border-radius:6px;transition:.15s;white-space:nowrap}
+.btn-res:hover{box-shadow:0 3px 14px rgba(201,162,39,.5);transform:translateY(-1px)}
 
 /* ── PAGE HEADER ── */
-.page-hd{background:var(--navy);padding:1.25rem 1.5rem 1.5rem}
+.page-hd{background:rgba(7,12,26,.95);padding:1.25rem 1.5rem 1.5rem;border-bottom:1px solid rgba(255,255,255,.06)}
 .hd-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.4rem;font-weight:800;color:#fff;margin-bottom:3px}
 .hd-title span{color:var(--gold2)}
-.hd-sub{font-family:'Kanit',sans-serif;font-size:.75rem;color:rgba(255,255,255,.4);margin-bottom:.875rem}
+.hd-sub{font-family:'Kanit',sans-serif;font-size:.75rem;color:rgba(255,255,255,.35);margin-bottom:.875rem}
 .legend-row{display:flex;flex-wrap:wrap;gap:.5rem .875rem;align-items:center}
-.leg{display:flex;align-items:center;gap:5px;font-family:'Kanit',sans-serif;font-size:.68rem;font-weight:600;color:rgba(255,255,255,.6)}
+.leg{display:flex;align-items:center;gap:5px;font-family:'Kanit',sans-serif;font-size:.68rem;font-weight:600;color:rgba(255,255,255,.55)}
 .leg-sq{width:10px;height:10px;border-radius:2px;flex-shrink:0}
 .status-row{display:flex;gap:.875rem;flex-wrap:wrap;margin-top:.5rem}
 .sl{display:flex;align-items:center;gap:5px;font-family:'Kanit',sans-serif;font-size:.68rem;font-weight:600}
 .sl-dot{width:10px;height:10px;border-radius:2px;border:1.5px solid;flex-shrink:0}
 
 /* ── TOOLBAR ── */
-.toolbar{background:#fff;border-bottom:1px solid #e5e7eb;padding:.625rem 1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.625rem;box-shadow:var(--shadow)}
+.toolbar{background:rgba(11,17,32,.97);border-bottom:1px solid rgba(255,255,255,.06);padding:.625rem 1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.625rem}
 .counter-row{display:flex;gap:1rem;flex-wrap:wrap}
-.counter-item{font-family:'Kanit',sans-serif;font-size:.72rem;color:#6b7280;display:flex;align-items:center;gap:5px}
+.counter-item{font-family:'Kanit',sans-serif;font-size:.72rem;color:rgba(255,255,255,.4);display:flex;align-items:center;gap:5px}
 .counter-dot{width:8px;height:8px;border-radius:2px;flex-shrink:0}
 .counter-num{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:.88rem}
 .zoom-row{display:flex;align-items:center;gap:.375rem}
-.zoom-lbl{font-family:'Kanit',sans-serif;font-size:.68rem;color:#9ca3af}
-.zoom-btn{width:28px;height:28px;border-radius:6px;border:1px solid #e5e7eb;background:#f9fafb;color:#374151;font-size:.95rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.15s;font-family:'Kanit',sans-serif;font-weight:700;line-height:1}
-.zoom-btn:hover{background:#f3f4f6;border-color:#d1d5db}
-.zoom-val{font-family:'Kanit',sans-serif;font-size:.72rem;color:#9ca3af;min-width:34px;text-align:center}
+.zoom-lbl{font-family:'Kanit',sans-serif;font-size:.68rem;color:rgba(255,255,255,.28)}
+.zoom-btn{width:28px;height:28px;border-radius:6px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);color:rgba(255,255,255,.7);font-size:.95rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.15s;font-family:'Kanit',sans-serif;font-weight:700;line-height:1}
+.zoom-btn:hover{background:rgba(255,255,255,.12);color:#fff}
+.zoom-val{font-family:'Kanit',sans-serif;font-size:.72rem;color:rgba(255,255,255,.3);min-width:34px;text-align:center}
 
-/* ── MAIN LAYOUT ── */
+/* ── PAGE BODY + SIDE PANEL ── */
 .page-body{max-width:1500px;margin:0 auto;padding:1.25rem;display:grid;grid-template-columns:1fr 280px;gap:1.25rem;align-items:start}
 @media(max-width:1100px){.page-body{grid-template-columns:1fr}}
-
-/* ── FLOOR CARD ── */
 .floor-card{background:transparent;overflow:hidden}
 .fp-scroll{overflow:auto;-webkit-overflow-scrolling:touch;padding:.25rem;cursor:grab}
 .fp-scroll:active{cursor:grabbing}
-.fp-canvas{transition:transform .2s ease;transform-origin:top left}
+.fp-canvas{width:100%;max-width:1100px;margin:auto;transition:transform .2s ease;transform-origin:top left}
 
 /* ══════════════════════════════════════
-   EXHIBITION MASTER GRID
-   Left: Franchise (260px)
-   Center: Premium + Walkway + B + C (1fr)
-   Right: Food Center D (320px)
+   FLOORPLAN WRAPPER
 ══════════════════════════════════════ */
-.exhibition{
-  display:grid;
-  grid-template-columns:260px 1fr 320px;
-  gap:20px;
-  align-items:start;
-  min-width:860px;
+.floorplan{
+  max-width:1100px;
+  margin:auto;
+  padding:20px;
 }
 
-/* ── Zone containers ── */
-.zone-franchise{background:#E0F2FE;padding:16px;border-radius:10px;border:1px solid #BFDBFE;box-shadow:var(--shadow)}
-.zone-premium  {background:#FEF3C7;padding:16px;border-radius:10px;border:1px solid #FDE68A;box-shadow:var(--shadow)}
-.zone-new      {background:#DCFCE7;padding:16px;border-radius:10px;border:1px solid #86EFAC;box-shadow:var(--shadow)}
-.zone-standard {background:#EDE9FE;padding:16px;border-radius:10px;border:1px solid #C7D2FE;box-shadow:var(--shadow)}
-.zone-fooddry  {background:#FFEDD5;padding:16px;border-radius:10px;border:1px solid #FED7AA;box-shadow:var(--shadow)}
-.zone-food     {background:#FEF9C3;padding:16px;border-radius:10px;border:1px solid #FEF08A;box-shadow:var(--shadow)}
+/* ── MAP: center-aligned flex ── */
+.map-container{
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  gap:20px;
+  flex-wrap:wrap;
+  margin-bottom:0;
+}
 
-/* Zone headings */
-.zone-franchise h3{color:#0369A1;font-size:.8rem;font-weight:800;margin-bottom:10px;display:flex;align-items:center;gap:6px}
-.zone-premium h3  {color:#B45309;font-size:.8rem;font-weight:800;margin-bottom:10px;display:flex;align-items:center;gap:6px}
-.zone-new h3      {color:#15803D;font-size:.8rem;font-weight:800;margin-bottom:10px;display:flex;align-items:center;gap:6px}
-.zone-standard h3 {color:#4338CA;font-size:.8rem;font-weight:800;margin-bottom:10px;display:flex;align-items:center;gap:6px}
-.zone-fooddry h3  {color:#C2410C;font-size:.8rem;font-weight:800;margin-bottom:10px;display:flex;align-items:center;gap:6px}
-.zone-food h3     {color:#A16207;font-size:.8rem;font-weight:800;margin-bottom:10px;display:flex;align-items:center;gap:6px}
-.zh-badge{font-family:'Kanit',sans-serif;font-size:.56rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border-radius:20px}
+/* ── Walkway ── */
+.walkway{
+  height:60px;
+  background:#1e293b;
+  border-radius:8px;
+  border:1px solid rgba(255,255,255,.07);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Kanit',sans-serif;
+  font-size:13px;font-weight:700;
+  color:#94a3b8;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  margin:16px 0;
+}
 
-/* ── booth-grid columns per zone (spec) ── */
+/* ── Center column ── */
+.col-center{
+  flex:1;
+  min-width:320px;
+  display:flex;
+  flex-direction:column;
+  gap:0;
+}
+
+/* ══════════════════════════════════════
+   ZONE CONTAINERS
+══════════════════════════════════════ */
+.zone{padding:16px;border-radius:10px;box-shadow:var(--shadow)}
+.zone h3{
+  font-family:'Plus Jakarta Sans','Kanit',sans-serif;
+  font-size:.78rem;font-weight:800;
+  color:rgba(255,255,255,.9);
+  margin-bottom:10px;
+  display:flex;align-items:center;gap:6px;
+}
+.zh-badge{
+  font-family:'Kanit',sans-serif;font-size:.54rem;font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase;
+  padding:2px 8px;border-radius:20px;
+  background:rgba(255,255,255,.15);color:rgba(255,255,255,.82);
+}
+
+/* Zone colors — spec exactly */
+.zone-franchise{background:#1d4ed8;width:200px;flex-shrink:0}
+.zone-premium  {background:#b45309}
+.zone-new      {background:#047857}
+.zone-standard {background:#6d28d9}
+.zone-fooddry  {background:#c2410c}
+.zone-food     {background:#4d7c0f;width:220px;flex-shrink:0}
+
+/* ── booth-grid columns per zone ── */
+.booth-grid{display:grid;gap:6px;margin-top:8px}
 .zone-franchise .booth-grid{grid-template-columns:repeat(2,1fr)}
 .zone-premium   .booth-grid{grid-template-columns:repeat(2,1fr)}
 .zone-new       .booth-grid{grid-template-columns:repeat(4,1fr)}
@@ -108,124 +148,115 @@ a{text-decoration:none;color:inherit}
 .zone-fooddry   .booth-grid{grid-template-columns:repeat(4,1fr)}
 .zone-food      .booth-grid{grid-template-columns:repeat(3,1fr)}
 
-/* ── booth-grid base ── */
-.booth-grid{
-  display:grid;
-  gap:7px;
-  margin-top:8px;
-}
-
-/* ── Walkway ── */
-.walkway{
-  height:52px;
-  background:#f1f5f9;
-  border-radius:8px;
-  border:1px solid #e2e8f0;
-  display:flex;align-items:center;justify-content:center;
-  font-family:'Kanit',sans-serif;
-  font-size:.7rem;font-weight:700;
-  color:#94a3b8;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  margin:14px 0;
-}
-
-/* Center column stacking */
-.col-center{display:flex;flex-direction:column;gap:0}
-
 /* ══════════════════════════════════════
    THE BOOTH
 ══════════════════════════════════════ */
 .booth{
   aspect-ratio:1/1;
-  border-radius:6px;
-  border:2px solid #94a3b8;
   background:#f8fafc;
-  color:#1e293b;
+  border:2px solid #475569;
+  border-radius:6px;
+  padding:10px;
+  font-family:'Kanit',sans-serif;
+  font-weight:600;
+  color:#0f172a;
   display:flex;flex-direction:column;
   align-items:center;justify-content:center;
   cursor:pointer;
-  transition:all .15s ease;
+  transition:all .2s ease;
   user-select:none;
   position:relative;
+  text-align:center;
 }
 .booth::before{
   content:attr(data-booth);
   font-family:'Kanit',sans-serif;
   font-size:.65rem;font-weight:800;
-  line-height:1;text-align:center;
-  color:inherit;
+  line-height:1;color:inherit;
 }
 .booth::after{
   content:attr(data-price);
   font-family:'Kanit',sans-serif;
   font-size:.52rem;font-weight:600;
-  opacity:.6;margin-top:2px;
-  color:inherit;
+  opacity:.6;margin-top:2px;color:inherit;
 }
-
-/* Premium tall */
-.booth.premium,.booth.tall{aspect-ratio:1/2}
-
-/* Default zone coloring */
-.zone-franchise .booth{background:#BAE6FD;border-color:#38BDF8;color:#0369A1}
-.zone-premium   .booth{background:#FDE68A;border-color:#F59E0B;color:#92400E}
-.zone-new       .booth{background:#BBF7D0;border-color:#34D399;color:#065F46}
-.zone-standard  .booth{background:#DDD6FE;border-color:#7C3AED;color:#3730A3}
-.zone-fooddry   .booth{background:#FED7AA;border-color:#F97316;color:#9A3412}
-.zone-food      .booth{background:#FEF08A;border-color:#EAB308;color:#713F12}
+.booth.premium{
+  aspect-ratio:1/2;
+  background:#fde68a;
+  border-color:#f59e0b;
+  font-weight:700;
+  color:#78350f;
+}
+.booth:hover{
+  transform:scale(1.05);
+  border-color:#f97316!important;
+  box-shadow:0 4px 16px rgba(249,115,22,.35);
+  z-index:2;
+}
+.booth.reserved{cursor:default}
+.booth.sold    {cursor:default;opacity:.65}
+.booth.reserved:hover,.booth.sold:hover{transform:none;border-color:inherit!important;box-shadow:none}
 
 /* Status overrides */
-.booth.available{background:var(--available-bg)!important;border-color:var(--available-border)!important;color:var(--available-text)!important}
-.booth.reserved {background:var(--reserved-bg)!important; border-color:var(--reserved-border)!important; color:var(--reserved-text)!important;cursor:default}
-.booth.sold     {background:var(--sold-bg)!important;     border-color:var(--sold-border)!important;     color:var(--sold-text)!important;    cursor:default;opacity:.65}
+.booth.available{background:rgba(16,185,129,.18)!important;border-color:#10B981!important;color:#6EE7B7!important}
+.booth.reserved {background:rgba(245,158,11,.15)!important;border-color:#F59E0B!important;color:#FCD34D!important}
+.booth.sold     {background:rgba(239,68,68,.15)!important; border-color:#EF4444!important;color:#FCA5A5!important}
 .booth.sold::before{text-decoration:line-through;opacity:.45}
-
-/* Hover — available only */
-.booth:not(.reserved):not(.sold):hover{transform:scale(1.06);border-color:#ff6b00!important;box-shadow:0 4px 14px rgba(255,107,0,.2);z-index:2}
-
-/* Selected */
-.booth.selected{outline:2.5px solid #10B981;outline-offset:2px;box-shadow:0 0 12px rgba(16,185,129,.35)}
+.booth.selected {outline:2.5px solid #10B981;outline-offset:2px;box-shadow:0 0 14px rgba(16,185,129,.5)}
 
 /* ── TOOLTIP ── */
-.fp-tooltip{position:fixed;z-index:900;background:rgba(17,24,39,.97);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:12px 15px;pointer-events:none;display:none;min-width:160px;box-shadow:0 8px 28px rgba(0,0,0,.35)}
+.fp-tooltip{position:fixed;z-index:900;background:rgba(7,12,26,.97);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:12px 15px;pointer-events:none;display:none;min-width:160px;box-shadow:0 8px 28px rgba(0,0,0,.6)}
 .fp-tooltip.show{display:block}
 .tt-id{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.05rem;font-weight:800;line-height:1;margin-bottom:3px}
-.tt-zone{font-family:'Kanit',sans-serif;font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:4px}
-.tt-size{font-family:'Kanit',sans-serif;font-size:.7rem;color:rgba(255,255,255,.6);margin-bottom:2px}
+.tt-zone{font-family:'Kanit',sans-serif;font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:4px}
+.tt-size{font-family:'Kanit',sans-serif;font-size:.7rem;color:rgba(255,255,255,.58);margin-bottom:2px}
 .tt-price{font-family:'Plus Jakarta Sans',sans-serif;font-size:.95rem;font-weight:800;color:var(--gold2);margin-bottom:3px}
 .tt-status{font-family:'Kanit',sans-serif;font-size:.65rem;font-weight:700}
-.tt-hint{font-family:'Kanit',sans-serif;font-size:.58rem;color:rgba(255,255,255,.25);margin-top:5px}
+.tt-hint{font-family:'Kanit',sans-serif;font-size:.58rem;color:rgba(255,255,255,.22);margin-top:5px}
 
 /* ── SIDE PANEL ── */
 .side-panel{display:flex;flex-direction:column;gap:1rem;position:sticky;top:72px}
-.panel-card{background:#fff;border:1px solid #e5e7eb;border-radius:10px;overflow:hidden;box-shadow:var(--shadow)}
-.panel-hd{padding:.75rem 1rem;border-bottom:1px solid #f3f4f6;font-family:'Kanit',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#9ca3af;background:#f9fafb}
+.panel-card{background:rgba(11,17,32,.9);border:1px solid rgba(255,255,255,.1);border-radius:10px;overflow:hidden;box-shadow:var(--shadow)}
+.panel-hd{padding:.75rem 1rem;border-bottom:1px solid rgba(255,255,255,.07);font-family:'Kanit',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.38);background:rgba(255,255,255,.04)}
 .panel-body{padding:1rem}
 .sel-empty{text-align:center;padding:1.5rem 0}
 .sel-empty-icon{font-size:1.75rem;margin-bottom:.4rem}
-.sel-empty-txt{font-family:'Kanit',sans-serif;font-size:.72rem;color:#9ca3af;line-height:1.6}
+.sel-empty-txt{font-family:'Kanit',sans-serif;font-size:.72rem;color:rgba(255,255,255,.28);line-height:1.6}
 .sel-zone-badge{font-family:'Kanit',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 9px;border-radius:20px;display:inline-block;margin-bottom:.4rem}
-.sel-id{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.75rem;font-weight:800;line-height:1;margin-bottom:.15rem;color:#111827}
-.sel-desc{font-family:'Kanit',sans-serif;font-size:.7rem;color:#9ca3af;margin-bottom:.75rem}
+.sel-id{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.75rem;font-weight:800;line-height:1;margin-bottom:.15rem;color:#fff}
+.sel-desc{font-family:'Kanit',sans-serif;font-size:.7rem;color:rgba(255,255,255,.32);margin-bottom:.75rem}
 .sel-grid{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-bottom:.75rem}
-.sel-box{background:#f9fafb;border:1px solid #f3f4f6;border-radius:8px;padding:.5rem;text-align:center}
-.sel-box-lbl{font-family:'Kanit',sans-serif;font-size:.55rem;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.15rem}
-.sel-box-val{font-family:'Plus Jakarta Sans',sans-serif;font-size:.95rem;font-weight:800;color:#111827}
-.btn-book{width:100%;font-family:'Kanit',sans-serif;font-size:.85rem;font-weight:800;background:linear-gradient(135deg,var(--goldDk),var(--gold));color:var(--navy);padding:10px;border-radius:8px;border:none;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:6px;text-decoration:none}
+.sel-box{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:.5rem;text-align:center}
+.sel-box-lbl{font-family:'Kanit',sans-serif;font-size:.55rem;font-weight:700;color:rgba(255,255,255,.32);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.15rem}
+.sel-box-val{font-family:'Plus Jakarta Sans',sans-serif;font-size:.95rem;font-weight:800;color:#fff}
+.btn-book{width:100%;font-family:'Kanit',sans-serif;font-size:.85rem;font-weight:800;background:linear-gradient(135deg,var(--goldDk),var(--gold));color:#0b1120;padding:10px;border-radius:8px;border:none;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:6px;text-decoration:none}
 .btn-book:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(201,162,39,.4)}
-.price-row{display:flex;align-items:center;justify-content:space-between;padding:.45rem 0;border-bottom:1px solid #f9fafb}
+.price-row{display:flex;align-items:center;justify-content:space-between;padding:.45rem 0;border-bottom:1px solid rgba(255,255,255,.06)}
 .price-row:last-child{border:none}
 .pz-dot{width:8px;height:8px;border-radius:2px;flex-shrink:0}
-.pz-name{font-family:'Kanit',sans-serif;font-size:.72rem;color:#6b7280;flex:1;margin-left:7px}
-.pz-val{font-family:'Plus Jakarta Sans',sans-serif;font-size:.78rem;font-weight:700;color:#111827}
+.pz-name{font-family:'Kanit',sans-serif;font-size:.72rem;color:rgba(255,255,255,.52);flex:1;margin-left:7px}
+.pz-val{font-family:'Plus Jakarta Sans',sans-serif;font-size:.78rem;font-weight:700;color:#fff}
 .avail-item{margin-bottom:.5rem}
 .avail-lbl{display:flex;justify-content:space-between;margin-bottom:.2rem;font-family:'Kanit',sans-serif;font-size:.65rem}
-.avail-lbl span:first-child{color:#6b7280}
-.avail-lbl span:last-child{font-weight:700;color:#374151}
-.avail-bar{height:4px;background:#f3f4f6;border-radius:3px;overflow:hidden}
+.avail-lbl span:first-child{color:rgba(255,255,255,.42)}
+.avail-lbl span:last-child{font-weight:700;color:rgba(255,255,255,.72)}
+.avail-bar{height:4px;background:rgba(255,255,255,.08);border-radius:3px;overflow:hidden}
 .avail-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--goldDk),var(--gold2));width:0;transition:width 1s cubic-bezier(.4,0,.2,1)}
 
+/* ── RESPONSIVE ── */
+@media(max-width:768px){
+  .map-container{
+    flex-direction:column;
+    align-items:center;
+  }
+  .zone-franchise,.zone-food{width:100% !important}
+  .col-center{min-width:0;width:100%}
+  .booth-grid{
+    grid-template-columns:repeat(2,1fr) !important;
+  }
+  .walkway{height:50px}
+  .page-body{grid-template-columns:1fr}
+}
 @media(max-width:600px){.nav-r .btn-back{display:none}}
 </style>
 </head>
@@ -287,14 +318,14 @@ a{text-decoration:none;color:inherit}
       <div class="fp-canvas" id="fpCanvas">
 
         <!-- ════════════════════════════════════
-             EXHIBITION GRID
-             260px | 1fr | 320px
+             FLOORPLAN — flex center layout
         ════════════════════════════════════ -->
-        <div class="exhibition">
+        <div class="floorplan">
+        <div class="map-container">
 
           <!-- ── LEFT: FRANCHISE A ── -->
-          <div class="zone-franchise">
-            <h3>Franchise Zone (A) <span class="zh-badge" style="background:#DBEAFE;color:#1D4ED8">฿18K · 2×3m</span></h3>
+          <div class="zone zone-franchise">
+            <h3>Franchise (A) <span class="zh-badge">฿18K</span></h3>
             <div class="booth-grid">
               <div class="booth" data-booth="A01" data-zone="A" data-price="฿18K" data-size="2×3m"></div>
               <div class="booth" data-booth="A02" data-zone="A" data-price="฿18K" data-size="2×3m"></div>
@@ -314,8 +345,8 @@ a{text-decoration:none;color:inherit}
           <div class="col-center">
 
             <!-- PREMIUM P -->
-            <div class="zone-premium">
-              <h3>Premium Zone (P) <span class="zh-badge" style="background:#FEF3C7;color:#B45309">฿25K · 3×6m</span></h3>
+            <div class="zone zone-premium">
+              <h3>Premium Zone (P) <span class="zh-badge">฿25K · 3×6m</span></h3>
               <div class="booth-grid">
                 <div class="booth premium" data-booth="P01" data-zone="P" data-price="฿25K" data-size="3×6m"></div>
                 <div class="booth premium" data-booth="P02" data-zone="P" data-price="฿25K" data-size="3×6m"></div>
@@ -331,8 +362,8 @@ a{text-decoration:none;color:inherit}
             <div class="walkway">MAIN WALKWAY 5M</div>
 
             <!-- NEW PRODUCT ZONE N -->
-            <div class="zone-new">
-              <h3>New Product Zone (N) <span class="zh-badge" style="background:#D1FAE5;color:#065F46;border:1px solid #6EE7B7">฿15K · 3×3m</span></h3>
+            <div class="zone zone-new">
+              <h3>New Product Zone (N) <span class="zh-badge">฿15K</span></h3>
               <div class="booth-grid">
                 <div class="booth new" data-booth="N01" data-zone="N" data-price="฿15K" data-size="3×3m"></div>
                 <div class="booth new" data-booth="N02" data-zone="N" data-price="฿15K" data-size="3×3m"></div>
@@ -348,8 +379,8 @@ a{text-decoration:none;color:inherit}
             <div class="walkway">MAIN WALKWAY 5M</div>
 
             <!-- STANDARD B -->
-            <div class="zone-standard">
-              <h3>Standard Booth (B) <span class="zh-badge" style="background:#E0E7FF;color:#4338CA">฿15K · 3×3m</span></h3>
+            <div class="zone zone-standard">
+              <h3>Standard Booth (B) <span class="zh-badge">฿15K</span></h3>
               <div class="booth-grid">
                 <div class="booth" data-booth="B01" data-zone="B" data-price="฿15K" data-size="3×3m"></div>
                 <div class="booth" data-booth="B02" data-zone="B" data-price="฿15K" data-size="3×3m"></div>
@@ -383,8 +414,8 @@ a{text-decoration:none;color:inherit}
             <div class="walkway">MAIN WALKWAY 5M</div>
 
             <!-- FOOD DRY C -->
-            <div class="zone-fooddry">
-              <h3>Food Dry Zone (C) <span class="zh-badge" style="background:#FFEDD5;color:#C2410C">฿12K · 2×3m</span></h3>
+            <div class="zone zone-fooddry">
+              <h3>Food Dry Zone (C) <span class="zh-badge">฿12K</span></h3>
               <div class="booth-grid">
                 <div class="booth" data-booth="C01" data-zone="C" data-price="฿12K" data-size="2×3m"></div>
                 <div class="booth" data-booth="C02" data-zone="C" data-price="฿12K" data-size="2×3m"></div>
@@ -413,8 +444,8 @@ a{text-decoration:none;color:inherit}
           </div><!-- /col-center -->
 
           <!-- ── RIGHT: FOOD CENTER D ── -->
-          <div class="zone-food">
-            <h3>Food Center (D) <span class="zh-badge" style="background:#FEF9C3;color:#A16207">฿12K · 2×3m</span></h3>
+          <div class="zone zone-food">
+            <h3>Food Center (D) <span class="zh-badge">฿12K</span></h3>
             <div class="booth-grid">
               <div class="booth" data-booth="D01" data-zone="D" data-price="฿12K" data-size="2×3m"></div>
               <div class="booth" data-booth="D02" data-zone="D" data-price="฿12K" data-size="2×3m"></div>
@@ -441,7 +472,8 @@ a{text-decoration:none;color:inherit}
             </div>
           </div>
 
-        </div><!-- /exhibition -->
+        </div><!-- /map-container -->
+        </div><!-- /floorplan -->
       </div><!-- /fp-canvas -->
     </div><!-- /fp-scroll -->
   </div><!-- /floor-card -->
