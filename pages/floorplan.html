@@ -430,7 +430,7 @@ a{text-decoration:none;color:inherit}
         <div class="map-container">
 
           <!-- ── LEFT: FRANCHISE A ── -->
-          <div class="zone zone-franchise">
+          <div class="zone zone-franchise" data-zone-id="A">
             <h3>Franchise (A) <span class="zh-badge">฿18K</span></h3>
             <div class="booth-grid">
               <div class="booth" data-booth="A01" data-zone="A" data-price="฿18K" data-size="2×3m"></div>
@@ -451,7 +451,7 @@ a{text-decoration:none;color:inherit}
           <div class="col-center">
 
             <!-- PREMIUM P -->
-            <div class="zone zone-premium">
+            <div class="zone zone-premium" data-zone-id="P">
               <h3>Premium Zone (P) <span class="zh-badge">฿25K · 3×6m</span></h3>
               <div class="booth-grid">
                 <div class="booth premium" data-booth="P01" data-zone="P" data-price="฿25K" data-size="3×6m"></div>
@@ -468,7 +468,7 @@ a{text-decoration:none;color:inherit}
             <div class="walkway">MAIN WALKWAY 5M</div>
 
             <!-- NEW PRODUCT ZONE N -->
-            <div class="zone zone-new">
+            <div class="zone zone-new" data-zone-id="N">
               <h3>Nation Booth Zone (N) <span class="zh-badge">฿15K</span></h3>
               <div class="booth-grid">
                 <div class="booth new" data-booth="N01" data-zone="N" data-price="฿15K" data-size="3×3m"></div>
@@ -488,7 +488,7 @@ a{text-decoration:none;color:inherit}
             <div class="walkway">MAIN WALKWAY 5M</div>
 
             <!-- STANDARD B -->
-            <div class="zone zone-standard">
+            <div class="zone zone-standard" data-zone-id="B">
               <h3>Standard Booth (B) <span class="zh-badge">฿15K</span></h3>
               <div class="booth-grid">
                 <div class="booth" data-booth="B01" data-zone="B" data-price="฿15K" data-size="3×3m"></div>
@@ -523,7 +523,7 @@ a{text-decoration:none;color:inherit}
             <div class="walkway">MAIN WALKWAY 5M</div>
 
             <!-- FOOD DRY C -->
-            <div class="zone zone-fooddry">
+            <div class="zone zone-fooddry" data-zone-id="C">
               <h3>Food Dry Zone (C) <span class="zh-badge">฿12K</span></h3>
               <div class="booth-grid">
                 <div class="booth" data-booth="C01" data-zone="C" data-price="฿12K" data-size="2×3m"></div>
@@ -553,7 +553,7 @@ a{text-decoration:none;color:inherit}
           </div><!-- /col-center -->
 
           <!-- ── RIGHT: FOOD CENTER D ── -->
-          <div class="zone zone-food">
+          <div class="zone zone-food" data-zone-id="D">
             <h3>Food Center (D) <span class="zh-badge">฿12K</span></h3>
             <div class="booth-grid">
               <div class="booth" data-booth="D01" data-zone="D" data-price="฿12K" data-size="2×3m"></div>
@@ -941,6 +941,17 @@ function filterZone(btn, zone){
   currentZone = zone;
   document.querySelectorAll('.zf-btn').forEach(b=> b.classList.remove('active'));
   btn.classList.add('active');
+
+  // Show/hide entire zone containers based on zone filter
+  document.querySelectorAll('.zone[data-zone-id]').forEach(zoneEl => {
+    const zid = zoneEl.dataset.zoneId;
+    if(zone === 'ALL' || zid === zone){
+      zoneEl.style.display = '';
+    } else {
+      zoneEl.style.display = 'none';
+    }
+  });
+
   applySearch();
 }
 
@@ -963,6 +974,8 @@ function applySearch(){
 function clearSearch(){
   document.getElementById('searchInput').value='';
   document.querySelectorAll('.booth').forEach(el => el.classList.remove('search-dim','search-match'));
+  // Re-apply zone filter after clearing search
+  applySearch();
 }
 
 document.getElementById('searchInput').addEventListener('input', applySearch);
