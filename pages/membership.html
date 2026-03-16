@@ -62,11 +62,11 @@ button { cursor: pointer; font-family: inherit; }
 @keyframes count-up { from { opacity:0; transform:scale(.85) } to { opacity:1; transform:scale(1) } }
 @keyframes draw-line { from { transform:scaleX(0) } to { transform:scaleX(1) } }
 
-.reveal { opacity:1; transform:none; /*was:opacity:0;translateY(24px)*/ transition:opacity .65s cubic-bezier(.4,0,.2,1), transform .65s cubic-bezier(.4,0,.2,1); }
+.reveal { opacity:0; transform:translateY(24px); transition:opacity .65s cubic-bezier(.4,0,.2,1), transform .65s cubic-bezier(.4,0,.2,1); }
 .reveal.in { opacity:1; transform:none; }
-.rl { opacity:1; transform:none; /*was hidden*/ transition:opacity .65s ease, transform .65s ease; }
+.rl { opacity:0; transform:translateX(-28px); transition:opacity .65s ease, transform .65s ease; }
 .rl.in { opacity:1; transform:none; }
-.rr { opacity:1; transform:none; /*was hidden*/ transition:opacity .65s ease, transform .65s ease; }
+.rr { opacity:0; transform:translateX(28px); transition:opacity .65s ease, transform .65s ease; }
 .rr.in { opacity:1; transform:none; }
 .d1 { transition-delay:.1s } .d2 { transition-delay:.2s } .d3 { transition-delay:.3s }
 .d4 { transition-delay:.4s } .d5 { transition-delay:.5s } .d6 { transition-delay:.6s }
@@ -1051,8 +1051,12 @@ button { cursor: pointer; font-family: inherit; }
   top:44px; left:12.5%; right:12.5%;
   height:1px;
   background:linear-gradient(90deg, transparent, var(--borderG), var(--gold2), var(--borderG), transparent);
-  animation:draw-line 1.5s ease .5s both;
   transform-origin:left;
+  transform:scaleX(0);
+  transition: transform 1.2s ease .3s;
+}
+.how-steps.in::before {
+  transform: scaleX(1);
 }
 .how-step {
   display:flex; flex-direction:column; align-items:center;
@@ -1331,9 +1335,10 @@ button { cursor: pointer; font-family: inherit; }
   .m-float { bottom:16px; right:16px; }
 }
 
-/* PREVIEW FIX: ensure hero content visible */
+/* Hero animations start from hidden state */
 .hero-badge, .hero-h1, .hero-sub, .hero-body, .hero-btns, .hero-stats {
-  opacity: 1 !important;
+  opacity: 0;
+  animation-fill-mode: forwards;
 }
 </style>
 </head>
@@ -1985,20 +1990,29 @@ button { cursor: pointer; font-family: inherit; }
 
 
 <script>
-// Nav scroll
+// Nav scroll — offset 36px for ticker height
 (function(){
   const nav = document.getElementById('vithNav');
   if(!nav) return;
   window.addEventListener('scroll', ()=>{
-    nav.classList.toggle('scrolled', window.scrollY > 20);
-  });
+    nav.classList.toggle('scrolled', window.scrollY > 36);
+  }, {passive: true});
 })();
 
-// Mobile menu
+// Mobile menu toggle
 function toggleNav(){
   const m = document.getElementById('mMobile');
   if(m) m.classList.toggle('open');
 }
+
+// Close mobile menu when any link inside it is clicked
+(function(){
+  const m = document.getElementById('mMobile');
+  if(!m) return;
+  m.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => m.classList.remove('open'));
+  });
+})();
 
 // Reveal on scroll
 (function(){
@@ -2006,6 +2020,12 @@ function toggleNav(){
     entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); }});
   }, {rootMargin:'0px 0px -40px 0px', threshold:0});
   document.querySelectorAll('.reveal,.rl,.rr').forEach(el=>obs.observe(el));
+
+  // Also observe .how-steps for the line animation
+  const lineObs = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); lineObs.unobserve(e.target); }});
+  }, {threshold:0.2});
+  document.querySelectorAll('.how-steps').forEach(el=>lineObs.observe(el));
 })();
 
 // FAQ
