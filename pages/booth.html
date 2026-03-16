@@ -11,13 +11,13 @@
 html{scroll-behavior:smooth}
 body{font-family:'Plus Jakarta Sans','Kanit',sans-serif;background:#08111f;color:#fff;overflow-x:hidden;min-height:100vh}
 :root{
-  --navy:#0B1F3B;
+  --navy:#0B1F3B;--navyL:#162d5a;
   --gold:#C9A227;--gold2:#E4BC4A;--goldDk:#9B7A10;
   --A:#3B82F6;--B:#818CF8;--P:#D4AF37;--C:#F97316;--D:#FBBF24;--N:#4a7fa8;
   --border:rgba(255,255,255,.1);
 }
 
-/* NAV */
+/* ── NAV ── */
 nav{position:sticky;top:0;z-index:400;height:60px;background:rgba(8,17,31,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
 .nav-in{max-width:1200px;margin:0 auto;height:100%;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between}
 .nav-logo{font-family:'Kanit',sans-serif;font-size:1.2rem;font-weight:900;letter-spacing:.06em;text-decoration:none;color:#fff}
@@ -26,116 +26,111 @@ nav{position:sticky;top:0;z-index:400;height:60px;background:rgba(8,17,31,.96);b
 .nav-r{display:flex;gap:.75rem;align-items:center}
 .btn-back{font-family:'Kanit',sans-serif;font-size:.78rem;font-weight:700;color:rgba(255,255,255,.55);padding:7px 14px;border-radius:8px;border:1px solid var(--border);transition:all .2s;text-decoration:none}
 .btn-back:hover{color:#fff;border-color:rgba(255,255,255,.3)}
-.btn-gold{font-family:'Kanit',sans-serif;font-size:.82rem;font-weight:800;background:linear-gradient(135deg,var(--goldDk),var(--gold));color:#0B1F3B;padding:8px 18px;border-radius:8px;text-decoration:none;transition:all .2s}
-.btn-gold:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(201,162,39,.4)}
+.btn-fp{font-family:'Kanit',sans-serif;font-size:.82rem;font-weight:800;background:linear-gradient(135deg,var(--goldDk),var(--gold));color:#0B1F3B;padding:8px 18px;border-radius:8px;text-decoration:none;transition:all .2s}
+.btn-fp:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(201,162,39,.4)}
 
-/* HERO */
+/* ── HERO BAND ── */
 .booth-hero{padding:2.5rem 1.5rem 1.75rem;background:linear-gradient(135deg,#060e1c,#0d1f38);border-bottom:1px solid var(--border);text-align:center}
 .eyebrow{font-family:'Kanit',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold2);margin-bottom:.6rem}
-.flow-trail{display:flex;align-items:center;justify-content:center;gap:0;margin-bottom:1rem}
-.flow-step{font-family:'Kanit',sans-serif;font-size:.7rem;font-weight:700;padding:5px 12px;border-radius:8px;color:rgba(255,255,255,.35);background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);text-decoration:none;transition:all .2s}
-.flow-step:hover{color:#fff;border-color:rgba(255,255,255,.2)}
-.flow-step.active{color:var(--gold2);background:rgba(201,162,39,.1);border-color:rgba(201,162,39,.3)}
-.flow-arrow{font-size:.65rem;color:rgba(255,255,255,.18);margin:0 .35rem}
 .booth-id{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(2.5rem,6vw,4rem);line-height:1;margin-bottom:.25rem}
 .booth-tagline{font-family:'Kanit',sans-serif;font-size:.85rem;color:rgba(255,255,255,.4);margin-bottom:1.25rem}
 .status-badge{display:inline-block;padding:5px 16px;border-radius:20px;font-family:'Kanit',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
 .status-available{background:rgba(16,185,129,.15);color:#34d399;border:1px solid rgba(16,185,129,.35)}
 .status-reserved{background:rgba(239,68,68,.15);color:#f87171;border:1px solid rgba(239,68,68,.3)}
 
-/* LAYOUT */
+/* ── MAIN LAYOUT ── */
 .page-body{max-width:1100px;margin:0 auto;padding:2rem 1.25rem 4rem;display:grid;grid-template-columns:1fr 420px;gap:2rem;align-items:start}
 @media(max-width:900px){.page-body{grid-template-columns:1fr}}
 
-/* INFO CARD */
+/* ── INFO CARD ── */
 .info-card{background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:18px;overflow:hidden;margin-bottom:1.5rem}
 .card-hd{padding:.875rem 1.25rem;border-bottom:1px solid var(--border);font-family:'Kanit',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold2)}
 .card-body{padding:1.5rem}
 
-/* BOOTH VISUAL PREVIEW */
-.booth-preview{width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;position:relative;border:1px solid var(--border)}
-.preview-inner{text-align:center}
-.preview-icon{font-size:3.5rem;margin-bottom:.75rem;display:block}
-.preview-label{font-family:'Kanit',sans-serif;font-size:1.1rem;font-weight:800;margin-bottom:.3rem}
-.preview-sub{font-family:'Kanit',sans-serif;font-size:.75rem;color:rgba(255,255,255,.4)}
-.preview-badge{position:absolute;top:12px;right:12px;font-family:'Kanit',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:8px}
-.preview-zone-bar{position:absolute;bottom:0;left:0;right:0;height:4px}
+/* Booth visual preview */
+.booth-preview{width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:linear-gradient(135deg,#0d1f38,#162d5a);display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;position:relative;border:1px solid var(--border)}
+.booth-preview-inner{text-align:center}
+.preview-icon{font-size:3rem;margin-bottom:.75rem}
+.preview-label{font-family:'Kanit',sans-serif;font-size:1rem;font-weight:700;color:rgba(255,255,255,.5)}
+.preview-sublabel{font-family:'Kanit',sans-serif;font-size:.75rem;color:rgba(255,255,255,.25);margin-top:.25rem}
+.booth-preview-badge{position:absolute;top:12px;right:12px;font-family:'Kanit',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:8px}
 
-/* SPEC GRID */
+/* Spec grid */
 .spec-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 .spec-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:1rem}
-.spec-lbl{font-family:'Kanit',sans-serif;font-size:.6rem;font-weight:700;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.4rem}
+.spec-lbl{font-family:'Kanit',sans-serif;font-size:.6rem;font-weight:700;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.3rem}
 .spec-val{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.05rem;font-weight:800}
 
-/* INCLUDES */
-.include-list{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+/* Includes list */
+.include-list{list-style:none;display:flex;flex-direction:column;gap:.5rem}
 .include-list li{display:flex;align-items:flex-start;gap:.625rem;font-family:'Kanit',sans-serif;font-size:.82rem;color:rgba(255,255,255,.65);line-height:1.5}
 .include-list li::before{content:"✓";font-weight:900;color:#34d399;flex-shrink:0;margin-top:.05rem}
 
-/* SOCIAL PROOF */
-.sp-stats{display:grid;grid-template-columns:repeat(3,1fr)}
-.sp-stat{padding:1rem .75rem;text-align:center;border-right:1px solid var(--border)}
-.sp-stat:last-child{border-right:none}
-.sp-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.4rem;font-weight:800;color:var(--gold2);line-height:1;margin-bottom:.2rem}
-.sp-lbl{font-family:'Kanit',sans-serif;font-size:.65rem;color:rgba(255,255,255,.35)}
-.sp-partners{padding:1rem 1.25rem;border-top:1px solid var(--border);display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}
-.sp-partners-lbl{font-family:'Kanit',sans-serif;font-size:.6rem;font-weight:700;color:rgba(255,255,255,.25);letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
-.sp-logo{font-family:'Kanit',sans-serif;font-size:.68rem;font-weight:700;padding:4px 10px;border-radius:6px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.55)}
-
-/* MAP LINK */
-.mini-map-link{display:flex;align-items:center;gap:.625rem;padding:1rem 1.25rem;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:12px;text-decoration:none;transition:all .2s;margin-bottom:1.5rem}
-.mini-map-link:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.2)}
-.mini-map-icon{font-size:1.4rem;flex-shrink:0}
-.mini-map-text strong{display:block;font-family:'Kanit',sans-serif;font-size:.82rem;color:#fff;margin-bottom:.1rem}
-.mini-map-text span{font-family:'Kanit',sans-serif;font-size:.7rem;color:rgba(255,255,255,.35)}
-.mini-map-arrow{margin-left:auto;font-size:.9rem;color:rgba(255,255,255,.3)}
-
-/* VENUE INFO */
-.venue-row{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.875rem}
-.venue-row:last-child{margin-bottom:0}
-.venue-icon{font-size:1.25rem;flex-shrink:0;margin-top:.05rem}
-.venue-title{font-family:'Kanit',sans-serif;font-size:.82rem;font-weight:700;margin-bottom:.15rem}
-.venue-sub{font-family:'Kanit',sans-serif;font-size:.73rem;color:rgba(255,255,255,.4)}
-
-/* FORM CARD */
+/* ── FORM CARD ── */
 .form-card{background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:18px;overflow:hidden;position:sticky;top:72px}
-.form-hd{padding:1.1rem 1.5rem;border-bottom:1px solid var(--border)}
+.form-hd{padding:1.1rem 1.5rem;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
 .form-hd-title{font-family:'Kanit',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold2)}
-.form-hd-sub{font-family:'Kanit',sans-serif;font-size:.65rem;color:rgba(255,255,255,.3);margin-top:.2rem}
+.form-hd-sub{font-family:'Kanit',sans-serif;font-size:.65rem;color:rgba(255,255,255,.3)}
 .form-body{padding:1.5rem;display:flex;flex-direction:column;gap:1rem}
+
 .field-group{display:flex;flex-direction:column;gap:.3rem}
 .field-group label{font-family:'Kanit',sans-serif;font-size:.68rem;font-weight:700;color:rgba(255,255,255,.45);letter-spacing:.06em;text-transform:uppercase}
 .field-group input,
 .field-group select,
-.field-group textarea{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:9px;padding:.75rem 1rem;color:#fff;font-family:'Kanit',sans-serif;font-size:.88rem;transition:border .2s,background .2s;outline:none;width:100%}
-.field-group input::placeholder,.field-group textarea::placeholder{color:rgba(255,255,255,.22)}
+.field-group textarea{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:9px;
+  padding:.75rem 1rem;
+  color:#fff;
+  font-family:'Kanit',sans-serif;
+  font-size:.88rem;
+  transition:border .2s,background .2s;
+  outline:none;
+  width:100%;
+}
+.field-group input::placeholder,
+.field-group textarea::placeholder{color:rgba(255,255,255,.22)}
 .field-group select option{background:#0d1f38;color:#fff}
-.field-group input:focus,.field-group select:focus,.field-group textarea:focus{border-color:rgba(201,162,39,.5);background:rgba(201,162,39,.05)}
+.field-group input:focus,
+.field-group select:focus,
+.field-group textarea:focus{
+  border-color:rgba(201,162,39,.5);
+  background:rgba(201,162,39,.05);
+}
 .field-row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
 
-/* PRICE SUMMARY */
 .price-summary{background:rgba(201,162,39,.07);border:1px solid rgba(201,162,39,.2);border-radius:12px;padding:1rem}
 .price-row-s{display:flex;justify-content:space-between;align-items:center;font-family:'Kanit',sans-serif;font-size:.8rem;padding:.25rem 0}
-.price-row-s.total{border-top:1px solid rgba(201,162,39,.2);margin-top:.5rem;padding-top:.75rem;font-weight:800;font-size:.95rem}
+.price-row-s:last-child{border-top:1px solid rgba(201,162,39,.2);margin-top:.5rem;padding-top:.75rem;font-weight:800;font-size:.95rem}
 .price-row-s .lbl{color:rgba(255,255,255,.5)}
 .price-row-s .val{color:var(--gold2)}
-.price-row-s.total .lbl{color:#fff}
-.price-row-s.total .val{font-size:1.15rem}
+.price-row-s:last-child .lbl{color:#fff}
+.price-row-s:last-child .val{color:var(--gold2);font-size:1.1rem}
 
-/* SUBMIT BUTTON */
-.btn-submit{width:100%;font-family:'Kanit',sans-serif;font-size:.95rem;font-weight:800;background:linear-gradient(135deg,var(--goldDk),var(--gold));color:#0B1F3B;padding:14px;border-radius:12px;border:none;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:7px}
+.btn-submit{
+  width:100%;
+  font-family:'Kanit',sans-serif;
+  font-size:.95rem;
+  font-weight:800;
+  background:linear-gradient(135deg,var(--goldDk),var(--gold));
+  color:#0B1F3B;
+  padding:14px;
+  border-radius:12px;
+  border:none;
+  cursor:pointer;
+  transition:all .2s;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  letter-spacing:.02em;
+}
 .btn-submit:hover{transform:translateY(-2px);box-shadow:0 6px 22px rgba(201,162,39,.45)}
-.btn-submit:disabled{opacity:.4;cursor:not-allowed;transform:none;box-shadow:none}
-.form-note{text-align:center;font-family:'Kanit',sans-serif;font-size:.65rem;color:rgba(255,255,255,.25);line-height:1.7}
+.btn-submit:disabled{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
+.form-note{text-align:center;font-family:'Kanit',sans-serif;font-size:.65rem;color:rgba(255,255,255,.25);line-height:1.6}
 
-/* RESERVED BANNER */
-.reserved-banner{background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.3);border-radius:12px;padding:1.25rem;text-align:center;display:none;margin:1rem 1.5rem 0}
-.reserved-banner.show{display:block}
-.reserved-icon{font-size:1.75rem;margin-bottom:.5rem}
-.reserved-title{font-family:'Kanit',sans-serif;font-size:.95rem;font-weight:800;color:#f87171;margin-bottom:.25rem}
-.reserved-sub{font-family:'Kanit',sans-serif;font-size:.75rem;color:rgba(248,113,113,.6)}
-
-/* SUCCESS STATE */
+/* Success state */
 .success-overlay{display:none;flex-direction:column;align-items:center;justify-content:center;padding:2.5rem 1.5rem;text-align:center;min-height:300px}
 .success-overlay.show{display:flex}
 .success-icon{font-size:3rem;margin-bottom:1rem}
@@ -144,22 +139,26 @@ nav{position:sticky;top:0;z-index:400;height:60px;background:rgba(8,17,31,.96);b
 .btn-back-fp{display:inline-block;font-family:'Kanit',sans-serif;font-size:.85rem;font-weight:700;background:rgba(255,255,255,.06);color:#fff;padding:10px 22px;border-radius:10px;text-decoration:none;transition:all .2s;border:1px solid var(--border)}
 .btn-back-fp:hover{background:rgba(255,255,255,.1)}
 
-/* STICKY CTA */
-.sticky-cta{position:fixed;right:1.25rem;bottom:1.5rem;z-index:500;display:flex;flex-direction:column;align-items:flex-end;gap:.5rem;opacity:0;transform:translateY(14px);pointer-events:none;transition:opacity .3s,transform .3s}
-.sticky-cta.show{opacity:1;transform:translateY(0);pointer-events:auto}
-.sticky-btn{font-family:'Kanit',sans-serif;font-size:.85rem;font-weight:800;background:linear-gradient(135deg,var(--goldDk),var(--gold));color:#0B1F3B;padding:12px 20px;border-radius:14px;text-decoration:none;display:flex;align-items:center;gap:7px;box-shadow:0 8px 28px rgba(201,162,39,.45);transition:all .2s;white-space:nowrap}
-.sticky-btn:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(201,162,39,.55)}
-.sticky-badge-pill{font-family:'Kanit',sans-serif;font-size:.62rem;font-weight:700;background:rgba(8,17,31,.92);color:rgba(255,255,255,.5);padding:4px 10px;border-radius:8px;border:1px solid var(--border);backdrop-filter:blur(10px)}
-.pulse-dot{width:8px;height:8px;border-radius:50%;background:#34d399;display:inline-block;vertical-align:middle;margin-right:4px;box-shadow:0 0 0 0 rgba(52,211,153,.5);animation:pulse 2s infinite}
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(52,211,153,.5)}70%{box-shadow:0 0 0 7px rgba(52,211,153,0)}100%{box-shadow:0 0 0 0 rgba(52,211,153,0)}}
+/* Reserved overlay */
+.reserved-banner{background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.3);border-radius:12px;padding:1.25rem;text-align:center;margin-bottom:1rem;display:none}
+.reserved-banner.show{display:block}
+.reserved-banner-icon{font-size:1.75rem;margin-bottom:.5rem}
+.reserved-banner-title{font-family:'Kanit',sans-serif;font-size:.95rem;font-weight:800;color:#f87171;margin-bottom:.25rem}
+.reserved-banner-sub{font-family:'Kanit',sans-serif;font-size:.75rem;color:rgba(248,113,113,.6)}
+
+/* Floor map mini */
+.mini-map-link{display:flex;align-items:center;gap:.625rem;padding:1rem 1.25rem;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:12px;text-decoration:none;transition:all .2s;margin-bottom:1.5rem}
+.mini-map-link:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.2)}
+.mini-map-icon{font-size:1.4rem;flex-shrink:0}
+.mini-map-text{font-family:'Kanit',sans-serif}
+.mini-map-text strong{display:block;font-size:.82rem;color:#fff;margin-bottom:.1rem}
+.mini-map-text span{font-size:.7rem;color:rgba(255,255,255,.35)}
+.mini-map-arrow{margin-left:auto;font-size:.9rem;color:rgba(255,255,255,.25)}
 
 @media(max-width:600px){
-  .flow-trail{display:none}
   .spec-grid{grid-template-columns:1fr 1fr}
   .field-row{grid-template-columns:1fr}
   .nav-r .btn-back{display:none}
-  .sticky-cta{right:.75rem;bottom:1rem}
-  .sp-num{font-size:1.1rem}
 }
 </style>
 </head>
@@ -168,59 +167,48 @@ nav{position:sticky;top:0;z-index:400;height:60px;background:rgba(8,17,31,.96);b
 <!-- NAV -->
 <nav>
   <div class="nav-in">
-    <a href="../index.html" class="nav-logo">
+    <a href="/" class="nav-logo" style="text-decoration:none">
       <div>VITH<span>HUB</span> 2026</div>
       <div class="nav-sub">Booth Reservation</div>
     </a>
     <div class="nav-r">
-      <a href="floorplan.html" class="btn-back">← Floor Plan</a>
-      <a href="event.html" class="btn-gold">✦ Event Info</a>
+      <a href="/pages/floorplan.html" class="btn-back">← Floor Plan</a>
+      <a href="/pages/event.html" class="btn-fp">✦ Event Info</a>
     </div>
   </div>
 </nav>
 
 <!-- HERO -->
-<div class="booth-hero">
-  <div class="eyebrow">VITH HUB 2026 · Big C Vientiane · 28 May – 1 June</div>
-  <div class="flow-trail">
-    <a href="event.html" class="flow-step">📅 Event</a>
-    <span class="flow-arrow">→</span>
-    <a href="floorplan.html" class="flow-step">🗺️ Floor Plan</a>
-    <span class="flow-arrow">→</span>
-    <span class="flow-step active">🏪 Booth Detail</span>
-    <span class="flow-arrow">→</span>
-    <span class="flow-step">✦ Reserve</span>
-  </div>
-  <div class="booth-id" id="heroTitle">Booth —</div>
-  <div class="booth-tagline" id="heroZoneName">Loading...</div>
+<div class="booth-hero" id="boothHero">
+  <div class="eyebrow" id="heroZone">VITH HUB 2026 · Big C Vientiane · 28 May – 1 June</div>
+  <div class="booth-id" id="heroTitle" style="color:var(--gold2)">Booth —</div>
+  <div class="booth-tagline" id="heroZoneName">Loading booth information...</div>
   <span class="status-badge status-available" id="statusBadge">✓ Available</span>
 </div>
 
-<!-- MAIN -->
 <div class="page-body">
 
-  <!-- LEFT COLUMN -->
+  <!-- LEFT: Info -->
   <div>
 
-    <!-- Visual Preview Card -->
+    <!-- Visual preview -->
     <div class="info-card">
       <div class="card-hd">Booth Preview</div>
       <div class="card-body">
-
         <div class="booth-preview" id="boothPreview">
-          <div class="preview-inner">
-            <span class="preview-icon" id="previewIcon">🏪</span>
+          <div class="booth-preview-inner">
+            <div class="preview-icon" id="previewIcon">🏪</div>
             <div class="preview-label" id="previewLabel">Standard Booth</div>
-            <div class="preview-sub" id="previewSub">3m × 3m · Big C Vientiane</div>
+            <div class="preview-sublabel" id="previewSub">3m × 3m · Big C Vientiane</div>
           </div>
-          <div class="preview-badge" id="previewBadge">Zone B</div>
-          <div class="preview-zone-bar" id="previewBar"></div>
+          <div class="booth-preview-badge" id="previewBadge" style="background:rgba(129,140,248,.25);color:#818cf8">Standard B</div>
         </div>
 
+        <!-- Spec grid -->
         <div class="spec-grid">
           <div class="spec-item">
             <div class="spec-lbl">Zone</div>
-            <div class="spec-val" id="specZone" style="font-size:.9rem">—</div>
+            <div class="spec-val" id="specZone" style="font-size:.95rem">—</div>
           </div>
           <div class="spec-item">
             <div class="spec-lbl">Size</div>
@@ -238,50 +226,25 @@ nav{position:sticky;top:0;z-index:400;height:60px;background:rgba(8,17,31,.96);b
       </div>
     </div>
 
-    <!-- Social Proof -->
+    <!-- What's included -->
     <div class="info-card">
-      <div class="sp-stats">
-        <div class="sp-stat">
-          <div class="sp-num">5,000+</div>
-          <div class="sp-lbl">Expected Visitors</div>
-        </div>
-        <div class="sp-stat">
-          <div class="sp-num">120+</div>
-          <div class="sp-lbl">Exhibitors</div>
-        </div>
-        <div class="sp-stat">
-          <div class="sp-num">12+</div>
-          <div class="sp-lbl">Nations</div>
-        </div>
-      </div>
-      <div class="sp-partners">
-        <span class="sp-partners-lbl">Partners</span>
-        <span class="sp-logo">🛒 Big C</span>
-        <span class="sp-logo">🇹🇭 Thai Trade Center</span>
-        <span class="sp-logo">🇱🇦 Lao Chamber</span>
-        <span class="sp-logo">🏛️ LITSE Market</span>
-      </div>
-    </div>
-
-    <!-- What's Included -->
-    <div class="info-card">
-      <div class="card-hd">What's Included</div>
+      <div class="card-hd" id="includesHd">What's Included</div>
       <div class="card-body">
         <ul class="include-list" id="includesList">
-          <li>Shell scheme booth — walls, flooring, fascia board</li>
+          <li>Shell scheme booth (walls, flooring, fascia)</li>
           <li>1 table + 2 chairs + power socket</li>
           <li>Exhibitor badge × 2 persons (5 days)</li>
           <li>Listing in VITH HUB 2026 official catalogue</li>
           <li>Free logistics support: Nong Khai → Vientiane</li>
-          <li>Big C Distribution Consultation — free, all 5 days</li>
+          <li>Big C Distribution Consultation (free, 5 days)</li>
           <li>Access to VITH HUB CUBE Business Matching</li>
           <li>0% Commission on all sales during the event</li>
         </ul>
       </div>
     </div>
 
-    <!-- Back to floor plan -->
-    <a href="floorplan.html" class="mini-map-link">
+    <!-- Back to map -->
+    <a href="/pages/floorplan.html" class="mini-map-link">
       <div class="mini-map-icon">🗺️</div>
       <div class="mini-map-text">
         <strong>View Full Floor Plan</strong>
@@ -290,29 +253,29 @@ nav{position:sticky;top:0;z-index:400;height:60px;background:rgba(8,17,31,.96);b
       <div class="mini-map-arrow">→</div>
     </a>
 
-    <!-- Venue Info -->
+    <!-- Venue info -->
     <div class="info-card">
       <div class="card-hd">Event & Venue</div>
-      <div class="card-body">
-        <div class="venue-row">
-          <span class="venue-icon">📅</span>
+      <div class="card-body" style="display:flex;flex-direction:column;gap:.75rem">
+        <div style="display:flex;align-items:flex-start;gap:.75rem">
+          <span style="font-size:1.25rem;flex-shrink:0">📅</span>
           <div>
-            <div class="venue-title">28 May – 1 June 2026</div>
-            <div class="venue-sub">5 Days · Opening Ceremony 28 May 2026</div>
+            <div style="font-family:'Kanit',sans-serif;font-size:.82rem;font-weight:700;margin-bottom:.15rem">28 May – 1 June 2026</div>
+            <div style="font-family:'Kanit',sans-serif;font-size:.73rem;color:rgba(255,255,255,.4)">5 วัน · 5 Days · Opening Ceremony 28 May 2026</div>
           </div>
         </div>
-        <div class="venue-row">
-          <span class="venue-icon">📍</span>
+        <div style="display:flex;align-items:flex-start;gap:.75rem">
+          <span style="font-size:1.25rem;flex-shrink:0">📍</span>
           <div>
-            <div class="venue-title">Big C Vientiane, Laos PDR</div>
-            <div class="venue-sub">Mekong Global Gateway · International Exhibition Hall</div>
+            <div style="font-family:'Kanit',sans-serif;font-size:.82rem;font-weight:700;margin-bottom:.15rem">Big C Vientiane, Laos PDR</div>
+            <div style="font-family:'Kanit',sans-serif;font-size:.73rem;color:rgba(255,255,255,.4)">Mekong Global Gateway · International Exhibition Hall</div>
           </div>
         </div>
-        <div class="venue-row">
-          <span class="venue-icon">✦</span>
+        <div style="display:flex;align-items:flex-start;gap:.75rem">
+          <span style="font-size:1.25rem;flex-shrink:0">✦</span>
           <div>
-            <div class="venue-title">Mekong Global Gateway 2026</div>
-            <div class="venue-sub">Organized by VITH HUB · Co-hosted with LITSE Market</div>
+            <div style="font-family:'Kanit',sans-serif;font-size:.82rem;font-weight:700;margin-bottom:.15rem">Mekong Global Gateway 2026</div>
+            <div style="font-family:'Kanit',sans-serif;font-size:.73rem;color:rgba(255,255,255,.4)">Organized by VITH HUB · Co-hosted with LITSE Market</div>
           </div>
         </div>
       </div>
@@ -320,41 +283,43 @@ nav{position:sticky;top:0;z-index:400;height:60px;background:rgba(8,17,31,.96);b
 
   </div>
 
-  <!-- RIGHT COLUMN: Form -->
+  <!-- RIGHT: Reservation form -->
   <div class="form-card">
     <div class="form-hd">
-      <div class="form-hd-title">Reserve This Booth</div>
-      <div class="form-hd-sub" id="formBoothSub">Fill in your details below</div>
+      <div>
+        <div class="form-hd-title">Reserve This Booth</div>
+        <div class="form-hd-sub" id="formBoothSub">Fill in your details below</div>
+      </div>
     </div>
 
-    <!-- Reserved notice -->
+    <!-- Reserved notice (shown when booth is reserved) -->
     <div class="reserved-banner" id="reservedBanner">
-      <div class="reserved-icon">🔒</div>
-      <div class="reserved-title">This Booth is Reserved</div>
-      <div class="reserved-sub">Please select another booth from the floor plan</div>
+      <div class="reserved-banner-icon">🔒</div>
+      <div class="reserved-banner-title">This Booth is Reserved</div>
+      <div class="reserved-banner-sub">Please select another booth from the floor plan</div>
     </div>
 
-    <!-- Form fields -->
+    <!-- Form -->
     <div class="form-body" id="formBody">
 
       <div class="field-group">
         <label>Full Name *</label>
-        <input type="text" id="fName" placeholder="Your full name">
+        <input type="text" id="fName" placeholder="Your full name" required>
       </div>
 
       <div class="field-group">
         <label>Company / Brand Name *</label>
-        <input type="text" id="fCompany" placeholder="Company or brand name">
+        <input type="text" id="fCompany" placeholder="Company or brand name" required>
       </div>
 
       <div class="field-row">
         <div class="field-group">
           <label>Email *</label>
-          <input type="email" id="fEmail" placeholder="your@email.com">
+          <input type="email" id="fEmail" placeholder="email@example.com" required>
         </div>
         <div class="field-group">
           <label>Phone / WhatsApp *</label>
-          <input type="tel" id="fPhone" placeholder="+66 or +856...">
+          <input type="tel" id="fPhone" placeholder="+66 or +856..." required>
         </div>
       </div>
 
@@ -362,13 +327,13 @@ nav{position:sticky;top:0;z-index:400;height:60px;background:rgba(8,17,31,.96);b
         <label>Product / Business Type *</label>
         <select id="fType">
           <option value="" disabled selected>Select your category</option>
-          <option>Food &amp; Beverage</option>
-          <option>Franchise / F&amp;B Brand</option>
+          <option>Food & Beverage</option>
+          <option>Franchise / F&B Brand</option>
           <option>FMCG / Consumer Products</option>
-          <option>Health &amp; Beauty</option>
+          <option>Health & Beauty</option>
           <option>Agriculture / Organic</option>
-          <option>Fashion &amp; Lifestyle</option>
-          <option>Tech &amp; Electronics</option>
+          <option>Fashion & Lifestyle</option>
+          <option>Tech & Electronics</option>
           <option>Nation Pavilion / Government</option>
           <option>Other</option>
         </select>
@@ -378,341 +343,286 @@ nav{position:sticky;top:0;z-index:400;height:60px;background:rgba(8,17,31,.96);b
         <label>Country of Origin</label>
         <select id="fCountry">
           <option value="" disabled selected>Select country</option>
-          <option>Thailand</option>
-          <option>Laos PDR</option>
-          <option>China</option>
-          <option>Vietnam</option>
-          <option>Russia</option>
-          <option>Europe</option>
-          <option>Japan</option>
-          <option>South Korea</option>
+          <option>🇹🇭 Thailand</option>
+          <option>🇱🇦 Laos PDR</option>
+          <option>🇨🇳 China</option>
+          <option>🇻🇳 Vietnam</option>
+          <option>🇷🇺 Russia</option>
+          <option>🇪🇺 Europe</option>
+          <option>🇯🇵 Japan</option>
+          <option>🇰🇷 South Korea</option>
           <option>Other</option>
         </select>
       </div>
 
       <div class="field-group">
         <label>Message / Special Requirements</label>
-        <textarea id="fMessage" rows="3" placeholder="Any special setup requirements or questions..."></textarea>
+        <textarea id="fMessage" rows="3" placeholder="Any special setup requirements, questions, or notes..."></textarea>
       </div>
 
-      <div class="price-summary">
+      <div class="price-summary" id="priceSummary">
         <div class="price-row-s"><span class="lbl" id="psBoothId">Booth —</span><span class="val" id="psZone">—</span></div>
         <div class="price-row-s"><span class="lbl">Size</span><span class="val" id="psSize">—</span></div>
         <div class="price-row-s"><span class="lbl">Commission</span><span class="val" style="color:#34d399">0%</span></div>
         <div class="price-row-s"><span class="lbl">Logistics (Nong Khai → VTE)</span><span class="val" style="color:#34d399">Free</span></div>
-        <div class="price-row-s total"><span class="lbl">Booth Fee</span><span class="val" id="psPrice">—</span></div>
+        <div class="price-row-s"><span class="lbl">Booth Fee</span><span class="val" id="psPrice" style="font-size:1.25rem">—</span></div>
       </div>
 
-      <button class="btn-submit" id="btnSubmit" onclick="submitForm()">
+      <button class="btn-submit" id="btnSubmit" onclick="submitReservation()">
         ✦ Submit Reservation Request
       </button>
 
       <div class="form-note">
         ทีมงาน VITH HUB จะติดต่อกลับภายใน 24 ชั่วโมง<br>
-        Our team will follow up within 24 hours to confirm
+        Our team will follow up within 24 hours · <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dfacbeb3baac9fa9b6abb7b7aabdf1beacb6be">[email&#160;protected]</a>
       </div>
 
-    </div><!-- /form-body -->
+    </div>
 
-    <!-- Success -->
+    <!-- Success state -->
     <div class="success-overlay" id="successOverlay">
       <div class="success-icon">🎉</div>
       <div class="success-title">Reservation Submitted!</div>
       <div class="success-sub" id="successMsg">
-        Thank you! Our team will contact you within 24 hours.
+        Thank you! Our team will contact you within 24 hours<br>to confirm your booth reservation.<br><br>
+        <strong style="color:#fff"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d5a6b4b9b0a695a3bca1bdbda0b7fbb4a6bcb4">[email&#160;protected]</a></strong>
       </div>
-      <a href="floorplan.html" class="btn-back-fp">← Back to Floor Plan</a>
+      <a href="/pages/floorplan.html" class="btn-back-fp">← Back to Floor Plan</a>
     </div>
 
-  </div><!-- /form-card -->
-
-</div><!-- /page-body -->
-
-<!-- STICKY CTA -->
-<div class="sticky-cta" id="stickyCTA">
-  <div class="sticky-badge-pill" id="stickyBadge"><span class="pulse-dot"></span>Available Now</div>
-  <a href="#" class="sticky-btn" id="stickyBtn" onclick="scrollToForm(event)">✦ Reserve This Booth</a>
+  </div>
 </div>
 
-<script>
-// ── BOOTH DATA ───────────────────────────────────────────────
-const ZONE_COLORS = {A:'#3B82F6',B:'#818CF8',P:'#D4AF37',C:'#F97316',D:'#FBBF24',N:'#4a7fa8'};
-
-const BOOTHS = {
-  A01:{zone:'Franchise Zone A',size:'2×3m',price:18000,icon:'☕',label:'Franchise',reserved:false},
-  A02:{zone:'Franchise Zone A',size:'2×3m',price:18000,icon:'☕',label:'Franchise',reserved:false},
-  A03:{zone:'Franchise Zone A',size:'2×3m',price:18000,icon:'☕',label:'Franchise',reserved:false},
-  A04:{zone:'Franchise Zone A',size:'2×3m',price:18000,icon:'☕',label:'Franchise',reserved:false},
-  A05:{zone:'Franchise Zone A',size:'2×3m',price:18000,icon:'☕',label:'Franchise',reserved:true},
-  A06:{zone:'Franchise Zone A',size:'2×3m',price:18000,icon:'☕',label:'Franchise',reserved:false},
-  A07:{zone:'Franchise Zone A',size:'2×3m',price:18000,icon:'☕',label:'Franchise Premium',reserved:false},
-  A08:{zone:'Franchise Zone A',size:'2×3m',price:18000,icon:'☕',label:'Franchise Premium',reserved:false},
-  A09:{zone:'Franchise Zone A',size:'2×3m',price:18000,icon:'☕',label:'Franchise Premium',reserved:false},
-  A10:{zone:'Franchise Zone A',size:'2×3m',price:18000,icon:'☕',label:'Franchise Premium',reserved:false},
-  A11:{zone:'Franchise Zone A',size:'2×3m',price:18000,icon:'☕',label:'Franchise Premium',reserved:true},
-  B01:{zone:'Standard Booth B',size:'3×3m',price:15000,icon:'🏪',label:'Standard',reserved:false},
-  B02:{zone:'Standard Booth B',size:'3×3m',price:15000,icon:'🏪',label:'Standard',reserved:false},
-  B03:{zone:'Standard Booth B',size:'3×3m',price:15000,icon:'🏪',label:'Standard',reserved:false},
-  B04:{zone:'Standard Booth B',size:'3×3m',price:15000,icon:'🏪',label:'Standard',reserved:false},
-  B05:{zone:'Standard Booth B',size:'3×3m',price:15000,icon:'🏪',label:'Standard',reserved:false},
-  B06:{zone:'Standard Booth B',size:'3×3m',price:15000,icon:'🏪',label:'Standard',reserved:true},
-  B07:{zone:'Standard Booth B',size:'3×3m',price:15000,icon:'🏪',label:'Standard',reserved:false},
-  B08:{zone:'Standard Booth B',size:'3×3m',price:15000,icon:'🏪',label:'Standard',reserved:false},
-  B09:{zone:'Standard Booth B',size:'3×3m',price:15000,icon:'🏪',label:'Standard',reserved:false},
-  B10:{zone:'Standard Booth B',size:'3×3m',price:15000,icon:'🏪',label:'Standard',reserved:true},
-  B11:{zone:'Standard Booth B',size:'3×3m',price:15000,icon:'🏪',label:'Standard',reserved:false},
-  B12:{zone:'Standard Booth B',size:'3×3m',price:15000,icon:'🏪',label:'Standard',reserved:false},
-  B13:{zone:'Standard Booth B',size:'3×3m',price:15000,icon:'🏪',label:'Standard',reserved:false},
-  B14:{zone:'Standard Booth B',size:'3×3m',price:15000,icon:'🏪',label:'Standard',reserved:false},
-  B15:{zone:'Standard Booth B',size:'3×3m',price:15000,icon:'🏪',label:'Standard',reserved:false},
-  B16:{zone:'Standard Booth B',size:'3×3m',price:15000,icon:'🏪',label:'Standard',reserved:false},
-  B17:{zone:'Standard Booth B',size:'3×3m',price:15000,icon:'🏪',label:'Standard',reserved:true},
-  B18:{zone:'Standard Booth B',size:'3×3m',price:15000,icon:'🏪',label:'Standard',reserved:false},
-  B19:{zone:'Standard Booth B',size:'3×3m',price:15000,icon:'🏪',label:'Standard',reserved:false},
-  B20:{zone:'Standard Booth B',size:'3×3m',price:15000,icon:'🏪',label:'Standard',reserved:false},
-  B21:{zone:'Standard Booth B',size:'3×3m',price:15000,icon:'🏪',label:'Standard',reserved:false},
-  B22:{zone:'Standard Booth B',size:'3×3m',price:15000,icon:'🏪',label:'Standard',reserved:true},
-  B23:{zone:'Standard Booth B',size:'3×3m',price:15000,icon:'🏪',label:'Standard',reserved:false},
-  B24:{zone:'Standard Booth B',size:'3×3m',price:15000,icon:'🏪',label:'Standard',reserved:true},
-  B25:{zone:'Standard Booth B',size:'3×3m',price:15000,icon:'🏪',label:'Standard',reserved:false},
-  B26:{zone:'Standard Booth B',size:'3×3m',price:15000,icon:'🏪',label:'Standard',reserved:false},
-  P01:{zone:'Premium Zone P',size:'3×6m',price:25000,icon:'⭐',label:'Premium',reserved:false},
-  P02:{zone:'Premium Zone P',size:'3×6m',price:25000,icon:'⭐',label:'Premium',reserved:false},
-  P03:{zone:'Premium Zone P',size:'3×6m',price:25000,icon:'⭐',label:'Premium',reserved:false},
-  P04:{zone:'Premium Zone P',size:'3×6m',price:25000,icon:'⭐',label:'Premium',reserved:true},
-  P05:{zone:'Premium Zone P',size:'3×6m',price:25000,icon:'⭐',label:'Premium',reserved:false},
-  P06:{zone:'Premium Zone P',size:'3×6m',price:25000,icon:'⭐',label:'Premium',reserved:false},
-  P07:{zone:'Premium Zone P',size:'3×6m',price:25000,icon:'⭐',label:'Premium',reserved:true},
-  P08:{zone:'Premium Zone P',size:'3×6m',price:25000,icon:'⭐',label:'Premium',reserved:false},
-  C01:{zone:'Food Dry Zone C',size:'2×3m',price:12000,icon:'🍱',label:'Food Dry',reserved:false},
-  C02:{zone:'Food Dry Zone C',size:'2×3m',price:12000,icon:'🍱',label:'Food Dry',reserved:false},
-  C03:{zone:'Food Dry Zone C',size:'2×3m',price:12000,icon:'🍱',label:'Food Dry',reserved:false},
-  C04:{zone:'Food Dry Zone C',size:'2×3m',price:12000,icon:'🍱',label:'Food Dry',reserved:false},
-  C05:{zone:'Food Dry Zone C',size:'2×3m',price:12000,icon:'🍱',label:'Food Dry',reserved:false},
-  C06:{zone:'Food Dry Zone C',size:'2×3m',price:12000,icon:'🍱',label:'Food Dry',reserved:false},
-  C07:{zone:'Food Dry Zone C',size:'2×3m',price:12000,icon:'🍱',label:'Food Dry',reserved:true},
-  C08:{zone:'Food Dry Zone C',size:'2×3m',price:12000,icon:'🍱',label:'Food Dry',reserved:false},
-  C09:{zone:'Food Dry Zone C',size:'2×3m',price:12000,icon:'🍱',label:'Food Dry',reserved:false},
-  C10:{zone:'Food Dry Zone C',size:'2×3m',price:12000,icon:'🍱',label:'Food Dry',reserved:false},
-  C11:{zone:'Food Dry Zone C',size:'2×3m',price:12000,icon:'🍱',label:'Food Dry',reserved:false},
-  C12:{zone:'Food Dry Zone C',size:'2×3m',price:12000,icon:'🍱',label:'Food Dry',reserved:false},
-  C13:{zone:'Food Dry Zone C',size:'2×3m',price:12000,icon:'🍱',label:'Food Dry',reserved:false},
-  C14:{zone:'Food Dry Zone C',size:'2×3m',price:12000,icon:'🍱',label:'Food Dry',reserved:true},
-  C15:{zone:'Food Dry Zone C',size:'2×3m',price:12000,icon:'🍱',label:'Food Dry',reserved:false},
-  C16:{zone:'Food Dry Zone C',size:'2×3m',price:12000,icon:'🍱',label:'Food Dry',reserved:false},
-  C17:{zone:'Food Dry Zone C',size:'2×3m',price:12000,icon:'🍱',label:'Food Dry',reserved:false},
-  C18:{zone:'Food Dry Zone C',size:'2×3m',price:12000,icon:'🍱',label:'Food Dry',reserved:false},
-  C19:{zone:'Food Dry Zone C',size:'2×3m',price:12000,icon:'🍱',label:'Food Dry',reserved:true},
-  C20:{zone:'Food Dry Zone C',size:'2×3m',price:12000,icon:'🍱',label:'Food Dry',reserved:false},
-  C21:{zone:'Food Dry Zone C',size:'2×3m',price:12000,icon:'🍱',label:'Food Dry',reserved:false},
-  D01:{zone:'Food Center Thai',size:'2×3m',price:12000,icon:'🍽️',label:'Food Center',reserved:false},
-  D02:{zone:'Food Center Thai',size:'2×3m',price:12000,icon:'🍽️',label:'Food Center',reserved:false},
-  D03:{zone:'Food Center Thai',size:'2×3m',price:12000,icon:'🍽️',label:'Food Center',reserved:false},
-  D04:{zone:'Food Center Thai',size:'2×3m',price:12000,icon:'🍽️',label:'Food Center',reserved:true},
-  D05:{zone:'Food Center Thai',size:'2×3m',price:12000,icon:'🍽️',label:'Food Center',reserved:false},
-  D06:{zone:'Food Center Thai',size:'2×3m',price:12000,icon:'🍽️',label:'Food Center',reserved:false},
-  D07:{zone:'Food Center Thai',size:'2×3m',price:12000,icon:'🍽️',label:'Food Center',reserved:false},
-  D08:{zone:'Food Center Thai',size:'2×3m',price:12000,icon:'🍽️',label:'Food Center',reserved:false},
-  D09:{zone:'Food Center Thai',size:'2×3m',price:12000,icon:'🍽️',label:'Food Center',reserved:false},
-  D10:{zone:'Food Center Thai',size:'2×3m',price:12000,icon:'🍽️',label:'Food Center',reserved:false},
-  D11:{zone:'Food Center Thai',size:'2×3m',price:12000,icon:'🍽️',label:'Food Center',reserved:true},
-  D12:{zone:'Food Center Thai',size:'2×3m',price:12000,icon:'🍽️',label:'Food Center',reserved:false},
-  D13:{zone:'Food Center Thai',size:'2×3m',price:12000,icon:'🍽️',label:'Food Center',reserved:false},
-  D14:{zone:'Food Center Thai',size:'2×3m',price:12000,icon:'🍽️',label:'Food Center',reserved:false},
-  D15:{zone:'Food Center Thai',size:'2×3m',price:12000,icon:'🍽️',label:'Food Center',reserved:false},
-  D16:{zone:'Food Center Thai',size:'2×3m',price:12000,icon:'🍽️',label:'Food Center',reserved:false},
-  D17:{zone:'Food Center Lao',size:'2×3m',price:12000,icon:'🍽️',label:'Food Center',reserved:false},
-  D18:{zone:'Food Center Lao',size:'2×3m',price:12000,icon:'🍽️',label:'Food Center',reserved:false},
-  D19:{zone:'Food Center Lao',size:'2×3m',price:12000,icon:'🍽️',label:'Food Center',reserved:true},
-  D20:{zone:'Food Center Lao',size:'2×3m',price:12000,icon:'🍽️',label:'Food Center',reserved:false},
-  D21:{zone:'Food Center Lao',size:'2×3m',price:12000,icon:'🍽️',label:'Food Center',reserved:false},
-  D22:{zone:'Food Center Lao',size:'2×3m',price:12000,icon:'🍽️',label:'Food Center',reserved:false},
-  N01:{zone:'Nation Booth N',size:'3×3m',price:15000,icon:'🌏',label:'Nation',reserved:false},
-  N02:{zone:'Nation Booth N',size:'3×3m',price:15000,icon:'🌏',label:'Nation',reserved:false},
-  N03:{zone:'Nation Booth N',size:'3×3m',price:15000,icon:'🌏',label:'Nation',reserved:false},
-  N04:{zone:'Nation Booth N',size:'3×3m',price:15000,icon:'🌏',label:'Nation',reserved:false},
-  N05:{zone:'Nation Booth N',size:'3×3m',price:15000,icon:'🌏',label:'Nation',reserved:false},
-  N06:{zone:'Nation Booth N',size:'3×3m',price:15000,icon:'🌏',label:'Nation',reserved:false},
-  N07:{zone:'Nation Booth N',size:'3×3m',price:15000,icon:'🌏',label:'Nation',reserved:false},
-  N08:{zone:'Nation Booth N',size:'3×3m',price:15000,icon:'🌏',label:'Nation',reserved:false},
-  N09:{zone:'Nation Booth N',size:'3×3m',price:15000,icon:'🌏',label:'Nation',reserved:true},
-  N10:{zone:'Nation Booth N',size:'3×3m',price:15000,icon:'🌏',label:'Nation',reserved:false},
-  N11:{zone:'Nation Booth N',size:'3×3m',price:15000,icon:'🌏',label:'Nation',reserved:false},
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// ── BOOTH DATA ──────────────────────────────────────────────
+const BOOTH_DATA = {
+  // Zone A – Franchise
+  A01:{zone:'Franchise Zone A',size:'2×3m',price:18000,color:'var(--A)',icon:'☕',label:'Franchise',reserved:false},
+  A02:{zone:'Franchise Zone A',size:'2×3m',price:18000,color:'var(--A)',icon:'☕',label:'Franchise',reserved:false},
+  A03:{zone:'Franchise Zone A',size:'2×3m',price:18000,color:'var(--A)',icon:'☕',label:'Franchise',reserved:false},
+  A04:{zone:'Franchise Zone A',size:'2×3m',price:18000,color:'var(--A)',icon:'☕',label:'Franchise',reserved:false},
+  A05:{zone:'Franchise Zone A',size:'2×3m',price:18000,color:'var(--A)',icon:'☕',label:'Franchise',reserved:true},
+  A06:{zone:'Franchise Zone A',size:'2×3m',price:18000,color:'var(--A)',icon:'☕',label:'Franchise',reserved:false},
+  A07:{zone:'Franchise Zone A',size:'2×3m',price:18000,color:'#4a90d9',icon:'☕',label:'Franchise Premium',reserved:false},
+  A08:{zone:'Franchise Zone A',size:'2×3m',price:18000,color:'#4a90d9',icon:'☕',label:'Franchise Premium',reserved:false},
+  A09:{zone:'Franchise Zone A',size:'2×3m',price:18000,color:'#4a90d9',icon:'☕',label:'Franchise Premium',reserved:false},
+  A10:{zone:'Franchise Zone A',size:'2×3m',price:18000,color:'#4a90d9',icon:'☕',label:'Franchise Premium',reserved:false},
+  A11:{zone:'Franchise Zone A',size:'2×3m',price:18000,color:'#4a90d9',icon:'☕',label:'Franchise Premium',reserved:true},
+  // Zone B – Standard
+  B01:{zone:'Standard Booth B',size:'3×3m',price:15000,color:'var(--B)',icon:'🏪',label:'Standard',reserved:false},
+  B02:{zone:'Standard Booth B',size:'3×3m',price:15000,color:'var(--B)',icon:'🏪',label:'Standard',reserved:false},
+  B03:{zone:'Standard Booth B',size:'3×3m',price:15000,color:'var(--B)',icon:'🏪',label:'Standard',reserved:false},
+  B04:{zone:'Standard Booth B',size:'3×3m',price:15000,color:'var(--B)',icon:'🏪',label:'Standard',reserved:false},
+  B05:{zone:'Standard Booth B',size:'3×3m',price:15000,color:'var(--B)',icon:'🏪',label:'Standard',reserved:false},
+  B06:{zone:'Standard Booth B',size:'3×3m',price:15000,color:'var(--B)',icon:'🏪',label:'Standard',reserved:true},
+  B07:{zone:'Standard Booth B',size:'3×3m',price:15000,color:'var(--B)',icon:'🏪',label:'Standard',reserved:false},
+  B08:{zone:'Standard Booth B',size:'3×3m',price:15000,color:'var(--B)',icon:'🏪',label:'Standard',reserved:false},
+  B09:{zone:'Standard Booth B',size:'3×3m',price:15000,color:'var(--B)',icon:'🏪',label:'Standard',reserved:false},
+  B10:{zone:'Standard Booth B',size:'3×3m',price:15000,color:'var(--B)',icon:'🏪',label:'Standard',reserved:true},
+  B11:{zone:'Standard Booth B',size:'3×3m',price:15000,color:'var(--B)',icon:'🏪',label:'Standard',reserved:false},
+  B12:{zone:'Standard Booth B',size:'3×3m',price:15000,color:'var(--B)',icon:'🏪',label:'Standard',reserved:false},
+  B13:{zone:'Standard Booth B',size:'3×3m',price:15000,color:'var(--B)',icon:'🏪',label:'Standard',reserved:false},
+  B14:{zone:'Standard Booth B',size:'3×3m',price:15000,color:'var(--B)',icon:'🏪',label:'Standard',reserved:false},
+  B15:{zone:'Standard Booth B',size:'3×3m',price:15000,color:'var(--B)',icon:'🏪',label:'Standard',reserved:false},
+  B16:{zone:'Standard Booth B',size:'3×3m',price:15000,color:'var(--B)',icon:'🏪',label:'Standard',reserved:false},
+  B17:{zone:'Standard Booth B',size:'3×3m',price:15000,color:'var(--B)',icon:'🏪',label:'Standard',reserved:true},
+  B18:{zone:'Standard Booth B',size:'3×3m',price:15000,color:'var(--B)',icon:'🏪',label:'Standard',reserved:false},
+  B19:{zone:'Standard Booth B',size:'3×3m',price:15000,color:'var(--B)',icon:'🏪',label:'Standard',reserved:false},
+  B20:{zone:'Standard Booth B',size:'3×3m',price:15000,color:'var(--B)',icon:'🏪',label:'Standard',reserved:false},
+  B21:{zone:'Standard Booth B',size:'3×3m',price:15000,color:'var(--B)',icon:'🏪',label:'Standard',reserved:false},
+  B22:{zone:'Standard Booth B',size:'3×3m',price:15000,color:'var(--B)',icon:'🏪',label:'Standard',reserved:true},
+  B23:{zone:'Standard Booth B',size:'3×3m',price:15000,color:'var(--B)',icon:'🏪',label:'Standard',reserved:false},
+  B24:{zone:'Standard Booth B',size:'3×3m',price:15000,color:'var(--B)',icon:'🏪',label:'Standard',reserved:true},
+  B25:{zone:'Standard Booth B',size:'3×3m',price:15000,color:'var(--B)',icon:'🏪',label:'Standard',reserved:false},
+  B26:{zone:'Standard Booth B',size:'3×3m',price:15000,color:'var(--B)',icon:'🏪',label:'Standard',reserved:false},
+  // Zone P – Premium
+  P01:{zone:'Premium Zone P',size:'3×6m',price:25000,color:'var(--P)',icon:'⭐',label:'Premium',reserved:false},
+  P02:{zone:'Premium Zone P',size:'3×6m',price:25000,color:'var(--P)',icon:'⭐',label:'Premium',reserved:false},
+  P03:{zone:'Premium Zone P',size:'3×6m',price:25000,color:'var(--P)',icon:'⭐',label:'Premium',reserved:false},
+  P04:{zone:'Premium Zone P',size:'3×6m',price:25000,color:'var(--P)',icon:'⭐',label:'Premium',reserved:true},
+  P05:{zone:'Premium Zone P',size:'3×6m',price:25000,color:'var(--P)',icon:'⭐',label:'Premium',reserved:false},
+  P06:{zone:'Premium Zone P',size:'3×6m',price:25000,color:'var(--P)',icon:'⭐',label:'Premium',reserved:false},
+  P07:{zone:'Premium Zone P',size:'3×6m',price:25000,color:'var(--P)',icon:'⭐',label:'Premium',reserved:true},
+  P08:{zone:'Premium Zone P',size:'3×6m',price:25000,color:'var(--P)',icon:'⭐',label:'Premium',reserved:false},
+  // Zone C – Food Dry
+  C01:{zone:'Food Dry Zone C',size:'2×3m',price:12000,color:'var(--C)',icon:'🍱',label:'Food Dry',reserved:false},
+  C02:{zone:'Food Dry Zone C',size:'2×3m',price:12000,color:'var(--C)',icon:'🍱',label:'Food Dry',reserved:false},
+  C03:{zone:'Food Dry Zone C',size:'2×3m',price:12000,color:'var(--C)',icon:'🍱',label:'Food Dry',reserved:false},
+  C04:{zone:'Food Dry Zone C',size:'2×3m',price:12000,color:'var(--C)',icon:'🍱',label:'Food Dry',reserved:false},
+  C05:{zone:'Food Dry Zone C',size:'2×3m',price:12000,color:'var(--C)',icon:'🍱',label:'Food Dry',reserved:false},
+  C06:{zone:'Food Dry Zone C',size:'2×3m',price:12000,color:'var(--C)',icon:'🍱',label:'Food Dry',reserved:false},
+  C07:{zone:'Food Dry Zone C',size:'2×3m',price:12000,color:'var(--C)',icon:'🍱',label:'Food Dry',reserved:true},
+  C08:{zone:'Food Dry Zone C',size:'2×3m',price:12000,color:'var(--C)',icon:'🍱',label:'Food Dry',reserved:false},
+  C09:{zone:'Food Dry Zone C',size:'2×3m',price:12000,color:'var(--C)',icon:'🍱',label:'Food Dry',reserved:false},
+  C10:{zone:'Food Dry Zone C',size:'2×3m',price:12000,color:'var(--C)',icon:'🍱',label:'Food Dry',reserved:false},
+  C11:{zone:'Food Dry Zone C',size:'2×3m',price:12000,color:'var(--C)',icon:'🍱',label:'Food Dry',reserved:false},
+  C12:{zone:'Food Dry Zone C',size:'2×3m',price:12000,color:'var(--C)',icon:'🍱',label:'Food Dry',reserved:false},
+  C13:{zone:'Food Dry Zone C',size:'2×3m',price:12000,color:'var(--C)',icon:'🍱',label:'Food Dry',reserved:false},
+  C14:{zone:'Food Dry Zone C',size:'2×3m',price:12000,color:'var(--C)',icon:'🍱',label:'Food Dry',reserved:true},
+  C15:{zone:'Food Dry Zone C',size:'2×3m',price:12000,color:'var(--C)',icon:'🍱',label:'Food Dry',reserved:false},
+  C16:{zone:'Food Dry Zone C',size:'2×3m',price:12000,color:'var(--C)',icon:'🍱',label:'Food Dry',reserved:false},
+  C17:{zone:'Food Dry Zone C',size:'2×3m',price:12000,color:'var(--C)',icon:'🍱',label:'Food Dry',reserved:false},
+  C18:{zone:'Food Dry Zone C',size:'2×3m',price:12000,color:'var(--C)',icon:'🍱',label:'Food Dry',reserved:false},
+  C19:{zone:'Food Dry Zone C',size:'2×3m',price:12000,color:'var(--C)',icon:'🍱',label:'Food Dry',reserved:true},
+  C20:{zone:'Food Dry Zone C',size:'2×3m',price:12000,color:'var(--C)',icon:'🍱',label:'Food Dry',reserved:false},
+  C21:{zone:'Food Dry Zone C',size:'2×3m',price:12000,color:'var(--C)',icon:'🍱',label:'Food Dry',reserved:false},
+  // Zone D – Food Center
+  D01:{zone:'Food Center Thai',size:'2×3m',price:12000,color:'var(--D)',icon:'🍽️',label:'Food Center',reserved:false},
+  D02:{zone:'Food Center Thai',size:'2×3m',price:12000,color:'var(--D)',icon:'🍽️',label:'Food Center',reserved:false},
+  D03:{zone:'Food Center Thai',size:'2×3m',price:12000,color:'var(--D)',icon:'🍽️',label:'Food Center',reserved:false},
+  D04:{zone:'Food Center Thai',size:'2×3m',price:12000,color:'var(--D)',icon:'🍽️',label:'Food Center',reserved:true},
+  D05:{zone:'Food Center Thai',size:'2×3m',price:12000,color:'var(--D)',icon:'🍽️',label:'Food Center',reserved:false},
+  D06:{zone:'Food Center Thai',size:'2×3m',price:12000,color:'var(--D)',icon:'🍽️',label:'Food Center',reserved:false},
+  D07:{zone:'Food Center Thai',size:'2×3m',price:12000,color:'var(--D)',icon:'🍽️',label:'Food Center',reserved:false},
+  D08:{zone:'Food Center Thai',size:'2×3m',price:12000,color:'var(--D)',icon:'🍽️',label:'Food Center',reserved:false},
+  D09:{zone:'Food Center Thai',size:'2×3m',price:12000,color:'var(--D)',icon:'🍽️',label:'Food Center',reserved:false},
+  D10:{zone:'Food Center Thai',size:'2×3m',price:12000,color:'var(--D)',icon:'🍽️',label:'Food Center',reserved:false},
+  D11:{zone:'Food Center Thai',size:'2×3m',price:12000,color:'var(--D)',icon:'🍽️',label:'Food Center',reserved:true},
+  D12:{zone:'Food Center Thai',size:'2×3m',price:12000,color:'var(--D)',icon:'🍽️',label:'Food Center',reserved:false},
+  D13:{zone:'Food Center Thai',size:'2×3m',price:12000,color:'var(--D)',icon:'🍽️',label:'Food Center',reserved:false},
+  D14:{zone:'Food Center Thai',size:'2×3m',price:12000,color:'var(--D)',icon:'🍽️',label:'Food Center',reserved:false},
+  D15:{zone:'Food Center Thai',size:'2×3m',price:12000,color:'var(--D)',icon:'🍽️',label:'Food Center',reserved:false},
+  D16:{zone:'Food Center Thai',size:'2×3m',price:12000,color:'var(--D)',icon:'🍽️',label:'Food Center',reserved:false},
+  D17:{zone:'Food Center Lao',size:'2×3m',price:12000,color:'#d97706',icon:'🍽️',label:'Food Center',reserved:false},
+  D18:{zone:'Food Center Lao',size:'2×3m',price:12000,color:'var(--D)',icon:'🍽️',label:'Food Center',reserved:false},
+  D19:{zone:'Food Center Lao',size:'2×3m',price:12000,color:'var(--D)',icon:'🍽️',label:'Food Center',reserved:true},
+  D20:{zone:'Food Center Lao',size:'2×3m',price:12000,color:'var(--D)',icon:'🍽️',label:'Food Center',reserved:false},
+  D21:{zone:'Food Center Lao',size:'2×3m',price:12000,color:'var(--D)',icon:'🍽️',label:'Food Center',reserved:false},
+  D22:{zone:'Food Center Lao',size:'2×3m',price:12000,color:'var(--D)',icon:'🍽️',label:'Food Center',reserved:false},
+  // Zone N – Nation
+  N01:{zone:'Nation Booth N',size:'3×3m',price:15000,color:'var(--N)',icon:'🌏',label:'Nation',reserved:false},
+  N02:{zone:'Nation Booth N',size:'3×3m',price:15000,color:'var(--N)',icon:'🌏',label:'Nation',reserved:false},
+  N03:{zone:'Nation Booth N',size:'3×3m',price:15000,color:'var(--N)',icon:'🌏',label:'Nation',reserved:false},
+  N04:{zone:'Nation Booth N',size:'3×3m',price:15000,color:'var(--N)',icon:'🌏',label:'Nation',reserved:false},
+  N05:{zone:'Nation Booth N',size:'3×3m',price:15000,color:'var(--N)',icon:'🌏',label:'Nation',reserved:false},
+  N06:{zone:'Nation Booth N',size:'3×3m',price:15000,color:'var(--N)',icon:'🌏',label:'Nation',reserved:false},
+  N07:{zone:'Nation Booth N',size:'3×3m',price:15000,color:'var(--N)',icon:'🌏',label:'Nation',reserved:false},
+  N08:{zone:'Nation Booth N',size:'3×3m',price:15000,color:'var(--N)',icon:'🌏',label:'Nation',reserved:false},
+  N09:{zone:'Nation Booth N',size:'3×3m',price:15000,color:'var(--N)',icon:'🌏',label:'Nation',reserved:true},
+  N10:{zone:'Nation Booth N',size:'3×3m',price:15000,color:'var(--N)',icon:'🌏',label:'Nation',reserved:false},
+  N11:{zone:'Nation Booth N',size:'3×3m',price:15000,color:'var(--N)',icon:'🌏',label:'Nation',reserved:false},
 };
 
-// ── INIT ─────────────────────────────────────────────────────
-const params  = new URLSearchParams(window.location.search);
+// ── INIT ────────────────────────────────────────────────────
+const params = new URLSearchParams(window.location.search);
 const boothId = (params.get('booth') || '').toUpperCase();
-const data    = BOOTHS[boothId];
+const data = BOOTH_DATA[boothId];
 
-function fmt(n){ return '\u0e3f' + n.toLocaleString(); }
-
-function hexFromZone(z){
-  const map = {A:'#3B82F6',B:'#818CF8',P:'#D4AF37',C:'#F97316',D:'#FBBF24',N:'#4a7fa8'};
-  return map[z] || '#818CF8';
-}
+function fmt(n){ return '฿' + n.toLocaleString(); }
 
 if(data){
-  const z   = boothId[0];
-  const col = hexFromZone(z);
-
   // Hero
+  document.getElementById('heroTitle').textContent = 'Booth ' + boothId;
+  document.getElementById('heroTitle').style.color = data.color.startsWith('var') ? '' : data.color;
+  document.getElementById('heroZoneName').textContent = data.zone + ' · ' + data.size + ' · Big C Vientiane';
   document.title = 'Booth ' + boothId + ' | VITH HUB 2026';
-  const heroTitle = document.getElementById('heroTitle');
-  heroTitle.textContent = 'Booth ' + boothId;
-  heroTitle.style.color = col;
-  document.getElementById('heroZoneName').textContent = data.zone + ' \u00b7 ' + data.size + ' \u00b7 Big C Vientiane';
 
   if(data.reserved){
-    const sb = document.getElementById('statusBadge');
-    sb.className = 'status-badge status-reserved';
-    sb.textContent = '\uD83D\uDD12 Reserved';
+    document.getElementById('statusBadge').className = 'status-badge status-reserved';
+    document.getElementById('statusBadge').textContent = '🔒 Reserved';
     document.getElementById('reservedBanner').classList.add('show');
-    const btn = document.getElementById('btnSubmit');
-    btn.disabled = true;
-    btn.textContent = '\uD83D\uDD12 This Booth is Reserved';
+    document.getElementById('btnSubmit').disabled = true;
+    document.getElementById('btnSubmit').textContent = '🔒 This Booth is Reserved';
   }
 
-  // Preview box — gradient background using zone color
-  const preview = document.getElementById('boothPreview');
-  preview.style.background = 'linear-gradient(135deg, ' + col + '18, ' + col + '08)';
-  preview.style.borderColor = col + '44';
+  // Preview
   document.getElementById('previewIcon').textContent = data.icon;
-  document.getElementById('previewLabel').textContent = 'Booth ' + boothId + ' \u00b7 ' + data.label;
-  document.getElementById('previewSub').textContent   = data.size + ' \u00b7 Big C Vientiane';
-  const badge = document.getElementById('previewBadge');
-  badge.textContent = 'Zone ' + z;
-  badge.style.background = col + '33';
-  badge.style.color = col;
-  badge.style.border = '1px solid ' + col + '55';
-  document.getElementById('previewBar').style.background = 'linear-gradient(90deg,' + col + ',' + col + '88)';
+  document.getElementById('previewLabel').textContent = 'Booth ' + boothId + ' · ' + data.label;
+  document.getElementById('previewSub').textContent = data.size + ' · Big C Vientiane';
+  document.getElementById('previewBadge').textContent = data.label;
 
   // Specs
-  document.getElementById('specZone').textContent  = data.zone;
-  document.getElementById('specSize').textContent  = data.size;
+  document.getElementById('specZone').textContent = data.zone;
+  document.getElementById('specSize').textContent = data.size;
   document.getElementById('specPrice').textContent = fmt(data.price);
 
   // Price summary
   document.getElementById('psBoothId').textContent = 'Booth ' + boothId;
-  document.getElementById('psZone').textContent    = data.zone;
-  document.getElementById('psSize').textContent    = data.size;
-  document.getElementById('psPrice').textContent   = fmt(data.price);
-  document.getElementById('formBoothSub').textContent = 'Booth ' + boothId + ' \u00b7 ' + fmt(data.price);
+  document.getElementById('psZone').textContent = data.zone;
+  document.getElementById('psSize').textContent = data.size;
+  document.getElementById('psPrice').textContent = fmt(data.price);
+  document.getElementById('formBoothSub').textContent = 'Booth ' + boothId + ' · ' + fmt(data.price);
 
   // Premium includes
-  if(z === 'P'){
-    document.getElementById('includesList').innerHTML = [
-      'Shell scheme premium booth \u2014 double-wall, premium flooring',
-      '2 tables + 4 chairs + power socket \u00d72',
-      'Exhibitor badge \u00d7 4 persons (5 days)',
-      'Premium placement in VITH HUB 2026 official catalogue',
-      'Free logistics support: Nong Khai \u2192 Vientiane',
-      'Big C Distribution Consultation \u2014 priority access',
-      'Priority VITH HUB CUBE Business Matching',
-      'Social media spotlight feature on VITH HUB channels',
-      '0% Commission on all sales during the event',
-    ].map(t => '<li>' + t + '</li>').join('');
-  }
-
-  // Sticky CTA
-  const sBtn  = document.getElementById('stickyBtn');
-  const sBadge = document.getElementById('stickyBadge');
-  if(data.reserved){
-    sBadge.innerHTML = '\uD83D\uDD12 Reserved';
-    sBtn.textContent = '\u2190 View Other Booths';
-    sBtn.href = 'floorplan.html';
-    sBtn.onclick = null;
-  } else {
-    sBadge.innerHTML = '<span class="pulse-dot"></span>Available Now';
-    sBtn.innerHTML = '\u2746 Reserve Booth ' + boothId;
+  if(boothId.startsWith('P')){
+    document.getElementById('includesList').innerHTML = `
+      <li>Shell scheme premium booth (double-wall, premium flooring)</li>
+      <li>2 tables + 4 chairs + power socket ×2</li>
+      <li>Exhibitor badge × 4 persons (5 days)</li>
+      <li>Premium placement in VITH HUB 2026 official catalogue</li>
+      <li>Free logistics support: Nong Khai → Vientiane</li>
+      <li>Big C Distribution Consultation (priority access)</li>
+      <li>Priority access to VITH HUB CUBE Business Matching</li>
+      <li>Social media spotlight feature (VITH HUB channels)</li>
+      <li>0% Commission on all sales during the event</li>
+    `;
   }
 
 } else {
-  // No booth param
+  // No booth specified
   document.getElementById('heroTitle').textContent = 'Select a Booth';
-  document.getElementById('heroZoneName').textContent = 'Go back to the floor plan to choose';
+  document.getElementById('heroZoneName').textContent = 'Go back to the floor plan to select a booth';
   document.getElementById('statusBadge').style.display = 'none';
-  document.getElementById('formBody').innerHTML = [
-    '<div style="text-align:center;padding:2rem 0">',
-    '<div style="font-size:2.5rem;margin-bottom:1rem">\uD83D\uDDFA\uFE0F</div>',
-    '<div style="font-family:Kanit,sans-serif;font-size:.9rem;color:rgba(255,255,255,.4);margin-bottom:1.5rem;line-height:1.8">',
-    'No booth selected.<br>Please go back to the floor plan<br>and click on a booth.',
-    '</div>',
-    '<a href="floorplan.html" style="display:inline-block;font-family:Kanit,sans-serif;font-size:.9rem;font-weight:700;',
-    'background:linear-gradient(135deg,#9B7A10,#C9A227);color:#0B1F3B;padding:12px 24px;border-radius:10px;text-decoration:none">',
-    '\u2190 Go to Floor Plan</a>',
-    '</div>'
-  ].join('');
+  document.getElementById('formBody').innerHTML = `
+    <div style="text-align:center;padding:2rem 0">
+      <div style="font-size:2.5rem;margin-bottom:1rem">🗺️</div>
+      <div style="font-family:'Kanit',sans-serif;font-size:.9rem;color:rgba(255,255,255,.45);margin-bottom:1.5rem;line-height:1.7">No booth selected.<br>Please go back to the floor plan<br>and click on a booth to view its details.</div>
+      <a href="/pages/floorplan.html" style="display:inline-block;font-family:'Kanit',sans-serif;font-size:.9rem;font-weight:700;background:linear-gradient(135deg,var(--goldDk),var(--gold));color:#0B1F3B;padding:12px 24px;border-radius:10px;text-decoration:none">← Go to Floor Plan</a>
+    </div>
+  `;
 }
 
-// ── FORM SUBMIT ──────────────────────────────────────────────
-function submitForm(){
-  const name    = document.getElementById('fName').value.trim();
+// ── SUBMIT ───────────────────────────────────────────────────
+function submitReservation(){
+  const name = document.getElementById('fName').value.trim();
   const company = document.getElementById('fCompany').value.trim();
-  const email   = document.getElementById('fEmail').value.trim();
-  const phone   = document.getElementById('fPhone').value.trim();
-  const type    = document.getElementById('fType').value;
+  const email = document.getElementById('fEmail').value.trim();
+  const phone = document.getElementById('fPhone').value.trim();
+  const type = document.getElementById('fType').value;
 
-  // Validate required fields
-  let ok = true;
-  ['fName','fCompany','fEmail','fPhone','fType'].forEach(id => {
-    const el = document.getElementById(id);
-    if(!el.value.trim()){
-      ok = false;
-      el.style.borderColor = 'rgba(239,68,68,.6)';
-      el.style.background  = 'rgba(239,68,68,.05)';
-      setTimeout(() => { el.style.borderColor = ''; el.style.background = ''; }, 2500);
-    }
-  });
-  if(!ok) return;
+  if(!name || !company || !email || !phone || !type){
+    // Highlight missing fields
+    ['fName','fCompany','fEmail','fPhone','fType'].forEach(id=>{
+      const el = document.getElementById(id);
+      if(!el.value.trim()){
+        el.style.borderColor = 'rgba(239,68,68,.6)';
+        el.style.background = 'rgba(239,68,68,.05)';
+        setTimeout(()=>{ el.style.borderColor=''; el.style.background=''; }, 2500);
+      }
+    });
+    return;
+  }
 
   const btn = document.getElementById('btnSubmit');
   btn.disabled = true;
-  btn.innerHTML = '<span style="opacity:.6">\u23F3 Submitting...</span>';
+  btn.innerHTML = '<span style="opacity:.6">⏳ Submitting...</span>';
 
-  const salesEmail = 'sales' + '@' + 'vithhub.asia';
-  const subject = encodeURIComponent('[VITH HUB 2026] Booth Reservation \u2013 ' + boothId);
+  // Build mailto link as the submission action
+  // In production, replace with fetch() to backend / Google Sheets API
+  const subject = encodeURIComponent(`[VITH HUB 2026] Booth Reservation Request – ${boothId}`);
   const body = encodeURIComponent(
-    'BOOTH RESERVATION REQUEST\n========================\n\n' +
-    'Booth:   ' + boothId + '\n' +
-    'Zone:    ' + (data ? data.zone : '-') + '\n' +
-    'Size:    ' + (data ? data.size : '-') + '\n' +
-    'Price:   ' + (data ? fmt(data.price) : '-') + '\n\n' +
-    'Name:    ' + name + '\n' +
-    'Company: ' + company + '\n' +
-    'Email:   ' + email + '\n' +
-    'Phone:   ' + phone + '\n' +
-    'Type:    ' + type + '\n' +
-    'Country: ' + document.getElementById('fCountry').value + '\n' +
-    'Message: ' + document.getElementById('fMessage').value + '\n\n' +
-    'Submitted: ' + new Date().toLocaleString()
+    `BOOTH RESERVATION REQUEST\n` +
+    `========================\n\n` +
+    `Booth:    ${boothId}\n` +
+    `Zone:     ${data ? data.zone : '—'}\n` +
+    `Size:     ${data ? data.size : '—'}\n` +
+    `Price:    ${data ? fmt(data.price) : '—'}\n\n` +
+    `Name:     ${name}\n` +
+    `Company:  ${company}\n` +
+    `Email:    ${email}\n` +
+    `Phone:    ${phone}\n` +
+    `Type:     ${type}\n` +
+    `Country:  ${document.getElementById('fCountry').value}\n` +
+    `Message:  ${document.getElementById('fMessage').value}\n\n` +
+    `Submitted via vithhub.asia · ${new Date().toLocaleString()}`
   );
 
-  window.location.href = 'mailto:' + salesEmail + '?subject=' + subject + '&body=' + body;
+  // Open mailto (production: swap for fetch to backend or Google Sheets)
+  window.location.href = `mailto:sales@vithhub.asia?subject=${subject}&body=${body}`;
 
-  setTimeout(() => {
+  // Show success after short delay
+  setTimeout(()=>{
     document.getElementById('formBody').style.display = 'none';
     document.getElementById('successMsg').innerHTML =
-      'Thank you, <strong style="color:#fff">' + name + '</strong>!<br>' +
-      'Your request for <strong style="color:var(--gold2)">Booth ' + boothId + '</strong> has been sent.<br>' +
-      'Our team will contact you at <strong style="color:#fff">' + email + '</strong> within 24 hours.';
-    document.getElementById('successOverlay').classList.add('show');
-  }, 900);
-}
-
-// ── STICKY CTA SCROLL ────────────────────────────────────────
-const stickyCTA = document.getElementById('stickyCTA');
-let ctaOn = false;
-window.addEventListener('scroll', () => {
-  const on = window.scrollY > 200;
-  if(on !== ctaOn){ ctaOn = on; stickyCTA.classList.toggle('show', on); }
-});
-
-function scrollToForm(e){
-  e.preventDefault();
-  document.querySelector('.form-card').scrollIntoView({behavior:'smooth', block:'start'});
-  setTimeout(() => document.getElementById('fName').focus(), 600);
-}
-</script>
-</body>
-</html>
+      `Thank you, <strong style="color:#fff">${name}</strong>!<br>` +
+      `Your request for <strong style="color:var(--gold2)">Booth
