@@ -243,6 +243,95 @@ a{text-decoration:none;color:inherit}
 .avail-bar{height:4px;background:rgba(255,255,255,.08);border-radius:3px;overflow:hidden}
 .avail-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--goldDk),var(--gold2));width:0;transition:width 1s cubic-bezier(.4,0,.2,1)}
 
+/* ── sold state ── */
+.booth.sold{
+  background:rgba(71,85,105,.25)!important;
+  border-color:#475569!important;
+  color:rgba(255,255,255,.2)!important;
+  cursor:not-allowed;
+  opacity:.5;
+}
+.booth.sold::before{text-decoration:line-through;opacity:.35}
+.booth.sold:hover{transform:none!important;border-color:#475569!important;box-shadow:none!important}
+
+/* ── selected highlight (pulse glow) ── */
+.booth.selected{
+  outline:3px solid #f97316 !important;
+  outline-offset:3px;
+  box-shadow:0 0 0 6px rgba(249,115,22,.2), 0 0 20px rgba(249,115,22,.4) !important;
+  z-index:10;
+  animation:pulseSelect .6s ease-out;
+}
+@keyframes pulseSelect{
+  0%  {box-shadow:0 0 0 0 rgba(249,115,22,.6),0 0 20px rgba(249,115,22,.4)}
+  100%{box-shadow:0 0 0 10px rgba(249,115,22,0),0 0 20px rgba(249,115,22,.4)}
+}
+
+/* ── zoom/pan wrapper ── */
+.zoom-pan-wrap{
+  overflow:hidden;
+  position:relative;
+  cursor:grab;
+  touch-action:none;
+  user-select:none;
+  border-radius:8px;
+  background:#0b1120;
+}
+.zoom-pan-wrap:active{cursor:grabbing}
+.zoom-pan-inner{
+  transform-origin:0 0;
+  transition:transform .05s linear;
+  will-change:transform;
+}
+
+/* ── search bar ── */
+.search-bar{
+  display:flex;gap:.5rem;align-items:center;
+  padding:.5rem 1.5rem;
+  background:rgba(11,17,32,.95);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.search-input{
+  flex:1;
+  font-family:'Kanit',sans-serif;font-size:.82rem;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:8px;
+  padding:7px 14px;
+  color:#fff;
+  outline:none;
+  transition:.2s;
+  max-width:260px;
+}
+.search-input::placeholder{color:rgba(255,255,255,.28)}
+.search-input:focus{border-color:rgba(249,115,22,.5);background:rgba(249,115,22,.06)}
+.zone-filter{
+  display:flex;gap:.375rem;flex-wrap:wrap;
+}
+.zf-btn{
+  font-family:'Kanit',sans-serif;font-size:.65rem;font-weight:700;
+  padding:5px 11px;border-radius:20px;
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.05);
+  color:rgba(255,255,255,.6);
+  cursor:pointer;transition:.15s;
+  letter-spacing:.06em;text-transform:uppercase;
+}
+.zf-btn:hover{background:rgba(255,255,255,.12);color:#fff}
+.zf-btn.active{background:rgba(249,115,22,.2);border-color:#f97316;color:#f97316}
+.search-clear{
+  font-family:'Kanit',sans-serif;font-size:.72rem;
+  color:rgba(255,255,255,.35);cursor:pointer;
+  padding:5px 8px;border-radius:6px;
+  background:none;border:none;
+  transition:.15s;
+}
+.search-clear:hover{color:#fff}
+
+/* booth highlight/dim during search */
+.booth.search-dim{opacity:.12;pointer-events:none}
+.booth.search-match{outline:2px solid rgba(249,115,22,.7);outline-offset:2px}
+
 /* ── RESPONSIVE ── */
 @media(max-width:768px){
   .map-container{
@@ -299,7 +388,7 @@ a{text-decoration:none;color:inherit}
     <div class="counter-item"><div class="counter-dot" style="background:var(--available-border)"></div><span class="counter-num" id="cnt-available" style="color:var(--available-text)">—</span>&nbsp;Available</div>
     <div class="counter-item"><div class="counter-dot" style="background:var(--reserved-border)"></div><span class="counter-num" id="cnt-reserved" style="color:var(--reserved-text)">—</span>&nbsp;Reserved</div>
     <div class="counter-item"><div class="counter-dot" style="background:var(--sold-border)"></div><span class="counter-num" id="cnt-sold" style="color:var(--sold-text)">—</span>&nbsp;Sold</div>
-    <div class="counter-item" style="color:#9ca3af">Total&nbsp;<strong id="cnt-total" style="color:#374151">—</strong></div>
+    <div class="counter-item" style="color:#9ca3af">Total&nbsp;<strong id="cnt-total" style="color:rgba(255,255,255,.75)">—</strong></div>
   </div>
   <div class="zoom-row">
     <span class="zoom-lbl">Zoom</span>
@@ -313,9 +402,24 @@ a{text-decoration:none;color:inherit}
 <!-- MAIN LAYOUT -->
 <div class="page-body">
 
+  <!-- SEARCH BAR -->
+  <div class="search-bar">
+    <input class="search-input" id="searchInput" placeholder="🔍  ค้นหาบูท เช่น B12, P01..." autocomplete="off">
+    <button class="search-clear" id="searchClear" onclick="clearSearch()">✕ Clear</button>
+    <div class="zone-filter" id="zoneFilter">
+      <button class="zf-btn active" data-zone="ALL" onclick="filterZone(this,'ALL')">All</button>
+      <button class="zf-btn" data-zone="P" onclick="filterZone(this,'P')">P</button>
+      <button class="zf-btn" data-zone="A" onclick="filterZone(this,'A')">A</button>
+      <button class="zf-btn" data-zone="N" onclick="filterZone(this,'N')">N</button>
+      <button class="zf-btn" data-zone="B" onclick="filterZone(this,'B')">B</button>
+      <button class="zf-btn" data-zone="C" onclick="filterZone(this,'C')">C</button>
+      <button class="zf-btn" data-zone="D" onclick="filterZone(this,'D')">D</button>
+    </div>
+  </div>
+
   <div class="floor-card">
-    <div class="fp-scroll" id="fpScroll">
-      <div class="fp-canvas" id="fpCanvas">
+    <div class="zoom-pan-wrap" id="fpWrap">
+      <div class="zoom-pan-inner" id="fpCanvas">
 
         <!-- ════════════════════════════════════
              FLOORPLAN — flex center layout
@@ -475,7 +579,7 @@ a{text-decoration:none;color:inherit}
         </div><!-- /map-container -->
         </div><!-- /floorplan -->
       </div><!-- /fp-canvas -->
-    </div><!-- /fp-scroll -->
+    </div><!-- /zoom-pan-wrap -->
   </div><!-- /floor-card -->
 
   <!-- SIDE PANEL -->
@@ -500,7 +604,7 @@ a{text-decoration:none;color:inherit}
         <div class="price-row"><div class="pz-dot" style="background:#4338CA"></div><div class="pz-name">🏪 Standard B (3×3m)</div><div class="pz-val">฿15,000</div></div>
         <div class="price-row"><div class="pz-dot" style="background:#C2410C"></div><div class="pz-name">🍱 Food Dry C (2×3m)</div><div class="pz-val">฿12,000</div></div>
         <div class="price-row"><div class="pz-dot" style="background:#A16207"></div><div class="pz-name">🍽️ Food Center D (2×3m)</div><div class="pz-val">฿12,000</div></div>
-        <div style="margin-top:.75rem;padding:.625rem;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:7px;font-family:'Kanit',sans-serif;font-size:.68rem;color:#15803d;line-height:1.7">
+        <div style="margin-top:.75rem;padding:.625rem;background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.2);border-radius:7px;font-family:'Kanit',sans-serif;font-size:.68rem;color:#6ee7b7;line-height:1.7">
           ✓ 0% Commission on all sales<br>✓ Free logistics Nong Khai → Vientiane<br>✓ Big C Consultation free 5 days
         </div>
       </div>
@@ -533,94 +637,133 @@ a{text-decoration:none;color:inherit}
 </div>
 
 <script>
-/* ══════════════════════════════
-   BOOTH STATUS DATA
-   แก้ตรงนี้เพื่ออัพเดทสถานะ
-══════════════════════════════ */
-const STATUS = {
-  A01:'available',A02:'available',A03:'available',A04:'available',
-  A05:'reserved', A06:'available',A07:'available',A08:'available',
-  A09:'available',A10:'available',A11:'reserved',
+/* ════════════════════════════════════════════════════════════
+   VITH HUB FLOORPLAN — v3
+   Features: JSON status, Zoom+Pan, Highlight, Search, Sold
+════════════════════════════════════════════════════════════ */
 
-  B01:'available',B02:'available',B03:'available',B04:'available',
-  B05:'available',B06:'reserved', B07:'available',B08:'available',
-  B09:'available',B10:'reserved', B11:'available',B12:'available',
-  B13:'available',B14:'available',B15:'available',B16:'available',
-  B17:'reserved', B18:'available',B19:'available',B20:'available',
-  B21:'available',B22:'reserved', B23:'available',B24:'reserved',
-  B25:'available',B26:'available',
+/* ──────────────────────────────────────────────────────────
+   BOOTH DATA JSON  ← แก้ตรงนี้เพื่ออัพเดทสถานะ
+   status: 'available' | 'reserved' | 'sold'
+   (จะ fetch จาก API ได้ในอนาคต — ดู loadStatus())
+────────────────────────────────────────────────────────── */
+const BOOTH_DATA = {
+  A01:{status:'available'},A02:{status:'available'},A03:{status:'available'},A04:{status:'available'},
+  A05:{status:'reserved'}, A06:{status:'available'},A07:{status:'available'},A08:{status:'available'},
+  A09:{status:'available'},A10:{status:'available'},A11:{status:'reserved'},
 
-  P01:'available',P02:'available',P03:'available',P04:'reserved',
-  P05:'available',P06:'available',P07:'reserved', P08:'available',
+  B01:{status:'available'},B02:{status:'available'},B03:{status:'available'},B04:{status:'available'},
+  B05:{status:'available'},B06:{status:'reserved'}, B07:{status:'available'},B08:{status:'available'},
+  B09:{status:'available'},B10:{status:'reserved'}, B11:{status:'available'},B12:{status:'available'},
+  B13:{status:'available'},B14:{status:'available'},B15:{status:'available'},B16:{status:'available'},
+  B17:{status:'reserved'}, B18:{status:'available'},B19:{status:'available'},B20:{status:'available'},
+  B21:{status:'available'},B22:{status:'reserved'}, B23:{status:'available'},B24:{status:'reserved'},
+  B25:{status:'available'},B26:{status:'sold'},
 
-  C01:'available',C02:'available',C03:'available',C04:'available',
-  C05:'available',C06:'available',C07:'reserved', C08:'available',
-  C09:'available',C10:'available',C11:'available',C12:'available',
-  C13:'available',C14:'reserved', C15:'available',C16:'available',
-  C17:'available',C18:'available',C19:'reserved', C20:'available',C21:'available',
+  P01:{status:'available'},P02:{status:'available'},P03:{status:'available'},P04:{status:'reserved'},
+  P05:{status:'available'},P06:{status:'available'},P07:{status:'sold'},    P08:{status:'available'},
 
-  N01:'available',N02:'available',N03:'available',N04:'available',
-  N05:'available',N06:'available',N07:'available',N08:'available',
+  C01:{status:'available'},C02:{status:'available'},C03:{status:'available'},C04:{status:'available'},
+  C05:{status:'available'},C06:{status:'available'},C07:{status:'reserved'}, C08:{status:'available'},
+  C09:{status:'available'},C10:{status:'available'},C11:{status:'available'},C12:{status:'available'},
+  C13:{status:'available'},C14:{status:'reserved'}, C15:{status:'available'},C16:{status:'available'},
+  C17:{status:'available'},C18:{status:'available'},C19:{status:'reserved'}, C20:{status:'available'},
+  C21:{status:'available'},
 
-  D01:'available',D02:'available',D03:'available',D04:'reserved',
-  D05:'available',D06:'available',D07:'available',D08:'available',
-  D09:'available',D10:'available',D11:'reserved', D12:'available',
-  D13:'available',D14:'available',D15:'available',D16:'available',
-  D17:'available',D18:'available',D19:'reserved', D20:'available',
-  D21:'available',D22:'available',
+  N01:{status:'available'},N02:{status:'available'},N03:{status:'available'},N04:{status:'available'},
+  N05:{status:'available'},N06:{status:'available'},N07:{status:'available'},N08:{status:'available'},
+
+  D01:{status:'available'},D02:{status:'available'},D03:{status:'available'},D04:{status:'reserved'},
+  D05:{status:'available'},D06:{status:'available'},D07:{status:'available'},D08:{status:'available'},
+  D09:{status:'available'},D10:{status:'available'},D11:{status:'reserved'}, D12:{status:'available'},
+  D13:{status:'available'},D14:{status:'available'},D15:{status:'available'},D16:{status:'available'},
+  D17:{status:'available'},D18:{status:'available'},D19:{status:'reserved'}, D20:{status:'available'},
+  D21:{status:'sold'},     D22:{status:'available'},
 };
 
+/* Zone metadata */
 const ZONE_NAMES = {A:'Franchise Zone A',B:'Standard Booth B',P:'Premium Zone P',N:'New Product Zone N',C:'Food Dry Zone C',D:'Food Center D'};
 const ZONE_PRICE = {A:18000,B:15000,P:25000,N:15000,C:12000,D:12000};
-const ZONE_COLOR = {A:'#0369A1',B:'#4338CA',P:'#B45309',N:'#065F46',C:'#C2410C',D:'#A16207'};
+const ZONE_COLOR = {A:'#1d4ed8',B:'#6d28d9',P:'#b45309',N:'#047857',C:'#c2410c',D:'#4d7c0f'};
 
-/* 1. Apply status */
-document.querySelectorAll('.booth').forEach(el => {
-  el.classList.add(STATUS[el.dataset.booth] || 'available');
-});
+/* ── loadStatus: fetch from API/DB (ถ้ามี) ─────────────────
+   เมื่อมี backend ให้ uncomment และใส่ URL จริง
+   Response ควรเป็น { "B26":"sold", "P07":"sold", ... }
+────────────────────────────────────────────────────────── */
+async function loadStatus(){
+  // const STATUS_API = 'https://your-api.com/booth-status';
+  // try {
+  //   const res = await fetch(STATUS_API);
+  //   const live = await res.json();
+  //   Object.keys(live).forEach(id => {
+  //     if(BOOTH_DATA[id]) BOOTH_DATA[id].status = live[id];
+  //   });
+  // } catch(e){ console.warn('Status API unavailable, using local data'); }
+  applyAllStatus();
+}
 
-/* 2. Counters + bars */
+/* ── applyAllStatus ─────────────────────────────────────── */
+function applyAllStatus(){
+  document.querySelectorAll('.booth[data-booth]').forEach(el => {
+    const id = el.dataset.booth;
+    const st = BOOTH_DATA[id]?.status || 'available';
+    // Remove all status classes first
+    el.classList.remove('available','reserved','sold');
+    el.classList.add(st);
+    // Disable pointer on sold
+    if(st === 'sold') el.setAttribute('aria-disabled','true');
+  });
+  updateCounters();
+}
+
+/* ── Counters ────────────────────────────────────────────── */
 function updateCounters(){
   const booths = document.querySelectorAll('.booth[data-booth]');
   const counts = {available:0,reserved:0,sold:0};
   const zc = {};
   booths.forEach(el => {
-    const st = STATUS[el.dataset.booth] || 'available';
-    counts[st] = (counts[st]||0) + 1;
-    const z = el.dataset.booth[0];
+    const id = el.dataset.booth;
+    const st = BOOTH_DATA[id]?.status || 'available';
+    counts[st] = (counts[st]||0)+1;
+    const z = id[0];
     if(!zc[z]) zc[z]={total:0,available:0};
     zc[z].total++;
     if(st==='available') zc[z].available++;
   });
   document.getElementById('cnt-available').textContent = counts.available;
   document.getElementById('cnt-reserved').textContent  = counts.reserved;
-  document.getElementById('cnt-sold').textContent      = counts.sold || 0;
+  document.getElementById('cnt-sold').textContent      = counts.sold;
   document.getElementById('cnt-total').textContent     = booths.length;
+
   function setAv(z,eId,bId){
     const d=zc[z]; if(!d) return;
-    document.getElementById(eId).textContent=`${d.available}/${d.total}`;
-    setTimeout(()=>{ document.getElementById(bId).style.width=Math.round(d.available/d.total*100)+'%'; },400);
+    document.getElementById(eId).textContent = d.available+'/'+d.total;
+    setTimeout(()=>{
+      const pct = Math.round(d.available/d.total*100);
+      document.getElementById(bId).style.width = pct+'%';
+    },400);
   }
   setAv('P','av-P','avb-P'); setAv('A','av-A','avb-A'); setAv('B','av-B','avb-B');
   setAv('N','av-N','avb-N'); setAv('C','av-C','avb-C'); setAv('D','av-D','avb-D');
 }
-updateCounters();
 
-/* 3. Tooltip */
+/* ── Tooltip ─────────────────────────────────────────────── */
 const tooltip = document.getElementById('fpTooltip');
-const stLabel = {available:'✓ Available',reserved:'🔒 Reserved',sold:'✗ Sold'};
-const stColor  = {available:'#15803d',reserved:'#92400e',sold:'#991b1b'};
+const stLabel = {available:'✓ Available',reserved:'🔒 Reserved',sold:'✗ Sold Out'};
+const stColor  = {available:'#10b981',    reserved:'#f59e0b',    sold:'#ef4444'};
+
 document.querySelectorAll('.booth').forEach(el => {
   el.addEventListener('mouseenter', e => {
-    const id=el.dataset.booth, z=id[0], st=STATUS[id]||'available';
+    const id=el.dataset.booth; if(!id) return;
+    const z=id[0], st=BOOTH_DATA[id]?.status||'available';
     document.getElementById('ttId').textContent    = 'Booth '+id;
-    document.getElementById('ttId').style.color    = ZONE_COLOR[z]||'#111';
+    document.getElementById('ttId').style.color    = ZONE_COLOR[z]||'#fff';
     document.getElementById('ttZone').textContent  = ZONE_NAMES[z]||'';
-    document.getElementById('ttSize').textContent  = el.dataset.size+' · Big C Vientiane';
-    document.getElementById('ttPrice').textContent = st==='sold'?'Sold Out':'฿'+(ZONE_PRICE[z]||0).toLocaleString();
-    document.getElementById('ttStatus').textContent= stLabel[st]||'';
-    document.getElementById('ttStatus').style.color= stColor[st]||'#111';
-    document.getElementById('ttHint').textContent  = st==='available'?'Click to reserve →':'';
+    document.getElementById('ttSize').textContent  = (el.dataset.size||'')+' · Big C Vientiane';
+    document.getElementById('ttPrice').textContent = st==='sold' ? 'Sold Out' : '฿'+(ZONE_PRICE[z]||0).toLocaleString();
+    document.getElementById('ttStatus').textContent = stLabel[st]||'';
+    document.getElementById('ttStatus').style.color = stColor[st]||'#fff';
+    document.getElementById('ttHint').textContent   = st==='available' ? 'Click to select →' : '';
     tooltip.classList.add('show');
     moveTT(e);
   });
@@ -628,44 +771,244 @@ document.querySelectorAll('.booth').forEach(el => {
   el.addEventListener('mouseleave', ()=> tooltip.classList.remove('show'));
 });
 function moveTT(e){
-  tooltip.style.left = Math.min(e.clientX+14, window.innerWidth -185)+'px';
+  tooltip.style.left = Math.min(e.clientX+14, window.innerWidth-185)+'px';
   tooltip.style.top  = Math.min(e.clientY-10, window.innerHeight-145)+'px';
 }
 
-/* 4. Click → select + panel */
-let selId=null;
+/* ── Click: Highlight + Side panel ──────────────────────── */
+let selId = null;
 document.querySelectorAll('.booth').forEach(el => {
   el.addEventListener('click', () => {
-    const id=el.dataset.booth, z=id[0], st=STATUS[id]||'available';
-    if(selId) document.querySelector(`[data-booth="${selId}"]`)?.classList.remove('selected');
-    if(st==='reserved'||st==='sold'){
+    const id=el.dataset.booth; if(!id) return;
+    const z=id[0], st=BOOTH_DATA[id]?.status||'available';
+
+    // Deselect previous
+    if(selId){
+      document.querySelector(`[data-booth="${selId}"]`)?.classList.remove('selected');
+    }
+
+    // Sold — not selectable
+    if(st==='sold'){
       document.getElementById('selPanel').innerHTML=`
         <div class="sel-empty">
-          <div class="sel-empty-icon">${st==='reserved'?'🔒':'✗'}</div>
-          <div class="sel-empty-txt">Booth <strong>${id}</strong><br>${st==='reserved'?'ถูกจองแล้ว':'Sold Out'}<br><br>เลือกบูทอื่นที่ว่างอยู่ครับ</div>
+          <div class="sel-empty-icon">✗</div>
+          <div class="sel-empty-txt">Booth <strong>${id}</strong><br>Sold Out — ขายแล้ว<br><br>เลือกบูทอื่นที่ว่างอยู่ครับ</div>
         </div>`;
       selId=null; return;
     }
-    selId=id; el.classList.add('selected');
-    const col=ZONE_COLOR[z]||'#4338CA', price=ZONE_PRICE[z]||0;
+
+    // Reserved — show but don't allow booking
+    if(st==='reserved'){
+      document.getElementById('selPanel').innerHTML=`
+        <div class="sel-empty">
+          <div class="sel-empty-icon">🔒</div>
+          <div class="sel-empty-txt">Booth <strong>${id}</strong><br>ถูกจองแล้ว<br><br>เลือกบูทอื่นที่ว่างอยู่ครับ</div>
+        </div>`;
+      selId=null; return;
+    }
+
+    // ✅ Available — highlight + fill panel
+    selId = id;
+    el.classList.add('selected');            // ← glow orange outline
+
+    const col   = ZONE_COLOR[z]||'#6d28d9';
+    const price = ZONE_PRICE[z]||0;
     document.getElementById('selPanel').innerHTML=`
-      <div class="sel-zone-badge" style="background:${col}18;color:${col};border:1px solid ${col}30">${ZONE_NAMES[z]}</div>
+      <div class="sel-zone-badge" style="background:${col}25;color:${col};border:1px solid ${col}50">${ZONE_NAMES[z]}</div>
       <div class="sel-id">${id}</div>
-      <div class="sel-desc">${el.dataset.size} · Big C Vientiane</div>
+      <div class="sel-desc">${el.dataset.size||''} · Big C Vientiane</div>
       <div class="sel-grid">
-        <div class="sel-box"><div class="sel-box-lbl">ราคา</div><div class="sel-box-val" style="color:${col}">฿${price.toLocaleString()}</div></div>
-        <div class="sel-box"><div class="sel-box-lbl">Commission</div><div class="sel-box-val" style="color:#15803d">0%</div></div>
+        <div class="sel-box">
+          <div class="sel-box-lbl">ราคา</div>
+          <div class="sel-box-val" style="color:var(--gold2)">฿${price.toLocaleString()}</div>
+        </div>
+        <div class="sel-box">
+          <div class="sel-box-lbl">Commission</div>
+          <div class="sel-box-val" style="color:#10b981;font-size:.85rem">0%</div>
+        </div>
       </div>
-      <a href="/pages/booth.html?booth=${id}" class="btn-book">✦ Reserve Booth ${id}</a>
-      <a href="/pages/booth.html?booth=${id}" style="display:block;text-align:center;margin-top:.5rem;font-family:'Kanit',sans-serif;font-size:.62rem;color:#9ca3af">→ View Full Details</a>`;
+      <a href="/pages/booth.html?booth=${id}" class="btn-book">✦ Reserve Booth ${id} →</a>
+      <a href="/pages/booth.html?booth=${id}" style="display:block;text-align:center;margin-top:.5rem;font-family:'Kanit',sans-serif;font-size:.62rem;color:rgba(255,255,255,.3)">View Full Details & Form</a>`;
   });
 });
 
-/* 5. Zoom */
-let zoomLevel=100;
-function zoom(dir){ zoomLevel=Math.max(60,Math.min(200,zoomLevel+dir*15)); document.getElementById('fpCanvas').style.transform=`scale(${zoomLevel/100})`; document.getElementById('zoomVal').textContent=zoomLevel+'%'; }
-function zoomReset(){ zoomLevel=100; document.getElementById('fpCanvas').style.transform='scale(1)'; document.getElementById('zoomVal').textContent='100%'; }
-document.getElementById('fpScroll').addEventListener('scroll',()=>tooltip.classList.remove('show'));
+/* ══════════════════════════════════════════════════════════
+   ZOOM & PAN SYSTEM
+   - Mouse wheel zoom
+   - Click+drag pan
+   - Pinch-to-zoom (mobile)
+   - Keyboard shortcuts: +/- to zoom, 0 to reset
+   - Toolbar buttons zoom(±1) / zoomReset()
+══════════════════════════════════════════════════════════ */
+const fpWrap   = document.getElementById('fpWrap');
+const fpCanvas = document.getElementById('fpCanvas');
+
+let scale  = 1;
+let panX   = 0;
+let panY   = 0;
+let isDragging = false;
+let startX, startY, startPanX, startPanY;
+
+const MIN_SCALE = 0.5;
+const MAX_SCALE = 3.5;
+const ZOOM_STEP = 0.15;
+
+function applyTransform(){
+  fpCanvas.style.transform = `translate(${panX}px,${panY}px) scale(${scale})`;
+  document.getElementById('zoomVal').textContent = Math.round(scale*100)+'%';
+}
+
+function clampPan(){
+  // Keep canvas somewhat visible
+  const rect = fpCanvas.getBoundingClientRect();
+  const wrap  = fpWrap.getBoundingClientRect();
+  const pad = 80;
+  panX = Math.min(panX, wrap.width  - pad);
+  panY = Math.min(panY, wrap.height - pad);
+}
+
+/* Zoom around a point (cx, cy relative to wrapper) */
+function zoomAt(cx, cy, delta){
+  const newScale = Math.max(MIN_SCALE, Math.min(MAX_SCALE, scale + delta));
+  if(newScale === scale) return;
+  const ratio = newScale / scale;
+  panX = cx - ratio*(cx - panX);
+  panY = cy - ratio*(cy - panY);
+  scale = newScale;
+  applyTransform();
+}
+
+/* Toolbar buttons */
+function zoom(dir){
+  const wrap = fpWrap.getBoundingClientRect();
+  zoomAt(wrap.width/2, wrap.height/2, dir * ZOOM_STEP);
+}
+function zoomReset(){
+  scale=1; panX=0; panY=0;
+  applyTransform();
+}
+
+/* Mouse wheel */
+fpWrap.addEventListener('wheel', e => {
+  e.preventDefault();
+  const rect = fpWrap.getBoundingClientRect();
+  const cx = e.clientX - rect.left;
+  const cy = e.clientY - rect.top;
+  zoomAt(cx, cy, -Math.sign(e.deltaY) * ZOOM_STEP);
+}, {passive:false});
+
+/* Mouse drag */
+fpWrap.addEventListener('mousedown', e => {
+  if(e.button !== 0) return;
+  isDragging = true;
+  startX = e.clientX; startY = e.clientY;
+  startPanX = panX;   startPanY = panY;
+  fpWrap.style.cursor = 'grabbing';
+});
+window.addEventListener('mousemove', e => {
+  if(!isDragging) return;
+  panX = startPanX + (e.clientX - startX);
+  panY = startPanY + (e.clientY - startY);
+  applyTransform();
+});
+window.addEventListener('mouseup', () => {
+  isDragging = false;
+  fpWrap.style.cursor = 'grab';
+});
+
+/* Pinch-to-zoom (mobile) */
+let lastDist = 0;
+fpWrap.addEventListener('touchstart', e => {
+  if(e.touches.length === 2){
+    lastDist = Math.hypot(
+      e.touches[0].clientX - e.touches[1].clientX,
+      e.touches[0].clientY - e.touches[1].clientY
+    );
+  } else if(e.touches.length === 1){
+    isDragging = true;
+    startX = e.touches[0].clientX; startY = e.touches[0].clientY;
+    startPanX = panX; startPanY = panY;
+  }
+}, {passive:true});
+
+fpWrap.addEventListener('touchmove', e => {
+  if(e.touches.length === 2){
+    e.preventDefault();
+    const dist = Math.hypot(
+      e.touches[0].clientX - e.touches[1].clientX,
+      e.touches[0].clientY - e.touches[1].clientY
+    );
+    const wrap = fpWrap.getBoundingClientRect();
+    const cx = (e.touches[0].clientX + e.touches[1].clientX)/2 - wrap.left;
+    const cy = (e.touches[0].clientY + e.touches[1].clientY)/2 - wrap.top;
+    if(lastDist > 0){
+      const delta = (dist - lastDist) / 120;
+      zoomAt(cx, cy, delta);
+    }
+    lastDist = dist;
+  } else if(e.touches.length === 1 && isDragging){
+    panX = startPanX + (e.touches[0].clientX - startX);
+    panY = startPanY + (e.touches[0].clientY - startY);
+    applyTransform();
+  }
+}, {passive:false});
+
+fpWrap.addEventListener('touchend', () => {
+  isDragging = false;
+  lastDist = 0;
+});
+
+/* Keyboard shortcuts */
+window.addEventListener('keydown', e => {
+  if(e.target.tagName === 'INPUT') return;
+  if(e.key === '+'||e.key === '=') zoom(1);
+  if(e.key === '-')                zoom(-1);
+  if(e.key === '0')                zoomReset();
+});
+
+/* Hide tooltip on move */
+fpWrap.addEventListener('scroll', ()=> tooltip.classList.remove('show'));
+
+/* ══════════════════════════════════════════════════════════
+   SEARCH & ZONE FILTER
+══════════════════════════════════════════════════════════ */
+let currentZone = 'ALL';
+
+function filterZone(btn, zone){
+  currentZone = zone;
+  document.querySelectorAll('.zf-btn').forEach(b=> b.classList.remove('active'));
+  btn.classList.add('active');
+  applySearch();
+}
+
+function applySearch(){
+  const q = (document.getElementById('searchInput').value||'').trim().toUpperCase();
+  document.querySelectorAll('.booth[data-booth]').forEach(el => {
+    const id = el.dataset.booth;
+    const z  = id[0];
+    const zoneMatch = currentZone==='ALL' || z===currentZone;
+    const searchMatch = !q || id.includes(q);
+    el.classList.remove('search-dim','search-match');
+    if(!zoneMatch || (!searchMatch && q)){
+      el.classList.add('search-dim');
+    } else if(q && searchMatch){
+      el.classList.add('search-match');
+    }
+  });
+}
+
+function clearSearch(){
+  document.getElementById('searchInput').value='';
+  document.querySelectorAll('.booth').forEach(el => el.classList.remove('search-dim','search-match'));
+}
+
+document.getElementById('searchInput').addEventListener('input', applySearch);
+
+/* ══════════════════════════════════════════════════════════
+   INIT
+══════════════════════════════════════════════════════════ */
+loadStatus();   // applies status from BOOTH_DATA (or future API)
+applyTransform(); // set initial transform
 </script>
 </body>
 </html>
