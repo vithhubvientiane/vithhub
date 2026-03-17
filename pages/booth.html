@@ -1,597 +1,1315 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Booth Detail | VITH HUB 2026</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>จองบูท — Mekong Growth Expo 2026 | VITH HUB</title>
+<meta name="description" content="จองบูทงาน Mekong Growth Expo 2026 — 60 บูท 4 โซน Big C Vientiane สปป.ลาว 28 พ.ค.–1 มิ.ย. 2026">
+<meta property="og:title" content="จองบูท — Mekong Growth Expo 2026">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Kanit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700&family=Noto+Sans+Lao:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'Plus Jakarta Sans','Kanit',sans-serif;background:#08111f;color:#fff;overflow-x:hidden;min-height:100vh}
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:'Inter','Noto Sans Thai',sans-serif;background:#f8f7f4;color:#0B1F3B;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+button{cursor:pointer;font-family:inherit}
+
 :root{
-  --navy:#0B1F3B;--navyL:#162d5a;
-  --gold:#C9A227;--gold2:#E4BC4A;--goldDk:#9B7A10;
-  --A:#3B82F6;--B:#818CF8;--P:#D4AF37;--C:#F97316;--D:#FBBF24;--N:#4a7fa8;
-  --border:rgba(255,255,255,.1);
+  --navy:#0B1F3B; --navy2:#0d2545; --navy3:#020d1f;
+  --gold:#C9A227; --gold2:#E4BC4A; --goldDk:#9B7A10;
+  --red:#e5141e; --green:#16a34a; --amber:#d97706;
+  --white:#fff; --off:#F7F5F0; --gray:#F0EDE8;
+  --sub:#4a5c78; --border:#DDD8CC;
+  --shadow:0 4px 20px rgba(11,31,59,.08); --shadowMd:0 8px 32px rgba(11,31,59,.12);
+  --max:1200px;
 }
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes shimmer{0%{background-position:200% center}100%{background-position:-200% center}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(201,162,39,.4)}70%{box-shadow:0 0 0 8px rgba(201,162,39,0)}}
+@keyframes blk{0%,100%{opacity:1}50%{opacity:.3}}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
+
+/* ── LANG ── */
+[data-lang]{display:none}
+span[data-lang].active{display:inline}
+div[data-lang].active,p[data-lang].active{display:block}
 
 /* ── NAV ── */
-nav{position:sticky;top:0;z-index:400;height:60px;background:rgba(8,17,31,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
-.nav-in{max-width:1200px;margin:0 auto;height:100%;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between}
-.nav-logo{font-family:'Kanit',sans-serif;font-size:1.2rem;font-weight:900;letter-spacing:.06em;text-decoration:none;color:#fff}
-.nav-logo span{color:var(--gold2)}
-.nav-sub{font-size:.55rem;font-weight:600;color:rgba(255,255,255,.3);letter-spacing:.18em;text-transform:uppercase}
-.nav-r{display:flex;gap:.75rem;align-items:center}
-.btn-back{font-family:'Kanit',sans-serif;font-size:.78rem;font-weight:700;color:rgba(255,255,255,.55);padding:7px 14px;border-radius:8px;border:1px solid var(--border);transition:all .2s;text-decoration:none}
-.btn-back:hover{color:#fff;border-color:rgba(255,255,255,.3)}
-.btn-fp{font-family:'Kanit',sans-serif;font-size:.82rem;font-weight:800;background:linear-gradient(135deg,var(--goldDk),var(--gold));color:#0B1F3B;padding:8px 18px;border-radius:8px;text-decoration:none;transition:all .2s}
-.btn-fp:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(201,162,39,.4)}
+.navbar{position:sticky;top:0;z-index:900;height:64px;background:rgba(255,255,255,.97);backdrop-filter:blur(24px);border-bottom:1px solid rgba(201,162,39,.2);box-shadow:0 1px 16px rgba(11,31,59,.07)}
+.nav-inner{max-width:var(--max);margin:0 auto;height:64px;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.nav-logo{display:flex;align-items:center;gap:9px}
+.nav-logo-mark{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,var(--goldDk),var(--gold),var(--gold2));display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:.9rem;color:#fff}
+.nav-logo-text{font-family:'Plus Jakarta Sans',sans-serif;font-size:1rem;font-weight:800;color:var(--navy);line-height:1}
+.nav-logo-text span{color:var(--gold2)}
+.nav-logo-sub{font-family:'Inter',sans-serif;font-size:9px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--sub);display:block;margin-top:1px}
+.nav-back{font-family:'Inter',sans-serif;font-size:.82rem;font-weight:600;color:var(--sub);display:flex;align-items:center;gap:5px;transition:color .2s}
+.nav-back:hover{color:var(--navy)}
+.nav-right{display:flex;align-items:center;gap:.625rem}
+.lang-wrap{display:flex;gap:3px}
+.lang-btn{font-family:'Inter',sans-serif;font-size:.68rem;font-weight:700;padding:4px 9px;border-radius:6px;cursor:pointer;border:1px solid var(--border);background:transparent;color:var(--sub);transition:all .2s}
+.lang-btn.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none}
+.hamburger span{display:block;width:20px;height:2px;background:var(--navy);border-radius:2px}
 
-/* ── HERO BAND ── */
-.booth-hero{padding:2.5rem 1.5rem 1.75rem;background:linear-gradient(135deg,#060e1c,#0d1f38);border-bottom:1px solid var(--border);text-align:center}
-.eyebrow{font-family:'Kanit',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold2);margin-bottom:.6rem}
-.booth-id{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(2.5rem,6vw,4rem);line-height:1;margin-bottom:.25rem}
-.booth-tagline{font-family:'Kanit',sans-serif;font-size:.85rem;color:rgba(255,255,255,.4);margin-bottom:1.25rem}
-.status-badge{display:inline-block;padding:5px 16px;border-radius:20px;font-family:'Kanit',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
-.status-available{background:rgba(16,185,129,.15);color:#34d399;border:1px solid rgba(16,185,129,.35)}
-.status-reserved{background:rgba(239,68,68,.15);color:#f87171;border:1px solid rgba(239,68,68,.3)}
-.status-sold{background:rgba(107,114,128,.15);color:#9ca3af;border:1px solid rgba(107,114,128,.3)}
+/* ── PAGE HEADER ── */
+.page-header{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:2.5rem 2rem;position:relative;overflow:hidden}
+.page-header::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(201,162,39,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(201,162,39,.05) 1px,transparent 1px);background-size:48px 48px;pointer-events:none}
+.page-header-inner{max-width:var(--max);margin:0 auto;position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
+.ph-left{}
+.ph-eyebrow{font-family:'Inter',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold2);margin-bottom:.5rem;display:flex;align-items:center;gap:8px}
+.ph-eyebrow::before{content:'';width:20px;height:1px;background:var(--gold2)}
+.ph-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.5rem,3.5vw,2.25rem);font-weight:900;color:#fff;line-height:1.1;letter-spacing:-.025em;margin-bottom:.375rem}
+.ph-sub{font-family:'Inter',sans-serif;font-size:.875rem;color:rgba(255,255,255,.55)}
 
-/* ── MAIN LAYOUT ── */
-.page-body{max-width:1100px;margin:0 auto;padding:2rem 1.25rem 4rem;display:grid;grid-template-columns:1fr 420px;gap:2rem;align-items:start}
-@media(max-width:900px){.page-body{grid-template-columns:1fr}}
+/* SLOGAN in header */
+.ph-slogan{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-left:3px solid var(--gold2);border-radius:0 8px 8px 0;padding:.5rem 1rem;margin-top:.75rem}
+.ph-slogan .s-grow{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1rem;color:rgba(255,255,255,.85)}
+.ph-slogan .s-bigc{font-family:'Plus Jakarta Sans',sans-serif;font-weight:900;font-size:1.125rem;color:var(--red);text-shadow:0 0 12px rgba(229,20,30,.4)}
+.ph-slogan .s-sep{color:rgba(255,255,255,.3);font-weight:300}
+.ph-slogan .s-go{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1rem;color:rgba(255,255,255,.85)}
+.ph-slogan .s-global{font-family:'Plus Jakarta Sans',sans-serif;font-weight:900;font-size:1.125rem;background:linear-gradient(90deg,var(--gold),var(--gold2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 
-/* ── INFO CARD ── */
-.info-card{background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:18px;overflow:hidden;margin-bottom:1.5rem}
-.card-hd{padding:.875rem 1.25rem;border-bottom:1px solid var(--border);font-family:'Kanit',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold2)}
-.card-body{padding:1.5rem}
+.ph-right{display:flex;flex-direction:column;gap:.75rem;align-items:flex-end}
+.ph-counter{background:rgba(229,20,30,.15);border:1px solid rgba(229,20,30,.35);border-radius:12px;padding:.875rem 1.25rem;text-align:center}
+.ph-counter-big{font-family:'Plus Jakarta Sans',sans-serif;font-size:2.5rem;font-weight:900;color:#ff6b6b;line-height:1}
+.ph-counter-lbl{font-family:'Inter',sans-serif;font-size:.72rem;font-weight:700;color:rgba(255,255,255,.6);letter-spacing:.06em;margin-top:2px}
+.ph-progress{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:.75rem 1rem;min-width:200px}
+.ph-progress-row{display:flex;justify-content:space-between;font-family:'Inter',sans-serif;font-size:.75rem;color:rgba(255,255,255,.55);margin-bottom:.5rem}
+.ph-progress-bar{height:6px;background:rgba(255,255,255,.1);border-radius:3px;overflow:hidden}
+.ph-progress-fill{height:100%;background:linear-gradient(90deg,var(--goldDk),var(--gold2));border-radius:3px;width:65%;transition:width 1.2s ease}
+.ph-progress-label{font-family:'Inter',sans-serif;font-size:.68rem;font-weight:700;color:var(--gold2);margin-top:.375rem;text-align:center}
 
-/* Booth visual preview */
-.booth-preview{width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:linear-gradient(135deg,#0d1f38,#162d5a);display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;position:relative;border:1px solid var(--border)}
-.booth-preview-inner{text-align:center}
-.preview-icon{font-size:3rem;margin-bottom:.75rem}
-.preview-label{font-family:'Kanit',sans-serif;font-size:1rem;font-weight:700;color:rgba(255,255,255,.5)}
-.preview-sublabel{font-family:'Kanit',sans-serif;font-size:.75rem;color:rgba(255,255,255,.25);margin-top:.25rem}
-.booth-preview-badge{position:absolute;top:12px;right:12px;font-family:'Kanit',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:8px}
+/* ── OVERVIEW STATS ── */
+.overview-sec{background:#fff;border-bottom:1px solid var(--border);padding:1.5rem 2rem}
+.overview-inner{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border)}
+.ov-item{background:#fff;padding:1.25rem 1.5rem;text-align:center}
+.ov-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.75rem;font-weight:900;color:var(--navy);line-height:1;margin-bottom:4px}
+.ov-lbl{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--sub);letter-spacing:.06em}
 
-/* Spec grid */
-.spec-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.spec-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:1rem}
-.spec-lbl{font-family:'Kanit',sans-serif;font-size:.6rem;font-weight:700;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.3rem}
-.spec-val{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.05rem;font-weight:800}
+/* ── ZONE LEGEND ── */
+.legend-bar{background:var(--off);border-bottom:1px solid var(--border);padding:1rem 2rem}
+.legend-inner{max-width:var(--max);margin:0 auto;display:flex;align-items:center;gap:2rem;flex-wrap:wrap}
+.legend-title{font-family:'Inter',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--sub)}
+.legend-items{display:flex;gap:1.25rem;flex-wrap:wrap}
+.legend-item{display:flex;align-items:center;gap:.5rem;font-family:'Inter',sans-serif;font-size:.8rem;font-weight:600;color:var(--sub)}
+.legend-dot{width:14px;height:14px;border-radius:4px;flex-shrink:0}
+.ld-avail{background:#22c55e}
+.ld-reserved{background:#f59e0b}
+.ld-sold{background:#ef4444}
 
-/* Includes list */
-.include-list{list-style:none;display:flex;flex-direction:column;gap:.5rem}
-.include-list li{display:flex;align-items:flex-start;gap:.625rem;font-family:'Kanit',sans-serif;font-size:.82rem;color:rgba(255,255,255,.65);line-height:1.5}
-.include-list li::before{content:"✓";font-weight:900;color:#34d399;flex-shrink:0;margin-top:.05rem}
+/* ── FLOOR PLAN ── */
+.floorplan-sec{padding:2.5rem 2rem;background:#fff}
+.floorplan-inner{max-width:var(--max);margin:0 auto}
+.fp-header{margin-bottom:1.5rem}
+.fp-header h2{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.375rem;font-weight:800;color:var(--navy);margin-bottom:.25rem}
+.fp-header p{font-family:'Inter',sans-serif;font-size:.875rem;color:var(--sub)}
+.fp-wrap{background:var(--off);border:1px solid var(--border);border-radius:16px;padding:1.5rem;overflow-x:auto}
+.fp-svg-container{min-width:680px;max-width:100%}
 
-/* ── FORM CARD ── */
-.form-card{background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:18px;overflow:hidden;position:sticky;top:72px}
-.form-hd{padding:1.1rem 1.5rem;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
-.form-hd-title{font-family:'Kanit',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold2)}
-.form-hd-sub{font-family:'Kanit',sans-serif;font-size:.65rem;color:rgba(255,255,255,.3)}
-.form-body{padding:1.5rem;display:flex;flex-direction:column;gap:1rem}
+/* Zone label colors */
+.zone-a-color{fill:#1d4ed8}
+.zone-b-color{fill:#7c3aed}
+.zone-c-color{fill:#ea580c}
+.zone-d-color{fill:#16a34a}
+.zone-p-color{fill:#9B7A10}
+.zone-n-color{fill:#0891b2}
 
-.field-group{display:flex;flex-direction:column;gap:.3rem}
-.field-group label{font-family:'Kanit',sans-serif;font-size:.68rem;font-weight:700;color:rgba(255,255,255,.45);letter-spacing:.06em;text-transform:uppercase}
-.field-group input,
-.field-group select,
-.field-group textarea{
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.1);
-  border-radius:9px;
-  padding:.75rem 1rem;
-  color:#fff;
-  font-family:'Kanit',sans-serif;
-  font-size:.88rem;
-  transition:border .2s,background .2s;
-  outline:none;
-  width:100%;
+/* Booth states */
+.booth-avail{fill:#dcfce7;stroke:#22c55e;stroke-width:1.5;cursor:pointer;transition:all .15s}
+.booth-avail:hover{fill:#bbf7d0;stroke:#16a34a;stroke-width:2}
+.booth-reserved{fill:#fef3c7;stroke:#f59e0b;stroke-width:1.5;cursor:default}
+.booth-sold{fill:#fee2e2;stroke:#ef4444;stroke-width:1.5;cursor:default}
+.booth-label{font-family:'Inter',sans-serif;font-size:8px;font-weight:700;fill:#374151;text-anchor:middle;pointer-events:none}
+.booth-status-dot{pointer-events:none}
+.zone-header-rect{rx:6;ry:6}
+.zone-label-text{font-family:'Inter',sans-serif;font-size:11px;font-weight:700;fill:#fff;text-anchor:middle;dominant-baseline:middle}
+.structure-label{font-family:'Inter',sans-serif;font-size:9px;fill:#9ca3af;text-anchor:middle}
+.fp-note{margin-top:1rem;font-family:'Inter',sans-serif;font-size:.78rem;color:var(--sub);text-align:center}
+
+/* ── BOOTH LIST ── */
+.list-sec{padding:2.5rem 2rem;background:var(--off)}
+.list-inner{max-width:var(--max);margin:0 auto}
+.list-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem}
+.list-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.375rem;font-weight:800;color:var(--navy)}
+.list-filter{display:flex;gap:.5rem;flex-wrap:wrap}
+.filter-btn{font-family:'Inter',sans-serif;font-size:.78rem;font-weight:600;padding:6px 14px;border-radius:20px;cursor:pointer;border:1.5px solid var(--border);background:#fff;color:var(--sub);transition:all .2s}
+.filter-btn.active,.filter-btn:hover{border-color:var(--navy);background:var(--navy);color:#fff}
+.booth-table{width:100%;border-collapse:separate;border-spacing:0 6px}
+.bt-head th{font-family:'Inter',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--sub);padding:.625rem 1rem;text-align:left}
+.bt-row{background:#fff;border-radius:10px;box-shadow:var(--shadow);transition:all .2s}
+.bt-row:hover{box-shadow:var(--shadowMd);transform:translateY(-1px)}
+.bt-row.sold{opacity:.55;pointer-events:none}
+.bt-row.reserved{opacity:.8}
+.bt-cell{padding:.875rem 1rem;font-family:'Inter',sans-serif;font-size:.875rem;color:var(--navy)}
+.bt-cell:first-child{border-radius:10px 0 0 10px;font-weight:700}
+.bt-cell:last-child{border-radius:0 10px 10px 0}
+.bt-zone-badge{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:20px;font-size:.72rem;font-weight:700;font-family:'Inter',sans-serif}
+.bz-a{background:rgba(29,78,216,.1);color:#1d4ed8}
+.bz-b{background:rgba(124,58,237,.1);color:#7c3aed}
+.bz-c{background:rgba(234,88,12,.1);color:#ea580c}
+.bz-d{background:rgba(22,163,74,.1);color:#16a34a}
+.bz-p{background:rgba(155,122,16,.12);color:var(--goldDk)}
+.bz-n{background:rgba(8,145,178,.1);color:#0891b2}
+.status-pill{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:20px;font-size:.72rem;font-weight:700;font-family:'Inter',sans-serif}
+.sp-avail{background:#dcfce7;color:#15803d}
+.sp-reserved{background:#fef3c7;color:#92400e}
+.sp-sold{background:#fee2e2;color:#b91c1c}
+.status-dot-sm{width:6px;height:6px;border-radius:50%;background:currentColor;animation:blk 1.5s infinite}
+.reserve-btn{font-family:'Plus Jakarta Sans',sans-serif;font-size:.78rem;font-weight:700;padding:7px 16px;border-radius:8px;border:none;cursor:pointer;transition:all .2s;white-space:nowrap;text-decoration:none;display:inline-flex;align-items:center;gap:5px}
+.rb-avail{background:linear-gradient(135deg,var(--goldDk),var(--gold));color:var(--navy);box-shadow:0 2px 10px rgba(201,162,39,.3)}
+.rb-avail:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(201,162,39,.4)}
+.rb-reserved{background:var(--gray);color:var(--sub);cursor:not-allowed}
+.rb-sold{background:#fee2e2;color:#b91c1c;cursor:not-allowed}
+
+/* ── RESERVE FORM MODAL / SECTION ── */
+.form-sec{padding:2.5rem 2rem;background:#fff;scroll-margin-top:70px}
+.form-inner{max-width:700px;margin:0 auto}
+.form-card{background:#fff;border:1.5px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:var(--shadowMd)}
+.form-top{background:linear-gradient(135deg,var(--navy),var(--navy2));padding:1.5rem 2rem;position:relative;overflow:hidden}
+.form-top::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(201,162,39,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(201,162,39,.06) 1px,transparent 1px);background-size:40px 40px;pointer-events:none}
+.form-top-inner{position:relative;z-index:1}
+.form-top-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.125rem;font-weight:800;color:#fff;margin-bottom:.25rem}
+.form-top-booth{font-family:'Inter',sans-serif;font-size:.875rem;color:var(--gold2);font-weight:600}
+.form-body{padding:2rem}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.f-group{display:flex;flex-direction:column;gap:.375rem}
+.f-label{font-family:'Inter',sans-serif;font-size:.75rem;font-weight:600;color:var(--navy);letter-spacing:.03em}
+.f-req{color:var(--red)}
+.f-input{font-family:'Inter',sans-serif;font-size:.9rem;padding:11px 14px;border:1.5px solid var(--border);border-radius:10px;color:var(--navy);background:#fff;width:100%;transition:all .2s;outline:none}
+.f-input:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,162,39,.1)}
+.f-input::placeholder{color:rgba(11,31,59,.3)}
+.f-input option{background:#fff}
+.span2{grid-column:1/-1}
+.f-submit{grid-column:1/-1;font-family:'Plus Jakarta Sans',sans-serif;font-size:1rem;font-weight:700;background:linear-gradient(135deg,var(--goldDk),var(--gold),var(--gold2));color:var(--navy);padding:15px 24px;border-radius:10px;border:none;cursor:pointer;transition:all .3s;box-shadow:0 4px 20px rgba(201,162,39,.4);display:flex;align-items:center;justify-content:center;gap:8px;animation:pulse 3s infinite}
+.f-submit:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(201,162,39,.55)}
+.f-note{grid-column:1/-1;font-family:'Inter',sans-serif;font-size:.7rem;color:rgba(11,31,59,.4);text-align:center;line-height:1.7}
+
+/* urgency banner */
+.urgency-banner{background:linear-gradient(135deg,#7f1d1d,#991b1b);color:#fff;padding:1rem 2rem;text-align:center;font-family:'Plus Jakarta Sans',sans-serif;font-size:.875rem;font-weight:700;display:flex;align-items:center;justify-content:center;gap:.75rem}
+.ub-dot{width:8px;height:8px;border-radius:50%;background:#fca5a5;animation:blk 1.2s infinite;flex-shrink:0}
+
+/* ── FLOAT ── */
+.float-cta{position:fixed;bottom:1.5rem;right:1.5rem;z-index:450;display:flex;flex-direction:column;gap:.5rem;align-items:flex-end}
+.float-btn{font-family:'Plus Jakarta Sans',sans-serif;font-size:.82rem;font-weight:700;padding:10px 16px;border-radius:28px;display:flex;align-items:center;gap:7px;box-shadow:0 4px 20px rgba(0,0,0,.2);transition:all .25s;white-space:nowrap;text-decoration:none;border:none;cursor:pointer}
+.float-btn:hover{transform:translateY(-2px)}
+.fb-gold{background:linear-gradient(135deg,var(--goldDk),var(--gold));color:var(--navy);animation:pulse 3s infinite}
+.fb-line{background:#06C755;color:#fff}
+
+/* ── TOAST ── */
+.toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(80px);background:var(--navy);color:#fff;padding:12px 24px;border-radius:12px;font-family:'Inter',sans-serif;font-size:.875rem;font-weight:600;box-shadow:0 8px 32px rgba(0,0,0,.25);z-index:600;transition:transform .35s cubic-bezier(.34,1.56,.64,1),opacity .35s;opacity:0;border:1px solid rgba(201,162,39,.3)}
+.toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+
+/* ── RESPONSIVE ── */
+@media(max-width:768px){
+  .page-header-inner{flex-direction:column;align-items:flex-start}
+  .ph-right{align-items:flex-start;flex-direction:row;flex-wrap:wrap}
+  .overview-inner{grid-template-columns:repeat(2,1fr)}
+  .form-grid{grid-template-columns:1fr}
+  .f-input.span2{grid-column:1}
+  .list-header{flex-direction:column;align-items:flex-start}
+  .bt-head th:nth-child(4),.bt-cell:nth-child(4){display:none}
 }
-.field-group input::placeholder,
-.field-group textarea::placeholder{color:rgba(255,255,255,.22)}
-.field-group select option{background:#0d1f38;color:#fff}
-.field-group input:focus,
-.field-group select:focus,
-.field-group textarea:focus{
-  border-color:rgba(201,162,39,.5);
-  background:rgba(201,162,39,.05);
-}
-.field-row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
-
-.price-summary{background:rgba(201,162,39,.07);border:1px solid rgba(201,162,39,.2);border-radius:12px;padding:1rem}
-.price-row-s{display:flex;justify-content:space-between;align-items:center;font-family:'Kanit',sans-serif;font-size:.8rem;padding:.25rem 0}
-.price-row-s:last-child{border-top:1px solid rgba(201,162,39,.2);margin-top:.5rem;padding-top:.75rem;font-weight:800;font-size:.95rem}
-.price-row-s .lbl{color:rgba(255,255,255,.5)}
-.price-row-s .val{color:var(--gold2)}
-.price-row-s:last-child .lbl{color:#fff}
-.price-row-s:last-child .val{color:var(--gold2);font-size:1.1rem}
-
-.btn-submit{
-  width:100%;
-  font-family:'Kanit',sans-serif;
-  font-size:.95rem;
-  font-weight:800;
-  background:linear-gradient(135deg,var(--goldDk),var(--gold));
-  color:#0B1F3B;
-  padding:14px;
-  border-radius:12px;
-  border:none;
-  cursor:pointer;
-  transition:all .2s;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:7px;
-  letter-spacing:.02em;
-}
-.btn-submit:hover{transform:translateY(-2px);box-shadow:0 6px 22px rgba(201,162,39,.45)}
-.btn-submit:disabled{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
-.form-note{text-align:center;font-family:'Kanit',sans-serif;font-size:.65rem;color:rgba(255,255,255,.25);line-height:1.6}
-
-/* Success state */
-.success-overlay{display:none;flex-direction:column;align-items:center;justify-content:center;padding:2.5rem 1.5rem;text-align:center;min-height:300px}
-.success-overlay.show{display:flex}
-.success-icon{font-size:3rem;margin-bottom:1rem}
-.success-title{font-family:'Kanit',sans-serif;font-size:1.3rem;font-weight:800;margin-bottom:.5rem;color:#34d399}
-.success-sub{font-family:'Kanit',sans-serif;font-size:.82rem;color:rgba(255,255,255,.45);line-height:1.7;margin-bottom:1.5rem}
-.btn-back-fp{display:inline-block;font-family:'Kanit',sans-serif;font-size:.85rem;font-weight:700;background:rgba(255,255,255,.06);color:#fff;padding:10px 22px;border-radius:10px;text-decoration:none;transition:all .2s;border:1px solid var(--border)}
-.btn-back-fp:hover{background:rgba(255,255,255,.1)}
-
-/* Reserved overlay */
-.reserved-banner{background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.3);border-radius:12px;padding:1.25rem;text-align:center;margin-bottom:1rem;display:none}
-.reserved-banner.show{display:block}
-.reserved-banner-icon{font-size:1.75rem;margin-bottom:.5rem}
-.reserved-banner-title{font-family:'Kanit',sans-serif;font-size:.95rem;font-weight:800;color:#f87171;margin-bottom:.25rem}
-.reserved-banner-sub{font-family:'Kanit',sans-serif;font-size:.75rem;color:rgba(248,113,113,.6)}
-
-/* Sold overlay */
-.sold-banner{background:rgba(107,114,128,.1);border:1px solid rgba(107,114,128,.3);border-radius:12px;padding:1.25rem;text-align:center;margin-bottom:1rem;display:none}
-.sold-banner.show{display:block}
-.sold-banner-icon{font-size:1.75rem;margin-bottom:.5rem}
-.sold-banner-title{font-family:'Kanit',sans-serif;font-size:.95rem;font-weight:800;color:#9ca3af;margin-bottom:.25rem}
-.sold-banner-sub{font-family:'Kanit',sans-serif;font-size:.75rem;color:rgba(156,163,175,.6)}
-
-/* Floor map mini */
-.mini-map-link{display:flex;align-items:center;gap:.625rem;padding:1rem 1.25rem;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:12px;text-decoration:none;transition:all .2s;margin-bottom:1.5rem}
-.mini-map-link:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.2)}
-.mini-map-icon{font-size:1.4rem;flex-shrink:0}
-.mini-map-text{font-family:'Kanit',sans-serif}
-.mini-map-text strong{display:block;font-size:.82rem;color:#fff;margin-bottom:.1rem}
-.mini-map-text span{font-size:.7rem;color:rgba(255,255,255,.35)}
-.mini-map-arrow{margin-left:auto;font-size:.9rem;color:rgba(255,255,255,.25)}
-
-@media(max-width:600px){
-  .spec-grid{grid-template-columns:1fr 1fr}
-  .field-row{grid-template-columns:1fr}
-  .nav-r .btn-back{display:none}
+@media(max-width:480px){
+  .overview-inner{grid-template-columns:repeat(2,1fr)}
+  .fp-wrap{padding:.875rem}
+  .float-cta{bottom:1rem;right:.875rem}
+  .ph-right{flex-direction:column}
 }
 </style>
 </head>
 <body>
 
+<!-- URGENCY BANNER -->
+<div class="urgency-banner">
+  <span class="ub-dot"></span>
+  <span data-lang="th" class="active">🔥 เหลือ <strong>48 บูท</strong> — จองก่อนได้เลือกทำเลก่อน · 65% ถูกจองแล้ว</span>
+  <span data-lang="la">🔥 ເຫຼືອພຽງ <strong>24 ບູດ</strong> — ຈອງກ່ອນໄດ້ເລືອກກ່ອນ</span>
+  <span data-lang="en">🔥 Only <strong>48 booths available</strong> — 70% already reserved · Book now to choose your spot</span>
+</div>
+
+<!-- FLOAT CTA -->
+<div class="float-cta">
+  <button onclick="scrollToForm()" class="float-btn fb-gold">🏪 <span data-lang="th" class="active">จองบูท</span><span data-lang="la">ຈອງບູດ</span><span data-lang="en">Reserve Booth</span></button>
+  <a href="https://line.me/ti/p/@cef8930n" target="_blank" rel="noopener" class="float-btn fb-line">
+    <svg width="15" height="15" viewBox="0 0 48 48"><path d="M24 4C13 4 4 11.8 4 21.5c0 5.5 3.1 10.4 7.9 13.7-.3 1.2-1.1 4.3-1.3 5 0 0-.1.3.2.4.2.1.5 0 .5 0 .7-.1 8.5-5.6 9.8-6.5.9.1 1.9.2 2.9.2 11 0 20-7.8 20-17.3S35 4 24 4z" fill="white"/></svg>
+    LINE
+  </a>
+</div>
+
 <!-- NAV -->
-<nav>
-  <div class="nav-in">
-    <a href="/" class="nav-logo" style="text-decoration:none">
-      <div>VITH<span>HUB</span> 2026</div>
-      <div class="nav-sub">Booth Reservation</div>
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <div class="nav-logo-mark">V</div>
+      <div>
+        <div class="nav-logo-text">VITH<span>HUB</span></div>
+        <span class="nav-logo-sub">Mekong Growth Expo</span>
+      </div>
     </a>
-    <div class="nav-r">
-      <a href="/pages/floorplan.html" class="btn-back">← Floor Plan</a>
-      <a href="/pages/event.html" class="btn-fp">✦ Event Info</a>
+    <a href="/pages/event.html" class="nav-back">← <span data-lang="th" class="active">กลับหน้า Event</span><span data-lang="la">ກັບໜ້າ Event</span><span data-lang="en">Back to Event</span></a>
+    <div class="nav-right">
+      <div class="lang-wrap">
+        <button onclick="setLang('th')" class="lang-btn active" id="lth">TH</button>
+        <button onclick="setLang('la')" class="lang-btn" id="lla">LAO</button>
+        <button onclick="setLang('en')" class="lang-btn" id="len">EN</button>
+      </div>
+      <button class="hamburger" onclick="this.style.display='none'" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
 </nav>
 
-<!-- HERO -->
-<div class="booth-hero" id="boothHero">
-  <div class="eyebrow" id="heroZone">VITH HUB 2026 · Big C Vientiane · 28 May – 1 June</div>
-  <div class="booth-id" id="heroTitle" style="color:var(--gold2)">Booth —</div>
-  <div class="booth-tagline" id="heroZoneName">Loading booth information...</div>
-  <span class="status-badge status-available" id="statusBadge">✓ Available</span>
-</div>
-
-<div class="page-body">
-
-  <!-- LEFT: Info -->
-  <div>
-
-    <!-- Visual preview -->
-    <div class="info-card">
-      <div class="card-hd">Booth Preview</div>
-      <div class="card-body">
-        <div class="booth-preview" id="boothPreview">
-          <div class="booth-preview-inner">
-            <div class="preview-icon" id="previewIcon">🏪</div>
-            <div class="preview-label" id="previewLabel">Standard Booth</div>
-            <div class="preview-sublabel" id="previewSub">3m × 3m · Big C Vientiane</div>
-          </div>
-          <div class="booth-preview-badge" id="previewBadge" style="background:rgba(129,140,248,.25);color:#818cf8">Standard B</div>
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="ph-left">
+      <div class="ph-eyebrow">🏪 Booth Reservation · Mekong Growth Expo 2026</div>
+      <div class="ph-title">
+        <span data-lang="th" class="active">เลือกและจองบูทของคุณ</span>
+        <span data-lang="la">ເລືອກ ແລະ ຈອງບູດຂອງທ່ານ</span>
+        <span data-lang="en">Choose & Reserve Your Booth</span>
+      </div>
+      <div class="ph-sub">📅 28 May – 1 June 2026 &nbsp;·&nbsp; 📍 Big C Vientiane, Laos PDR</div>
+      <div class="ph-slogan">
+        <span class="s-grow">Grow</span>
+        <span class="s-bigc">Big C</span>
+        <span class="s-sep">—</span>
+        <span class="s-go">Go</span>
+        <span class="s-global">Global</span>
+      </div>
+    </div>
+    <div class="ph-right">
+      <div class="ph-counter">
+        <div class="ph-counter-big">48</div>
+        <div class="ph-counter-lbl">
+          <span data-lang="th" class="active">บูทคงเหลือ</span>
+          <span data-lang="la">ບູດທີ່ເຫຼືອ</span>
+          <span data-lang="en">Booths Remaining</span>
         </div>
-
-        <!-- Spec grid -->
-        <div class="spec-grid">
-          <div class="spec-item">
-            <div class="spec-lbl">Zone</div>
-            <div class="spec-val" id="specZone" style="font-size:.95rem">—</div>
-          </div>
-          <div class="spec-item">
-            <div class="spec-lbl">Size</div>
-            <div class="spec-val" id="specSize">—</div>
-          </div>
-          <div class="spec-item">
-            <div class="spec-lbl">Price</div>
-            <div class="spec-val" id="specPrice" style="color:var(--gold2)">—</div>
-          </div>
-          <div class="spec-item">
-            <div class="spec-lbl">Commission</div>
-            <div class="spec-val" style="color:#34d399;font-size:.9rem">0%</div>
-          </div>
+      </div>
+      <div class="ph-progress">
+        <div class="ph-progress-row">
+          <span><span data-lang="th" class="active">จองแล้ว</span><span data-lang="la">ຈອງແລ້ວ</span><span data-lang="en">Reserved</span></span>
+          <span>47/95</span>
+        </div>
+        <div class="ph-progress-bar"><div class="ph-progress-fill" id="headerBar" style="width:50%"></div></div>
+        <div class="ph-progress-label">
+          <span data-lang="th" class="active">🔥 50% ถูกจองแล้ว</span>
+          <span data-lang="la">🔥 60% ຈອງແລ້ວ</span>
+          <span data-lang="en">🔥 60% Already Booked</span>
         </div>
       </div>
     </div>
-
-    <!-- What's included -->
-    <div class="info-card">
-      <div class="card-hd" id="includesHd">What's Included</div>
-      <div class="card-body">
-        <ul class="include-list" id="includesList">
-          <li>Shell scheme booth (walls, flooring, fascia)</li>
-          <li>1 table + 2 chairs + power socket</li>
-          <li>Exhibitor badge × 2 persons (5 days)</li>
-          <li>Listing in VITH HUB 2026 official catalogue</li>
-          <li>Free logistics support: Nong Khai → Vientiane</li>
-          <li>Big C Distribution Consultation (free, 5 days)</li>
-          <li>Access to VITH HUB CUBE Business Matching</li>
-          <li>0% Commission on all sales during the event</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Back to map -->
-    <a href="/pages/floorplan.html" class="mini-map-link">
-      <div class="mini-map-icon">🗺️</div>
-      <div class="mini-map-text">
-        <strong>View Full Floor Plan</strong>
-        <span>Browse all available booths · Click to select</span>
-      </div>
-      <div class="mini-map-arrow">→</div>
-    </a>
-
-    <!-- Venue info -->
-    <div class="info-card">
-      <div class="card-hd">Event & Venue</div>
-      <div class="card-body" style="display:flex;flex-direction:column;gap:.75rem">
-        <div style="display:flex;align-items:flex-start;gap:.75rem">
-          <span style="font-size:1.25rem;flex-shrink:0">📅</span>
-          <div>
-            <div style="font-family:'Kanit',sans-serif;font-size:.82rem;font-weight:700;margin-bottom:.15rem">28 May – 1 June 2026</div>
-            <div style="font-family:'Kanit',sans-serif;font-size:.73rem;color:rgba(255,255,255,.4)">5 วัน · 5 Days · Opening Ceremony 28 May 2026</div>
-          </div>
-        </div>
-        <div style="display:flex;align-items:flex-start;gap:.75rem">
-          <span style="font-size:1.25rem;flex-shrink:0">📍</span>
-          <div>
-            <div style="font-family:'Kanit',sans-serif;font-size:.82rem;font-weight:700;margin-bottom:.15rem">Big C Vientiane, Laos PDR</div>
-            <div style="font-family:'Kanit',sans-serif;font-size:.73rem;color:rgba(255,255,255,.4)">Mekong Global Gateway · International Exhibition Hall</div>
-          </div>
-        </div>
-        <div style="display:flex;align-items:flex-start;gap:.75rem">
-          <span style="font-size:1.25rem;flex-shrink:0">✦</span>
-          <div>
-            <div style="font-family:'Kanit',sans-serif;font-size:.82rem;font-weight:700;margin-bottom:.15rem">Mekong Global Gateway 2026</div>
-            <div style="font-family:'Kanit',sans-serif;font-size:.73rem;color:rgba(255,255,255,.4)">Organized by VITH HUB · Co-hosted with LITSE Market</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- RIGHT: Reservation form -->
-  <div class="form-card">
-    <div class="form-hd">
-      <div>
-        <div class="form-hd-title">Reserve This Booth</div>
-        <div class="form-hd-sub" id="formBoothSub">Fill in your details below</div>
-      </div>
-    </div>
-
-    <!-- Reserved notice (shown when booth is reserved) -->
-    <div class="reserved-banner" id="reservedBanner">
-      <div class="reserved-banner-icon">🔒</div>
-      <div class="reserved-banner-title">This Booth is Reserved</div>
-      <div class="reserved-banner-sub">Please select another booth from the floor plan</div>
-    </div>
-
-    <!-- Sold notice (shown when booth is sold) -->
-    <div class="sold-banner" id="soldBanner">
-      <div class="sold-banner-icon">✗</div>
-      <div class="sold-banner-title">This Booth is Sold Out</div>
-      <div class="sold-banner-sub">Please select another booth from the floor plan</div>
-    </div>
-
-    <!-- Form -->
-    <div class="form-body" id="formBody">
-
-      <div class="field-group">
-        <label>Full Name *</label>
-        <input type="text" id="fName" placeholder="Your full name" required>
-      </div>
-
-      <div class="field-group">
-        <label>Company / Brand Name *</label>
-        <input type="text" id="fCompany" placeholder="Company or brand name" required>
-      </div>
-
-      <div class="field-row">
-        <div class="field-group">
-          <label>Email *</label>
-          <input type="email" id="fEmail" placeholder="email@example.com" required>
-        </div>
-        <div class="field-group">
-          <label>Phone / WhatsApp *</label>
-          <input type="tel" id="fPhone" placeholder="+66 or +856..." required>
-        </div>
-      </div>
-
-      <div class="field-group">
-        <label>Product / Business Type *</label>
-        <select id="fType">
-          <option value="" disabled selected>Select your category</option>
-          <option>Food & Beverage</option>
-          <option>Franchise / F&B Brand</option>
-          <option>FMCG / Consumer Products</option>
-          <option>Health & Beauty</option>
-          <option>Agriculture / Organic</option>
-          <option>Fashion & Lifestyle</option>
-          <option>Tech & Electronics</option>
-          <option>Nation Pavilion / Government</option>
-          <option>Other</option>
-        </select>
-      </div>
-
-      <div class="field-group">
-        <label>Country of Origin</label>
-        <select id="fCountry">
-          <option value="" disabled selected>Select country</option>
-          <option>🇹🇭 Thailand</option>
-          <option>🇱🇦 Laos PDR</option>
-          <option>🇨🇳 China</option>
-          <option>🇻🇳 Vietnam</option>
-          <option>🇷🇺 Russia</option>
-          <option>🇪🇺 Europe</option>
-          <option>🇯🇵 Japan</option>
-          <option>🇰🇷 South Korea</option>
-          <option>Other</option>
-        </select>
-      </div>
-
-      <div class="field-group">
-        <label>Message / Special Requirements</label>
-        <textarea id="fMessage" rows="3" placeholder="Any special setup requirements, questions, or notes..."></textarea>
-      </div>
-
-      <div class="price-summary" id="priceSummary">
-        <div class="price-row-s"><span class="lbl" id="psBoothId">Booth —</span><span class="val" id="psZone">—</span></div>
-        <div class="price-row-s"><span class="lbl">Size</span><span class="val" id="psSize">—</span></div>
-        <div class="price-row-s"><span class="lbl">Commission</span><span class="val" style="color:#34d399">0%</span></div>
-        <div class="price-row-s"><span class="lbl">Logistics (Nong Khai → VTE)</span><span class="val" style="color:#34d399">Free</span></div>
-        <div class="price-row-s"><span class="lbl">Booth Fee</span><span class="val" id="psPrice" style="font-size:1.25rem">—</span></div>
-      </div>
-
-      <button class="btn-submit" id="btnSubmit" onclick="submitReservation()">
-        ✦ Submit Reservation Request
-      </button>
-
-      <div class="form-note">
-        ทีมงาน VITH HUB จะติดต่อกลับภายใน 24 ชั่วโมง<br>
-        Our team will follow up within 24 hours · <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ed9e8c81889ead9b84998585988fc38c9e848c">[email&#160;protected]</a>
-      </div>
-
-    </div>
-
-    <!-- Success state -->
-    <div class="success-overlay" id="successOverlay">
-      <div class="success-icon">🎉</div>
-      <div class="success-title">Reservation Submitted!</div>
-      <div class="success-sub" id="successMsg">
-        Thank you! Our team will contact you within 24 hours<br>to confirm your booth reservation.<br><br>
-        <strong style="color:#fff"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="85f6e4e9e0f6c5f3ecf1ededf0e7abe4f6ece4">[email&#160;protected]</a></strong>
-      </div>
-      <a href="/pages/floorplan.html" class="btn-back-fp">← Back to Floor Plan</a>
-    </div>
-
   </div>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-<script src="booth-data.js"></script>
+<!-- OVERVIEW STATS -->
+<div class="overview-sec">
+  <div class="overview-inner">
+    <div class="ov-item">
+      <div class="ov-num">95</div>
+      <div class="ov-lbl"><span data-lang="th" class="active">บูททั้งหมด</span><span data-lang="la">ບູດທັງໝົດ</span><span data-lang="en">Total Booths</span></div>
+    </div>
+    <div class="ov-item">
+      <div class="ov-num" style="color:var(--green)">48</div>
+      <div class="ov-lbl"><span data-lang="th" class="active">🟢 ว่างอยู่</span><span data-lang="la">🟢 ຫວ່າງ</span><span data-lang="en">🟢 Available</span></div>
+    </div>
+    <div class="ov-item">
+      <div class="ov-num" style="color:var(--amber)">24</div>
+      <div class="ov-lbl"><span data-lang="th" class="active">🟡 มัดจำแล้ว</span><span data-lang="la">🟡 ມັດຈຳແລ້ວ</span><span data-lang="en">🟡 Reserved</span></div>
+    </div>
+    <div class="ov-item">
+      <div class="ov-num" style="color:var(--red)">23</div>
+      <div class="ov-lbl"><span data-lang="th" class="active">🔴 ขายแล้ว</span><span data-lang="la">🔴 ຂາຍແລ້ວ</span><span data-lang="en">🔴 Sold</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- LEGEND -->
+<div class="legend-bar">
+  <div class="legend-inner">
+    <span class="legend-title"><span data-lang="th" class="active">สถานะบูท</span><span data-lang="la">ສະຖານະບູດ</span><span data-lang="en">Booth Status</span></span>
+    <div class="legend-items">
+      <div class="legend-item"><div class="legend-dot ld-avail"></div><span data-lang="th" class="active">ว่างอยู่ — คลิกจองได้เลย</span><span data-lang="la">ຫວ່າງ — ຄລິກຈອງໄດ້ເລີຍ</span><span data-lang="en">Available — Click to Reserve</span></div>
+      <div class="legend-item"><div class="legend-dot ld-reserved"></div><span data-lang="th" class="active">มัดจำแล้ว — รอยืนยัน</span><span data-lang="la">ມັດຈຳແລ້ວ</span><span data-lang="en">Reserved — Pending Confirmation</span></div>
+      <div class="legend-item"><div class="legend-dot ld-sold"></div><span data-lang="th" class="active">ขายแล้ว</span><span data-lang="la">ຂາຍແລ້ວ</span><span data-lang="en">Sold Out</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- §2 FLOOR PLAN -->
+<section class="floorplan-sec" id="floorplan">
+  <div class="floorplan-inner">
+    <div class="fp-header reveal">
+      <h2><span data-lang="th" class="active">ผังบูท Mekong Growth Expo 2026</span><span data-lang="la">ຜັງບູດ Mekong Growth Expo 2026</span><span data-lang="en">Mekong Growth Expo 2026 — Booth Map</span></h2>
+      <p><span data-lang="th" class="active">📍 Big C Vientiane · คลิกบูทสีเขียวเพื่อจอง</span><span data-lang="la">📍 Big C ວຽງຈັນ · ຄລິກບູດສີຂຽວເພື່ອຈອງ</span><span data-lang="en">📍 Big C Vientiane · Click a green booth to reserve</span></p>
+    </div>
+
+    <!-- ── ACTUAL FLOOR PLAN IMAGE ── -->
+    <div class="reveal" style="margin-bottom:2rem">
+      <div style="background:var(--navy);border-radius:12px 12px 0 0;padding:.75rem 1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem">
+        <span style="font-family:'Inter',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold2)">📐 Official Floor Plan · Big C Vientiane</span>
+        <span style="font-family:'Inter',sans-serif;font-size:.72rem;color:rgba(255,255,255,.4)">Mekong Growth Expo 2026</span>
+      </div>
+      <div style="border:2px solid var(--border);border-top:none;border-radius:0 0 12px 12px;overflow:hidden;background:#fff;padding:1rem">
+        <img src="/images/Floor_1.webp"
+          alt="Mekong Growth Expo 2026 — Official Floor Plan"
+          style="width:100%;display:block;border-radius:8px"
+          onerror="this.parentNode.style.background='#f1f5f9';this.outerHTML='<div style=\'padding:3rem;text-align:center;font-family:Inter,sans-serif;color:#64748b\'>📐 แผนผังจะแสดงเมื่อมีไฟล์ /images/Floor_1.webp</div>'">
+      </div>
+      <p style="font-family:'Inter',sans-serif;font-size:.75rem;color:var(--sub);text-align:center;margin-top:.625rem">
+        <span data-lang="th" class="active">ภาพผังจริง (Official) · ใช้แผนผัง Interactive ด้านล่างเพื่อดูสถานะและคลิกจอง</span>
+        <span data-lang="la">ຜັງຈິງ — ໃຊ້ Interactive Map ດ້ານລຸ່ມເພື່ອຄລິກຈອງ</span>
+        <span data-lang="en">Official floor plan · Use the interactive map below to check availability and reserve</span>
+      </p>
+    </div>
+
+    <!-- ── INTERACTIVE SVG MAP ── -->
+    <div class="fp-wrap reveal d1">
+      <div style="background:var(--navy);border-radius:10px 10px 0 0;padding:.625rem 1.25rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margin:-1.5rem -1.5rem 1.25rem">
+        <span style="font-family:'Inter',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold2)">🖱️ Interactive Map</span>
+        <div style="display:flex;gap:1.25rem;flex-wrap:wrap">
+          <span style="display:inline-flex;align-items:center;gap:5px;font-family:'Inter',sans-serif;font-size:.7rem;color:rgba(255,255,255,.7)"><span style="width:11px;height:11px;border-radius:3px;background:#22c55e;display:inline-block"></span><span data-lang="th" class="active">ว่าง — คลิกจอง</span><span data-lang="en">Available</span></span>
+          <span style="display:inline-flex;align-items:center;gap:5px;font-family:'Inter',sans-serif;font-size:.7rem;color:rgba(255,255,255,.7)"><span style="width:11px;height:11px;border-radius:3px;background:#f59e0b;display:inline-block"></span><span data-lang="th" class="active">มัดจำแล้ว</span><span data-lang="en">Reserved</span></span>
+          <span style="display:inline-flex;align-items:center;gap:5px;font-family:'Inter',sans-serif;font-size:.7rem;color:rgba(255,255,255,.7)"><span style="width:11px;height:11px;border-radius:3px;background:#ef4444;display:inline-block"></span><span data-lang="th" class="active">ขายแล้ว</span><span data-lang="en">Sold</span></span>
+        </div>
+      </div>
+
+      <div class="fp-svg-container" style="min-width:900px">
+        <!--
+          SVG Floor Plan — matches actual Big C Vientiane layout
+          ViewBox: 1100 × 720
+          Scale reference: 1 unit ≈ real proportional space
+          
+          Zones (left→right, top→bottom):
+          - ENTRANCE / REGISTER / PAVILION — top
+          - Zone A (A01-A11) — far left (blue, Franchise Premium)
+          - Zone B (B01-B26) — center-left (magenta/pink, Standard)
+          - Zone P (P01-P08) — center (gold, Premium)
+          - Zone N (N1-N6 big 3×8m, N7-N11 small 3×3m) — right wall
+          - Zone C (C01-C19) — bottom center-left (orange, Food Dry)
+          - Zone D (D01-D20) — bottom right (yellow/gold, Food Center)
+          - Main Stage, VITH HUB CUBE, Lao Pavilion, Network Area
+        -->
+        <svg viewBox="0 0 1100 720" xmlns="http://www.w3.org/2000/svg" width="100%" style="display:block;margin:0 auto;background:#e8edf2;border-radius:8px">
+
+          <!-- ══ OUTER BOUNDARY ══ -->
+          <rect x="0" y="0" width="1100" height="720" fill="#dde3ea" rx="8"/>
+          <!-- Main hall floor -->
+          <rect x="10" y="10" width="1080" height="700" fill="#f0f4f8" rx="6"/>
+
+          <!-- ══ ENTRANCE AREA (TOP) ══ -->
+          <!-- Register strip -->
+          <rect x="10" y="10" width="760" height="36" fill="#6b7280" rx="4"/>
+          <text x="100" y="33" font-family="Inter,sans-serif" font-size="11" font-weight="700" fill="#fff" text-anchor="start">Register</text>
+          <!-- Main Entrance arrow -->
+          <polygon points="10,46 50,80 10,115" fill="#9ca3af" opacity=".7"/>
+          <text x="4" y="132" font-family="Inter,sans-serif" font-size="8" font-weight="600" fill="#374151" text-anchor="start">Main</text>
+          <text x="4" y="143" font-family="Inter,sans-serif" font-size="8" font-weight="600" fill="#374151" text-anchor="start">Entrance</text>
+
+          <!-- Go Hall Exhibition (grey box top) -->
+          <rect x="55" y="46" width="320" height="72" fill="#9ca3af" rx="4"/>
+          <text x="215" y="87" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">Go Hall Exhibition</text>
+
+          <!-- Design Entrance (yellow) -->
+          <rect x="385" y="46" width="160" height="72" fill="#eab308" rx="4"/>
+          <text x="465" y="87" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#1a1a1a" text-anchor="middle">Design Entrance</text>
+
+          <!-- Social Stop / Photo Spot -->
+          <rect x="555" y="46" width="88" height="72" fill="#67e8f9" rx="4" opacity=".7"/>
+          <text x="599" y="78" font-family="Inter,sans-serif" font-size="8" font-weight="600" fill="#0c4a6e" text-anchor="middle">Social Stop</text>
+          <text x="599" y="90" font-family="Inter,sans-serif" font-size="8" font-weight="600" fill="#0c4a6e" text-anchor="middle">Photo Spot</text>
+
+          <!-- Pavilion (big grey) -->
+          <rect x="248" y="126" width="316" height="82" fill="#d1d5db" rx="4"/>
+          <text x="406" y="173" font-family="Inter,sans-serif" font-size="14" font-weight="700" fill="#374151" text-anchor="middle">Pavilion</text>
+
+          <!-- Sponsor A (green) -->
+          <rect x="55" y="126" width="76" height="82" fill="#22c55e" rx="4"/>
+          <text x="93" y="162" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#fff" text-anchor="middle">Sponsor</text>
+          <text x="93" y="175" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#fff" text-anchor="middle">A</text>
+
+          <!-- Sponsor B (green) -->
+          <rect x="140" y="126" width="76" height="82" fill="#22c55e" rx="4"/>
+          <text x="178" y="162" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#fff" text-anchor="middle">Sponsor</text>
+          <text x="178" y="175" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#fff" text-anchor="middle">B</text>
+
+          <!-- Retail Entry Desk -->
+          <rect x="226" y="126" width="16" height="82" fill="#16a34a" rx="2"/>
+
+          <!-- Main Walk Away label (top horizontal) -->
+          <text x="406" y="222" font-family="Inter,sans-serif" font-size="9" font-weight="600" fill="#6b7280" text-anchor="middle">— Main Walk Away 5m —</text>
+
+          <!-- ══ ZONE A — FRANCHISE PREMIUM (left column) ══ -->
+          <!-- A01-A06 left sub-column, A07-A11 right sub-column -->
+          <rect x="55" y="218" width="168" height="24" fill="#1d4ed8" rx="4"/>
+          <text x="139" y="234" font-family="Inter,sans-serif" font-size="9" font-weight="700" fill="#fff" text-anchor="middle">ZONE A — FRANCHISE PREMIUM</text>
+
+          <!-- Franchise Premium label box -->
+          <rect x="94" y="248" width="80" height="200" fill="#bfdbfe" rx="4" opacity=".3"/>
+          <text x="134" y="348" font-family="Inter,sans-serif" font-size="9" fill="#1e40af" text-anchor="middle" font-weight="600">Franchise</text>
+          <text x="134" y="360" font-family="Inter,sans-serif" font-size="9" fill="#1e40af" text-anchor="middle" font-weight="600">Premium</text>
+
+          <!-- A left col: A01-A06 -->
+          <!-- A01 -->
+          <rect id="svgA01" x="57" y="248" width="34" height="28" rx="3" class="booth-avail" onclick="clickBooth('A01','avail','Zone A — Franchise','฿25,000')"/>
+          <text x="74" y="258" class="booth-label">A01</text>
+          <text x="74" y="268" class="booth-label" style="fill:#15803d;font-size:6px">AVAIL</text>
+
+          <rect id="svgA02" x="57" y="282" width="34" height="28" rx="3" class="booth-sold"/>
+          <text x="74" y="292" class="booth-label">A02</text>
+          <text x="74" y="302" class="booth-label" style="fill:#b91c1c;font-size:6px">SOLD</text>
+
+          <rect id="svgA03" x="57" y="316" width="34" height="28" rx="3" class="booth-avail" onclick="clickBooth('A03','avail','Zone A — Franchise','฿25,000')"/>
+          <text x="74" y="326" class="booth-label">A03</text>
+          <text x="74" y="336" class="booth-label" style="fill:#15803d;font-size:6px">AVAIL</text>
+
+          <rect id="svgA04" x="57" y="350" width="34" height="28" rx="3" class="booth-reserved"/>
+          <text x="74" y="360" class="booth-label">A04</text>
+          <text x="74" y="370" class="booth-label" style="fill:#92400e;font-size:6px">RESV</text>
+
+          <rect id="svgA05" x="57" y="384" width="34" height="28" rx="3" class="booth-avail" onclick="clickBooth('A05','avail','Zone A — Franchise','฿25,000')"/>
+          <text x="74" y="394" class="booth-label">A05</text>
+          <text x="74" y="404" class="booth-label" style="fill:#15803d;font-size:6px">AVAIL</text>
+
+          <rect id="svgA06" x="57" y="418" width="34" height="28" rx="3" class="booth-sold"/>
+          <text x="74" y="428" class="booth-label">A06</text>
+          <text x="74" y="438" class="booth-label" style="fill:#b91c1c;font-size:6px">SOLD</text>
+
+          <!-- A right col: A07-A11 -->
+          <rect id="svgA07" x="178" y="248" width="34" height="28" rx="3" class="booth-avail" onclick="clickBooth('A07','avail','Zone A — Franchise','฿25,000')"/>
+          <text x="195" y="258" class="booth-label">A07</text>
+          <text x="195" y="268" class="booth-label" style="fill:#15803d;font-size:6px">AVAIL</text>
+
+          <rect id="svgA08" x="178" y="282" width="34" height="28" rx="3" class="booth-reserved"/>
+          <text x="195" y="292" class="booth-label">A08</text>
+          <text x="195" y="302" class="booth-label" style="fill:#92400e;font-size:6px">RESV</text>
+
+          <rect id="svgA09" x="178" y="316" width="34" height="28" rx="3" class="booth-avail" onclick="clickBooth('A09','avail','Zone A — Franchise','฿25,000')"/>
+          <text x="195" y="326" class="booth-label">A09</text>
+          <text x="195" y="336" class="booth-label" style="fill:#15803d;font-size:6px">AVAIL</text>
+
+          <rect id="svgA10" x="178" y="350" width="34" height="28" rx="3" class="booth-avail" onclick="clickBooth('A10','avail','Zone A — Franchise','฿25,000')"/>
+          <text x="195" y="360" class="booth-label">A10</text>
+          <text x="195" y="370" class="booth-label" style="fill:#15803d;font-size:6px">AVAIL</text>
+
+          <rect id="svgA11" x="178" y="384" width="34" height="28" rx="3" class="booth-sold"/>
+          <text x="195" y="394" class="booth-label">A11</text>
+          <text x="195" y="404" class="booth-label" style="fill:#b91c1c;font-size:6px">SOLD</text>
+
+          <!-- Main Stage (bottom left of A zone) -->
+          <rect x="55" y="456" width="76" height="52" fill="#b91c1c" rx="4"/>
+          <text x="93" y="479" font-family="Inter,sans-serif" font-size="9" font-weight="700" fill="#fff" text-anchor="middle">Main</text>
+          <text x="93" y="491" font-family="Inter,sans-serif" font-size="9" font-weight="700" fill="#fff" text-anchor="middle">Stage</text>
+
+          <!-- Network Area -->
+          <rect x="55" y="516" width="168" height="72" fill="#e5e7eb" rx="4"/>
+          <text x="139" y="550" font-family="Inter,sans-serif" font-size="9" font-weight="600" fill="#374151" text-anchor="middle">Network Area</text>
+          <!-- chairs dots -->
+          <circle cx="90" cy="562" r="5" fill="#9ca3af" opacity=".6"/>
+          <circle cx="105" cy="562" r="5" fill="#9ca3af" opacity=".6"/>
+          <circle cx="120" cy="562" r="5" fill="#9ca3af" opacity=".6"/>
+          <circle cx="135" cy="562" r="5" fill="#9ca3af" opacity=".6"/>
+          <circle cx="150" cy="562" r="5" fill="#9ca3af" opacity=".6"/>
+          <circle cx="165" cy="562" r="5" fill="#9ca3af" opacity=".6"/>
+
+          <!-- Meeting Coffee Corner -->
+          <rect x="140" y="456" width="80" height="52" fill="#fef9c3" rx="4"/>
+          <text x="180" y="478" font-family="Inter,sans-serif" font-size="8" fill="#92400e" text-anchor="middle">Meeting /</text>
+          <text x="180" y="489" font-family="Inter,sans-serif" font-size="8" fill="#92400e" text-anchor="middle">Coffee</text>
+
+          <!-- Logistic bottom left -->
+          <rect x="55" y="690" width="76" height="22" fill="#c084fc" rx="3"/>
+          <text x="93" y="705" font-family="Inter,sans-serif" font-size="8" font-weight="700" fill="#fff" text-anchor="middle">LOGISTIC</text>
+
+          <!-- ══ MAIN EXHIBITION HALL (pink/magenta area) ══ -->
+          <rect x="230" y="238" width="500" height="380" fill="#fce7f3" rx="6" opacity=".5"/>
+
+          <!-- MAIN WALK AWAY vertical (center) -->
+          <rect x="478" y="238" width="14" height="380" fill="#e9d5ff" rx="2" opacity=".6"/>
+          <text x="485" y="430" font-family="Inter,sans-serif" font-size="7" fill="#7c3aed" text-anchor="middle" transform="rotate(-90,485,430)" font-weight="600">Main Walk Away 5m</text>
+
+          <!-- ══ ZONE B — STANDARD BOOTH (center, 26 booths) ══ -->
+          <!-- Row labels -->
+          <text x="340" y="248" font-family="Inter,sans-serif" font-size="8" font-weight="700" fill="#7c3aed" text-anchor="middle">Standard Booth — Zone B (3×3m)</text>
+
+          <!-- B Row 1: B01-B06 (two sub-rows) -->
+          <!-- B03 B02 B01 -->
+          <rect id="svgB03" x="234" y="256" width="36" height="28" rx="3" class="booth-avail" onclick="clickBooth('B03','avail','Zone B — Standard','฿15,000')"/>
+          <text x="252" y="266" class="booth-label">B03</text><text x="252" y="276" class="booth-label" style="fill:#15803d;font-size:6px">AVAIL</text>
+
+          <rect id="svgB02" x="274" y="256" width="36" height="28" rx="3" class="booth-avail" onclick="clickBooth('B02','avail','Zone B — Standard','฿15,000')"/>
+          <text x="292" y="266" class="booth-label">B02</text><text x="292" y="276" class="booth-label" style="fill:#15803d;font-size:6px">AVAIL</text>
+
+          <rect id="svgB01" x="314" y="256" width="36" height="28" rx="3" class="booth-sold"/>
+          <text x="332" y="266" class="booth-label">B01</text><text x="332" y="276" class="booth-label" style="fill:#b91c1c;font-size:6px">SOLD</text>
+
+          <!-- B04 B05 B06 -->
+          <rect id="svgB04" x="234" y="290" width="36" height="28" rx="3" class="booth-reserved"/>
+          <text x="252" y="300" class="booth-label">B04</text><text x="252" y="310" class="booth-label" style="fill:#92400e;font-size:6px">RESV</text>
+
+          <rect id="svgB05" x="274" y="290" width="36" height="28" rx="3" class="booth-avail" onclick="clickBooth('B05','avail','Zone B — Standard','฿15,000')"/>
+          <text x="292" y="300" class="booth-label">B05</text><text x="292" y="310" class="booth-label" style="fill:#15803d;font-size:6px">AVAIL</text>
+
+          <rect id="svgB06" x="314" y="290" width="36" height="28" rx="3" class="booth-sold"/>
+          <text x="332" y="300" class="booth-label">B06</text><text x="332" y="310" class="booth-label" style="fill:#b91c1c;font-size:6px">SOLD</text>
+
+          <!-- B Row 2: B07-B12 -->
+          <text x="340" y="330" font-family="Inter,sans-serif" font-size="7" fill="#6b7280" text-anchor="middle">Standard Booth</text>
+
+          <rect id="svgB09" x="234" y="338" width="36" height="28" rx="3" class="booth-avail" onclick="clickBooth('B09','avail','Zone B — Standard','฿15,000')"/>
+          <text x="252" y="348" class="booth-label">B09</text><text x="252" y="358" class="booth-label" style="fill:#15803d;font-size:6px">AVAIL</text>
+
+          <rect id="svgB08" x="274" y="338" width="36" height="28" rx="3" class="booth-reserved"/>
+          <text x="292" y="348" class="booth-label">B08</text><text x="292" y="358" class="booth-label" style="fill:#92400e;font-size:6px">RESV</text>
+
+          <rect id="svgB07" x="314" y="338" width="36" height="28" rx="3" class="booth-avail" onclick="clickBooth('B07','avail','Zone B — Standard','฿15,000')"/>
+          <text x="332" y="348" class="booth-label">B07</text><text x="332" y="358" class="booth-label" style="fill:#15803d;font-size:6px">AVAIL</text>
+
+          <rect id="svgB10" x="234" y="372" width="36" height="28" rx="3" class="booth-sold"/>
+          <text x="252" y="382" class="booth-label">B10</text><text x="252" y="392" class="booth-label" style="fill:#b91c1c;font-size:6px">SOLD</text>
+
+          <rect id="svgB11" x="274" y="372" width="36" height="28" rx="3" class="booth-avail" onclick="clickBooth('B11','avail','Zone B — Standard','฿15,000')"/>
+          <text x="292" y="382" class="booth-label">B11</text><text x="292" y="392" class="booth-label" style="fill:#15803d;font-size:6px">AVAIL</text>
+
+          <rect id="svgB12" x="314" y="372" width="36" height="28" rx="3" class="booth-reserved"/>
+          <text x="332" y="382" class="booth-label">B12</text><text x="332" y="392" class="booth-label" style="fill:#92400e;font-size:6px">RESV</text>
+
+          <!-- B Row 3: B13-B18 -->
+          <text x="340" y="410" font-family="Inter,sans-serif" font-size="7" fill="#6b7280" text-anchor="middle">Standard Booth</text>
+
+          <rect id="svgB15" x="234" y="418" width="36" height="28" rx="3" class="booth-avail" onclick="clickBooth('B15','avail','Zone B — Standard','฿15,000')"/>
+          <text x="252" y="428" class="booth-label">B15</text><text x="252" y="438" class="booth-label" style="fill:#15803d;font-size:6px">AVAIL</text>
+
+          <rect id="svgB14" x="274" y="418" width="36" height="28" rx="3" class="booth-sold"/>
+          <text x="292" y="428" class="booth-label">B14</text><text x="292" y="438" class="booth-label" style="fill:#b91c1c;font-size:6px">SOLD</text>
+
+          <rect id="svgB13" x="314" y="418" width="36" height="28" rx="3" class="booth-avail" onclick="clickBooth('B13','avail','Zone B — Standard','฿15,000')"/>
+          <text x="332" y="428" class="booth-label">B13</text><text x="332" y="438" class="booth-label" style="fill:#15803d;font-size:6px">AVAIL</text>
+
+          <rect id="svgB16" x="234" y="452" width="36" height="28" rx="3" class="booth-reserved"/>
+          <text x="252" y="462" class="booth-label">B16</text><text x="252" y="472" class="booth-label" style="fill:#92400e;font-size:6px">RESV</text>
+
+          <rect id="svgB17" x="274" y="452" width="36" height="28" rx="3" class="booth-avail" onclick="clickBooth('B17','avail','Zone B — Standard','฿15,000')"/>
+          <text x="292" y="462" class="booth-label">B17</text><text x="292" y="472" class="booth-label" style="fill:#15803d;font-size:6px">AVAIL</text>
+
+          <rect id="svgB18" x="314" y="452" width="36" height="28" rx="3" class="booth-sold"/>
+          <text x="332" y="462" class="booth-label">B18</text><text x="332" y="472" class="booth-label" style="fill:#b91c1c;font-size:6px">SOLD</text>
+
+          <!-- ══ ZONE B right group: B19-B26 ══ -->
+          <text x="440" y="330" font-family="Inter,sans-serif" font-size="7" fill="#6b7280" text-anchor="middle">Standard Booth</text>
+
+          <rect id="svgB19" x="360" y="338" width="36" height="28" rx="3" class="booth-avail" onclick="clickBooth('B19','avail','Zone B — Standard','฿15,000')"/>
+          <text x="378" y="348" class="booth-label">B19</text><text x="378" y="358" class="booth-label" style="fill:#15803d;font-size:6px">AVAIL</text>
+
+          <rect id="svgB20" x="400" y="338" width="36" height="28" rx="3" class="booth-sold"/>
+          <text x="418" y="348" class="booth-label">B20</text><text x="418" y="358" class="booth-label" style="fill:#b91c1c;font-size:6px">SOLD</text>
+
+          <rect id="svgB21" x="440" y="338" width="36" height="28" rx="3" class="booth-avail" onclick="clickBooth('B21','avail','Zone B — Standard','฿15,000')"/>
+          <text x="458" y="348" class="booth-label">B21</text><text x="458" y="358" class="booth-label" style="fill:#15803d;font-size:6px">AVAIL</text>
+
+          <rect id="svgB22" x="480" y="338" width="36" height="28" rx="3" class="booth-reserved"/>
+          <text x="498" y="348" class="booth-label">B22</text><text x="498" y="358" class="booth-label" style="fill:#92400e;font-size:6px">RESV</text>
+
+          <rect id="svgB23" x="360" y="372" width="36" height="28" rx="3" class="booth-sold"/>
+          <text x="378" y="382" class="booth-label">B23</text><text x="378" y="392" class="booth-label" style="fill:#b91c1c;font-size:6px">SOLD</text>
+
+          <rect id="svgB24" x="400" y="372" width="36" height="28" rx="3" class="booth-avail" onclick="clickBooth('B24','avail','Zone B — Standard','฿15,000')"/>
+          <text x="418" y="382" class="booth-label">B24</text><text x="418" y="392" class="booth-label" style="fill:#15803d;font-size:6px">AVAIL</text>
+
+          <rect id="svgB25" x="440" y="372" width="36" height="28" rx="3" class="booth-avail" onclick="clickBooth('B25','avail','Zone B — Standard','฿15,000')"/>
+          <text x="458" y="382" class="booth-label">B25</text><text x="458" y="392" class="booth-label" style="fill:#15803d;font-size:6px">AVAIL</text>
+
+          <rect id="svgB26" x="480" y="372" width="36" height="28" rx="3" class="booth-reserved"/>
+          <text x="498" y="382" class="booth-label">B26</text><text x="498" y="392" class="booth-label" style="fill:#92400e;font-size:6px">RESV</text>
+
+          <text x="440" y="410" font-family="Inter,sans-serif" font-size="7" fill="#6b7280" text-anchor="middle">Standard Booth</text>
+
+          <!-- ══ ZONE P — PREMIUM BOOTH (center-gold area) ══ -->
+          <rect x="356" y="240" width="128" height="18" fill="#9B7A10" rx="3"/>
+          <text x="420" y="252" font-family="Inter,sans-serif" font-size="8" font-weight="700" fill="#fff" text-anchor="middle">⭐ PREMIUM ZONE P (3×6m)</text>
+
+          <!-- P01-P04 top row -->
+          <rect id="svgP02" x="360" y="262" width="52" height="34" rx="3" class="booth-sold"/>
+          <text x="386" y="276" class="booth-label" style="font-size:9px">P02</text>
+          <text x="386" y="287" class="booth-label" style="fill:#b91c1c;font-size:7px">SOLD</text>
+
+          <rect id="svgP01" x="420" y="262" width="52" height="34" rx="3" class="booth-avail" onclick="clickBooth('P01','avail','Zone P — Premium','฿50,000')"/>
+          <text x="446" y="276" class="booth-label" style="font-size:9px">P01</text>
+          <text x="446" y="287" class="booth-label" style="fill:#15803d;font-size:7px">AVAIL</text>
+
+          <!-- P04 wide (2-unit width) -->
+          <rect id="svgP04" x="360" y="302" width="52" height="34" rx="3" class="booth-avail" onclick="clickBooth('P04','avail','Zone P — Premium','฿50,000')"/>
+          <text x="386" y="316" class="booth-label" style="font-size:9px;font-weight:800">P04</text>
+          <text x="386" y="327" class="booth-label" style="fill:#15803d;font-size:7px">AVAIL</text>
+
+          <rect id="svgP03" x="420" y="302" width="52" height="34" rx="3" class="booth-reserved"/>
+          <text x="446" y="316" class="booth-label" style="font-size:9px">P03</text>
+          <text x="446" y="327" class="booth-label" style="fill:#92400e;font-size:7px">RESV</text>
+
+          <!-- P06 P05 -->
+          <rect id="svgP06" x="360" y="418" width="52" height="34" rx="3" class="booth-avail" onclick="clickBooth('P06','avail','Zone P — Premium','฿50,000')"/>
+          <text x="386" y="432" class="booth-label" style="font-size:9px">P06</text>
+          <text x="386" y="443" class="booth-label" style="fill:#15803d;font-size:7px">AVAIL</text>
+
+          <rect id="svgP05" x="420" y="418" width="52" height="34" rx="3" class="booth-sold"/>
+          <text x="446" y="432" class="booth-label" style="font-size:9px">P05</text>
+          <text x="446" y="443" class="booth-label" style="fill:#b91c1c;font-size:7px">SOLD</text>
+
+          <!-- P08 P07 (shown as P08 P08 in original - keeping as P07 P08) -->
+          <rect id="svgP08" x="360" y="458" width="52" height="34" rx="3" class="booth-avail" onclick="clickBooth('P08','avail','Zone P — Premium','฿50,000')"/>
+          <text x="386" y="472" class="booth-label" style="font-size:9px">P08</text>
+          <text x="386" y="483" class="booth-label" style="fill:#15803d;font-size:7px">AVAIL</text>
+
+          <rect id="svgP07" x="420" y="458" width="52" height="34" rx="3" class="booth-reserved"/>
+          <text x="446" y="472" class="booth-label" style="font-size:9px">P07</text>
+          <text x="446" y="483" class="booth-label" style="fill:#92400e;font-size:7px">RESV</text>
+
+          <!-- Premium Zone label -->
+          <text x="420" y="408" font-family="Inter,sans-serif" font-size="8" font-weight="700" fill="#9B7A10" text-anchor="middle">Premium Zone</text>
+
+          <!-- VITH HUB CUBE -->
+          <rect x="530" y="392" width="48" height="48" fill="#fff" stroke="#9B7A10" stroke-width="2" rx="4"/>
+          <text x="554" y="413" font-family="Inter,sans-serif" font-size="7" font-weight="700" fill="#9B7A10" text-anchor="middle">VITH</text>
+          <text x="554" y="424" font-family="Inter,sans-serif" font-size="7" font-weight="700" fill="#9B7A10" text-anchor="middle">HUB</text>
+          <text x="554" y="435" font-family="Inter,sans-serif" font-size="6" fill="#6b7280" text-anchor="middle">CUBE</text>
+
+          <!-- Rest points -->
+          <rect x="596" y="400" width="22" height="8" fill="#f87171" rx="2"/>
+          <rect x="624" y="400" width="22" height="8" fill="#f87171" rx="2"/>
+          <rect x="652" y="400" width="22" height="8" fill="#f87171" rx="2"/>
+          <text x="625" y="420" font-family="Inter,sans-serif" font-size="7" fill="#6b7280" text-anchor="middle">Rest point · Rest point · Rest point</text>
+
+          <!-- ══ ZONE N — NATION BOOTH (right wall) ══ -->
+          <!-- Nation Booth label at top right -->
+          <text x="780" y="210" font-family="Inter,sans-serif" font-size="9" font-weight="700" fill="#0891b2" text-anchor="middle">NATION BOOTH</text>
+
+          <!-- N1-N6: 3×8m (tall, right wall top) -->
+          <rect x="730" y="218" width="130" height="16" fill="#0891b2" rx="3"/>
+          <text x="795" y="230" font-family="Inter,sans-serif" font-size="8" font-weight="700" fill="#fff" text-anchor="middle">N1–N6 · 3×8m</text>
+
+          <!-- N1 -->
+          <rect id="svgN1" x="730" y="238" width="20" height="56" rx="3" class="booth-sold"/>
+          <text x="740" y="262" class="booth-label" transform="rotate(-90,740,262)" style="font-size:7px">N1</text>
+
+          <!-- N2 -->
+          <rect id="svgN2" x="754" y="238" width="20" height="56" rx="3" class="booth-avail" onclick="clickBooth('N2','avail','Zone N — Nation (3×8m)','฿15,000')"/>
+          <text x="764" y="262" class="booth-label" transform="rotate(-90,764,262)" style="font-size:7px;fill:#15803d">N2</text>
+
+          <!-- N3 -->
+          <rect id="svgN3" x="778" y="238" width="20" height="56" rx="3" class="booth-reserved"/>
+          <text x="788" y="262" class="booth-label" transform="rotate(-90,788,262)" style="font-size:7px">N3</text>
+
+          <!-- Cultural Show box left of N -->
+          <rect x="680" y="344" width="46" height="44" fill="#fef3c7" rx="3" stroke="#d97706" stroke-width="1"/>
+          <text x="703" y="362" font-family="Inter,sans-serif" font-size="7" fill="#92400e" text-anchor="middle">Cultural</text>
+          <text x="703" y="373" font-family="Inter,sans-serif" font-size="7" fill="#92400e" text-anchor="middle">Show</text>
+
+          <!-- N4, N5, N6 — Nation Booth row (3 boxes) -->
+          <rect x="730" y="344" width="42" height="44" fill="#e0f2fe" rx="3" stroke="#0891b2" stroke-width="1"/>
+          <text x="751" y="363" font-family="Inter,sans-serif" font-size="8" fill="#0c4a6e" text-anchor="middle">Nation</text>
+          <text x="751" y="374" font-family="Inter,sans-serif" font-size="8" fill="#0c4a6e" text-anchor="middle">Booth</text>
+
+          <rect x="778" y="344" width="42" height="44" fill="#e0f2fe" rx="3" stroke="#0891b2" stroke-width="1"/>
+          <text x="799" y="363" font-family="Inter,sans-serif" font-size="8" fill="#0c4a6e" text-anchor="middle">Nation</text>
+          <text x="799" y="374" font-family="Inter,sans-serif" font-size="8" fill="#0c4a6e" text-anchor="middle">Booth</text>
+
+          <rect x="826" y="344" width="42" height="44" fill="#e0f2fe" rx="3" stroke="#0891b2" stroke-width="1"/>
+          <text x="847" y="363" font-family="Inter,sans-serif" font-size="8" fill="#0c4a6e" text-anchor="middle">Nation</text>
+          <text x="847" y="374" font-family="Inter,sans-serif" font-size="8" fill="#0c4a6e" text-anchor="middle">Booth</text>
+
+          <!-- Main Walk Away horizontal label -->
+          <text x="860" y="430" font-family="Inter,sans-serif" font-size="8" font-weight="600" fill="#6b7280" text-anchor="middle">— Main Walk Away 5m —</text>
+
+          <!-- Lao Pavilion + N7-N11 area -->
+          <rect x="680" y="444" width="86" height="56" fill="#fef3c7" rx="4" stroke="#d97706" stroke-width="1.5"/>
+          <text x="723" y="468" font-family="Inter,sans-serif" font-size="9" font-weight="700" fill="#92400e" text-anchor="middle">Lao</text>
+          <text x="723" y="480" font-family="Inter,sans-serif" font-size="9" font-weight="700" fill="#92400e" text-anchor="middle">Pavilion</text>
+
+          <!-- N7-N11: 3×3m small booths -->
+          <rect x="730" y="238" width="240" height="16" fill="#0891b2" rx="3" y="456" style="display:none"/>
+          <!-- N7 -->
+          <rect id="svgN7" x="772" y="456" width="28" height="28" rx="3" class="booth-avail" onclick="clickBooth('N7','avail','Zone N — Nation (3×3m)','฿15,000')"/>
+          <text x="786" y="467" class="booth-label">N7</text>
+          <text x="786" y="477" class="booth-label" style="fill:#15803d;font-size:6px">AVAIL</text>
+
+          <rect id="svgN8" x="804" y="456" width="28" height="28" rx="3" class="booth-sold"/>
+          <text x="818" y="467" class="booth-label">N8</text>
+          <text x="818" y="477" class="booth-label" style="fill:#b91c1c;font-size:6px">SOLD</text>
+
+          <rect id="svgN9" x="836" y="456" width="28" height="28" rx="3" class="booth-avail" onclick="clickBooth('N9','avail','Zone N — Nation (3×3m)','฿15,000')"/>
+          <text x="850" y="467" class="booth-label">N9</text>
+          <text x="850" y="477" class="booth-label" style="fill:#15803d;font-size:6px">AVAIL</text>
+
+          <rect id="svgN10" x="868" y="456" width="28" height="28" rx="3" class="booth-reserved"/>
+          <text x="882" y="467" class="booth-label">N10</text>
+          <text x="882" y="477" class="booth-label" style="fill:#92400e;font-size:6px">RESV</text>
+
+          <rect id="svgN11" x="900" y="456" width="28" height="28" rx="3" class="booth-avail" onclick="clickBooth('N11','avail','Zone N — Nation (3×3m)','฿15,000')"/>
+          <text x="914" y="467" class="booth-label">N11</text>
+          <text x="914" y="477" class="booth-label" style="fill:#15803d;font-size:6px">AVAIL</text>
+
+          <!-- N4-N6 (3×8m) interactive -->
+          <rect id="svgN4" x="730" y="304" width="20" height="56" rx="3" class="booth-avail" onclick="clickBooth('N4','avail','Zone N — Nation (3×8m)','฿15,000')"/>
+          <text x="740" y="328" class="booth-label" transform="rotate(-90,740,328)" style="font-size:7px;fill:#15803d">N4</text>
+
+          <rect id="svgN5" x="754" y="304" width="20" height="56" rx="3" class="booth-sold"/>
+          <text x="764" y="328" class="booth-label" transform="rotate(-90,764,328)" style="font-size:7px">N5</text>
+
+          <rect id="svgN6" x="778" y="304" width="20" height="56" rx="3" class="booth-avail" onclick="clickBooth('N6','avail','Zone N — Nation (3×8m)','฿15,000')"/>
+          <text x="788" y="328" class="booth-label" transform="rotate(-90,788,328)" style="font-size:7px;fill:#15803d">N6</text>
+
+          <!-- ══ FOOD CENTER D — right zone (D01-D20, 2×3m) ══ -->
+          <rect x="680" y="500" width="396" height="18" fill="#d97706" rx="3"/>
+          <text x="878" y="513" font-family="Inter,sans-serif" font-size="9" font-weight="700" fill="#fff" text-anchor="middle">ZONE D — FOOD CENTER THAI &amp; LAO (2×3m · 20 booths)</text>
+
+          <!-- D Row 1: D01-D06 -->
+          <rect id="svgD01" x="680" y="522" width="32" height="26" rx="3" class="booth-avail" onclick="clickBooth('D01','avail','Zone D — Food Center','฿12,000')"/>
+          <text x="696" y="532" class="booth-label">D01</text><text x="696" y="542" class="booth-label" style="fill:#15803d;font-size:6px">AVAIL</text>
+
+          <rect id="svgD02" x="716" y="522" width="32" height="26" rx="3" class="booth-sold"/>
+          <text x="732" y="532" class="booth-label">D02</text><text x="732" y="542" class="booth-label" style="fill:#b91c1c;font-size:6px">SOLD</text>
+
+          <rect id="svgD03" x="752" y="522" width="32" height="26" rx="3" class="booth-avail" onclick="clickBooth('D03','avail','Zone D — Food Center','฿12,000')"/>
+          <text x="768" y="532" class="booth-label">D03</text><text x="768" y="542" class="booth-label" style="fill:#15803d;font-size:6px">AVAIL</text>
+
+          <rect id="svgD04" x="788" y="522" width="32" height="26" rx="3" class="booth-reserved"/>
+          <text x="804" y="532" class="booth-label">D04</text><text x="804" y="542" class="booth-label" style="fill:#92400e;font-size:6px">RESV</text>
+
+          <rect id="svgD05" x="824" y="522" width="32" height="26" rx="3" class="booth-avail" onclick="clickBooth('D05','avail','Zone D — Food Center','฿12,000')"/>
+          <text x="840" y="532" class="booth-label">D05</text><text x="840" y="542" class="booth-label" style="fill:#15803d;font-size:6px">AVAIL</text>
+
+          <rect id="svgD06" x="860" y="522" width="32" height="26" rx="3" class="booth-avail" onclick="clickBooth('D06','avail','Zone D — Food Center','฿12,000')"/>
+          <text x="876" y="532" class="booth-label">D06</text><text x="876" y="542" class="booth-label" style="fill:#15803d;font-size:6px">AVAIL</text>
+
+          <!-- Food Center Thai label -->
+          <text x="810" y="558" font-family="Inter,sans-serif" font-size="8" font-weight="700" fill="#92400e" text-anchor="middle">FOOD CENTER THAI</text>
+
+          <!-- D Row 2: D07-D16 (two rows) -->
+          <rect id="svgD07" x="896" y="522" width="32" height="26" rx="3" class="booth-sold"/>
+          <text x="912" y="532" class="booth-label">D07</text><text x="912" y="542" class="booth-label" style="fill:#b91c1c;font-size:6px">SOLD</text>
+
+          <rect id="svgD08" x="932" y="522" width="32" height="26" rx="3" class="booth-avail" onclick="clickBooth('D08','avail','Zone D — Food Center','฿12,000')"/>
+          <text x="948" y="532" class="booth-label">D08</text><text x="948" y="542" class="booth-label" style="fill:#15803d;font-size:6px">AVAIL</text>
+
+          <rect id="svgD09" x="968" y="522" width="32" height="26" rx="3" class="booth-reserved"/>
+          <text x="984" y="532" class="booth-label">D09</text><text x="984" y="542" class="booth-label" style="fill:#92400e;font-size:6px">RESV</text>
+
+          <rect id="svgD10" x="1004" y="522" width="32" height="26" rx="3" class="booth-avail" onclick="clickBooth('D10','avail','Zone D — Food Center','฿12,000')"/>
+          <text x="1020" y="532" class="booth-label">D10</text><text x="1020" y="542" class="booth-label" style="fill:#15803d;font-size:6px">AVAIL</text>
+
+          <rect id="svgD11" x="1040" y="522" width="32" height="26" rx="3" class="booth-avail" onclick="clickBooth('D11','avail','Zone D — Food Center','฿12,000')"/>
+          <text x="1056" y="532" class="booth-label">D11</text><text x="1056" y="542" class="booth-label" style="fill:#15803d;font-size:6px">AVAIL</text>
+
+          <!-- Food Center LAO label + D12-D16 -->
+          <text x="880" y="572" font-family="Inter,sans-serif" font-size="8" font-weight="700" fill="#15803d" text-anchor="middle">FOOD CENTER LAO</text>
+
+          <rect id="svgD12" x="680" y="578" width="32" height="26" rx="3" class="booth-sold"/>
+          <text x="696" y="588" class="booth-label">D12</text><text x="696" y="598" class="booth-label" style="fill:#b91c1c;font-size:6px">SOLD</text>
+
+          <rect id="svgD13" x="716" y="578" width="32" height="26" rx="3" class="booth-avail" onclick="clickBooth('D13','avail','Zone D — Food Center','฿12,000')"/>
+          <text x="732" y="588" class="booth-label">D13</text><text x="732" y="598" class="booth-label" style="fill:#15803d;font-size:6px">AVAIL</text>
+
+          <rect id="svgD14" x="752" y="578" width="32" height="26" rx="3" class="booth-avail" onclick="clickBooth('D14','avail','Zone D — Food Center','฿12,000')"/>
+          <text x="768" y="588" class="booth-label">D14</text><text x="768" y="598" class="booth-label" style="fill:#15803d;font-size:6px">AVAIL</text>
+
+          <rect id="svgD15" x="788" y="578" width="32" height="26" rx="3" class="booth-reserved"/>
+          <text x="804" y="588" class="booth-label">D15</text><text x="804" y="598" class="booth-label" style="fill:#92400e;font-size:6px">RESV</text>
+
+          <rect id="svgD16" x="824" y="578" width="32" height="26" rx="3" class="booth-avail" onclick="clickBooth('D16','avail','Zone D — Food Center','฿12,000')"/>
+          <text x="840" y="588" class="booth-label">D16</text><text x="840" y="598" class="booth-label" style="fill:#15803d;font-size:6px">AVAIL</text>
+
+          <!-- D Row 3: D17-D22 (bottom row) -->
+          <rect id="svgD17" x="680" y="634" width="32" height="26" rx="3" class="booth-avail" onclick="clickBooth('D17','avail','Zone D — Food Center','฿12,000')"/>
+          <text x="696" y="644" class="booth-label">D17</text><text x="696" y="654" class="booth-label" style="fill:#15803d;font-size:6px">AVAIL</text>
+
+          <rect id="svgD18" x="716" y="634" width="32" height="26" rx="3" class="booth-avail" onclick="clickBooth('D18','avail','Zone D — Food Center','฿12,000')"/>
+          <text x="732" y="644" class="booth-label">D18</text><text x="732" y="654" class="booth-label" style="fill:#15803d;font-size:6px">AVAIL</text>
+
+          <rect id="svgD19" x="752" y="634" width="32" height="26" rx="3" class="booth-sold"/>
+          <text x="768" y="644" class="booth-label">D19</text><text x="768" y="654" class="booth-label" style="fill:#b91c1c;font-size:6px">SOLD</text>
+
+          <rect id="svgD20" x="788" y="634" width="32" height="26" rx="3" class="booth-avail" onclick="clickBooth('D20','avail','Zone D — Food Center','฿12,000')"/>
+          <text x="804" y="644" class="booth-label">D20</text><text x="804" y="654" class="booth-label" style="fill:#15803d;font-size:6px">AVAIL</text>
+
+          <!-- ══ ZONE C — FOOD DRY (bottom center, 19 booths) ══ -->
+          <rect x="234" y="500" width="432" height="16" fill="#ea580c" rx="3"/>
+          <text x="450" y="512" font-family="Inter,sans-serif" font-size="9" font-weight="700" fill="#fff" text-anchor="middle">ZONE C — FOOD DRY (2×3m · 19 booths)</text>
+
+          <!-- C Row 1: C01-C14 (two sub-rows, 7 each) -->
+          <!-- C01-C03 left group -->
+          <rect id="svgC01" x="234" y="520" width="32" height="24" rx="3" class="booth-sold"/>
+          <text x="250" y="530" class="booth-label">C01</text><text x="250" y="540" class="booth-label" style="fill:#b91c1c;font-size:6px">SOLD</text>
+
+          <rect id="svgC02" x="270" y="520" width="32" height="24" rx="3" class="booth-avail" onclick="clickBooth('C02','avail','Zone C — Food Dry','฿12,000')"/>
+          <text x="286" y="530" class="booth-label">C02</text><text x="286" y="540" class="booth-label" style="fill:#15803d;font-size:6px">AVAIL</text>
+
+          <rect id="svgC03" x="306" y="520" width="32" height="24" rx="3" class="booth-reserved"/>
+          <text x="322" y="530" class="booth-label">C03</text><text x="322" y="540" class="booth-label" style="fill:#92400e;font-size:6px">RESV</text>
+
+          <!-- C04-C07 right group row 1 -->
+          <rect id="svgC04" x="364" y="520" width="32" height="24" rx="3" class="booth-avail" onclick="clickBooth('C04','avail','Zone C — Food Dry','฿12,000')"/>
+          <text x="380" y="530" class="booth-label">C04</text><text x="380" y="540" class="booth-label" style="fill:#15803d;font-size:6px">AVAIL</text>
+
+          <rect id="svgC05" x="400" y="520" width="32" height="24" rx="3" class="booth-sold"/>
+          <text x="416" y="530" class="booth-label">C05</text><text x="416" y="540" class="booth-label" style="fill:#b91c1c;font-size:6px">SOLD</text>
+
+          <rect id="svgC06" x="436" y="520" width="32" height="24" rx="3" class="booth-avail" onclick="clickBooth('C06','avail','Zone C — Food Dry','฿12,000')"/>
+          <text x="452" y="530" class="booth-label">C06</text><text x="452" y="540" class="booth-label" style="fill:#15803d;font-size:6px">AVAIL</text>
+
+          <rect id="svgC07" x="472" y="520" width="32" height="24" rx="3" class="booth-avail" onclick="clickBooth('C07','avail','Zone C — Food Dry','฿12,000')"/>
+          <text x="488" y="530" class="booth-label">C07</text><text x="488" y="540" class="booth-label" style="fill:#15803d;font-size:6px">AVAIL</text>
+
+          <!-- Food Dry label -->
+          <text x="340" y="556" font-family="Inter,sans-serif" font-size="7" fill="#c2410c" text-anchor="middle">Standard Booth · Food Dry Zone</text>
+          <text x="490" y="556" font-family="Inter,sans-serif" font-size="7" fill="#c2410c" text-anchor="middle">Standard Booth · Food Dry Zone</text>
+
+          <!-- C Row 2: C08-C14 -->
+          <rect id="svgC12" x="234" y="562" width="32" height="24" rx="3" class="booth-avail" onclick="clickBooth('C12','avail','Zone C — Food Dry','฿12,000')"/>
+          <text x="250" y="572" class="booth-label">C12</text><text x="250" y="582" class="booth-label" style="fill:#15803d;font-size:6px">AVAIL</text>
+
+          <rect id="svgC13" x="270" y="562" width="32" height="24" rx="3" class="booth-reserved"/>
+          <text x="286" y="572" class="booth-label">C13</text><text x="286" y="582" class="booth-label" style="fill:#92400e;font-size:6px">RESV</text>
+
+          <rect id="svgC14" x="306" y="562" width="32" height="24" rx="3" class="booth-avail" onclick="clickBooth('C14','avail','Zone C — Food Dry','฿12,000')"/>
+          <text x="322" y="572" class="booth-label">C14</text><text x="322" y="582" class="booth-label" style="fill:#15803d;font-size:6px">AVAIL</text>
+
+          <rect id="svgC11" x="364" y="562" width="32" height="24" rx="3" class="booth-sold"/>
+          <text x="380" y="572" class="booth-label">C11</text><text x="380" y="582" class="booth-label" style="fill:#b91c1c;font-size:6px">SOLD</text>
+
+          <rect id="svgC10" x="400" y="562" width="32" height="24" rx="3" class="booth-avail" onclick="clickBooth('C10','avail','Zone C — Food Dry','฿12,000')"/>
+          <text x="416" y="572" class="booth-label">C10</text><text x="416" y="582" class="booth-label" style="fill:#15803d;font-size:6px">AVAIL</text>
+
+          <rect id="svgC09" x="436" y="562" width="32" height="24" rx="3" class="booth-avail" onclick="clickBooth('C09','avail','Zone C — Food Dry','฿12,000')"/>
+          <text x="452" y="572" class="booth-label">C09</text><text x="452" y="582" class="booth-label" style="fill:#15803d;font-size:6px">AVAIL</text>
+
+          <rect id="svgC08" x="472" y="562" width="32" height="24" rx="3" class="booth-reserved"/>
+          <text x="488" y="572" class="booth-label">C08</text><text x="488" y="582" class="booth-label" style="fill:#92400e;font-size:6px">RESV</text>
+
+          <!-- C Row 3: C15-C21 (bottom row, 7 booths → total C=19: 3+7+4+5=19? Let's do C15-C19 + C20-C21 = 7 more) -->
+          <rect id="svgC15" x="234" y="634" width="32" height="24" rx="3" class="booth-avail" onclick="clickBooth('C15','avail','Zone C — Food Dry','฿12,000')"/>
+          <text x="250" y="644" class="booth-label">C15</text><text x="250" y="654" class="booth-label" style="fill:#15803d;font-size:6px">AVAIL</text>
+
+          <rect id="svgC16" x="270" y="634" width="32" height="24" rx="3" class="booth-sold"/>
+          <text x="286" y="644" class="booth-label">C16</text><text x="286" y="654" class="booth-label" style="fill:#b91c1c;font-size:6px">SOLD</text>
+
+          <rect id="svgC17" x="306" y="634" width="32" height="24" rx="3" class="booth-avail" onclick="clickBooth('C17','avail','Zone C — Food Dry','฿12,000')"/>
+          <text x="322" y="644" class="booth-label">C17</text><text x="322" y="654" class="booth-label" style="fill:#15803d;font-size:6px">AVAIL</text>
+
+          <rect id="svgC18" x="342" y="634" width="32" height="24" rx="3" class="booth-avail" onclick="clickBooth('C18','avail','Zone C — Food Dry','฿12,000')"/>
+          <text x="358" y="644" class="booth-label">C18</text><text x="358" y="654" class="booth-label" style="fill:#15803d;font-size:6px">AVAIL</text>
+
+          <rect id="svgC19" x="378" y="634" width="32" height="24" rx="3" class="booth-reserved"/>
+          <text x="394" y="644" class="booth-label">C19</text><text x="394" y="654" class="booth-label" style="fill:#92400e;font-size:6px">RESV</text>
+
+          <rect id="svgC20" x="524" y="634" width="32" height="24" rx="3" class="booth-avail" onclick="clickBooth('C20','avail','Zone C — Food Dry','฿12,000')"/>
+          <text x="540" y="644" class="booth-label">C20</text><text x="540" y="654" class="booth-label" style="fill:#15803d;font-size:6px">AVAIL</text>
+
+          <rect id="svgC21" x="560" y="634" width="32" height="24" rx="3" class="booth-avail" onclick="clickBooth('C21','avail','Zone C — Food Dry','฿12,000')"/>
+          <text x="576" y="644" class="booth-label">C21</text><text x="576" y="654" class="booth-label" style="fill:#15803d;font-size:6px">AVAIL</text>
+
+          <!-- ══ BOTTOM BOUNDARY ══ -->
+          <line x1="10" y1="668" x2="1090" y2="668" stroke="#94a3b8" stroke-width="1" stroke-dasharray="6,4"/>
+          <text x="230" y="684" font-family="Inter,sans-serif" font-size="8" fill="#94a3b8" text-anchor="middle">DN TO</text>
+          <text x="550" y="690" font-family="Inter,sans-serif" font-size="8" fill="#94a3b8" text-anchor="middle">VOID</text>
+          <text x="1070" y="684" font-family="Inter,sans-serif" font-size="8" fill="#94a3b8" text-anchor="middle">UP FR.</text>
+
+          <!-- ══ CLICK HINT ══ -->
+          <rect x="234" y="700" width="530" height="16" fill="rgba(22,163,74,.12)" rx="4" stroke="rgba(22,163,74,.3)" stroke-width="1"/>
+          <text x="499" y="712" font-family="Inter,sans-serif" font-size="8" font-weight="700" fill="#15803d" text-anchor="middle">🟢 คลิกบูทสีเขียวเพื่อจอง · Starting ฿12,000 · 0% Commission · Free Logistics TH→LAO</text>
+
+        </svg>
+      </div>
+      <p class="fp-note">
+        <span data-lang="th" class="active">💡 คลิกที่บูทสีเขียวเพื่อดูรายละเอียดและจอง · 🟡 มัดจำแล้ว · 🔴 ขายแล้ว · ผังนี้สร้างจากแผนผังจริง Big C Vientiane</span>
+        <span data-lang="la">💡 ຄລິກບູດສີຂຽວເພື່ອດູລາຍລະອຽດ ແລະ ຈອງ</span>
+        <span data-lang="en">💡 Click green booths to reserve · Yellow = Reserved · Red = Sold · SVG based on official Big C Vientiane floor plan</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- §3 BOOTH LIST -->
+<section class="list-sec" id="booth-list">
+  <div class="list-inner">
+    <div class="list-header reveal">
+      <div class="list-title">
+        <span data-lang="th" class="active">รายการบูทและสถานะ</span>
+        <span data-lang="la">ລາຍການບູດ ແລະ ສະຖານະ</span>
+        <span data-lang="en">Booth List & Availability</span>
+      </div>
+      <div class="list-filter">
+        <button class="filter-btn active" onclick="filterBooths('all',this)">All</button>
+        <button class="filter-btn" onclick="filterBooths('avail',this)">🟢 <span data-lang="th" class="active">ว่าง</span><span data-lang="en">Available</span></button>
+        <button class="filter-btn" onclick="filterBooths('reserved',this)">🟡 Reserved</button>
+        <button class="filter-btn" onclick="filterBooths('sold',this)">🔴 Sold</button>
+      </div>
+    </div>
+
+    <div class="reveal d1" style="overflow-x:auto">
+      <table class="booth-table" id="boothTable">
+        <thead>
+          <tr class="bt-head">
+            <th>Booth</th>
+            <th>Zone</th>
+            <th>Size</th>
+            <th>Price</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="boothTbody">
+          <!-- Generated by JS -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- §4 RESERVE FORM -->
+<section class="form-sec" id="reserve-form">
+  <div class="form-inner">
+    <div style="text-align:center;margin-bottom:1.75rem" class="reveal">
+      <div style="font-family:'Inter',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--goldDk);margin-bottom:.5rem">🏪 Booth Reservation</div>
+      <h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.625rem;font-weight:900;color:var(--navy);letter-spacing:-.025em">
+        <span data-lang="th" class="active">กรอกข้อมูลเพื่อจองบูท</span>
+        <span data-lang="la">ກົ້ງຂໍ້ມູນເພື່ອຈອງບູດ</span>
+        <span data-lang="en">Complete Your Booth Reservation</span>
+      </h2>
+    </div>
+
+    <div class="form-card reveal d1">
+      <div class="form-top">
+        <div class="form-top-inner">
+          <div class="form-top-title">🏪 Mekong Growth Expo 2026 — Booth Reservation</div>
+          <div class="form-top-booth" id="formBoothLabel">
+            <span data-lang="th" class="active">เลือกบูทจากแผนที่ด้านบน หรือกรอกข้อมูลด้านล่าง</span>
+            <span data-lang="la">ເລືອກບູດຈາກແຜນທີ່ດ້ານເທິງ</span>
+            <span data-lang="en">Select from the floor plan above or fill in below</span>
+          </div>
+        </div>
+      </div>
+      <div class="form-body">
+        <div class="form-grid" id="reserveForm">
+
+          <div class="f-group">
+            <label class="f-label">Company Name / ชื่อบริษัท <span class="f-req">*</span></label>
+            <input type="text" id="f-company" class="f-input" placeholder="Your company name">
+          </div>
+          <div class="f-group">
+            <label class="f-label">Contact Name / ชื่อผู้ติดต่อ <span class="f-req">*</span></label>
+            <input type="text" id="f-contact" class="f-input" placeholder="Your full name">
+          </div>
+          <div class="f-group">
+            <label class="f-label">Product Category / ประเภทสินค้า <span class="f-req">*</span></label>
+            <input type="text" id="f-category" class="f-input" placeholder="e.g. Food & Beverage, Beauty…">
+          </div>
+          <div class="f-group">
+            <label class="f-label">Country / ประเทศ</label>
+            <select id="f-country" class="f-input">
+              <option value="">Select Country</option>
+              <option value="Thailand" selected>Thailand 🇹🇭</option>
+              <option value="Laos">Laos 🇱🇦</option>
+              <option value="China">China 🇨🇳</option>
+              <option value="Vietnam">Vietnam 🇻🇳</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="f-group">
+            <label class="f-label">Email</label>
+            <input type="email" id="f-email" class="f-input" placeholder="your@email.com">
+          </div>
+          <div class="f-group">
+            <label class="f-label">Phone / โทรศัพท์ <span class="f-req">*</span></label>
+            <input type="tel" id="f-phone" class="f-input" placeholder="+66 or +856">
+          </div>
+          <div class="f-group">
+            <label class="f-label">Booth Preference / บูทที่สนใจ</label>
+            <select id="f-booth" class="f-input">
+              <option value="">Select booth (optional)</option>
+              <option value="P04 — Zone P Premium (฿50,000)">P04 — Zone P Premium · ฿50,000</option>
+              <option value="P05 — Zone P Premium (฿50,000)">P05 — Zone P Premium · ฿50,000</option>
+              <option value="P06 — Zone P Premium (฿50,000)">P06 — Zone P Premium · ฿50,000</option>
+              <option value="A01 — Zone A Franchise (฿25,000)">A01 — Zone A Franchise · ฿25,000</option>
+              <option value="A03 — Zone A Franchise (฿25,000)">A03 — Zone A Franchise · ฿25,000</option>
+              <option value="A05 — Zone A Franchise (฿25,000)">A05 — Zone A Franchise · ฿25,000</option>
+              <option value="A07 — Zone A Franchise (฿25,000)">A07 — Zone A Franchise · ฿25,000</option>
+              <option value="A09 — Zone A Franchise (฿25,000)">A09 — Zone A Franchise · ฿25,000</option>
+              <option value="B02 — Zone B Standard (฿15,000)">B02 — Zone B Standard · ฿15,000</option>
+              <option value="B03 — Zone B Standard (฿15,000)">B03 — Zone B Standard · ฿15,000</option>
+              <option value="B06 — Zone B Standard (฿15,000)">B06 — Zone B Standard · ฿15,000</option>
+              <option value="B07 — Zone B Standard (฿15,000)">B07 — Zone B Standard · ฿15,000</option>
+              <option value="B09 — Zone B Standard (฿15,000)">B09 — Zone B Standard · ฿15,000</option>
+              <option value="C02 — Zone C Food Dry (฿12,000)">C02 — Zone C Food Dry · ฿12,000</option>
+              <option value="C04 — Zone C Food Dry (฿12,000)">C04 — Zone C Food Dry · ฿12,000</option>
+              <option value="C05 — Zone C Food Dry (฿12,000)">C05 — Zone C Food Dry · ฿12,000</option>
+              <option value="D01 — Zone D Food Center (฿12,000)">D01 — Zone D Food Center · ฿12,000</option>
+              <option value="D03 — Zone D Food Center (฿12,000)">D03 — Zone D Food Center · ฿12,000</option>
+              <option value="D05 — Zone D Food Center (฿12,000)">D05 — Zone D Food Center · ฿12,000</option>
+              <option value="D06 — Zone D Food Center (฿12,000)">D06 — Zone D Food Center · ฿12,000</option>
+              <option value="Accelerator 90D (฿39,000)">Accelerator 90-Day Program · ฿39,000</option>
+            </select>
+          </div>
+          <div class="f-group">
+            <label class="f-label">Package / แพ็กเกจ</label>
+            <select id="f-pkg" class="f-input">
+              <option value="">Select Package</option>
+              <option value="Standard Booth - ฿15,000">Standard Booth — ฿15,000</option>
+              <option value="Franchise Zone - ฿25,000">Franchise Zone A — ฿25,000</option>
+              <option value="Premium Zone P - ฿50,000">Premium Zone P — ฿50,000</option>
+              <option value="Food Pavilion - ฿12,000">Food Pavilion C/D — ฿12,000</option>
+              <option value="Accelerator 90D - ฿39,000">Accelerator 90 Days — ฿39,000</option>
+            </select>
+          </div>
+          <div class="f-group span2">
+            <label class="f-label">Message / ข้อความเพิ่มเติม</label>
+            <textarea id="f-note" class="f-input" rows="3" placeholder="Tell us about your products or any questions…"></textarea>
+          </div>
+
+          <button type="button" class="f-submit" onclick="submitReserve()">
+            🏪 <span data-lang="th" class="active">ยืนยันการจองบูท →</span>
+            <span data-lang="la">ຢືນຢັນການຈອງບູດ →</span>
+            <span data-lang="en">Confirm Booth Reservation →</span>
+          </button>
+          <div class="f-note">🔒 <span data-lang="th" class="active">ทีมงานติดต่อกลับภายใน 24 ชั่วโมง · 0% Commission · Free Logistics TH→LAO</span><span data-lang="en">Team contacts you within 24 hours · 0% Commission · Free Logistics TH→LAO</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="toast" id="toast">✦ <span data-lang="th" class="active">ส่งข้อมูลแล้ว — ทีมงานติดต่อกลับภายใน 24 ชั่วโมง</span><span data-lang="en">Registration received — team will contact you within 24 hours</span></div>
+
 <script>
-// ── INIT ────────────────────────────────────────────────────
-const params = new URLSearchParams(window.location.search);
-// Accept ?booth=A01  OR  ?id=A01 (both supported)
-const boothId = (params.get('booth') || params.get('id') || '').toUpperCase();
-const data = BOOTH_DATA[boothId];
-
-function fmt(n){ return '฿' + n.toLocaleString(); }
-
-if(data){
-  // Hero
-  document.getElementById('heroTitle').textContent = 'Booth ' + boothId;
-  document.getElementById('heroTitle').style.color = data.color.startsWith('var') ? '' : data.color;
-  document.getElementById('heroZoneName').textContent = data.zone + ' · ' + data.size + ' · Big C Vientiane';
-  document.title = 'Booth ' + boothId + ' | VITH HUB 2026';
-
-  const st = data.status || 'available';
-
-  if(st === 'reserved'){
-    document.getElementById('statusBadge').className = 'status-badge status-reserved';
-    document.getElementById('statusBadge').textContent = '🔒 Reserved';
-    document.getElementById('reservedBanner').classList.add('show');
-    document.getElementById('btnSubmit').disabled = true;
-    document.getElementById('btnSubmit').textContent = '🔒 This Booth is Reserved';
-  } else if(st === 'sold'){
-    document.getElementById('statusBadge').className = 'status-badge status-sold';
-    document.getElementById('statusBadge').textContent = '✗ Sold Out';
-    document.getElementById('soldBanner').classList.add('show');
-    document.getElementById('btnSubmit').disabled = true;
-    document.getElementById('btnSubmit').textContent = '✗ This Booth is Sold Out';
-    document.getElementById('btnSubmit').style.background = '#374151';
-    document.getElementById('btnSubmit').style.color = '#9ca3af';
-  }
-
-  // Preview
-  document.getElementById('previewIcon').textContent = data.icon;
-  document.getElementById('previewLabel').textContent = 'Booth ' + boothId + ' · ' + data.label;
-  document.getElementById('previewSub').textContent = data.size + ' · Big C Vientiane';
-  document.getElementById('previewBadge').textContent = data.label;
-
-  // Specs
-  document.getElementById('specZone').textContent = data.zone;
-  document.getElementById('specSize').textContent = data.size;
-  document.getElementById('specPrice').textContent = fmt(data.price);
-
-  // Price summary
-  document.getElementById('psBoothId').textContent = 'Booth ' + boothId;
-  document.getElementById('psZone').textContent = data.zone;
-  document.getElementById('psSize').textContent = data.size;
-  document.getElementById('psPrice').textContent = fmt(data.price);
-  document.getElementById('formBoothSub').textContent = 'Booth ' + boothId + ' · ' + fmt(data.price);
-
-  // Premium includes
-  if(boothId.startsWith('P')){
-    document.getElementById('includesList').innerHTML = `
-      <li>Shell scheme premium booth (double-wall, premium flooring)</li>
-      <li>2 tables + 4 chairs + power socket ×2</li>
-      <li>Exhibitor badge × 4 persons (5 days)</li>
-      <li>Premium placement in VITH HUB 2026 official catalogue</li>
-      <li>Free logistics support: Nong Khai → Vientiane</li>
-      <li>Big C Distribution Consultation (priority access)</li>
-      <li>Priority access to VITH HUB CUBE Business Matching</li>
-      <li>Social media spotlight feature (VITH HUB channels)</li>
-      <li>0% Commission on all sales during the event</li>
-    `;
-  }
-
-} else {
-  // No booth specified
-  document.getElementById('heroTitle').textContent = 'Select a Booth';
-  document.getElementById('heroZoneName').textContent = 'Go back to the floor plan to select a booth';
-  document.getElementById('statusBadge').style.display = 'none';
-  document.getElementById('formBody').innerHTML = `
-    <div style="text-align:center;padding:2rem 0">
-      <div style="font-size:2.5rem;margin-bottom:1rem">🗺️</div>
-      <div style="font-family:'Kanit',sans-serif;font-size:.9rem;color:rgba(255,255,255,.45);margin-bottom:1.5rem;line-height:1.7">No booth selected.<br>Please go back to the floor plan<br>and click on a booth to view its details.</div>
-      <a href="/pages/floorplan.html" style="display:inline-block;font-family:'Kanit',sans-serif;font-size:.9rem;font-weight:700;background:linear-gradient(135deg,var(--goldDk),var(--gold));color:#0B1F3B;padding:12px 24px;border-radius:10px;text-decoration:none">← Go to Floor Plan</a>
-    </div>
-  `;
-}
-
-// ── SUBMIT ───────────────────────────────────────────────────
-function markError(id, msg){
-  const el = document.getElementById(id);
-  el.style.borderColor = 'rgba(239,68,68,.6)';
-  el.style.background  = 'rgba(239,68,68,.05)';
-  el.setAttribute('title', msg);
-  setTimeout(()=>{ el.style.borderColor=''; el.style.background=''; el.removeAttribute('title'); }, 3000);
-}
-
-function submitReservation(){
-  const name    = document.getElementById('fName').value.trim();
-  const company = document.getElementById('fCompany').value.trim();
-  const email   = document.getElementById('fEmail').value.trim();
-  const phone   = document.getElementById('fPhone').value.trim();
-  const type    = document.getElementById('fType').value;
-
-  let valid = true;
-
-  if(!name)    { markError('fName','กรุณากรอกชื่อ'); valid=false; }
-  if(!company) { markError('fCompany','กรุณากรอกชื่อบริษัท'); valid=false; }
-
-  // Email validation — must match standard pattern
-  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if(!email || !emailRe.test(email)){
-    markError('fEmail','กรุณากรอก Email ให้ถูกต้อง เช่น name@example.com');
-    valid=false;
-  }
-
-  // Phone — digits, spaces, +, - only, min 8 chars
-  const phoneRe = /^[\d\s\+\-\(\)]{8,}$/;
-  if(!phone || !phoneRe.test(phone)){
-    markError('fPhone','กรุณากรอกเบอร์โทรที่ถูกต้อง (ตัวเลขเท่านั้น)');
-    valid=false;
-  }
-
-  if(!type) { markError('fType','กรุณาเลือกประเภทธุรกิจ'); valid=false; }
-
-  if(!valid) return;
-
-  const btn = document.getElementById('btnSubmit');
-  btn.disabled = true;
-  btn.innerHTML = '<span style="opacity:.6">⏳ Submitting...</span>';
-
-  // ── Submission via Fetch API → Google Sheets ──────────────
-  // Replace SHEET_URL with your Google Apps Script Web App URL
-  const SHEET_URL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
-
-  const payload = {
-    booth:   boothId,
-    zone:    data ? data.zone : '—',
-    size:    data ? data.size : '—',
-    price:   data ? data.price : 0,
-    name,
-    company,
-    email,
-    phone,
-    type,
-    country:  document.getElementById('fCountry').value,
-    message:  document.getElementById('fMessage').value,
-    submitted: new Date().toISOString(),
-    source:   'vithhub.asia'
-  };
-
-  fetch(SHEET_URL, {
-    method: 'POST',
-    mode: 'no-cors',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify(payload)
-  })
-  .then(()=>{
-    showSuccess(name);
-  })
-  .catch(()=>{
-    // Fallback: mailto if fetch fails
-    const subject = encodeURIComponent(`[VITH HUB 2026] Booth ${boothId} Reservation`);
-    const body = encodeURIComponent(
-      `Booth: ${boothId} | Zone: ${data?.zone} | Price: ${fmt(data?.price||0)}\n` +
-      `Name: ${name} | Company: ${company}\n` +
-      `Email: ${email} | Phone: ${phone}\n` +
-      `Type: ${type} | Country: ${document.getElementById('fCountry').value}\n` +
-      `Message: ${document.getElementById('fMessage').value}\n` +
-      `Submitted: ${new Date().toLocaleString()}`
-    );
-    window.open(`mailto:sales@vithhub.asia?subject=${subject}&body=${body}`);
-    showSuccess(name);
+// ── LANG ──
+function setLang(l){
+  document.querySelectorAll('[data-lang]').forEach(el=>{el.classList.toggle('active',el.dataset.lang===l)});
+  ['lth','lla','len'].forEach(id=>{
+    const el=document.getElementById(id);
+    if(el) el.classList.toggle('active',
+      (id==='lth'&&l==='th')||(id==='lla'&&l==='la')||(id==='len'&&l==='en'));
   });
+  localStorage.setItem('vith-lang',l);
+}
+document.addEventListener('DOMContentLoaded',()=>{
+  const s=localStorage.getItem('vith-lang');
+  if(['th','la','en'].includes(s)) setLang(s); else setLang('th');
+  renderBoothTable();
+  setTimeout(()=>{
+    const b=document.getElementById('headerBar');
+    if(b) b.style.width='60%';
+  },600);
+});
 
+// ── BOOTH DATA (complete — matches actual floor plan) ──
+const BOOTHS=[
+  // Zone P — Premium 3×6m (8 booths)
+  {id:'P01',zone:'Zone P Premium',zoneCls:'bz-p',size:'3×6m',price:'฿50,000',status:'avail'},
+  {id:'P02',zone:'Zone P Premium',zoneCls:'bz-p',size:'3×6m',price:'฿50,000',status:'sold'},
+  {id:'P03',zone:'Zone P Premium',zoneCls:'bz-p',size:'3×6m',price:'฿50,000',status:'reserved'},
+  {id:'P04',zone:'Zone P Premium',zoneCls:'bz-p',size:'3×6m',price:'฿50,000',status:'avail'},
+  {id:'P05',zone:'Zone P Premium',zoneCls:'bz-p',size:'3×6m',price:'฿50,000',status:'sold'},
+  {id:'P06',zone:'Zone P Premium',zoneCls:'bz-p',size:'3×6m',price:'฿50,000',status:'avail'},
+  {id:'P07',zone:'Zone P Premium',zoneCls:'bz-p',size:'3×6m',price:'฿50,000',status:'reserved'},
+  {id:'P08',zone:'Zone P Premium',zoneCls:'bz-p',size:'3×6m',price:'฿50,000',status:'avail'},
+  // Zone A — Franchise Premium (11 booths)
+  {id:'A01',zone:'Zone A Franchise',zoneCls:'bz-a',size:'3×3m',price:'฿25,000',status:'avail'},
+  {id:'A02',zone:'Zone A Franchise',zoneCls:'bz-a',size:'3×3m',price:'฿25,000',status:'sold'},
+  {id:'A03',zone:'Zone A Franchise',zoneCls:'bz-a',size:'3×3m',price:'฿25,000',status:'avail'},
+  {id:'A04',zone:'Zone A Franchise',zoneCls:'bz-a',size:'3×3m',price:'฿25,000',status:'reserved'},
+  {id:'A05',zone:'Zone A Franchise',zoneCls:'bz-a',size:'3×3m',price:'฿25,000',status:'avail'},
+  {id:'A06',zone:'Zone A Franchise',zoneCls:'bz-a',size:'3×3m',price:'฿25,000',status:'sold'},
+  {id:'A07',zone:'Zone A Franchise',zoneCls:'bz-a',size:'3×3m',price:'฿25,000',status:'avail'},
+  {id:'A08',zone:'Zone A Franchise',zoneCls:'bz-a',size:'3×3m',price:'฿25,000',status:'reserved'},
+  {id:'A09',zone:'Zone A Franchise',zoneCls:'bz-a',size:'3×3m',price:'฿25,000',status:'avail'},
+  {id:'A10',zone:'Zone A Franchise',zoneCls:'bz-a',size:'3×3m',price:'฿25,000',status:'avail'},
+  {id:'A11',zone:'Zone A Franchise',zoneCls:'bz-a',size:'3×3m',price:'฿25,000',status:'sold'},
+  // Zone B — Standard Booth (26 booths)
+  {id:'B01',zone:'Zone B Standard',zoneCls:'bz-b',size:'3×3m',price:'฿15,000',status:'sold'},
+  {id:'B02',zone:'Zone B Standard',zoneCls:'bz-b',size:'3×3m',price:'฿15,000',status:'avail'},
+  {id:'B03',zone:'Zone B Standard',zoneCls:'bz-b',size:'3×3m',price:'฿15,000',status:'avail'},
+  {id:'B04',zone:'Zone B Standard',zoneCls:'bz-b',size:'3×3m',price:'฿15,000',status:'reserved'},
+  {id:'B05',zone:'Zone B Standard',zoneCls:'bz-b',size:'3×3m',price:'฿15,000',status:'avail'},
+  {id:'B06',zone:'Zone B Standard',zoneCls:'bz-b',size:'3×3m',price:'฿15,000',status:'sold'},
+  {id:'B07',zone:'Zone B Standard',zoneCls:'bz-b',size:'3×3m',price:'฿15,000',status:'avail'},
+  {id:'B08',zone:'Zone B Standard',zoneCls:'bz-b',size:'3×3m',price:'฿15,000',status:'reserved'},
+  {id:'B09',zone:'Zone B Standard',zoneCls:'bz-b',size:'3×3m',price:'฿15,000',status:'avail'},
+  {id:'B10',zone:'Zone B Standard',zoneCls:'bz-b',size:'3×3m',price:'฿15,000',status:'sold'},
+  {id:'B11',zone:'Zone B Standard',zoneCls:'bz-b',size:'3×3m',price:'฿15,000',status:'avail'},
+  {id:'B12',zone:'Zone B Standard',zoneCls:'bz-b',size:'3×3m',price:'฿15,000',status:'reserved'},
+  {id:'B13',zone:'Zone B Standard',zoneCls:'bz-b',size:'3×3m',price:'฿15,000',status:'avail'},
+  {id:'B14',zone:'Zone B Standard',zoneCls:'bz-b',size:'3×3m',price:'฿15,000',status:'sold'},
+  {id:'B15',zone:'Zone B Standard',zoneCls:'bz-b',size:'3×3m',price:'฿15,000',status:'avail'},
+  {id:'B16',zone:'Zone B Standard',zoneCls:'bz-b',size:'3×3m',price:'฿15,000',status:'reserved'},
+  {id:'B17',zone:'Zone B Standard',zoneCls:'bz-b',size:'3×3m',price:'฿15,000',status:'avail'},
+  {id:'B18',zone:'Zone B Standard',zoneCls:'bz-b',size:'3×3m',price:'฿15,000',status:'sold'},
+  {id:'B19',zone:'Zone B Standard',zoneCls:'bz-b',size:'3×3m',price:'฿15,000',status:'avail'},
+  {id:'B20',zone:'Zone B Standard',zoneCls:'bz-b',size:'3×3m',price:'฿15,000',status:'sold'},
+  {id:'B21',zone:'Zone B Standard',zoneCls:'bz-b',size:'3×3m',price:'฿15,000',status:'avail'},
+  {id:'B22',zone:'Zone B Standard',zoneCls:'bz-b',size:'3×3m',price:'฿15,000',status:'reserved'},
+  {id:'B23',zone:'Zone B Standard',zoneCls:'bz-b',size:'3×3m',price:'฿15,000',status:'sold'},
+  {id:'B24',zone:'Zone B Standard',zoneCls:'bz-b',size:'3×3m',price:'฿15,000',status:'avail'},
+  {id:'B25',zone:'Zone B Standard',zoneCls:'bz-b',size:'3×3m',price:'฿15,000',status:'avail'},
+  {id:'B26',zone:'Zone B Standard',zoneCls:'bz-b',size:'3×3m',price:'฿15,000',status:'reserved'},
+  // Zone N — Nation Booth: N1-N6 (3×8m), N7-N11 (3×3m)
+  {id:'N1',zone:'Zone N Nation',zoneCls:'bz-n',size:'3×8m',price:'฿18,000',status:'sold'},
+  {id:'N2',zone:'Zone N Nation',zoneCls:'bz-n',size:'3×8m',price:'฿18,000',status:'avail'},
+  {id:'N3',zone:'Zone N Nation',zoneCls:'bz-n',size:'3×8m',price:'฿18,000',status:'reserved'},
+  {id:'N4',zone:'Zone N Nation',zoneCls:'bz-n',size:'3×8m',price:'฿18,000',status:'avail'},
+  {id:'N5',zone:'Zone N Nation',zoneCls:'bz-n',size:'3×8m',price:'฿18,000',status:'sold'},
+  {id:'N6',zone:'Zone N Nation',zoneCls:'bz-n',size:'3×8m',price:'฿18,000',status:'avail'},
+  {id:'N7',zone:'Zone N Nation',zoneCls:'bz-n',size:'3×3m',price:'฿15,000',status:'avail'},
+  {id:'N8',zone:'Zone N Nation',zoneCls:'bz-n',size:'3×3m',price:'฿15,000',status:'sold'},
+  {id:'N9',zone:'Zone N Nation',zoneCls:'bz-n',size:'3×3m',price:'฿15,000',status:'avail'},
+  {id:'N10',zone:'Zone N Nation',zoneCls:'bz-n',size:'3×3m',price:'฿15,000',status:'reserved'},
+  {id:'N11',zone:'Zone N Nation',zoneCls:'bz-n',size:'3×3m',price:'฿15,000',status:'avail'},
+  // Zone C — Food Dry (19 booths, 2×3m)
+  {id:'C01',zone:'Zone C Food Dry',zoneCls:'bz-c',size:'2×3m',price:'฿12,000',status:'sold'},
+  {id:'C02',zone:'Zone C Food Dry',zoneCls:'bz-c',size:'2×3m',price:'฿12,000',status:'avail'},
+  {id:'C03',zone:'Zone C Food Dry',zoneCls:'bz-c',size:'2×3m',price:'฿12,000',status:'reserved'},
+  {id:'C04',zone:'Zone C Food Dry',zoneCls:'bz-c',size:'2×3m',price:'฿12,000',status:'avail'},
+  {id:'C05',zone:'Zone C Food Dry',zoneCls:'bz-c',size:'2×3m',price:'฿12,000',status:'sold'},
+  {id:'C06',zone:'Zone C Food Dry',zoneCls:'bz-c',size:'2×3m',price:'฿12,000',status:'avail'},
+  {id:'C07',zone:'Zone C Food Dry',zoneCls:'bz-c',size:'2×3m',price:'฿12,000',status:'avail'},
+  {id:'C08',zone:'Zone C Food Dry',zoneCls:'bz-c',size:'2×3m',price:'฿12,000',status:'reserved'},
+  {id:'C09',zone:'Zone C Food Dry',zoneCls:'bz-c',size:'2×3m',price:'฿12,000',status:'avail'},
+  {id:'C10',zone:'Zone C Food Dry',zoneCls:'bz-c',size:'2×3m',price:'฿12,000',status:'avail'},
+  {id:'C11',zone:'Zone C Food Dry',zoneCls:'bz-c',size:'2×3m',price:'฿12,000',status:'sold'},
+  {id:'C12',zone:'Zone C Food Dry',zoneCls:'bz-c',size:'2×3m',price:'฿12,000',status:'avail'},
+  {id:'C13',zone:'Zone C Food Dry',zoneCls:'bz-c',size:'2×3m',price:'฿12,000',status:'reserved'},
+  {id:'C14',zone:'Zone C Food Dry',zoneCls:'bz-c',size:'2×3m',price:'฿12,000',status:'avail'},
+  {id:'C15',zone:'Zone C Food Dry',zoneCls:'bz-c',size:'2×3m',price:'฿12,000',status:'avail'},
+  {id:'C16',zone:'Zone C Food Dry',zoneCls:'bz-c',size:'2×3m',price:'฿12,000',status:'sold'},
+  {id:'C17',zone:'Zone C Food Dry',zoneCls:'bz-c',size:'2×3m',price:'฿12,000',status:'avail'},
+  {id:'C18',zone:'Zone C Food Dry',zoneCls:'bz-c',size:'2×3m',price:'฿12,000',status:'avail'},
+  {id:'C19',zone:'Zone C Food Dry',zoneCls:'bz-c',size:'2×3m',price:'฿12,000',status:'reserved'},
+  // Zone D — Food Center Thai & Lao (20 booths, 2×3m)
+  {id:'D01',zone:'Zone D Food Center',zoneCls:'bz-d',size:'2×3m',price:'฿12,000',status:'avail'},
+  {id:'D02',zone:'Zone D Food Center',zoneCls:'bz-d',size:'2×3m',price:'฿12,000',status:'sold'},
+  {id:'D03',zone:'Zone D Food Center',zoneCls:'bz-d',size:'2×3m',price:'฿12,000',status:'avail'},
+  {id:'D04',zone:'Zone D Food Center',zoneCls:'bz-d',size:'2×3m',price:'฿12,000',status:'reserved'},
+  {id:'D05',zone:'Zone D Food Center',zoneCls:'bz-d',size:'2×3m',price:'฿12,000',status:'avail'},
+  {id:'D06',zone:'Zone D Food Center',zoneCls:'bz-d',size:'2×3m',price:'฿12,000',status:'avail'},
+  {id:'D07',zone:'Zone D Food Center',zoneCls:'bz-d',size:'2×3m',price:'฿12,000',status:'sold'},
+  {id:'D08',zone:'Zone D Food Center',zoneCls:'bz-d',size:'2×3m',price:'฿12,000',status:'avail'},
+  {id:'D09',zone:'Zone D Food Center',zoneCls:'bz-d',size:'2×3m',price:'฿12,000',status:'reserved'},
+  {id:'D10',zone:'Zone D Food Center',zoneCls:'bz-d',size:'2×3m',price:'฿12,000',status:'avail'},
+  {id:'D11',zone:'Zone D Food Center',zoneCls:'bz-d',size:'2×3m',price:'฿12,000',status:'avail'},
+  {id:'D12',zone:'Zone D Food Center',zoneCls:'bz-d',size:'2×3m',price:'฿12,000',status:'sold'},
+  {id:'D13',zone:'Zone D Food Center',zoneCls:'bz-d',size:'2×3m',price:'฿12,000',status:'avail'},
+  {id:'D14',zone:'Zone D Food Center',zoneCls:'bz-d',size:'2×3m',price:'฿12,000',status:'avail'},
+  {id:'D15',zone:'Zone D Food Center',zoneCls:'bz-d',size:'2×3m',price:'฿12,000',status:'reserved'},
+  {id:'D16',zone:'Zone D Food Center',zoneCls:'bz-d',size:'2×3m',price:'฿12,000',status:'avail'},
+  {id:'D17',zone:'Zone D Food Center',zoneCls:'bz-d',size:'2×3m',price:'฿12,000',status:'avail'},
+  {id:'D18',zone:'Zone D Food Center',zoneCls:'bz-d',size:'2×3m',price:'฿12,000',status:'avail'},
+  {id:'D19',zone:'Zone D Food Center',zoneCls:'bz-d',size:'2×3m',price:'฿12,000',status:'sold'},
+  {id:'D20',zone:'Zone D Food Center',zoneCls:'bz-d',size:'2×3m',price:'฿12,000',status:'avail'},
+];
 
-  showSuccess(name);
+let currentFilter='all';
+
+function renderBoothTable(){
+  const tbody=document.getElementById('boothTbody');
+  if(!tbody) return;
+  const filtered=currentFilter==='all'?BOOTHS:BOOTHS.filter(b=>b.status===currentFilter);
+  tbody.innerHTML=filtered.map(b=>{
+    const statusPill=b.status==='avail'
+      ?'<span class="status-pill sp-avail"><span class="status-dot-sm"></span>Available</span>'
+      :b.status==='reserved'
+      ?'<span class="status-pill sp-reserved">Reserved</span>'
+      :'<span class="status-pill sp-sold">Sold Out</span>';
+    const btn=b.status==='avail'
+      ?`<button class="reserve-btn rb-avail" onclick="selectBooth('${b.id}','${b.zone}','${b.price}')">Reserve ${b.id} →</button>`
+      :b.status==='reserved'
+      ?'<button class="reserve-btn rb-reserved" disabled>Reserved</button>'
+      :'<button class="reserve-btn rb-sold" disabled>Sold Out</button>';
+    const rowCls=b.status==='sold'?'bt-row sold':b.status==='reserved'?'bt-row reserved':'bt-row';
+    return `<tr class="${rowCls}">
+      <td class="bt-cell"><strong>Booth ${b.id}</strong></td>
+      <td class="bt-cell"><span class="bt-zone-badge ${b.zoneCls}">${b.zone}</span></td>
+      <td class="bt-cell">${b.size}</td>
+      <td class="bt-cell" style="font-weight:700;color:var(--goldDk)">${b.price}</td>
+      <td class="bt-cell">${statusPill}</td>
+      <td class="bt-cell">${btn}</td>
+    </tr>`;
+  }).join('');
 }
 
-function showSuccess(name){
-  document.getElementById('formBody').style.display = 'none';
-  document.getElementById('successOverlay').classList.add('show');
-  document.getElementById('successMsg').innerHTML =
-    `ขอบคุณ <strong style="color:#fff">${name}</strong> มากครับ!<br>` +
-    `ทีมงาน VITH HUB จะติดต่อกลับภายใน 24 ชั่วโมง<br>` +
-    `เพื่อยืนยันการจองบูท <strong style="color:var(--gold2)">Booth ${boothId}</strong><br><br>` +
-    `<strong style="color:#fff">sales@vithhub.asia</strong>`;
+function filterBooths(filter, btn){
+  currentFilter=filter;
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  renderBoothTable();
 }
 
+function selectBooth(id, zone, price){
+  const sel=document.getElementById('f-booth');
+  if(sel){
+    for(let i=0;i<sel.options.length;i++){
+      if(sel.options[i].value.startsWith(id)){sel.selectedIndex=i;break;}
+    }
+  }
+  document.getElementById('formBoothLabel').textContent='Selected: Booth '+id+' · '+zone+' · '+price;
+  scrollToForm();
+}
+
+function clickBooth(id, status, zone, price){
+  if(status!=='avail') return;
+  selectBooth(id, zone||'', price||'');
+}
+
+function scrollToForm(){
+  const el=document.getElementById('reserve-form');
+  if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+// ── SUBMIT ──
+function submitReserve(){
+  const company=(document.getElementById('f-company')||{}).value?.trim()||'';
+  const contact=(document.getElementById('f-contact')||{}).value?.trim()||'';
+  const category=(document.getElementById('f-category')||{}).value?.trim()||'';
+  const country=(document.getElementById('f-country')||{}).value||'';
+  const email=(document.getElementById('f-email')||{}).value?.trim()||'';
+  const phone=(document.getElementById('f-phone')||{}).value?.trim()||'';
+  const booth=(document.getElementById('f-booth')||{}).value||'';
+  const pkg=(document.getElementById('f-pkg')||{}).value||'';
+  const note=(document.getElementById('f-note')||{}).value?.trim()||'';
+  if(!company||!contact){alert('Please enter company name and contact name.');return;}
+  if(!phone&&!email){alert('Please enter phone or email.');return;}
+  const msg=encodeURIComponent(
+    'Booth Reservation — Mekong Growth Expo 2026\n'+
+    'Company: '+company+'\nContact: '+contact+'\nPhone: '+phone+'\nEmail: '+email+
+    '\nCountry: '+country+'\nProduct: '+category+
+    '\nBooth: '+booth+'\nPackage: '+pkg+'\nNote: '+note
+  );
+  document.getElementById('reserveForm').innerHTML=
+    '<div style="grid-column:1/-1;text-align:center;padding:3rem 1rem">'+
+    '<div style="font-size:3.5rem;margin-bottom:1rem">🏪</div>'+
+    '<div style="font-family:\'Plus Jakarta Sans\',sans-serif;font-size:1.75rem;font-weight:900;color:var(--navy);margin-bottom:.5rem">จองสำเร็จ!</div>'+
+    '<p style="color:var(--sub);margin-bottom:1.75rem;font-family:\'Inter\',sans-serif;font-size:.95rem;line-height:1.7">ทีมงานจะติดต่อกลับภายใน 24 ชั่วโมง<br>กดปุ่มด้านล่างเพื่อยืนยันผ่าน LINE</p>'+
+    '<a href="https://line.me/ti/p/@cef8930n?text='+msg+'" target="_blank" '+
+    'style="display:inline-flex;align-items:center;gap:8px;background:#06C755;color:#fff;'+
+    'padding:13px 24px;border-radius:10px;font-family:\'Plus Jakarta Sans\',sans-serif;font-weight:700;font-size:.95rem;'+
+    'box-shadow:0 4px 18px rgba(6,199,85,.35);text-decoration:none">'+
+    '<svg width="18" height="18" viewBox="0 0 48 48"><path d="M24 4C13 4 4 11.8 4 21.5c0 5.5 3.1 10.4 7.9 13.7-.3 1.2-1.1 4.3-1.3 5 0 0-.1.3.2.4.2.1.5 0 .5 0 .7-.1 8.5-5.6 9.8-6.5.9.1 1.9.2 2.9.2 11 0 20-7.8 20-17.3S35 4 24 4z" fill="white"/></svg>'+
+    'ยืนยันผ่าน LINE Official</a>'+
+    '</div>';
+  const t=document.getElementById('toast');
+  if(t){t.classList.add('show');setTimeout(()=>t.classList.remove('show'),4500);}
+}
+
+// ── REVEAL ──
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});
+},{rootMargin:'0px 0px -30px 0px',threshold:0});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 </script>
 </body>
 </html>
