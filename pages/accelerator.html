@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Retail Entry Package — VITH HUB | Big C Vientiane, Laos</title>
+<meta name="description" content="VITH HUB Retail Entry Package — sell in Big C Vientiane, Laos. Real shelf, real buyers, full logistics. 20 brands only. ฿39,000 flat fee.">
+<meta property="og:title" content="Sell Your Product in Big C Laos | VITH HUB">
+<meta property="og:description" content="Real shelf in Big C Vientiane. Buyers. Import/Export. 90 days. ฿39,000 flat fee.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:'Inter','Noto Sans Thai',sans-serif;background:#fff;color:#0a0a0a;overflow-x:hidden;line-height:1.55}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+button{cursor:pointer;font-family:inherit}
+
+:root{
+  --black:#0a0a0a;--white:#fff;
+  --gray-50:#f9f9f9;--gray-100:#f3f3f3;--gray-200:#e8e8e8;
+  --gray-400:#9a9a9a;--gray-600:#5a5a5a;--gray-800:#2a2a2a;
+  --red:#e5141e;--red-dark:#c01019;--red-light:#fff0f0;
+  --green:#16a34a;
+  --gold:#C9A227;--gold2:#FCD34D;--goldDk:#A16207;
+  --r-sm:6px;--r:10px;--r-lg:16px;--r-xl:20px;
+  --max:1060px;
+}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes pulse-red{0%,100%{box-shadow:0 0 0 0 rgba(229,20,30,.4)}70%{box-shadow:0 0 0 12px rgba(229,20,30,0)}}
+@keyframes pulseCTA{0%{box-shadow:0 0 0 0 rgba(229,20,30,.4)}70%{box-shadow:0 0 0 16px rgba(229,20,30,0)}100%{box-shadow:0 0 0 0 rgba(229,20,30,0)}}
+@keyframes glowGreen{0%,100%{text-shadow:none}50%{text-shadow:0 0 10px rgba(22,163,74,.5),0 0 22px rgba(22,163,74,.3)}}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
+
+/* TOP BAR */
+.top-bar{background:var(--red);color:#fff;text-align:center;padding:.55rem 1.5rem;font-family:'Inter',sans-serif;font-size:.78rem;font-weight:600;letter-spacing:.04em;position:relative;z-index:1000}
+
+/* TICKER */
+.ticker-wrap{background:var(--black);overflow:hidden;height:34px;display:flex;align-items:center}
+.ticker-inner{display:flex;white-space:nowrap;animation:ticker 28s linear infinite}
+.ticker-item{font-size:.7rem;font-weight:500;color:rgba(255,255,255,.55);padding:0 2.5rem;letter-spacing:.05em}
+.ticker-item span{color:var(--gold)}
+
+/* NAV */
+:root{--vn-bg:rgba(15,23,42,.96);--vn-border:rgba(234,179,8,.18);--vn-gold:#EAB308;--vn-gold2:#FCD34D;--vn-goldDk:#A16207}
+.vith-nav{position:fixed;top:0;left:0;right:0;z-index:900;height:60px;background:var(--vn-bg);backdrop-filter:blur(24px) saturate(1.5);border-bottom:1px solid var(--vn-border);transition:all .25s}
+.vith-nav.scrolled{background:rgba(2,6,23,.97);box-shadow:0 2px 24px rgba(0,0,0,.3)}
+.vith-nav-inner{max-width:1200px;margin:0 auto;height:60px;padding:0 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.vith-nav-logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.vith-nav-logo-mark{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,var(--vn-goldDk),var(--vn-gold),var(--vn-gold2));display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.9rem;color:#020617;flex-shrink:0}
+.vith-nav-logo-stack{display:flex;flex-direction:column}
+.vith-nav-logo-text{font-family:'Oswald',sans-serif;font-size:1.05rem;font-weight:600;color:#fff;line-height:1;letter-spacing:1.5px;text-transform:uppercase}
+.vith-nav-logo-text span{color:var(--vn-gold2)}
+.vith-nav-logo-sub{font-size:9px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.3);display:block;margin-top:2px}
+.vith-nav-links{display:flex;align-items:center;gap:2px}
+.vith-nav-a{font-size:.8rem;font-weight:500;color:rgba(255,255,255,.5);padding:6px 11px;border-radius:5px;transition:all .2s;white-space:nowrap}
+.vith-nav-a:hover,.vith-nav-a.active{color:#fff;background:rgba(255,255,255,.08)}
+.vith-nav-right{display:flex;align-items:center;gap:10px}
+.lang-toggle{display:flex;align-items:center;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:3px;gap:2px;flex-shrink:0}
+.lang-btn{font-size:.7rem;font-weight:700;letter-spacing:.06em;color:rgba(255,255,255,.4);padding:4px 9px;border-radius:14px;border:none;background:none;cursor:pointer;transition:all .2s;line-height:1}
+.lang-btn.active{background:#fff;color:var(--black)}
+.vith-nav-cta{font-size:.8rem;font-weight:600;background:var(--red);color:#fff;padding:8px 16px;border-radius:5px;border:none;transition:all .2s}
+.vith-nav-cta:hover{background:#c01019}
+.vith-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:6px;cursor:pointer}
+.vith-hamburger span{display:block;width:22px;height:2px;background:rgba(255,255,255,.8);border-radius:2px;transition:all .25s}
+.vith-mobile-menu{display:none;position:fixed;top:60px;left:0;right:0;background:rgba(2,6,23,.99);backdrop-filter:blur(20px);padding:20px;border-bottom:1px solid rgba(234,179,8,.2);flex-direction:column;gap:4px;z-index:898;box-shadow:0 16px 40px rgba(0,0,0,.3)}
+.vith-mobile-menu.open{display:flex}
+.vith-mob-link{font-size:15px;font-weight:600;color:rgba(255,255,255,.65);padding:11px 14px;border-radius:8px;text-decoration:none;transition:all .2s}
+.vith-mob-link:hover,.vith-mob-link.active{color:#fff;background:rgba(255,255,255,.08)}
+.vith-mob-cta{font-size:15px;font-weight:700;background:var(--red);color:#fff;padding:13px 20px;border-radius:8px;text-align:center;margin-top:10px;border:none;cursor:pointer}
+@media(max-width:768px){.vith-nav-links{display:none}.vith-hamburger{display:flex}}
+
+/* §1 HERO */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;background:var(--black);overflow:hidden;padding-top:60px}
+.hero-bg{position:absolute;inset:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 40%;filter:saturate(.8)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(110deg,rgba(10,10,10,.88) 0%,rgba(10,10,10,.68) 55%,rgba(10,10,10,.82) 100%)}
+.hero-grid-lines{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:52px 52px;pointer-events:none}
+.hero-red-stripe{position:absolute;top:0;left:0;width:3px;height:100%;background:linear-gradient(to bottom,transparent,var(--red) 35%,var(--red) 65%,transparent);opacity:.6}
+
+.hero-inner{position:relative;z-index:10;max-width:var(--max);width:100%;margin:0 auto;padding:5rem 1.5rem;display:grid;grid-template-columns:1fr 360px;gap:3.5rem;align-items:center}
+
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'Inter',sans-serif;font-size:.67rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--red);padding:5px 12px;border:1px solid rgba(229,20,30,.3);border-radius:20px;background:rgba(229,20,30,.07);margin-bottom:1.5rem;animation:fadeUp .5s .1s both}
+.hero-eyebrow-dot{width:5px;height:5px;border-radius:50%;background:var(--red);animation:pulse-red 2s infinite}
+
+.hero-headline{font-family:'Oswald',sans-serif;font-size:clamp(3.2rem,6vw,5rem);font-weight:600;line-height:1.05;letter-spacing:.5px;margin-bottom:1.125rem;animation:fadeUp .5s .15s both}
+.grow{color:var(--green);font-weight:700;letter-spacing:1px;text-transform:uppercase;display:block;animation:glowGreen 2s ease-in-out infinite}
+.global{background:linear-gradient(90deg,#C9A227,#FCD34D,#A16207);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:600;letter-spacing:1px;display:block}
+
+.hero-sub{font-family:'Inter',sans-serif;font-size:1rem;color:rgba(255,255,255,.58);line-height:1.72;max-width:480px;margin-bottom:1.5rem;animation:fadeUp .5s .22s both}
+
+.hero-points{display:flex;flex-direction:column;gap:8px;margin-bottom:1.5rem;animation:fadeUp .5s .28s both}
+.hero-point{display:flex;align-items:center;gap:10px;font-family:'Inter',sans-serif;font-size:.88rem;font-weight:500;color:rgba(255,255,255,.78)}
+.hero-point-dot{width:18px;height:18px;border-radius:50%;background:rgba(22,163,74,.15);border:1px solid rgba(22,163,74,.4);display:flex;align-items:center;justify-content:center;font-size:.58rem;color:var(--green);flex-shrink:0}
+
+.hero-meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:1.75rem;animation:fadeUp .5s .33s both}
+.hero-meta-item{font-family:'Inter',sans-serif;font-size:.77rem;font-weight:500;color:rgba(255,255,255,.55);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:4px;padding:5px 11px}
+
+.hero-cta-wrap{animation:fadeUp .5s .38s both}
+.cta-main{font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;letter-spacing:.3px;background:var(--red);color:#fff;padding:15px 30px;border-radius:7px;border:none;animation:pulseCTA 2.5s 1s infinite;transition:background .2s,transform .15s;display:inline-block}
+.cta-main:hover{background:var(--red-dark);transform:translateY(-2px)}
+.cta-urgency{margin-top:9px;font-family:'Inter',sans-serif;font-size:11px;color:rgba(255,255,255,.38);line-height:1.5}
+.hero-link{display:inline-block;margin-top:14px;font-family:'Inter',sans-serif;font-size:.78rem;color:rgba(255,255,255,.32);cursor:pointer;transition:color .2s}
+.hero-link:hover{color:rgba(255,255,255,.65)}
+
+/* Hero right card */
+.hero-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--r-xl);overflow:hidden;animation:fadeUp .6s .3s both;position:relative}
+.hero-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--red),transparent)}
+.hc-head{padding:1.375rem 1.625rem 1.125rem;border-bottom:1px solid rgba(255,255,255,.07)}
+.hc-badge{font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:6px;margin-bottom:.875rem}
+.hc-pkg{font-family:'Oswald',sans-serif;font-size:1.1rem;font-weight:600;color:#fff;letter-spacing:.5px;margin-bottom:.5rem}
+.hc-value-pill{display:inline-flex;gap:8px;align-items:center;background:rgba(229,20,30,.1);border:1px solid rgba(229,20,30,.22);border-radius:4px;padding:.45rem .875rem;margin-bottom:.75rem}
+.hc-old{font-size:.75rem;color:rgba(255,255,255,.32);text-decoration:line-through}
+.hc-new{font-family:'Space Grotesk',sans-serif;font-size:.88rem;font-weight:700;color:var(--red)}
+.hc-price{font-family:'Space Grotesk',sans-serif;font-size:2.8rem;color:#fff;line-height:1;font-weight:700;margin-bottom:.25rem}
+.hc-price-note{font-size:.7rem;color:rgba(255,255,255,.35)}
+.hc-body{padding:1.125rem 1.625rem}
+.hc-row{display:flex;align-items:flex-start;gap:8px;font-family:'Inter',sans-serif;font-size:.8rem;color:rgba(255,255,255,.55);margin-bottom:.55rem;line-height:1.45}
+.hc-check{color:var(--green);flex-shrink:0;margin-top:2px}
+.hc-sep{height:1px;background:rgba(255,255,255,.07);margin:.875rem 0}
+.hc-urgency{display:flex;align-items:center;justify-content:space-between;padding:.75rem .875rem;background:rgba(229,20,30,.07);border:1px solid rgba(229,20,30,.18);border-radius:var(--r-sm);margin-bottom:.875rem}
+.hc-slots-num{font-family:'Space Grotesk',sans-serif;font-size:1.5rem;color:var(--red);font-weight:700;line-height:1}
+.hc-slots-lbl{font-size:.62rem;color:rgba(255,255,255,.3);margin-top:2px}
+.hc-fill{font-size:.68rem;color:rgba(255,255,255,.35);text-align:right;line-height:1.65}
+.hc-cta{width:100%;font-family:'Inter',sans-serif;background:var(--red);color:#fff;font-size:.9rem;font-weight:700;padding:12px;border-radius:var(--r-sm);border:none;cursor:pointer;transition:background .2s;letter-spacing:.3px}
+.hc-cta:hover{background:var(--red-dark)}
+
+/* §2 PROBLEM */
+.problem-sec{background:#fff;padding:5rem 1.5rem;border-top:1px solid var(--gray-200)}
+.problem-inner{max-width:680px;margin:0 auto}
+.eyebrow{font-family:'Inter',sans-serif;font-size:.64rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:8px;margin-bottom:.875rem}
+.eyebrow::before{content:'';width:16px;height:1.5px;background:var(--red);flex-shrink:0}
+.eyebrow.light::before{background:rgba(255,255,255,.4)}
+.eyebrow.light{color:rgba(255,255,255,.45)}
+.sec-h2{font-family:'Oswald',sans-serif;font-size:clamp(1.75rem,3vw,2.4rem);font-weight:600;line-height:1.15;letter-spacing:.3px;margin-bottom:1rem}
+.sec-h2.dark{color:var(--black)}
+.sec-h2.light{color:#fff}
+
+.problem-list{display:flex;flex-direction:column;gap:.75rem;margin:1.75rem 0}
+.problem-row{display:flex;align-items:center;gap:.875rem;padding:1rem 1.125rem;background:var(--gray-50);border:1.5px solid var(--gray-200);border-radius:var(--r-lg)}
+.problem-x{width:26px;height:26px;border-radius:50%;background:var(--red-light);color:var(--red);font-weight:800;font-size:.7rem;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.problem-text{font-size:.88rem;font-weight:500;color:var(--gray-800);line-height:1.4}
+.problem-callout{margin-top:1.75rem;padding:1.125rem 1.375rem;background:var(--black);border-radius:var(--r-lg);font-size:.92rem;color:#fff;font-weight:500;line-height:1.7}
+.problem-callout strong{color:var(--red)}
+
+/* SYSTEM STATEMENT */
+.system-sec{background:var(--black);padding:5rem 1.5rem;position:relative;overflow:hidden;border-top:3px solid var(--red)}
+.system-sec::before{content:'';position:absolute;inset:0;background-image:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(229,20,30,.07) 0%,transparent 70%);pointer-events:none}
+.system-inner{max-width:900px;margin:0 auto;position:relative;z-index:1}
+.system-headline{font-family:'Oswald',sans-serif;font-weight:700;font-size:clamp(2rem,5.5vw,4rem);line-height:1.08;letter-spacing:.5px;text-transform:uppercase;color:#fff;margin-bottom:1.5rem}
+.system-headline em{font-style:normal;color:var(--red)}
+.system-sub{font-size:1rem;color:rgba(255,255,255,.45);line-height:1.75;max-width:560px;margin-bottom:3rem}
+
+/* SYSTEM GRID */
+.sys-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.07);border-radius:var(--r-xl);overflow:hidden;margin-top:.5rem}
+.sys-cell{background:rgba(255,255,255,.025);padding:1.75rem 1.5rem;display:flex;flex-direction:column;gap:.625rem;transition:background .25s}
+.sys-cell:hover{background:rgba(255,255,255,.055)}
+.sys-cell-icon{font-size:1.5rem;line-height:1}
+.sys-cell-num{font-family:'Space Grotesk',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.14em;color:var(--red);text-transform:uppercase;margin-bottom:.125rem}
+.sys-cell-title{font-family:'Oswald',sans-serif;font-size:1.05rem;font-weight:600;color:#fff;letter-spacing:.3px;line-height:1.2}
+.sys-cell-desc{font-family:'Inter',sans-serif;font-size:.78rem;color:rgba(255,255,255,.35);line-height:1.6}
+.sys-cell-tag{display:inline-flex;align-items:center;gap:5px;margin-top:.375rem;font-family:'Inter',sans-serif;font-size:.64rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.3);border:1px solid rgba(255,255,255,.08);border-radius:4px;padding:2px 8px;transition:color .2s,border-color .2s}
+.sys-cell:hover .sys-cell-tag{color:var(--red);border-color:rgba(229,20,30,.3)}
+.sys-cell:hover .sys-cell-desc{color:rgba(255,255,255,.58)}
+.sys-cell:hover .sys-cell-title{color:rgba(255,255,255,1)}
+.sys-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:6px 14px;font-family:'Inter',sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.06em;color:rgba(255,255,255,.5);margin-bottom:2.5rem}
+.sys-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--red);animation:pulse-red 2s infinite;flex-shrink:0}
+@media(max-width:700px){.sys-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:440px){.sys-grid{grid-template-columns:1fr}}
+.solution-sec{background:var(--black);padding:5rem 1.5rem;position:relative;overflow:hidden}
+.solution-sec::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:42px 42px;pointer-events:none}
+.solution-inner{max-width:700px;margin:0 auto;position:relative;z-index:1}
+
+.solution-card{margin-top:2.5rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-top:3px solid var(--red);border-radius:var(--r-xl);padding:2.25rem 2.5rem;position:relative;overflow:hidden}
+.solution-card::after{content:'';position:absolute;top:-40px;right:-40px;width:200px;height:200px;background:radial-gradient(circle,rgba(229,20,30,.06) 0%,transparent 70%);pointer-events:none}
+.solution-card-title{font-family:'Oswald',sans-serif;font-size:clamp(1.4rem,2.5vw,1.85rem);font-weight:600;color:#fff;letter-spacing:.5px;margin-bottom:.4rem;line-height:1.2}
+.solution-card-sub{font-size:.82rem;color:rgba(255,255,255,.38);margin-bottom:1.75rem}
+
+.sol-checklist{display:flex;flex-direction:column;gap:.75rem}
+.sol-row{display:flex;align-items:flex-start;gap:.875rem;padding:.875rem 1rem;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:var(--r-sm);transition:border-color .2s,background .2s}
+.sol-row:hover{background:rgba(255,255,255,.055);border-color:rgba(255,255,255,.12)}
+.sol-check{width:22px;height:22px;border-radius:50%;background:rgba(22,163,74,.12);border:1px solid rgba(22,163,74,.3);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:.62rem;font-weight:700;flex-shrink:0;margin-top:1px}
+.sol-row-title{font-family:'Inter',sans-serif;font-weight:600;font-size:.9rem;color:#fff;margin-bottom:2px}
+.sol-row-desc{font-size:.77rem;color:rgba(255,255,255,.38);line-height:1.5}
+.sol-commission{margin-top:1.375rem;padding:.75rem 1rem;background:rgba(22,163,74,.08);border:1px solid rgba(22,163,74,.2);border-radius:var(--r-sm);font-family:'Inter',sans-serif;font-size:.82rem;color:rgba(255,255,255,.55);display:flex;align-items:center;gap:.5rem}
+.sol-commission strong{color:#4ade80}
+
+/* §4 PRICE */
+.price-sec{background:var(--black);padding:0 1.5rem 5rem}
+.price-inner{max-width:700px;margin:0 auto}
+.price-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);border-radius:var(--r-xl);overflow:hidden;position:relative}
+.price-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.price-card-head{padding:2rem 2.25rem 1.75rem;border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:flex-start;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
+.price-label{font-family:'Oswald',sans-serif;font-size:1.1rem;font-weight:600;color:#fff;letter-spacing:.5px;margin-bottom:.25rem}
+.price-note{font-size:.74rem;color:rgba(255,255,255,.32)}
+.price-figure{text-align:right}
+.price-was{font-size:.76rem;color:rgba(255,255,255,.26);text-decoration:line-through;margin-bottom:.1rem}
+.price-amount{font-family:'Space Grotesk',sans-serif;font-size:3.25rem;font-weight:700;color:#fff;line-height:1}
+.price-thb{font-size:.88rem;color:rgba(255,255,255,.35)}
+.price-saving{display:inline-block;margin-top:.4rem;font-family:'Inter',sans-serif;font-size:.7rem;font-weight:700;color:var(--red);background:rgba(229,20,30,.12);border:1px solid rgba(229,20,30,.2);border-radius:3px;padding:3px 9px}
+.price-card-body{padding:1.75rem 2.25rem}
+.slots-row{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.125rem;background:rgba(229,20,30,.07);border:1px solid rgba(229,20,30,.18);border-radius:var(--r-sm);margin-bottom:1.375rem}
+.slots-left .num{font-family:'Space Grotesk',sans-serif;font-size:2rem;color:var(--red);font-weight:700;line-height:1}
+.slots-left .lbl{font-size:.63rem;color:rgba(255,255,255,.28);margin-top:2px}
+.slots-bar{flex:1;margin:0 1.25rem}
+.slots-bar-track{height:4px;background:rgba(255,255,255,.08);border-radius:2px;overflow:hidden}
+.slots-bar-fill{height:4px;background:var(--red);border-radius:2px;width:72%}
+.slots-bar-label{font-size:.63rem;color:rgba(255,255,255,.25);margin-top:4px;text-align:right}
+.slots-right{text-align:right;font-size:.7rem;color:rgba(255,255,255,.35);line-height:1.65}
+.price-cta{width:100%;font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;letter-spacing:.3px;background:var(--red);color:#fff;padding:15px;border-radius:var(--r-sm);border:none;cursor:pointer;animation:pulse-red 3s 1s infinite;transition:background .2s;margin-bottom:8px}
+.price-cta:hover{background:var(--red-dark)}
+.price-sub-note{font-family:'Inter',sans-serif;font-size:.7rem;color:rgba(255,255,255,.3);text-align:center;line-height:1.65}
+
+/* FOOTER */
+.footer{background:#050505;border-top:1px solid rgba(255,255,255,.07);padding:2.25rem 1.5rem}
+.footer-inner{max-width:var(--max);margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:.75rem;text-align:center}
+.footer-logo{font-family:'Oswald',sans-serif;font-size:1.1rem;font-weight:600;color:#fff;letter-spacing:2px}
+.footer-logo span{color:var(--gold2)}
+.footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:.25rem}
+.footer-link{font-size:.73rem;color:rgba(255,255,255,.28);padding:4px 8px;border-radius:4px;transition:color .2s}
+.footer-link:hover{color:rgba(255,255,255,.65)}
+.footer-copy{font-size:.67rem;color:rgba(255,255,255,.18);letter-spacing:.03em}
+
+/* STICKY CTA */
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:800;background:rgba(10,10,10,.96);backdrop-filter:blur(12px);border-top:1px solid rgba(229,20,30,.2);padding:.75rem 1.5rem;display:none;align-items:center;justify-content:space-between;gap:1rem}
+.sticky-cta.show{display:flex}
+.sticky-cta-text{font-size:.77rem;color:rgba(255,255,255,.42);line-height:1.4}
+.sticky-cta-text strong{color:#fff;display:block;font-size:.84rem}
+.sticky-cta-btn{flex-shrink:0;background:var(--red);color:#fff;font-family:'Inter',sans-serif;font-size:.84rem;font-weight:700;padding:10px 20px;border-radius:var(--r-sm);border:none;cursor:pointer;white-space:nowrap;animation:pulse-red 3s infinite;letter-spacing:.3px;transition:background .2s}
+.sticky-cta-btn:hover{background:var(--red-dark)}
+
+/* FLOAT */
+.float-contact{position:fixed;bottom:5rem;right:1.25rem;z-index:799;display:flex;flex-direction:column;gap:.5rem}
+.float-btn{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.22);transition:all .22s;text-decoration:none}
+.float-btn:hover{transform:translateY(-3px)}
+.float-line{background:#06C755}
+.float-wa{background:#25D366}
+
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:2000;display:none;align-items:center;justify-content:center;padding:1.25rem;backdrop-filter:blur(8px)}
+.modal-overlay.open{display:flex}
+.modal{background:#fff;border-radius:var(--r-xl);width:100%;max-width:460px;overflow:hidden;animation:fadeUp .3s both;box-shadow:0 40px 100px rgba(0,0,0,.3)}
+.modal-head{background:var(--black);padding:1.625rem 2rem 1.375rem;position:relative}
+.modal-head::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--red),transparent)}
+.modal-title{font-family:'Oswald',sans-serif;font-size:1.35rem;font-weight:600;color:#fff;letter-spacing:.5px;margin-bottom:.25rem}
+.modal-sub{font-size:.78rem;color:rgba(255,255,255,.38)}
+.modal-close{position:absolute;top:.875rem;right:.875rem;background:rgba(255,255,255,.1);border:none;color:rgba(255,255,255,.6);width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.9rem;transition:all .2s}
+.modal-close:hover{background:rgba(255,255,255,.2);color:#fff}
+.modal-body{padding:1.625rem 2rem}
+.form-group{margin-bottom:1rem}
+.form-label{font-family:'Inter',sans-serif;font-size:.74rem;font-weight:600;color:var(--gray-800);margin-bottom:.4rem;display:block}
+.form-input,.form-select{width:100%;padding:10px 12px;border:1.5px solid var(--gray-200);border-radius:var(--r-sm);font-family:inherit;font-size:.88rem;color:var(--black);transition:border-color .2s;background:#fff}
+.form-input:focus,.form-select:focus{outline:none;border-color:var(--red)}
+.form-input.error,.form-select.error{border:2px solid #ff0000!important;background-color:rgba(255,0,0,0.05);}
+.form-select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239a9a9a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
+.form-submit{width:100%;background:var(--red);color:#fff;font-family:'Inter',sans-serif;font-size:.92rem;font-weight:700;padding:13px;border-radius:var(--r-sm);border:none;cursor:pointer;transition:background .2s;margin-top:.25rem;letter-spacing:.3px}
+.form-submit:hover{background:var(--red-dark)}
+.form-note{font-family:'Inter',sans-serif;font-size:.67rem;color:var(--gray-400);text-align:center;margin-top:.75rem;line-height:1.65}
+.form-success{display:none;text-align:center;padding:.25rem 0}
+.form-success.show{display:block}
+.form-success-icon{font-size:2.5rem;margin-bottom:.75rem}
+.form-success h3{font-family:'Oswald',sans-serif;font-size:1.35rem;font-weight:600;color:var(--black);margin-bottom:.4rem}
+.form-success p{font-size:.84rem;color:var(--gray-600);line-height:1.65}
+.form-success-line{margin-top:1.125rem;padding:.875rem 1rem;background:var(--gray-50);border-radius:var(--r-sm);font-size:.8rem;color:var(--gray-600);line-height:1.6}
+
+/* RESPONSIVE */
+@media(max-width:920px){.hero-inner{grid-template-columns:1fr;max-width:560px;gap:2.5rem}.hero-card{max-width:400px}}
+@media(max-width:600px){.solution-card{padding:1.5rem 1.25rem}.price-card-head{flex-direction:column}.price-figure{text-align:left}.sticky-cta-text{display:none}.sticky-cta{justify-content:center}.float-contact{bottom:5.5rem}}
+</style>
+</head>
+<body>
+
+<div class="top-bar" data-th="🔴 รับเพียง 20 แบรนด์ต่อรอบ · Big C Vientiane · 28 May – 1 Jun 2026" data-en="🔴 Only 20 brands per batch · Big C Vientiane · 28 May – 1 Jun 2026">🔴 Only 20 brands per batch &nbsp;·&nbsp; Big C Vientiane &nbsp;·&nbsp; 28 May – 1 Jun 2026</div>
+
+<nav class="vith-nav" id="mainNav">
+  <div class="vith-nav-inner">
+    <a class="vith-nav-logo" href="/index.html">
+      <div class="vith-nav-logo-mark">V</div>
+      <div class="vith-nav-logo-stack">
+        <span class="vith-nav-logo-text">VITH<span>HUB</span></span>
+        <span class="vith-nav-logo-sub">Laos Market Gateway</span>
+      </div>
+    </a>
+    <div class="vith-nav-links">
+      <a href="/index.html" class="vith-nav-a">Home</a>
+      <a href="/pages/gateway.html" class="vith-nav-a">Gateway</a>
+      <a href="/pages/accelerator.html" class="vith-nav-a active">Retail Entry</a>
+      <a href="/pages/event.html" class="vith-nav-a">Event</a>
+      <a href="/pages/membership.html" class="vith-nav-a">Membership</a>
+      <a href="/pages/about.html" class="vith-nav-a">About</a>
+    </div>
+    <div class="vith-nav-right">
+      <div class="lang-toggle">
+        <button class="lang-btn active" id="btnTH" onclick="setLang('th')">TH</button>
+        <button class="lang-btn" id="btnEN" onclick="setLang('en')">EN</button>
+      </div>
+      <button class="vith-nav-cta" onclick="openModal()" data-th="สมัครเลย →" data-en="Apply Now (Limited Slots) →">Apply Now (Limited Slots) →</button>
+      <button class="vith-hamburger" onclick="vithToggleNav()"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="vith-mobile-menu" id="vithMobileMenu">
+  <a href="/index.html" class="vith-mob-link">Home</a>
+  <a href="/pages/gateway.html" class="vith-mob-link">Gateway</a>
+  <a href="/pages/accelerator.html" class="vith-mob-link active">Retail Entry</a>
+  <a href="/pages/event.html" class="vith-mob-link">Event</a>
+  <a href="/pages/membership.html" class="vith-mob-link">Membership</a>
+  <a href="/pages/about.html" class="vith-mob-link">About</a>
+  <a href="/pages/checkout.html" class="vith-mob-link" style="color:var(--gold2)">💳 แจ้งชำระเงิน</a>
+  <button class="vith-mob-cta" onclick="openModal()" data-th="สมัคร Retail Entry Package →" data-en="Apply for Retail Entry →">Apply for Retail Entry →</button>
+</div>
+
+<div class="ticker-wrap">
+  <div class="ticker-inner">
+    <span class="ticker-item">Big C Vientiane &nbsp;<span>Retail Shelf</span></span>
+    <span class="ticker-item">Import / Export &nbsp;<span>Ready</span></span>
+    <span class="ticker-item">Local Bilingual Team &nbsp;<span>On-ground</span></span>
+    <span class="ticker-item">B2B Buyer Matching &nbsp;<span>5+ Countries</span></span>
+    <span class="ticker-item">Free Shipping &nbsp;<span>100 KG</span></span>
+    <span class="ticker-item">0% Commission &nbsp;<span>Flat Fee Only</span></span>
+    <span class="ticker-item">Big C Vientiane &nbsp;<span>Retail Shelf</span></span>
+    <span class="ticker-item">Import / Export &nbsp;<span>Ready</span></span>
+    <span class="ticker-item">Local Bilingual Team &nbsp;<span>On-ground</span></span>
+    <span class="ticker-item">B2B Buyer Matching &nbsp;<span>5+ Countries</span></span>
+    <span class="ticker-item">Free Shipping &nbsp;<span>100 KG</span></span>
+    <span class="ticker-item">0% Commission &nbsp;<span>Flat Fee Only</span></span>
+  </div>
+</div>
+
+<!-- §1 HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg"><img src="/images/hero-vith-bigc.png" alt="Big C Vientiane" loading="eager"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="hero-red-stripe"></div>
+
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">
+        <span class="hero-eyebrow-dot"></span>
+        <span data-th="VITH HUB · Retail Entry Package · Big C Laos" data-en="VITH HUB · Retail Entry Package · Big C Laos">VITH HUB · Retail Entry Package · Big C Laos</span>
+      </div>
+
+      <h1 class="hero-headline">
+        <span class="grow">Grow Big C</span>
+        <span class="global">Go Global</span>
+      </h1>
+
+      <p class="hero-sub" data-th="เปิดตลาดลาวด้วยพื้นที่ขายจริงใน Big C เวียงจันทน์ ระบบและทีมครบพร้อม — ไม่ต้องเริ่มจากศูนย์" data-en="Enter Laos with a real shelf in Big C Vientiane. Full system, local team — nothing to build from scratch.">
+        Enter Laos with a real shelf in Big C Vientiane.<br>Full system, local team — nothing to build from scratch.
+      </p>
+
+      <div class="hero-points">
+        <div class="hero-point"><span class="hero-point-dot">✓</span><span data-th="วางสินค้าบนชั้น Big C เวียงจันทน์จริง" data-en="Launch your brand on Big C Vientiane's real shelf">Launch your brand on Big C Vientiane's real shelf</span></div>
+        <div class="hero-point"><span class="hero-point-dot">✓</span><span data-th="พบ Buyers และ Distributors จากทั่วอาเซียน" data-en="Meet real buyers &amp; distributors across ASEAN">Meet real buyers &amp; distributors across ASEAN</span></div>
+        <div class="hero-point"><span class="hero-point-dot">✓</span><span data-th="ขยายสู่ตลาด Mekong ด้วยระบบครบ" data-en="Expand to the Mekong market — system fully ready">Expand to the Mekong market — system fully ready</span></div>
+      </div>
+
+      <div class="hero-meta">
+        <span class="hero-meta-item">📅 28 May – 1 Jun 2026</span>
+        <span class="hero-meta-item">📍 Big C Vientiane, Laos</span>
+        <span class="hero-meta-item">🏪 20 Brands Only</span>
+      </div>
+
+      <div class="hero-cta-wrap">
+        <button class="cta-main" onclick="openModal()" data-th="สมัครเข้าร่วม (Limited Slots) →" data-en="Apply Now (Limited Slots) →">Apply Now (Limited Slots) →</button>
+        <div class="cta-urgency" data-th="เพียง 20 แบรนด์ต่อรอบ · ปิดรับเมื่อเต็ม" data-en="Only 20 brands will be selected · Closing soon">Only 20 brands will be selected &nbsp;·&nbsp; Closing soon</div>
+        <div class="hero-link" id="heroScrollLink">See How It Works ↓</div>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <div class="hc-head">
+        <div class="hc-badge"><svg width="7" height="7" viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="#e5141e"/></svg><span data-th="จำกัดจำนวน" data-en="Limited Availability">Limited Availability</span></div>
+        <div class="hc-pkg" data-th="Retail Entry Package" data-en="Retail Entry Package">Retail Entry Package</div>
+        <div class="hc-value-pill"><span class="hc-old" data-th="Value 170,000+ THB" data-en="Value 170,000+ THB">Value 170,000+ THB</span><span class="hc-new">Today ฿39,000</span></div>
+        <div class="hc-price">฿39,000</div>
+        <div class="hc-price-note" data-th="เหมาจ่าย 90 วัน · 0% Commission" data-en="Flat fee · 90 days · 0% Commission">Flat fee · 90 days · 0% Commission</div>
+      </div>
+      <div class="hc-body">
+        <div class="hc-row"><span class="hc-check">✦</span><span data-th="ชั้นวางจริงใน Big C ลาว" data-en="Real shelf in Big C Laos">Real shelf in Big C Laos</span></div>
+        <div class="hc-row"><span class="hc-check">✦</span><span data-th="Buyers โดยตรง (5+ ประเทศ)" data-en="Direct buyer access (5+ countries)">Direct buyer access (5+ countries)</span></div>
+        <div class="hc-row"><span class="hc-check">✦</span><span data-th="ทดสอบกับลูกค้าจริง + Sales Data" data-en="Real customer testing + Sales Data">Real customer testing + Sales Data</span></div>
+        <div class="hc-row"><span class="hc-check">✦</span><span data-th="ทีมท้องถิ่นดูแล ไม่ต้องบินไปเอง" data-en="Local team — you never need to fly over">Local team — you never need to fly over</span></div>
+        <div class="hc-sep"></div>
+        <div class="hc-urgency">
+          <div><div class="hc-slots-num" id="heroSlot">12</div><div class="hc-slots-lbl" data-th="slots คงเหลือ" data-en="slots remaining">slots remaining</div></div>
+          <div class="hc-fill"><div data-th="จาก 20 แบรนด์เท่านั้น" data-en="from 20 total">from 20 total</div><div style="color:var(--red);font-weight:700;font-size:.7rem;margin-top:2px">⚡ Filling fast</div></div>
+        </div>
+        <button class="hc-cta" onclick="openModal()" data-th="สมัคร Retail Entry →" data-en="Apply Now (Limited Slots) →">Apply Now (Limited Slots) →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- §2 PROBLEM -->
+<section class="problem-sec" id="how">
+  <div class="problem-inner">
+    <div class="reveal">
+      <div class="eyebrow" data-th="ทำไมถึงยาก" data-en="The Real Problem">The Real Problem</div>
+      <h2 class="sec-h2 dark" data-th="การเข้าตลาดลาว ไม่ใช่เรื่องง่าย" data-en="Entering Laos is not easy">Entering Laos is not easy</h2>
+      <p style="font-size:.93rem;color:var(--gray-600);line-height:1.72;max-width:540px" data-th="ส่วนใหญ่แบรนด์ไม่ได้ล้มเหลวเพราะสินค้าไม่ดี แต่เพราะไม่มีระบบรองรับ" data-en="Most brands don't fail because the product is bad. They fail because there's no system to support it.">Most brands don't fail because the product is bad. They fail because there's no system to support it.</p>
+    </div>
+    <div class="problem-list reveal d1">
+      <div class="problem-row"><span class="problem-x">✗</span><span class="problem-text" data-th="ไม่มีช่องทางจัดจำหน่าย" data-en="No distribution channel in Laos">No distribution channel in Laos</span></div>
+      <div class="problem-row"><span class="problem-x">✗</span><span class="problem-text" data-th="ไม่มีระบบ Import / Export" data-en="No Import / Export system">No Import / Export system</span></div>
+      <div class="problem-row"><span class="problem-x">✗</span><span class="problem-text" data-th="ไม่มี buyer — ต้องหาเองทั้งหมด" data-en="No buyer access — have to find everything yourself">No buyer access — have to find everything yourself</span></div>
+      <div class="problem-row"><span class="problem-x">✗</span><span class="problem-text" data-th="ใช้เวลา 3–6 เดือน + ต้นทุน 100,000+ บาทเพื่อเริ่มต้น" data-en="3–6 months + 100,000+ THB just to get started">3–6 months + 100,000+ THB just to get started</span></div>
+    </div>
+    <div class="problem-callout reveal d2">
+      <span data-th="ไม่ใช่เพราะสินค้าคุณไม่ดี — แต่เพราะ " data-en="It's not the product. It's because ">It's not the product. It's because </span><strong data-th='"ไม่มีระบบรองรับ"' data-en='"there was no system in place."'>"there was no system in place."</strong>
+    </div>
+  </div>
+</section>
+
+<!-- §2b SYSTEM STATEMENT -->
+<section class="system-sec">
+  <div class="system-inner">
+
+    <div class="reveal">
+      <div class="sys-badge"><span class="sys-badge-dot"></span><span data-th="VITH HUB Platform" data-en="VITH HUB Platform">VITH HUB Platform</span></div>
+      <h2 class="system-headline" data-th="VITH HUB คือ<em>ระบบเดียว</em><br>ที่ออกแบบมาเพื่อรองรับ<br>การขยายตลาดสู่<em>อินโดจีน</em>โดยเฉพาะ" data-en="VITH HUB IS THE ONLY <em>SYSTEM</em><br>BUILT EXCLUSIVELY FOR<br><em>INDOCHINA</em> MARKET ENTRY">VITH HUB IS THE ONLY <em>SYSTEM</em><br>BUILT EXCLUSIVELY FOR<br><em>INDOCHINA</em> MARKET ENTRY</h2>
+      <p class="system-sub" data-th="เราไม่ใช่แค่คนรับจ้างขนของ — เราคือ platform ที่จัดการทุกชั้นของการขยายตลาด ตั้งแต่ logistics ถึง retail ถึง buyer matching อย่างเป็นระบบและตรวจสอบได้" data-en="We're not a delivery service. We're a platform that manages every layer of market entry — from logistics to retail to buyer matching — systematically and trackably.">We're not a delivery service. We're a platform that manages every layer of market entry — from logistics to retail to buyer matching — systematically and trackably.</p>
+    </div>
+
+    <!-- SYSTEM GRID -->
+    <div class="sys-grid reveal d1">
+
+      <div class="sys-cell">
+        <div class="sys-cell-icon">📦</div>
+        <div class="sys-cell-num">Module 01</div>
+        <div class="sys-cell-title" data-th="Inventory System" data-en="Inventory System">Inventory System</div>
+        <div class="sys-cell-desc" data-th="ระบบสต็อกสินค้าในลาว ติดตามได้ real-time ไม่ต้องบินไปดูเอง" data-en="Real-time stock management in Laos — no need to fly over to check.">Real-time stock management in Laos — no need to fly over to check.</div>
+        <div class="sys-cell-tag">Warehouse · 1 CBM Free</div>
+      </div>
+
+      <div class="sys-cell">
+        <div class="sys-cell-icon">🚚</div>
+        <div class="sys-cell-num">Module 02</div>
+        <div class="sys-cell-title" data-th="Logistics Tracking" data-en="Logistics Tracking">Logistics Tracking</div>
+        <div class="sys-cell-desc" data-th="ระบบขนส่งผ่านด่านหนองคาย → เวียงจันทน์ พร้อมเอกสาร import/export ครบ" data-en="Cross-border shipping Nong Khai → Vientiane with full import/export documentation.">Cross-border shipping Nong Khai → Vientiane with full import/export documentation.</div>
+        <div class="sys-cell-tag">Free 100 KG · First Run</div>
+      </div>
+
+      <div class="sys-cell">
+        <div class="sys-cell-icon">🏪</div>
+        <div class="sys-cell-num">Module 03</div>
+        <div class="sys-cell-title" data-th="Retail Management" data-en="Retail Management">Retail Management</div>
+        <div class="sys-cell-desc" data-th="จัดการชั้นวางสินค้าบน Big C Vientiane โดยทีมท้องถิ่น bilingual ทุกวัน" data-en="Shelf management at Big C Vientiane by a bilingual local team — every day.">Shelf management at Big C Vientiane by a bilingual local team — every day.</div>
+        <div class="sys-cell-tag">200 sqm · Big C</div>
+      </div>
+
+      <div class="sys-cell">
+        <div class="sys-cell-icon">🤝</div>
+        <div class="sys-cell-num">Module 04</div>
+        <div class="sys-cell-title" data-th="Buyer Matching" data-en="Buyer Matching">Buyer Matching</div>
+        <div class="sys-cell-desc" data-th="B2B Matching กับ distributors จาก 5+ ประเทศ — นัดตรง 1-on-1 ไม่ผ่านตัวกลาง" data-en="Direct 1-on-1 B2B matching with distributors from 5+ countries — no middleman.">Direct 1-on-1 B2B matching with distributors from 5+ countries — no middleman.</div>
+        <div class="sys-cell-tag">5+ Countries</div>
+      </div>
+
+      <div class="sys-cell">
+        <div class="sys-cell-icon">📋</div>
+        <div class="sys-cell-num">Module 05</div>
+        <div class="sys-cell-title" data-th="Compliance &amp; Billing" data-en="Compliance &amp; Billing">Compliance &amp; Billing</div>
+        <div class="sys-cell-desc" data-th="ระบบวางบิล ฉลากภาษาลาว และพิธีการศุลกากรครบ — 0% commission" data-en="Billing system, Lao-language labeling, and customs clearance — 0% commission.">Billing system, Lao-language labeling, and customs clearance — 0% commission.</div>
+        <div class="sys-cell-tag">0% Commission</div>
+      </div>
+
+      <div class="sys-cell">
+        <div class="sys-cell-icon">🏦</div>
+        <div class="sys-cell-num">Module 06</div>
+        <div class="sys-cell-title" data-th="Payment Infrastructure" data-en="Payment Infrastructure">Payment Infrastructure</div>
+        <div class="sys-cell-desc" data-th="เปิดบัญชีธนาคารลาว (JDB) รับเงินโดยตรง ไม่ผ่านตัวกลาง ตรวจสอบได้ทุกรายการ" data-en="Open a Lao bank account (JDB) and receive payments directly — every transaction traceable.">Open a Lao bank account (JDB) and receive payments directly — every transaction traceable.</div>
+        <div class="sys-cell-tag">JDB Bank · Direct</div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════
+     KEY PRIVILEGES
+══════════════════════════ -->
+<section style="background:#f8f9fc;padding:5rem 1.5rem 4rem;border-top:3px solid var(--gold)">
+  <style>
+    .priv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.375rem;margin-bottom:2.5rem}
+    .priv-card{background:#fff;border-radius:16px;box-shadow:0 2px 16px rgba(0,0,0,.07),0 0 0 1px rgba(201,162,39,.1);overflow:hidden;display:flex;flex-direction:column;transition:transform .28s,box-shadow .28s}
+    .priv-card:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(0,0,0,.13),0 0 0 1px rgba(201,162,39,.2)}
+    .priv-img-wrap{width:100%;aspect-ratio:4/3;overflow:hidden;position:relative;background:#f1f5f9}
+    .priv-img-wrap img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .45s}
+    .priv-card:hover .priv-img-wrap img{transform:scale(1.05)}
+    .priv-img-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem}
+    .priv-img-placeholder span{font-size:2.2rem}
+    .priv-img-placeholder small{font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.4}
+    .priv-body{padding:1.375rem 1.25rem 1.5rem;display:flex;flex-direction:column;flex:1}
+    .priv-icon-row{display:flex;align-items:center;gap:.625rem;margin-bottom:.625rem}
+    .priv-icon{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .priv-title{font-family:'Inter',sans-serif;font-size:.97rem;font-weight:800;color:#0a0a0a;line-height:1.3}
+    .priv-sub{font-size:.79rem;color:#64748b;line-height:1.65;margin-top:.5rem;flex:1}
+    .priv-badge{display:inline-flex;margin-top:1rem;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 11px;border-radius:20px}
+    .priv-banner{background:linear-gradient(120deg,#0a0a0a 0%,#1c0a0a 100%);border-radius:16px;padding:1.75rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;border:1px solid rgba(201,162,39,.22);box-shadow:0 8px 32px rgba(0,0,0,.18)}
+    .priv-zeros{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+    .priv-zero-item{text-align:center}
+    .priv-zero-num{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;font-weight:700;color:var(--gold);line-height:1}
+    .priv-zero-lbl{font-size:.65rem;color:rgba(255,255,255,.38);letter-spacing:.08em;text-transform:uppercase;margin-top:.15rem}
+    .priv-divider{width:1px;height:36px;background:rgba(255,255,255,.1)}
+    @media(max-width:900px){.priv-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:520px){.priv-grid{grid-template-columns:1fr}}
+  </style>
+
+  <div class="wrap">
+    <div class="sec-head center reveal" style="margin-bottom:3rem">
+      <div class="eyebrow center" style="justify-content:center" data-th="สิทธิพิเศษที่ได้รับ" data-en="What You Get">What You Get</div>
+      <h2 class="h2" style="text-align:center" data-th="Key Privileges<br><em>ครอบคลุมทุกอย่าง ตั้งแต่วันแรก</em>" data-en="Key Privileges<br><em>Everything covered, from day one</em>">Key Privileges<br><em>Everything covered, from day one</em></h2>
+    </div>
+
+    <div class="priv-grid reveal d1">
+
+      <!-- Card 1: Truck -->
+      <div class="priv-card">
+        <div class="priv-img-wrap">
+          <img src="/images/benefit-truck.webp" alt="ขนส่งฟรี VITH HUB" loading="lazy"
+            onerror="this.parentNode.innerHTML='<div class=\'priv-img-placeholder\' style=\'background:linear-gradient(135deg,#fffbeb,#fef3c7)\'><span>🚚</span><small>Free Logistics</small></div>'">
+        </div>
+        <div class="priv-body">
+          <div class="priv-icon-row">
+            <div class="priv-icon" style="background:linear-gradient(135deg,#fffbeb,#fef3c7)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A227" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            </div>
+            <div class="priv-title" data-th="ขนส่งฟรี 100 KG" data-en="Free Shipping 100 KG">ขนส่งฟรี 100 KG</div>
+          </div>
+          <div class="priv-sub" data-th="กิโลกรัมแรกเราขนให้ฟรีจากไทยถึงเวียงจันทน์ เริ่มง่าย ไร้กังวลเรื่องค่าขนส่ง" data-en="First 100 kg shipped free Thailand → Vientiane. Start easy, zero freight stress.">กิโลกรัมแรกเราขนให้ฟรีจากไทยถึงเวียงจันทน์ เริ่มง่าย ไร้กังวลเรื่องค่าขนส่ง</div>
+          <span class="priv-badge" style="color:var(--gold);background:#fffbeb;border:1px solid rgba(201,162,39,.25)">มูลค่า ฿3,500+</span>
+        </div>
+      </div>
+
+      <!-- Card 2: Warehouse -->
+      <div class="priv-card">
+        <div class="priv-img-wrap">
+          <img src="/images/benefit-warehouse.webp" alt="สต็อกฟรี VITH HUB" loading="lazy"
+            onerror="this.parentNode.innerHTML='<div class=\'priv-img-placeholder\' style=\'background:linear-gradient(135deg,#f0fdf4,#dcfce7)\'><span>🏭</span><small>Warehouse Laos</small></div>'">
+        </div>
+        <div class="priv-body">
+          <div class="priv-icon-row">
+            <div class="priv-icon" style="background:linear-gradient(135deg,#f0fdf4,#dcfce7)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 8.35V20a2 2 0 01-2 2H4a2 2 0 01-2-2V8.35A2 2 0 012.61 6.4l8-5.33a2 2 0 012.78 0l8 5.33A2 2 0 0122 8.35z"/><path d="M15 22v-4a3 3 0 00-6 0v4"/></svg>
+            </div>
+            <div class="priv-title" data-th="สต็อกฟรี 1 ลบ.ม." data-en="Free Storage 1 CBM">สต็อกฟรี 1 ลบ.ม.</div>
+          </div>
+          <div class="priv-sub" data-th="พื้นที่จัดเก็บสินค้ามาตรฐานในลาว ไม่มีค่าเช่าเพิ่ม ประหยัดค่าโกดังได้ทันที" data-en="Standard warehouse space in Laos, no extra storage fee. Save on warehousing cost immediately.">พื้นที่จัดเก็บสินค้ามาตรฐานในลาว ไม่มีค่าเช่าเพิ่ม ประหยัดค่าโกดังได้ทันที</div>
+          <span class="priv-badge" style="color:#16a34a;background:#f0fdf4;border:1px solid rgba(22,163,74,.2)">มูลค่า ฿2,400+/เดือน</span>
+        </div>
+      </div>
+
+      <!-- Card 3: Showroom -->
+      <div class="priv-card">
+        <div class="priv-img-wrap">
+          <img src="/images/benefit-showroom.webp" alt="โชว์รูม VITH HUB Big C" loading="lazy"
+            onerror="this.parentNode.innerHTML='<div class=\'priv-img-placeholder\' style=\'background:linear-gradient(135deg,#fff0f0,#ffe4e6)\'><span>🏪</span><small>Big C Showroom</small></div>'">
+        </div>
+        <div class="priv-body">
+          <div class="priv-icon-row">
+            <div class="priv-icon" style="background:linear-gradient(135deg,#fff0f0,#ffe4e6)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#e5141e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <div class="priv-title" data-th="โชว์รูมและสตาฟดูแล" data-en="Showroom &amp; Staff">โชว์รูมและสตาฟดูแล</div>
+          </div>
+          <div class="priv-sub" data-th="โชว์รูมสินค้าที่ Big C พร้อมทีมงานดูแลหลังบ้านครบวงจร มีตัวตนจริงในเวียงจันทน์" data-en="Product showroom at Big C Vientiane with full back-office team. Real physical presence in Laos.">โชว์รูมสินค้าที่ Big C พร้อมทีมงานดูแลหลังบ้านครบวงจร มีตัวตนจริงในเวียงจันทน์</div>
+          <span class="priv-badge" style="color:var(--red);background:#fff0f0;border:1px solid rgba(229,20,30,.2)">200 ตร.ม. · Big C</span>
+        </div>
+      </div>
+
+      <!-- Card 4: Billing -->
+      <div class="priv-card">
+        <div class="priv-img-wrap">
+          <img src="/images/benefit-billing.webp" alt="0% Commission VITH HUB" loading="lazy"
+            onerror="this.parentNode.innerHTML='<div class=\'priv-img-placeholder\' style=\'background:linear-gradient(135deg,#f0f9ff,#e0f2fe)\'><span>📋</span><small>0% Commission</small></div>'">
+        </div>
+        <div class="priv-body">
+          <div class="priv-icon-row">
+            <div class="priv-icon" style="background:linear-gradient(135deg,#f0f9ff,#e0f2fe)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg>
+            </div>
+            <div class="priv-title" data-th="0% Commission &amp; Free Billing" data-en="0% Commission &amp; Free Billing">0% Commission &amp; Free Billing</div>
+          </div>
+          <div class="priv-sub" data-th="ระบบวางบิลฟรี รับเงินเต็มจำนวน ไม่หักเปอร์เซ็นต์ยอดขาย" data-en="Free billing system, receive full sales amount, zero commission deducted.">ระบบวางบิลฟรี รับเงินเต็มจำนวน ไม่หักเปอร์เซ็นต์ยอดขาย</div>
+          <span class="priv-badge" style="color:#0ea5e9;background:#f0f9ff;border:1px solid rgba(14,165,233,.2)">ไม่มีค่าคอมมิชชั่น</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Zero-Cost Banner -->
+    <div class="priv-banner reveal d2">
+      <div style="display:flex;align-items:center;gap:1rem">
+        <div style="width:44px;height:44px;border-radius:50%;background:rgba(201,162,39,.15);border:1.5px solid rgba(201,162,39,.35);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.2rem">✓</div>
+        <div>
+          <div style="font-family:'Inter',sans-serif;font-size:1.05rem;font-weight:800;color:#fff" data-th="จ่ายครั้งเดียวจบ" data-en="One-time payment, all-in">จ่ายครั้งเดียวจบ</div>
+          <div style="font-size:.8rem;color:rgba(255,255,255,.45);margin-top:.1rem" data-th="ไม่มีค่าใช้จ่ายแฝงในการเริ่มต้น" data-en="No hidden costs to get started">ไม่มีค่าใช้จ่ายแฝงในการเริ่มต้น</div>
+        </div>
+      </div>
+      <div class="priv-zeros">
+        <div class="priv-zero-item"><div class="priv-zero-num">฿0</div><div class="priv-zero-lbl">ค่า Commission</div></div>
+        <div class="priv-divider"></div>
+        <div class="priv-zero-item"><div class="priv-zero-num">฿0</div><div class="priv-zero-lbl">ค่าเช่าสต็อก</div></div>
+        <div class="priv-divider"></div>
+        <div class="priv-zero-item"><div class="priv-zero-num">฿0</div><div class="priv-zero-lbl">ค่าขนส่ง 100KG</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- §3 ONE BIG CARD -->
+<section class="solution-sec" id="solution">
+  <div class="solution-inner">
+    <div class="reveal">
+      <div class="eyebrow light" data-th="VITH HUB SYSTEM" data-en="PLATFORM CAPABILITIES">PLATFORM CAPABILITIES</div>
+      <h2 class="sec-h2 light" data-th="ทุกอย่างที่ต้องมีเพื่อขายในลาว — พร้อมแล้ว" data-en="Everything You Need to Sell in Laos — Ready">Everything You Need to Sell in Laos — Ready</h2>
+      <p style="font-size:.88rem;color:rgba(255,255,255,.38);max-width:500px;line-height:1.7" data-th="คุณไม่ต้องเริ่มจากศูนย์ เราสร้าง infrastructure ไว้ให้แล้วทั้งหมด" data-en="You don't start from zero. The entire infrastructure is already built — you just bring your product.">You don't start from zero. The entire infrastructure is already built — you just bring your product.</p>
+    </div>
+
+    <div class="solution-card reveal d1">
+      <div class="solution-card-title" data-th="Retail Entry Package" data-en="Retail Entry Package">Retail Entry Package</div>
+      <div class="solution-card-sub" data-th="ทุกอย่างในก้อนเดียว · 90 วัน · ฿39,000 เหมาจ่าย" data-en="Everything in one package · 90 days · ฿39,000 flat fee">Everything in one package · 90 days · ฿39,000 flat fee</div>
+
+      <div class="sol-checklist">
+        <div class="sol-row">
+          <span class="sol-check">✓</span>
+          <div><div class="sol-row-title" data-th="ขายบน Big C เวียงจันทน์ (Shelf จริง)" data-en="Sell in Big C Vientiane (Real Shelf)">Sell in Big C Vientiane (Real Shelf)</div><div class="sol-row-desc" data-th="โชว์รูม 200 ตร.ม. + ชั้นวางสินค้าจริงใน Big C ตลอด 90 วัน" data-en="200 sqm showroom + physical shelf inside Big C for the full 90 days">200 sqm showroom + physical shelf inside Big C for the full 90 days</div></div>
+        </div>
+        <div class="sol-row">
+          <span class="sol-check">✓</span>
+          <div><div class="sol-row-title" data-th="ส่งและสต็อกสินค้าในลาว" data-en="Send &amp; Stock Your Products in Laos">Send &amp; Stock Your Products in Laos</div><div class="sol-row-desc" data-th="ขนส่งฟรี 100 KG (ไทย → เวียงจันทน์) + คลังสินค้าฟรี 1 ลบ.ม." data-en="Free shipping 100 KG (Thailand → Vientiane) + free warehouse storage 1 CBM">Free shipping 100 KG (Thailand → Vientiane) + free warehouse storage 1 CBM</div></div>
+        </div>
+        <div class="sol-row">
+          <span class="sol-check">✓</span>
+          <div><div class="sol-row-title" data-th="Showroom + เข้าถึง Buyers โดยตรง" data-en="Showroom + Buyer Access">Showroom + Buyer Access</div><div class="sol-row-desc" data-th="1-on-1 กับ Buyers จากจีน รัสเซีย เวียดนาม ยุโรป ลาว" data-en="1-on-1 meetings with buyers from China, Russia, Vietnam, Europe, Laos">1-on-1 meetings with buyers from China, Russia, Vietnam, Europe, Laos</div></div>
+        </div>
+        <div class="sol-row">
+          <span class="sol-check">✓</span>
+          <div><div class="sol-row-title" data-th="Import Export + ระบบวางบิล" data-en="Import Export + Billing System">Import Export + Billing System</div><div class="sol-row-desc" data-th="พิธีการศุลกากรครบ + ระบบวางบิล ไม่มีคอมมิชชั่น" data-en="Full customs clearance + billing system, zero commission deducted">Full customs clearance + billing system, zero commission deducted</div></div>
+        </div>
+        <div class="sol-row">
+          <span class="sol-check">✓</span>
+          <div><div class="sol-row-title" data-th="เปิดบัญชีธนาคารลาว (JDB)" data-en="Open Lao Bank Account (JDB)">Open Lao Bank Account (JDB)</div><div class="sol-row-desc" data-th="รับเงินจากลาวตรงเข้าบัญชี ไม่มีสิ่งกีดขวาง" data-en="Receive payments from Laos directly — no friction, no middleman">Receive payments from Laos directly — no friction, no middleman</div></div>
+        </div>
+      </div>
+
+      <div class="sol-commission"><span>✅</span><span data-th="VITH HUB ไม่รับ % ยอดขายหรือ Commission ใดๆ — <strong>เหมาจ่าย ฿39,000 เท่านั้น</strong>" data-en="VITH HUB takes <strong>0% commission</strong> — flat fee ฿39,000 only. Every baht you sell is yours.">VITH HUB takes <strong>0% commission</strong> — flat fee ฿39,000 only. Every baht you sell is yours.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- §4 PRICE + URGENCY -->
+<section class="price-sec" id="pricing">
+  <div class="price-inner">
+    <div class="price-card reveal">
+      <div class="price-card-head">
+        <div>
+          <div class="price-label" data-th="Retail Entry Package" data-en="Retail Entry Package">Retail Entry Package</div>
+          <div class="price-note" data-th="เหมาจ่าย · 90 วัน · 0% Commission · รับจำกัดต่อรอบ" data-en="Flat fee · 90 days · 0% Commission · Limited per batch">Flat fee · 90 days · 0% Commission · Limited per batch</div>
+        </div>
+        <div class="price-figure">
+          <div class="price-was" data-th="Total Value: 170,000+ THB" data-en="Total Value: 170,000+ THB">Total Value: 170,000+ THB</div>
+          <div class="price-amount">฿39,000</div>
+          <div class="price-thb">THB</div>
+          <div class="price-saving" data-th="ประหยัด 130,000+ บาท" data-en="Save 130,000+ THB">Save 130,000+ THB</div>
+        </div>
+      </div>
+      <div class="price-card-body">
+        <div class="slots-row">
+          <div class="slots-left"><div class="num" id="pricingSlot">12</div><div class="lbl" data-th="slots คงเหลือ" data-en="slots remaining">slots remaining</div></div>
+          <div class="slots-bar"><div class="slots-bar-track"><div class="slots-bar-fill"></div></div><div class="slots-bar-label" data-th="72% เต็มแล้ว" data-en="72% filled">72% filled</div></div>
+          <div class="slots-right"><div data-th="จาก 20 แบรนด์เท่านั้น" data-en="from 20 total">from 20 total</div><div style="color:var(--red);font-weight:700;font-size:.72rem;margin-top:3px">⚡ Filling fast</div></div>
+        </div>
+        <button class="price-cta" onclick="openModal()" data-th="สมัคร Retail Entry — ฿39,000 →" data-en="Apply Now (Limited Slots) — ฿39,000 →">Apply Now (Limited Slots) — ฿39,000 →</button>
+        <div class="price-sub-note" data-th="🔒 ทีมติดต่อกลับภายใน 24 ชั่วโมง · ปิดรับเมื่อครบ 20 แบรนด์" data-en="🔒 Team contacts you within 24 hours · Closes when 20 brands are filled">🔒 Team contacts you within 24 hours · Closes when 20 brands are filled</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-logo">VITH<span>HUB</span></div>
+    <div class="footer-links">
+      <a href="/" class="footer-link">Home</a>
+      <a href="/pages/event.html" class="footer-link">Expo 2026</a>
+      <a href="/pages/accelerator.html" class="footer-link">Retail Entry</a>
+      <a href="/pages/membership.html" class="footer-link">Membership</a>
+      <a href="https://line.me/ti/p/@cef8930n" class="footer-link" target="_blank">LINE @cef8930n</a>
+    </div>
+    <div class="footer-copy">© 2026 VITH HUB · vithhub.asia</div>
+    <span style="font-size:.64rem;color:rgba(255,255,255,.16)">หจก. รอยัล บริตจ์ 99 · ทะเบียนนิติบุคคล: 0413568000586 · อุดรธานี 41000 · <a href="/pages/policy.html" style="color:rgba(255,255,255,.22)">นโยบายการคืนเงิน</a></span>
+  </div>
+</footer>
+
+<!-- STICKY CTA -->
+<div class="sticky-cta" id="stickyCta">
+  <div class="sticky-cta-text">
+    <strong data-th="Retail Entry Package · ฿39,000" data-en="Retail Entry Package · ฿39,000">Retail Entry Package · ฿39,000</strong>
+    <span data-th="20 แบรนด์เท่านั้น · ปิดรับเมื่อเต็ม" data-en="20 brands only · Closes when full">20 brands only · Closes when full</span>
+  </div>
+  <button class="sticky-cta-btn" onclick="openModal()" data-th="สมัคร — ฿39,000 →" data-en="Apply Now (Limited Slots) →">Apply Now (Limited Slots) →</button>
+</div>
+
+<!-- FLOAT -->
+<div class="float-contact">
+  <a href="https://line.me/ti/p/@cef8930n" target="_blank" class="float-btn float-line" title="LINE">
+    <svg width="20" height="20" viewBox="0 0 48 48"><path d="M24 4C13 4 4 11.8 4 21.5c0 5.5 3.1 10.4 7.9 13.7-.3 1.2-1.1 4.3-1.3 5 0 0-.1.3.2.4.2.1.5 0 .5 0 .7-.1 8.5-5.6 9.8-6.5.9.1 1.9.2 2.9.2 11 0 20-7.8 20-17.3S35 4 24 4z" fill="white"/></svg>
+  </a>
+  <a href="https://wa.me/66855907666" target="_blank" class="float-btn float-wa" title="WhatsApp">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="applyModal" onclick="handleModalBg(event)">
+  <div class="modal">
+    <div class="modal-head">
+      <div class="modal-title" data-th="เชื่อมต่อสินค้าของคุณเข้ากับระบบ VITH HUB" data-en="Connect Your Brand to VITH HUB System">Connect Your Brand to VITH HUB System</div>
+      <div class="modal-sub" data-th="กรอกข้อมูลเพื่อเริ่มต้น — ทีมงานติดต่อกลับภายใน 24 ชั่วโมง" data-en="Fill in your details to get started — our team will contact you within 24 hours">Fill in your details to get started — our team will contact you within 24 hours</div>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div id="applyForm">
+        <div class="form-group">
+          <label class="form-label" data-th="ชื่อแบรนด์ *" data-en="Brand Name *">Brand Name *</label>
+          <input type="text" class="form-input" id="fBrand" data-th-placeholder="เช่น สินค้าดี Co., Ltd." data-en-placeholder="e.g. Good Products Co., Ltd." placeholder="e.g. Good Products Co., Ltd." />
+        </div>
+        <div class="form-group">
+          <label class="form-label" data-th="ประเภทสินค้า *" data-en="Product Type *">Product Type *</label>
+          <select class="form-select" id="fProduct">
+            <option value="" data-th="-- เลือกประเภท --" data-en="-- Select type --">-- Select type --</option>
+            <option data-th="อาหาร / ขนม / เครื่องดื่ม" data-en="Food / Snacks / Beverages">Food / Snacks / Beverages</option>
+            <option data-th="เครื่องสำอาง / สกินแคร์" data-en="Cosmetics / Skincare">Cosmetics / Skincare</option>
+            <option data-th="อาหารเสริม / สุขภาพ" data-en="Supplements / Health">Supplements / Health</option>
+            <option data-th="สินค้าเกษตร / สมุนไพร" data-en="Agricultural / Herbal">Agricultural / Herbal</option>
+            <option data-th="เครื่องใช้ในบ้าน / ของใช้ทั่วไป" data-en="Household / General Products">Household / General Products</option>
+            <option data-th="อื่นๆ" data-en="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" data-th="ข้อมูลติดต่อ (โทร / Line / Email) *" data-en="Contact (Phone / Line / Email) *">Contact (Phone / Line / Email) *</label>
+          <input type="text" class="form-input" id="fContact" data-th-placeholder="เบอร์โทร, Line ID หรือ Email" data-en-placeholder="Phone number, Line ID, or Email" placeholder="Phone number, Line ID, or Email" />
+        </div>
+        <button class="form-submit" onclick="submitForm()" data-th="ส่งใบสมัคร →" data-en="Submit Application →">Submit Application →</button>
+        <div class="form-note" data-th="🔒 ข้อมูลปลอดภัย 100% · ทีมงานติดต่อกลับภายใน 24 ชั่วโมง" data-en="🔒 100% secure · Team contacts you within 24 hours">🔒 100% secure · Team contacts you within 24 hours</div>
+      </div>
+      <div class="form-success" id="formSuccess">
+        <div class="form-success-icon">🎯</div>
+        <h3 data-th="คุณเกือบได้แล้ว!" data-en="You're Almost In">You're Almost In</h3>
+        <p data-th="ทีมงาน VITH HUB จะติดต่อกลับภายใน <strong>24 ชั่วโมง</strong><br>Slots กำลังเต็มเร็ว — โปรดเตรียมโทรศัพท์ไว้ใกล้มือ" data-en="Our team will contact you within <strong>24 hours</strong>.<br>Slots are filling fast — keep your phone available.">Our team will contact you within <strong>24 hours</strong>.<br>Slots are filling fast — keep your phone available.</p>
+        <div class="form-success-line" style="background:#fff8f8;border:1px solid rgba(229,20,30,.15)">
+          <div style="font-size:.7rem;color:var(--red);font-weight:700;margin-bottom:.2rem">⚡ Quick contact via LINE</div>
+          <div style="font-size:.88rem;color:var(--black);font-weight:600">@cef8930n</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function vithToggleNav(){document.getElementById('vithMobileMenu').classList.toggle('open')}
+window.addEventListener('scroll',()=>{
+  document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>20);
+  const h=document.getElementById('hero').offsetHeight;
+  document.getElementById('stickyCta').classList.toggle('show',window.scrollY>h*.6);
+});
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}})},{rootMargin:'0px 0px -40px 0px',threshold:0});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+const REMAINING=Math.max(0,20-8);
+['heroSlot','pricingSlot'].forEach(id=>{const el=document.getElementById(id);if(el){el.textContent=REMAINING;if(REMAINING<=10)el.style.color='#e5141e'}});
+document.getElementById('heroScrollLink').onclick=()=>document.getElementById('how').scrollIntoView({behavior:'smooth'});
+let lang=localStorage.getItem('vith_lang')||'th';
+function setLang(l){
+  lang=l;localStorage.setItem('vith_lang',l);document.documentElement.lang=l;
+  document.getElementById('btnTH').classList.toggle('active',l==='th');
+  document.getElementById('btnEN').classList.toggle('active',l==='en');
+  document.querySelectorAll('[data-th],[data-en]').forEach(el=>{const v=el.getAttribute('data-'+l);if(v!==null)el.innerHTML=v});
+  document.querySelectorAll('[data-th-placeholder],[data-en-placeholder]').forEach(el=>{const v=el.getAttribute('data-'+l+'-placeholder');if(v!==null)el.placeholder=v});
+  document.querySelectorAll('select option[data-th]').forEach(o=>{const v=o.getAttribute('data-'+l);if(v!==null)o.textContent=v});
+}
+setLang(lang);
+function openModal(){document.getElementById('applyModal').classList.add('open');document.body.style.overflow='hidden'}
+function closeModal(){document.getElementById('applyModal').classList.remove('open');document.body.style.overflow=''}
+function handleModalBg(e){if(e.target===document.getElementById('applyModal'))closeModal()}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+const WEBHOOK_URL="https://script.google.com/macros/s/AKfycbzpN1z2qrSdaZv2AHJofeEYPHRyk7UNOqQq9uIHoEYVY_D5td0IOLK2PBnPw0vbjcw/exec";
+async function submitForm(){
+  const brand  = document.getElementById('fBrand').value.trim();
+  const product= document.getElementById('fProduct').value;
+  const contact= document.getElementById('fContact').value.trim();
+  let ok=true;
+  [['fBrand',brand],['fProduct',product],['fContact',contact]].forEach(([id,v])=>{
+    const el=document.getElementById(id);
+    if(!v){el.classList.add('error');ok=false}else el.classList.remove('error');
+  });
+  if(!ok)return;
+
+  // Track
+  window.dataLayer=window.dataLayer||[];
+  window.dataLayer.push({event:'lead_submit',path:'accelerator',page:window.location.pathname});
+
+  const btn=document.querySelector('button.form-submit');
+  if(btn){btn.disabled=true;btn.innerHTML='⏳ Sending...'}
+
+  // Fire-and-forget webhook (no-cors = opaque response — that's expected)
+  // We don't await success; we trust the send completed and move on
+  fetch(WEBHOOK_URL,{
+    method:'POST',
+    mode:'no-cors',
+    body:JSON.stringify({
+      form_type:'Retail_Entry_Application',
+      brand_name:brand,
+      product_category:product,
+      contact_name:contact,
+      source:'accelerator.html',
+      submitted_at:new Date().toISOString()
+    }),
+    headers:{'Content-Type':'text/plain;charset=utf-8'}
+  }).catch(err=>console.warn('Webhook failed:',err));
+
+  // Show success state immediately (don't wait for opaque response)
+  const formEl=document.getElementById('applyForm');
+  const successEl=document.getElementById('formSuccess');
+  if(formEl)formEl.style.display='none';
+  if(successEl)successEl.classList.add('show');
+
+  // Redirect after 2.5s so user sees the success message
+  setTimeout(()=>{
+    window.location.href='/pages/checkout.html?brand='+encodeURIComponent(brand);
+  },2500);
+}
+</script>
+</body>
+</html>
