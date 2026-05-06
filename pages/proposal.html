@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>VITH HUB — Mekong Growth Expo 2026 & Retail Entry</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0b1120;--navy2:#0d2545;--navy3:#071629;
+  --gold:#C9A227;--gold2:#E4BC4A;--goldDk:#9B7A10;
+  --red:#e5141e;
+  --sub:rgba(255,255,255,.55);
+  --border:rgba(255,255,255,.08);
+  --borderG:rgba(201,162,39,.22);
+  --r:10px;--rL:16px;--rXL:24px;
+  --max:1100px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--navy);color:#fff;font-family:'Plus Jakarta Sans','Noto Sans Thai',sans-serif;line-height:1.6;overflow-x:hidden}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:none}}
+@keyframes shimmer{to{background-position:200% center}}
+@keyframes pulseGold{0%,100%{box-shadow:0 0 0 0 rgba(201,162,39,.35)}70%{box-shadow:0 0 0 14px rgba(201,162,39,0)}}
+@keyframes countUp{from{opacity:0;transform:scale(.8)}to{opacity:1;transform:scale(1)}}
+@keyframes lineGrow{from{width:0}to{width:100%}}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+.anim-1{animation:fadeUp .75s .05s both}
+.anim-2{animation:fadeUp .75s .15s both}
+.anim-3{animation:fadeUp .75s .25s both}
+.anim-4{animation:fadeUp .75s .35s both}
+.anim-5{animation:fadeUp .75s .45s both}
+
+/* TOP BAR */
+.top-bar{
+  background:linear-gradient(90deg,var(--goldDk),var(--gold),var(--gold2),var(--gold),var(--goldDk));
+  background-size:200% auto;animation:shimmer 5s linear infinite;
+  text-align:center;padding:10px 1.5rem;
+  font-family:'Space Mono',monospace;font-size:.68rem;font-weight:700;
+  color:var(--navy);letter-spacing:.18em;text-transform:uppercase;
+}
+
+/* NAV */
+nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(11,17,32,.92);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+  padding:.875rem 2rem;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:.08em;color:var(--gold2);text-decoration:none}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-size:.8rem;font-weight:600;color:var(--sub);text-decoration:none;letter-spacing:.04em;transition:color .2s}
+.nav-links a:hover{color:#fff}
+.nav-cta{
+  background:var(--gold);color:var(--navy);
+  font-size:.78rem;font-weight:800;letter-spacing:.06em;
+  padding:.5rem 1.25rem;border-radius:8px;text-decoration:none;
+  transition:background .2s,transform .15s;
+}
+.nav-cta:hover{background:var(--gold2);transform:translateY(-1px)}
+@media(max-width:640px){.nav-links{display:none}}
+
+/* HERO */
+.hero{
+  position:relative;padding:100px 2rem 90px;
+  background:linear-gradient(150deg,#071629 0%,#0d2545 50%,#0a1e3d 100%);
+  overflow:hidden;text-align:center;
+}
+.hero-grid-bg{
+  position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(rgba(201,162,39,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(201,162,39,.04) 1px,transparent 1px);
+  background-size:60px 60px;
+}
+.hero-glow{
+  position:absolute;top:-20%;left:50%;transform:translateX(-50%);
+  width:600px;height:400px;border-radius:50%;
+  background:radial-gradient(ellipse,rgba(201,162,39,.12) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero::after{
+  content:'';position:absolute;bottom:-2px;left:0;right:0;height:80px;
+  background:linear-gradient(to bottom,transparent,var(--navy));pointer-events:none;
+}
+.hero-inner{position:relative;z-index:1;max-width:860px;margin:0 auto}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'Space Mono',monospace;font-size:.65rem;font-weight:700;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--gold2);
+  padding:6px 18px;border-radius:20px;border:1px solid var(--borderG);
+  background:rgba(201,162,39,.08);margin-bottom:1.75rem;
+}
+.hero-badge::before{content:'◆';font-size:.45rem}
+.hero-h1{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(3rem,8vw,6.5rem);letter-spacing:.04em;line-height:.95;
+  color:#fff;margin-bottom:.5rem;
+}
+.hero-h1 span{
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.hero-sub{font-size:clamp(1rem,2.5vw,1.3rem);color:var(--sub);margin-bottom:2rem;font-weight:500}
+.hero-pills{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center;margin-bottom:2.5rem}
+.hero-pill{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,.06);border:1px solid var(--border);
+  padding:.5rem 1.125rem;border-radius:30px;
+  font-size:.8rem;font-weight:600;color:#fff;
+}
+.hero-pill.gold{border-color:var(--borderG);background:rgba(201,162,39,.1);color:var(--gold2)}
+.hero-cta-group{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-primary{
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  color:var(--navy);font-weight:800;font-size:.9rem;
+  padding:.875rem 2rem;border-radius:12px;text-decoration:none;
+  display:inline-flex;align-items:center;gap:8px;
+  animation:pulseGold 2.5s infinite;transition:transform .2s,box-shadow .2s;
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(201,162,39,.35)}
+.btn-secondary{
+  background:rgba(255,255,255,.06);border:1px solid var(--border);
+  color:#fff;font-weight:700;font-size:.9rem;
+  padding:.875rem 2rem;border-radius:12px;text-decoration:none;
+  display:inline-flex;align-items:center;gap:8px;
+  transition:background .2s,transform .2s;
+}
+.btn-secondary:hover{background:rgba(255,255,255,.1);transform:translateY(-2px)}
+
+/* STATS ROW */
+.stats-row{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  background:rgba(255,255,255,.02);
+}
+@media(max-width:640px){.stats-row{grid-template-columns:repeat(2,1fr)}}
+.stat-item{
+  padding:2rem 1.5rem;text-align:center;
+  border-right:1px solid var(--border);
+}
+.stat-item:last-child{border-right:none}
+.stat-num{
+  font-family:'Bebas Neue',sans-serif;font-size:2.75rem;letter-spacing:.04em;
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  line-height:1;margin-bottom:.25rem;
+}
+.stat-lbl{font-size:.72rem;color:var(--sub);font-weight:600;letter-spacing:.06em}
+
+/* SECTION */
+.section{padding:80px 2rem}
+.section-inner{max-width:var(--max);margin:0 auto}
+.section-label{
+  font-family:'Space Mono',monospace;font-size:.65rem;font-weight:700;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--gold);
+  margin-bottom:.875rem;display:flex;align-items:center;gap:.5rem;
+}
+.section-label::before{content:'';width:24px;height:2px;background:var(--gold);border-radius:2px}
+.section-title{font-size:clamp(1.6rem,4vw,2.5rem);font-weight:900;letter-spacing:-.03em;line-height:1.1;margin-bottom:.875rem}
+.section-sub{font-size:.95rem;color:var(--sub);max-width:560px}
+
+/* FLOOR PLAN SECTION */
+.fp-layout{display:grid;grid-template-columns:1fr 340px;gap:2rem;align-items:start}
+@media(max-width:900px){.fp-layout{grid-template-columns:1fr}}
+
+.fp-img-wrap{
+  position:relative;border-radius:var(--rXL);overflow:hidden;
+  border:1px solid var(--borderG);
+  background:linear-gradient(135deg,#0d2545,#071629);
+  aspect-ratio:16/10;
+}
+.fp-img-wrap img{width:100%;height:100%;object-fit:cover;display:block}
+.fp-placeholder{
+  width:100%;height:100%;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:1rem;
+  color:var(--sub);font-size:.85rem;
+}
+.fp-placeholder-icon{font-size:3rem}
+.fp-img-overlay{
+  position:absolute;bottom:0;left:0;right:0;
+  background:linear-gradient(to top,rgba(7,22,41,.95),transparent);
+  padding:1.5rem 1.25rem .875rem;
+}
+.fp-overlay-text{font-family:'Space Mono',monospace;font-size:.6rem;color:rgba(255,255,255,.45);letter-spacing:.1em}
+.fp-actions{display:flex;gap:.875rem;flex-wrap:wrap;margin-top:1rem}
+.fp-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:.78rem;font-weight:700;padding:.625rem 1.125rem;border-radius:8px;
+  text-decoration:none;transition:all .2s;
+}
+.fp-btn-dl{background:rgba(255,255,255,.06);border:1px solid var(--border);color:#fff}
+.fp-btn-dl:hover{background:rgba(255,255,255,.12)}
+.fp-btn-book{background:var(--gold);color:var(--navy)}
+.fp-btn-book:hover{background:var(--gold2);transform:translateY(-1px)}
+
+/* ZONE CARDS */
+.zone-stack{display:flex;flex-direction:column;gap:.75rem}
+.zone-card{
+  padding:1rem 1.125rem;border-radius:var(--rL);
+  border:1px solid var(--border);background:rgba(255,255,255,.03);
+  transition:transform .2s,border-color .2s;cursor:default;
+}
+.zone-card:hover{transform:translateX(4px)}
+.zone-card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:.375rem}
+.zone-left{display:flex;align-items:center;gap:.625rem}
+.zone-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.zone-name{font-weight:800;font-size:.9rem}
+.zone-tag{font-size:.6rem;font-weight:700;letter-spacing:.1em;padding:2px 8px;border-radius:4px;text-transform:uppercase}
+.zone-price-big{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:.04em;line-height:1}
+.zone-detail{font-size:.72rem;color:var(--sub)}
+
+.zone-p{border-color:rgba(201,162,39,.3);background:rgba(201,162,39,.05)}
+.zone-p .zone-dot{background:var(--gold2)}
+.zone-p .zone-tag{background:rgba(201,162,39,.15);color:var(--gold2)}
+.zone-p .zone-price-big{color:var(--gold2)}
+.zone-p:hover{border-color:rgba(201,162,39,.5)}
+
+.zone-a{border-color:rgba(96,165,250,.25)}
+.zone-a .zone-dot{background:#60a5fa}
+.zone-a .zone-tag{background:rgba(96,165,250,.12);color:#93c5fd}
+.zone-a .zone-price-big{color:#93c5fd}
+.zone-a:hover{border-color:rgba(96,165,250,.4)}
+
+.zone-b{border-color:rgba(74,222,128,.25)}
+.zone-b .zone-dot{background:#4ade80}
+.zone-b .zone-tag{background:rgba(74,222,128,.1);color:#86efac}
+.zone-b .zone-price-big{color:#86efac}
+.zone-b:hover{border-color:rgba(74,222,128,.4)}
+
+.zone-cd{border-color:rgba(251,146,60,.25)}
+.zone-cd .zone-dot{background:#fb923c}
+.zone-cd .zone-tag{background:rgba(251,146,60,.1);color:#fdba74}
+.zone-cd .zone-price-big{color:#fdba74}
+.zone-cd:hover{border-color:rgba(251,146,60,.4)}
+
+.zero-badge{
+  display:flex;align-items:center;gap:.625rem;
+  background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.2);
+  border-radius:10px;padding:.75rem 1rem;margin-top:.5rem;
+  font-size:.78rem;font-weight:700;color:#86efac;
+}
+
+/* RETAIL ENTRY SECTION */
+.re-section{background:linear-gradient(160deg,#0a1628,var(--navy2));border-top:1px solid var(--border)}
+.re-card{
+  border:1px solid var(--borderG);border-radius:var(--rXL);
+  background:linear-gradient(135deg,rgba(201,162,39,.06),rgba(201,162,39,.02));
+  overflow:hidden;
+}
+.re-card-top{
+  display:flex;align-items:flex-start;justify-content:space-between;gap:2rem;
+  padding:2rem 2rem 1.5rem;flex-wrap:wrap;
+  border-bottom:1px solid var(--borderG);
+}
+.re-title-badge{
+  font-family:'Space Mono',monospace;font-size:.6rem;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--gold);
+  margin-bottom:.625rem;display:flex;align-items:center;gap:.5rem;
+}
+.re-title-badge::before{content:'🚀'}
+.re-title-main{font-size:clamp(1.4rem,3vw,2rem);font-weight:900;letter-spacing:-.02em;color:#fff;line-height:1.1}
+.re-title-main span{color:var(--gold2)}
+.re-price-area{text-align:right;flex-shrink:0}
+.re-price-lbl{font-size:.58rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:.25rem}
+.re-price-num{font-family:'Bebas Neue',sans-serif;font-size:3.25rem;letter-spacing:.04em;line-height:1;color:var(--gold2)}
+.re-price-note{font-size:.68rem;color:rgba(255,255,255,.35);margin-top:.25rem}
+
+.re-includes{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.75rem;padding:1.5rem 2rem}
+.inc-item{
+  display:flex;align-items:flex-start;gap:.75rem;
+  background:rgba(255,255,255,.03);border:1px solid var(--border);
+  border-radius:var(--rL);padding:.875rem 1rem;
+}
+.inc-icon{font-size:1.25rem;flex-shrink:0;margin-top:.1rem}
+.inc-label{font-size:.82rem;font-weight:700;color:#fff;margin-bottom:.2rem}
+.inc-sub{font-size:.7rem;color:var(--sub)}
+
+.re-zero{
+  margin:0 2rem 1.5rem;
+  display:flex;align-items:center;gap:.75rem;
+  background:rgba(74,222,128,.06);border:1px solid rgba(74,222,128,.18);
+  border-radius:12px;padding:.875rem 1.125rem;
+  font-size:.82rem;font-weight:700;color:#86efac;
+}
+
+/* BIG C NOTICE */
+.bigc-notice{
+  margin:0 2rem 2rem;
+  padding:1.125rem 1.25rem;
+  background:rgba(201,162,39,.06);border:1px solid rgba(201,162,39,.2);
+  border-radius:14px;
+}
+.bigc-notice-title{
+  font-family:'Space Mono',monospace;font-size:.6rem;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--gold);
+  margin-bottom:.75rem;
+}
+.bigc-rows{display:flex;flex-direction:column;gap:.5rem}
+.bigc-row{
+  display:flex;align-items:flex-start;gap:.875rem;
+  font-size:.78rem;color:rgba(255,255,255,.6);
+}
+.bigc-row strong{color:#fff}
+.bigc-note{margin-top:.75rem;font-size:.7rem;color:rgba(255,255,255,.35);font-style:italic}
+
+/* STEPS */
+.steps-section{background:linear-gradient(160deg,var(--navy2),#071629);border-top:1px solid var(--border)}
+.steps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--border);border-radius:var(--rXL);overflow:hidden;border:1px solid var(--border)}
+.step-item{
+  background:var(--navy);padding:2rem 1.5rem;text-align:center;
+  position:relative;
+}
+.step-num{
+  font-family:'Bebas Neue',sans-serif;font-size:4rem;line-height:1;
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  margin-bottom:.5rem;opacity:.4;
+}
+.step-title{font-size:.9rem;font-weight:800;color:#fff;margin-bottom:.375rem}
+.step-desc{font-size:.75rem;color:var(--sub);line-height:1.5}
+.step-item::after{content:'→';position:absolute;right:-12px;top:50%;transform:translateY(-50%);color:var(--gold);font-size:1.2rem;z-index:1}
+.step-item:last-child::after{display:none}
+@media(max-width:640px){.step-item::after{display:none}}
+
+/* CTA SECTION */
+.cta-section{
+  padding:80px 2rem;text-align:center;
+  background:linear-gradient(135deg,#071629,#0d2545);
+  border-top:1px solid var(--border);position:relative;overflow:hidden;
+}
+.cta-glow{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:500px;height:300px;
+  background:radial-gradient(ellipse,rgba(201,162,39,.1) 0%,transparent 70%);
+  pointer-events:none;
+}
+.cta-inner{position:relative;z-index:1;max-width:640px;margin:0 auto}
+.cta-h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,6vw,4.5rem);letter-spacing:.04em;line-height:.95;color:#fff;margin-bottom:1rem}
+.cta-h2 span{color:var(--gold2)}
+.cta-sub{font-size:.95rem;color:var(--sub);margin-bottom:2rem}
+.contact-pills{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center;margin-top:1.5rem}
+.contact-pill{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,.05);border:1px solid var(--border);
+  padding:.625rem 1.125rem;border-radius:30px;
+  font-size:.8rem;font-weight:600;color:#fff;text-decoration:none;
+  transition:background .2s,transform .15s;
+}
+.contact-pill:hover{background:rgba(255,255,255,.1);transform:translateY(-2px)}
+
+/* FOOTER */
+footer{
+  background:var(--navy3);border-top:1px solid var(--border);
+  padding:2rem;text-align:center;
+  font-size:.72rem;color:rgba(255,255,255,.25);
+  font-family:'Space Mono',monospace;letter-spacing:.06em;
+}
+
+/* LANG */
+[data-lang]{display:none}
+[data-lang].active{display:inline}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">🏆 VITH HUB · Mekong Growth Expo 2026 · Big C Vientiane · 25–29 June 2026 · Invitation Only</div>
+
+<!-- NAV -->
+<nav>
+  <a href="/index.html" class="nav-logo">VITH HUB</a>
+  <ul class="nav-links">
+    <li><a href="#expo">Expo 2026</a></li>
+    <li><a href="#floorplan">ผังงาน</a></li>
+    <li><a href="#retail">Retail Entry</a></li>
+    <li><a href="#apply">สมัคร</a></li>
+  </ul>
+  <a href="/pages/apply.html" class="nav-cta">สมัครเลย →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div class="hero-badge anim-1">◆ Exclusive Invitation · Screened Brands Only</div>
+    <h1 class="hero-h1 anim-2">
+      MEKONG<br>
+      <span>GROWTH EXPO</span><br>
+      2026
+    </h1>
+    <p class="hero-sub anim-3">Grow Big C — Go Global · Big C Vientiane ITECC</p>
+    <div class="hero-pills anim-4">
+      <div class="hero-pill gold">📅 25–29 มิถุนายน 2026</div>
+      <div class="hero-pill">📍 Big C Vientiane · ชั้น 2 · 2,000 ตร.ม.</div>
+      <div class="hero-pill">🏪 60+ บูท · 4 โซน</div>
+      <div class="hero-pill gold">✅ 0% Commission ทุกโซน</div>
+    </div>
+    <div class="hero-cta-group anim-5">
+      <a href="#retail" class="btn-primary">🚀 ดูโปรแกรม Retail Entry</a>
+      <a href="#floorplan" class="btn-secondary">📐 ดูผังงาน</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-row">
+  <div class="stat-item reveal">
+    <div class="stat-num">5</div>
+    <div class="stat-lbl">วัน · Days</div>
+  </div>
+  <div class="stat-item reveal">
+    <div class="stat-num">5,000+</div>
+    <div class="stat-lbl">Traffic / วัน</div>
+  </div>
+  <div class="stat-item reveal">
+    <div class="stat-num">60+</div>
+    <div class="stat-lbl">บูทแบรนด์ไทย</div>
+  </div>
+  <div class="stat-item reveal">
+    <div class="stat-num">0%</div>
+    <div class="stat-lbl">Commission</div>
+  </div>
+</div>
+
+<!-- FLOOR PLAN + ZONE PRICING -->
+<section class="section" id="floorplan" style="background:linear-gradient(160deg,#0a1628,var(--navy2));border-top:1px solid var(--border)">
+  <div class="section-inner">
+
+    <div class="reveal" style="margin-bottom:2.5rem">
+      <div class="section-label">ส่วนที่ 1 · ผังงานและราคาตามโซน</div>
+      <h2 class="section-title">ผังงาน <span style="color:var(--gold2)">Big C Vientiane</span></h2>
+      <p class="section-sub">25–29 มิ.ย. 2026 · 60+ บูท · 4 โซน · 2,000 ตร.ม. ชั้น 2</p>
+    </div>
+
+    <div class="fp-layout reveal">
+      <!-- Floor Plan Image -->
+      <div>
+        <div class="fp-img-wrap">
+          <img src="/images/Floor_1.webp" alt="Mekong Growth Expo 2026 Floor Plan"
+            onerror="this.style.display='none';document.getElementById('fpFallback').style.display='flex'">
+          <div id="fpFallback" class="fp-placeholder" style="display:none">
+            <div class="fp-placeholder-icon">📐</div>
+            <div>Floor Plan · Big C Vientiane<br><span style="font-size:.7rem;color:rgba(255,255,255,.3)">/images/Floor_1.webp</span></div>
+          </div>
+          <div class="fp-img-overlay">
+            <div class="fp-overlay-text">📐 MEKONG GROWTH EXPO 2026 · BIG C VIENTIANE · 25–29 JUNE 2026</div>
+          </div>
+        </div>
+        <div class="fp-actions">
+          <a href="/assets/floorplan-mge2026.pdf" download class="fp-btn fp-btn-dl">📥 ดาวน์โหลด PDF</a>
+          <a href="/pages/booth.html?type=expo" class="fp-btn fp-btn-book">🏪 เลือกตำแหน่งบูท →</a>
+        </div>
+      </div>
+
+      <!-- Zone Cards -->
+      <div>
+        <div style="font-size:.6rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.75rem;font-family:'Space Mono',monospace">ราคาตามโซน · 5 วัน</div>
+        <div class="zone-stack">
+
+          <div class="zone-card zone-p">
+            <div class="zone-card-top">
+              <div class="zone-left">
+                <div class="zone-dot"></div>
+                <span class="zone-name">Zone P</span>
+                <span class="zone-tag">Premium</span>
+              </div>
+              <div class="zone-price-big">฿50,000</div>
+            </div>
+            <div class="zone-detail">3×6 ม. · ทางเข้าหลัก · Traffic สูงสุด</div>
+          </div>
+
+          <div class="zone-card zone-a">
+            <div class="zone-card-top">
+              <div class="zone-left">
+                <div class="zone-dot"></div>
+                <span class="zone-name">Zone A</span>
+                <span class="zone-tag">Franchise</span>
+              </div>
+              <div class="zone-price-big">฿25,000</div>
+            </div>
+            <div class="zone-detail">3×3 ม. · โซน Franchise · ใกล้ทางเข้า</div>
+          </div>
+
+          <div class="zone-card zone-b">
+            <div class="zone-card-top">
+              <div class="zone-left">
+                <div class="zone-dot"></div>
+                <span class="zone-name">Zone B</span>
+                <span class="zone-tag">Standard</span>
+              </div>
+              <div class="zone-price-big">฿15,000</div>
+            </div>
+            <div class="zone-detail">3×3 ม. · บูทมาตรฐาน · สินค้าทั่วไป</div>
+          </div>
+
+          <div class="zone-card zone-cd">
+            <div class="zone-card-top">
+              <div class="zone-left">
+                <div class="zone-dot"></div>
+                <span class="zone-name">Zone C/D</span>
+                <span class="zone-tag">Food</span>
+              </div>
+              <div class="zone-price-big">฿12,000</div>
+            </div>
+            <div class="zone-detail">2×3 ม. · Food Pavilion · ราคาเข้าถึงง่ายที่สุด</div>
+          </div>
+
+          <div class="zero-badge">✅ 0% Commission ทุกโซน · ทุกยอดขายเป็นของคุณ</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- RETAIL ENTRY -->
+<section class="section re-section" id="retail">
+  <div class="section-inner">
+
+    <div class="reveal" style="margin-bottom:2rem">
+      <div class="section-label">ส่วนที่ 2 · โปรแกรมระยะยาว</div>
+      <h2 class="section-title">Retail Entry · <span style="color:var(--gold2)">90 วัน</span></h2>
+      <p class="section-sub">วางสินค้าบน Shelf จริงใน Big C Vientiane · รับเพียง 20 แบรนด์</p>
+    </div>
+
+    <div class="re-card reveal">
+      <!-- Header -->
+      <div class="re-card-top">
+        <div>
+          <div class="re-title-badge">Retail Entry Program</div>
+          <div class="re-title-main">วางสินค้าจริง<br><span>Big C Zone B</span> · 90 วัน</div>
+          <div style="font-size:.82rem;color:var(--sub);margin-top:.625rem">ระบบครบวงจร · 0% Commission · Founder Price จำกัด 20 แบรนด์</div>
+        </div>
+        <div class="re-price-area">
+          <div class="re-price-lbl">Founder Price</div>
+          <div class="re-price-num">฿39,000</div>
+          <div class="re-price-note">เหมาจ่ายครั้งเดียว · 90 วัน</div>
+        </div>
+      </div>
+
+      <!-- Includes Grid -->
+      <div class="re-includes">
+        <div class="inc-item">
+          <div class="inc-icon">🏪</div>
+          <div>
+            <div class="inc-label">Shelf Space จริง</div>
+            <div class="inc-sub">Big C Vientiane Zone B ตลอด 90 วัน</div>
+          </div>
+        </div>
+        <div class="inc-item">
+          <div class="inc-icon">👤</div>
+          <div>
+            <div class="inc-label">Product Champion</div>
+            <div class="inc-sub">พนักงานลาวดูแลข้อมูลสินค้าทุกวัน</div>
+          </div>
+        </div>
+        <div class="inc-item">
+          <div class="inc-icon">🚚</div>
+          <div>
+            <div class="inc-label">ขนส่งฟรี 100 kg</div>
+            <div class="inc-sub">หนองคาย–เวียงจันทน์ ครั้งแรก</div>
+          </div>
+        </div>
+        <div class="inc-item">
+          <div class="inc-icon">🏭</div>
+          <div>
+            <div class="inc-label">คลังสินค้าเวียงจันทน์</div>
+            <div class="inc-sub">1 Q³ พร้อมจัดการสต๊อก</div>
+          </div>
+        </div>
+        <div class="inc-item">
+          <div class="inc-icon">🤝</div>
+          <div>
+            <div class="inc-label">B2B Matching</div>
+            <div class="inc-sub">เชื่อมโยงผู้ซื้อท้องถิ่นตลอด 90 วัน</div>
+          </div>
+        </div>
+        <div class="inc-item">
+          <div class="inc-icon">📊</div>
+          <div>
+            <div class="inc-label">Dashboard รายสัปดาห์</div>
+            <div class="inc-sub">ดูยอดขายแบบ Real-time</div>
+          </div>
+        </div>
+        <div class="inc-item">
+          <div class="inc-icon">🎪</div>
+          <div>
+            <div class="inc-label">ออกงาน Expo ฟรี</div>
+            <div class="inc-sub">Zone B ใน Mekong Growth Expo 2026</div>
+          </div>
+        </div>
+        <div class="inc-item">
+          <div class="inc-icon">📋</div>
+          <div>
+            <div class="inc-label">สลากลาว & เอกสาร</div>
+            <div class="inc-sub">ช่วยดำเนินการนำเข้าครบวงจร</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 0% Commission -->
+      <div class="re-zero">
+        <span style="font-size:1.25rem">✅</span>
+        <span>0% Commission · <strong style="color:#fff">ทุกบาทที่ขายได้คือของคุณ</strong> ไม่หักส่วนแบ่งยอดขาย</span>
+      </div>
+
+      <!-- Big C Notice -->
+      <div class="bigc-notice">
+        <div class="bigc-notice-title">⚠️ เงื่อนไขเพิ่มเติมจาก Big C Vientiane (ชำระโดยตรงกับ Big C)</div>
+        <div class="bigc-rows">
+          <div class="bigc-row">
+            <span>🔒</span>
+            <span>วางเงินประกัน <strong>10,000 บาท</strong> — คืนเมื่อสิ้นสุดสัญญา</span>
+          </div>
+          <div class="bigc-row">
+            <span>🏷️</span>
+            <span>ค่าลงทะเบียน SKU: 20 รายการแรก <strong>1,200 บาท/รายการ</strong> · เกิน 20 รายการ <strong>500 บาท/รายการ</strong></span>
+          </div>
+          <div class="bigc-row">
+            <span>📈</span>
+            <span>GP <strong>15–30%</strong> จากยอดขายจริง — ขึ้นอยู่กับหมวดสินค้า</span>
+          </div>
+        </div>
+        <div class="bigc-note">ทีม VITH HUB ช่วยประสานงานและดูแลกระบวนการทั้งหมดให้ค่ะ</div>
+      </div>
+
+    </div><!-- /re-card -->
+  </div>
+</section>
+
+<!-- STEPS -->
+<section class="section steps-section" id="apply">
+  <div class="section-inner">
+    <div class="reveal" style="text-align:center;margin-bottom:2.5rem">
+      <div class="section-label" style="justify-content:center;display:flex">ขั้นตอนการสมัคร</div>
+      <h2 class="section-title">3 ขั้นตอน · เริ่มได้เลย</h2>
+    </div>
+    <div class="steps-grid reveal">
+      <div class="step-item">
+        <div class="step-num">01</div>
+        <div class="step-title">ยื่นใบสมัคร</div>
+        <div class="step-desc">กรอกข้อมูลแบรนด์ที่ vithhub.asia/pages/apply<br>ทีมงานพิจารณาใน 48 ชั่วโมง</div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">02</div>
+        <div class="step-title">ชำระเงิน & ล็อคสิทธิ์</div>
+        <div class="step-desc">โอน ฿39,000 · เลือกตำแหน่งบูท<br>ดำเนินการเอกสารนำเข้าและสลากลาว</div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">03</div>
+        <div class="step-title">ส่งสินค้า & เริ่มขาย</div>
+        <div class="step-desc">ส่งสินค้าเข้าคลังเวียงจันทน์<br>ทีม PC ดูแลและรายงานยอดรายสัปดาห์</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-glow"></div>
+  <div class="cta-inner">
+    <div class="reveal">
+      <div class="section-label" style="justify-content:center;display:flex;margin-bottom:1rem">🎯 จำกัด 20 แบรนด์เท่านั้น</div>
+      <h2 class="cta-h2">พร้อมเข้าสู่<br><span>ตลาดลาว</span> แล้วหรือยัง?</h2>
+      <p class="cta-sub">ที่นั่งเหลือน้อยมาก · Founder Price หมดเมื่อครบ 20 แบรนด์</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="/pages/apply.html" class="btn-primary" style="animation:pulseGold 2.5s infinite">📝 สมัครเลย →</a>
+        <a href="/pages/booth.html?type=expo" class="btn-secondary">🏪 เลือกตำแหน่งบูท</a>
+      </div>
+      <div class="contact-pills">
+        <a href="https://wa.me/85620566054050" class="contact-pill">💬 WhatsApp ลาว</a>
+        <a href="https://wa.me/66855907666" class="contact-pill">💬 WhatsApp ไทย</a>
+        <a href="https://line.me/R/ti/p/@cef8930n" class="contact-pill">📱 Line: @cef8930n</a>
+        <a href="mailto:sales@vithhub.asia" class="contact-pill">✉️ sales@vithhub.asia</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 VITH HUB · หจก. รอยัล บริตจ์ 99 · vithhub.asia · sales@vithhub.asia · จันทร์–เสาร์ 9:00–18:00
+</footer>
+
+<script>
+// Scroll reveal
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); observer.unobserve(e.target) } });
+}, {threshold:.12});
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Lang switcher (ถ้ามีใน parent layout)
+function setLang(l){
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.classList.toggle('active', el.getAttribute('data-lang') === l);
+  });
+  localStorage.setItem('vith_lang', l);
+}
+const savedLang = localStorage.getItem('vith_lang') || 'th';
+setLang(savedLang);
+</script>
+</body>
+</html>
