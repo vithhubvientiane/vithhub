@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>แพ็กเกจและราคาบูท — Mekong Growth Expo 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800;900&family=Noto+Sans+Thai:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:16px;scroll-behavior:smooth}
+body{
+  font-family:'DM Sans','Noto Sans Thai',sans-serif;
+  background:#FAFAF9;
+  color:#1a1a1a;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+:root{
+  --navy:#0B1F3B;
+  --gold:#C9A227;
+  --gold2:#E4BC4A;
+  --gold-light:#FBF3DC;
+  --gold-border:#E8D8A0;
+  --red:#e5141e;
+  --white:#FFFFFF;
+  --bg:#FAFAF9;
+  --bg2:#F4F2EE;
+  --border:#E8E4DE;
+  --text:#1a1a1a;
+  --sub:#6B6B6B;
+  --max:1160px;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes shimmer{0%{background-position:200% center}100%{background-position:-200% center}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.18s}.d3{transition-delay:.26s}.d4{transition-delay:.34s}.d5{transition-delay:.42s}
+
+/* ── TOP BAR ── */
+.top-bar{
+  background:var(--navy);
+  color:rgba(255,255,255,.8);
+  text-align:center;
+  padding:10px 1.5rem;
+  font-family:'DM Sans',sans-serif;
+  font-size:.8rem;
+  font-weight:500;
+  display:flex;align-items:center;justify-content:center;gap:1rem;
+  flex-wrap:wrap;
+}
+.top-bar strong{color:var(--gold2)}
+.top-bar a{color:var(--gold2);font-weight:600}
+.tb-dot{width:5px;height:5px;border-radius:50%;background:var(--gold2);flex-shrink:0;animation:pulse 1.6s infinite}
+
+/* ── NAV ── */
+.nav{
+  position:sticky;top:0;z-index:900;
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+  height:60px;
+}
+.nav-inner{
+  max-width:var(--max);margin:0 auto;
+  height:60px;padding:0 24px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.nav-logo{
+  display:flex;align-items:center;gap:10px;
+  text-decoration:none;
+}
+.nav-logo-mark{
+  width:34px;height:34px;border-radius:8px;
+  background:linear-gradient(135deg,#9B7A10,#C9A227,#E4BC4A);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Sora',sans-serif;font-weight:800;font-size:.95rem;color:#fff;
+}
+.nav-brand{font-family:'Sora',sans-serif;font-weight:800;font-size:1.05rem;color:var(--navy)}
+.nav-brand span{color:var(--gold)}
+.nav-sub{font-size:.65rem;color:var(--sub);letter-spacing:.1em;text-transform:uppercase;display:block}
+.nav-cta{
+  font-family:'Sora',sans-serif;font-size:.82rem;font-weight:700;
+  background:var(--navy);color:#fff;
+  padding:9px 20px;border-radius:8px;
+  text-decoration:none;
+  transition:all .2s;
+}
+.nav-cta:hover{background:#162f55}
+
+/* ── PAGE HERO ── */
+.page-hero{
+  background:var(--white);
+  border-bottom:1px solid var(--border);
+  padding:72px 24px 60px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.page-hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 80% at 50% -20%,rgba(201,162,39,.07) 0%,transparent 65%);
+  pointer-events:none;
+}
+.event-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'DM Sans',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  color:#9B7A10;
+  padding:5px 16px;border-radius:20px;
+  background:var(--gold-light);border:1px solid var(--gold-border);
+  margin-bottom:1.25rem;
+  animation:fadeUp .7s both;
+}
+.page-hero h1{
+  font-family:'Sora',sans-serif;
+  font-size:clamp(2rem,4.5vw,3rem);
+  font-weight:800;color:var(--navy);
+  letter-spacing:-.03em;line-height:1.1;
+  margin-bottom:.75rem;
+  animation:fadeUp .7s .1s both;
+}
+.page-hero h1 span{
+  background:linear-gradient(90deg,#9B7A10,#C9A227,#E4BC4A,#C9A227,#9B7A10);
+  background-size:200% auto;
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  animation:shimmer 5s linear infinite;
+}
+.page-hero-sub{
+  font-size:1rem;color:var(--sub);line-height:1.7;
+  max-width:520px;margin:0 auto 2rem;
+  animation:fadeUp .7s .18s both;
+}
+.hero-pills{
+  display:flex;flex-wrap:wrap;gap:.625rem;justify-content:center;
+  animation:fadeUp .7s .26s both;
+}
+.pill{
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:'DM Sans',sans-serif;font-size:.78rem;font-weight:500;
+  color:var(--sub);
+  background:#fff;border:1px solid var(--border);
+  padding:6px 14px;border-radius:20px;
+}
+.pill strong{color:var(--navy);font-weight:600}
+
+/* ── URGENCY STRIP ── */
+.urgency-strip{
+  background:linear-gradient(90deg,#fff7ed,#fef9ec);
+  border-top:1px solid #fcd34d;border-bottom:1px solid #fcd34d;
+  padding:14px 24px;
+  display:flex;align-items:center;justify-content:center;
+  gap:2rem;flex-wrap:wrap;
+}
+.us-item{
+  display:flex;align-items:center;gap:8px;
+  font-family:'DM Sans',sans-serif;font-size:.82rem;color:#78350f;
+}
+.us-item strong{font-weight:700}
+.us-bar-wrap{
+  display:flex;align-items:center;gap:10px;
+  font-family:'DM Sans',sans-serif;font-size:.78rem;color:#78350f;font-weight:500;
+}
+.us-bar{width:120px;height:7px;background:#fde68a;border-radius:4px;overflow:hidden}
+.us-fill{height:100%;background:linear-gradient(90deg,#d97706,#f59e0b);border-radius:4px;width:65%;transition:width 1.4s ease}
+
+/* ── SECTION ── */
+.section{padding:64px 24px;background:var(--bg)}
+.section.white{background:var(--white)}
+.sec-inner{max-width:var(--max);margin:0 auto}
+
+.sec-label{
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:'DM Sans',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:#9B7A10;
+  padding:4px 14px;border-radius:20px;
+  background:var(--gold-light);border:1px solid var(--gold-border);
+  margin-bottom:.875rem;
+}
+.sec-title{
+  font-family:'Sora',sans-serif;
+  font-size:clamp(1.5rem,3vw,2rem);
+  font-weight:800;color:var(--navy);
+  letter-spacing:-.025em;line-height:1.15;
+  margin-bottom:.625rem;
+}
+.sec-title .accent{color:var(--gold)}
+.sec-desc{font-size:.95rem;color:var(--sub);line-height:1.75;max-width:540px}
+
+/* ── PACKAGE GRID ── */
+.pkg-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1.25rem;
+  margin-top:2.5rem;
+}
+
+/* ── PACKAGE CARD ── */
+.pkg-card{
+  background:var(--white);
+  border:1.5px solid var(--border);
+  border-radius:16px;
+  overflow:hidden;
+  display:flex;flex-direction:column;
+  position:relative;
+  transition:box-shadow .25s,transform .25s,border-color .25s;
+}
+.pkg-card:hover{
+  box-shadow:0 12px 40px rgba(0,0,0,.1);
+  transform:translateY(-3px);
+  border-color:#C9A227;
+}
+.pkg-card.featured{
+  border-color:#C9A227;
+  box-shadow:0 8px 32px rgba(201,162,39,.18);
+}
+.pkg-card.premium-card{
+  border-color:#C9A227;
+  background:linear-gradient(to bottom,#FFFDF5,#fff);
+}
+
+/* top accent line */
+.pkg-top-line{height:3px;width:100%;background:var(--border)}
+.pkg-top-line.gold{background:linear-gradient(90deg,#9B7A10,#C9A227,#E4BC4A)}
+.pkg-top-line.orange{background:linear-gradient(90deg,#ea580c,#f97316)}
+.pkg-top-line.green{background:linear-gradient(90deg,#065f46,#059669)}
+.pkg-top-line.sponsor{background:linear-gradient(90deg,#1e3a8a,#2563eb,#7c3aed)}
+
+/* badge */
+.pkg-badge{
+  position:absolute;top:16px;right:14px;
+  font-family:'DM Sans',sans-serif;font-size:.58rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+  padding:4px 10px;border-radius:20px;
+}
+.badge-popular{background:#e5141e;color:#fff}
+.badge-limited{background:linear-gradient(135deg,#9B7A10,#C9A227);color:#fff}
+.badge-new{background:var(--navy);color:#fff}
+
+.pkg-header{padding:1.5rem 1.75rem 1.25rem;border-bottom:1px solid var(--border)}
+.pkg-zone{
+  font-family:'DM Sans',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:#9B7A10;margin-bottom:.375rem;
+}
+.pkg-zone.orange{color:#ea580c}
+.pkg-zone.green{color:#059669}
+.pkg-zone.sponsor{color:#2563eb}
+.pkg-name{
+  font-family:'Sora',sans-serif;font-size:1.2rem;font-weight:800;
+  color:var(--navy);margin-bottom:.25rem;letter-spacing:-.015em;
+}
+.pkg-size{
+  font-family:'DM Sans',sans-serif;font-size:.78rem;color:var(--sub);
+  margin-bottom:.875rem;
+}
+.price-row{display:flex;align-items:baseline;gap:.5rem;margin-bottom:.25rem}
+.pkg-price{
+  font-family:'Sora',sans-serif;font-size:2.1rem;font-weight:800;
+  color:#9B7A10;line-height:1;letter-spacing:-.03em;
+}
+.pkg-price.orange{color:#ea580c}
+.pkg-price.green{color:#059669}
+.pkg-price.sponsor{color:#2563eb}
+.pkg-price-old{
+  font-family:'DM Sans',sans-serif;font-size:.8rem;color:rgba(26,26,26,.3);
+  text-decoration:line-through;
+}
+.pkg-price-note{font-family:'DM Sans',sans-serif;font-size:.75rem;color:var(--sub);margin-bottom:.375rem}
+.pkg-avail{
+  display:inline-flex;align-items:center;gap:5px;
+  font-family:'DM Sans',sans-serif;font-size:.72rem;font-weight:700;
+  color:var(--red);
+}
+.pkg-avail.green-txt{color:#059669}
+
+.pkg-body{padding:1.25rem 1.75rem;flex:1}
+.pkg-feat-label{
+  font-family:'DM Sans',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--sub);margin-bottom:.75rem;
+}
+.pkg-feat{
+  display:flex;align-items:flex-start;gap:.5rem;
+  font-family:'DM Sans',sans-serif;font-size:.85rem;color:#444;
+  line-height:1.5;margin-bottom:.625rem;
+}
+.feat-check{color:var(--gold);font-weight:700;flex-shrink:0;font-size:.95rem;margin-top:.05rem}
+.feat-check.orange{color:#f97316}
+.feat-check.green{color:#059669}
+.feat-check.blue{color:#2563eb}
+
+.pkg-footer{padding:1.25rem 1.75rem 1.5rem;border-top:1px solid var(--border)}
+.pkg-btn{
+  font-family:'Sora',sans-serif;font-size:.88rem;font-weight:700;
+  width:100%;padding:12px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;gap:6px;
+  transition:all .22s;border:none;cursor:pointer;text-decoration:none;
+  letter-spacing:-.01em;
+}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{background:#162f55;transform:translateY(-1px)}
+.btn-gold{background:linear-gradient(135deg,#9B7A10,#C9A227,#E4BC4A);color:#fff}
+.btn-gold:hover{box-shadow:0 6px 20px rgba(201,162,39,.4);transform:translateY(-1px)}
+.btn-orange{background:linear-gradient(135deg,#065f46,#059669);color:#fff}
+.btn-orange:hover{transform:translateY(-1px)}
+.btn-sponsor{background:linear-gradient(135deg,#1e3a8a,#2563eb);color:#fff}
+.btn-sponsor:hover{transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--navy);border:1.5px solid var(--border)}
+.btn-outline:hover{border-color:var(--navy);background:var(--bg2)}
+
+/* ── WIDE CARD (food pavilion, main sponsor) ── */
+.pkg-card.wide{
+  grid-column:1/-1;
+}
+.wide-inner{
+  display:grid;
+  grid-template-columns:280px 1fr auto;
+  align-items:stretch;
+}
+.wide-inner .pkg-header{border-bottom:none;border-right:1px solid var(--border);padding:1.75rem}
+.wide-inner .pkg-body{border-right:1px solid var(--border);padding:1.75rem}
+.wide-cta{padding:1.75rem;display:flex;align-items:center;justify-content:center;min-width:200px}
+.wide-cta .pkg-btn{width:180px}
+
+.pkg-card.sponsor-card{
+  grid-column:1/-1;
+  background:linear-gradient(135deg,var(--navy),#162f55);
+  border-color:transparent;
+  color:#fff;
+}
+.sponsor-inner{
+  display:grid;
+  grid-template-columns:300px 1fr auto;
+  align-items:stretch;
+}
+.sponsor-inner .pkg-header{
+  border-bottom:none;border-right:1px solid rgba(255,255,255,.1);
+  padding:1.75rem;
+}
+.sponsor-inner .pkg-body{
+  border-right:1px solid rgba(255,255,255,.1);
+  padding:1.75rem;
+}
+.sponsor-card .pkg-zone{color:#60a5fa}
+.sponsor-card .pkg-name{color:#fff}
+.sponsor-card .pkg-size{color:rgba(255,255,255,.5)}
+.sponsor-card .pkg-price{color:#60a5fa}
+.sponsor-card .pkg-price-note{color:rgba(255,255,255,.4)}
+.sponsor-card .pkg-header{border-bottom-color:rgba(255,255,255,.08)}
+.sponsor-card .pkg-feat{color:rgba(255,255,255,.75)}
+.sponsor-card .pkg-feat-label{color:rgba(255,255,255,.35)}
+.sponsor-card .pkg-footer{border-top-color:rgba(255,255,255,.08)}
+.sponsor-avail{
+  display:inline-flex;align-items:center;gap:5px;
+  font-family:'DM Sans',sans-serif;font-size:.72rem;font-weight:700;
+  color:#fcd34d;margin-top:.25rem;
+}
+
+/* ── SUMMARY BAR ── */
+.summary-bar{
+  background:var(--navy);border-radius:14px;
+  padding:1.5rem 2rem;
+  margin-top:2rem;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:1.25rem;
+}
+.sb-item{text-align:center;flex:1;min-width:80px}
+.sb-num{
+  font-family:'Sora',sans-serif;font-size:1.5rem;font-weight:800;color:#fff;
+  line-height:1;margin-bottom:3px;
+}
+.sb-num.gold{color:var(--gold2)}
+.sb-lbl{font-family:'DM Sans',sans-serif;font-size:.65rem;color:rgba(255,255,255,.4);letter-spacing:.08em;text-transform:uppercase}
+.sb-divider{width:1px;height:32px;background:rgba(255,255,255,.1)}
+
+/* ── COMPARISON TABLE ── */
+.compare-wrap{margin-top:2.5rem;overflow-x:auto}
+table.compare{
+  width:100%;border-collapse:collapse;
+  font-family:'DM Sans',sans-serif;font-size:.85rem;
+}
+.compare thead th{
+  font-family:'Sora',sans-serif;font-size:.78rem;font-weight:700;
+  color:var(--navy);padding:12px 16px;
+  border-bottom:2px solid var(--border);
+  text-align:center;white-space:nowrap;
+  letter-spacing:-.01em;
+}
+.compare thead th:first-child{text-align:left;color:var(--sub);font-family:'DM Sans',sans-serif;font-weight:600}
+.compare tbody tr{border-bottom:1px solid var(--border);transition:background .15s}
+.compare tbody tr:hover{background:var(--bg2)}
+.compare tbody td{padding:11px 16px;color:var(--sub);text-align:center;vertical-align:middle}
+.compare tbody td:first-child{text-align:left;color:var(--navy);font-weight:500}
+.chk{color:var(--gold);font-size:1.05rem;font-weight:700}
+.chk.orange{color:#ea580c}
+.chk.blue{color:#2563eb}
+.cross{color:#D1D5DB;font-size:.9rem}
+.price-cell{
+  font-family:'Sora',sans-serif;font-weight:800;font-size:.95rem;
+  color:#9B7A10;
+}
+.price-cell.orange{color:#ea580c}
+.price-cell.green{color:#059669}
+.price-cell.blue{color:#2563eb}
+.th-gold{background:var(--gold-light);border-bottom:2px solid var(--gold)!important}
+.th-sponsored{background:#eff6ff;border-bottom:2px solid #2563eb!important;color:#1d4ed8!important}
+
+/* ── FAQ / INFO BOX ── */
+.info-box{
+  background:var(--white);border:1.5px solid var(--border);
+  border-radius:14px;padding:1.5rem 1.75rem;
+  margin-top:1.25rem;
+}
+.info-box-title{
+  font-family:'Sora',sans-serif;font-size:.95rem;font-weight:700;
+  color:var(--navy);margin-bottom:.875rem;
+  display:flex;align-items:center;gap:.5rem;
+}
+.info-item{
+  display:flex;align-items:flex-start;gap:.75rem;
+  font-family:'DM Sans',sans-serif;font-size:.875rem;color:var(--sub);
+  line-height:1.65;padding:.625rem 0;
+  border-bottom:1px solid var(--border);
+}
+.info-item:last-child{border-bottom:none}
+.info-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:.4rem}
+
+/* ── CTA SECTION ── */
+.cta-section{
+  background:linear-gradient(135deg,var(--navy),#162f55);
+  padding:72px 24px;text-align:center;
+  position:relative;overflow:hidden;
+}
+.cta-section::before{
+  content:'';position:absolute;inset:0;
+  background-image:linear-gradient(rgba(201,162,39,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(201,162,39,.05) 1px,transparent 1px);
+  background-size:52px 52px;pointer-events:none;
+}
+.cta-inner{max-width:600px;margin:0 auto;position:relative;z-index:1}
+.cta-eyebrow{
+  font-family:'DM Sans',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gold2);margin-bottom:1rem;
+}
+.cta-title{
+  font-family:'Sora',sans-serif;font-size:clamp(1.75rem,3.5vw,2.5rem);font-weight:800;
+  color:#fff;letter-spacing:-.025em;line-height:1.12;margin-bottom:.875rem;
+}
+.cta-title span{color:var(--gold2)}
+.cta-desc{font-family:'DM Sans',sans-serif;font-size:.95rem;color:rgba(255,255,255,.55);margin-bottom:2rem;line-height:1.75}
+.cta-btns{display:flex;gap:.875rem;justify-content:center;flex-wrap:wrap}
+.cta-btn-primary{
+  font-family:'Sora',sans-serif;font-size:.9rem;font-weight:700;
+  background:linear-gradient(135deg,#9B7A10,#C9A227,#E4BC4A);
+  color:#fff;padding:14px 28px;border-radius:10px;
+  text-decoration:none;display:inline-flex;align-items:center;gap:7px;
+  box-shadow:0 4px 20px rgba(201,162,39,.35);
+  transition:all .25s;
+}
+.cta-btn-primary:hover{box-shadow:0 8px 32px rgba(201,162,39,.5);transform:translateY(-2px)}
+.cta-btn-line{
+  font-family:'Sora',sans-serif;font-size:.9rem;font-weight:700;
+  background:#06C755;color:#fff;padding:14px 24px;border-radius:10px;
+  text-decoration:none;display:inline-flex;align-items:center;gap:7px;
+  transition:all .25s;
+}
+.cta-btn-line:hover{background:#05b84d;transform:translateY(-2px)}
+.cta-note{font-family:'DM Sans',sans-serif;font-size:.75rem;color:rgba(255,255,255,.3);margin-top:1.25rem;line-height:1.6}
+
+/* ── FOOTER ── */
+footer{
+  background:#020d1f;padding:2rem 24px;
+  text-align:center;
+  font-family:'DM Sans',sans-serif;font-size:.78rem;
+  color:rgba(255,255,255,.3);
+}
+footer a{color:rgba(255,255,255,.45);text-decoration:none}
+footer strong{color:var(--gold2)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1100px){
+  .pkg-grid{grid-template-columns:1fr 1fr}
+  .pkg-card.wide{grid-column:auto}
+  .wide-inner,.sponsor-inner{grid-template-columns:1fr}
+  .wide-inner .pkg-header,.sponsor-inner .pkg-header{border-right:none;border-bottom:1px solid var(--border)}
+  .wide-inner .pkg-body,.sponsor-inner .pkg-body{border-right:none;border-bottom:1px solid var(--border)}
+  .pkg-card.sponsor-card{grid-column:auto}
+  .wide-cta{justify-content:flex-start}
+  .wide-cta .pkg-btn{width:100%}
+}
+@media(max-width:720px){
+  .pkg-grid{
+    display:flex;flex-direction:row;overflow-x:auto;
+    scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
+    gap:14px;padding-bottom:16px;scrollbar-width:none;
+  }
+  .pkg-grid::-webkit-scrollbar{display:none}
+  .pkg-card{min-width:80vw;max-width:80vw;flex-shrink:0;scroll-snap-align:start}
+  .pkg-card.wide{min-width:90vw;max-width:90vw}
+  .pkg-card.sponsor-card{min-width:90vw;max-width:90vw}
+  .summary-bar{padding:1.25rem}
+  .sb-num{font-size:1.25rem}
+  .sb-divider{width:40px;height:1px}
+  .compare-wrap{margin-top:1.5rem}
+  .nav-cta{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="tb-dot"></div>
+  <strong>Mekong Growth Expo 2026</strong>
+  <span>· 25–28 June 2026 · Big C Vientiane ·</span>
+  <a href="#packages">จองบูท →</a>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <div class="nav-logo-mark">V</div>
+      <div>
+        <div class="nav-brand">VITH<span>HUB</span></div>
+        <span class="nav-sub">Mekong Trade Gateway</span>
+      </div>
+    </a>
+    <a href="/pages/apply.html" class="nav-cta">📋 สมัครออกบูท</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="event-badge">🏪 Mekong Growth Expo 2026 · 25–28 June · Big C Vientiane</div>
+  <h1>แพ็กเกจและ<br><span>ราคาบูทแสดงสินค้า</span></h1>
+  <p class="page-hero-sub">ราคาโปร่งใส ไม่มีค่าคอมมิชชัน · เลือกแพ็กเกจที่เหมาะกับธุรกิจของคุณ<br>5 วัน · ผู้เข้าชม 1,500+ คน · ผู้ซื้อจาก 4 ประเทศ<br>25–28 June 2026 · Big C Vientiane, Laos</p>
+  <div class="hero-pills">
+    <div class="pill">📅 <strong>25–28 June 2026</strong></div>
+    <div class="pill">🏬 <strong>Big C Vientiane</strong> · Laos</div>
+    <div class="pill">📦 โลจิสติกส์ฟรี <strong>TH→LAO</strong></div>
+    <div class="pill">💰 <strong>0%</strong> Commission</div>
+    <div class="pill">🎯 Target <strong>60 Booths</strong></div>
+  </div>
+</div>
+
+<!-- URGENCY STRIP -->
+<div class="urgency-strip">
+  <div class="us-item">🔥 <strong>39 / 60 บูทถูกจองแล้ว</strong> — เหลือเพียง 21 บูท</div>
+  <div class="us-bar-wrap">
+    <span>Reserved</span>
+    <div class="us-bar"><div class="us-fill" id="usBar"></div></div>
+    <span><strong>65%</strong></span>
+  </div>
+  <div class="us-item">⚡ ทีมงานตอบกลับภายใน <strong>24 ชั่วโมง</strong></div>
+</div>
+
+<!-- PACKAGES SECTION -->
+<section class="section white" id="packages">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">Booth Packages</div>
+      <h2 class="sec-title">เลือกแพ็กเกจ<span class="accent">ที่เหมาะกับคุณ</span></h2>
+      <p class="sec-desc">ทุกแพ็กเกจรวมโลจิสติกส์ฟรีไทย→ลาว และค่าคอมมิชชัน 0% ไม่มีค่าใช้จ่ายซ่อนเร้น</p>
+    </div>
+
+    <div class="pkg-grid" style="margin-top:2.5rem">
+
+      <!-- 1. Standard Booth Zone B -->
+      <div class="pkg-card reveal d1">
+        <div class="pkg-top-line"></div>
+        <div class="pkg-header">
+          <div class="pkg-zone">Zone B · บูทมาตรฐาน</div>
+          <div class="pkg-name">Standard Booth</div>
+          <div class="pkg-size">3m × 2m · 6 sqm · 5 วัน</div>
+          <div class="price-row">
+            <div class="pkg-price">฿15,000</div>
+          </div>
+          <div class="pkg-price-note">ต่อบูท · 5 วัน · 0% commission</div>
+          <div class="pkg-avail">🔥 เหลือ 9 บูท</div>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-feat-label">สิ่งที่รวมอยู่</div>
+          <div class="pkg-feat"><span class="feat-check">✓</span>โครงสร้างบูท 3×2 เมตร</div>
+          <div class="pkg-feat"><span class="feat-check">✓</span>โต๊ะ เก้าอี้ และไฟส่องสว่าง</div>
+          <div class="pkg-feat"><span class="feat-check">✓</span>บัตรผู้แสดงสินค้า 2 คน</div>
+          <div class="pkg-feat"><span class="feat-check">✓</span>ชื่อบริษัทในไดเรกทอรีงาน</div>
+          <div class="pkg-feat"><span class="feat-check">✓</span>โลจิสติกส์ฟรี 50 กก. ไทย→ลาว</div>
+          <div class="pkg-feat"><span class="feat-check">✓</span>0% ค่าคอมมิชชันทุกยอดขาย</div>
+        </div>
+        <div class="pkg-footer">
+          <a href="/pages/apply.html?pkg=standard" class="pkg-btn btn-navy">จองบูทมาตรฐาน →</a>
+        </div>
+      </div>
+
+      <!-- 2. Zone A Premium Booth -->
+      <div class="pkg-card reveal d2">
+        <div class="pkg-top-line" style="background:linear-gradient(90deg,#1d4ed8,#3b82f6)"></div>
+        <div class="pkg-header">
+          <div class="pkg-zone" style="color:#1d4ed8">Zone A · บูทหน้างาน</div>
+          <div class="pkg-name">Showcase Booth</div>
+          <div class="pkg-size">3m × 3m · 9 sqm · 5 วัน · ตกแต่งเองได้</div>
+          <div class="price-row">
+            <div class="pkg-price" style="color:#1d4ed8">฿25,000</div>
+          </div>
+          <div class="pkg-price-note">ต่อบูท · 5 วัน · 0% commission</div>
+          <div class="pkg-avail">🔥 เพียง 7 บูท</div>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-feat-label">สิ่งที่รวมอยู่</div>
+          <div class="pkg-feat"><span class="feat-check" style="color:#3b82f6">✓</span>โครงสร้างบูท 3×3 เมตร</div>
+          <div class="pkg-feat"><span class="feat-check" style="color:#3b82f6">✓</span>โต๊ะ เก้าอี้ และไฟส่องสว่าง</div>
+          <div class="pkg-feat"><span class="feat-check" style="color:#3b82f6">✓</span>บัตรผู้แสดงสินค้า 2 คน</div>
+          <div class="pkg-feat"><span class="feat-check" style="color:#3b82f6">✓</span>ชื่อบริษัทในไดเรกทอรีงาน</div>
+          <div class="pkg-feat"><span class="feat-check" style="color:#3b82f6">✓</span>โลจิสติกส์ฟรี 100 กก. หนองคาย→เวียงจันทน์</div>
+          <div class="pkg-feat"><span class="feat-check" style="color:#3b82f6">✓</span>0% ค่าคอมมิชชันทุกยอดขาย</div>
+          <div class="pkg-feat"><span class="feat-check" style="color:#3b82f6">✓</span>Speaking slot บน Main Stage</div>
+        </div>
+        <div class="pkg-footer">
+          <a href="/pages/apply.html?pkg=zonea" class="pkg-btn" style="background:linear-gradient(135deg,#1e3a8a,#2563eb,#3b82f6);color:#fff">จอง Zone A →</a>
+        </div>
+      </div>
+
+      <!-- 4. Retail Entry 90D — FEATURED -->
+      <div class="pkg-card featured reveal d3">
+        <div class="pkg-top-line gold"></div>
+        <div class="pkg-badge badge-popular">⭐ Most Popular</div>
+        <div class="pkg-header">
+          <div class="pkg-zone">Zone B · Retail Entry</div>
+          <div class="pkg-name">Retail Entry 90 วัน</div>
+          <div class="pkg-size">3m × 3m · บูท + เข้าตลาด 90 วันเต็ม</div>
+          <div class="price-row">
+            <div class="pkg-price">฿39,000</div>
+            <div class="pkg-price-old">฿59,000</div>
+          </div>
+          <div class="pkg-price-note">flat-fee 90 วัน · 0% commission · จำกัด 26 แบรนด์</div>
+          <div class="pkg-avail">⚡ จำกัดเพียง 26 แบรนด์เท่านั้น</div>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-feat-label">สิ่งที่รวมอยู่</div>
+          <div class="pkg-feat"><span class="feat-check">✓</span>บูท Zone B + ทดสอบชั้นวาง Big C</div>
+          <div class="pkg-feat"><span class="feat-check">✓</span>B2B Matching 1-on-1 นาน 90 วัน</div>
+          <div class="pkg-feat"><span class="feat-check">✓</span>เข้าถึง Managed Showroom</div>
+          <div class="pkg-feat"><span class="feat-check">✓</span>ที่ปรึกษาตลาด CLMV</div>
+          <div class="pkg-feat"><span class="feat-check">✓</span>โลจิสติกส์ฟรี 100 กก. + ลด 15% 90 วัน</div>
+          <div class="pkg-feat"><span class="feat-check">✓</span>รายงานผู้ซื้อ + รายชื่อติดต่อ</div>
+          <div class="pkg-feat"><span class="feat-check">✓</span>Speaking slot บน Main Stage</div>
+        </div>
+        <div class="pkg-footer">
+          <a href="/pages/apply.html?pkg=retail90" class="pkg-btn btn-gold">🚀 สมัคร Retail Entry →</a>
+        </div>
+      </div>
+
+      <!-- 5. Premium Zone P -->
+      <div class="pkg-card premium-card reveal d4">
+        <div class="pkg-top-line gold"></div>
+        <div class="pkg-badge badge-limited">✦ 4 Left</div>
+        <div class="pkg-header">
+          <div class="pkg-zone" style="color:var(--gold)">Zone P · พรีเมียม</div>
+          <div class="pkg-name">Premium Zone P</div>
+          <div class="pkg-size">3m × 6m · 18 sqm · Custom build</div>
+          <div class="price-row">
+            <div class="pkg-price">฿50,000</div>
+          </div>
+          <div class="pkg-price-note">ต่องาน 5 วัน · ทำเลกลางงาน</div>
+          <div class="pkg-avail">🔥 เหลือเพียง 4 slot</div>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-feat-label">สิ่งที่รวมอยู่</div>
+          <div class="pkg-feat"><span class="feat-check">✦</span>18 sqm open space — double มาตรฐาน</div>
+          <div class="pkg-feat"><span class="feat-check">✦</span>ทำเลกลางงาน — traffic สูงสุด</div>
+          <div class="pkg-feat"><span class="feat-check">✦</span>Priority B2B Matching + Big C Consultation</div>
+          <div class="pkg-feat"><span class="feat-check">✦</span>Speaking slot บน Main Stage 10 นาที</div>
+          <div class="pkg-feat"><span class="feat-check">✦</span>โลโก้ในสื่อ Marketing ทุกชิ้น</div>
+          <div class="pkg-feat"><span class="feat-check">✦</span>โลจิสติกส์ฟรี 200 กก. ไทย→ลาว</div>
+        </div>
+        <div class="pkg-footer">
+          <a href="/pages/apply.html?pkg=premium" class="pkg-btn btn-gold">✦ จอง Zone P →</a>
+        </div>
+      </div>
+
+      <!-- 4. Food Pavilion — WIDE -->
+      <div class="pkg-card wide reveal d4">
+        <div class="pkg-top-line green"></div>
+        <div class="wide-inner">
+          <div class="pkg-header">
+            <div class="pkg-zone green">Zone C/D · Food Pavilion</div>
+            <div class="pkg-name">Food Pavilion</div>
+            <div class="pkg-size">2m × 3m · อาหาร & FMCG</div>
+            <div class="price-row">
+              <div class="pkg-price green">฿12,000</div>
+            </div>
+            <div class="pkg-price-note">ต่อบูท · ราคาเริ่มต้น</div>
+            <div class="pkg-avail green-txt">✓ ยังมี 21 บูท</div>
+          </div>
+          <div class="pkg-body">
+            <div class="pkg-feat-label">สิ่งที่รวมอยู่</div>
+            <div class="pkg-feat"><span class="feat-check green">✓</span>Zone C/D — ศูนย์อาหารไทย-ลาว</div>
+            <div class="pkg-feat"><span class="feat-check green">✓</span>2×3 ม. + ไฟส่องสว่าง + โต๊ะเก้าอี้</div>
+            <div class="pkg-feat"><span class="feat-check green">✓</span>โลจิสติกส์ฟรี 50 กก. ไทย→ลาว</div>
+            <div class="pkg-feat"><span class="feat-check green">✓</span>เหมาะสำหรับทดสอบตลาดลาวครั้งแรก</div>
+            <div class="pkg-feat"><span class="feat-check green">✓</span>0% ค่าคอมมิชชันทุกยอดขาย</div>
+          </div>
+          <div class="wide-cta">
+            <a href="/pages/apply.html?pkg=food" class="pkg-btn btn-orange">จอง Food Pavilion →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Main Sponsor — DARK WIDE -->
+      <div class="pkg-card sponsor-card reveal d5">
+        <div class="pkg-top-line sponsor"></div>
+        <div class="sponsor-inner">
+          <div class="pkg-header">
+            <div class="pkg-zone sponsor">Main Sponsor Package</div>
+            <div class="pkg-name">Main Sponsor</div>
+            <div class="pkg-size">Full event branding · Premium space</div>
+            <div class="price-row">
+              <div class="pkg-price sponsor">฿150,000</div>
+            </div>
+            <div class="pkg-price-note">ต่อ 5 วัน · exclusive partnership</div>
+            <div class="sponsor-avail">✦ 1 Slot Available Only</div>
+          </div>
+          <div class="pkg-body">
+            <div class="pkg-feat-label">สิ่งที่รวมอยู่</div>
+            <div class="pkg-feat"><span class="feat-check blue">★</span>พื้นที่ขนาดใหญ่ Prime Location ติดทางเข้า</div>
+            <div class="pkg-feat"><span class="feat-check blue">★</span>โลโก้ Sponsor หลัก ในสื่อทุกช่องทาง</div>
+            <div class="pkg-feat"><span class="feat-check blue">★</span>Speaking slot Main Stage 30 นาที</div>
+            <div class="pkg-feat"><span class="feat-check blue">★</span>B2B Matching Priority ทุกวัน</div>
+            <div class="pkg-feat"><span class="feat-check blue">★</span>Press Release + Media Coverage</div>
+            <div class="pkg-feat"><span class="feat-check blue">★</span>โลจิสติกส์ฟรี 500 กก. + Account Manager ตลอด 90 วัน</div>
+          </div>
+          <div class="wide-cta" style="padding:1.75rem">
+            <a href="https://line.me/ti/p/@cef8930n" target="_blank" class="pkg-btn btn-sponsor" style="width:180px">ติดต่อสอบถาม →</a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end pkg-grid -->
+
+    <!-- SUMMARY BAR -->
+    <div class="summary-bar reveal">
+      <div class="sb-item"><div class="sb-num gold">฿12K</div><div class="sb-lbl">เริ่มต้นที่</div></div>
+      <div class="sb-divider"></div>
+      <div class="sb-item"><div class="sb-num">0%</div><div class="sb-lbl">Commission</div></div>
+      <div class="sb-divider"></div>
+      <div class="sb-item"><div class="sb-num">FREE</div><div class="sb-lbl">Logistics TH→LAO</div></div>
+      <div class="sb-divider"></div>
+      <div class="sb-item"><div class="sb-num">6</div><div class="sb-lbl">Package Options</div></div>
+      <div class="sb-divider"></div>
+      <div class="sb-item"><div class="sb-num">24H</div><div class="sb-lbl">Response Time</div></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section class="section" id="compare">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-label">เปรียบเทียบแพ็กเกจ</div>
+      <h2 class="sec-title">Compare <span class="accent">All Packages</span></h2>
+      <p class="sec-desc">เปรียบเทียบสิทธิประโยชน์ทุกแพ็กเกจในหน้าเดียว เพื่อตัดสินใจได้ง่ายขึ้น</p>
+    </div>
+
+    <div class="compare-wrap reveal d1">
+      <table class="compare">
+        <thead>
+          <tr>
+            <th style="min-width:180px">สิทธิประโยชน์</th>
+            <th>Food Pavilion<br><span style="color:#6B6B6B;font-size:.7rem;font-weight:500">฿12,000</span></th>
+            <th>Standard<br><span style="color:#6B6B6B;font-size:.7rem;font-weight:500">฿15,000</span></th>
+            <th style="background:#eff6ff;border-bottom:2px solid #2563eb">Zone A Showcase<br><span style="color:#1d4ed8;font-size:.7rem;font-weight:600">฿25,000</span></th>
+            <th class="th-gold">Retail Entry 90D<br><span style="color:#9B7A10;font-size:.7rem;font-weight:600">฿39,000</span></th>
+            <th>Premium Zone P<br><span style="color:#6B6B6B;font-size:.7rem;font-weight:500">฿50,000</span></th>
+            <th class="th-sponsored">Main Sponsor<br><span style="color:#1d4ed8;font-size:.7rem;font-weight:600">฿150,000</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>พื้นที่บูท</td>
+            <td>2×3 ม.</td>
+            <td>3×2 ม.</td>
+            <td>3×3 ม.</td>
+            <td>3×3 ม.</td>
+            <td>3×6 ม. (18 sqm)</td>
+            <td>Prime Location ใหญ่</td>
+          </tr>
+          <tr>
+            <td>โครงสร้าง + ไฟ + โต๊ะ</td>
+            <td><span class="chk">✓</span></td>
+            <td><span class="chk">✓</span></td>
+            <td><span class="chk blue">✓</span></td>
+            <td><span class="chk">✓</span></td>
+            <td><span class="chk">✓</span> Custom build</td>
+            <td><span class="chk">✓</span></td>
+          </tr>
+          <tr>
+            <td>ตกแต่งเองได้</td>
+            <td><span class="cross">—</span></td>
+            <td><span class="cross">—</span></td>
+            <td><span class="chk blue">✓</span></td>
+            <td><span class="cross">—</span></td>
+            <td><span class="chk">✓</span></td>
+            <td><span class="chk">✓</span></td>
+          </tr>
+          <tr>
+            <td>0% ค่าคอมมิชชัน</td>
+            <td><span class="chk">✓</span></td>
+            <td><span class="chk">✓</span></td>
+            <td><span class="chk blue">✓</span></td>
+            <td><span class="chk">✓</span></td>
+            <td><span class="chk">✓</span></td>
+            <td><span class="chk">✓</span></td>
+          </tr>
+          <tr>
+            <td>โลจิสติกส์ฟรี TH→LAO</td>
+            <td>50 กก.</td>
+            <td>50 กก.</td>
+            <td>100 กก.</td>
+            <td>100 กก. + ลด 15%</td>
+            <td>200 กก.</td>
+            <td>500 กก.</td>
+          </tr>
+          <tr>
+            <td>บัตรผู้แสดงสินค้า</td>
+            <td>2 คน</td>
+            <td>2 คน</td>
+            <td>2 คน</td>
+            <td>3 คน</td>
+            <td>4 คน</td>
+            <td>ไม่จำกัด</td>
+          </tr>
+          <tr>
+            <td>B2B Matching</td>
+            <td><span class="cross">—</span></td>
+            <td><span class="cross">—</span></td>
+            <td><span class="cross">—</span></td>
+            <td><span class="chk">✓</span> 90 วัน</td>
+            <td><span class="chk">✓</span> Priority</td>
+            <td><span class="chk blue">✓</span> Priority ทุกวัน</td>
+          </tr>
+          <tr>
+            <td>ทดสอบชั้นวาง Big C</td>
+            <td><span class="cross">—</span></td>
+            <td><span class="cross">—</span></td>
+            <td><span class="cross">—</span></td>
+            <td><span class="chk">✓</span></td>
+            <td><span class="chk">✓</span></td>
+            <td><span class="chk blue">✓</span></td>
+          </tr>
+          <tr>
+            <td>ที่ปรึกษาตลาด CLMV</td>
+            <td><span class="cross">—</span></td>
+            <td><span class="cross">—</span></td>
+            <td><span class="cross">—</span></td>
+            <td><span class="chk">✓</span></td>
+            <td><span class="chk">✓</span></td>
+            <td><span class="chk blue">✓</span></td>
+          </tr>
+          <tr>
+            <td>รายงานผู้ซื้อ + Contacts</td>
+            <td><span class="cross">—</span></td>
+            <td><span class="cross">—</span></td>
+            <td><span class="cross">—</span></td>
+            <td><span class="chk">✓</span></td>
+            <td><span class="chk">✓</span></td>
+            <td><span class="chk blue">✓</span></td>
+          </tr>
+          <tr>
+            <td>Speaking slot Main Stage</td>
+            <td><span class="cross">—</span></td>
+            <td><span class="cross">—</span></td>
+            <td><span class="chk blue">✓</span></td>
+            <td><span class="chk">✓</span></td>
+            <td>10 นาที</td>
+            <td>30 นาที</td>
+          </tr>
+          <tr>
+            <td>โลโก้ในสื่อ Marketing</td>
+            <td><span class="cross">—</span></td>
+            <td><span class="cross">—</span></td>
+            <td><span class="cross">—</span></td>
+            <td><span class="cross">—</span></td>
+            <td><span class="chk">✓</span></td>
+            <td><span class="chk blue">✓</span> Main Sponsor branding</td>
+          </tr>
+          <tr>
+            <td><strong>ราคา</strong></td>
+            <td><span class="price-cell green">฿12,000</span></td>
+            <td><span class="price-cell">฿15,000</span></td>
+            <td><span class="price-cell blue">฿25,000</span></td>
+            <td><span class="price-cell" style="color:#9B7A10">฿39,000</span></td>
+            <td><span class="price-cell" style="color:#9B7A10">฿50,000</span></td>
+            <td><span class="price-cell blue">฿150,000</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- INFO BOXES -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:2rem" class="reveal d2">
+      <div class="info-box">
+        <div class="info-box-title">📦 นโยบายการจอง</div>
+        <div class="info-item"><div class="info-dot"></div><div>ชำระ <strong>50%</strong> เพื่อยืนยันสิทธิ์บูท และชำระส่วนที่เหลือ <strong>50%</strong> ก่อนวันงาน 10 วัน</div></div>
+        <div class="info-item"><div class="info-dot"></div><div>สามารถยกเลิกได้ก่อน 30 วัน คืนเงิน 80%</div></div>
+        <div class="info-item"><div class="info-dot"></div><div>ยกเลิกหลัง 30 วันก่อนงาน ไม่คืนเงิน</div></div>
+        <div class="info-item"><div class="info-dot"></div><div>ทีมงานติดต่อกลับภายใน 24 ชั่วโมงหลังสมัคร</div></div>
+      </div>
+      <div class="info-box">
+        <div class="info-box-title">🏪 โลจิสติกส์ หนองคาย→เวียงจันทน์</div>
+        <div class="info-item"><div class="info-dot"></div><div>รับสินค้าจากคลัง Nong Khai</div></div>
+        <div class="info-item"><div class="info-dot"></div><div>ขนส่งข้ามด่านหนองคาย–เวียงจันทน์</div></div>
+        <div class="info-item"><div class="info-dot"></div><div>จัดส่งตรงถึงบูทภายใน Big C Vientiane</div></div>
+        <div class="info-item"><div class="info-dot"></div><div>พาร์ทเนอร์: Khamkhong Logistics (Nong Khai)</div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<div class="cta-section">
+  <div class="cta-inner">
+    <div class="cta-eyebrow">🏪 Reserve Your Booth — Mekong Growth Expo 2026</div>
+    <h2 class="cta-title">จองบูทวันนี้<br><span>ก่อนที่นั่งจะเต็ม</span></h2>
+    <p class="cta-desc">เหลือเพียง 21 บูทจากทั้งหมด 60 บูท — ทีมงานติดต่อกลับภายใน 24 ชั่วโมง พร้อมดูแลตั้งแต่สมัครถึงวันงาน</p>
+    <div class="cta-btns">
+      <a href="/pages/apply.html" class="cta-btn-primary">📋 สมัครออกบูทตอนนี้ →</a>
+      <a href="https://line.me/ti/p/@cef8930n" target="_blank" class="cta-btn-line">
+        <svg width="16" height="16" viewBox="0 0 48 48"><path d="M24 4C13 4 4 11.8 4 21.5c0 5.5 3.1 10.4 7.9 13.7-.3 1.2-1.1 4.3-1.3 5 0 0-.1.3.2.4.2.1.5 0 .5 0 .7-.1 8.5-5.6 9.8-6.5.9.1 1.9.2 2.9.2 11 0 20-7.8 20-17.3S35 4 24 4z" fill="white"/></svg>
+        LINE @cef8930n
+      </a>
+    </div>
+    <p class="cta-note">🔒 ข้อมูลปลอดภัย · ไม่มีค่าคอมมิชชัน · โลจิสติกส์ฟรี TH→LAO<br>หจก. รอยัล บริตจ์ 99 · Udon Thani · vithhub.asia</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <strong>VITH HUB</strong> · Mekong Growth Expo 2026 · Big C Vientiane, Laos<br>
+  <a href="https://line.me/ti/p/@cef8930n">LINE @cef8930n</a> · <a href="https://wa.me/66855907666">WhatsApp +66855907666</a> · <a href="/pages/policy.html">นโยบายการคืนเงิน</a>
+</footer>
+
+<script>
+// urgency bar
+setTimeout(()=>{const b=document.getElementById('usBar');if(b)b.style.width='65%';},600);
+
+// reveal
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});
+},{rootMargin:'0px 0px -36px 0px',threshold:0});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
