@@ -1,0 +1,3052 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>VITH HUB 2026 · Mekong Growth Expo — Floorplan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* ── Institutional palette ─────────────────────────── */
+    --paper:        #F5F5F3;
+    --paper-2:      #EDEDE9;
+    --hall:         #E8E9EB;
+    --hall-2:       #DEE0E3;
+    --line:         #D4D6DA;
+    --line-soft:    #E3E5E8;
+    --line-strong:  #B8BCC4;
+    --ink-0:        #0B132B;
+    --ink-1:        #1F2937;
+    --ink-2:        #4B5563;
+    --ink-3:        #6B7280;
+    --ink-4:        #9CA3AF;
+    --navy:         #0B132B;
+    --navy-2:       #1B2542;
+    --gold:         #C8A96B;
+    --gold-deep:    #8B7239;
+
+    /* Booth fills — muted, architectural */
+    --c-sponsor:    #9BC18E;
+    --c-sponsor-bd: #6B9B5E;
+    --c-showcase:   #4F6FB3;
+    --c-showcase-bd:#2D4A8A;
+    --c-premium:    #BCDDD3;
+    --c-premium-bd: #7CB5A5;
+    --c-nation:     #6FC1B0;
+    --c-nation-bd:  #3F8B7B;
+    --c-standard:   #D9BFD8;
+    --c-standard-bd:#A485A4;
+    --c-food-dry:   #DCC3A0;
+    --c-food-dry-bd:#A88B5E;
+    --c-food-drk:   #9BA3B0;
+    --c-food-drk-bd:#5F6776;
+    --c-pavilion:   #C8DFD8;
+    --c-pavilion-bd:#7AA89C;
+
+    /* Status — restrained */
+    --s-available:  #4F8B40;
+    --s-reserved:   #B68026;
+    --s-sold:       #B23A3A;
+    --s-vip:        #5B4FA8;
+
+    /* Wayfinding */
+    --w-entry:      #C04162;
+    --w-design:     #E6CE5C;
+    --w-stage:      #B23854;
+
+    --radius-xs: 2px;
+    --radius-sm: 4px;
+    --radius:    6px;
+    --radius-lg: 10px;
+    --ease:      cubic-bezier(.22,.61,.36,1);
+    --shadow-sm: 0 1px 2px rgba(11,19,43,.06);
+    --shadow:    0 2px 8px rgba(11,19,43,.08), 0 1px 2px rgba(11,19,43,.04);
+    --shadow-lg: 0 20px 48px rgba(11,19,43,.12), 0 4px 12px rgba(11,19,43,.06);
+  }
+
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0; height: 100%;
+    background: var(--paper);
+    color: var(--ink-1);
+    font-family: 'Inter', system-ui, sans-serif;
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* ─── App shell ──────────────────────────────────────────── */
+  .app {
+    display: grid;
+    grid-template-columns: 304px 1fr;
+    grid-template-rows: 68px 1fr;
+    height: 100vh;
+  }
+
+  /* ── Top bar ────────────────────────────────────────────── */
+  .topbar {
+    grid-column: 1 / -1;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 28px;
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    position: relative; z-index: 30;
+  }
+  .topbar::after {
+    content: ''; position: absolute; left: 28px; right: 28px; bottom: -1px; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold) 30%, var(--gold) 70%, transparent);
+    opacity: .55;
+  }
+  .brand { display: flex; align-items: center; gap: 16px; }
+  .brand-mark {
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 28%, #1F3168, var(--navy) 65%, #050C20);
+    border: 1.5px solid var(--gold);
+    display: grid; place-items: center;
+    color: #F2E6C7;
+    font: 800 9.5px 'Inter', sans-serif;
+    letter-spacing: .08em;
+    box-shadow: var(--shadow-sm), inset 0 0 6px rgba(0,0,0,.4);
+    position: relative;
+  }
+  .brand-mark::after {
+    content: ''; position: absolute; inset: 2px;
+    border-radius: 50%;
+    border: 1px solid rgba(200,169,107,.35);
+  }
+  .brand-divider {
+    width: 1px; height: 32px; background: var(--line);
+    margin: 0 4px;
+  }
+  .brand-text { display: flex; flex-direction: column; line-height: 1.1; }
+  .brand-text .name {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: -.005em;
+    color: var(--navy);
+  }
+  .brand-text .name em {
+    font-style: normal;
+    color: var(--gold-deep);
+    font-weight: 600;
+  }
+  .brand-text .tag {
+    font-size: 10.5px;
+    letter-spacing: .26em;
+    color: var(--ink-3);
+    text-transform: uppercase;
+    margin-top: 4px;
+    font-weight: 500;
+  }
+
+  .top-meta {
+    display: flex; align-items: center; gap: 18px;
+    font: 500 11px 'JetBrains Mono', monospace;
+    color: var(--ink-3);
+  }
+  .top-meta .k { color: var(--ink-4); margin-right: 4px; }
+  .top-meta .sep { width: 1px; height: 14px; background: var(--line); }
+
+  .top-tools { display: flex; align-items: center; gap: 8px; }
+  .search {
+    position: relative;
+  }
+  .search input {
+    width: 280px; height: 38px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    color: var(--ink-1);
+    padding: 0 14px 0 38px;
+    border-radius: var(--radius);
+    font: 500 12.5px 'Inter', sans-serif;
+    outline: none;
+    transition: border-color .15s var(--ease), box-shadow .15s var(--ease), background .15s var(--ease);
+  }
+  .search input:focus {
+    background: #fff;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(200,169,107,.18);
+  }
+  .search input::placeholder { color: var(--ink-4); font-weight: 400; }
+  .search svg {
+    position: absolute; left: 13px; top: 11px;
+    width: 15px; height: 15px;
+    color: var(--ink-4); pointer-events: none;
+  }
+  .icon-btn {
+    width: 38px; height: 38px;
+    background: #fff;
+    border: 1px solid var(--line);
+    color: var(--ink-2);
+    border-radius: var(--radius);
+    display: grid; place-items: center;
+    cursor: pointer;
+    transition: all .15s var(--ease);
+  }
+  .icon-btn:hover {
+    border-color: var(--ink-3);
+    color: var(--navy);
+  }
+  .icon-btn.is-on {
+    background: var(--navy);
+    border-color: var(--navy);
+    color: var(--gold);
+  }
+
+  /* ─── Side panel ─────────────────────────────────────────── */
+  .side {
+    background: #fff;
+    border-right: 1px solid var(--line);
+    overflow-y: auto;
+    display: flex; flex-direction: column;
+  }
+  .side::-webkit-scrollbar { width: 6px; }
+  .side::-webkit-scrollbar-thumb { background: var(--line); border-radius: 3px; }
+
+  .side-section {
+    padding: 22px 24px 24px;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .side-section:last-child { border-bottom: 0; }
+
+  .section-label {
+    display: flex; align-items: center; gap: 10px;
+    font: 600 10px 'Inter', sans-serif;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin: 0 0 14px;
+  }
+  .section-label::before {
+    content: ''; flex: 0 0 14px; height: 1px; background: var(--gold);
+  }
+
+  /* Stats strip */
+  .stats {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+    background: var(--line-soft);
+    border: 1px solid var(--line-soft);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+  }
+  .stat {
+    background: #fff;
+    padding: 12px 14px;
+  }
+  .stat .label {
+    font: 500 9.5px 'Inter', sans-serif;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-4);
+    margin-bottom: 4px;
+  }
+  .stat .value {
+    font: 600 22px 'Fraunces', serif;
+    color: var(--navy);
+    line-height: 1;
+  }
+  .stat .delta {
+    font: 500 10.5px 'JetBrains Mono', monospace;
+    color: var(--ink-3);
+    margin-top: 4px;
+  }
+
+  /* Legend */
+  .legend { display: flex; flex-direction: column; gap: 4px; }
+  .legend-item {
+    display: flex; align-items: center; gap: 12px;
+    padding: 9px 10px;
+    border: 1px solid transparent;
+    border-radius: var(--radius-xs);
+    font-size: 12.5px;
+    color: var(--ink-1);
+    cursor: pointer;
+    transition: all .12s var(--ease);
+    user-select: none;
+  }
+  .legend-item:hover { background: var(--paper); }
+  .legend-item.is-off { opacity: .35; }
+  .legend-item.is-off .swatch { filter: grayscale(.8); }
+  .swatch {
+    width: 16px; height: 16px;
+    border-radius: 2px;
+    flex-shrink: 0;
+    border: 1px solid rgba(0,0,0,.08);
+  }
+  .legend-item .count {
+    margin-left: auto;
+    font: 500 10.5px 'JetBrains Mono', monospace;
+    color: var(--ink-3);
+  }
+
+  /* Status pills */
+  .status-list { display: flex; flex-direction: column; gap: 2px; }
+  .status-row {
+    display: flex; align-items: center; gap: 10px;
+    padding: 8px 4px;
+    font-size: 12px;
+    color: var(--ink-1);
+  }
+  .status-row .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(0,0,0,.04);
+  }
+  .status-row .bar {
+    flex: 1;
+    height: 4px;
+    background: var(--paper-2);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .status-row .bar i {
+    display: block; height: 100%;
+    background: currentColor;
+    opacity: .55;
+  }
+  .status-row .num {
+    font: 600 11px 'JetBrains Mono', monospace;
+    color: var(--ink-1);
+    min-width: 28px; text-align: right;
+  }
+
+  /* Quick nav */
+  .navlist { display: flex; flex-direction: column; gap: 2px; }
+  .navlist button {
+    display: flex; align-items: center; gap: 10px;
+    width: 100%;
+    background: none;
+    border: 0;
+    padding: 9px 10px;
+    text-align: left;
+    cursor: pointer;
+    font: 500 12.5px 'Inter', sans-serif;
+    color: var(--ink-1);
+    border-radius: var(--radius-xs);
+    transition: all .12s var(--ease);
+  }
+  .navlist button:hover { background: var(--paper); }
+  .navlist button .glyph {
+    width: 20px; height: 20px;
+    display: grid; place-items: center;
+    color: var(--ink-3);
+  }
+  .navlist button .chev {
+    margin-left: auto;
+    color: var(--ink-4);
+  }
+
+  .credit {
+    margin-top: auto;
+    padding: 16px 24px;
+    border-top: 1px solid var(--line-soft);
+    font: 400 10px 'JetBrains Mono', monospace;
+    color: var(--ink-4);
+    letter-spacing: .04em;
+    line-height: 1.6;
+  }
+  .credit b { color: var(--ink-2); font-weight: 600; }
+
+  /* ─── Canvas ─────────────────────────────────────────────── */
+  .canvas-wrap {
+    position: relative;
+    overflow: hidden;
+    background: var(--paper);
+    cursor: grab;
+  }
+  .canvas-wrap.is-dragging { cursor: grabbing; }
+  .canvas-wrap::before {
+    /* architectural blueprint dot grid */
+    content: ''; position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(11,19,43,.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(11,19,43,.025) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Corner registration marks (architectural detail) */
+  .reg-mark {
+    position: absolute;
+    width: 18px; height: 18px;
+    z-index: 5;
+    pointer-events: none;
+  }
+  .reg-mark::before, .reg-mark::after {
+    content: ''; position: absolute;
+    background: var(--ink-4);
+  }
+  .reg-mark::before { left: 0; right: 0; top: 50%; height: 1px; }
+  .reg-mark::after { top: 0; bottom: 0; left: 50%; width: 1px; }
+  .reg-mark.tl { top: 16px; left: 16px; }
+  .reg-mark.tr { top: 16px; right: 16px; }
+  .reg-mark.bl { bottom: 16px; left: 16px; }
+  .reg-mark.br { bottom: 16px; right: 16px; }
+
+  /* Scale ruler */
+  .scale-ruler {
+    position: absolute;
+    left: 50%;
+    bottom: 22px;
+    transform: translateX(-50%);
+    display: flex; align-items: center; gap: 10px;
+    font: 500 10.5px 'JetBrains Mono', monospace;
+    color: var(--ink-3);
+    z-index: 5;
+    pointer-events: none;
+  }
+  .scale-ruler .bar {
+    width: 120px; height: 6px;
+    background: linear-gradient(90deg, var(--navy) 0 25%, #fff 25% 50%, var(--navy) 50% 75%, #fff 75%);
+    border: 1px solid var(--navy);
+  }
+
+  /* Compass */
+  .compass {
+    position: absolute;
+    top: 20px; left: 20px;
+    width: 64px; height: 64px;
+    background: rgba(255,255,255,.85);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    display: grid; place-items: center;
+    z-index: 5;
+    box-shadow: var(--shadow-sm);
+  }
+  .compass-rose {
+    width: 44px; height: 44px;
+    position: relative;
+  }
+  .compass-rose::before, .compass-rose::after {
+    content: ''; position: absolute;
+    background: var(--ink-3);
+  }
+  .compass-rose::before { left: 50%; top: 6px; bottom: 6px; width: 1px; }
+  .compass-rose::after { top: 50%; left: 6px; right: 6px; height: 1px; }
+  .compass-needle {
+    position: absolute; left: 50%; top: 6px;
+    transform: translateX(-50%);
+    width: 0; height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 16px solid var(--w-entry);
+  }
+  .compass-needle.s {
+    top: auto; bottom: 6px;
+    border-bottom: 0;
+    border-top: 16px solid var(--ink-2);
+  }
+  .compass-label {
+    position: absolute; font: 600 9px 'Inter', sans-serif;
+    color: var(--ink-2); letter-spacing: .1em;
+  }
+  .compass-label.n { top: -2px; left: 50%; transform: translateX(-50%); color: var(--w-entry); }
+  .compass-label.s { bottom: -2px; left: 50%; transform: translateX(-50%); }
+  .compass-label.e { right: -2px; top: 50%; transform: translateY(-50%); }
+  .compass-label.w { left: -2px; top: 50%; transform: translateY(-50%); }
+
+  /* Stage SVG */
+  #stage {
+    width: 100%; height: 100%;
+    position: relative; z-index: 1;
+    user-select: none;
+  }
+
+  /* ── Booth visuals (architectural minimal) ── */
+  .booth-shape {
+    transition: filter .18s var(--ease), transform .2s var(--ease), stroke .15s var(--ease);
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+  .booth-group { cursor: pointer; }
+  .booth-group:hover .booth-shape {
+    filter: drop-shadow(0 6px 14px rgba(11,19,43,.18));
+    transform: scale(1.02);
+    stroke-width: 1.8;
+  }
+  .booth-group.is-active .booth-shape {
+    stroke: var(--gold);
+    stroke-width: 2;
+    filter: drop-shadow(0 8px 20px rgba(200,169,107,.45));
+  }
+  .booth-group.is-active .booth-label { fill: var(--navy); }
+  .booth-group.is-dim { opacity: .18; }
+  .booth-group.is-dim .booth-shape { filter: grayscale(.6); }
+
+  .booth-label {
+    fill: var(--navy);
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+    font-size: 11px;
+    text-anchor: middle;
+    dominant-baseline: central;
+    pointer-events: none;
+    letter-spacing: .04em;
+  }
+  .booth-label.light { fill: #fff; font-weight: 600; }
+
+  .booth-traffic {
+    pointer-events: none;
+  }
+
+  /* Premium ring marker for top-traffic booths */
+  .premium-marker {
+    fill: var(--gold);
+    pointer-events: none;
+  }
+
+  /* Structure styles */
+  .hall-outline {
+    fill: var(--hall);
+    stroke: var(--ink-2);
+    stroke-width: 1.5;
+  }
+  .hall-inner {
+    fill: var(--hall-2);
+    stroke: none;
+  }
+  .zone-entry { fill: rgba(192,65,98,.10); stroke: var(--w-entry); stroke-width: 1.2; }
+  .zone-warning { fill: rgba(230,206,92,.18); stroke: rgba(180,150,40,.6); stroke-width: 1; }
+  .zone-neutral { fill: rgba(255,255,255,.6); stroke: var(--line-strong); stroke-width: 1; }
+  .zone-stage { fill: rgba(192,65,98,.16); stroke: var(--w-stage); stroke-width: 1.2; }
+  .zone-pavilion { fill: rgba(200,223,216,.55); stroke: var(--c-pavilion-bd); stroke-width: 1.2; }
+  .zone-venus {
+    fill: rgba(255,255,255,.45);
+    stroke: var(--line-strong);
+    stroke-width: 1;
+    stroke-dasharray: 4 3;
+  }
+
+  .zone-label {
+    font-family: 'Inter', sans-serif;
+    text-anchor: middle;
+    dominant-baseline: central;
+    pointer-events: none;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .zone-label.t-entry { fill: var(--w-entry); }
+  .zone-label.t-warn { fill: #8B6F1F; }
+  .zone-label.t-ink { fill: var(--ink-1); }
+  .zone-label.t-dim { fill: var(--ink-3); }
+  .zone-label.t-stage { fill: var(--w-stage); }
+  .zone-label.t-gold { fill: var(--gold-deep); }
+  .zone-label.t-pavilion { fill: var(--c-pavilion-bd); }
+
+  .venus-title {
+    font-family: 'Fraunces', serif;
+    text-anchor: middle;
+    dominant-baseline: central;
+    pointer-events: none;
+    fill: var(--navy);
+    letter-spacing: .22em;
+    font-weight: 500;
+  }
+
+  .aisle-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9.5px;
+    fill: var(--ink-3);
+    text-anchor: middle;
+    dominant-baseline: central;
+    pointer-events: none;
+    letter-spacing: .08em;
+  }
+  .aisle-tag.bold { font-weight: 600; fill: var(--ink-2); }
+
+  /* Watermark */
+  .watermark {
+    pointer-events: none;
+    opacity: .035;
+    fill: var(--navy);
+  }
+
+  /* Debug grid */
+  .debug-grid line { stroke: rgba(200,169,107,.4); stroke-width: .4; }
+  .debug-grid text { fill: rgba(200,169,107,.85); font: 9px 'JetBrains Mono', monospace; }
+  .debug-grid .major { stroke: rgba(200,169,107,.7); stroke-width: .6; }
+
+  /* Hitbox visible in debug */
+  .debug-on .booth-hitbox {
+    fill: rgba(200,169,107,.08) !important;
+    stroke: rgba(200,169,107,.5);
+    stroke-width: .5;
+    stroke-dasharray: 2 2;
+  }
+
+  /* ─── Mini-map ───────────────────────────────────────────── */
+  .minimap {
+    position: absolute;
+    top: 20px; right: 20px;
+    width: 220px;
+    height: 140px;
+    background: rgba(255,255,255,.92);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    z-index: 8;
+    box-shadow: var(--shadow);
+  }
+  .minimap-head {
+    height: 24px;
+    padding: 0 10px;
+    display: flex; align-items: center; justify-content: space-between;
+    font: 600 9.5px 'Inter', sans-serif;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .minimap-head .dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--s-available);
+    box-shadow: 0 0 0 2px rgba(79,139,64,.2);
+  }
+  .minimap-body {
+    position: relative;
+    width: 100%; height: calc(100% - 24px);
+  }
+  .minimap-body svg { display: block; width: 100%; height: 100%; }
+  .minimap-viewport {
+    position: absolute;
+    border: 1.5px solid var(--gold);
+    background: rgba(200,169,107,.1);
+    pointer-events: none;
+    transition: all .1s linear;
+  }
+
+  /* ─── Zoom cluster ──────────────────────────────────────── */
+  .zoom-cluster {
+    position: absolute;
+    right: 20px;
+    bottom: 80px;
+    display: flex; flex-direction: column;
+    background: rgba(255,255,255,.92);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    z-index: 8;
+    box-shadow: var(--shadow);
+  }
+  .zoom-cluster button {
+    width: 38px; height: 38px;
+    background: transparent;
+    border: 0;
+    color: var(--ink-2);
+    cursor: pointer;
+    display: grid; place-items: center;
+    border-bottom: 1px solid var(--line-soft);
+    transition: all .12s var(--ease);
+  }
+  .zoom-cluster button:last-child { border-bottom: 0; }
+  .zoom-cluster button:hover { background: var(--paper); color: var(--navy); }
+  .zoom-cluster .zoom-level {
+    height: 26px;
+    border-bottom: 1px solid var(--line-soft);
+    display: grid; place-items: center;
+    font: 600 10px 'JetBrains Mono', monospace;
+    color: var(--navy);
+    background: var(--paper);
+  }
+
+  /* ─── Tooltip ────────────────────────────────────────────── */
+  .tooltip {
+    position: absolute;
+    pointer-events: none;
+    background: #fff;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius);
+    padding: 0;
+    min-width: 220px;
+    max-width: 280px;
+    box-shadow: var(--shadow-lg);
+    opacity: 0; transform: translateY(4px);
+    transition: opacity .12s var(--ease), transform .12s var(--ease);
+    z-index: 20;
+    overflow: hidden;
+  }
+  .tooltip.is-visible { opacity: 1; transform: translateY(0); }
+  .tooltip .tt-head {
+    padding: 12px 14px 10px;
+    display: flex; align-items: baseline; justify-content: space-between;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .tooltip .tt-id {
+    font: 600 20px 'Fraunces', serif;
+    color: var(--navy);
+    line-height: 1;
+    letter-spacing: -.01em;
+  }
+  .tooltip .tt-cat {
+    font: 500 9.5px 'Inter', sans-serif;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+  .tooltip .tt-body {
+    padding: 10px 14px;
+    display: flex; flex-direction: column; gap: 7px;
+  }
+  .tooltip .tt-row {
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 11.5px;
+    color: var(--ink-2);
+  }
+  .tooltip .tt-row .lbl {
+    font: 500 9.5px 'Inter', sans-serif;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-4);
+  }
+  .tooltip .tt-row .val { font-weight: 500; color: var(--ink-1); font-family: 'JetBrains Mono', monospace; font-size: 11px; }
+  .tooltip .tt-status {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif !important;
+  }
+  .tooltip .tt-foot {
+    padding: 9px 14px;
+    background: var(--paper);
+    border-top: 1px solid var(--line-soft);
+    font: 500 10px 'Inter', sans-serif;
+    color: var(--ink-3);
+    letter-spacing: .06em;
+    text-transform: uppercase;
+  }
+
+  /* ─── Detail card ────────────────────────────────────────── */
+  .detail {
+    position: absolute;
+    bottom: 22px; left: 22px;
+    width: 360px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    z-index: 15;
+    opacity: 0; transform: translateY(12px);
+    pointer-events: none;
+    transition: all .25s var(--ease);
+    overflow: hidden;
+  }
+  .detail.is-open { opacity: 1; transform: translateY(0); pointer-events: auto; }
+  .detail-head {
+    padding: 18px 20px 14px;
+    border-bottom: 1px solid var(--line-soft);
+    position: relative;
+  }
+  .detail-head::before {
+    content: ''; position: absolute; top: 0; left: 20px; width: 32px; height: 2px;
+    background: var(--gold);
+  }
+  .detail-close {
+    position: absolute; top: 14px; right: 14px;
+    width: 26px; height: 26px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    color: var(--ink-3);
+    cursor: pointer;
+    display: grid; place-items: center;
+    transition: all .15s var(--ease);
+  }
+  .detail-close:hover { color: var(--navy); border-color: var(--ink-3); }
+  .detail .d-cat-row {
+    display: flex; align-items: center; gap: 8px;
+    margin-bottom: 6px;
+  }
+  .detail .d-cat-chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 3px 8px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 100px;
+    font: 600 9.5px 'Inter', sans-serif;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+  }
+  .detail .d-cat-chip .ch-dot { width: 8px; height: 8px; border-radius: 2px; }
+  .detail .d-id {
+    font: 600 38px 'Fraunces', serif;
+    color: var(--navy);
+    line-height: 1;
+    letter-spacing: -.015em;
+  }
+  .detail .d-body { padding: 16px 20px 18px; }
+  .detail .d-stat-banner {
+    padding: 10px 14px;
+    border-radius: var(--radius-sm);
+    font: 600 11px 'Inter', sans-serif;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 14px;
+    border-left: 3px solid currentColor;
+  }
+  .detail .d-stat-banner .pulse {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: currentColor;
+    box-shadow: 0 0 0 4px rgba(0,0,0,.08);
+    flex-shrink: 0;
+  }
+  .detail .d-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+    background: var(--line-soft);
+    border: 1px solid var(--line-soft);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    margin-bottom: 14px;
+  }
+  .detail .d-stat-card { background: #fff; padding: 10px 12px; }
+  .detail .d-stat-card .lbl {
+    font: 500 9.5px 'Inter', sans-serif;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-4);
+    margin-bottom: 4px;
+  }
+  .detail .d-stat-card .val {
+    font: 600 15px 'JetBrains Mono', monospace;
+    color: var(--navy);
+  }
+  .detail .d-stat-card .val.serif { font-family: 'Fraunces', serif; font-size: 17px; }
+
+  .detail .d-traffic {
+    margin-bottom: 14px;
+  }
+  .detail .d-traffic-head {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 6px;
+  }
+  .detail .d-traffic-lbl {
+    font: 500 10px 'Inter', sans-serif;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+  .detail .d-traffic-val {
+    font: 600 11px 'JetBrains Mono', monospace;
+    color: var(--navy);
+  }
+  .detail .d-traffic-bar {
+    height: 6px;
+    background: var(--paper-2);
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+  }
+  .detail .d-traffic-bar i {
+    display: block; height: 100%;
+    background: linear-gradient(90deg, var(--c-nation-bd), var(--gold));
+    border-radius: 3px;
+  }
+  .detail .d-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .detail .d-actions button {
+    height: 40px;
+    background: #fff;
+    border: 1px solid var(--line-strong);
+    color: var(--ink-1);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font: 600 11px 'Inter', sans-serif;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    transition: all .15s var(--ease);
+  }
+  .detail .d-actions button:hover {
+    border-color: var(--navy);
+    background: var(--paper);
+  }
+  .detail .d-actions .primary {
+    background: var(--navy);
+    border-color: var(--navy);
+    color: var(--gold);
+  }
+  .detail .d-actions .primary:hover {
+    background: var(--navy-2);
+  }
+  .detail .d-actions .primary:disabled {
+    background: var(--ink-4);
+    border-color: var(--ink-4);
+    color: #fff;
+    cursor: not-allowed; opacity: .5;
+  }
+
+  /* ─── Debug panel ────────────────────────────────────────── */
+  .debug-hud {
+    position: absolute;
+    left: 20px; bottom: 22px;
+    background: rgba(255,255,255,.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    padding: 10px 14px;
+    font: 500 10.5px 'JetBrains Mono', monospace;
+    color: var(--ink-2);
+    display: none;
+    z-index: 10;
+    box-shadow: var(--shadow-sm);
+  }
+  .debug-hud.is-on { display: flex; gap: 18px; flex-wrap: wrap; }
+  .debug-hud .k { color: var(--ink-4); margin-right: 4px; }
+  .debug-hud .v { color: var(--navy); font-weight: 600; }
+
+  /* ─── Fullscreen ─────────────────────────────────────────── */
+  :fullscreen .topbar, :fullscreen .side { display: none; }
+  :fullscreen .app { grid-template-columns: 1fr; grid-template-rows: 1fr; }
+  :fullscreen .canvas-wrap { grid-column: 1; }
+  :-webkit-full-screen .topbar, :-webkit-full-screen .side { display: none; }
+
+  /* ─── Toast ──────────────────────────────────────────────── */
+  .toast {
+    position: absolute; top: 88px; left: 50%;
+    transform: translateX(-50%) translateY(-20px);
+    background: var(--navy);
+    border: 1px solid var(--navy);
+    border-radius: var(--radius-sm);
+    padding: 10px 18px;
+    font: 500 12px 'Inter', sans-serif;
+    color: var(--gold);
+    opacity: 0;
+    pointer-events: none;
+    transition: all .25s var(--ease);
+    z-index: 30;
+    box-shadow: var(--shadow);
+  }
+  .toast.is-visible { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  /* ─── Responsive ─────────────────────────────────────────── */
+  @media (max-width: 960px) {
+    .app { grid-template-columns: 1fr; }
+    .side { display: none; }
+    .detail { width: calc(100% - 40px); left: 20px; right: 20px; bottom: 20px; }
+    .minimap { width: 160px; height: 100px; top: 16px; right: 16px; }
+    .compass { display: none; }
+    .top-meta { display: none; }
+    .search input { width: 180px; }
+  }
+
+  /* ─── Edit Panel (slide-in from right) ──────────────────── */
+  .edit-panel {
+    position: fixed;
+    top: 0; right: -420px;
+    width: 400px; height: 100%;
+    background: #fff;
+    border-left: 3px solid var(--gold);
+    box-shadow: var(--shadow-lg);
+    z-index: 200;
+    display: flex; flex-direction: column;
+    transition: right .3s var(--ease);
+    overflow: hidden;
+  }
+  .edit-panel.is-open { right: 0; }
+
+  .ep-head {
+    padding: 20px 22px 16px;
+    border-bottom: 1px solid var(--line);
+    background: var(--navy);
+    position: relative;
+    flex-shrink: 0;
+  }
+  .ep-head::after {
+    content: ''; position: absolute; left: 22px; right: 22px; bottom: -1px; height: 2px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+  }
+  .ep-close {
+    position: absolute; top: 14px; right: 14px;
+    width: 28px; height: 28px;
+    background: rgba(255,255,255,.1);
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: 50%; color: #fff;
+    cursor: pointer; display: grid; place-items: center;
+    transition: all .15s var(--ease);
+  }
+  .ep-close:hover { background: rgba(255,255,255,.2); }
+  .ep-title {
+    font: 600 22px 'Fraunces', serif;
+    color: var(--gold);
+    letter-spacing: -.01em;
+    line-height: 1;
+  }
+  .ep-subtitle {
+    font: 500 10.5px 'Inter', sans-serif;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.5);
+    margin-top: 4px;
+  }
+
+  .ep-body {
+    flex: 1; overflow-y: auto;
+    padding: 20px 22px;
+  }
+  .ep-body::-webkit-scrollbar { width: 5px; }
+  .ep-body::-webkit-scrollbar-thumb { background: var(--line); border-radius: 3px; }
+
+  .ep-section {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .ep-section:last-child { border-bottom: 0; margin-bottom: 0; }
+  .ep-section-label {
+    font: 600 10px 'Inter', sans-serif;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin-bottom: 12px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .ep-section-label::before {
+    content: ''; flex: 0 0 12px; height: 1px; background: var(--gold);
+  }
+
+  /* Info grid */
+  .ep-info-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+    background: var(--line-soft);
+    border: 1px solid var(--line-soft);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    margin-bottom: 14px;
+  }
+  .ep-info-cell { background: #fff; padding: 10px 12px; }
+  .ep-info-cell .lbl {
+    font: 500 9px 'Inter', sans-serif;
+    letter-spacing: .14em; text-transform: uppercase;
+    color: var(--ink-4); margin-bottom: 3px;
+  }
+  .ep-info-cell .val {
+    font: 600 13px 'JetBrains Mono', monospace;
+    color: var(--navy);
+  }
+
+  /* Status buttons */
+  .ep-status-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 6px;
+    margin-bottom: 12px;
+  }
+  .ep-stat-btn {
+    height: 38px;
+    border-radius: var(--radius-sm);
+    border: 1.5px solid;
+    cursor: pointer;
+    font: 700 10.5px 'Inter', sans-serif;
+    letter-spacing: .14em; text-transform: uppercase;
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+    transition: all .15s var(--ease);
+    background: transparent;
+  }
+  .ep-stat-btn:hover { opacity: .8; }
+  .ep-stat-btn.active { opacity: 1; filter: brightness(1.1); }
+  .ep-stat-btn[data-s="available"] { border-color: var(--s-available); color: var(--s-available); }
+  .ep-stat-btn[data-s="available"].active { background: rgba(79,139,64,.12); }
+  .ep-stat-btn[data-s="reserved"] { border-color: var(--s-reserved); color: var(--s-reserved); }
+  .ep-stat-btn[data-s="reserved"].active { background: rgba(182,128,38,.12); }
+  .ep-stat-btn[data-s="sold"] { border-color: var(--s-sold); color: var(--s-sold); }
+  .ep-stat-btn[data-s="sold"].active { background: rgba(178,58,58,.12); }
+  .ep-stat-btn[data-s="vip"] { border-color: var(--s-vip); color: var(--s-vip); }
+  .ep-stat-btn[data-s="vip"].active { background: rgba(91,79,168,.12); }
+
+  /* Type selector */
+  .ep-type-select {
+    width: 100%;
+    height: 38px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    color: var(--ink-1);
+    padding: 0 12px;
+    border-radius: var(--radius-sm);
+    font: 500 12.5px 'Inter', sans-serif;
+    outline: none;
+    cursor: pointer;
+    transition: border-color .15s var(--ease);
+    margin-bottom: 10px;
+  }
+  .ep-type-select:focus { border-color: var(--gold); }
+
+  /* Text inputs */
+  .ep-input-wrap { margin-bottom: 10px; }
+  .ep-input-label {
+    font: 500 9.5px 'Inter', sans-serif;
+    letter-spacing: .14em; text-transform: uppercase;
+    color: var(--ink-3); display: block; margin-bottom: 5px;
+  }
+  .ep-input {
+    width: 100%; height: 38px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    color: var(--ink-1);
+    padding: 0 12px;
+    border-radius: var(--radius-sm);
+    font: 500 12.5px 'Inter', sans-serif;
+    outline: none;
+    transition: border-color .15s var(--ease);
+  }
+  .ep-input:focus { border-color: var(--gold); background: #fff; }
+  .ep-input::placeholder { color: var(--ink-4); }
+
+  /* Size display */
+  .ep-size-chips {
+    display: flex; gap: 6px; flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+  .ep-size-chip {
+    padding: 4px 10px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 100px;
+    font: 600 10.5px 'JetBrains Mono', monospace;
+    color: var(--ink-2);
+    cursor: pointer;
+    transition: all .15s var(--ease);
+  }
+  .ep-size-chip:hover { border-color: var(--gold); color: var(--navy); }
+  .ep-size-chip.active {
+    background: var(--navy);
+    border-color: var(--navy);
+    color: var(--gold);
+  }
+
+  /* Logo upload */
+  .ep-logo-preview {
+    width: 100%; height: 80px;
+    border: 2px dashed var(--line);
+    border-radius: var(--radius-sm);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 8px;
+    overflow: hidden;
+    background: var(--paper);
+    transition: border-color .15s var(--ease);
+  }
+  .ep-logo-preview:hover { border-color: var(--gold); }
+  .ep-logo-preview img { max-width: 100%; max-height: 100%; object-fit: contain; }
+  .ep-logo-placeholder { font: 400 11px 'Inter', sans-serif; color: var(--ink-4); }
+  #epLogoInput { display: none; }
+
+  .ep-logo-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+
+  /* Save button */
+  .ep-save-btn {
+    width: 100%; height: 44px;
+    background: var(--navy);
+    border: 0;
+    border-radius: var(--radius-sm);
+    color: var(--gold);
+    font: 700 11px 'Inter', sans-serif;
+    letter-spacing: .18em; text-transform: uppercase;
+    cursor: pointer;
+    transition: all .15s var(--ease);
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+  }
+  .ep-save-btn:hover { background: var(--navy-2); }
+
+  .ep-sec-btn {
+    height: 34px;
+    background: #fff;
+    border: 1px solid var(--line-strong);
+    color: var(--ink-1);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font: 600 10px 'Inter', sans-serif;
+    letter-spacing: .1em; text-transform: uppercase;
+    transition: all .15s var(--ease);
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+  }
+  .ep-sec-btn:hover { border-color: var(--navy); background: var(--paper); }
+  .ep-sec-btn.danger { color: var(--s-sold); border-color: rgba(178,58,58,.3); }
+  .ep-sec-btn.danger:hover { background: rgba(178,58,58,.05); border-color: var(--s-sold); }
+
+  @media (max-width: 960px) {
+    .edit-panel { width: 100%; right: -100%; border-left: 0; border-top: 3px solid var(--gold); }
+    .edit-panel.is-open { right: 0; }
+  }
+/* ─── PIN Modal ──────────────────────────────────────────── */
+  .pin-overlay {
+    position: fixed; inset: 0;
+    background: rgba(11,19,43,.55);
+    backdrop-filter: blur(6px);
+    z-index: 500;
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; pointer-events: none;
+    transition: opacity .2s cubic-bezier(.22,.61,.36,1);
+  }
+  .pin-overlay.is-open { opacity: 1; pointer-events: auto; }
+  .pin-box {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    width: 320px; overflow: hidden;
+    transform: translateY(8px);
+    transition: transform .2s cubic-bezier(.22,.61,.36,1);
+  }
+  .pin-overlay.is-open .pin-box { transform: translateY(0); }
+  .pin-box-head {
+    background: var(--navy);
+    padding: 18px 22px 14px; position: relative;
+  }
+  .pin-box-head::after {
+    content: ''; position: absolute; left: 22px; right: 22px; bottom: -1px; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold) 40%, var(--gold) 60%, transparent);
+    opacity: .6;
+  }
+  .pin-lock-icon {
+    width: 36px; height: 36px;
+    background: rgba(200,169,107,.15);
+    border: 1px solid rgba(200,169,107,.3);
+    border-radius: 50%;
+    display: grid; place-items: center; margin-bottom: 10px;
+  }
+  .pin-box-head h3 { margin: 0 0 3px; font: 600 15px 'Fraunces', serif; color: #fff; }
+  .pin-box-head p  { margin: 0; font: 400 11px 'Inter', sans-serif; color: rgba(255,255,255,.5); }
+  .pin-box-body { padding: 20px 22px 22px; }
+  .pin-dots { display: flex; gap: 10px; justify-content: center; margin-bottom: 18px; }
+  .pin-dot {
+    width: 12px; height: 12px; border-radius: 50%;
+    border: 1.5px solid var(--line-strong); background: transparent;
+    transition: all .15s cubic-bezier(.22,.61,.36,1);
+  }
+  .pin-dot.filled { background: var(--navy); border-color: var(--navy); }
+  .pin-dot.error  { background: var(--s-sold); border-color: var(--s-sold); }
+  .pin-keypad { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; margin-bottom: 10px; }
+  .pin-key {
+    height: 46px; background: var(--paper);
+    border: 1px solid var(--line); border-radius: var(--radius-sm);
+    font: 600 18px 'Fraunces', serif; color: var(--navy);
+    cursor: pointer; display: grid; place-items: center;
+    transition: all .1s cubic-bezier(.22,.61,.36,1);
+  }
+  .pin-key:hover  { background: var(--paper-2); border-color: var(--ink-3); }
+  .pin-key:active { background: var(--navy); color: var(--gold); transform: scale(.96); }
+  .pin-key.del    { font: 500 13px 'Inter', sans-serif; color: var(--ink-3); }
+  .pin-error-msg  {
+    font: 500 11px 'Inter', sans-serif; color: var(--s-sold);
+    text-align: center; height: 16px; opacity: 0; transition: opacity .2s;
+  }
+  .pin-error-msg.show { opacity: 1; }
+  .pin-cancel {
+    width: 100%; margin-top: 12px; height: 36px;
+    background: none; border: 1px solid var(--line); border-radius: var(--radius-sm);
+    font: 500 11px 'Inter', sans-serif; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--ink-3); cursor: pointer; transition: all .15s cubic-bezier(.22,.61,.36,1);
+  }
+  .pin-cancel:hover { border-color: var(--ink-3); color: var(--ink-1); }
+  .admin-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 4px 10px;
+    background: rgba(200,169,107,.12); border: 1px solid rgba(200,169,107,.35);
+    border-radius: 100px;
+    font: 600 10px 'Inter', sans-serif; letter-spacing: .18em; text-transform: uppercase;
+    color: var(--gold-deep); cursor: pointer; transition: all .15s; user-select: none;
+  }
+  .admin-badge:hover { background: rgba(200,169,107,.22); }
+  .admin-badge .badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--s-sold); }
+  .admin-badge.unlocked .badge-dot { background: var(--s-available); }
+</style>
+</head>
+<body>
+<div class="app">
+
+  <!-- ════ TOP BAR ════ -->
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark">VITH</div>
+      <div class="brand-divider"></div>
+      <div class="brand-text">
+        <div class="name">VITH <em>HUB</em> · 2026</div>
+        <div class="tag">Mekong Growth Expo · Vientiane</div>
+      </div>
+    </div>
+
+    <div class="top-meta">
+      <div><span class="k">HALL</span> 01 / Main Exhibition</div>
+      <div class="sep"></div>
+      <div><span class="k">SCALE</span> 1:200</div>
+      <div class="sep"></div>
+      <div><span class="k">REV</span> 09.A</div>
+    </div>
+
+    <div class="top-tools">
+      <div class="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input id="searchInput" placeholder="Locate booth (B-12, P-03, N-04…)" autocomplete="off" />
+      </div>
+      <button class="icon-btn" id="btnFit" title="Fit to view">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+      </button>
+      <button class="icon-btn" id="btnFullscreen" title="Fullscreen">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7V3h4M21 7V3h-4M3 17v4h4M21 17v4h-4"/></svg>
+      </button>
+      <button class="icon-btn" id="btnDebug" title="Debug alignment">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3h18v18H3zM3 9h18M3 15h18M9 3v18M15 3v18"/></svg>
+      </button>
+      <button class="icon-btn" id="btnExport" title="Export coordinates">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+      </button>
+      <button class="icon-btn" id="btnPrint" style="background:var(--navy);border-color:var(--navy);color:var(--gold)" title="Print / Export PDF">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v8H6z"/></svg>
+      </button>
+      <div class="admin-badge" id="adminBadge" title="Admin">
+        <span class="badge-dot"></span>
+        <span id="adminBadgeLabel">Admin</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ════ SIDE PANEL ════ -->
+  <aside class="side">
+
+    <section class="side-section">
+      <div class="section-label">Hall Overview</div>
+      <div class="stats">
+        <div class="stat"><div class="label">Total Booths</div><div class="value" id="statTotal">—</div><div class="delta" id="statOccPct">—</div></div>
+        <div class="stat"><div class="label">Available</div><div class="value" style="color:var(--s-available)" id="statAvail">—</div><div class="delta" id="statAvailPct">—</div></div>
+        <div class="stat"><div class="label">Reserved</div><div class="value" style="color:var(--s-reserved)" id="statReserved">—</div><div class="delta" id="statReservedPct">—</div></div>
+        <div class="stat"><div class="label">Sold / VIP</div><div class="value" style="color:var(--s-sold)" id="statSold">—</div><div class="delta" id="statSoldPct">—</div></div>
+      </div>
+    </section>
+
+    <section class="side-section">
+      <div class="section-label">Categories</div>
+      <div class="legend" id="legend"></div>
+    </section>
+
+    <section class="side-section">
+      <div class="section-label">Availability</div>
+      <div class="status-list" id="statusList"></div>
+    </section>
+
+    <section class="side-section">
+      <div class="section-label">Quick Navigation</div>
+      <div class="navlist" id="navlist">
+        <button data-jump="entrance">
+          <span class="glyph"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          Main Entrance
+          <span class="chev"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m9 18 6-6-6-6"/></svg></span>
+        </button>
+        <button data-jump="stage">
+          <span class="glyph"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 9h20M3 9v11a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V9M8 21v-7M16 21v-7"/></svg></span>
+          Main Stage
+          <span class="chev"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m9 18 6-6-6-6"/></svg></span>
+        </button>
+        <button data-jump="premium">
+          <span class="glyph"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 4 9l8 13 8-13z"/></svg></span>
+          Premium Zone
+          <span class="chev"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m9 18 6-6-6-6"/></svg></span>
+        </button>
+        <button data-jump="pavilion">
+          <span class="glyph"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-7h6v7"/></svg></span>
+          National Pavilions
+          <span class="chev"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m9 18 6-6-6-6"/></svg></span>
+        </button>
+        <button data-jump="food">
+          <span class="glyph"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11h18l-2 9H5zM5 11V8a3 3 0 0 1 3-3M19 11V8a3 3 0 0 0-3-3M12 5V2"/></svg></span>
+          F&amp;B Zone
+          <span class="chev"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m9 18 6-6-6-6"/></svg></span>
+        </button>
+      </div>
+    </section>
+
+    <div class="credit">
+      <div><b>VITH HUB 2026</b></div>
+      <div>Trade · Talent · Connectivity</div>
+      <div style="margin-top: 8px; color: var(--ink-4)">v1.0.0 · Build 09.A · Floorplan © VITH</div>
+    </div>
+  </aside>
+
+  <!-- ════ CANVAS ════ -->
+  <main class="canvas-wrap" id="canvasWrap">
+    <!-- Registration marks -->
+    <span class="reg-mark tl"></span>
+    <span class="reg-mark tr"></span>
+    <span class="reg-mark bl"></span>
+    <span class="reg-mark br"></span>
+
+    <!-- Compass -->
+    <div class="compass" aria-hidden="true">
+      <div class="compass-rose">
+        <span class="compass-label n">N</span>
+        <span class="compass-label s">S</span>
+        <span class="compass-label e">E</span>
+        <span class="compass-label w">W</span>
+        <span class="compass-needle"></span>
+        <span class="compass-needle s"></span>
+      </div>
+    </div>
+
+    <!-- SVG stage -->
+    <svg id="stage" viewBox="0 0 2200 1400" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="pat-sold" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(45)">
+          <line x1="0" y1="0" x2="0" y2="6" stroke="rgba(178,58,58,.7)" stroke-width="1.4"/>
+        </pattern>
+        <pattern id="pat-vip" patternUnits="userSpaceOnUse" width="7" height="7">
+          <circle cx="3.5" cy="3.5" r="1" fill="rgba(91,79,168,.55)"/>
+        </pattern>
+        <pattern id="pat-reserved" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(-45)">
+          <line x1="0" y1="0" x2="0" y2="6" stroke="rgba(182,128,38,.45)" stroke-width="1"/>
+        </pattern>
+      </defs>
+
+      <!-- Layer 0 — Floor base + watermark -->
+      <g id="layer-floor">
+        <rect x="0" y="0" width="2200" height="1400" fill="#F5F5F3"/>
+        <!-- VITH HUB watermark behind everything -->
+        <g class="watermark">
+          <text x="1100" y="780" text-anchor="middle"
+                font-family="Fraunces, serif" font-size="220" font-weight="600"
+                letter-spacing="0.08em">VITH HUB</text>
+          <text x="1100" y="880" text-anchor="middle"
+                font-family="Inter, sans-serif" font-size="40" font-weight="500"
+                letter-spacing="0.5em">2026</text>
+        </g>
+      </g>
+
+      <!-- Layer 1 — Hall structure -->
+      <g id="layer-structure"></g>
+
+      <!-- Layer 2 — Booths -->
+      <g id="layer-booths"></g>
+
+      <!-- Layer 3 — Labels -->
+      <g id="layer-labels"></g>
+
+      <!-- Layer 4 — Hitboxes (transparent, on top) -->
+      <g id="layer-hitboxes"></g>
+
+      <!-- Layer 5 — Debug overlay -->
+      <g id="layer-debug" class="debug-grid" style="display:none"></g>
+    </svg>
+
+    <!-- Mini-map -->
+    <div class="minimap">
+      <div class="minimap-head">
+        <span>Hall Index</span>
+        <span class="dot"></span>
+      </div>
+      <div class="minimap-body" id="minimapBody">
+        <svg id="minimap" viewBox="0 0 2200 1400" preserveAspectRatio="xMidYMid meet"></svg>
+        <div class="minimap-viewport" id="minimapViewport"></div>
+      </div>
+    </div>
+
+    <!-- Zoom -->
+    <div class="zoom-cluster">
+      <div class="zoom-level" id="zoomLevel">100%</div>
+      <button id="zoomIn" title="Zoom in">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg>
+      </button>
+      <button id="zoomOut" title="Zoom out">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14"/></svg>
+      </button>
+      <button id="zoomReset" title="Reset view">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+
+    <!-- Scale -->
+    <div class="scale-ruler">
+      <span>0</span>
+      <span class="bar"></span>
+      <span>20 m</span>
+    </div>
+
+    <!-- Tooltip -->
+    <div class="tooltip" id="tooltip"></div>
+
+    <!-- Detail card -->
+    <aside class="detail" id="detailCard">
+      <div class="detail-head">
+        <button class="detail-close" id="detailClose">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+        <div class="d-cat-row" id="dCatRow"></div>
+        <div class="d-id" id="dId">—</div>
+      </div>
+      <div class="d-body">
+        <div class="d-stat-banner" id="dStat"><span class="pulse"></span><span id="dStatLbl">—</span></div>
+        <div class="d-grid">
+          <div class="d-stat-card">
+            <div class="lbl">Footprint</div>
+            <div class="val serif" id="dArea">—</div>
+          </div>
+          <div class="d-stat-card">
+            <div class="lbl">Visibility</div>
+            <div class="val" id="dVis">—</div>
+          </div>
+          <div class="d-stat-card">
+            <div class="lbl">Coordinates</div>
+            <div class="val" id="dCoord">—</div>
+          </div>
+          <div class="d-stat-card">
+            <div class="lbl">Hall Zone</div>
+            <div class="val" id="dZone">—</div>
+          </div>
+        </div>
+        <div class="d-traffic">
+          <div class="d-traffic-head">
+            <span class="d-traffic-lbl">Foot Traffic Score</span>
+            <span class="d-traffic-val" id="dTrafficVal">—</span>
+          </div>
+          <div class="d-traffic-bar"><i id="dTrafficBar" style="width:0%"></i></div>
+        </div>
+        <div class="d-actions">
+          <button id="dCenter">Center Map</button>
+          <button class="primary" id="dBook">Reserve Booth</button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Debug HUD -->
+    <div class="debug-hud" id="debugHud">
+      <div><span class="k">VIEWBOX</span> <span class="v" id="hudSvg">—</span></div>
+      <div><span class="k">CURSOR</span> <span class="v" id="hudCursor">—</span></div>
+      <div><span class="k">ZOOM</span> <span class="v" id="hudZoom">—</span></div>
+      <div><span class="k">BOOTHS</span> <span class="v" id="hudBooths">—</span></div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
+  </main>
+</div>
+
+<!-- ════ EDIT PANEL ════ -->
+<div class="edit-panel" id="editPanel">
+  <div class="ep-head">
+    <button class="ep-close" id="epClose">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="ep-title" id="epTitle">—</div>
+    <div class="ep-subtitle" id="epSubtitle">Edit Booth</div>
+  </div>
+
+  <div class="ep-body">
+    <!-- Booth Info -->
+    <div class="ep-section">
+      <div class="ep-section-label">Booth Info</div>
+      <div class="ep-info-grid" id="epInfoGrid"></div>
+    </div>
+
+    <!-- Type / Category -->
+    <div class="ep-section">
+      <div class="ep-section-label">ประเภทบูธ</div>
+      <select class="ep-type-select" id="epTypeSelect">
+        <option value="sponsor">Sponsor</option>
+        <option value="showcase">Showcase</option>
+        <option value="premium">Premium Booth</option>
+        <option value="nation">Nation Booth</option>
+        <option value="standard">Standard Booth</option>
+        <option value="food_dry">Food Dry &amp; Butry</option>
+        <option value="food_drink">Food &amp; Drinks</option>
+      </select>
+    </div>
+
+    <!-- Size -->
+    <div class="ep-section">
+      <div class="ep-section-label">ขนาดบูธ</div>
+      <div class="ep-size-chips" id="epSizeChips">
+        <span class="ep-size-chip" data-w="75" data-h="75">2×2 m</span>
+        <span class="ep-size-chip" data-w="90" data-h="80">3×3 m</span>
+        <span class="ep-size-chip" data-w="130" data-h="85">4×3 m</span>
+        <span class="ep-size-chip" data-w="175" data-h="75">5×2.5 m</span>
+        <span class="ep-size-chip" data-w="215" data-h="75">6×2.5 m</span>
+        <span class="ep-size-chip" data-w="95" data-h="145">3×5 m</span>
+      </div>
+      <div style="display:flex;gap:8px;">
+        <div class="ep-input-wrap" style="flex:1;margin-bottom:0">
+          <label class="ep-input-label">กว้าง (px)</label>
+          <input class="ep-input" id="epWidth" type="number" min="40" max="400" placeholder="width">
+        </div>
+        <div class="ep-input-wrap" style="flex:1;margin-bottom:0">
+          <label class="ep-input-label">สูง (px)</label>
+          <input class="ep-input" id="epHeight" type="number" min="40" max="400" placeholder="height">
+        </div>
+      </div>
+    </div>
+
+    <!-- Status -->
+    <div class="ep-section">
+      <div class="ep-section-label">สถานะ</div>
+      <div class="ep-status-grid">
+        <button class="ep-stat-btn" data-s="available">✔ ว่าง</button>
+        <button class="ep-stat-btn" data-s="reserved">⏳ จอง</button>
+        <button class="ep-stat-btn" data-s="sold">✖ เต็ม</button>
+        <button class="ep-stat-btn" data-s="vip">★ VIP Hold</button>
+      </div>
+    </div>
+
+    <!-- Brand -->
+    <div class="ep-section">
+      <div class="ep-section-label">ชื่อแบรนด์</div>
+      <div class="ep-input-wrap">
+        <label class="ep-input-label">Brand / Company Name</label>
+        <input class="ep-input" id="epBrand" type="text" placeholder="ชื่อแบรนด์หรือผู้จอง…">
+      </div>
+    </div>
+
+    <!-- Logo Upload -->
+    <div class="ep-section">
+      <div class="ep-section-label">โลโก้แบรนด์</div>
+      <div class="ep-logo-preview" id="epLogoPreview" onclick="document.getElementById('epLogoInput').click()">
+        <img id="epLogoImg" src="" alt="" style="display:none">
+        <span class="ep-logo-placeholder" id="epLogoPlaceholder">คลิกเพื่ออัปโหลดโลโก้</span>
+      </div>
+      <input type="file" id="epLogoInput" accept="image/*">
+      <div class="ep-logo-actions">
+        <button class="ep-sec-btn" onclick="document.getElementById('epLogoInput').click()">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+          อัปโหลด
+        </button>
+        <button class="ep-sec-btn danger" id="epRemoveLogo">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M19 6l-1 14H6L5 6M10 11v6M14 11v6M9 6V4h6v2"/></svg>
+          ลบโลโก้
+        </button>
+      </div>
+    </div>
+
+    <!-- Save -->
+    <button class="ep-save-btn" id="epSave">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg>
+      บันทึกข้อมูล
+    </button>
+  </div>
+</div>
+
+<div class="pin-overlay" id="pinOverlay">
+  <div class="pin-box">
+    <div class="pin-box-head">
+      <div class="pin-lock-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+      <h3>Admin Access</h3><p>ใส่ PIN เพื่อเปิดโหมดแก้ไข</p>
+    </div>
+    <div class="pin-box-body">
+      <div class="pin-dots" id="pinDots">
+        <div class="pin-dot" id="pd0"></div><div class="pin-dot" id="pd1"></div>
+        <div class="pin-dot" id="pd2"></div><div class="pin-dot" id="pd3"></div>
+      </div>
+      <div class="pin-keypad">
+        <button class="pin-key" data-k="1">1</button><button class="pin-key" data-k="2">2</button><button class="pin-key" data-k="3">3</button>
+        <button class="pin-key" data-k="4">4</button><button class="pin-key" data-k="5">5</button><button class="pin-key" data-k="6">6</button>
+        <button class="pin-key" data-k="7">7</button><button class="pin-key" data-k="8">8</button><button class="pin-key" data-k="9">9</button>
+        <button class="pin-key del" data-k="del">⌫</button><button class="pin-key" data-k="0">0</button><button class="pin-key del" data-k="clr">CLR</button>
+      </div>
+      <div class="pin-error-msg" id="pinError">PIN ไม่ถูกต้อง</div>
+      <button class="pin-cancel" id="pinCancel">ยกเลิก</button>
+    </div>
+  </div>
+</div>
+<script>
+/* ═══════════════════════════════════════════════════════════
+   VITH HUB · Interactive Exhibition Floorplan
+   Coordinate-mapped SVG, layered overlays, institutional UI
+   ═══════════════════════════════════════════════════════════ */
+
+const CATS = {
+  sponsor:    { fill: 'var(--c-sponsor)',    stroke: 'var(--c-sponsor-bd)',    label: 'Sponsor',          textLight: true,  zone: 'Entry' },
+  showcase:   { fill: 'var(--c-showcase)',   stroke: 'var(--c-showcase-bd)',   label: 'Showcase',         textLight: true,  zone: 'West Wing' },
+  premium:    { fill: 'var(--c-premium)',    stroke: 'var(--c-premium-bd)',    label: 'Premium Booth',    textLight: false, zone: 'Central Premium' },
+  nation:     { fill: 'var(--c-nation)',     stroke: 'var(--c-nation-bd)',     label: 'Nation Booth',     textLight: false, zone: 'North Concourse' },
+  standard:   { fill: 'var(--c-standard)',   stroke: 'var(--c-standard-bd)',   label: 'Standard Booth',   textLight: false, zone: 'Main Hall' },
+  food_dry:   { fill: 'var(--c-food-dry)',   stroke: 'var(--c-food-dry-bd)',   label: 'Commercial Products', textLight: false, zone: 'South Hall' },
+  food_drink: { fill: 'var(--c-food-drk)',   stroke: 'var(--c-food-drk-bd)',   label: 'Franchise & Food',    textLight: true,  zone: 'East Pavilion' }
+};
+
+const STATUS = {
+  available: { label: 'Available', color: 'var(--s-available)', raw: '#4F8B40' },
+  reserved:  { label: 'Reserved',  color: 'var(--s-reserved)',  raw: '#B68026' },
+  sold:      { label: 'Sold',      color: 'var(--s-sold)',      raw: '#B23A3A' },
+  vip:       { label: 'VIP Hold',  color: 'var(--s-vip)',       raw: '#5B4FA8' }
+};
+
+/* ── Booth registry — coordinate-mapped from masterplan PNG (2200×1400) ── */
+const BOOTHS = [
+
+  // ── S: SPONSOR ──
+  { id:"S-01", cat:"sponsor", status:"available", x:240, y:250, w:80, h:160, width_m:4, height_m:8, sqm:32, trafficScore:95, visibilityRank:"AAA", brand:"", logo:"" },
+  { id:"S-02", cat:"sponsor", status:"available", x:390, y:250, w:80, h:160, width_m:4, height_m:8, sqm:32, trafficScore:93, visibilityRank:"AAA", brand:"", logo:"" },
+  // ── A: SHOWCASE (west wing) ──
+  { id:"A-01", cat:"showcase", status:"available", x:240, y:420, w:90, h:80, width_m:3, height_m:3, sqm:9, trafficScore:88, visibilityRank:"AAA", brand:"", logo:"" },
+  { id:"A-02", cat:"showcase", status:"available", x:240, y:520, w:90, h:80, width_m:3, height_m:3, sqm:9, trafficScore:92, visibilityRank:"AAA", brand:"", logo:"" },
+  { id:"A-03", cat:"showcase", status:"sold",      x:240, y:620, w:90, h:80, width_m:3, height_m:3, sqm:9, trafficScore:94, visibilityRank:"AAA", brand:"", logo:"" },
+  { id:"A-04", cat:"showcase", status:"available", x:240, y:720, w:90, h:80, width_m:3, height_m:3, sqm:9, trafficScore:90, visibilityRank:"AAA", brand:"", logo:"" },
+  { id:"A-05", cat:"showcase", status:"available", x:390, y:420, w:90, h:80, width_m:3, height_m:3, sqm:9, trafficScore:85, visibilityRank:"AA",  brand:"", logo:"" },
+  { id:"A-06", cat:"showcase", status:"reserved",  x:390, y:520, w:90, h:80, width_m:3, height_m:3, sqm:9, trafficScore:87, visibilityRank:"AA",  brand:"", logo:"" },
+  { id:"A-07", cat:"showcase", status:"available", x:390, y:620, w:90, h:80, width_m:3, height_m:3, sqm:9, trafficScore:82, visibilityRank:"AA",  brand:"", logo:"" },
+
+  // ── B: STANDARD cluster ──
+  { id:"B-01", cat:"standard", status:"available", x:620, y:510, w:75, h:75, width_m:2, height_m:3, sqm:6, trafficScore:78, visibilityRank:"AA",  brand:"", logo:"" },
+  { id:"B-02", cat:"standard", status:"available", x:695, y:510, w:75, h:75, width_m:2, height_m:3, sqm:6, trafficScore:74, visibilityRank:"A",   brand:"", logo:"" },
+  { id:"B-03", cat:"standard", status:"sold",      x:770, y:510, w:75, h:75, width_m:2, height_m:3, sqm:6, trafficScore:80, visibilityRank:"AA",  brand:"", logo:"" },
+  { id:"B-04", cat:"standard", status:"available", x:620, y:585, w:75, h:75, width_m:2, height_m:3, sqm:6, trafficScore:72, visibilityRank:"A",   brand:"", logo:"" },
+  { id:"B-05", cat:"standard", status:"available", x:695, y:585, w:75, h:75, width_m:2, height_m:3, sqm:6, trafficScore:68, visibilityRank:"A",   brand:"", logo:"" },
+  { id:"B-06", cat:"standard", status:"reserved",  x:770, y:585, w:75, h:75, width_m:2, height_m:3, sqm:6, trafficScore:75, visibilityRank:"A",   brand:"", logo:"" },
+  { id:"B-07", cat:"standard", status:"available", x:620, y:700, w:75, h:75, width_m:2, height_m:3, sqm:6, trafficScore:76, visibilityRank:"AA",  brand:"", logo:"" },
+  { id:"B-08", cat:"standard", status:"available", x:695, y:700, w:75, h:75, width_m:2, height_m:3, sqm:6, trafficScore:71, visibilityRank:"A",   brand:"", logo:"" },
+  { id:"B-09", cat:"standard", status:"available", x:770, y:700, w:75, h:75, width_m:2, height_m:3, sqm:6, trafficScore:77, visibilityRank:"AA",  brand:"", logo:"" },
+  { id:"B-10", cat:"standard", status:"sold",      x:620, y:775, w:75, h:75, width_m:2, height_m:3, sqm:6, trafficScore:69, visibilityRank:"A",   brand:"", logo:"" },
+  { id:"B-11", cat:"standard", status:"available", x:695, y:775, w:75, h:75, width_m:2, height_m:3, sqm:6, trafficScore:67, visibilityRank:"A",   brand:"", logo:"" },
+  { id:"B-12", cat:"standard", status:"available", x:770, y:775, w:75, h:75, width_m:2, height_m:3, sqm:6, trafficScore:70, visibilityRank:"A",   brand:"", logo:"" },
+  { id:"B-13", cat:"standard", status:"available", x:620, y:890, w:75, h:75, width_m:2, height_m:3, sqm:6, trafficScore:65, visibilityRank:"A",   brand:"", logo:"" },
+  { id:"B-14", cat:"standard", status:"reserved",  x:695, y:890, w:75, h:75, width_m:2, height_m:3, sqm:6, trafficScore:63, visibilityRank:"B",   brand:"", logo:"" },
+  { id:"B-15", cat:"standard", status:"available", x:770, y:890, w:75, h:75, width_m:2, height_m:3, sqm:6, trafficScore:66, visibilityRank:"A",   brand:"", logo:"" },
+  { id:"B-16", cat:"standard", status:"available", x:620, y:965, w:75, h:75, width_m:2, height_m:3, sqm:6, trafficScore:60, visibilityRank:"B",   brand:"", logo:"" },
+  { id:"B-17", cat:"standard", status:"available", x:695, y:965, w:75, h:75, width_m:2, height_m:3, sqm:6, trafficScore:58, visibilityRank:"B",   brand:"", logo:"" },
+  { id:"B-18", cat:"standard", status:"sold",      x:770, y:965, w:75, h:75, width_m:2, height_m:3, sqm:6, trafficScore:62, visibilityRank:"B",   brand:"", logo:"" },
+  { id:"B-19", cat:"standard", status:"available", x:940,  y:890, w:75, h:75, width_m:2, height_m:3, sqm:6, trafficScore:73, visibilityRank:"A",  brand:"", logo:"" },
+  { id:"B-20", cat:"standard", status:"available", x:1015, y:890, w:75, h:75, width_m:2, height_m:3, sqm:6, trafficScore:71, visibilityRank:"A",  brand:"", logo:"" },
+  { id:"B-21", cat:"standard", status:"available", x:1090, y:890, w:75, h:75, width_m:2, height_m:3, sqm:6, trafficScore:74, visibilityRank:"A",  brand:"", logo:"" },
+  { id:"B-22", cat:"standard", status:"reserved",  x:1165, y:890, w:75, h:75, width_m:2, height_m:3, sqm:6, trafficScore:79, visibilityRank:"AA", brand:"", logo:"" },
+  { id:"B-23", cat:"standard", status:"available", x:940,  y:965, w:75, h:75, width_m:2, height_m:3, sqm:6, trafficScore:64, visibilityRank:"B",  brand:"", logo:"" },
+  { id:"B-24", cat:"standard", status:"available", x:1015, y:965, w:75, h:75, width_m:2, height_m:3, sqm:6, trafficScore:62, visibilityRank:"B",  brand:"", logo:"" },
+  { id:"B-25", cat:"standard", status:"sold",      x:1090, y:965, w:75, h:75, width_m:2, height_m:3, sqm:6, trafficScore:65, visibilityRank:"A",  brand:"", logo:"" },
+  { id:"B-26", cat:"standard", status:"available", x:1165, y:965, w:75, h:75, width_m:2, height_m:3, sqm:6, trafficScore:72, visibilityRank:"A",  brand:"", logo:"" },
+
+  // ── P: PREMIUM (paired) ──
+  { id:"P-02", cat:"premium", status:"available", x:945,  y:475, w:130, h:85, width_m:3, height_m:6, sqm:18, trafficScore:95, visibilityRank:"AAA", brand:"", logo:"" },
+  { id:"P-01", cat:"premium", status:"vip",       x:1085, y:475, w:130, h:85, width_m:3, height_m:6, sqm:18, trafficScore:98, visibilityRank:"AAA", brand:"", logo:"" },
+  { id:"P-04", cat:"premium", status:"available", x:945,  y:565, w:130, h:85, width_m:3, height_m:6, sqm:18, trafficScore:93, visibilityRank:"AAA", brand:"", logo:"" },
+  { id:"P-03", cat:"premium", status:"sold",      x:1085, y:565, w:130, h:85, width_m:3, height_m:6, sqm:18, trafficScore:96, visibilityRank:"AAA", brand:"", logo:"" },
+  { id:"P-06", cat:"premium", status:"available", x:945,  y:685, w:130, h:85, width_m:3, height_m:6, sqm:18, trafficScore:90, visibilityRank:"AAA", brand:"", logo:"" },
+  { id:"P-05", cat:"premium", status:"available", x:1085, y:685, w:130, h:85, width_m:3, height_m:6, sqm:18, trafficScore:92, visibilityRank:"AAA", brand:"", logo:"" },
+  { id:"P-08", cat:"premium", status:"available", x:945,  y:775, w:130, h:85, width_m:3, height_m:6, sqm:18, trafficScore:88, visibilityRank:"AAA", brand:"", logo:"" },
+  { id:"P-07", cat:"premium", status:"vip",       x:1085, y:775, w:130, h:85, width_m:3, height_m:6, sqm:18, trafficScore:91, visibilityRank:"AAA", brand:"", logo:"" },
+
+  // ── C: STANDARD + FOOD DRY ──
+  { id:"C-01", cat:"food_dry", status:"available", x:620, y:1085, w:75, h:70, width_m:2, height_m:3, sqm:6, trafficScore:55, visibilityRank:"B",  brand:"", logo:"" },
+  { id:"C-02", cat:"food_dry", status:"available", x:695, y:1085, w:75, h:70, width_m:2, height_m:3, sqm:6, trafficScore:53, visibilityRank:"B",  brand:"", logo:"" },
+  { id:"C-03", cat:"food_dry", status:"reserved",  x:770, y:1085, w:75, h:70, width_m:2, height_m:3, sqm:6, trafficScore:56, visibilityRank:"B",  brand:"", logo:"" },
+  { id:"C-04", cat:"food_dry", status:"available", x:845,  y:1085, w:75, h:70, width_m:2, height_m:3, sqm:6, trafficScore:60, visibilityRank:"B", brand:"", logo:"" },
+  { id:"C-05", cat:"food_dry", status:"available", x:1015, y:1085, w:75, h:70, width_m:2, height_m:3, sqm:6, trafficScore:58, visibilityRank:"B", brand:"", logo:"" },
+  { id:"C-06", cat:"food_dry", status:"available", x:1090, y:1085, w:75, h:70, width_m:2, height_m:3, sqm:6, trafficScore:61, visibilityRank:"B", brand:"", logo:"" },
+  { id:"C-07", cat:"food_dry", status:"sold",      x:1165, y:1085, w:75, h:70, width_m:2, height_m:3, sqm:6, trafficScore:67, visibilityRank:"A", brand:"", logo:"" },
+
+  { id:"C-14", cat:"food_dry", status:"sold",      x:620, y:1155, w:75, h:70, width_m:2, height_m:3, sqm:6, trafficScore:62, visibilityRank:"A", brand:"", logo:"" },
+  { id:"C-13", cat:"food_dry", status:"available", x:695, y:1155, w:75, h:70, width_m:2, height_m:3, sqm:6, trafficScore:58, visibilityRank:"B", brand:"", logo:"" },
+  { id:"C-12", cat:"food_dry", status:"available", x:770, y:1155, w:75, h:70, width_m:2, height_m:3, sqm:6, trafficScore:55, visibilityRank:"B", brand:"", logo:"" },
+  { id:"C-11", cat:"food_dry", status:"available", x:845,  y:1155, w:75, h:70, width_m:2, height_m:3, sqm:6, trafficScore:60, visibilityRank:"B", brand:"", logo:"" },
+  { id:"C-10", cat:"food_dry", status:"reserved",  x:1015, y:1155, w:75, h:70, width_m:2, height_m:3, sqm:6, trafficScore:64, visibilityRank:"A", brand:"", logo:"" },
+  { id:"C-09", cat:"food_dry", status:"available", x:1090, y:1155, w:75, h:70, width_m:2, height_m:3, sqm:6, trafficScore:58, visibilityRank:"B", brand:"", logo:"" },
+  { id:"C-08", cat:"food_dry", status:"available", x:1165, y:1155, w:75, h:70, width_m:2, height_m:3, sqm:6, trafficScore:66, visibilityRank:"A", brand:"", logo:"" },
+
+  { id:"C-15", cat:"food_dry", status:"available", x:620, y:1270, w:80, h:70, width_m:2, height_m:3, sqm:6, trafficScore:50, visibilityRank:"B", brand:"", logo:"" },
+  { id:"C-16", cat:"food_dry", status:"available", x:705, y:1270, w:80, h:70, width_m:2, height_m:3, sqm:6, trafficScore:48, visibilityRank:"B", brand:"", logo:"" },
+  { id:"C-17", cat:"food_dry", status:"available", x:790, y:1270, w:80, h:70, width_m:2, height_m:3, sqm:6, trafficScore:45, visibilityRank:"C", brand:"", logo:"" },
+  { id:"C-18", cat:"food_dry", status:"reserved",  x:875, y:1270, w:80, h:70, width_m:2, height_m:3, sqm:6, trafficScore:47, visibilityRank:"C", brand:"", logo:"" },
+  { id:"C-19", cat:"food_dry", status:"available", x:960, y:1270, w:80, h:70, width_m:2, height_m:3, sqm:6, trafficScore:52, visibilityRank:"B", brand:"", logo:"" },
+
+  // ── N: NATION ──
+  { id:"N-01", cat:"nation", status:"available", x:1370, y:290, w:95,  h:145, width_m:5, height_m:8, sqm:40, trafficScore:84, visibilityRank:"AA",  brand:"", logo:"" },
+  { id:"N-02", cat:"nation", status:"reserved",  x:1370, y:470, w:95,  h:145, width_m:5, height_m:8, sqm:40, trafficScore:82, visibilityRank:"AA",  brand:"", logo:"" },
+  { id:"N-03", cat:"nation", status:"available", x:1485, y:545, w:215, h:75, width_m:8, height_m:5, sqm:40,  trafficScore:88, visibilityRank:"AAA", brand:"", logo:"" },
+  { id:"N-04", cat:"nation", status:"available", x:1715, y:545, w:175, h:75, width_m:8, height_m:5, sqm:40,  trafficScore:86, visibilityRank:"AAA", brand:"", logo:"" },
+  { id:"N-05", cat:"nation", status:"sold",      x:1905, y:545, w:175, h:75, width_m:8, height_m:5, sqm:40,  trafficScore:85, visibilityRank:"AAA", brand:"", logo:"" },
+
+  // ── D: FOOD & DRINKS (east) ──
+  { id:"D-01", cat:"food_drink", status:"available", x:1430, y:895, w:70, h:65, width_m:2, height_m:3, sqm:6, trafficScore:54, visibilityRank:"B", brand:"", logo:"" },
+  { id:"D-02", cat:"food_drink", status:"available", x:1505, y:895, w:70, h:65, width_m:2, height_m:3, sqm:6, trafficScore:52, visibilityRank:"B", brand:"", logo:"" },
+  { id:"D-03", cat:"food_drink", status:"reserved",  x:1620, y:895, w:70, h:65, width_m:2, height_m:3, sqm:6, trafficScore:50, visibilityRank:"B", brand:"", logo:"" },
+  { id:"D-04", cat:"food_drink", status:"available", x:1695, y:895, w:70, h:65, width_m:2, height_m:3, sqm:6, trafficScore:48, visibilityRank:"B", brand:"", logo:"" },
+  { id:"D-05", cat:"food_drink", status:"available", x:1825, y:895, w:70, h:65, width_m:2, height_m:3, sqm:6, trafficScore:51, visibilityRank:"B", brand:"", logo:"" },
+  { id:"D-06", cat:"food_drink", status:"sold",      x:1900, y:895, w:70, h:65, width_m:2, height_m:3, sqm:6, trafficScore:55, visibilityRank:"B", brand:"", logo:"" },
+  { id:"D-11", cat:"food_drink", status:"available", x:1510, y:1055, w:70, h:65, width_m:2, height_m:3, sqm:6, trafficScore:42, visibilityRank:"C", brand:"", logo:"" },
+  { id:"D-10", cat:"food_drink", status:"available", x:1585, y:1055, w:70, h:65, width_m:2, height_m:3, sqm:6, trafficScore:40, visibilityRank:"C", brand:"", logo:"" },
+  { id:"D-09", cat:"food_drink", status:"reserved",  x:1660, y:1055, w:70, h:65, width_m:2, height_m:3, sqm:6, trafficScore:43, visibilityRank:"C", brand:"", logo:"" },
+  { id:"D-08", cat:"food_drink", status:"available", x:1735, y:1055, w:70, h:65, width_m:2, height_m:3, sqm:6, trafficScore:45, visibilityRank:"C", brand:"", logo:"" },
+  { id:"D-07", cat:"food_drink", status:"available", x:1810, y:1055, w:70, h:65, width_m:2, height_m:3, sqm:6, trafficScore:48, visibilityRank:"B", brand:"", logo:"" },
+  { id:"D-12", cat:"food_drink", status:"available", x:1510, y:1125, w:70, h:65, width_m:2, height_m:3, sqm:6, trafficScore:38, visibilityRank:"C", brand:"", logo:"" },
+  { id:"D-13", cat:"food_drink", status:"sold",      x:1585, y:1125, w:70, h:65, width_m:2, height_m:3, sqm:6, trafficScore:40, visibilityRank:"C", brand:"", logo:"" },
+  { id:"D-14", cat:"food_drink", status:"available", x:1660, y:1125, w:70, h:65, width_m:2, height_m:3, sqm:6, trafficScore:41, visibilityRank:"C", brand:"", logo:"" },
+  { id:"D-15", cat:"food_drink", status:"available", x:1735, y:1125, w:70, h:65, width_m:2, height_m:3, sqm:6, trafficScore:44, visibilityRank:"C", brand:"", logo:"" },
+  { id:"D-16", cat:"food_drink", status:"available", x:1810, y:1125, w:70, h:65, width_m:2, height_m:3, sqm:6, trafficScore:46, visibilityRank:"B", brand:"", logo:"" },
+  { id:"D-17", cat:"food_drink", status:"available", x:1430, y:1265, w:75, h:65, width_m:2, height_m:3, sqm:6, trafficScore:35, visibilityRank:"C", brand:"", logo:"" },
+  { id:"D-18", cat:"food_drink", status:"reserved",  x:1510, y:1265, w:75, h:65, width_m:2, height_m:3, sqm:6, trafficScore:36, visibilityRank:"C", brand:"", logo:"" },
+  { id:"D-19", cat:"food_drink", status:"available", x:1610, y:1265, w:75, h:65, width_m:2, height_m:3, sqm:6, trafficScore:38, visibilityRank:"C", brand:"", logo:"" },
+  { id:"D-20", cat:"food_drink", status:"available", x:1690, y:1265, w:75, h:65, width_m:2, height_m:3, sqm:6, trafficScore:40, visibilityRank:"C", brand:"", logo:"" },
+  { id:"D-21", cat:"food_drink", status:"available", x:1790, y:1265, w:75, h:65, width_m:2, height_m:3, sqm:6, trafficScore:42, visibilityRank:"C", brand:"", logo:"" },
+  { id:"D-22", cat:"food_drink", status:"sold",      x:1870, y:1265, w:75, h:65, width_m:2, height_m:3, sqm:6, trafficScore:39, visibilityRank:"C", brand:"", logo:"" }
+];
+
+const boothIndex = new Map(BOOTHS.map(b => [b.id, b]));
+/* ── Scale: 1 real-world metre = PX_PER_METER SVG units ──────────────────
+   Hall is 1820 × 1230 SVG units.  Aisles are labelled 8 m / 5 m / 3 m.
+   Main aisle corridor ≈ 160 px wide = 8 m  →  160 / 8 = 20 px/m.
+   All footprint calculations MUST use this constant — never derive from px.
+   ──────────────────────────────────────────────────────────────────────── */
+const PX_PER_METER = 20;
+
+function boothSqm(b) {
+  // Always read from stored meter fields — never derive from px
+  return b.sqm != null ? b.sqm : +(b.width_m * b.height_m).toFixed(1);
+}
+function boothDims(b) {
+  const wm = b.width_m != null ? b.width_m : '?';
+  const hm = b.height_m != null ? b.height_m : '?';
+  return wm + ' × ' + hm + ' m';
+}
+
+/* Per-category reference — real-world sizes per zone (user-confirmed) */
+const REAL_SIZES = {
+  showcase:   { w_m: 3, h_m: 3, sqm: 9  },   // A
+  standard:   { w_m: 2, h_m: 3, sqm: 6  },   // B
+  food_dry:   { w_m: 2, h_m: 3, sqm: 6  },   // C
+  food_drink: { w_m: 2, h_m: 3, sqm: 6  },   // D
+  premium:    { w_m: 3, h_m: 6, sqm: 18 },   // P
+  nation:     { w_m: 5, h_m: 8, sqm: 40 },   // N (vertical); wide strips = 8×5
+};
+
+/* Scale factors (px/m) per category — derived, not used in render.
+   Visual px sizes are fixed; meter values are stored in width_m/height_m. */
+const SCALE_FACTOR = {
+  showcase:   { w_px_per_m: (90/3).toFixed(2),  h_px_per_m: (80/3).toFixed(2)  },
+  standard:   { w_px_per_m: (75/2).toFixed(2),  h_px_per_m: (75/3).toFixed(2)  },
+  food_dry:   { w_px_per_m: (75/2).toFixed(2),  h_px_per_m: (70/3).toFixed(2)  },
+  food_drink: { w_px_per_m: (70/2).toFixed(2),  h_px_per_m: (65/3).toFixed(2)  },
+  premium:    { w_px_per_m: (130/3).toFixed(2), h_px_per_m: (85/6).toFixed(2)  },
+  nation:     { w_px_per_m: (95/5).toFixed(2),  h_px_per_m: (145/8).toFixed(2) },
+};
+
+/* Footprint validator — runs at boot, logs mismatches to console */
+function validateFootprint() {
+  let errors = 0;
+  BOOTHS.forEach(b => {
+    const calc = +(b.width_m * b.height_m).toFixed(1);
+    if (Math.abs(calc - b.sqm) > 0.05) {
+      console.log('[Footprint ERROR] ' + b.id + ': stored sqm=' + b.sqm + ' but width_m×height_m=' + calc);
+      errors++;
+    }
+    const wFromPx = +(b.w / PX_PER_METER).toFixed(2);
+    const hFromPx = +(b.h / PX_PER_METER).toFixed(2);
+    if (wFromPx !== b.width_m || hFromPx !== b.height_m) {
+      console.log('[Scale WARN] ' + b.id + ': px(' + b.w + '×' + b.h + ') ↔ m(' + b.width_m + '×' + b.height_m + ') drift');
+    }
+  });
+  if (errors === 0) console.log('[Footprint] ✓ All ' + BOOTHS.length + ' booths validated OK');
+  return errors === 0;
+}
+
+
+/* ════════════════════════════════════════════════════════════
+   Layer 1 — Hall structure (architectural)
+   ════════════════════════════════════════════════════════════ */
+function renderStructure() {
+  const g = document.getElementById('layer-structure');
+  const L = document.getElementById('layer-labels');
+
+  // Hall outer outline
+  g.insertAdjacentHTML('beforeend',
+    `<rect class="hall-outline" x="180" y="120" width="1820" height="1230" rx="4"/>`);
+  // Inner light shading
+  g.insertAdjacentHTML('beforeend',
+    `<rect class="hall-inner" x="183" y="123" width="1814" height="1224" rx="3"/>`);
+
+  // Pink perimeter accent stripes (the masterplan has these — institutional decoding)
+  // Top-left corner accent
+  g.insertAdjacentHTML('beforeend',
+    `<rect x="180" y="120" width="60" height="6" fill="#E8B4C0"/>
+     <rect x="180" y="120" width="6" height="60" fill="#E8B4C0"/>`);
+
+  // Main entrance corridor (red zone, top-left)
+  g.insertAdjacentHTML('beforeend',
+    `<rect class="zone-entry" x="240" y="200" width="280" height="720" rx="3"/>`);
+
+  // Entry arrow (cleaner, architectural)
+  g.insertAdjacentHTML('beforeend',
+    `<path d="M 50 168 L 230 168 L 230 148 L 286 196 L 230 244 L 230 224 L 50 224 Z"
+           fill="rgba(192,65,98,.12)" stroke="${CSS_VAR('w-entry')}" stroke-width="1.2"/>`);
+  L.insertAdjacentHTML('beforeend',
+    `<text class="zone-label t-entry" x="135" y="186" style="font-size:14px">MAIN ENTRANCE</text>
+     <text class="zone-label t-entry" x="265" y="208" style="font-size:11px;letter-spacing:.3em">IN</text>`);
+
+  // Top corridor — Go to Exhibition / Design Entrance / Social Check Point
+  g.insertAdjacentHTML('beforeend',
+    `<rect class="zone-neutral" x="540" y="135" width="320" height="110" rx="3"/>
+     <rect class="zone-warning" x="880" y="135" width="220" height="110" rx="3"/>
+     <rect class="zone-neutral" x="1130" y="135" width="240" height="110" rx="3"/>`);
+  L.insertAdjacentHTML('beforeend',
+    `<text class="zone-label t-ink"  x="700"  y="178" style="font-size:13px">Go to Exhibition</text>
+     <text class="aisle-tag bold"    x="700"  y="206">8 m</text>
+
+     <text class="zone-label t-warn" x="990"  y="178" style="font-size:13px">Design Entrance</text>
+     <text class="aisle-tag bold"    x="990"  y="206">8 m</text>
+
+     <text class="zone-label t-ink"  x="1250" y="171" style="font-size:11px">Social</text>
+     <text class="zone-label t-ink"  x="1250" y="192" style="font-size:11px">Check Point</text>`);
+
+  // VENUS GUIDE — text only (box removed)
+  L.insertAdjacentHTML('beforeend',
+    `<text class="venus-title" x="940" y="318" style="font-size:14px;letter-spacing:.35em;fill:var(--ink-3)">VENUS GUIDE</text>
+     <text class="venus-title" x="940" y="372" style="font-size:34px">Mekong</text>
+     <text class="venus-title" x="940" y="420" style="font-size:34px">Growth Expo</text>
+     <text class="venus-title" x="940" y="468" style="font-size:18px;letter-spacing:.4em;fill:var(--gold-deep)">— 2026 —</text>`);
+
+  // Sponsor blocks
+  g.insertAdjacentHTML('beforeend',
+    `<rect x="240" y="250" width="90" height="90" rx="2" fill="${CSS_VAR('c-sponsor')}" stroke="${CSS_VAR('c-sponsor-bd')}" stroke-width="1.2"/>
+     <rect x="460" y="250" width="90" height="90" rx="2" fill="${CSS_VAR('c-sponsor')}" stroke="${CSS_VAR('c-sponsor-bd')}" stroke-width="1.2"/>`);
+  L.insertAdjacentHTML('beforeend',
+    `<text class="booth-label light" x="285" y="295" style="font-size:10px;letter-spacing:.1em">SPONSOR</text>
+     <text class="booth-label light" x="505" y="295" style="font-size:10px;letter-spacing:.1em">SPONSOR</text>`);
+
+  // Main Stage
+  g.insertAdjacentHTML('beforeend',
+    `<rect class="zone-stage" x="240" y="940" width="280" height="200" rx="3"/>`);
+  for (let r = 0; r < 5; r++) {
+    for (let c = 0; c < 6; c++) {
+      g.insertAdjacentHTML('beforeend',
+        `<rect x="${325 + c*16}" y="${975 + r*16}" width="9" height="9" fill="rgba(11,19,43,.18)" rx=".5"/>`);
+    }
+  }
+  // Stage platform
+  g.insertAdjacentHTML('beforeend',
+    `<rect x="430" y="970" width="80" height="60" fill="rgba(178,56,84,.5)" stroke="${CSS_VAR('w-stage')}" stroke-width="1"/>
+     <rect x="430" y="1035" width="80" height="55" fill="rgba(120,120,128,.35)" stroke="rgba(80,80,90,.5)" stroke-width="1"/>`);
+  L.insertAdjacentHTML('beforeend',
+    `<text class="zone-label t-stage" x="285" y="1090" style="font-size:14px">MAIN</text>
+     <text class="zone-label t-stage" x="285" y="1112" style="font-size:14px">STAGE</text>`);
+
+  // Network area
+  g.insertAdjacentHTML('beforeend',
+    `<rect class="zone-neutral" x="240" y="1160" width="280" height="180" rx="3"/>`);
+  L.insertAdjacentHTML('beforeend',
+    `<text class="zone-label t-dim" x="380" y="1185" style="font-size:10px">NETWORK AREA</text>`);
+  // Café tables
+  for (let r = 0; r < 3; r++) {
+    for (let c = 0; c < 3; c++) {
+      const cx = 290 + c*70, cy = 1210 + r*45;
+      g.insertAdjacentHTML('beforeend',
+        `<circle cx="${cx}" cy="${cy}" r="10" fill="rgba(180,170,150,.35)" stroke="rgba(120,110,90,.4)" stroke-width=".7"/>
+         <circle cx="${cx-13}" cy="${cy}" r="3.5" fill="rgba(120,110,90,.35)"/>
+         <circle cx="${cx+13}" cy="${cy}" r="3.5" fill="rgba(120,110,90,.35)"/>`);
+    }
+  }
+  L.insertAdjacentHTML('beforeend',
+    `<text class="zone-label t-dim" x="380" y="1330" style="font-size:9.5px">MEETING · COFFEE CORNER</text>`);
+
+  // VITH CUBE (mini info kiosk)
+  g.insertAdjacentHTML('beforeend',
+    `<rect x="1330" y="700" width="70" height="80" rx="2" fill="rgba(200,169,107,.18)" stroke="${CSS_VAR('gold')}" stroke-width="1"/>
+     <path d="M1365 723 l 12 0 -6 -10 z" fill="rgba(200,169,107,.5)"/>
+     <rect x="1352" y="738" width="26" height="26" fill="rgba(200,169,107,.3)"/>`);
+  L.insertAdjacentHTML('beforeend',
+    `<text class="zone-label t-entry" x="1365" y="700" style="font-size:9.5px">VITH</text>
+     <text class="zone-label t-entry" x="1365" y="713" style="font-size:9.5px">CUBE</text>`);
+
+  // Rest areas
+  g.insertAdjacentHTML('beforeend',
+    `<rect x="1430" y="715" width="200" height="60" rx="2" fill="rgba(255,255,255,.6)" stroke="${CSS_VAR('line-strong')}" stroke-width="1"/>
+     <rect x="1660" y="715" width="200" height="60" rx="2" fill="rgba(255,255,255,.6)" stroke="${CSS_VAR('line-strong')}" stroke-width="1"/>`);
+  for (let i = 0; i < 4; i++) {
+    g.insertAdjacentHTML('beforeend',
+      `<rect x="${1445 + i*42}" y="735" width="32" height="20" fill="rgba(220,195,160,.5)" rx="1"/>
+       <rect x="${1675 + i*42}" y="735" width="32" height="20" fill="rgba(220,195,160,.5)" rx="1"/>`);
+  }
+  L.insertAdjacentHTML('beforeend',
+    `<text class="zone-label t-dim" x="1530" y="700" style="font-size:9.5px">REST AREA</text>
+     <text class="zone-label t-dim" x="1760" y="700" style="font-size:9.5px">REST AREA</text>`);
+
+  // Pavilions
+  g.insertAdjacentHTML('beforeend',
+    `<rect class="zone-pavilion" x="1430" y="810" width="240" height="80" rx="3"/>
+     <rect class="zone-pavilion" x="1680" y="810" width="220" height="80" rx="3"/>
+     <rect x="1910" y="810" width="170" height="80" rx="3" fill="rgba(200,169,107,.22)" stroke="${CSS_VAR('gold')}" stroke-width="1.4"/>`);
+  // Pavilion decorative arches
+  g.insertAdjacentHTML('beforeend',
+    `<path d="M 1450 880 Q 1550 825 1650 880" stroke="${CSS_VAR('c-pavilion-bd')}" stroke-width="1.5" fill="none"/>
+     <path d="M 1700 880 Q 1790 825 1880 880" stroke="${CSS_VAR('c-pavilion-bd')}" stroke-width="1.5" fill="none"/>`);
+  L.insertAdjacentHTML('beforeend',
+    `<text class="zone-label t-pavilion" x="1550" y="857" style="font-size:12px">Thai Pavilion</text>
+     <text class="zone-label t-pavilion" x="1790" y="857" style="font-size:12px">Laos Pavilion</text>
+     <text class="zone-label t-gold" x="1995" y="857" style="font-size:12px;font-weight:700">VITH HUB</text>`);
+
+  // ── AISLE LABELS — true to masterplan widths ──
+  const aisles = [
+    { x: 410, y: 470, t: 'Aisle', s: '8 m' },
+    { x: 410, y: 660, t: 'Aisle', s: '8 m' },
+    { x: 895, y: 470, t: 'Aisle', s: '5 m' },
+    { x: 895, y: 660, t: 'Aisle', s: '5 m' },
+    { x: 895, y: 855, t: 'Aisle', s: '5 m' },
+    { x: 895, y: 1050, t: 'Aisle', s: '5 m' },
+    { x: 895, y: 1235, t: 'Aisle', s: '3 m' },
+    { x: 1310, y: 470, t: 'Main Aisle', s: '8 m', bold: true },
+    { x: 1310, y: 660, t: 'Main Aisle', s: '8 m', bold: true },
+    { x: 1985, y: 660, t: 'Aisle', s: '4 m' },
+    { x: 1985, y: 740, t: 'Aisle', s: '4 m' },
+    { x: 1985, y: 800, t: 'Aisle', s: '8 m' },
+    { x: 1995, y: 985, t: 'Aisle', s: '4 m' },
+    { x: 1995, y: 1095, t: 'Aisle', s: '4 m' },
+    { x: 1340, y: 1100, t: 'Aisle', s: '4 m' },
+    { x: 1340, y: 1210, t: 'Aisle', s: '4 m' }
+  ];
+  aisles.forEach(a => {
+    L.insertAdjacentHTML('beforeend',
+      `<text class="aisle-tag ${a.bold?'bold':''}" x="${a.x}" y="${a.y}">${a.t}</text>
+       <text class="aisle-tag ${a.bold?'bold':''}" x="${a.x}" y="${a.y + 13}">${a.s}</text>`);
+  });
+}
+
+function CSS_VAR(name) {
+  return getComputedStyle(document.documentElement).getPropertyValue('--' + name).trim();
+}
+
+/* ════════════════════════════════════════════════════════════
+   Layer 2 — Booths
+   ════════════════════════════════════════════════════════════ */
+function renderBooths() {
+  const G = document.getElementById('layer-booths');
+  const L = document.getElementById('layer-labels');
+  const H = document.getElementById('layer-hitboxes');
+  const SVGNS = 'http://www.w3.org/2000/svg';
+
+  BOOTHS.forEach(b => {
+    const meta = CATS[b.cat];
+    const sta = STATUS[b.status];
+
+    const group = document.createElementNS(SVGNS, 'g');
+    group.setAttribute('class', 'booth-group');
+    group.setAttribute('data-id', b.id);
+    group.setAttribute('data-cat', b.cat);
+    group.setAttribute('data-status', b.status);
+
+    // Subtle 3D shadow box
+    const shadow = document.createElementNS(SVGNS, 'rect');
+    shadow.setAttribute('x', b.x + 2);
+    shadow.setAttribute('y', b.y + 2);
+    shadow.setAttribute('width', b.w);
+    shadow.setAttribute('height', b.h);
+    shadow.setAttribute('rx', 1.5);
+    shadow.setAttribute('fill', 'rgba(11,19,43,.10)');
+    group.appendChild(shadow);
+
+    // Main shape
+    const rect = document.createElementNS(SVGNS, 'rect');
+    rect.setAttribute('class', 'booth-shape');
+    rect.setAttribute('x', b.x);
+    rect.setAttribute('y', b.y);
+    rect.setAttribute('width', b.w);
+    rect.setAttribute('height', b.h);
+    rect.setAttribute('rx', 1.5);
+    rect.setAttribute('fill', meta.fill);
+    rect.setAttribute('stroke', meta.stroke);
+    rect.setAttribute('stroke-width', 1.1);
+    group.appendChild(rect);
+
+    // Status overlay
+    if (b.status === 'sold' || b.status === 'reserved' || b.status === 'vip') {
+      const ov = document.createElementNS(SVGNS, 'rect');
+      ov.setAttribute('x', b.x);
+      ov.setAttribute('y', b.y);
+      ov.setAttribute('width', b.w);
+      ov.setAttribute('height', b.h);
+      ov.setAttribute('rx', 1.5);
+      ov.setAttribute('fill', `url(#pat-${b.status})`);
+      ov.setAttribute('pointer-events', 'none');
+      ov.setAttribute('class', 'status-mark');
+      group.appendChild(ov);
+    }
+
+    // Status corner pip
+    const dot = document.createElementNS(SVGNS, 'circle');
+    dot.setAttribute('cx', b.x + b.w - 6);
+    dot.setAttribute('cy', b.y + 6);
+    dot.setAttribute('r', 2.8);
+    dot.setAttribute('fill', sta.raw);
+    dot.setAttribute('stroke', '#fff');
+    dot.setAttribute('stroke-width', '.8');
+    dot.setAttribute('class', 'status-mark');
+    group.appendChild(dot);
+
+    // Premium AAA marker (commercial UX — psychologically signals premium)
+    if (b.visibilityRank === 'AAA' && b.status !== 'sold') {
+      const star = document.createElementNS(SVGNS, 'circle');
+      star.setAttribute('cx', b.x + 6);
+      star.setAttribute('cy', b.y + 6);
+      star.setAttribute('r', 2.5);
+      star.setAttribute('class', 'premium-marker');
+      group.appendChild(star);
+    }
+
+    G.appendChild(group);
+
+    // Label
+    const labelEl = document.createElementNS(SVGNS, 'text');
+    labelEl.setAttribute('class', 'booth-label' + (meta.textLight ? ' light' : ''));
+    labelEl.setAttribute('x', b.x + b.w/2);
+    labelEl.setAttribute('y', b.y + b.h/2);
+    labelEl.setAttribute('data-id', b.id);
+    labelEl.textContent = b.id;
+    labelEl.setAttribute('pointer-events', 'none');
+    if (b.cat === 'premium') {
+      labelEl.style.fontSize = '13px';
+      labelEl.style.fontFamily = "'Fraunces', serif";
+      labelEl.style.fontWeight = '600';
+    }
+    L.appendChild(labelEl);
+
+    // Hitbox
+    const hb = document.createElementNS(SVGNS, 'rect');
+    hb.setAttribute('x', b.x - 1);
+    hb.setAttribute('y', b.y - 1);
+    hb.setAttribute('width', b.w + 2);
+    hb.setAttribute('height', b.h + 2);
+    hb.setAttribute('fill', 'transparent');
+    hb.setAttribute('data-id', b.id);
+    hb.setAttribute('class', 'booth-hitbox');
+    hb.style.cursor = 'pointer';
+    H.appendChild(hb);
+  });
+}
+
+/* ════════════════════════════════════════════════════════════
+   Mini-map
+   ════════════════════════════════════════════════════════════ */
+function renderMinimap() {
+  const mm = document.getElementById('minimap');
+  const SVGNS = 'http://www.w3.org/2000/svg';
+  // Hall outline
+  mm.insertAdjacentHTML('beforeend',
+    `<rect x="180" y="120" width="1820" height="1230" rx="4" fill="${CSS_VAR('hall')}" stroke="${CSS_VAR('ink-3')}" stroke-width="4"/>`);
+  // All booths as small dots
+  BOOTHS.forEach(b => {
+    mm.insertAdjacentHTML('beforeend',
+      `<rect x="${b.x}" y="${b.y}" width="${b.w}" height="${b.h}" fill="${CSS_VAR('c-' + b.cat.replace('_','-'))}" opacity=".7"/>`);
+  });
+}
+
+/* ════════════════════════════════════════════════════════════
+   Debug grid
+   ════════════════════════════════════════════════════════════ */
+function renderDebugGrid() {
+  const g = document.getElementById('layer-debug');
+  g.innerHTML = '';
+  for (let x = 0; x <= 2200; x += 50) {
+    const major = x % 200 === 0;
+    g.insertAdjacentHTML('beforeend',
+      `<line ${major?'class="major"':''} x1="${x}" y1="0" x2="${x}" y2="1400"/>`);
+    if (major) g.insertAdjacentHTML('beforeend', `<text x="${x + 3}" y="14">${x}</text>`);
+  }
+  for (let y = 0; y <= 1400; y += 50) {
+    const major = y % 200 === 0;
+    g.insertAdjacentHTML('beforeend',
+      `<line ${major?'class="major"':''} x1="0" y1="${y}" x2="2200" y2="${y}"/>`);
+    if (major) g.insertAdjacentHTML('beforeend', `<text x="4" y="${y + 14}">${y}</text>`);
+  }
+}
+
+/* ════════════════════════════════════════════════════════════
+   Side panel
+   ════════════════════════════════════════════════════════════ */
+function renderStats() {
+  const total=BOOTHS.length, avail=BOOTHS.filter(b=>b.status==='available').length;
+  const res=BOOTHS.filter(b=>b.status==='reserved').length;
+  const sold=BOOTHS.filter(b=>b.status==='sold').length, vip=BOOTHS.filter(b=>b.status==='vip').length;
+  const pct=v=>Math.round(v/total*100)+'%';
+  document.getElementById('statTotal').textContent=total;
+  document.getElementById('statOccPct').textContent=pct(sold+vip+res)+' occupied';
+  document.getElementById('statAvail').textContent=avail;
+  document.getElementById('statAvailPct').textContent=pct(avail)+' of total';
+  document.getElementById('statReserved').textContent=res;
+  document.getElementById('statReservedPct').textContent=pct(res)+' of total';
+  document.getElementById('statSold').textContent=sold+vip;
+  document.getElementById('statSoldPct').textContent=sold+' sold · '+vip+' VIP';
+}
+
+function renderLegend() {
+  const wrap = document.getElementById('legend');
+  wrap.innerHTML = '';
+  Object.entries(CATS).forEach(([k, c]) => {
+    const count = BOOTHS.filter(b => b.cat === k).length;
+    wrap.insertAdjacentHTML('beforeend',
+      `<div class="legend-item" data-cat="${k}">
+         <div class="swatch" style="background:${c.fill}"></div>
+         <span>${c.label}</span>
+         <span class="count">${String(count).padStart(2,'0')}</span>
+       </div>`);
+  });
+  wrap.addEventListener('click', e => {
+    const item = e.target.closest('.legend-item');
+    if (!item) return;
+    item.classList.toggle('is-off');
+    applyFilters();
+  });
+}
+
+function renderStatusList() {
+  const wrap = document.getElementById('statusList');
+  Object.entries(STATUS).forEach(([k, s]) => {
+    const count = BOOTHS.filter(b => b.status === k).length;
+    const pct = Math.round((count / BOOTHS.length) * 100);
+    wrap.insertAdjacentHTML('beforeend',
+      `<div class="status-row" style="color:${s.raw}">
+         <span class="dot" style="background:${s.raw}"></span>
+         <span style="color:var(--ink-1)">${s.label}</span>
+         <span class="bar"><i style="width:${pct}%"></i></span>
+         <span class="num">${count}</span>
+       </div>`);
+  });
+}
+
+function applyFilters() {
+  const off = new Set([...document.querySelectorAll('.legend-item.is-off')].map(el => el.dataset.cat));
+  document.querySelectorAll('.booth-group').forEach(g => {
+    g.classList.toggle('is-dim', off.has(g.dataset.cat));
+  });
+}
+
+/* ════════════════════════════════════════════════════════════
+   Stage (viewBox zoom/pan)
+   ════════════════════════════════════════════════════════════ */
+const Stage = (() => {
+  const svg = document.getElementById('stage');
+  const wrap = document.getElementById('canvasWrap');
+  const baseVB = [0, 0, 2200, 1400];
+  let vb = [...baseVB];
+  let isPanning = false;
+  let panStart = null;
+  let vbStart = null;
+  const mmViewport = document.getElementById('minimapViewport');
+  const mmBody = document.getElementById('minimapBody');
+
+  function setVB(nv) {
+    vb = nv;
+    svg.setAttribute('viewBox', vb.join(' '));
+    updateDisplays();
+    updateMinimap();
+  }
+  function updateDisplays() {
+    const pct = Math.round((baseVB[2] / vb[2]) * 100);
+    document.getElementById('zoomLevel').textContent = pct + '%';
+    document.getElementById('hudZoom').textContent = pct + '%';
+    document.getElementById('hudSvg').textContent =
+      `${Math.round(vb[0])},${Math.round(vb[1])} · ${Math.round(vb[2])}×${Math.round(vb[3])}`;
+  }
+  function updateMinimap() {
+    const mmRect = mmBody.getBoundingClientRect();
+    const sx = mmRect.width / baseVB[2];
+    const sy = mmRect.height / baseVB[3];
+    mmViewport.style.left = (vb[0] * sx) + 'px';
+    mmViewport.style.top = (vb[1] * sy) + 'px';
+    mmViewport.style.width = (vb[2] * sx) + 'px';
+    mmViewport.style.height = (vb[3] * sy) + 'px';
+  }
+  function reset() { animateVB([...baseVB]); }
+  function zoomBy(factor, cx, cy) {
+    const rect = svg.getBoundingClientRect();
+    const px = cx === undefined ? rect.width/2 : cx - rect.left;
+    const py = cy === undefined ? rect.height/2 : cy - rect.top;
+    const sx = vb[0] + (px / rect.width) * vb[2];
+    const sy = vb[1] + (py / rect.height) * vb[3];
+    const newW = Math.max(220, Math.min(baseVB[2] * 2, vb[2] / factor));
+    const newH = newW * (baseVB[3] / baseVB[2]);
+    const newX = sx - (px / rect.width) * newW;
+    const newY = sy - (py / rect.height) * newH;
+    setVB([newX, newY, newW, newH]);
+  }
+  function focusOn(b, padding = 100) {
+    const targetW = Math.max(450, b.w + padding * 2);
+    const targetH = targetW * (baseVB[3] / baseVB[2]);
+    const cx = b.x + b.w/2, cy = b.y + b.h/2;
+    animateVB([cx - targetW/2, cy - targetH/2, targetW, targetH]);
+  }
+  function focusOnRect(x, y, w, h, pad = 60) {
+    const ratio = baseVB[3] / baseVB[2];
+    const targetRatio = h / w;
+    let tw, th;
+    if (targetRatio > ratio) { th = h + pad * 2; tw = th / ratio; }
+    else { tw = w + pad * 2; th = tw * ratio; }
+    animateVB([x + w/2 - tw/2, y + h/2 - th/2, tw, th]);
+  }
+  function animateVB(target, duration = 500) {
+    const from = [...vb];
+    const start = performance.now();
+    function step(now) {
+      const t = Math.min(1, (now - start) / duration);
+      const ease = 1 - Math.pow(1 - t, 3);
+      setVB(from.map((v, i) => v + (target[i] - v) * ease));
+      if (t < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  wrap.addEventListener('wheel', e => {
+    e.preventDefault();
+    const factor = e.deltaY < 0 ? 1.18 : 1/1.18;
+    zoomBy(factor, e.clientX, e.clientY);
+  }, { passive: false });
+
+  wrap.addEventListener('pointerdown', e => {
+    if (e.target.closest('.booth-hitbox, .icon-btn, button, input, .minimap, .zoom-cluster, .detail')) return;
+    isPanning = true;
+    panStart = { x: e.clientX, y: e.clientY };
+    vbStart = [...vb];
+    wrap.classList.add('is-dragging');
+    wrap.setPointerCapture(e.pointerId);
+  });
+  wrap.addEventListener('pointermove', e => {
+    const rect = svg.getBoundingClientRect();
+    const px = e.clientX - rect.left, py = e.clientY - rect.top;
+    const sx = vb[0] + (px / rect.width) * vb[2];
+    const sy = vb[1] + (py / rect.height) * vb[3];
+    document.getElementById('hudCursor').textContent = `${Math.round(sx)}, ${Math.round(sy)}`;
+    if (!isPanning) return;
+    const dx = (e.clientX - panStart.x) * (vb[2] / rect.width);
+    const dy = (e.clientY - panStart.y) * (vb[3] / rect.height);
+    setVB([vbStart[0] - dx, vbStart[1] - dy, vbStart[2], vbStart[3]]);
+  });
+  wrap.addEventListener('pointerup', e => {
+    isPanning = false;
+    wrap.classList.remove('is-dragging');
+  });
+
+  // Pinch zoom
+  let pinchStart = null;
+  wrap.addEventListener('touchstart', e => {
+    if (e.touches.length === 2) {
+      const [a, b] = e.touches;
+      pinchStart = { dist: Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY), vb: [...vb] };
+    }
+  });
+  wrap.addEventListener('touchmove', e => {
+    if (e.touches.length === 2 && pinchStart) {
+      e.preventDefault();
+      const [a, b] = e.touches;
+      const dist = Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
+      const factor = dist / pinchStart.dist;
+      const newW = Math.max(220, Math.min(baseVB[2] * 2, pinchStart.vb[2] / factor));
+      const newH = newW * (baseVB[3] / baseVB[2]);
+      const cx = pinchStart.vb[0] + pinchStart.vb[2]/2;
+      const cy = pinchStart.vb[1] + pinchStart.vb[3]/2;
+      setVB([cx - newW/2, cy - newH/2, newW, newH]);
+    }
+  }, { passive: false });
+
+  // Minimap click to jump
+  mmBody.addEventListener('click', e => {
+    const rect = mmBody.getBoundingClientRect();
+    const mx = (e.clientX - rect.left) / rect.width;
+    const my = (e.clientY - rect.top) / rect.height;
+    const cx = baseVB[2] * mx, cy = baseVB[3] * my;
+    animateVB([cx - vb[2]/2, cy - vb[3]/2, vb[2], vb[3]]);
+  });
+
+  setTimeout(updateMinimap, 100);
+
+  return { reset, zoomBy, focusOn, focusOnRect, animateVB, getVB: () => vb, baseVB };
+})();
+
+/* ════════════════════════════════════════════════════════════
+   UI Wiring
+   ════════════════════════════════════════════════════════════ */
+document.getElementById('zoomIn').onclick = () => Stage.zoomBy(1.3);
+document.getElementById('zoomOut').onclick = () => Stage.zoomBy(1/1.3);
+document.getElementById('zoomReset').onclick = () => Stage.reset();
+document.getElementById('btnFit').onclick = () => Stage.reset();
+
+// Fullscreen
+document.getElementById('btnFullscreen').onclick = () => {
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen?.();
+  } else {
+    document.exitFullscreen?.();
+  }
+};
+
+// Jump nav
+document.getElementById('navlist').addEventListener('click', e => {
+  const btn = e.target.closest('button[data-jump]');
+  if (!btn) return;
+  const zones = {
+    entrance: [240, 200, 280, 720],
+    stage:    [240, 940, 280, 200],
+    premium:  [930, 495, 300, 410],
+    pavilion: [1430, 280, 660, 350],
+    food:     [1430, 880, 660, 450]
+  };
+  const z = zones[btn.dataset.jump];
+  if (z) Stage.focusOnRect(...z);
+});
+
+/* Tooltip */
+const tip = document.getElementById('tooltip');
+function showTooltip(b, e) {
+  const meta = CATS[b.cat];
+  const sta = STATUS[b.status];
+  const area = boothSqm(b);
+  tip.innerHTML = `
+    <div class="tt-head">
+      <span class="tt-id">${b.id}</span>
+      <span class="tt-cat">${meta.label}</span>
+    </div>
+    <div class="tt-body">
+      <div class="tt-row">
+        <span class="lbl">Status</span>
+        <span class="tt-status" style="color:${sta.raw}">
+          <span style="width:7px;height:7px;border-radius:50%;background:${sta.raw};display:inline-block"></span>
+          ${sta.label}
+        </span>
+      </div>
+      <div class="tt-row"><span class="lbl">Footprint</span><span class="val">${area} m²</span></div>
+      <div class="tt-row"><span class="lbl">Dims</span><span class="val">${boothDims(b)}</span></div>
+      <div class="tt-row"><span class="lbl">Visibility</span><span class="val">${b.visibilityRank}</span></div>
+      <div class="tt-row"><span class="lbl">Traffic</span><span class="val">${b.trafficScore}/100</span></div>
+    </div>
+    <div class="tt-foot">${meta.zone} · Click for details</div>
+  `;
+  const rect = document.getElementById('canvasWrap').getBoundingClientRect();
+  let x = e.clientX - rect.left + 14;
+  let y = e.clientY - rect.top + 14;
+  if (x + 280 > rect.width) x = e.clientX - rect.left - 294;
+  if (y + 220 > rect.height) y = e.clientY - rect.top - 230;
+  tip.style.left = x + 'px';
+  tip.style.top = y + 'px';
+  tip.classList.add('is-visible');
+}
+function hideTooltip() { tip.classList.remove('is-visible'); }
+
+/* Detail card */
+const card = document.getElementById('detailCard');
+function showDetail(b) {
+  document.querySelectorAll('.booth-group').forEach(g =>
+    g.classList.toggle('is-active', g.dataset.id === b.id));
+  const meta = CATS[b.cat];
+  const sta = STATUS[b.status];
+  document.getElementById('dCatRow').innerHTML =
+    `<span class="d-cat-chip"><span class="ch-dot" style="background:${meta.fill}"></span>${meta.label}</span>`;
+  document.getElementById('dId').textContent = b.id;
+  const stEl = document.getElementById('dStat');
+  stEl.style.background = sta.raw + '14';
+  stEl.style.color = sta.raw;
+  document.getElementById('dStatLbl').textContent = sta.label;
+  document.getElementById('dArea').textContent = boothSqm(b) + ' m²  (' + boothDims(b) + ')';
+  document.getElementById('dVis').textContent = b.visibilityRank;
+  document.getElementById('dCoord').textContent = `${b.x},${b.y}`;
+  document.getElementById('dZone').textContent = meta.zone;
+  document.getElementById('dTrafficVal').textContent = b.trafficScore + ' / 100';
+  document.getElementById('dTrafficBar').style.width = b.trafficScore + '%';
+
+  const bookBtn = document.getElementById('dBook');
+  if (b.status === 'sold') {
+    bookBtn.textContent = 'Sold Out'; bookBtn.disabled = true;
+  } else if (b.status === 'vip') {
+    bookBtn.textContent = 'Request Access'; bookBtn.disabled = false;
+  } else if (b.status === 'reserved') {
+    bookBtn.textContent = 'Join Waitlist'; bookBtn.disabled = false;
+  } else {
+    bookBtn.textContent = 'Reserve Booth'; bookBtn.disabled = false;
+  }
+  document.getElementById('dCenter').onclick = () => Stage.focusOn(b);
+  bookBtn.onclick = () => toast(`Booking flow initiated · ${b.id}`);
+  card.classList.add('is-open');
+}
+document.getElementById('detailClose').onclick = () => {
+  card.classList.remove('is-open');
+  document.querySelectorAll('.booth-group').forEach(g => g.classList.remove('is-active'));
+};
+
+/* Booth events */
+function wireBoothEvents() {
+  const hit = document.getElementById('layer-hitboxes');
+  hit.addEventListener('pointermove', e => {
+    const t = e.target.closest('.booth-hitbox');
+    if (!t) { hideTooltip(); return; }
+    const b = boothIndex.get(t.dataset.id);
+    if (b) showTooltip(b, e);
+  });
+  hit.addEventListener('pointerleave', hideTooltip);
+  hit.addEventListener('click', e => {
+    const t = e.target.closest('.booth-hitbox');
+    if (!t) return;
+    const b = boothIndex.get(t.dataset.id);
+    if (b) { showDetail(b); Stage.focusOn(b, 180); }
+  });
+}
+
+/* Search */
+document.getElementById('searchInput').addEventListener('input', e => {
+  const q = e.target.value.trim().toUpperCase();
+  if (!q) {
+    document.querySelectorAll('.booth-group').forEach(g => g.classList.remove('is-active', 'is-dim'));
+    applyFilters();
+    return;
+  }
+  document.querySelectorAll('.booth-group').forEach(g => {
+    const match = g.dataset.id.toUpperCase().includes(q);
+    g.classList.toggle('is-active', match);
+    g.classList.toggle('is-dim', !match);
+  });
+});
+document.getElementById('searchInput').addEventListener('keydown', e => {
+  if (e.key === 'Enter') {
+    const q = e.target.value.trim().toUpperCase();
+    const b = boothIndex.get(q);
+    if (b) { showDetail(b); Stage.focusOn(b); }
+    else { toast(`Booth "${q}" not found`); }
+  }
+});
+
+/* Debug */
+const btnDebug = document.getElementById('btnDebug');
+btnDebug.onclick = () => {
+  btnDebug.classList.toggle('is-on');
+  const on = btnDebug.classList.contains('is-on');
+  document.getElementById('layer-debug').style.display = on ? '' : 'none';
+  document.getElementById('debugHud').classList.toggle('is-on', on);
+  document.getElementById('canvasWrap').classList.toggle('debug-on', on);
+};
+
+/* Export */
+document.getElementById('btnExport').onclick = () => {
+  const payload = {
+    meta: {
+      version: '1.0.0',
+      project: 'VITH HUB 2026',
+      hall: 'Hall 01 — Main Exhibition',
+      exportedAt: new Date().toISOString(),
+      viewBox: Stage.baseVB
+    },
+    categories: CATS,
+    statuses: Object.fromEntries(Object.entries(STATUS).map(([k,v]) => [k, { label: v.label, color: v.raw }])),
+    booths: BOOTHS.map(b => ({
+      ...b,
+      x_m:      +(b.x / PX_PER_METER).toFixed(2),
+      y_m:      +(b.y / PX_PER_METER).toFixed(2),
+      width_m:  b.width_m,
+      height_m: b.height_m,
+      sqm:      b.sqm
+    }))
+  };
+  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = `vithhub-floorplan-${new Date().toISOString().slice(0,10)}.json`;
+  document.body.appendChild(a); a.click(); a.remove();
+  URL.revokeObjectURL(url);
+  toast('Coordinates exported · JSON');
+};
+
+/* Realtime API surface */
+window.VithFloorplan = {
+  setStatus(boothId, newStatus) {
+    const b = boothIndex.get(boothId);
+    if (!b || !STATUS[newStatus]) return false;
+    b.status = newStatus;
+    const group = document.querySelector(`.booth-group[data-id="${boothId}"]`);
+    if (group) {
+      group.setAttribute('data-status', newStatus);
+      group.querySelectorAll('.status-mark').forEach(n => n.remove());
+      const SVGNS = 'http://www.w3.org/2000/svg';
+      if (['sold','reserved','vip'].includes(newStatus)) {
+        const ov = document.createElementNS(SVGNS, 'rect');
+        ov.setAttribute('x', b.x); ov.setAttribute('y', b.y);
+        ov.setAttribute('width', b.w); ov.setAttribute('height', b.h);
+        ov.setAttribute('rx', 1.5);
+        ov.setAttribute('fill', `url(#pat-${newStatus})`);
+        ov.setAttribute('class', 'status-mark');
+        ov.setAttribute('pointer-events', 'none');
+        group.appendChild(ov);
+      }
+      const dot = document.createElementNS(SVGNS, 'circle');
+      dot.setAttribute('cx', b.x + b.w - 6);
+      dot.setAttribute('cy', b.y + 6);
+      dot.setAttribute('r', 2.8);
+      dot.setAttribute('fill', STATUS[newStatus].raw);
+      dot.setAttribute('stroke', '#fff');
+      dot.setAttribute('stroke-width', '.8');
+      dot.setAttribute('class', 'status-mark');
+      group.appendChild(dot);
+    }
+    renderStats();
+    return true;
+  },
+  getBooth(id) { return boothIndex.get(id); },
+  getAll() { return [...BOOTHS]; },
+  focusOn(id) {
+    const b = boothIndex.get(id);
+    if (b) Stage.focusOn(b);
+  },
+  filterByCategory(cats) {
+    document.querySelectorAll('.legend-item').forEach(item => {
+      item.classList.toggle('is-off', cats && !cats.includes(item.dataset.cat));
+    });
+    applyFilters();
+  }
+};
+
+/* Toast */
+const toastEl = document.getElementById('toast');
+let toastTimer;
+function toast(msg) {
+  toastEl.textContent = msg;
+  toastEl.classList.add('is-visible');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toastEl.classList.remove('is-visible'), 2400);
+}
+
+/* ════════════════════════════════════════════════════════════
+   EDIT PANEL
+   ════════════════════════════════════════════════════════════ */
+const editPanel = document.getElementById('editPanel');
+let editingBoothId = null;
+let pendingLogo = null;
+
+function openEditPanel(b) {
+  editingBoothId = b.id;
+  pendingLogo = null;
+
+  // Header
+  document.getElementById('epTitle').textContent = b.id;
+  document.getElementById('epSubtitle').textContent = CATS[b.cat]?.label + ' · Edit Booth';
+
+  // Info grid
+  const area = boothSqm(b);
+  document.getElementById('epInfoGrid').innerHTML = `
+    <div class="ep-info-cell"><div class="lbl">Traffic</div><div class="val">${b.trafficScore}/100</div></div>
+    <div class="ep-info-cell"><div class="lbl">Visibility</div><div class="val">${b.visibilityRank}</div></div>
+    <div class="ep-info-cell"><div class="lbl">Footprint</div><div class="val">${area} m²</div></div>
+    <div class="ep-info-cell"><div class="lbl">Zone</div><div class="val">${CATS[b.cat]?.zone || '–'}</div></div>
+  `;
+
+  // Type
+  document.getElementById('epTypeSelect').value = b.cat;
+
+  // Size chips
+  document.querySelectorAll('.ep-size-chip').forEach(chip => {
+    chip.classList.toggle('active', parseInt(chip.dataset.w) === b.w && parseInt(chip.dataset.h) === b.h);
+  });
+  document.getElementById('epWidth').value = b.w;
+  document.getElementById('epHeight').value = b.h;
+
+  // Status buttons
+  document.querySelectorAll('.ep-stat-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.s === b.status);
+  });
+
+  // Brand
+  document.getElementById('epBrand').value = b.brand || '';
+
+  // Logo
+  const img = document.getElementById('epLogoImg');
+  const ph = document.getElementById('epLogoPlaceholder');
+  if (b.logo) {
+    img.src = b.logo; img.style.display = 'block'; ph.style.display = 'none';
+  } else {
+    img.src = ''; img.style.display = 'none'; ph.style.display = '';
+  }
+
+  editPanel.classList.add('is-open');
+}
+
+function closeEditPanel() {
+  editPanel.classList.remove('is-open');
+  editingBoothId = null;
+}
+
+document.getElementById('epClose').onclick = closeEditPanel;
+
+// Status buttons
+document.querySelectorAll('.ep-stat-btn').forEach(btn => {
+  btn.onclick = () => {
+    document.querySelectorAll('.ep-stat-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  };
+});
+
+// Type select — update header subtitle
+document.getElementById('epTypeSelect').onchange = function() {
+  const b = boothIndex.get(editingBoothId);
+  if (b) document.getElementById('epSubtitle').textContent = CATS[this.value]?.label + ' · Edit Booth';
+};
+
+// Size chips
+document.querySelectorAll('.ep-size-chip').forEach(chip => {
+  chip.onclick = () => {
+    document.querySelectorAll('.ep-size-chip').forEach(c => c.classList.remove('active'));
+    chip.classList.add('active');
+    document.getElementById('epWidth').value = chip.dataset.w;
+    document.getElementById('epHeight').value = chip.dataset.h;
+  };
+});
+
+// Manual size input — deselect chips
+document.getElementById('epWidth').oninput =
+document.getElementById('epHeight').oninput = () => {
+  document.querySelectorAll('.ep-size-chip').forEach(c => c.classList.remove('active'));
+};
+
+// Logo upload
+document.getElementById('epLogoInput').onchange = function(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+  const imgEl = new Image();
+  const objectUrl = URL.createObjectURL(file);
+  imgEl.onload = () => {
+    const MAX = 400;
+    const ratio = Math.min(1, MAX / imgEl.width);
+    const canvas = document.createElement('canvas');
+    canvas.width = Math.round(imgEl.width * ratio);
+    canvas.height = Math.round(imgEl.height * ratio);
+    canvas.getContext('2d').drawImage(imgEl, 0, 0, canvas.width, canvas.height);
+    pendingLogo = canvas.toDataURL('image/webp', 0.8);
+    URL.revokeObjectURL(objectUrl);
+    const img = document.getElementById('epLogoImg');
+    img.src = pendingLogo; img.style.display = 'block';
+    document.getElementById('epLogoPlaceholder').style.display = 'none';
+  };
+  imgEl.src = objectUrl;
+};
+
+// Remove logo
+document.getElementById('epRemoveLogo').onclick = () => {
+  const b = boothIndex.get(editingBoothId);
+  if (!b) return;
+  b.logo = ''; pendingLogo = null;
+  document.getElementById('epLogoImg').style.display = 'none';
+  document.getElementById('epLogoPlaceholder').style.display = '';
+  updateBoothVisual(b);
+  toast('ลบโลโก้แล้ว');
+};
+
+// Save
+document.getElementById('epSave').onclick = () => {
+  const b = boothIndex.get(editingBoothId);
+  if (!b) return;
+
+  const newStatus = document.querySelector('.ep-stat-btn.active')?.dataset.s || b.status;
+  const newCat    = document.getElementById('epTypeSelect').value;
+  const newBrand  = document.getElementById('epBrand').value.trim();
+  const newW      = parseInt(document.getElementById('epWidth').value) || b.w;
+  const newH      = parseInt(document.getElementById('epHeight').value) || b.h;
+
+  // Apply changes
+  const oldStatus = b.status;
+  b.status = newStatus;
+  b.cat    = newCat;
+  b.brand  = newBrand;
+  b.w      = newW;
+  b.h      = newH;
+  if (pendingLogo) b.logo = pendingLogo;
+
+  updateBoothVisual(b);
+  renderStats();
+  renderLegend();
+
+  saveState();
+  toast(`✓ บันทึก ${b.id}${newBrand ? ' · ' + newBrand : ''}`);
+  closeEditPanel();
+};
+
+// Re-render a single booth's visual after edit
+function updateBoothVisual(b) {
+  const SVGNS = 'http://www.w3.org/2000/svg';
+  const group = document.querySelector(`.booth-group[data-id="${b.id}"]`);
+  if (!group) return;
+
+  const meta = CATS[b.cat];
+  const sta  = STATUS[b.status];
+
+  // Update data attrs
+  group.setAttribute('data-cat', b.cat);
+  group.setAttribute('data-status', b.status);
+
+  // Rebuild group children
+  group.innerHTML = '';
+
+  // Shadow
+  const shadow = document.createElementNS(SVGNS, 'rect');
+  shadow.setAttribute('x', b.x + 2); shadow.setAttribute('y', b.y + 2);
+  shadow.setAttribute('width', b.w); shadow.setAttribute('height', b.h);
+  shadow.setAttribute('rx', 1.5); shadow.setAttribute('fill', 'rgba(11,19,43,.10)');
+  group.appendChild(shadow);
+
+  // Main shape
+  const rect = document.createElementNS(SVGNS, 'rect');
+  rect.setAttribute('class', 'booth-shape');
+  rect.setAttribute('x', b.x); rect.setAttribute('y', b.y);
+  rect.setAttribute('width', b.w); rect.setAttribute('height', b.h);
+  rect.setAttribute('rx', 1.5);
+  rect.setAttribute('fill', meta.fill);
+  rect.setAttribute('stroke', meta.stroke);
+  rect.setAttribute('stroke-width', 1.1);
+  group.appendChild(rect);
+
+  // Logo overlay (if present)
+  if (b.logo) {
+    const logoImg = document.createElementNS(SVGNS, 'image');
+    logoImg.setAttribute('x', b.x + 4); logoImg.setAttribute('y', b.y + 4);
+    logoImg.setAttribute('width', b.w - 8); logoImg.setAttribute('height', b.h - 8);
+    logoImg.setAttribute('href', b.logo);
+    logoImg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+    logoImg.setAttribute('pointer-events', 'none');
+    group.appendChild(logoImg);
+  }
+
+  // Status overlay
+  if (['sold','reserved','vip'].includes(b.status)) {
+    const ov = document.createElementNS(SVGNS, 'rect');
+    ov.setAttribute('x', b.x); ov.setAttribute('y', b.y);
+    ov.setAttribute('width', b.w); ov.setAttribute('height', b.h);
+    ov.setAttribute('rx', 1.5); ov.setAttribute('fill', `url(#pat-${b.status})`);
+    ov.setAttribute('pointer-events', 'none'); ov.setAttribute('class', 'status-mark');
+    group.appendChild(ov);
+  }
+
+  // Corner pip
+  const dot = document.createElementNS(SVGNS, 'circle');
+  dot.setAttribute('cx', b.x + b.w - 6); dot.setAttribute('cy', b.y + 6);
+  dot.setAttribute('r', 2.8); dot.setAttribute('fill', sta.raw);
+  dot.setAttribute('stroke', '#fff'); dot.setAttribute('stroke-width', '.8');
+  dot.setAttribute('class', 'status-mark');
+  group.appendChild(dot);
+
+  // Premium AAA marker
+  if (b.visibilityRank === 'AAA' && b.status !== 'sold') {
+    const star = document.createElementNS(SVGNS, 'circle');
+    star.setAttribute('cx', b.x + 6); star.setAttribute('cy', b.y + 6);
+    star.setAttribute('r', 2.5); star.setAttribute('class', 'premium-marker');
+    group.appendChild(star);
+  }
+
+  // Update label
+  const existingLabel = document.querySelector(`#layer-labels text[data-id="${b.id}"]`);
+  if (existingLabel) {
+    existingLabel.setAttribute('x', b.x + b.w / 2);
+    existingLabel.setAttribute('y', b.y + b.h / 2);
+    existingLabel.style.display = b.logo ? 'none' : '';
+  }
+
+  // Update hitbox
+  const hb = document.querySelector(`.booth-hitbox[data-id="${b.id}"]`);
+  if (hb) {
+    hb.setAttribute('x', b.x - 1); hb.setAttribute('y', b.y - 1);
+    hb.setAttribute('width', b.w + 2); hb.setAttribute('height', b.h + 2);
+  }
+
+  // Update brand label
+  updateBrandLabel(b);
+}
+
+function updateBrandLabel(b) {
+  const SVGNS = 'http://www.w3.org/2000/svg';
+  const L = document.getElementById('layer-labels');
+  // Remove existing brand label
+  const existing = L.querySelector(`text.brand-label[data-id="${b.id}"]`);
+  if (existing) existing.remove();
+
+  if (b.brand && !b.logo) {
+    const bl = document.createElementNS(SVGNS, 'text');
+    bl.setAttribute('class', 'brand-label');
+    bl.setAttribute('data-id', b.id);
+    bl.setAttribute('x', b.x + b.w / 2);
+    bl.setAttribute('y', b.y + b.h / 2 + 12);
+    bl.setAttribute('text-anchor', 'middle');
+    bl.setAttribute('dominant-baseline', 'central');
+    bl.setAttribute('pointer-events', 'none');
+    bl.style.fontFamily = "'Inter', sans-serif";
+    bl.style.fontSize = '9px';
+    bl.style.fontWeight = '600';
+    bl.style.letterSpacing = '.04em';
+    bl.style.fill = CATS[b.cat]?.textLight ? 'rgba(255,255,255,.8)' : 'var(--ink-2)';
+    bl.textContent = b.brand.length > 10 ? b.brand.slice(0, 10) + '…' : b.brand;
+    L.appendChild(bl);
+  }
+}
+
+// Override showDetail to also open edit panel on click
+// Wire booth click to open EDIT PANEL instead of (or in addition to) detail card
+function wireBoothEventsWithEdit() {
+  const hit = document.getElementById('layer-hitboxes');
+  hit.addEventListener('pointermove', e => {
+    const t = e.target.closest('.booth-hitbox');
+    if (!t) { hideTooltip(); return; }
+    const b = boothIndex.get(t.dataset.id);
+    if (b) showTooltip(b, e);
+  });
+  hit.addEventListener('pointerleave', hideTooltip);
+  hit.addEventListener('click', e => {
+    const t = e.target.closest('.booth-hitbox');
+    if (!t) return;
+    const b = boothIndex.get(t.dataset.id);
+    if (b) {
+      showDetail(b);
+      Stage.focusOn(b, 180);
+      openEditPanel(b);
+      hideTooltip();
+    }
+  });
+}
+
+// Close edit panel when clicking outside
+document.getElementById('canvasWrap').addEventListener('pointerdown', e => {
+  if (!e.target.closest('.booth-hitbox') && editPanel.classList.contains('is-open')) {
+    if (!e.target.closest('.edit-panel')) closeEditPanel();
+  }
+});
+
+/* ── resolve CSS variable สำหรับ SVG fill ── */
+function resolveCSSVar(varStr) {
+  // varStr = 'var(--c-sponsor)' → '#9BC18E'
+  const m = varStr.match(/var\(([^)]+)\)/);
+  if (!m) return varStr;
+  return getComputedStyle(document.documentElement).getPropertyValue(m[1]).trim() || varStr;
+}
+/* ════ State Persistence ════ */
+const LS_KEY = 'vithhub_floorplan_state_v1';
+function saveState() {
+  try {
+    localStorage.setItem(LS_KEY, JSON.stringify(
+      BOOTHS.map(b => ({ id:b.id, status:b.status, brand:b.brand, cat:b.cat, w:b.w, h:b.h, logo:b.logo }))
+    ));
+  } catch(e) {}
+}
+function restoreState() {
+  try {
+    const raw = localStorage.getItem(LS_KEY);
+    if (!raw) return false;
+    let restored = 0;
+    JSON.parse(raw).forEach(s => {
+      const b = boothIndex.get(s.id);
+      if (!b) return;
+      b.status = s.status||b.status; b.brand = s.brand||b.brand;
+      b.cat = s.cat||b.cat; b.w = s.w||b.w; b.h = s.h||b.h; b.logo = s.logo||b.logo;
+      restored++;
+    });
+    if (restored > 0) toast('✓ โหลดข้อมูลที่บันทึกไว้ · ' + restored + ' บูธ');
+    return restored > 0;
+  } catch(e) { return false; }
+}
+/* ════ PIN Authentication ════ */
+const ADMIN_PIN = '2026';          // ← เปลี่ยน PIN ตรงนี้
+const PIN_SESSION_KEY = 'vith_admin_unlocked';
+let isAdminUnlocked = false;
+
+function checkAdminSession() {
+  try { if (sessionStorage.getItem(PIN_SESSION_KEY) === 'yes') setAdminMode(true, false); } catch(e) {}
+}
+function setAdminMode(unlocked, showToast=true) {
+  isAdminUnlocked = unlocked;
+  const badge = document.getElementById('adminBadge');
+  document.getElementById('adminBadgeLabel').textContent = unlocked ? 'Admin ✓' : 'Admin';
+  badge.classList.toggle('unlocked', unlocked);
+  try { unlocked ? sessionStorage.setItem(PIN_SESSION_KEY,'yes') : sessionStorage.removeItem(PIN_SESSION_KEY); } catch(e) {}
+  if (showToast) toast(unlocked ? '✓ Admin mode เปิดแล้ว' : 'ออกจาก Admin mode แล้ว');
+}
+
+const pinOverlay = document.getElementById('pinOverlay');
+let pinBuffer = '';
+function openPinModal() {
+  pinBuffer=''; updatePinDots();
+  document.getElementById('pinError').classList.remove('show');
+  pinOverlay.classList.add('is-open');
+}
+function closePinModal() { pinOverlay.classList.remove('is-open'); pinBuffer=''; updatePinDots(); }
+function updatePinDots() {
+  for (let i=0;i<4;i++) {
+    const d = document.getElementById('pd'+i);
+    d.classList.toggle('filled', i<pinBuffer.length); d.classList.remove('error');
+  }
+}
+function pinError() {
+  for (let i=0;i<4;i++) document.getElementById('pd'+i).classList.add('error');
+  document.getElementById('pinError').classList.add('show');
+  setTimeout(() => { pinBuffer=''; updatePinDots(); document.getElementById('pinError').classList.remove('show'); }, 900);
+}
+function pinSubmit() {
+  if (pinBuffer === ADMIN_PIN) { closePinModal(); setAdminMode(true); }
+  else pinError();
+}
+document.getElementById('pinOverlay').addEventListener('click', e => {
+  if (e.target === pinOverlay) { closePinModal(); return; }
+  const key = e.target.closest('.pin-key');
+  if (!key) return;
+  const k = key.dataset.k;
+  if (k==='del') { pinBuffer=pinBuffer.slice(0,-1); updatePinDots(); }
+  else if (k==='clr') { pinBuffer=''; updatePinDots(); }
+  else if (pinBuffer.length<4) { pinBuffer+=k; updatePinDots(); if(pinBuffer.length===4) setTimeout(pinSubmit,120); }
+});
+document.addEventListener('keydown', e => {
+  if (!pinOverlay.classList.contains('is-open')) return;
+  if (e.key>='0'&&e.key<='9'&&pinBuffer.length<4) { pinBuffer+=e.key; updatePinDots(); if(pinBuffer.length===4) setTimeout(pinSubmit,120); }
+  else if (e.key==='Backspace') { pinBuffer=pinBuffer.slice(0,-1); updatePinDots(); }
+  else if (e.key==='Escape') closePinModal();
+});
+document.getElementById('pinCancel').onclick = closePinModal;
+document.getElementById('adminBadge').onclick = () => isAdminUnlocked ? setAdminMode(false) : openPinModal();
+
+/* ── Normalize booth ID query (รองรับ A01, a01, A-01) ── */
+function normalizeBoothId(q) {
+  q = q.trim().toUpperCase();
+  // เพิ่ม dash ถ้าไม่มี: A01 → A-01, P03 → P-03, S01 → S-01
+  if (/^([A-Z]+)(\d+)$/.test(q)) {
+    q = q.replace(/^([A-Z]+)(\d+)$/, '$1-$2');
+  }
+  // เพิ่ม leading zero ถ้าหลัก: A-1 → A-01
+  if (/^([A-Z]+-)(\d)$/.test(q)) {
+    q = q.replace(/^([A-Z]+-)(\d)$/, '$10$2');
+  }
+  return q;
+}
+
+// Wire booth click
+function wireBoothEventsWithEdit() {
+  const hit = document.getElementById('layer-hitboxes');
+  hit.addEventListener('pointermove', e => {
+    const t = e.target.closest('.booth-hitbox');
+    if (!t) { hideTooltip(); return; }
+    const b = boothIndex.get(t.dataset.id);
+    if (b) showTooltip(b, e);
+  });
+  hit.addEventListener('pointerleave', hideTooltip);
+  hit.addEventListener('click', e => {
+    const t = e.target.closest('.booth-hitbox');
+    if (!t) return;
+    const b = boothIndex.get(t.dataset.id);
+    if (!b) return;
+    showDetail(b);
+    Stage.focusOn(b, 180);
+    if (typeof isAdminUnlocked !== 'undefined' && isAdminUnlocked) openEditPanel(b);
+    hideTooltip();
+  });
+}
+
+
+// ════ Boot ════
+validateFootprint();   // ตรวจ footprint ทุก booth ก่อน render
+renderStructure();
+renderBooths();
+renderDebugGrid();
+renderStats();
+renderLegend();
+renderStatusList();
+renderMinimap();
+wireBoothEventsWithEdit();
+if (typeof restoreState === 'function') {
+  const had = restoreState();
+  if (had) BOOTHS.forEach(b => updateBoothVisual(b));
+}
+if (typeof checkAdminSession === 'function') checkAdminSession();
+document.getElementById('hudBooths').textContent = BOOTHS.length;
+if (document.getElementById('btnPrint')) {
+  document.getElementById('btnPrint').addEventListener('click', function() {
+    if (typeof renderPrintLegend === 'function') { renderPrintLegend(); renderPrintStats(); renderPrintDate(); }
+    var svg = document.getElementById('stage');
+    var orig = svg.getAttribute('viewBox');
+    svg.setAttribute('viewBox','0 0 2200 1400');
+    window.print();
+    svg.setAttribute('viewBox', orig);
+  });
+}
+window.addEventListener('resize', () => {
+  // Recompute minimap viewport on resize
+  Stage.zoomBy(1);
+});
+</script>
+</body>
+</html>
