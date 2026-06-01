@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exhibitor Business Profile — VITH HUB</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Sarabun:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0B1F3B;
+  --navy-mid: #112847;
+  --navy-light: #1a3558;
+  --gold: #D4AF37;
+  --gold-light: #E8C94A;
+  --gold-dim: rgba(212,175,55,0.12);
+  --gold-border: rgba(212,175,55,0.25);
+  --white: #FBF8F2;
+  --white-dim: rgba(251,248,242,0.88);
+  --white-mid: rgba(251,248,242,0.68);
+  --white-muted: rgba(251,248,242,0.55);
+  --radius: 4px;
+  --radius-lg: 8px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--navy);color:var(--white);font-family:'Sarabun',sans-serif;font-weight:400;line-height:1.7;min-height:100vh;overflow-x:hidden;font-size:15.5px;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(212,175,55,0.07) 0%,transparent 60%);pointer-events:none;z-index:0}
+.noise{position:fixed;inset:0;opacity:.022;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");pointer-events:none;z-index:0}
+.wrap{position:relative;z-index:1;max-width:780px;margin:0 auto;padding:0 24px 80px}
+
+/* HEADER */
+.header{padding:48px 0 52px;border-bottom:1px solid var(--gold-border);margin-bottom:48px}
+.header-top{display:flex;align-items:center;gap:12px;margin-bottom:36px}
+.logo-mark{width:34px;height:34px;border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center}
+.logo-mark span{font-family:'Bebas Neue',sans-serif;font-size:15px;color:var(--gold);letter-spacing:1px}
+.logo-text{font-family:'Bebas Neue',sans-serif;font-size:17px;letter-spacing:4px;color:var(--white)}
+.page-eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:10px}
+.header-title{font-family:'DM Serif Display',serif;font-size:clamp(32px,5.5vw,50px);line-height:1.08;color:var(--white);margin-bottom:6px}
+.header-title em{font-style:italic;color:var(--gold)}
+.header-sub{font-size:15.5px;color:var(--white-dim);max-width:520px;line-height:1.8;margin-top:14px}
+.header-meta{display:flex;gap:28px;margin-top:28px;flex-wrap:wrap}
+.meta-item{display:flex;flex-direction:column;gap:3px}
+.meta-label{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);font-weight:600}
+.meta-value{font-size:13px;color:var(--white-dim)}
+
+/* DRAFT BANNER */
+.draft-banner{background:rgba(212,175,55,0.08);border:1px solid var(--gold-border);border-radius:var(--radius);padding:10px 16px;font-size:13px;color:var(--gold);margin-bottom:24px;display:flex;align-items:center;gap:8px}
+.draft-banner.hidden{display:none!important}
+
+/* PROGRESS */
+.progress-bar{display:flex;align-items:center;margin-bottom:48px}
+.step-item{display:flex;align-items:center;gap:10px;flex:1}
+.step-item:last-child{flex:0}
+.step-dot{width:28px;height:28px;border-radius:50%;border:1.5px solid rgba(245,240,232,0.15);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:var(--white-mid);flex-shrink:0;transition:all 0.3s}
+.step-dot.active{border-color:var(--gold);color:var(--gold);background:var(--gold-dim)}
+.step-dot.done{border-color:var(--gold);background:var(--gold);color:var(--navy)}
+.step-label{font-size:12px;color:var(--white-mid);white-space:nowrap;transition:color 0.3s}
+.step-label.active{color:var(--white-dim)}
+.step-line{flex:1;height:1px;background:var(--gold-border);margin:0 8px}
+
+/* SECTIONS */
+.section{display:none;animation:fadeUp 0.35s ease both}
+.section.active{display:block}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.section-eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:8px}
+.section-title{font-family:'DM Serif Display',serif;font-size:26px;color:var(--white);margin-bottom:28px;line-height:1.2}
+
+/* FIELDS */
+.field-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px}
+.field-grid.single{grid-template-columns:1fr}
+.field-grid.three{grid-template-columns:1fr 1fr 1fr}
+.field{display:flex;flex-direction:column;gap:7px}
+.field.span2{grid-column:span 2}
+label.field-label{font-size:14px;color:var(--white);font-weight:600}
+label.field-label .req{color:var(--gold);margin-left:2px}
+input[type=text],input[type=email],input[type=tel],select,textarea{background:rgba(255,255,255,0.06);border:1px solid rgba(251,248,242,0.18);border-radius:var(--radius);color:var(--white);font-family:'Sarabun',sans-serif;font-size:15.5px;padding:13px 16px;width:100%;transition:border-color .2s,background .2s;outline:none;-webkit-appearance:none}
+input::placeholder,textarea::placeholder{color:rgba(251,248,242,0.45)}
+input:focus,select:focus,textarea:focus{border-color:var(--gold);background:rgba(212,175,55,0.05)}
+input.error,select.error,textarea.error{border-color:#e05252}
+select{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23D4AF37' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:44px}
+select option{background:var(--navy-mid);color:var(--white)}
+textarea{resize:vertical;min-height:90px;line-height:1.6}
+.field-hint{font-size:12.5px;color:var(--white-mid);margin-top:-2px}
+.field-error{font-size:12px;color:#e05252;display:none;margin-top:2px}
+
+/* CHECK GRID */
+.check-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.check-grid.three{grid-template-columns:1fr 1fr 1fr}
+.check-item{display:flex;align-items:center;gap:9px;padding:11px 13px;border:1px solid rgba(245,240,232,0.1);border-radius:var(--radius);cursor:pointer;transition:all .2s;-webkit-user-select:none;user-select:none}
+.check-item:hover{border-color:var(--gold-border);background:var(--gold-dim)}
+.check-item input[type=checkbox]{width:15px;height:15px;padding:0;accent-color:var(--gold);flex-shrink:0}
+.check-item span{font-size:14px;color:var(--white-dim)}
+
+/* RADIO GROUP */
+.radio-group{display:flex;flex-direction:column;gap:9px}
+.radio-item{display:flex;align-items:center;gap:9px;padding:11px 13px;border:1px solid rgba(245,240,232,0.1);border-radius:var(--radius);cursor:pointer;transition:all .2s;-webkit-user-select:none;user-select:none}
+.radio-item:hover{border-color:var(--gold-border);background:var(--gold-dim)}
+.radio-item.selected{border-color:var(--gold);background:var(--gold-dim)}
+.radio-item input[type=radio]{width:15px;height:15px;padding:0;accent-color:var(--gold);flex-shrink:0}
+.radio-item span{font-size:14px;color:var(--white-dim)}
+
+/* YES/NO */
+.yesno-group{display:flex;gap:9px}
+.yesno-btn{flex:1;padding:11px;border:1px solid rgba(245,240,232,0.12);border-radius:var(--radius);background:transparent;color:var(--white-mid);font-family:'Sarabun',sans-serif;font-size:14px;cursor:pointer;transition:all .2s;text-align:center;display:flex;align-items:center;justify-content:center;gap:6px}
+.yesno-btn:hover{border-color:var(--gold-border);color:var(--white-dim)}
+.yesno-btn.selected{border-color:var(--gold);background:var(--gold-dim);color:var(--gold)}
+.yesno-btn .dot{width:8px;height:8px;border-radius:50%;border:1.5px solid currentColor;flex-shrink:0}
+.yesno-btn.selected .dot{background:currentColor}
+
+/* UPLOAD */
+.upload-zone{border:1.5px dashed rgba(212,175,55,0.3);border-radius:var(--radius-lg);padding:28px 20px;text-align:center;cursor:pointer;transition:all .2s;position:relative;background:rgba(212,175,55,0.02)}
+.upload-zone:hover,.upload-zone.dragover{border-color:var(--gold);background:var(--gold-dim)}
+.upload-zone input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%;padding:0;border:none;background:none}
+.upload-icon{width:36px;height:36px;margin:0 auto 10px;opacity:.45}
+.upload-title{font-size:14px;color:var(--white-dim);margin-bottom:4px}
+.upload-title strong{color:var(--gold);font-weight:500}
+.upload-hint{font-size:12px;color:var(--white-mid)}
+.upload-types{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+.upload-type-tag{font-size:11px;padding:4px 10px;border:1px solid var(--gold-border);border-radius:20px;color:var(--gold);background:var(--gold-dim)}
+.file-list{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+.file-item{display:flex;align-items:center;gap:10px;padding:10px 13px;background:rgba(212,175,55,0.07);border:1px solid var(--gold-border);border-radius:var(--radius);animation:fadeUp .2s ease}
+.file-icon{font-size:17px;flex-shrink:0}
+.file-info{flex:1;min-width:0}
+.file-name{font-size:13px;color:var(--white);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.file-size{font-size:11px;color:var(--white-mid)}
+.file-remove{background:none;border:none;color:var(--white-mid);cursor:pointer;font-size:18px;line-height:1;padding:2px;flex-shrink:0;transition:color .2s}
+.file-remove:hover{color:#e05252}
+.file-progress{height:2px;background:var(--gold-border);border-radius:2px;margin-top:5px;overflow:hidden}
+.file-progress-bar{height:100%;background:var(--gold);border-radius:2px;width:0;transition:width 1.5s ease}
+
+/* DIVIDER */
+.divider{height:1px;background:var(--gold-border);margin:32px 0}
+
+/* SCORE PREVIEW */
+.score-preview{background:rgba(212,175,55,0.06);border:1px solid var(--gold-border);border-radius:var(--radius-lg);padding:20px 24px;margin-top:24px}
+.score-title{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:14px}
+.score-bar-wrap{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.score-bar-label{font-size:12px;color:var(--white-mid);width:120px;flex-shrink:0}
+.score-bar-track{flex:1;height:4px;background:rgba(245,240,232,0.1);border-radius:4px;overflow:hidden}
+.score-bar-fill{height:100%;background:var(--gold);border-radius:4px;transition:width .5s ease}
+.score-total{font-size:22px;font-family:'Bebas Neue',sans-serif;letter-spacing:2px;color:var(--gold);margin-top:12px}
+.score-badge{display:inline-block;font-size:11px;padding:3px 10px;border-radius:20px;margin-left:10px;vertical-align:middle;font-family:'Sarabun',sans-serif;font-weight:600}
+.badge-basic{background:rgba(245,240,232,0.1);color:var(--white-mid)}
+.badge-ready{background:rgba(26,107,60,0.2);color:#6db;border:1px solid rgba(26,107,60,0.3)}
+.badge-premium{background:rgba(212,175,55,0.15);color:var(--gold);border:1px solid var(--gold-border)}
+
+/* NAV */
+.nav-buttons{display:flex;align-items:center;justify-content:space-between;margin-top:44px;padding-top:28px;border-top:1px solid var(--gold-border)}
+.btn-back{background:none;border:1px solid rgba(245,240,232,0.15);color:var(--white-dim);font-family:'Sarabun',sans-serif;font-size:14px;padding:11px 22px;border-radius:var(--radius);cursor:pointer;transition:all .2s}
+.btn-back:hover{border-color:var(--white-dim);color:var(--white)}
+.btn-next{background:var(--gold);border:none;color:var(--navy);font-family:'Sarabun',sans-serif;font-size:14px;font-weight:600;padding:13px 32px;border-radius:var(--radius);cursor:pointer;transition:all .2s;letter-spacing:.5px;display:flex;align-items:center;gap:8px}
+.btn-next:hover{background:var(--gold-light);transform:translateY(-1px)}
+.btn-submit{background:var(--gold);border:none;color:var(--navy);font-family:'Sarabun',sans-serif;font-size:15px;font-weight:700;padding:15px 44px;border-radius:var(--radius);cursor:pointer;transition:all .2s;letter-spacing:1px}
+.btn-submit:hover{background:var(--gold-light);transform:translateY(-1px)}
+.btn-submit:disabled,.btn-next:disabled{opacity:.5;cursor:not-allowed;transform:none}
+
+/* STATUS */
+.status-msg{padding:12px 16px;border-radius:var(--radius);font-size:13px;margin-top:10px;display:none}
+.status-msg.error{background:rgba(192,57,43,0.12);border:1px solid rgba(192,57,43,0.25);color:#e88}
+.status-msg.info{background:var(--gold-dim);border:1px solid var(--gold-border);color:var(--gold)}
+
+/* CHAR COUNT */
+.char-count{font-size:11px;color:var(--white-mid);text-align:right;margin-top:3px}
+
+/* CONSENT */
+.consent-box{display:flex;align-items:flex-start;gap:10px;padding:14px 16px;border:1px solid rgba(245,240,232,0.1);border-radius:var(--radius);cursor:pointer;margin-bottom:20px}
+.consent-box input{width:16px;height:16px;margin-top:2px;accent-color:var(--gold);flex-shrink:0}
+.consent-box span{font-size:13px;color:var(--white-dim);line-height:1.6}
+
+/* SUCCESS */
+.success-screen{display:none;text-align:center;padding:72px 0;animation:fadeUp .5s ease}
+.success-icon{width:68px;height:68px;border:2px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 28px;font-size:26px}
+.success-title{font-family:'DM Serif Display',serif;font-size:34px;color:var(--white);margin-bottom:14px}
+.success-id{display:inline-block;background:var(--gold-dim);border:1px solid var(--gold-border);color:var(--gold);font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:3px;padding:10px 28px;border-radius:var(--radius);margin-bottom:22px}
+.success-sub{font-size:15px;color:var(--white-dim);max-width:400px;margin:0 auto;line-height:1.75}
+
+@media(max-width:600px){
+  .field-grid,.field-grid.three{grid-template-columns:1fr}
+  .field.span2{grid-column:span 1}
+  .check-grid,.check-grid.three{grid-template-columns:1fr 1fr}
+  .header-meta{gap:16px}
+}
+</style>
+</head>
+<body>
+<div class="noise"></div>
+<div class="wrap">
+
+  <header class="header">
+    <div class="header-top">
+      <div class="logo-mark"><span>VH</span></div>
+      <div class="logo-text">VITH HUB</div>
+    </div>
+    <div class="page-eyebrow">Mekong Trade Gateway 2026</div>
+    <h1 class="header-title"><em>Exhibitor</em><br>Business Profile</h1>
+    <p class="header-sub">กรอกข้อมูลแบรนด์เพื่อใช้ในการคัดเลือกและจับคู่ธุรกิจกับ Buyer, Distributor และนักลงทุนในงาน ทีมงานจะติดต่อกลับภายใน 48 ชั่วโมง</p>
+    <div class="header-meta">
+      <div class="meta-item"><span class="meta-label">งาน</span><span class="meta-value">VITH HUB 2026</span></div>
+      <div class="meta-item"><span class="meta-label">วันที่</span><span class="meta-value">25–29 มิถุนายน 2569</span></div>
+      <div class="meta-item"><span class="meta-label">สถานที่</span><span class="meta-value">Big C Vientiane, Laos</span></div>
+    </div>
+  </header>
+
+  <div id="draftBanner" class="draft-banner hidden">
+    <span>●</span> พบข้อมูลที่กรอกไว้ก่อนหน้า — <strong style="cursor:pointer;text-decoration:underline" onclick="loadDraft()">โหลดต่อ</strong> หรือ <strong style="cursor:pointer;text-decoration:underline" onclick="clearDraft()">เริ่มใหม่</strong>
+  </div>
+
+  <!-- PROGRESS -->
+  <div class="progress-bar" id="progressBar">
+    <div class="step-item">
+      <div class="step-dot active" id="dot1">1</div>
+      <span class="step-label active" id="lbl1">ข้อมูลแบรนด์</span>
+    </div>
+    <div class="step-line"></div>
+    <div class="step-item">
+      <div class="step-dot" id="dot2">2</div>
+      <span class="step-label" id="lbl2">สินค้า & การผลิต</span>
+    </div>
+    <div class="step-line"></div>
+    <div class="step-item">
+      <div class="step-dot" id="dot3">3</div>
+      <span class="step-label" id="lbl3">Matching Goals</span>
+    </div>
+    <div class="step-line"></div>
+    <div class="step-item">
+      <div class="step-dot" id="dot4">4</div>
+      <span class="step-label" id="lbl4">เอกสาร</span>
+    </div>
+  </div>
+
+  <!-- STEP 1: BRAND -->
+  <div class="section active" id="step1">
+    <div class="section-eyebrow">Step 1 of 4</div>
+    <h2 class="section-title">ข้อมูลแบรนด์</h2>
+
+    <div class="field-grid">
+      <div class="field span2">
+        <label class="field-label">ชื่อแบรนด์ <span class="req">*</span></label>
+        <input type="text" id="brandName" placeholder="เช่น คุณยายแม่กลอง" oninput="saveDraft()"/>
+        <span class="field-error" id="err_brandName">กรุณากรอกชื่อแบรนด์</span>
+      </div>
+    </div>
+
+    <div class="field-grid">
+      <div class="field">
+        <label class="field-label">ชื่อผู้ติดต่อ <span class="req">*</span></label>
+        <input type="text" id="contactName" placeholder="ชื่อ-นามสกุล" oninput="saveDraft()"/>
+        <span class="field-error" id="err_contactName">กรุณากรอกชื่อผู้ติดต่อ</span>
+      </div>
+      <div class="field">
+        <label class="field-label">ตำแหน่ง</label>
+        <input type="text" id="position" placeholder="เช่น เจ้าของ, ผู้จัดการฝ่ายขาย" oninput="saveDraft()"/>
+      </div>
+    </div>
+
+    <div class="field-grid">
+      <div class="field">
+        <label class="field-label">เบอร์โทรศัพท์ <span class="req">*</span></label>
+        <input type="tel" id="phone" placeholder="08x-xxx-xxxx" oninput="saveDraft()"/>
+        <span class="field-error" id="err_phone">กรุณากรอกเบอร์โทร</span>
+      </div>
+      <div class="field">
+        <label class="field-label">Email <span class="req">*</span></label>
+        <input type="email" id="email" placeholder="brand@email.com" oninput="saveDraft()"/>
+        <span class="field-error" id="err_email">กรุณากรอก email ให้ถูกต้อง</span>
+      </div>
+    </div>
+
+    <div class="field-grid">
+      <div class="field">
+        <label class="field-label">LINE ID</label>
+        <input type="text" id="lineId" placeholder="@line_id" oninput="saveDraft()"/>
+      </div>
+      <div class="field">
+        <label class="field-label">หมวดสินค้าหลัก <span class="req">*</span></label>
+        <select id="category" onchange="saveDraft()">
+          <option value="">— เลือกหมวดสินค้า —</option>
+          <option>อาหารและเครื่องปรุง</option>
+          <option>เครื่องดื่ม</option>
+          <option>ของว่างและขนม</option>
+          <option>ผลิตภัณฑ์เพื่อสุขภาพ</option>
+          <option>เครื่องสำอางและความงาม</option>
+          <option>สินค้า OEM / Private Label</option>
+          <option>อื่นๆ</option>
+        </select>
+        <span class="field-error" id="err_category">กรุณาเลือกหมวดสินค้า</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="field-label">ตลาดเป้าหมาย</label>
+      <div class="check-grid">
+        <label class="check-item"><input type="checkbox" name="market" value="Laos" checked onchange="saveDraft()"><span>ลาว (Laos)</span></label>
+        <label class="check-item"><input type="checkbox" name="market" value="Vietnam" onchange="saveDraft()"><span>เวียดนาม (Vietnam)</span></label>
+        <label class="check-item"><input type="checkbox" name="market" value="Cambodia" onchange="saveDraft()"><span>กัมพูชา (Cambodia)</span></label>
+        <label class="check-item"><input type="checkbox" name="market" value="Myanmar" onchange="saveDraft()"><span>เมียนมา (Myanmar)</span></label>
+      </div>
+    </div>
+
+    <div class="field" style="margin-top:18px">
+      <label class="field-label">ประเทศที่ส่งออกอยู่แล้ว (ถ้ามี)</label>
+      <input type="text" id="currentExport" placeholder="เช่น Malaysia, Singapore หรือ ยังไม่มี" oninput="saveDraft()"/>
+      <span class="field-hint">ข้อมูลนี้ช่วย matching ได้มากขึ้น</span>
+    </div>
+
+    <div class="nav-buttons">
+      <div></div>
+      <button class="btn-next" onclick="goNext(1)">ถัดไป →</button>
+    </div>
+  </div>
+
+  <!-- STEP 2: PRODUCT & PRODUCTION -->
+  <div class="section" id="step2">
+    <div class="section-eyebrow">Step 2 of 4</div>
+    <h2 class="section-title">สินค้าและการผลิต</h2>
+
+    <div class="field-grid">
+      <div class="field">
+        <label class="field-label">ชื่อสินค้าหลัก <span class="req">*</span></label>
+        <input type="text" id="productName" placeholder="เช่น น้ำพริกปลาทู" oninput="saveDraft()"/>
+        <span class="field-error" id="err_productName">กรุณากรอกชื่อสินค้า</span>
+      </div>
+      <div class="field">
+        <label class="field-label">ราคาขายปลีก (บาท)</label>
+        <input type="text" id="price" placeholder="เช่น 45–80 บาท" oninput="saveDraft()"/>
+      </div>
+    </div>
+
+    <div class="field-grid">
+      <div class="field">
+        <label class="field-label">MOQ (จำนวนขั้นต่ำต่อออเดอร์)</label>
+        <input type="text" id="moq" placeholder="เช่น 50 ชิ้น หรือ 1 ลัง" oninput="saveDraft()"/>
+      </div>
+      <div class="field">
+        <label class="field-label">อายุสินค้า (วัน)</label>
+        <input type="text" id="shelfLife" placeholder="เช่น 365" oninput="saveDraft()"/>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="field-label">กำลังการผลิตต่อเดือน <span class="req">*</span></label>
+      <div class="radio-group" id="capacityGroup">
+        <label class="radio-item" onclick="selectRadio('capacity','lt1000',this)"><input type="radio" name="capacity" value="lt1000"><span>ต่ำกว่า 1,000 ชิ้น / เดือน</span></label>
+        <label class="radio-item" onclick="selectRadio('capacity','1k_5k',this)"><input type="radio" name="capacity" value="1k_5k"><span>1,000 – 5,000 ชิ้น / เดือน</span></label>
+        <label class="radio-item" onclick="selectRadio('capacity','5k_50k',this)"><input type="radio" name="capacity" value="5k_50k"><span>5,000 – 50,000 ชิ้น / เดือน</span></label>
+        <label class="radio-item" onclick="selectRadio('capacity','gt50k',this)"><input type="radio" name="capacity" value="gt50k"><span>มากกว่า 50,000 ชิ้น / เดือน</span></label>
+      </div>
+      <span class="field-error" id="err_capacity">กรุณาเลือกกำลังการผลิต</span>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="field">
+      <label class="field-label">ลักษณะการผลิต <span class="req">*</span></label>
+      <div class="radio-group" id="factoryGroup">
+        <label class="radio-item" onclick="selectRadio('factory','own',this)"><input type="radio" name="factory" value="own"><span>โรงงานตนเอง</span></label>
+        <label class="radio-item" onclick="selectRadio('factory','oem',this)"><input type="radio" name="factory" value="oem"><span>OEM (จ้างผลิต)</span></label>
+        <label class="radio-item" onclick="selectRadio('factory','both',this)"><input type="radio" name="factory" value="both"><span>ทั้งสองแบบ</span></label>
+      </div>
+      <span class="field-error" id="err_factory">กรุณาเลือกลักษณะการผลิต</span>
+    </div>
+
+    <div class="field" style="margin-top:18px">
+      <label class="field-label">ช่องทางจำหน่ายปัจจุบัน</label>
+      <div class="check-grid three">
+        <label class="check-item"><input type="checkbox" name="channel" value="Modern Trade"><span>Modern Trade</span></label>
+        <label class="check-item"><input type="checkbox" name="channel" value="Traditional Trade"><span>Traditional Trade</span></label>
+        <label class="check-item"><input type="checkbox" name="channel" value="Online"><span>Online / E-commerce</span></label>
+        <label class="check-item"><input type="checkbox" name="channel" value="Export"><span>Export ต่างประเทศ</span></label>
+        <label class="check-item"><input type="checkbox" name="channel" value="Distributor"><span>Distributor</span></label>
+        <label class="check-item"><input type="checkbox" name="channel" value="ไม่มีหน้าร้าน"><span>ยังไม่มีหน้าร้าน</span></label>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="field">
+      <label class="field-label">มาตรฐานและการรับรอง</label>
+      <div class="check-grid three">
+        <label class="check-item"><input type="checkbox" name="cert" value="HACCP"><span>HACCP</span></label>
+        <label class="check-item"><input type="checkbox" name="cert" value="FDA"><span>อย. (FDA)</span></label>
+        <label class="check-item"><input type="checkbox" name="cert" value="GMP"><span>GMP</span></label>
+        <label class="check-item"><input type="checkbox" name="cert" value="Halal"><span>Halal</span></label>
+        <label class="check-item"><input type="checkbox" name="cert" value="Organic"><span>Organic</span></label>
+        <label class="check-item"><input type="checkbox" name="cert" value="ISO"><span>ISO</span></label>
+      </div>
+    </div>
+
+    <div class="field" style="margin-top:18px">
+      <label class="field-label">รายละเอียดสินค้า <span class="req">*</span></label>
+      <textarea id="description" placeholder="อธิบายสินค้า จุดเด่น กลุ่มเป้าหมาย..." maxlength="500" oninput="updateCount(this,'descCount');saveDraft()"></textarea>
+      <div class="char-count"><span id="descCount">0</span> / 500</div>
+      <span class="field-error" id="err_description">กรุณากรอกรายละเอียดสินค้า</span>
+    </div>
+
+    <div class="nav-buttons">
+      <button class="btn-back" onclick="goBack(2)">← ย้อนกลับ</button>
+      <button class="btn-next" onclick="goNext(2)">ถัดไป →</button>
+    </div>
+  </div>
+
+  <!-- STEP 3: MATCHING GOALS -->
+  <div class="section" id="step3">
+    <div class="section-eyebrow">Step 3 of 4</div>
+    <h2 class="section-title">Matching Goals</h2>
+    <p style="font-size:14px;color:var(--white-dim);margin-bottom:28px;line-height:1.7">ข้อมูลนี้คือหัวใจของระบบ AI Matching — ยิ่งกรอกละเอียด ยิ่งได้คู่ธุรกิจที่ตรงมากขึ้น</p>
+
+    <div class="field">
+      <label class="field-label">ต้องการพบใครในงาน <span class="req">*</span></label>
+      <div class="check-grid three">
+        <label class="check-item"><input type="checkbox" name="target" value="Distributor" onchange="updateScore()"><span>Distributor</span></label>
+        <label class="check-item"><input type="checkbox" name="target" value="นักลงทุน" onchange="updateScore()"><span>นักลงทุน</span></label>
+        <label class="check-item"><input type="checkbox" name="target" value="Modern Trade" onchange="updateScore()"><span>Modern Trade</span></label>
+        <label class="check-item"><input type="checkbox" name="target" value="Retail Buyer" onchange="updateScore()"><span>Retail Buyer</span></label>
+        <label class="check-item"><input type="checkbox" name="target" value="Franchise Partner" onchange="updateScore()"><span>Franchise Partner</span></label>
+        <label class="check-item"><input type="checkbox" name="target" value="OEM Partner" onchange="updateScore()"><span>OEM Partner</span></label>
+        <label class="check-item"><input type="checkbox" name="target" value="Agent" onchange="updateScore()"><span>Agent / ตัวแทน</span></label>
+        <label class="check-item"><input type="checkbox" name="target" value="Local Partner" onchange="updateScore()"><span>Local Partner (Laos)</span></label>
+      </div>
+      <span class="field-error" id="err_target">กรุณาเลือกอย่างน้อย 1 ข้อ</span>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="field-grid">
+      <div class="field">
+        <label class="field-label">ต้องการเงินทุนเพิ่มเติม?</label>
+        <div class="yesno-group">
+          <button class="yesno-btn selected" id="funding_no" onclick="setYesNo('funding',false)"><span class="dot"></span> ไม่ต้องการ</button>
+          <button class="yesno-btn" id="funding_yes" onclick="setYesNo('funding',true)"><span class="dot"></span> ต้องการ</button>
+        </div>
+      </div>
+      <div class="field">
+        <label class="field-label">สนใจรับ OEM / Private Label?</label>
+        <div class="yesno-group">
+          <button class="yesno-btn selected" id="oem_no" onclick="setYesNo('oem',false)"><span class="dot"></span> ไม่สนใจ</button>
+          <button class="yesno-btn" id="oem_yes" onclick="setYesNo('oem',true)"><span class="dot"></span> สนใจ</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="field" style="margin-top:18px">
+      <label class="field-label">งบประมาณในการ expand ตลาด (ต่อปี)</label>
+      <select id="budget" onchange="saveDraft()">
+        <option value="">— เลือกช่วงงบประมาณ —</option>
+        <option>ต่ำกว่า 100,000 บาท</option>
+        <option>100,000 – 500,000 บาท</option>
+        <option>500,000 – 2,000,000 บาท</option>
+        <option>มากกว่า 2,000,000 บาท</option>
+        <option>ยังไม่มีงบประมาณที่ชัดเจน</option>
+      </select>
+    </div>
+
+    <!-- SCORE PREVIEW -->
+    <div class="score-preview" id="scorePreview">
+      <div class="score-title">Matching Readiness Score</div>
+      <div class="score-bar-wrap"><div class="score-bar-label">ข้อมูลครบถ้วน</div><div class="score-bar-track"><div class="score-bar-fill" id="bar_info" style="width:0%"></div></div></div>
+      <div class="score-bar-wrap"><div class="score-bar-label">มาตรฐาน / ใบรับรอง</div><div class="score-bar-track"><div class="score-bar-fill" id="bar_cert" style="width:0%"></div></div></div>
+      <div class="score-bar-wrap"><div class="score-bar-label">Export readiness</div><div class="score-bar-track"><div class="score-bar-fill" id="bar_export" style="width:0%"></div></div></div>
+      <div class="score-bar-wrap"><div class="score-bar-label">Matching target clarity</div><div class="score-bar-track"><div class="score-bar-fill" id="bar_match" style="width:0%"></div></div></div>
+      <div>
+        <span class="score-total" id="scoreTxt">0 / 100</span>
+        <span class="score-badge badge-basic" id="scoreBadge">Basic</span>
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <button class="btn-back" onclick="goBack(3)">← ย้อนกลับ</button>
+      <button class="btn-next" onclick="goNext(3)">ถัดไป →</button>
+    </div>
+  </div>
+
+  <!-- STEP 4: DOCUMENTS -->
+  <div class="section" id="step4">
+    <div class="section-eyebrow">Step 4 of 4</div>
+    <h2 class="section-title">เอกสารประกอบ</h2>
+
+    <div class="field">
+      <label class="field-label">อัปโหลดเอกสาร <span class="req">*</span></label>
+      <div class="upload-zone" id="uploadZone">
+        <input type="file" id="fileInput" multiple accept=".pdf,.jpg,.jpeg,.png,.webp" onchange="handleFiles(this.files)">
+        <svg class="upload-icon" viewBox="0 0 40 40" fill="none">
+          <rect x="4" y="10" width="32" height="24" rx="3" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.5"/>
+          <path d="M20 28V18M15 23l5-5 5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <p class="upload-title"><strong>คลิกเพื่อเลือกไฟล์</strong> หรือลากวางที่นี่</p>
+        <p class="upload-hint">PDF, JPG, PNG, WEBP — ไม่เกิน 10MB ต่อไฟล์ · สูงสุด 5 ไฟล์</p>
+        <div class="upload-types">
+          <span class="upload-type-tag">Product Catalog</span>
+          <span class="upload-type-tag">Company Profile</span>
+          <span class="upload-type-tag">Certificate</span>
+          <span class="upload-type-tag">Product Photo</span>
+        </div>
+      </div>
+      <div id="fileList" class="file-list"></div>
+      <span class="field-error" id="err_files">กรุณาอัปโหลดเอกสารอย่างน้อย 1 ไฟล์</span>
+    </div>
+
+    <div class="field" style="margin-top:18px">
+      <label class="field-label">หมายเหตุเพิ่มเติม</label>
+      <textarea id="notes" placeholder="ข้อมูลอื่นๆ ที่ต้องการแจ้งทีมงาน..." rows="3" maxlength="300" oninput="updateCount(this,'notesCount');saveDraft()"></textarea>
+      <div class="char-count"><span id="notesCount">0</span> / 300</div>
+    </div>
+
+    <div class="divider"></div>
+
+    <label class="consent-box">
+      <input type="checkbox" id="consent">
+      <span>ฉันยินยอมให้ VITH HUB ใช้ข้อมูลและเอกสารนี้เพื่อการประสานงาน, Business Matching, และการนำเสนอต่อ Buyer / Investor ในงาน</span>
+    </label>
+
+    <div id="statusMsg" class="status-msg"></div>
+
+    <div class="nav-buttons">
+      <button class="btn-back" onclick="goBack(4)">← ย้อนกลับ</button>
+      <button class="btn-submit" id="submitBtn" onclick="submitForm()">ส่ง Business Profile</button>
+    </div>
+  </div>
+
+  <!-- SUCCESS -->
+  <div class="success-screen" id="successScreen">
+    <div class="success-icon">✓</div>
+    <h2 class="success-title">ได้รับ Business Profile แล้ว</h2>
+    <div class="success-id" id="successId">BRAND-2026-001</div>
+    <p class="success-sub">ทีมงาน VITH HUB จะตรวจสอบข้อมูลและติดต่อกลับภายใน 48 ชั่วโมง ทาง LINE หรือ Email ที่ระบุไว้</p>
+  </div>
+
+</div>
+<script>
+const N8N_WEBHOOK = 'https://n8n.vithhub.asia/webhook/a3114d82-456f-4350-a855-57671551e7d4';
+const DRAFT_KEY = 'vith_hub_draft';
+
+let currentStep = 1;
+const totalSteps = 4;
+const state = { funding: false, oem: false };
+const files = [];
+
+// DRAFT
+function saveDraft() {
+  const d = {
+    brandName: v('brandName'), contactName: v('contactName'),
+    position: v('position'), phone: v('phone'), email: v('email'),
+    lineId: v('lineId'), category: v('category'),
+    currentExport: v('currentExport'),
+    productName: v('productName'), price: v('price'),
+    moq: v('moq'), shelfLife: v('shelfLife'),
+    description: v('description'), notes: v('notes'), budget: v('budget'),
+    funding: state.funding, oem: state.oem,
+    markets: checked('market'), certs: checked('cert'),
+    channels: checked('channel'), targets: checked('target'),
+    capacity: checkedRadio('capacity'), factory: checkedRadio('factory'),
+  };
+  try { localStorage.setItem(DRAFT_KEY, JSON.stringify(d)); } catch(e) {}
+}
+
+function loadDraft() {
+  try {
+    const d = JSON.parse(localStorage.getItem(DRAFT_KEY));
+    if (!d) return;
+    setV('brandName',d.brandName); setV('contactName',d.contactName);
+    setV('position',d.position); setV('phone',d.phone);
+    setV('email',d.email); setV('lineId',d.lineId);
+    setV('category',d.category); setV('currentExport',d.currentExport);
+    setV('productName',d.productName); setV('price',d.price);
+    setV('moq',d.moq); setV('shelfLife',d.shelfLife);
+    setV('description',d.description); setV('notes',d.notes);
+    setV('budget',d.budget);
+    if (d.funding !== undefined) setYesNo('funding', d.funding);
+    if (d.oem !== undefined) setYesNo('oem', d.oem);
+    setChecked('market', d.markets || []);
+    setChecked('cert', d.certs || []);
+    setChecked('channel', d.channels || []);
+    setChecked('target', d.targets || []);
+    if (d.capacity) document.querySelector(`input[name=capacity][value="${d.capacity}"]`)?.click();
+    if (d.factory) document.querySelector(`input[name=factory][value="${d.factory}"]`)?.click();
+    updateCount(document.getElementById('description'), 'descCount');
+    updateCount(document.getElementById('notes'), 'notesCount');
+    document.getElementById('draftBanner').classList.add('hidden');
+    updateScore();
+    showStatus('โหลดข้อมูลที่กรอกไว้แล้ว', 'info');
+  } catch(e) {}
+}
+
+function clearDraft() {
+  try { localStorage.removeItem(DRAFT_KEY); } catch(e) {}
+  document.getElementById('draftBanner').classList.add('hidden');
+}
+
+window.addEventListener('load', () => {
+  try {
+    const d = localStorage.getItem(DRAFT_KEY);
+    if (d && JSON.parse(d).brandName) {
+      document.getElementById('draftBanner').classList.remove('hidden');
+    }
+  } catch(e) {}
+});
+
+// HELPERS
+function v(id) { return document.getElementById(id)?.value || ''; }
+function setV(id, val) { const el = document.getElementById(id); if (el && val) el.value = val; }
+function checked(name) { return [...document.querySelectorAll(`input[name=${name}]:checked`)].map(e => e.value); }
+function checkedRadio(name) { return document.querySelector(`input[name=${name}]:checked`)?.value || ''; }
+function setChecked(name, vals) {
+  document.querySelectorAll(`input[name=${name}]`).forEach(el => { el.checked = vals.includes(el.value); });
+}
+
+// NAV
+function goNext(step) {
+  if (!validate(step)) return;
+  setStep(step + 1);
+}
+function goBack(step) { setStep(step - 1); }
+function setStep(n) {
+  document.getElementById('step' + currentStep).classList.remove('active');
+  currentStep = n;
+  document.getElementById('step' + n).classList.add('active');
+  updateProgress();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+function updateProgress() {
+  for (let i = 1; i <= totalSteps; i++) {
+    const dot = document.getElementById('dot' + i);
+    const lbl = document.getElementById('lbl' + i);
+    dot.className = 'step-dot' + (i < currentStep ? ' done' : i === currentStep ? ' active' : '');
+    dot.textContent = i < currentStep ? '✓' : i;
+    lbl.className = 'step-label' + (i === currentStep ? ' active' : '');
+  }
+}
+
+// VALIDATE
+function validate(step) {
+  let ok = true;
+  const rules = {
+    1: [['brandName',x=>x.trim().length>0,'err_brandName'],['contactName',x=>x.trim().length>0,'err_contactName'],['phone',x=>x.trim().length>=9,'err_phone'],['email',x=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(x),'err_email'],['category',x=>x!=='','err_category']],
+    2: [['productName',x=>x.trim().length>0,'err_productName'],['description',x=>x.trim().length>10,'err_description']],
+    3: [],
+    4: [],
+  };
+  (rules[step]||[]).forEach(([id,fn,eid]) => {
+    const el = document.getElementById(id);
+    const valid = fn(el.value);
+    el.classList.toggle('error', !valid);
+    const e = document.getElementById(eid);
+    if (e) e.style.display = valid ? 'none' : 'block';
+    if (!valid) ok = false;
+  });
+  if (step === 2) {
+    const cap = checkedRadio('capacity');
+    const fac = checkedRadio('factory');
+    document.getElementById('err_capacity').style.display = cap ? 'none' : 'block';
+    document.getElementById('err_factory').style.display = fac ? 'none' : 'block';
+    if (!cap || !fac) ok = false;
+  }
+  if (step === 3) {
+    const t = checked('target');
+    document.getElementById('err_target').style.display = t.length ? 'none' : 'block';
+    if (!t.length) ok = false;
+  }
+  if (step === 4) {
+    if (files.length === 0) { document.getElementById('err_files').style.display = 'block'; ok = false; }
+    if (!document.getElementById('consent').checked) { showStatus('กรุณายืนยันการยินยอมใช้ข้อมูล', 'error'); ok = false; }
+  }
+  return ok;
+}
+
+// RADIO
+function selectRadio(name, val, el) {
+  document.querySelectorAll(`input[name=${name}]`).forEach(r => {
+    r.closest('.radio-item').classList.remove('selected');
+  });
+  el.classList.add('selected');
+  saveDraft();
+}
+
+// YES/NO
+function setYesNo(key, val) {
+  state[key] = val;
+  document.getElementById(key+'_yes').classList.toggle('selected', val);
+  document.getElementById(key+'_no').classList.toggle('selected', !val);
+  saveDraft(); updateScore();
+}
+
+// SCORE
+function updateScore() {
+  const certs = checked('cert');
+  const targets = checked('target');
+  const exportVal = v('currentExport').toLowerCase();
+  const capacity = checkedRadio('capacity');
+
+  let info = 0, cert = 0, exp = 0, match = 0;
+
+  if (v('brandName')) info += 20;
+  if (v('productName')) info += 15;
+  if (v('description').length > 30) info += 15;
+  if (capacity) info += 20;
+  if (v('moq')) info += 10;
+  if (v('shelfLife')) info += 10;
+  if (v('budget') && v('budget') !== '') info += 10;
+  info = Math.min(info, 100);
+
+  if (certs.includes('HACCP')) cert += 35;
+  if (certs.includes('FDA')) cert += 30;
+  if (certs.includes('GMP')) cert += 20;
+  if (certs.includes('Halal')) cert += 15;
+  cert = Math.min(cert, 100);
+
+  if (exportVal && exportVal !== 'ยังไม่มี') exp += 50;
+  if (capacity === 'gt50k') exp += 30;
+  else if (capacity === '5k_50k') exp += 20;
+  else if (capacity === '1k_5k') exp += 10;
+  if (state.oem) exp += 20;
+  exp = Math.min(exp, 100);
+
+  match = Math.min(targets.length * 18, 100);
+
+  document.getElementById('bar_info').style.width = info + '%';
+  document.getElementById('bar_cert').style.width = cert + '%';
+  document.getElementById('bar_export').style.width = exp + '%';
+  document.getElementById('bar_match').style.width = match + '%';
+
+  const total = Math.round((info * 0.25) + (cert * 0.3) + (exp * 0.25) + (match * 0.2));
+  document.getElementById('scoreTxt').textContent = total + ' / 100';
+
+  const badge = document.getElementById('scoreBadge');
+  if (total >= 70) { badge.textContent = 'Investor Ready'; badge.className = 'score-badge badge-premium'; }
+  else if (total >= 45) { badge.textContent = 'Match Ready'; badge.className = 'score-badge badge-ready'; }
+  else { badge.textContent = 'Basic'; badge.className = 'score-badge badge-basic'; }
+}
+
+// FILE
+function handleFiles(incoming) {
+  for (const f of incoming) {
+    if (files.length >= 5) { showStatus('อัปโหลดได้สูงสุด 5 ไฟล์', 'error'); break; }
+    if (f.size > 10*1024*1024) { showStatus(`${f.name} มีขนาดเกิน 10MB`, 'error'); continue; }
+    files.push(f);
+    renderFile(f, files.length-1);
+  }
+  document.getElementById('err_files').style.display = files.length ? 'none' : 'block';
+}
+
+function renderFile(f, idx) {
+  const ext = f.name.split('.').pop().toLowerCase();
+  const icon = ['pdf'].includes(ext) ? '📄' : ['jpg','jpeg','png','webp'].includes(ext) ? '🖼️' : '📎';
+  const div = document.createElement('div');
+  div.className = 'file-item'; div.id = 'file_'+idx;
+  div.innerHTML = `<span class="file-icon">${icon}</span><div class="file-info"><div class="file-name">${f.name}</div><div class="file-size">${(f.size/1024/1024).toFixed(2)} MB</div><div class="file-progress"><div class="file-progress-bar" id="bar_f${idx}"></div></div></div><button class="file-remove" onclick="removeFile(${idx})" title="ลบ">×</button>`;
+  document.getElementById('fileList').appendChild(div);
+  setTimeout(() => { const b = document.getElementById('bar_f'+idx); if(b) b.style.width='100%'; }, 50);
+}
+
+function removeFile(idx) {
+  files.splice(idx, 1);
+  document.getElementById('fileList').innerHTML = '';
+  files.forEach((f,i) => renderFile(f,i));
+}
+
+const zone = document.getElementById('uploadZone');
+zone.addEventListener('dragover', e => { e.preventDefault(); zone.classList.add('dragover'); });
+zone.addEventListener('dragleave', () => zone.classList.remove('dragover'));
+zone.addEventListener('drop', e => { e.preventDefault(); zone.classList.remove('dragover'); handleFiles(e.dataTransfer.files); });
+
+// SUBMIT
+async function submitForm() {
+  if (!validate(4)) return;
+  const btn = document.getElementById('submitBtn');
+  btn.disabled = true; btn.textContent = 'กำลังส่ง...';
+
+  const payload = {
+    brand_name: v('brandName'), contact_name: v('contactName'),
+    position: v('position'), phone: v('phone'), email: v('email'),
+    line_id: v('lineId'), category: v('category'),
+    country_target: checked('market'), current_export: v('currentExport'),
+    product_name: v('productName'), price: v('price'),
+    moq: v('moq'), shelf_life: v('shelfLife'),
+    description: v('description'), certifications: checked('cert'),
+    capacity: checkedRadio('capacity'), factory_type: checkedRadio('factory'),
+    channels: checked('channel'), target_partners: checked('target'),
+    needs_funding: state.funding, interested_oem: state.oem,
+    budget: v('budget'), notes: v('notes'),
+    file_count: files.length, file_names: files.map(f=>f.name),
+    submitted_at: new Date().toISOString(), source: 'vith_hub_website_v2',
+  };
+
+  try {
+    if (N8N_WEBHOOK === 'YOUR_N8N_WEBHOOK_URL') {
+      await new Promise(r => setTimeout(r, 1600));
+      clearDraft();
+      showSuccess('BRAND-2026-' + String(Math.floor(Math.random()*900)+100).padStart(3,'0'));
+      return;
+    }
+    const fd = new FormData();
+    fd.append('data', JSON.stringify(payload));
+    files.forEach((f,i) => fd.append('file_'+i, f));
+    const res = await fetch(N8N_WEBHOOK, { method:'POST', body:fd });
+    if (!res.ok) throw new Error();
+    const data = await res.json();
+    clearDraft();
+    showSuccess(data.brand_id || 'BRAND-2026-???');
+  } catch(e) {
+    showStatus('เกิดข้อผิดพลาด กรุณาลองใหม่ หรือติดต่อ LINE @cef8930n', 'error');
+    btn.disabled = false; btn.textContent = 'ส่ง Business Profile';
+  }
+}
+
+function showSuccess(id) {
+  document.getElementById('step4').classList.remove('active');
+  document.getElementById('progressBar').style.display = 'none';
+  const s = document.getElementById('successScreen');
+  s.style.display = 'block';
+  document.getElementById('successId').textContent = id;
+  window.scrollTo({ top:0, behavior:'smooth' });
+}
+
+function showStatus(msg, type) {
+  const el = document.getElementById('statusMsg');
+  el.textContent = msg; el.className = 'status-msg '+type; el.style.display = 'block';
+  setTimeout(() => el.style.display = 'none', 5000);
+}
+
+function updateCount(el, spanId) {
+  const s = document.getElementById(spanId);
+  if (s) s.textContent = el.value.length;
+}
+
+// init score
+updateScore();
+document.querySelectorAll('input[name=cert],input[name=target]').forEach(el => el.addEventListener('change', updateScore));
+document.querySelectorAll('input[name=capacity]').forEach(el => el.addEventListener('change', updateScore));
+['brandName','productName','currentExport','moq','shelfLife','description'].forEach(id => {
+  const el = document.getElementById(id);
+  if (el) el.addEventListener('input', updateScore);
+});
+document.getElementById('budget')?.addEventListener('change', updateScore);
+</script>
+</body>
+</html>
