@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mekong Growth Expo 2026 — 15-Day Checklist</title>
+<style>
+  :root {
+    --bg: #0d0f12;
+    --surface: #161920;
+    --surface2: #1e222b;
+    --border: rgba(255,255,255,0.07);
+    --border2: rgba(255,255,255,0.13);
+    --text: #f0f2f5;
+    --muted: #7a8394;
+    --muted2: #555d6e;
+    --gold: #e8b84b;
+    --gold-dim: rgba(232,184,75,0.12);
+    --red: #e05252;
+    --red-dim: rgba(224,82,82,0.1);
+    --blue: #4d9de0;
+    --blue-dim: rgba(77,157,224,0.1);
+    --green: #3dbf7f;
+    --green-dim: rgba(61,191,127,0.1);
+    --amber: #f0a04a;
+    --amber-dim: rgba(240,160,74,0.1);
+    --teal: #35c4b0;
+    --teal-dim: rgba(53,196,176,0.1);
+    --radius: 10px;
+    --radius-sm: 6px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-size: 14px;
+    min-height: 100vh;
+  }
+
+  /* TOP HEADER */
+  .site-header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .header-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+    gap: 12px;
+  }
+  .logo-block { display: flex; align-items: center; gap: 10px; }
+  .logo-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 8px var(--gold);
+    flex-shrink: 0;
+  }
+  .logo-text { font-size: 13px; font-weight: 600; color: var(--text); letter-spacing: .02em; }
+  .logo-sub { font-size: 11px; color: var(--muted); margin-top: 1px; }
+  .header-right { display: flex; align-items: center; gap: 10px; }
+  .live-badge {
+    display: flex; align-items: center; gap: 5px;
+    font-size: 11px; color: var(--green);
+    background: var(--green-dim);
+    border: 1px solid rgba(61,191,127,0.2);
+    padding: 3px 9px; border-radius: 20px;
+  }
+  .live-dot {
+    width: 5px; height: 5px; border-radius: 50%;
+    background: var(--green);
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
+  .sync-btn {
+    background: none; border: 1px solid var(--border2);
+    color: var(--muted); font-size: 12px; padding: 4px 10px;
+    border-radius: var(--radius-sm); cursor: pointer; transition: all .15s;
+  }
+  .sync-btn:hover { color: var(--text); border-color: var(--border2); background: var(--surface2); }
+
+  /* MAIN */
+  .main { max-width: 860px; margin: 0 auto; padding: 24px 20px 60px; }
+
+  /* HERO */
+  .hero { margin-bottom: 24px; }
+  .hero-eyebrow {
+    font-size: 11px; font-weight: 600; letter-spacing: .1em;
+    color: var(--gold); text-transform: uppercase; margin-bottom: 8px;
+  }
+  .hero-title { font-size: 22px; font-weight: 700; color: var(--text); line-height: 1.2; margin-bottom: 4px; }
+  .hero-sub { font-size: 13px; color: var(--muted); }
+
+  /* PROGRESS */
+  .progress-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    margin-bottom: 20px;
+  }
+  .progress-top { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 10px; }
+  .progress-pct { font-size: 32px; font-weight: 700; color: var(--gold); line-height: 1; }
+  .progress-label { font-size: 12px; color: var(--muted); margin-bottom: 4px; }
+  .progress-count { font-size: 13px; color: var(--muted); }
+  .progress-bar-bg {
+    height: 5px; background: var(--surface2); border-radius: 3px; overflow: hidden;
+  }
+  .progress-bar-fill {
+    height: 100%; background: var(--gold); border-radius: 3px;
+    transition: width .4s ease; width: 0%;
+  }
+  .stat-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+  .stat-pill {
+    font-size: 11px; padding: 3px 10px; border-radius: 20px;
+    border: 1px solid; display: flex; align-items: center; gap: 4px;
+  }
+  .stat-pill.red { color: var(--red); border-color: rgba(224,82,82,0.25); background: var(--red-dim); }
+  .stat-pill.blue { color: var(--blue); border-color: rgba(77,157,224,0.25); background: var(--blue-dim); }
+  .stat-pill.green { color: var(--green); border-color: rgba(61,191,127,0.25); background: var(--green-dim); }
+  .stat-pill.amber { color: var(--amber); border-color: rgba(240,160,74,0.25); background: var(--amber-dim); }
+  .stat-pill.teal { color: var(--teal); border-color: rgba(53,196,176,0.25); background: var(--teal-dim); }
+  .stat-num { font-weight: 600; }
+
+  /* FILTERS */
+  .filter-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+  .f-btn {
+    font-size: 12px; padding: 5px 12px; border-radius: 20px;
+    border: 1px solid var(--border); background: none;
+    color: var(--muted); cursor: pointer; transition: all .15s;
+  }
+  .f-btn:hover { color: var(--text); border-color: var(--border2); }
+  .f-btn.active { color: var(--gold); border-color: rgba(232,184,75,0.4); background: var(--gold-dim); }
+
+  /* DAY SECTIONS */
+  .day-block { margin-bottom: 8px; }
+  .day-header {
+    display: flex; align-items: center; gap: 10px;
+    padding: 11px 14px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    cursor: pointer; transition: border-color .15s, background .15s;
+    user-select: none;
+  }
+  .day-header:hover { border-color: var(--border2); background: var(--surface2); }
+  .day-block.open .day-header {
+    border-radius: var(--radius) var(--radius) 0 0;
+    border-bottom-color: transparent;
+    background: var(--surface2);
+  }
+  .day-num-badge {
+    font-size: 10px; font-weight: 700; padding: 2px 8px;
+    border-radius: 20px; white-space: nowrap; flex-shrink: 0;
+  }
+  .badge-red { background: var(--red-dim); color: var(--red); border: 1px solid rgba(224,82,82,0.25); }
+  .badge-amber { background: var(--amber-dim); color: var(--amber); border: 1px solid rgba(240,160,74,0.25); }
+  .badge-blue { background: var(--blue-dim); color: var(--blue); border: 1px solid rgba(77,157,224,0.25); }
+  .badge-green { background: var(--green-dim); color: var(--green); border: 1px solid rgba(61,191,127,0.25); }
+  .day-title { font-size: 13px; font-weight: 500; color: var(--text); flex: 1; }
+  .day-date { font-size: 11px; color: var(--muted); white-space: nowrap; }
+  .day-prog-text { font-size: 11px; color: var(--muted); white-space: nowrap; }
+  .day-prog-mini {
+    width: 36px; height: 3px; background: var(--surface2);
+    border-radius: 2px; overflow: hidden; flex-shrink: 0;
+  }
+  .day-prog-mini-fill { height: 100%; background: var(--gold); border-radius: 2px; transition: width .3s; }
+  .chevron-icon {
+    font-size: 11px; color: var(--muted2); flex-shrink: 0;
+    transition: transform .2s;
+  }
+  .day-block.open .chevron-icon { transform: rotate(180deg); }
+
+  .task-list {
+    display: none;
+    border: 1px solid var(--border);
+    border-top: none;
+    border-radius: 0 0 var(--radius) var(--radius);
+    overflow: hidden;
+  }
+  .day-block.open .task-list { display: block; }
+
+  .task-item {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    cursor: pointer; transition: background .1s;
+  }
+  .task-item:last-child { border-bottom: none; }
+  .task-item:hover { background: var(--surface2); }
+  .task-item.done { opacity: .45; }
+
+  .task-cb {
+    width: 17px; height: 17px; border-radius: 4px;
+    border: 1.5px solid var(--border2);
+    flex-shrink: 0; margin-top: 1px;
+    display: flex; align-items: center; justify-content: center;
+    transition: all .15s;
+  }
+  .task-item.done .task-cb {
+    background: var(--green); border-color: var(--green);
+  }
+  .task-cb svg { display: none; }
+  .task-item.done .task-cb svg { display: block; }
+
+  .task-body { flex: 1; min-width: 0; }
+  .task-text { font-size: 13px; color: var(--text); line-height: 1.45; }
+  .task-item.done .task-text { text-decoration: line-through; color: var(--muted2); }
+  .task-meta { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 5px; }
+  .tag {
+    font-size: 10px; padding: 1px 7px; border-radius: 20px; font-weight: 500;
+  }
+  .tag-crit { background: var(--red-dim); color: var(--red); }
+  .tag-tech { background: var(--blue-dim); color: var(--blue); }
+  .tag-ops { background: var(--teal-dim); color: var(--teal); }
+  .tag-vip { background: var(--amber-dim); color: var(--amber); }
+  .tag-mkt { background: rgba(180,100,220,0.12); color: #c084fc; }
+
+  .who-badge {
+    font-size: 10px; padding: 1px 7px; border-radius: 20px;
+    background: var(--surface2); color: var(--muted);
+    border: 1px solid var(--border);
+  }
+
+  /* TOAST */
+  .toast {
+    position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(20px);
+    background: var(--surface2); border: 1px solid var(--border2);
+    color: var(--text); font-size: 12px; padding: 8px 16px;
+    border-radius: 20px; opacity: 0; transition: all .25s; pointer-events: none;
+    z-index: 999; white-space: nowrap;
+  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  /* SYNC STATUS */
+  .sync-status {
+    font-size: 11px; color: var(--muted2); text-align: center;
+    margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border);
+  }
+
+  @media (max-width: 480px) {
+    .main { padding: 16px 12px 60px; }
+    .hero-title { font-size: 18px; }
+    .day-date { display: none; }
+    .progress-pct { font-size: 26px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo-block">
+      <div class="logo-dot"></div>
+      <div>
+        <div class="logo-text">MEKONG GROWTH EXPO 2026</div>
+        <div class="logo-sub">15-Day Sprint Checklist</div>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="live-badge"><div class="live-dot"></div>Shared</div>
+      <button class="sync-btn" onclick="syncNow()">↻ Sync</button>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+  <div class="hero">
+    <div class="hero-eyebrow">Big C Vientiane, Lao PDR</div>
+    <div class="hero-title">25 – 29 มิถุนายน 2569</div>
+    <div class="hero-sub">คลิกที่งานแต่ละข้อเพื่อ tick ✓ · สถานะซิงค์ร่วมกันทุกคน</div>
+  </div>
+
+  <div class="progress-card">
+    <div class="progress-top">
+      <div>
+        <div class="progress-label">ความคืบหน้าทั้งหมด</div>
+        <div class="progress-pct" id="pct">0%</div>
+      </div>
+      <div style="text-align:right">
+        <div class="progress-count" id="count-text">0 / 0 งาน</div>
+        <div style="font-size:11px;color:var(--muted);margin-top:3px" id="days-left">D-15 เหลืออีก 15 วัน</div>
+      </div>
+    </div>
+    <div class="progress-bar-bg"><div class="progress-bar-fill" id="prog-fill"></div></div>
+    <div class="stat-row">
+      <div class="stat-pill red"><span class="stat-num" id="cnt-crit">0</span> Critical</div>
+      <div class="stat-pill blue"><span class="stat-num" id="cnt-tech">0</span> Tech</div>
+      <div class="stat-pill teal"><span class="stat-num" id="cnt-ops">0</span> Ops</div>
+      <div class="stat-pill amber"><span class="stat-num" id="cnt-vip">0</span> VIP</div>
+      <div class="stat-pill" style="color:#c084fc;border-color:rgba(192,132,252,0.25);background:rgba(192,132,252,0.08)"><span class="stat-num" id="cnt-mkt">0</span> Marketing</div>
+    </div>
+  </div>
+
+  <div class="filter-row">
+    <button class="f-btn active" data-f="all" onclick="setFilter('all')">ทั้งหมด</button>
+    <button class="f-btn" data-f="crit" onclick="setFilter('crit')">🔴 Critical</button>
+    <button class="f-btn" data-f="tech" onclick="setFilter('tech')">💻 Tech</button>
+    <button class="f-btn" data-f="ops" onclick="setFilter('ops')">⚙️ Ops</button>
+    <button class="f-btn" data-f="vip" onclick="setFilter('vip')">🏛 VIP</button>
+    <button class="f-btn" data-f="mkt" onclick="setFilter('mkt')">📢 Marketing</button>
+  </div>
+
+  <div id="days-container"></div>
+  <div class="sync-status" id="sync-status">กำลังโหลดสถานะ...</div>
+</main>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const DAYS = [
+  { id:'d15', badge:'D-15', bc:'badge-red', name:'ประเมินสถานะ + Lock แผน', date:'10 มิ.ย. (พ.)',
+    tasks:[
+      {t:'Confirm สถานที่ Big C Vientiane อย่างเป็นทางการ', tags:['ops','crit'], who:'คุณ'},
+      {t:'นับบูธที่จองแล้วจริง vs ว่าง — ทำ spreadsheet สรุป', tags:['ops','crit'], who:'คุณ'},
+      {t:'แก้ bug Admin Panel Floorplan (vithhub.asia/page/floorplan)', tags:['tech'], who:'คุณ'},
+      {t:'ส่ง Last Call ให้ Exhibitor ที่ยังไม่ Confirm ทาง LINE/Email', tags:['ops'], who:'แฟน'},
+      {t:'Assign คนดูแล VIP/Protocol โดยเฉพาะ — วันที่ 26 ต้องมีคนนี้', tags:['vip','crit'], who:'คุณ'},
+    ]
+  },
+  { id:'d14', badge:'D-14', bc:'badge-red', name:'Freeze Exhibitor List', date:'11 มิ.ย. (พฤ.)',
+    tasks:[
+      {t:'ปิดรับจองบูธ — Freeze รายชื่อ Exhibitor ทั้งหมด', tags:['ops','crit'], who:'แฟน'},
+      {t:'Assign บูธสุดท้าย ตาม Floorplan (A/B/C/N zones)', tags:['ops','crit'], who:'Head Venue'},
+      {t:'ส่ง Booth Confirmation Letter ให้ทุก Exhibitor', tags:['ops'], who:'แฟน'},
+      {t:'เปิด Buyer Registration — สร้าง form + QR link', tags:['tech','mkt'], who:'คุณ'},
+      {t:'โพสต์ประกาศงานบน Social ครั้งแรก (ลาว + ไทย)', tags:['mkt'], who:'แฟน'},
+    ]
+  },
+  { id:'d13', badge:'D-13', bc:'badge-red', name:'Exhibitor Pack + VIP Invitation', date:'12 มิ.ย. (ศ.)',
+    tasks:[
+      {t:'ส่ง Exhibitor Pack: กำหนดการ 5 วัน, แผนผังบูธ, กฎระเบียบ, วันติดตั้ง', tags:['ops','crit'], who:'แฟน'},
+      {t:'ส่ง Official VIP Invitation รัฐบาลลาว/ไทย + Confirm ตัวแทน', tags:['vip','crit'], who:'คุณ'},
+      {t:'Confirm อาจารย์เบียร์ (Speaker 27 มิ.ย.) — ส่ง Brief + AV requirements', tags:['vip'], who:'คุณ'},
+      {t:'Export Floorplan PDF/DXF ฉบับสุดท้าย ส่งผู้รับเหมาตกแต่ง', tags:['tech','ops'], who:'คุณ'},
+    ]
+  },
+  { id:'d12', badge:'D-12', bc:'badge-red', name:'Vendor Book + เริ่ม Build AI Matching', date:'13 มิ.ย. (ส.)',
+    tasks:[
+      {t:'Book vendor: เวที, ระบบเสียง, ไฟ, ป้าย, Backdrop ทั้งหมด', tags:['ops','crit'], who:'Head Venue'},
+      {t:'Book Catering 5 วัน (Staff + VIP Lunch วันที่ 26)', tags:['ops'], who:'แฟน'},
+      {t:'เริ่ม build AI Matching Week 2 pipeline — Embedding + Match logic', tags:['tech','crit'], who:'คุณ'},
+      {t:'ออกแบบ Pre-Matching Form สำหรับ Exhibitor & Buyer กรอกวันที่ 25', tags:['tech'], who:'คุณ'},
+      {t:'โพสต์แนะนำ Exhibitor รายแรก (ลาว + ไทย)', tags:['mkt'], who:'แฟน'},
+    ]
+  },
+  { id:'d11', badge:'D-11', bc:'badge-red', name:'Permit + Print + AI Progress', date:'14 มิ.ย. (อา.)',
+    tasks:[
+      {t:'ตรวจสถานะใบอนุญาตจัดงาน (Lao government) — Push ถ้าค้าง', tags:['ops','crit'], who:'คุณ'},
+      {t:'สั่งพิมพ์: Backdrop, ป้ายบูธ, Banner, Signage ทั้งหมด', tags:['ops'], who:'Head Venue'},
+      {t:'AI Matching: ทดสอบ Embedding pipeline กับ dummy data', tags:['tech'], who:'คุณ'},
+      {t:'เตรียม MOU Template (ลาว/ไทย/EN/จีน)', tags:['ops','vip'], who:'แฟน'},
+      {t:'Content: Countdown post + Highlight Sponsor/BioActive+', tags:['mkt'], who:'แฟน'},
+    ]
+  },
+  { id:'d10', badge:'D-10', bc:'badge-amber', name:'Registration System + หาคนเพิ่ม', date:'15 มิ.ย. (จ.)',
+    tasks:[
+      {t:'Deploy ระบบลงทะเบียนผู้เข้างาน (QR + web form) บน vithhub.asia', tags:['tech','crit'], who:'คุณ'},
+      {t:'🔴 หา MC ภาษาลาว+ไทย สำหรับ Opening Ceremony วันที่ 26', tags:['ops','crit'], who:'คุณ'},
+      {t:'🔴 หา Interpreter ลาว↔ไทย↔EN สำหรับ Matching session', tags:['ops','crit'], who:'คุณ'},
+      {t:'🔴 หา Registration Staff เพิ่ม 2 คน สำหรับวันที่ 25', tags:['ops','crit'], who:'คุณ'},
+      {t:'Confirm Protocol วันที่ 26: ลำดับ VIP, สคริปต์เปิดงาน', tags:['vip'], who:'คุณ'},
+      {t:'ยิง Email/LINE blast ให้ Buyer/Visitor ลงทะเบียน', tags:['mkt'], who:'แฟน'},
+    ]
+  },
+  { id:'d9', badge:'D-9', bc:'badge-amber', name:'Tech Deploy + Content Push', date:'16 มิ.ย. (อ.)',
+    tasks:[
+      {t:'Floorplan Production deploy — ทดสอบ Admin Panel, Airtable sync', tags:['tech'], who:'คุณ'},
+      {t:'AI Matching: Deploy MVP บน Vercel — ทดสอบ end-to-end flow', tags:['tech','crit'], who:'คุณ'},
+      {t:'โพสต์ Speaker อาจารย์เบียร์ + กำหนดการวันที่ 27', tags:['mkt'], who:'แฟน'},
+      {t:'ส่ง Reminder ให้ Exhibitor: กำหนดกรอก Pre-Matching Form ภายใน D-5', tags:['ops'], who:'แฟน'},
+      {t:'ติดต่อสื่อ/Press ลาว+ไทย — ส่ง Press Kit', tags:['mkt','vip'], who:'แฟน'},
+    ]
+  },
+  { id:'d8', badge:'D-8', bc:'badge-amber', name:'เข้าพื้นที่ก่อสร้าง + IT ติดตั้ง', date:'17 มิ.ย. (พ.)',
+    tasks:[
+      {t:'ผู้รับเหมาเข้า Big C Vientiane — เริ่มก่อสร้างบูธตาม Floorplan', tags:['ops','crit'], who:'Head Venue'},
+      {t:'ติดตั้ง WiFi/Network, Registration Kiosk, Display Screens', tags:['tech','ops'], who:'คุณ'},
+      {t:'ติดตั้งระบบไฟ, เวที Main Stage, ระบบเสียง', tags:['ops'], who:'Head Venue'},
+      {t:'Live/Story เบื้องหลังการเตรียมงาน', tags:['mkt'], who:'แฟน'},
+    ]
+  },
+  { id:'d7', badge:'D-7', bc:'badge-amber', name:'Pre-Matching Data Collection', date:'18 มิ.ย. (พฤ.)',
+    tasks:[
+      {t:'เปิดให้ Exhibitor กรอก Pre-Matching Form ใน AI Matching system', tags:['tech','crit'], who:'คุณ'},
+      {t:'ติดตาม Exhibitor ที่ยังไม่กรอก — ส่ง Reminder', tags:['ops'], who:'แฟน'},
+      {t:'ตรวจความคืบหน้าการก่อสร้างบูธ — แก้ปัญหาที่พบ', tags:['ops'], who:'Head Venue'},
+      {t:'Confirm Menu Catering วันที่ 26 (VIP Lunch)', tags:['ops','vip'], who:'แฟน'},
+      {t:'Prepare Live Streaming setup สำหรับวันที่ 27', tags:['tech','mkt'], who:'คุณ'},
+    ]
+  },
+  { id:'d6', badge:'D-6', bc:'badge-blue', name:'AI Matching Run + Staff Briefing', date:'19 มิ.ย. (ศ.)',
+    tasks:[
+      {t:'Run AI Matching กับข้อมูล Exhibitor + Buyer ทั้งหมดที่มี', tags:['tech','crit'], who:'คุณ'},
+      {t:'Staff Briefing ครั้งแรก: หน้าที่, ภาษา, ตำแหน่ง, ระบบ QR', tags:['ops','crit'], who:'คุณ'},
+      {t:'ส่ง Pre-Schedule Matching ฉบับ Draft ให้ Exhibitor/Buyer review', tags:['ops'], who:'แฟน'},
+      {t:'ตรวจงาน Printing ทั้งหมด — รับของ', tags:['ops'], who:'Head Venue'},
+    ]
+  },
+  { id:'d5', badge:'D-5', bc:'badge-blue', name:'Runsheet + Protocol Final', date:'20 มิ.ย. (ส.)',
+    tasks:[
+      {t:'ทำ Runsheet ฉบับสมบูรณ์ทั้ง 5 วัน (MC Script ทุก session)', tags:['ops','crit'], who:'คุณ'},
+      {t:'Confirm VIP list final + ลำดับนั่ง/พิธีการวันที่ 26', tags:['vip','crit'], who:'คุณ'},
+      {t:'พิมพ์ Name Badge ทั้งหมด (Exhibitor/Buyer/VIP/Staff)', tags:['ops'], who:'แฟน'},
+      {t:'AI Matching: ทดสอบ scenario จริง — Fix bugs', tags:['tech'], who:'คุณ'},
+      {t:'ประกาศกำหนดการครบ 5 วัน + กระตุ้น Buyer ลงทะเบียน', tags:['mkt'], who:'แฟน'},
+    ]
+  },
+  { id:'d4', badge:'D-4', bc:'badge-blue', name:'Full Rehearsal', date:'21 มิ.ย. (อา.)',
+    tasks:[
+      {t:'ซ้อม Opening Ceremony เต็มรูปแบบ (MC + VIP walk-through + เสียง/แสง)', tags:['ops','vip','crit'], who:'ทีม'},
+      {t:'ซ้อม Registration flow: QR check-in, Badge, นำทางบูธ', tags:['ops','tech'], who:'ทีม'},
+      {t:'ทดสอบ AI Matching dashboard บน screen จริงในงาน', tags:['tech'], who:'คุณ'},
+      {t:'Walk-through ตรวจทุกบูธ — แก้ไขที่ยังพบปัญหา', tags:['ops'], who:'Head Venue'},
+    ]
+  },
+  { id:'d3', badge:'D-3', bc:'badge-green', name:'Final Matching Schedule + VIP Confirm', date:'22 มิ.ย. (จ.)',
+    tasks:[
+      {t:'ส่ง Final Pre-Scheduled Matching ให้ Exhibitor/Buyer ทุกคน', tags:['ops','tech','crit'], who:'คุณ'},
+      {t:'Reconfirm VIP เข้างานวันที่ 26 — ส่ง Agenda + Protocol Sheet', tags:['vip','crit'], who:'คุณ'},
+      {t:'จัด Welcome Kit + Gift สำหรับ VIP', tags:['vip','ops'], who:'แฟน'},
+      {t:'Confirm Live Streaming platform + ทดสอบ stream', tags:['tech','mkt'], who:'คุณ'},
+      {t:'Countdown 3 วัน + ยิง Paid Boost', tags:['mkt'], who:'แฟน'},
+    ]
+  },
+  { id:'d2', badge:'D-2', bc:'badge-green', name:'Exhibitor Move-in Day', date:'23 มิ.ย. (อ.)',
+    tasks:[
+      {t:'Exhibitor เข้าตกแต่งบูธ — Staff ประจำแต่ละ Zone', tags:['ops','crit'], who:'Head Venue'},
+      {t:'ทดสอบ QR Check-in ทุกจุดเข้างาน', tags:['tech'], who:'คุณ'},
+      {t:'เช็ค Server/Vercel/Supabase load — ปรับ capacity ถ้าจำเป็น', tags:['tech'], who:'คุณ'},
+      {t:'Walk-through ตรวจทุกบูธ + ถ่ายรูป Before', tags:['ops','mkt'], who:'ทีม'},
+    ]
+  },
+  { id:'d1', badge:'D-1', bc:'badge-green', name:'Final System Check', date:'24 มิ.ย. (พ.)',
+    tasks:[
+      {t:'ทดสอบทุก Tech รอบสุดท้าย: Floorplan, AI Matching, Registration, Kiosk', tags:['tech','crit'], who:'คุณ'},
+      {t:'Staff Briefing สุดท้าย: Runsheet, Emergency contacts, ตำแหน่ง', tags:['ops','crit'], who:'คุณ'},
+      {t:'จัดเตรียม MOU Documents ครบ — แยก folder ต่อคู่', tags:['ops','vip'], who:'แฟน'},
+      {t:'Confirm Catering delivery time วันที่ 25–29', tags:['ops'], who:'แฟน'},
+      {t:'โพสต์ Day-before hype + IG Story behind the scenes', tags:['mkt'], who:'แฟน'},
+    ]
+  },
+];
+
+const STORAGE_KEY = 'mg2026_done_v2';
+let filter = 'all';
+let doneSet = new Set();
+let lastSyncTime = null;
+
+async function loadFromStorage() {
+  try {
+    const result = await window.storage.get(STORAGE_KEY, true);
+    if (result && result.value) {
+      const arr = JSON.parse(result.value);
+      doneSet = new Set(arr);
+    }
+  } catch(e) {
+    try {
+      const local = localStorage.getItem(STORAGE_KEY);
+      if (local) doneSet = new Set(JSON.parse(local));
+    } catch(e2) {}
+  }
+  lastSyncTime = new Date();
+  updateSyncStatus();
+}
+
+async function saveToStorage() {
+  const arr = [...doneSet];
+  try {
+    await window.storage.set(STORAGE_KEY, JSON.stringify(arr), true);
+  } catch(e) {}
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(arr)); } catch(e) {}
+  lastSyncTime = new Date();
+  updateSyncStatus();
+}
+
+function updateSyncStatus() {
+  const el = document.getElementById('sync-status');
+  if (!lastSyncTime) { el.textContent = 'กำลังโหลด...'; return; }
+  const t = lastSyncTime.toLocaleTimeString('th-TH', {hour:'2-digit', minute:'2-digit'});
+  el.textContent = `ซิงค์ล่าสุด ${t} · ข้อมูลแชร์ร่วมกันทุกคน`;
+}
+
+async function syncNow() {
+  showToast('กำลังซิงค์...');
+  await loadFromStorage();
+  renderDays();
+  showToast('ซิงค์แล้ว ✓');
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2000);
+}
+
+function setFilter(f) {
+  filter = f;
+  document.querySelectorAll('.f-btn').forEach(b => b.classList.toggle('active', b.dataset.f === f));
+  renderDays();
+}
+
+function toggleTask(dayId, taskIdx) {
+  const key = dayId + '|' + taskIdx;
+  if (doneSet.has(key)) doneSet.delete(key);
+  else doneSet.add(key);
+  saveToStorage();
+  const el = document.querySelector(`[data-key="${key}"]`);
+  if (el) {
+    el.classList.toggle('done', doneSet.has(key));
+  }
+  updateProgress();
+  updateDayBar(dayId);
+}
+
+function updateProgress() {
+  let total = 0, done = 0;
+  let crit = 0, tech = 0, ops = 0, vip = 0, mkt = 0;
+  DAYS.forEach(d => d.tasks.forEach((t, i) => {
+    const vis = filter === 'all' || t.tags.includes(filter);
+    if (!vis) return;
+    total++;
+    if (doneSet.has(d.id + '|' + i)) done++;
+    if (t.tags.includes('crit')) crit++;
+    if (t.tags.includes('tech')) tech++;
+    if (t.tags.includes('ops')) ops++;
+    if (t.tags.includes('vip')) vip++;
+    if (t.tags.includes('mkt')) mkt++;
+  }));
+  const pct = total ? Math.round(done / total * 100) : 0;
+  document.getElementById('pct').textContent = pct + '%';
+  document.getElementById('count-text').textContent = done + ' / ' + total + ' งาน';
+  document.getElementById('prog-fill').style.width = pct + '%';
+  document.getElementById('cnt-crit').textContent = crit;
+  document.getElementById('cnt-tech').textContent = tech;
+  document.getElementById('cnt-ops').textContent = ops;
+  document.getElementById('cnt-vip').textContent = vip;
+  document.getElementById('cnt-mkt').textContent = mkt;
+
+  const today = new Date();
+  const target = new Date('2026-06-25');
+  const diff = Math.ceil((target - today) / 86400000);
+  document.getElementById('days-left').textContent = diff > 0 ? `เหลืออีก ${diff} วัน` : 'วันงาน!';
+}
+
+function updateDayBar(dayId) {
+  const day = DAYS.find(d => d.id === dayId);
+  if (!day) return;
+  const visTasks = day.tasks.filter(t => filter === 'all' || t.tags.includes(filter));
+  let done = 0;
+  visTasks.forEach((t, i) => {
+    const origIdx = day.tasks.indexOf(t);
+    if (doneSet.has(dayId + '|' + origIdx)) done++;
+  });
+  const pct = visTasks.length ? Math.round(done / visTasks.length * 100) : 0;
+  const fill = document.querySelector(`[data-dayfill="${dayId}"]`);
+  const prog = document.querySelector(`[data-dayprog="${dayId}"]`);
+  if (fill) fill.style.width = pct + '%';
+  if (prog) prog.textContent = done + '/' + visTasks.length;
+}
+
+function tagHtml(tags) {
+  const map = { crit: ['tag-crit','Critical'], tech: ['tag-tech','Tech'], ops: ['tag-ops','Ops'], vip: ['tag-vip','VIP'], mkt: ['tag-mkt','Marketing'] };
+  return tags.map(t => map[t] ? `<span class="tag ${map[t][0]}">${map[t][1]}</span>` : '').join('');
+}
+
+function renderDays() {
+  const container = document.getElementById('days-container');
+  const openStates = {};
+  document.querySelectorAll('.day-block').forEach(el => {
+    openStates[el.dataset.dayid] = el.classList.contains('open');
+  });
+  container.innerHTML = '';
+
+  DAYS.forEach(day => {
+    const visTasks = day.tasks.filter(t => filter === 'all' || t.tags.includes(filter));
+    if (visTasks.length === 0) return;
+
+    let doneCount = 0;
+    visTasks.forEach(t => { const i = day.tasks.indexOf(t); if (doneSet.has(day.id + '|' + i)) doneCount++; });
+    const pct = Math.round(doneCount / visTasks.length * 100);
+    const isOpen = openStates[day.id] !== undefined ? openStates[day.id] : (day.id === 'd15');
+
+    const block = document.createElement('div');
+    block.className = 'day-block' + (isOpen ? ' open' : '');
+    block.dataset.dayid = day.id;
+
+    block.innerHTML = `
+      <div class="day-header" onclick="this.closest('.day-block').classList.toggle('open')">
+        <span class="day-num-badge ${day.bc}">${day.badge}</span>
+        <span class="day-title">${day.name}</span>
+        <span class="day-date">${day.date}</span>
+        <span class="day-prog-text" data-dayprog="${day.id}">${doneCount}/${visTasks.length}</span>
+        <div class="day-prog-mini"><div class="day-prog-mini-fill" data-dayfill="${day.id}" style="width:${pct}%"></div></div>
+        <span class="chevron-icon">▾</span>
+      </div>
+      <div class="task-list">
+        ${visTasks.map(t => {
+          const origIdx = day.tasks.indexOf(t);
+          const key = day.id + '|' + origIdx;
+          const isDone = doneSet.has(key);
+          return `<div class="task-item${isDone ? ' done' : ''}" data-key="${key}" onclick="toggleTask('${day.id}',${origIdx})">
+            <div class="task-cb">
+              <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+                <path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="task-body">
+              <div class="task-text">${t.t}</div>
+              <div class="task-meta">${tagHtml(t.tags)}<span class="who-badge">${t.who}</span></div>
+            </div>
+          </div>`;
+        }).join('')}
+      </div>`;
+    container.appendChild(block);
+  });
+  updateProgress();
+}
+
+(async () => {
+  await loadFromStorage();
+  renderDays();
+  setInterval(async () => {
+    await loadFromStorage();
+    renderDays();
+  }, 30000);
+})();
+</script>
+</body>
+</html>
