@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mekong Growth 2026 – Pre-Event War Checklist</title>
+<style>
+:root {
+  --navy:  #0B1F3B;
+  --navy2: #1A3560;
+  --gold:  #D4AF37;
+  --gold2: #B8962E;
+  --cream: #F7F4EE;
+  --red:   #C0392B;
+  --red2:  #E74C3C;
+  --orange:#E67E22;
+  --green: #1A6B5A;
+  --green2:#27AE60;
+  --muted: #6A8BAA;
+  --white: #ffffff;
+  --r: 10px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Segoe UI','Noto Sans Thai',Arial,sans-serif;background:var(--cream);color:var(--navy);}
+
+/* TOP BAR */
+.topbar{
+  position:sticky;top:0;z-index:200;
+  background:var(--navy);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 1.5rem;
+  border-bottom:3px solid var(--gold);
+}
+.topbar-logo{font-size:13px;font-weight:700;color:var(--gold);letter-spacing:1.5px;}
+.topbar-right{display:flex;align-items:center;gap:12px;padding:10px 0;}
+#countdown{font-size:12px;font-weight:700;color:var(--gold);letter-spacing:1px;}
+
+/* HERO */
+.hero{background:var(--navy);padding:2.5rem 1.5rem 2rem;text-align:center;position:relative;}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:var(--gold);}
+.hero-badge{
+  display:inline-block;background:var(--red);color:var(--white);
+  font-size:11px;font-weight:700;letter-spacing:2px;
+  padding:5px 18px;border-radius:20px;margin-bottom:1rem;
+  animation:pulse 2s infinite;
+}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.65}}
+.hero h1{font-size:clamp(1.5rem,4vw,2.4rem);font-weight:700;color:var(--white);letter-spacing:2px;margin-bottom:.4rem;}
+.hero .tagline{font-size:clamp(.8rem,2vw,1rem);font-style:italic;color:var(--gold);margin-bottom:1.5rem;}
+
+/* KPI DASHBOARD */
+.kpi-wrap{max-width:960px;margin:0 auto;padding:0 1rem;}
+.kpi-title{font-size:10px;font-weight:700;letter-spacing:2.5px;color:var(--gold2);text-align:center;margin:2rem 0 .9rem;}
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:2rem;}
+.kpi-card{background:var(--navy);border-radius:var(--r);padding:16px 10px;text-align:center;border:1px solid rgba(212,175,55,.2);}
+.kpi-val{font-size:1.6rem;font-weight:700;color:var(--gold);}
+.kpi-val input{
+  background:transparent;border:none;border-bottom:1.5px dashed var(--gold2);
+  color:var(--gold);font-size:1.4rem;font-weight:700;width:70px;
+  text-align:center;outline:none;
+}
+.kpi-label{font-size:11px;color:var(--muted);margin-top:5px;line-height:1.4;}
+
+/* PROGRESS BAR */
+.progress-wrap{background:var(--navy);border-radius:var(--r);padding:14px 18px;margin-bottom:2rem;}
+.progress-label{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:6px;}
+.progress-bar{height:10px;background:rgba(255,255,255,.1);border-radius:10px;overflow:hidden;}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--gold2),var(--gold));border-radius:10px;transition:width .5s ease;}
+
+/* MAIN WRAP */
+.wrap{max-width:960px;margin:0 auto;padding:0 1rem 3rem;}
+
+/* PILLAR TABS */
+.pillars{display:flex;flex-wrap:wrap;gap:8px;margin:1.5rem 0 1rem;}
+.pillar-btn{
+  padding:7px 16px;border:1.5px solid var(--gold);
+  background:transparent;color:var(--gold);
+  border-radius:20px;font-size:12px;font-weight:700;cursor:pointer;transition:all .2s;
+}
+.pillar-btn.active,.pillar-btn:hover{background:var(--gold);color:var(--navy);}
+
+/* SECTION */
+.section{margin-bottom:1.5rem;border-radius:14px;overflow:hidden;box-shadow:0 2px 18px rgba(11,31,59,.1);}
+.section[data-pillar]{display:none;}
+.section[data-pillar].visible{display:block;}
+
+.sec-hdr{
+  padding:1rem 1.4rem;
+  display:flex;align-items:center;justify-content:space-between;
+  cursor:pointer;user-select:none;
+}
+.sec-hdr-left{display:flex;align-items:center;gap:10px;}
+.sec-hdr-icon{font-size:1.3rem;}
+.sec-hdr-text .sn{font-size:10px;font-weight:700;letter-spacing:2px;color:rgba(255,255,255,.6);margin-bottom:2px;}
+.sec-hdr-text h2{font-size:14px;font-weight:700;color:var(--white);line-height:1.3;}
+.sec-hdr-right{display:flex;align-items:center;gap:8px;}
+.sec-progress-text{font-size:11px;color:rgba(255,255,255,.5);}
+.sec-chevron{font-size:1rem;color:var(--gold);transition:transform .3s;}
+.section.collapsed .sec-chevron{transform:rotate(-90deg);}
+.sec-body{background:var(--white);}
+.section.collapsed .sec-body{display:none;}
+
+/* DAY GROUP */
+.day-group{border-bottom:1px solid #ede9e0;}
+.day-group:last-child{border-bottom:none;}
+.day-label{
+  font-size:10px;font-weight:700;letter-spacing:2px;
+  padding:8px 16px 6px;
+  background:#f0ece2;color:var(--navy2);
+  border-bottom:1px solid #e0dcd0;
+}
+
+/* TASK */
+.task{
+  display:flex;align-items:flex-start;gap:12px;
+  padding:11px 16px;
+  border-bottom:1px solid #f0ece2;
+  transition:background .15s;
+}
+.task:last-child{border-bottom:none;}
+.task:hover{background:#faf7f0;}
+.task.done{background:#f6fbf7;}
+.task.done .task-title{text-decoration:line-through;color:#9aab9a;}
+
+.task-check{
+  width:18px;height:18px;min-width:18px;
+  border-radius:4px;border:2px solid #c0c8d0;
+  cursor:pointer;margin-top:1px;
+  display:flex;align-items:center;justify-content:center;
+  transition:all .15s;
+}
+.task.done .task-check{background:var(--green2);border-color:var(--green2);}
+.task.done .task-check::after{content:'✓';font-size:11px;color:white;font-weight:700;}
+
+.task-body{flex:1;}
+.task-title{font-size:13px;font-weight:600;color:var(--navy);line-height:1.4;}
+.task-sub{font-size:11.5px;color:#6a7a8a;margin-top:3px;line-height:1.5;}
+
+.tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:5px;}
+.tag{
+  font-size:10px;font-weight:700;letter-spacing:.5px;
+  padding:2px 8px;border-radius:10px;
+}
+.tag-critical{background:#fde8e8;color:var(--red);}
+.tag-tech{background:#e8f0fe;color:#1a56a0;}
+.tag-optional{background:#e8f5e9;color:#2e7d32;}
+.tag-phase1{background:#fff3e0;color:#e65100;}
+.tag-phase2{background:#ede7f6;color:#512da8;}
+.tag-vip{background:#fce4ec;color:#c62828;}
+.tag-revenue{background:#e8f5e9;color:#1b5e20;}
+
+/* EMERGENCY section special */
+.emergency-hdr{background:linear-gradient(135deg,#7B1A1A,#C0392B) !important;}
+.sponsor-hdr{background:linear-gradient(135deg,#7B1A00,#C0390B) !important;}
+
+/* FOOTER */
+footer{background:var(--navy);color:var(--muted);text-align:center;padding:1.5rem;font-size:12px;border-top:3px solid var(--gold);}
+footer a{color:var(--gold);text-decoration:none;}
+
+@media(max-width:560px){
+  .kpi-grid{grid-template-columns:repeat(2,1fr);}
+  .pillars{gap:6px;}
+  .pillar-btn{font-size:11px;padding:5px 12px;}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-logo">VITH HUB</div>
+  <div class="topbar-right">
+    <div id="countdown">⏳ กำลังนับ...</div>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="hero-badge">🚨 WAR ROOM CHECKLIST — ACTIVE</div>
+  <h1>MEKONG GROWTH 2026</h1>
+  <p class="tagline">Pre-Event Master Checklist · 25–29 June 2026 · Big C Vientiane</p>
+</div>
+
+<!-- KPI DASHBOARD -->
+<div class="kpi-wrap">
+  <p class="kpi-title">📊 EVENT READINESS DASHBOARD</p>
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <div class="kpi-val"><input id="kpi-booth-sold" type="text" value="0" maxlength="4"> <span style="font-size:1rem;color:var(--muted)">/</span> <input id="kpi-booth-total" type="text" value="36" maxlength="4"></div>
+      <div class="kpi-label">Booth Sold / Total</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-val"><input id="kpi-sponsor" type="text" value="0" maxlength="4"></div>
+      <div class="kpi-label">Sponsors Closed</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-val"><input id="kpi-buyer" type="text" value="0" maxlength="4"></div>
+      <div class="kpi-label">Buyers Registered</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-val"><input id="kpi-visitor" type="text" value="0" maxlength="4"></div>
+      <div class="kpi-label">Visitors Registered</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-val"><input id="kpi-vip" type="text" value="0" maxlength="4"></div>
+      <div class="kpi-label">VIP Confirmed</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-val" id="kpi-days" style="color:var(--red)">–</div>
+      <div class="kpi-label">Days Remaining</div>
+    </div>
+  </div>
+
+  <!-- overall progress -->
+  <div class="progress-wrap">
+    <div class="progress-label">
+      <span>Overall Task Progress</span>
+      <span id="progress-pct">0 / 0 tasks</span>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- PILLAR FILTER -->
+  <div class="pillars">
+    <button class="pillar-btn active" onclick="filterPillar('all',this)">🔍 ทั้งหมด</button>
+    <button class="pillar-btn" onclick="filterPillar('sponsor',this)">💰 Sponsor</button>
+    <button class="pillar-btn" onclick="filterPillar('exhibitor',this)">🏪 Exhibitor</button>
+    <button class="pillar-btn" onclick="filterPillar('buyer',this)">🤝 Buyer</button>
+    <button class="pillar-btn" onclick="filterPillar('vip',this)">👑 VIP/Gov</button>
+    <button class="pillar-btn" onclick="filterPillar('ops',this)">🏗 Venue & Ops</button>
+    <button class="pillar-btn" onclick="filterPillar('tech',this)">⚙️ Tech (เสริม)</button>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       🔴 SPONSOR CLOSING (Critical)
+  ═══════════════════════════════════════════ -->
+  <div class="section visible" data-pillar="sponsor">
+    <div class="sec-hdr sponsor-hdr" style="background:linear-gradient(135deg,#7B1A00,#C0390B)" onclick="toggleSection(this)">
+      <div class="sec-hdr-left">
+        <div class="sec-hdr-icon">🔴</div>
+        <div class="sec-hdr-text">
+          <div class="sn">PILLAR 1 · D-15 TO D-10</div>
+          <h2>Sponsor Closing — Main Sponsor Pipeline</h2>
+        </div>
+      </div>
+      <div class="sec-hdr-right">
+        <span class="sec-progress-text" id="prog-sponsor-close"></span>
+        <span class="sec-chevron">▾</span>
+      </div>
+    </div>
+    <div class="sec-body">
+      <div class="day-group">
+        <div class="day-label">D-15 ถึง D-10 · Main Sponsor Pipeline</div>
+        <div class="task" data-sec="sponsor-close">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-title">ปิด Main Stage Partner</div>
+            <div class="tags"><span class="tag tag-critical">🔴 Critical</span></div>
+          </div>
+        </div>
+        <div class="task" data-sec="sponsor-close">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-title">ปิด Official Banking Partner</div>
+            <div class="tags"><span class="tag tag-critical">🔴 Critical</span></div>
+          </div>
+        </div>
+        <div class="task" data-sec="sponsor-close">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-title">ปิด Taste of Laos Partner</div>
+            <div class="tags"><span class="tag tag-critical">🔴 Critical</span></div>
+          </div>
+        </div>
+        <div class="task" data-sec="sponsor-close">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-title">ปิด Logistics Partner</div>
+            <div class="tags"><span class="tag tag-critical">🔴 Critical</span></div>
+          </div>
+        </div>
+        <div class="task" data-sec="sponsor-close">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-title">Follow-up Sponsor ทุกวัน (Daily)</div>
+            <div class="task-sub">ติดตามทุก lead ที่ส่ง Proposal ไปแล้ว — ไม่รอให้เขาตอบกลับ</div>
+            <div class="tags"><span class="tag tag-critical">🔴 Critical</span></div>
+          </div>
+        </div>
+        <div class="task" data-sec="sponsor-close">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-title">อัปเดต Sponsor Pipeline Report ทุกวัน</div>
+            <div class="task-sub">Status: Prospect / Proposal Sent / Negotiating / Closed / Lost</div>
+            <div class="tags"><span class="tag tag-critical">🔴 Critical</span></div>
+          </div>
+        </div>
+        <div class="task" data-sec="sponsor-close">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-title">เตรียม Proposal และ Quotation พร้อมส่งทันที</div>
+            <div class="task-sub">ทุก Package มี PDF พร้อม — ไม่ต้องรอทำใหม่ทุกครั้ง</div>
+            <div class="tags"><span class="tag tag-critical">🔴 Critical</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       💰 EXHIBITOR REVENUE DASHBOARD
+  ═══════════════════════════════════════════ -->
+  <div class="section visible" data-pillar="exhibitor">
+    <div class="sec-hdr" style="background:linear-gradient(135deg,#7B4F00,#B8760E)" onclick="toggleSection(this)">
+      <div class="sec-hdr-left">
+        <div class="sec-hdr-icon">💰</div>
+        <div class="sec-hdr-text">
+          <div class="sn">PILLAR 2 · D-15</div>
+          <h2>Exhibitor Revenue Dashboard — Sales Tracking</h2>
+        </div>
+      </div>
+      <div class="sec-hdr-right">
+        <span class="sec-progress-text" id="prog-exhibitor"></span>
+        <span class="sec-chevron">▾</span>
+      </div>
+    </div>
+    <div class="sec-body">
+      <div class="day-group">
+        <div class="day-label">D-15 · Sales Tracking (อัปเดตทุกวัน)</div>
+        <div class="task" data-sec="exhibitor">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-title">บันทึกจำนวนบูททั้งหมด</div>
+            <div class="task-sub">Zone A / B / C / F / N / Food &amp; Drink รวมกี่บูท</div>
+            <div class="tags"><span class="tag tag-revenue">💰 Revenue</span><span class="tag tag-critical">🔴 Critical</span></div>
+          </div>
+        </div>
+        <div class="task" data-sec="exhibitor">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-title">บันทึกจำนวนบูทขายแล้ว</div>
+            <div class="task-sub">Paid + Confirmed เท่านั้น ไม่นับ Reserved</div>
+            <div class="tags"><span class="tag tag-revenue">💰 Revenue</span><span class="tag tag-critical">🔴 Critical</span></div>
+          </div>
+        </div>
+        <div class="task" data-sec="exhibitor">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-title">บันทึกจำนวนบูทคงเหลือ</div>
+            <div class="tags"><span class="tag tag-revenue">💰 Revenue</span></div>
+          </div>
+        </div>
+        <div class="task" data-sec="exhibitor">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-title">บันทึกรายได้จริง (Actual Revenue)</div>
+            <div class="task-sub">ยอดเงินที่รับมาจริง ไม่ใช่ยอด Invoice</div>
+            <div class="tags"><span class="tag tag-revenue">💰 Revenue</span><span class="tag tag-critical">🔴 Critical</span></div>
+          </div>
+        </div>
+        <div class="task" data-sec="exhibitor">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-title">บันทึกยอดค้างชำระ (Outstanding)</div>
+            <div class="task-sub">ใครยังไม่จ่าย — Follow up ทันที</div>
+            <div class="tags"><span class="tag tag-revenue">💰 Revenue</span></div>
+          </div>
+        </div>
+        <div class="task" data-sec="exhibitor">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-title">ตั้งเป้าหมายรายได้รายวัน</div>
+            <div class="task-sub">ต้องปิดวันละเท่าไหร่เพื่อให้ถึง Target ก่อน D-Day</div>
+            <div class="tags"><span class="tag tag-revenue">💰 Revenue</span><span class="tag tag-critical">🔴 Critical</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       👑 VIP & GOVERNMENT TRACKING
+  ═══════════════════════════════════════════ -->
+  <div class="section visible" data-pillar="vip">
+    <div class="sec-hdr" style="background:linear-gradient(135deg,#4A1560,#7B2D9E)" onclick="toggleSection(this)">
+      <div class="sec-hdr-left">
+        <div class="sec-hdr-icon">👑</div>
+        <div class="sec-hdr-text">
+          <div class="sn">PILLAR 4 · D-10 TO D-3</div>
+          <h2>VIP & Government Tracking</h2>
+        </div>
+      </div>
+      <div class="sec-hdr-right">
+        <span class="sec-progress-text" id="prog-vip"></span>
+        <span class="sec-chevron">▾</span>
+      </div>
+    </div>
+    <div class="sec-body">
+      <div class="day-group">
+        <div class="day-label">D-10 ถึง D-3 · Government Confirmation</div>
+        <div class="task" data-sec="vip">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-title">Confirm หน่วยงานภาครัฐที่เข้าร่วม</div>
+            <div class="task-sub">LITSE, กรมพาณิชย์เวียงจันทน์, กระทรวงอุตสาหกรรมและการค้า</div>
+            <div class="tags"><span class="tag tag-vip">👑 VIP</span><span class="tag tag-critical">🔴 Critical</span></div>
+          </div>
+        </div>
+        <div class="task" data-sec="vip">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-title">Confirm ผู้แทนกล่าวเปิดงาน</div>
+            <div class="task-sub">ชื่อ ตำแหน่ง และเวลาที่แน่นอน — เขียนลงใน Script MC</div>
+            <div class="tags"><span class="tag tag-vip">👑 VIP</span><span class="tag tag-critical">🔴 Critical</span></div>
+          </div>
+        </div>
+        <div class="task" data-sec="vip">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-title">Confirm Protocol (พิธีการ)</div>
+            <div class="task-sub">ลำดับการกล่าวสุนทรพจน์ / ของที่ระลึก / ช่างภาพ</div>
+            <div class="tags"><span class="tag tag-vip">👑 VIP</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="day-group">
+        <div class="day-label">D-7 ถึง D-1 · VIP Logistics</div>
+        <div class="task" data-sec="vip">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-title">Confirm Arrival Time ของ VIP ทุกคน</div>
+            <div class="tags"><span class="tag tag-vip">👑 VIP</span><span class="tag tag-critical">🔴 Critical</span></div>
+          </div>
+        </div>
+        <div class="task" data-sec="vip">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-title">Confirm Seating Plan</div>
+            <div class="task-sub">Front row, name cards, reserved zones</div>
+            <div class="tags"><span class="tag tag-vip">👑 VIP</span></div>
+          </div>
+        </div>
+        <div class="task" data-sec="vip">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-title">Confirm Escort Team</div>
+            <div class="task-sub">ใครดูแล VIP แต่ละคน — ชื่อ + เบอร์โทร</div>
+            <div class="tags"><span class="tag tag-vip">👑 VIP</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       🤝 BUYER REGISTRATION
+  ═══════════════════════════════════════════ -->
+  <div class="section visible" data-pillar="buyer">
+    <div class="sec-hdr" style="background:linear-gradient(135deg,#1A5A3A,#1A6B5A)" onclick="toggleSection(this)">
+      <div class="sec-hdr-left">
+        <div class="sec-hdr-icon">🤝</div>
+        <div class="sec-hdr-text">
+          <div class="sn">PILLAR 3 · D-15 TO D-3</div>
+          <h2>Buyer Registration & Confirmation</h2>
+        </div>
+      </div>
+      <div class="sec-hdr-right">
+        <span class="sec-progress-text" id="prog-buyer"></span>
+        <span class="sec-chevron">▾</span>
+      </div>
+    </div>
+    <div class="sec-body">
+      <div class="day-group">
+        <div class="day-label">D-15 ถึง D-10 · Outreach</div>
+        <div class="task" data-sec="buyer">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-title">ส่ง Buyer Invitation Letter รอบแรก</div>
+            <div class="task-sub">ทั้ง Thai และ Lao contacts — EMAIL + LINE + WhatsApp</div>
+            <div class="tags"><span class="tag tag-critical">🔴 Critical</span></div>
+          </div>
+        </div>
+        <div class="task" data-sec="buyer">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-title">Follow-up Buyer ที่ยังไม่ตอบรับ</div>
+            <div class="tags"><span class="tag tag-critical">🔴 Critical</span></div>
+          </div>
+        </div>
+        <div class="task" data-sec="buyer">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-title">Confirm รายชื่อ Buyer ที่เข้าร่วม Business Matching</div>
+            <div class="task-sub">ต้องมีชื่อ บริษัท สินค้าที่สนใจ ก่อน D-3</div>
+            <div class="tags"><span class="tag tag-critical">🔴 Critical</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       🏗 VENUE & OPERATIONS
+  ═══════════════════════════════════════════ -->
+  <div class="section visible" data-pillar="ops">
+    <div class="sec-hdr" style="background:linear-gradient(135deg,#0B1F3B,#1A3560)" onclick="toggleSection(this)">
+      <div class="sec-hdr-left">
+        <div class="sec-hdr-icon">🏗</div>
+        <div class="sec-hdr-text">
+          <div class="sn">PILLAR 5 · D-10 TO D-1</div>
+          <h2>Venue & Operations Readiness</h2>
+        </div>
+      </div>
+      <div class="sec-hdr-right">
+        <span class="sec-progress-text" id="prog-ops"></span>
+        <span class="sec-chevron">▾</span>
+      </div>
+    </div>
+    <div class="sec-body">
+      <div class="day-group">
+        <div class="day-label">D-10 ถึง D-7 · Setup Confirmation</div>
+        <div class="task" data-sec="ops">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-title">Confirm Floor Plan กับ Big C Vientiane</div>
+            <div class="task-sub">Zone F, Nation Zone, Main Stage, Business Matching Zone</div>
+            <div class="tags"><span class="tag tag-critical">🔴 Critical</span></div>
+          </div>
+        </div>
+        <div class="task" data-sec="ops">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-title">Confirm ผู้รับเหมาตกแต่งบูท</div>
+            <div class="tags"><span class="tag tag-critical">🔴 Critical</span></div>
+          </div>
+        </div>
+        <div class="task" data-sec="ops">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-title">Confirm Audio/Visual System</div>
+            <div class="task-sub">Main Stage PA, Projector, Screen, Lighting</div>
+            <div class="tags"><span class="tag tag-critical">🔴 Critical</span></div>
+          </div>
+        </div>
+        <div class="task" data-sec="ops">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-title">Confirm Signage และ Branding</div>
+            <div class="task-sub">Banner, Standee, Backdrop, Wayfinding ทุกจุด</div>
+          </div>
+        </div>
+        <div class="task" data-sec="ops">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-title">Confirm Registration Counter Setup</div>
+            <div class="task-sub">โต๊ะ, เก้าอี้, Printer, Scanner, Badge Holder</div>
+            <div class="tags"><span class="tag tag-critical">🔴 Critical</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="day-group">
+        <div class="day-label">D-5 ถึง D-1 · Final Checks</div>
+        <div class="task" data-sec="ops">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-title">Walk-through ทุก Zone กับทีมงาน</div>
+            <div class="tags"><span class="tag tag-critical">🔴 Critical</span></div>
+          </div>
+        </div>
+        <div class="task" data-sec="ops">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-title">Briefing Staff ทุกคน — รู้ตำแหน่งและหน้าที่</div>
+            <div class="tags"><span class="tag tag-critical">🔴 Critical</span></div>
+          </div>
+        </div>
+        <div class="task" data-sec="ops">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-title">Confirm MC Script และ Run of Show</div>
+            <div class="tags"><span class="tag tag-critical">🔴 Critical</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       ⚠️ EMERGENCY & BACKUP PLAN
+  ═══════════════════════════════════════════ -->
+  <div class="section visible" data-pillar="ops">
+    <div class="sec-hdr emergency-hdr" onclick="toggleSection(this)">
+      <div class="sec-hdr-left">
+        <div class="sec-hdr-icon">⚠️</div>
+        <div class="sec-hdr-text">
+          <div class="sn">EMERGENCY · D-5</div>
+          <h2>Emergency & Backup Plan Review</h2>
+        </div>
+      </div>
+      <div class="sec-hdr-right">
+        <span class="sec-progress-text" id="prog-emergency"></span>
+        <span class="sec-chevron">▾</span>
+      </div>
+    </div>
+    <div class="sec-body">
+      <div class="day-group">
+        <div class="day-label">D-5 · Registration Backup</div>
+        <div class="task" data-sec="emergency">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-title">เตรียมรายชื่อผู้เข้าร่วมแบบ Excel (Offline)</div>
+            <div class="task-sub">Export จาก Airtable — Print ไว้ที่ Registration Counter</div>
+            <div class="tags"><span class="tag tag-critical">🔴 Critical</span></div>
+          </div>
+        </div>
+        <div class="task" data-sec="emergency">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-title">เตรียม QR Print Backup (Pre-printed)</div>
+            <div class="task-sub">Print QR badge ล่วงหน้าสำหรับผู้ที่ลงทะเบียนแล้ว</div>
+            <div class="tags"><span class="tag tag-critical">🔴 Critical</span></div>
+          </div>
+        </div>
+        <div class="task" data-sec="emergency">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-title">เตรียม Manual Registration Form (กระดาษ)</div>
+            <div class="task-sub">สำหรับ Walk-in ที่ระบบล่ม</div>
+            <div class="tags"><span class="tag tag-critical">🔴 Critical</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="day-group">
+        <div class="day-label">D-5 · Internet Backup</div>
+        <div class="task" data-sec="emergency">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-title">เตรียม Router สำรอง (Backup Router)</div>
+            <div class="tags"><span class="tag tag-critical">🔴 Critical</span></div>
+          </div>
+        </div>
+        <div class="task" data-sec="emergency">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-title">เตรียม Mobile Hotspot สำรอง (อย่างน้อย 2 เครื่อง)</div>
+            <div class="tags"><span class="tag tag-critical">🔴 Critical</span></div>
+          </div>
+        </div>
+        <div class="task" data-sec="emergency">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-title">ทดสอบ 4G/5G ทุกเครือข่าย (Unitel, LTC, ETL)</div>
+            <div class="task-sub">ทดสอบ Speed &amp; Coverage ที่ Big C Vientiane ก่อน D-Day</div>
+            <div class="tags"><span class="tag tag-critical">🔴 Critical</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="day-group">
+        <div class="day-label">D-5 · Power Backup</div>
+        <div class="task" data-sec="emergency">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-title">ตรวจจุดปลั๊กทุกโซน</div>
+            <div class="task-sub">Zone F, Nation, Main Stage, Registration — ไฟพอไหม?</div>
+            <div class="tags"><span class="tag tag-critical">🔴 Critical</span></div>
+          </div>
+        </div>
+        <div class="task" data-sec="emergency">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-title">เตรียมปลั๊กพ่วงสำรอง (Extension Cord)</div>
+            <div class="task-sub">อย่างน้อย 10 อัน กระจายทุกโซน</div>
+            <div class="tags"><span class="tag tag-critical">🔴 Critical</span></div>
+          </div>
+        </div>
+        <div class="task" data-sec="emergency">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-title">เตรียมไฟฉุกเฉิน / UPS สำหรับ Registration Counter</div>
+            <div class="tags"><span class="tag tag-critical">🔴 Critical</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="day-group">
+        <div class="day-label">D-5 · Staff Backup</div>
+        <div class="task" data-sec="emergency">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-title">Confirm MC สำรอง (ชื่อ + เบอร์โทร)</div>
+            <div class="task-sub">ถ้า MC หลักป่วย — ใครรับช่วงได้ทันที</div>
+            <div class="tags"><span class="tag tag-critical">🔴 Critical</span></div>
+          </div>
+        </div>
+        <div class="task" data-sec="emergency">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-title">Confirm Registration Staff สำรอง</div>
+            <div class="tags"><span class="tag tag-critical">🔴 Critical</span></div>
+          </div>
+        </div>
+        <div class="task" data-sec="emergency">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-title">Confirm ล่ามสำรอง (TH–LAO–EN)</div>
+            <div class="task-sub">มีล่ามสำรองอย่างน้อย 1 คนต่อภาษา</div>
+            <div class="tags"><span class="tag tag-critical">🔴 Critical</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       ⚙️ TECH (Phase 1 Must Have / Phase 2 Optional)
+  ═══════════════════════════════════════════ -->
+  <div class="section visible" data-pillar="tech">
+    <div class="sec-hdr" style="background:linear-gradient(135deg,#1A3560,#2D5FA6)" onclick="toggleSection(this)">
+      <div class="sec-hdr-left">
+        <div class="sec-hdr-icon">⚙️</div>
+        <div class="sec-hdr-text">
+          <div class="sn">TECH (เสริม) · D-15 TO D-1</div>
+          <h2>Tech & Digital Infrastructure</h2>
+        </div>
+      </div>
+      <div class="sec-hdr-right">
+        <span class="sec-progress-text" id="prog-tech"></span>
+        <span class="sec-chevron">▾</span>
+      </div>
+    </div>
+    <div class="sec-body">
+      <div class="day-group">
+        <div class="day-label">Phase 1 · Must Have (งานหยุดถ้าไม่มีสิ่งนี้)</div>
+        <div class="task" data-sec="tech">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-title">Registration System — ทดสอบ End-to-End</div>
+            <div class="task-sub">Form → Airtable → Telegram Notification ต้องทำงานได้ 100%</div>
+            <div class="tags"><span class="tag tag-phase1">Phase 1</span><span class="tag tag-tech">Tech</span><span class="tag tag-critical">🔴 Critical</span></div>
+          </div>
+        </div>
+        <div class="task" data-sec="tech">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-title">QR Check-in — ทดสอบ Scanner + Badge Print</div>
+            <div class="task-sub">ทดสอบกับ Device จริงที่จะใช้ในงาน</div>
+            <div class="tags"><span class="tag tag-phase1">Phase 1</span><span class="tag tag-tech">Tech</span><span class="tag tag-critical">🔴 Critical</span></div>
+          </div>
+        </div>
+        <div class="task" data-sec="tech">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-title">Exhibitor Database — ข้อมูลครบทุก Field</div>
+            <div class="task-sub">ชื่อบริษัท, สินค้า, Zone, บูทหมายเลข, ข้อมูลติดต่อ</div>
+            <div class="tags"><span class="tag tag-phase1">Phase 1</span><span class="tag tag-tech">Tech</span><span class="tag tag-critical">🔴 Critical</span></div>
+          </div>
+        </div>
+        <div class="task" data-sec="tech">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-title">Buyer Database — ข้อมูลครบ พร้อม Category ที่สนใจ</div>
+            <div class="tags"><span class="tag tag-phase1">Phase 1</span><span class="tag tag-tech">Tech</span><span class="tag tag-critical">🔴 Critical</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="day-group">
+        <div class="day-label">Phase 2 · Optional (ทำได้ถ้ามีเวลา — ไม่กระทบงาน)</div>
+        <div class="task" data-sec="tech">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-title">AI Matching — Deploy MVP</div>
+            <div class="task-sub">ทำเสร็จก็ดี ไม่เสร็จก็ทำ Manual Matching แทนได้</div>
+            <div class="tags"><span class="tag tag-phase2">Phase 2</span><span class="tag tag-tech">Tech</span></div>
+          </div>
+        </div>
+        <div class="task" data-sec="tech">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-title">Smart Recommendation Engine</div>
+            <div class="tags"><span class="tag tag-phase2">Phase 2</span><span class="tag tag-tech">Tech</span></div>
+          </div>
+        </div>
+        <div class="task" data-sec="tech">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-title">Matching Dashboard</div>
+            <div class="tags"><span class="tag tag-phase2">Phase 2</span><span class="tag tag-tech">Tech</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /wrap -->
+
+<footer>
+  <p>Mekong Growth 2026 · Organized by <a href="https://vithhub.asia" target="_blank">VITH HUB</a> · Royal Bridge 99 Limited Partnership · vithhub.asia</p>
+</footer>
+
+<script>
+// ── COUNTDOWN ──────────────────────────────────────────────
+const EVENT_DATE = new Date('2026-06-25T09:00:00');
+function updateCountdown(){
+  const now = new Date();
+  const diff = EVENT_DATE - now;
+  if(diff <= 0){ document.getElementById('countdown').textContent='🚀 งานเริ่มแล้ว!'; return; }
+  const days = Math.floor(diff/86400000);
+  const hrs  = Math.floor((diff%86400000)/3600000);
+  const mins = Math.floor((diff%3600000)/60000);
+  document.getElementById('countdown').textContent = `⏳ D-${days} · ${String(hrs).padStart(2,'0')}:${String(mins).padStart(2,'0')} ถึงงาน`;
+  document.getElementById('kpi-days').textContent  = `D-${days}`;
+  document.getElementById('kpi-days').style.color  = days <= 5 ? 'var(--red2)' : days <= 10 ? 'var(--orange)' : 'var(--gold)';
+}
+updateCountdown();
+setInterval(updateCountdown, 30000);
+
+// ── TOGGLE SECTION ──────────────────────────────────────────
+function toggleSection(hdr){
+  const sec = hdr.closest('.section');
+  sec.classList.toggle('collapsed');
+}
+
+// ── TOGGLE TASK ─────────────────────────────────────────────
+function toggleTask(chk){
+  const task = chk.closest('.task');
+  task.classList.toggle('done');
+  saveState();
+  updateProgress();
+}
+
+// ── PROGRESS ────────────────────────────────────────────────
+const SEC_PROG_IDS = {
+  'sponsor-close':'prog-sponsor-close',
+  'exhibitor':'prog-exhibitor',
+  'vip':'prog-vip',
+  'buyer':'prog-buyer',
+  'ops':'prog-ops',
+  'emergency':'prog-emergency',
+  'tech':'prog-tech',
+};
+
+function updateProgress(){
+  const all = document.querySelectorAll('.task');
+  const done = document.querySelectorAll('.task.done');
+  const pct = all.length ? Math.round(done.length/all.length*100) : 0;
+  document.getElementById('progress-pct').textContent = `${done.length} / ${all.length} tasks  (${pct}%)`;
+  document.getElementById('progress-fill').style.width = pct+'%';
+
+  // per-section
+  Object.keys(SEC_PROG_IDS).forEach(sec => {
+    const tasks = document.querySelectorAll(`.task[data-sec="${sec}"]`);
+    const doneS = document.querySelectorAll(`.task[data-sec="${sec}"].done`);
+    const el = document.getElementById(SEC_PROG_IDS[sec]);
+    if(el && tasks.length) el.textContent = `${doneS.length}/${tasks.length}`;
+  });
+}
+updateProgress();
+
+// ── PILLAR FILTER ────────────────────────────────────────────
+function filterPillar(p, btn){
+  document.querySelectorAll('.pillar-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.section[data-pillar]').forEach(sec=>{
+    if(p==='all' || sec.dataset.pillar===p) sec.classList.add('visible');
+    else sec.classList.remove('visible');
+  });
+}
+
+// ── PERSIST STATE ────────────────────────────────────────────
+function saveState(){
+  const tasks = document.querySelectorAll('.task');
+  const state = [];
+  tasks.forEach(t => state.push(t.classList.contains('done')));
+  try{ localStorage.setItem('mg2026_checklist', JSON.stringify(state)); }catch(e){}
+}
+
+function loadState(){
+  try{
+    const saved = JSON.parse(localStorage.getItem('mg2026_checklist')||'[]');
+    const tasks = document.querySelectorAll('.task');
+    tasks.forEach((t,i)=>{ if(saved[i]) t.classList.add('done'); });
+  }catch(e){}
+  updateProgress();
+}
+loadState();
+</script>
+</body>
+</html>
