@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mekong Growth 2026 – Official Program</title>
+<style>
+  :root {
+    --navy: #0B1F3B;
+    --navy2: #1A3560;
+    --navy3: #0D2A52;
+    --gold: #D4AF37;
+    --gold2: #B8962E;
+    --cream: #F7F4EE;
+    --white: #ffffff;
+    --muted: #6A8BAA;
+    --r: 10px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI','Noto Sans Thai','Phetsarath OT',Arial,sans-serif; background: var(--cream); color: var(--navy); }
+
+  /* ── LANG BAR ── */
+  .topbar {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--navy);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 1.5rem;
+    border-bottom: 3px solid var(--gold);
+  }
+  .topbar-logo { font-size: 13px; font-weight: 700; color: var(--gold); letter-spacing: 1.5px; }
+  .lang-btns { display: flex; gap: 6px; padding: 10px 0; }
+  .lang-btn {
+    padding: 5px 16px; border: 1.5px solid var(--gold);
+    background: transparent; color: var(--gold);
+    border-radius: 20px; font-size: 13px; font-weight: 700; cursor: pointer; transition: all .2s;
+  }
+  .lang-btn.active, .lang-btn:hover { background: var(--gold); color: var(--navy); }
+
+  /* ── HERO ── */
+  .hero { background: var(--navy); padding: 3rem 1.5rem 2.5rem; text-align: center; position: relative; }
+  .hero::after { content:''; position:absolute; bottom:0; left:0; right:0; height:4px; background:var(--gold); }
+  .hero-badge {
+    display: inline-block; background: var(--gold); color: var(--navy);
+    font-size: 11px; font-weight: 700; letter-spacing: 2px;
+    padding: 5px 18px; border-radius: 20px; margin-bottom: 1.1rem;
+  }
+  .hero h1 {
+    font-size: clamp(1.7rem, 5vw, 3rem); font-weight: 700; color: var(--white);
+    letter-spacing: 2px; line-height: 1.15; margin-bottom: .5rem;
+  }
+  .hero .tagline { font-size: clamp(.9rem,2.5vw,1.15rem); font-style: italic; color: var(--gold); margin-bottom: .6rem; }
+  .hero .theme {
+    font-size: clamp(.8rem,1.8vw,.95rem); color: rgba(170,188,208,.85);
+    max-width: 680px; margin: 0 auto 2rem; line-height: 1.6;
+  }
+  .hero-meta { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 2rem; }
+  .hero-pill {
+    display: flex; align-items: center; gap: 7px;
+    background: rgba(255,255,255,.06); border: 1px solid rgba(212,175,55,.35);
+    border-radius: 30px; padding: 7px 16px; color: #AABCD0; font-size: 13px;
+  }
+  .hero-pill b { color: var(--gold); }
+
+  /* Day badges */
+  .day-badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; max-width: 760px; margin: 0 auto; }
+  .day-badge {
+    background: var(--navy3); border: 1.5px solid var(--gold);
+    border-radius: 10px; padding: 12px 16px; min-width: 110px;
+    text-align: center; flex: 1 1 100px; max-width: 150px;
+  }
+  .day-badge .db-num { color: var(--gold); font-size: 10px; font-weight: 700; letter-spacing: 2px; }
+  .day-badge .db-date { color: var(--white); font-size: 13px; font-weight: 600; margin-top: 3px; }
+  .day-badge .db-label { color: rgba(170,188,208,.7); font-size: 10px; margin-top: 2px; line-height: 1.3; }
+
+  /* ── MAIN ── */
+  .wrap { max-width: 900px; margin: 0 auto; padding: 0 1rem 3rem; }
+
+  .sec-title {
+    font-size: 10px; font-weight: 700; letter-spacing: 2.5px;
+    color: var(--gold2); text-align: center; margin: 2.5rem 0 1rem;
+  }
+
+  /* Stats */
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px,1fr)); gap: 10px; margin-bottom: 2.5rem; }
+  .stat { background: var(--navy); border-radius: var(--r); padding: 16px 10px; text-align: center; }
+  .stat .sv { font-size: 1.6rem; font-weight: 700; color: var(--gold); }
+  .stat .sl { font-size: 11px; color: var(--muted); margin-top: 4px; line-height: 1.4; }
+
+  /* ── DAY BLOCK ── */
+  .day-block { margin-bottom: 2rem; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 18px rgba(11,31,59,.12); }
+  .day-hdr {
+    padding: 1.2rem 1.5rem;
+    display: flex; align-items: flex-start; justify-content: space-between; gap: 12px;
+  }
+  .day-hdr-left .dn { font-size: 10px; font-weight: 700; letter-spacing: 2px; color: var(--gold); margin-bottom: 4px; }
+  .day-hdr-left h2 { font-size: 1.05rem; font-weight: 700; color: var(--white); line-height: 1.3; }
+  .day-hdr-left .dd { font-size: 12px; color: rgba(255,255,255,.6); margin-top: 3px; }
+  .day-hdr-icon { font-size: 1.8rem; opacity: .65; flex-shrink: 0; margin-top: 2px; }
+
+  /* Sessions */
+  .sessions { background: var(--white); }
+  .sess {
+    display: flex; align-items: stretch;
+    border-bottom: 1px solid #ede9e0;
+  }
+  .sess:last-child { border-bottom: none; }
+  .sess-time {
+    width: 128px; min-width: 128px; padding: 16px 10px;
+    display: flex; align-items: flex-start; justify-content: center;
+    flex-shrink: 0;
+  }
+  .sess-time span {
+    font-size: 10px; font-weight: 700; color: var(--white);
+    border-radius: 6px; padding: 5px 8px; text-align: center;
+    line-height: 1.5; display: block;
+  }
+  .sess-body { flex: 1; padding: 14px 16px 14px 10px; }
+  .sess-body h3 { font-size: 13.5px; font-weight: 700; margin-bottom: 7px; }
+  .sess-body ul { padding-left: 16px; }
+  .sess-body li { font-size: 12.5px; color: #4a5568; margin-bottom: 3px; line-height: 1.55; }
+
+  /* Participants */
+  .part-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(155px,1fr)); gap: 10px; }
+  .part-card {
+    background: var(--navy); border: 1px solid rgba(212,175,55,.28);
+    border-radius: var(--r); padding: 18px 10px; text-align: center;
+  }
+  .part-card .pi { font-size: 1.4rem; margin-bottom: 8px; }
+  .part-card .pl { font-size: 12px; font-weight: 600; color: var(--white); line-height: 1.4; }
+
+  footer {
+    background: var(--navy); color: var(--muted);
+    text-align: center; padding: 1.5rem;
+    font-size: 12px; border-top: 3px solid var(--gold);
+  }
+  footer a { color: var(--gold); text-decoration: none; }
+
+  @media(max-width:560px){
+    .sess { flex-direction: column; }
+    .sess-time { width: auto; min-width: unset; justify-content: flex-start; padding: 12px 16px 4px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-logo">VITH HUB</div>
+  <div class="lang-btns">
+    <button class="lang-btn" data-lang="en">EN</button>
+    <button class="lang-btn" data-lang="th">ไทย</button>
+    <button class="lang-btn" data-lang="lo">ລາວ</button>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="hero-badge" id="h-badge"></div>
+  <h1>MEKONG GROWTH 2026</h1>
+  <p class="tagline" id="h-tagline"></p>
+  <p class="theme" id="h-theme"></p>
+  <div class="hero-meta">
+    <div class="hero-pill">📅 <b>25–29 June 2026</b></div>
+    <div class="hero-pill">📍 <b>Big C Vientiane, Lao PDR</b></div>
+  </div>
+  <div class="day-badges" id="dayBadges"></div>
+</div>
+
+<div class="wrap">
+  <p class="sec-title" id="glanceTitle"></p>
+  <div class="stats" id="statsGrid"></div>
+  <div id="dayBlocks"></div>
+  <p class="sec-title" id="partTitle"></p>
+  <div class="part-grid" id="partGrid"></div>
+</div>
+
+<footer>
+  <p>Organized by <a href="https://vithhub.asia" target="_blank">VITH HUB</a> &nbsp;|&nbsp; vithhub.asia &nbsp;|&nbsp; Mekong Growth 2026</p>
+</footer>
+
+<script>
+const DAY_COLORS = ["#1A6B5A","#0B1F3B","#7B4F00","#5A1A6B","#6B1A1A"];
+const DAY_ICONS  = ["📋","🤝","⭐","📈","🏆"];
+
+const DATA = {
+  en: {
+    badge: "OFFICIAL PROGRAM AGENDA",
+    tagline: "The Growth Community of the Mekong",
+    theme: "Theme: Connecting SMEs, Buyers, Investors and Trade Partners Across the Mekong Region",
+    glance: "5-DAY PROGRAM AT A GLANCE",
+    stats: [
+      {v:"500+", l:"Expected Participants"},
+      {v:"4",    l:"Business Matching Sessions"},
+      {v:"50+",  l:"SME Exhibitor Brands"},
+      {v:"CLMV", l:"Market Focus"},
+    ],
+    dayLabels: ["DAY 1","DAY 2","DAY 3","DAY 4","DAY 5"],
+    dayDates:  ["25 Jun","26 Jun","27 Jun","28 Jun","29 Jun"],
+    dayShort:  ["Matching I","Matching II","Exhibition","Forum","Closing"],
+    partTitle: "EXPECTED PARTICIPANTS",
+    days: [
+      {
+        title: "International Business Matching Day I",
+        date: "25 June 2026",
+        sessions: [
+          { time:"09:00–10:00", title:"Registration & Check-in",
+            bullets:["Exhibitor Registration","Buyer Registration","Business Verification"] },
+          { time:"10:00–12:00", title:"Business Matching Session I",
+            bullets:["One-on-One Business Meetings","Product Presentation","Trade Discussions"] },
+          { time:"12:00–13:00", title:"Networking Lunch", bullets:[] },
+          { time:"13:00–17:00", title:"Business Matching Session II",
+            bullets:["Buyer-Seller Negotiation","Distribution Partnership Discussions","OEM and Export Opportunities"] },
+          { time:"17:00–18:00", title:"Business Networking Session", bullets:[] },
+        ]
+      },
+      {
+        title: "International Business Matching Day II & Official Opening Ceremony",
+        date: "26 June 2026",
+        sessions: [
+          { time:"10:00–12:00", title:"Business Matching Session III",
+            bullets:["One-on-One Meetings","Product Showcase","Commercial Negotiations"] },
+          { time:"12:00–13:00", title:"Networking Lunch", bullets:[] },
+          { time:"13:00–14:00", title:"Business Matching Session IV",
+            bullets:["Final Matching Sessions","Letter of Intent (LOI) Discussions","Partnership Opportunities"] },
+          { time:"15:00–16:00", title:"Official Opening Ceremony",
+            bullets:["Welcome Address","Remarks by Government Representatives","Regional Economic Cooperation Vision","Official Opening Declaration","Group Photo Session"] },
+          { time:"16:00–17:00", title:"VIP Exhibition Tour & Media Session", bullets:[] },
+        ]
+      },
+      {
+        title: "SME Showcase & Public Exhibition Day",
+        date: "27 June 2026",
+        sessions: [
+          { time:"10:00–18:00", title:"Public Exhibition",
+            bullets:["SME Product Showcase","Product Demonstrations","Brand Promotion Activities","Buyer Visits","Media Coverage"] },
+          { time:"13:30–15:00", title:"Special Keynote Session",
+            bullets:["Topic: Entrepreneurship, Business Growth and Future Opportunities"] },
+          { time:"15:00–17:00", title:"Public Networking & Engagement Activities", bullets:[] },
+        ]
+      },
+      {
+        title: "SME Development & Trade Expansion Forum",
+        date: "28 June 2026",
+        sessions: [
+          { time:"10:00–12:00", title:"SME Development Workshop",
+            bullets:["Branding","Packaging","Digital Marketing","Export Readiness"] },
+          { time:"13:00–15:00", title:"Trade Development Forum", bullets:[] },
+          { time:"15:00–17:00", title:"Distributor & Buyer Networking Session", bullets:[] },
+        ]
+      },
+      {
+        title: "Closing Ceremony & Future Cooperation Session",
+        date: "29 June 2026",
+        sessions: [
+          { time:"10:00–12:00", title:"Trade Outcome Presentation",
+            bullets:["Business Matching Results","Trade Value Summary","Success Stories"] },
+          { time:"13:00–14:00", title:"Recognition & Appreciation Ceremony", bullets:[] },
+          { time:"14:00–15:00", title:"Future Cooperation Announcement", bullets:[] },
+          { time:"15:00–16:00", title:"Closing Ceremony",
+            bullets:["Closing Remarks","Appreciation Presentation","Group Photo Session"] },
+        ]
+      },
+    ],
+    participants: [
+      {i:"🏭",l:"SMEs"},
+      {i:"🌐",l:"Importers & Exporters"},
+      {i:"🛒",l:"Retailers"},
+      {i:"📦",l:"Distributors"},
+      {i:"💼",l:"Investors"},
+      {i:"🏛",l:"Chambers of Commerce"},
+      {i:"🏢",l:"Government Agencies"},
+      {i:"🤝",l:"Development Partners"},
+    ]
+  },
+
+  th: {
+    badge: "กำหนดการโปรแกรมอย่างเป็นทางการ",
+    tagline: "ชุมชนแห่งการเติบโตของลุ่มน้ำโขง",
+    theme: "ธีม: เชื่อมต่อ SMEs ผู้ซื้อ นักลงทุน และพันธมิตรการค้าทั่วภูมิภาคแม่น้ำโขง",
+    glance: "ภาพรวมโปรแกรม 5 วัน",
+    stats: [
+      {v:"500+", l:"ผู้เข้าร่วมที่คาดหวัง"},
+      {v:"4",    l:"เซสชั่นจับคู่ธุรกิจ"},
+      {v:"50+",  l:"แบรนด์ผู้แสดงสินค้า SME"},
+      {v:"CLMV", l:"เป้าหมายตลาด"},
+    ],
+    dayLabels: ["วันที่ 1","วันที่ 2","วันที่ 3","วันที่ 4","วันที่ 5"],
+    dayDates:  ["25 มิ.ย.","26 มิ.ย.","27 มิ.ย.","28 มิ.ย.","29 มิ.ย."],
+    dayShort:  ["จับคู่ธุรกิจ I","จับคู่ธุรกิจ II","นิทรรศการ","ฟอรั่ม","ปิดงาน"],
+    partTitle: "ผู้เข้าร่วมที่คาดหวัง",
+    days: [
+      {
+        title: "วันจับคู่ธุรกิจนานาชาติ ครั้งที่ I",
+        date: "25 มิถุนายน 2569",
+        sessions: [
+          { time:"09:00–10:00", title:"ลงทะเบียน & เช็คอิน",
+            bullets:["ลงทะเบียนผู้แสดงสินค้า","ลงทะเบียนผู้ซื้อ","การยืนยันข้อมูลธุรกิจ"] },
+          { time:"10:00–12:00", title:"เซสชั่นจับคู่ธุรกิจ ครั้งที่ I",
+            bullets:["การประชุม One-on-One","นำเสนอสินค้า","การเจรจาการค้า"] },
+          { time:"12:00–13:00", title:"มื้อเที่ยงเน็ตเวิร์กกิ้ง", bullets:[] },
+          { time:"13:00–17:00", title:"เซสชั่นจับคู่ธุรกิจ ครั้งที่ II",
+            bullets:["การเจรจาระหว่างผู้ซื้อและผู้ขาย","การหารือพันธมิตรจัดจำหน่าย","โอกาส OEM และการส่งออก"] },
+          { time:"17:00–18:00", title:"เซสชั่นเน็ตเวิร์กกิ้งธุรกิจ", bullets:[] },
+        ]
+      },
+      {
+        title: "วันจับคู่ธุรกิจนานาชาติ ครั้งที่ II & พิธีเปิดอย่างเป็นทางการ",
+        date: "26 มิถุนายน 2569",
+        sessions: [
+          { time:"10:00–12:00", title:"เซสชั่นจับคู่ธุรกิจ ครั้งที่ III",
+            bullets:["การประชุม One-on-One","การแสดงสินค้า","การเจรจาเชิงพาณิชย์"] },
+          { time:"12:00–13:00", title:"มื้อเที่ยงเน็ตเวิร์กกิ้ง", bullets:[] },
+          { time:"13:00–14:00", title:"เซสชั่นจับคู่ธุรกิจ ครั้งที่ IV",
+            bullets:["เซสชั่นจับคู่รอบสุดท้าย","การหารือ Letter of Intent (LOI)","โอกาสการเป็นพันธมิตร"] },
+          { time:"15:00–16:00", title:"พิธีเปิดอย่างเป็นทางการ",
+            bullets:["กล่าวต้อนรับ","คำกล่าวจากผู้แทนรัฐบาล","วิสัยทัศน์ความร่วมมือทางเศรษฐกิจระดับภูมิภาค","ประกาศเปิดงานอย่างเป็นทางการ","ถ่ายภาพหมู่"] },
+          { time:"16:00–17:00", title:"ทัวร์บูธ VIP & เซสชั่นสื่อมวลชน", bullets:[] },
+        ]
+      },
+      {
+        title: "วันนิทรรศการ SME & งานแสดงสินค้าสาธารณะ",
+        date: "27 มิถุนายน 2569",
+        sessions: [
+          { time:"10:00–18:00", title:"นิทรรศการสาธารณะ",
+            bullets:["การแสดงสินค้า SME","การสาธิตสินค้า","กิจกรรมส่งเสริมแบรนด์","การเยี่ยมชมของผู้ซื้อ","การรายงานข่าวจากสื่อมวลชน"] },
+          { time:"13:30–15:00", title:"เซสชั่น Keynote พิเศษ",
+            bullets:["หัวข้อ: ผู้ประกอบการ การเติบโตทางธุรกิจ และโอกาสในอนาคต"] },
+          { time:"15:00–17:00", title:"กิจกรรมเน็ตเวิร์กกิ้งสาธารณะ", bullets:[] },
+        ]
+      },
+      {
+        title: "ฟอรั่มพัฒนา SME & ขยายการค้า",
+        date: "28 มิถุนายน 2569",
+        sessions: [
+          { time:"10:00–12:00", title:"เวิร์กช็อปพัฒนา SME",
+            bullets:["การสร้างแบรนด์","บรรจุภัณฑ์","การตลาดดิจิทัล","ความพร้อมด้านการส่งออก"] },
+          { time:"13:00–15:00", title:"ฟอรั่มพัฒนาการค้า", bullets:[] },
+          { time:"15:00–17:00", title:"เซสชั่นเน็ตเวิร์กกิ้งกับตัวแทนจำหน่ายและผู้ซื้อ", bullets:[] },
+        ]
+      },
+      {
+        title: "พิธีปิดงาน & เซสชั่นความร่วมมือในอนาคต",
+        date: "29 มิถุนายน 2569",
+        sessions: [
+          { time:"10:00–12:00", title:"นำเสนอผลลัพธ์ทางการค้า",
+            bullets:["ผลการจับคู่ธุรกิจ","สรุปมูลค่าการค้า","เรื่องราวความสำเร็จ"] },
+          { time:"13:00–14:00", title:"พิธีมอบรางวัลและขอบคุณ", bullets:[] },
+          { time:"14:00–15:00", title:"ประกาศความร่วมมือในอนาคต", bullets:[] },
+          { time:"15:00–16:00", title:"พิธีปิดงาน",
+            bullets:["กล่าวปิด","การมอบของที่ระลึก","ถ่ายภาพหมู่"] },
+        ]
+      },
+    ],
+    participants: [
+      {i:"🏭",l:"วิสาหกิจขนาดกลางและย่อม (SMEs)"},
+      {i:"🌐",l:"ผู้นำเข้าและผู้ส่งออก"},
+      {i:"🛒",l:"ผู้ค้าปลีก"},
+      {i:"📦",l:"ผู้จัดจำหน่าย"},
+      {i:"💼",l:"นักลงทุน"},
+      {i:"🏛",l:"หอการค้า"},
+      {i:"🏢",l:"หน่วยงานรัฐบาล"},
+      {i:"🤝",l:"พันธมิตรด้านการพัฒนา"},
+    ]
+  },
+
+  lo: {
+    badge: "ຕາຕະລາງໂຄງການຢ່າງເປັນທາງການ",
+    tagline: "ຊຸມຊົນການເຕີບໂຕຂອງແມ່ນ້ຳຂອງ",
+    theme: "ຫົວຂໍ້: ເຊື່ອມຕໍ່ SMEs, ຜູ້ຊື້, ນັກລົງທຶນ ແລະ ຄູ່ຮ່ວມການຄ້າທົ່ວພາກພື້ນແມ່ນ້ຳຂອງ",
+    glance: "ພາບລວມໂຄງການ 5 ວັນ",
+    stats: [
+      {v:"500+", l:"ຜູ້ເຂົ້າຮ່ວມທີ່ຄາດໄວ້"},
+      {v:"4",    l:"ກອງປະຊຸມຈັບຄູ່ທຸລະກິດ"},
+      {v:"50+",  l:"ຍີ່ຫໍ້ SME ທີ່ເຂົ້າຮ່ວມ"},
+      {v:"CLMV", l:"ເປົ້າໝາຍຕະຫຼາດ"},
+    ],
+    dayLabels: ["ວັນທີ 1","ວັນທີ 2","ວັນທີ 3","ວັນທີ 4","ວັນທີ 5"],
+    dayDates:  ["25 ມິ.ຖ.","26 ມິ.ຖ.","27 ມິ.ຖ.","28 ມິ.ຖ.","29 ມິ.ຖ."],
+    dayShort:  ["ຈັບຄູ່ I","ຈັບຄູ່ II","ວາງສະແດງ","ຟໍຣ່ຳ","ປິດງານ"],
+    partTitle: "ຜູ້ເຂົ້າຮ່ວມທີ່ຄາດໄວ້",
+    days: [
+      {
+        title: "ວັນຈັບຄູ່ທຸລະກິດສາກົນ ຄັ້ງທີ I",
+        date: "25 ມິຖຸນາ 2026",
+        sessions: [
+          { time:"09:00–10:00", title:"ລົງທະບຽນ & ເຊັກອິນ",
+            bullets:["ລົງທະບຽນຜູ້ສະແດງສິນຄ້າ","ລົງທະບຽນຜູ້ຊື້","ຢັ້ງຢືນຂໍ້ມູນທຸລະກິດ"] },
+          { time:"10:00–12:00", title:"ກອງປະຊຸມຈັບຄູ່ທຸລະກິດ ຄັ້ງທີ I",
+            bullets:["ກອງປະຊຸມ One-on-One","ນຳສະເໜີສິນຄ້າ","ການເຈລະຈາທາງການຄ້າ"] },
+          { time:"12:00–13:00", title:"ອາຫານທ່ຽງ Networking", bullets:[] },
+          { time:"13:00–17:00", title:"ກອງປະຊຸມຈັບຄູ່ທຸລະກິດ ຄັ້ງທີ II",
+            bullets:["ການເຈລະຈາລະຫວ່າງຜູ້ຊື້-ຜູ້ຂາຍ","ການປຶກສາຫາລືຄູ່ຮ່ວມຈໍາໜ່າຍ","ໂອກາດ OEM ແລະ ການສົ່ງອອກ"] },
+          { time:"17:00–18:00", title:"ກອງປະຊຸມ Networking ທຸລະກິດ", bullets:[] },
+        ]
+      },
+      {
+        title: "ວັນຈັບຄູ່ທຸລະກິດສາກົນ ຄັ້ງທີ II & ພິທີເປີດຢ່າງເປັນທາງການ",
+        date: "26 ມິຖຸນາ 2026",
+        sessions: [
+          { time:"10:00–12:00", title:"ກອງປະຊຸມຈັບຄູ່ທຸລະກິດ ຄັ້ງທີ III",
+            bullets:["ກອງປະຊຸມ One-on-One","ການວາງສະແດງສິນຄ້າ","ການເຈລະຈາທາງການຄ້າ"] },
+          { time:"12:00–13:00", title:"ອາຫານທ່ຽງ Networking", bullets:[] },
+          { time:"13:00–14:00", title:"ກອງປະຊຸມຈັບຄູ່ທຸລະກິດ ຄັ້ງທີ IV",
+            bullets:["ກອງປະຊຸມຈັບຄູ່ຮອບສຸດທ້າຍ","ການປຶກສາ Letter of Intent (LOI)","ໂອກາດການເປັນຄູ່ຮ່ວມທຸລະກິດ"] },
+          { time:"15:00–16:00", title:"ພິທີເປີດຢ່າງເປັນທາງການ",
+            bullets:["ກ່າວຕ້ອນຮັບ","ຄຳເວົ້າຈາກຕົວແທນລັດຖະບານ","ວິໄສທັດການຮ່ວມມືເສດຖະກິດລະດັບພາກພື້ນ","ປະກາດເປີດງານຢ່າງເປັນທາງການ","ຖ່າຍຮູບໝູ່"] },
+          { time:"16:00–17:00", title:"ທ່ຽວຊົມບູດ VIP & ກອງປະຊຸມສື່ມວນຊົນ", bullets:[] },
+        ]
+      },
+      {
+        title: "ວັນວາງສະແດງ SME & ງານວາງສະແດງສາທາລະນະ",
+        date: "27 ມິຖຸນາ 2026",
+        sessions: [
+          { time:"10:00–18:00", title:"ງານວາງສະແດງສາທາລະນະ",
+            bullets:["ສະແດງສິນຄ້າ SME","ການສາທິດສິນຄ້າ","ກິດຈະກຳສົ່ງເສີມຍີ່ຫໍ້","ຜູ້ຊື້ຢ້ຽມຊົມ","ການນຳສະເໜີຂ່າວ"] },
+          { time:"13:30–15:00", title:"ກອງປະຊຸມ Keynote ພິເສດ",
+            bullets:["ຫົວຂໍ້: ຜູ້ປະກອບການ, ການເຕີບໂຕທຸລະກິດ ແລະ ໂອກາດໃນອານາຄົດ"] },
+          { time:"15:00–17:00", title:"ກິດຈະກຳ Networking ສາທາລະນະ", bullets:[] },
+        ]
+      },
+      {
+        title: "ຟໍຣ່ຳພັດທະນາ SME & ຂະຫຍາຍການຄ້າ",
+        date: "28 ມິຖຸນາ 2026",
+        sessions: [
+          { time:"10:00–12:00", title:"ກອງປະຊຸມພັດທະນາ SME",
+            bullets:["ການສ້າງຍີ່ຫໍ້","ການບັນຈຸພັນ","ການຕະຫຼາດດິຈິຕອນ","ຄວາມພ້ອມດ້ານການສົ່ງອອກ"] },
+          { time:"13:00–15:00", title:"ຟໍຣ່ຳພັດທະນາການຄ້າ", bullets:[] },
+          { time:"15:00–17:00", title:"ກອງປະຊຸມ Networking ກັບຜູ້ຈໍາໜ່າຍ ແລະ ຜູ້ຊື້", bullets:[] },
+        ]
+      },
+      {
+        title: "ພິທີປິດງານ & ກອງປະຊຸມຮ່ວມມືໃນອານາຄົດ",
+        date: "29 ມິຖຸນາ 2026",
+        sessions: [
+          { time:"10:00–12:00", title:"ນຳສະເໜີຜົນໄດ້ຮັບທາງການຄ້າ",
+            bullets:["ຜົນການຈັບຄູ່ທຸລະກິດ","ສະຫຼຸບມູນຄ່າການຄ້າ","ເລື່ອງຄວາມສຳເລັດ"] },
+          { time:"13:00–14:00", title:"ພິທີມອບລາງວັນ ແລະ ຂອບໃຈ", bullets:[] },
+          { time:"14:00–15:00", title:"ປະກາດການຮ່ວມມືໃນອານາຄົດ", bullets:[] },
+          { time:"15:00–16:00", title:"ພິທີປິດ",
+            bullets:["ກ່າວປິດ","ມອບຂອງທີ່ລະລຶກ","ຖ່າຍຮູບໝູ່"] },
+        ]
+      },
+    ],
+    participants: [
+      {i:"🏭",l:"ວິສາຫະກິດຂະໜາດນ້ອຍ-ກາງ (SMEs)"},
+      {i:"🌐",l:"ຜູ້ນຳເຂົ້າ ແລະ ຜູ້ສົ່ງອອກ"},
+      {i:"🛒",l:"ຜູ້ຂາຍຍ່ອຍ"},
+      {i:"📦",l:"ຜູ້ຈໍາໜ່າຍ"},
+      {i:"💼",l:"ນັກລົງທຶນ"},
+      {i:"🏛",l:"ຫໍການຄ້າ"},
+      {i:"🏢",l:"ໜ່ວຍງານລັດ"},
+      {i:"🤝",l:"ຄູ່ຮ່ວມພັດທະນາ"},
+    ]
+  }
+};
+
+function render(lang) {
+  const d = DATA[lang];
+
+  // Lang buttons
+  document.querySelectorAll('.lang-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.lang === lang);
+  });
+
+  // Hero
+  document.getElementById('h-badge').textContent   = d.badge;
+  document.getElementById('h-tagline').textContent = d.tagline;
+  document.getElementById('h-theme').textContent   = d.theme;
+
+  // Day badges
+  const badges = document.getElementById('dayBadges');
+  badges.innerHTML = '';
+  for (let i = 0; i < 5; i++) {
+    badges.innerHTML += `
+      <div class="day-badge">
+        <div class="db-num">${d.dayLabels[i]}</div>
+        <div class="db-date">${d.dayDates[i]}</div>
+        <div class="db-label">${d.dayShort[i]}</div>
+      </div>`;
+  }
+
+  // Section titles
+  document.getElementById('glanceTitle').textContent = d.glance;
+  document.getElementById('partTitle').textContent   = d.partTitle;
+
+  // Stats
+  const sg = document.getElementById('statsGrid');
+  sg.innerHTML = d.stats.map(s =>
+    `<div class="stat"><div class="sv">${s.v}</div><div class="sl">${s.l}</div></div>`
+  ).join('');
+
+  // Day blocks
+  const db = document.getElementById('dayBlocks');
+  db.innerHTML = '';
+  d.days.forEach((day, i) => {
+    const col = DAY_COLORS[i];
+    const ico = DAY_ICONS[i];
+    const sessHTML = day.sessions.map(s => {
+      const lis = s.bullets.map(b => `<li>${b}</li>`).join('');
+      return `
+        <div class="sess">
+          <div class="sess-time">
+            <span style="background:${col}">${s.time}</span>
+          </div>
+          <div class="sess-body">
+            <h3 style="color:${col}">${s.title}</h3>
+            ${lis ? `<ul>${lis}</ul>` : ''}
+          </div>
+        </div>`;
+    }).join('');
+
+    db.innerHTML += `
+      <div class="day-block">
+        <div class="day-hdr" style="background:${col}">
+          <div class="day-hdr-left">
+            <div class="dn">${d.dayLabels[i]}</div>
+            <h2>${day.title}</h2>
+            <div class="dd">${day.date}</div>
+          </div>
+          <div class="day-hdr-icon">${ico}</div>
+        </div>
+        <div class="sessions">${sessHTML}</div>
+      </div>`;
+  });
+
+  // Participants
+  const pg = document.getElementById('partGrid');
+  pg.innerHTML = d.participants.map(p =>
+    `<div class="part-card"><div class="pi">${p.i}</div><div class="pl">${p.l}</div></div>`
+  ).join('');
+}
+
+document.querySelectorAll('.lang-btn').forEach(b => {
+  b.addEventListener('click', () => render(b.dataset.lang));
+});
+
+render('en');
+</script>
+</body>
+</html>
