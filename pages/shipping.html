@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>VITH HUB · Wholesale Shipping Calculator</title>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700;800&family=Cormorant+Garamond:wght@700;800&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{min-height:100vh;background:linear-gradient(160deg,#0B1F3B 0%,#0f2a4a 55%,#1a3a2a 100%);
+  font-family:'Sarabun',sans-serif;display:flex;justify-content:center;padding:28px 14px 60px}
+.wrap{width:100%;max-width:540px}
+.lang-bar{display:flex;justify-content:flex-end;gap:6px;margin-bottom:16px}
+.lang-btn{padding:5px 14px;border-radius:999px;font-size:12px;font-weight:700;cursor:pointer;
+  border:1.5px solid rgba(255,255,255,0.15);background:transparent;color:rgba(255,255,255,0.5)}
+.lang-btn.active{background:#D4AF37;color:#0B1F3B;border-color:#D4AF37}
+.header{text-align:center;margin-bottom:22px}
+.brand-tag{font-size:10px;letter-spacing:.22em;color:#D4AF37;font-weight:700;margin-bottom:6px}
+.title{font-size:22px;font-weight:800;color:#fff;font-family:'Cormorant Garamond',serif;line-height:1.2;margin-bottom:4px}
+.subtitle{color:#7a9abb;font-size:12px}
+.card{background:#fff;border-radius:20px;box-shadow:0 24px 64px rgba(0,0,0,.4);overflow:hidden}
+.card-body{padding:22px 20px 20px}
+
+/* parcel banner */
+.parcel-banner{background:linear-gradient(135deg,#f59e0b15,#d9770615);border:1.5px solid #f59e0b;
+  border-radius:12px;padding:10px 14px;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.parcel-banner-icon{font-size:20px;flex-shrink:0}
+.parcel-banner-text{font-size:11px;color:#92400e;line-height:1.5}
+.parcel-banner-title{font-weight:700;font-size:12px;color:#78350f;margin-bottom:2px}
+
+/* vol tier table */
+.tier-table{width:100%;border-collapse:collapse;margin-bottom:20px;font-size:11px}
+.tier-table th{background:#0B1F3B;color:#D4AF37;padding:7px 9px;text-align:left;font-weight:700;font-size:10.5px}
+.tier-table td{padding:6px 9px;border-bottom:1px solid #f0ede6;vertical-align:middle}
+.tier-table tr:last-child td{border-bottom:none}
+.tier-table tr.active-tier td{background:#fffbeb;font-weight:700}
+.tier-table tr.parcel-row td{background:#fef9ee}
+.tier-badge{display:inline-block;padding:2px 7px;border-radius:999px;font-size:10px;font-weight:700;color:#fff}
+
+.step-label{font-size:11px;font-weight:700;color:#0B1F3B;letter-spacing:.08em;margin-bottom:8px;margin-top:2px}
+
+/* direction */
+.dir-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:18px}
+.dir-btn{padding:11px 8px;border-radius:12px;cursor:pointer;border:2px solid #e8e4d9;
+  background:#fafaf8;text-align:center;transition:all .12s}
+.dir-btn.active{border-color:#D4AF37;background:#0B1F3B}
+.dir-label{font-size:12px;font-weight:700;color:#222;margin-bottom:2px}
+.dir-btn.active .dir-label{color:#D4AF37}
+.dir-sub{font-size:10px;color:#999}
+.dir-btn.active .dir-sub{color:rgba(212,175,55,.7)}
+.x2tag{display:inline-block;margin-top:5px;font-size:9px;padding:2px 8px;border-radius:999px;
+  background:#fee2e2;color:#991b1b;font-weight:700}
+.dir-btn.active .x2tag{background:#D4AF37;color:#0B1F3B}
+
+/* category */
+.cat-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:18px}
+.cat-btn{display:flex;flex-direction:column;padding:12px;border-radius:12px;
+  border:2px solid #e8e4d9;background:#fafaf8;cursor:pointer;text-align:left;
+  width:100%;transition:all .12s;gap:3px}
+.cat-icon{font-size:20px}
+.cat-name{font-size:11.5px;font-weight:700;color:#222;line-height:1.3}
+.cat-sub{font-size:10px;color:#888;line-height:1.4}
+.cat-badge{font-size:9px;padding:2px 7px;border-radius:999px;background:#e8e4d9;
+  color:#666;font-weight:700;display:inline-block;margin-top:2px}
+.cond-note{font-size:9.5px;color:#c2410c;margin-top:2px;font-style:italic}
+
+/* inputs */
+.dim-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:14px}
+.dim-wrap label{font-size:10px;color:#999;display:block;margin-bottom:3px}
+input[type=number]{width:100%;padding:9px 4px;border-radius:10px;border:1.5px solid #e0ddd6;
+  font-size:18px;font-weight:700;color:#0B1F3B;text-align:center;outline:none;
+  background:#fafaf8;font-family:'Sarabun',sans-serif}
+input[type=number]:focus{border-color:#D4AF37}
+input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none}
+.qty-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:18px}
+.qty-row label{font-size:10px;color:#999;display:block;margin-bottom:3px}
+.big-input{padding:10px 16px;font-size:20px;font-weight:800}
+
+.calc-btn{width:100%;padding:13px;border-radius:12px;border:none;background:#ede9e0;
+  color:#bbb;font-size:15px;font-weight:800;cursor:not-allowed;letter-spacing:.04em;
+  margin-bottom:14px;font-family:'Sarabun',sans-serif;transition:all .15s}
+.calc-btn.ready{background:linear-gradient(135deg,#D4AF37,#b8941e);color:#0B1F3B;cursor:pointer}
+
+/* result */
+.result-box{border-radius:16px;padding:20px;color:#fff;margin-bottom:10px}
+.result-meta{font-size:11px;color:rgba(255,255,255,.65);margin-bottom:8px;line-height:1.9}
+.tag{display:inline-block;padding:1px 8px;border-radius:999px;font-size:10px;font-weight:700;margin:1px}
+.result-label{font-size:12px;color:rgba(255,255,255,.75);margin-bottom:4px}
+.result-price{font-size:48px;font-weight:900;line-height:1;font-family:'Cormorant Garamond',serif}
+.result-unit{font-size:13px;color:rgba(255,255,255,.7);margin-top:4px}
+.breakdown{background:rgba(255,255,255,.08);border-radius:10px;padding:12px 14px;margin-top:12px}
+.breakdown-row{display:flex;justify-content:space-between;font-size:12px;
+  color:rgba(255,255,255,.75);padding:3px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.breakdown-row:last-child{border-bottom:none;color:#D4AF37;font-weight:700;font-size:13px;padding-top:6px}
+.result-note{font-size:11px;color:rgba(255,255,255,.5);margin-top:10px;line-height:1.7}
+.reset-btn{margin-top:12px;padding:7px 22px;border-radius:999px;
+  border:1px solid rgba(255,255,255,.3);background:transparent;
+  color:rgba(255,255,255,.7);font-size:12px;font-weight:600;cursor:pointer;font-family:'Sarabun',sans-serif}
+
+/* parcel result highlight */
+.parcel-flag{display:inline-block;background:#f59e0b;color:#0B1F3B;
+  font-size:9px;font-weight:800;padding:2px 8px;border-radius:999px;margin-left:4px}
+
+.warn-box{border-radius:14px;padding:16px 20px;text-align:center;margin-bottom:10px}
+.warn-orange{background:#fff7ed;border:1.5px solid #f97316}
+.warn-yellow{background:#fffbeb;border:1.5px solid #fbbf24}
+.warn-emoji{font-size:22px}
+.warn-title{font-weight:700;margin-top:5px;font-size:14px}
+.warn-sub{font-size:12px;margin-top:4px;line-height:1.6}
+.contact-link{display:inline-block;margin-top:10px;padding:7px 18px;border-radius:999px;
+  background:#0B1F3B;color:#D4AF37;font-size:12px;font-weight:700;text-decoration:none}
+.note{font-size:10px;color:#aaa;text-align:center;margin-top:12px;line-height:1.6}
+.not-accepted{background:#fafaf8;border-top:1px solid #eee;padding:14px 20px}
+.not-title{font-size:11px;font-weight:700;color:#c00;margin-bottom:7px}
+.not-tags{display:flex;flex-wrap:wrap;gap:6px}
+.not-tag{font-size:11px;padding:3px 10px;border-radius:999px;background:#fee2e2;color:#991b1b;font-weight:500}
+.footer{text-align:center;margin-top:18px;font-size:10px;color:rgba(255,255,255,.2)}
+/* last mile */
+.lm-section{margin-bottom:18px}
+.lm-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
+.lm-btn{padding:12px 10px;border-radius:12px;cursor:pointer;border:2px solid #e8e4d9;
+  background:#fafaf8;text-align:center;transition:all .12s}
+.lm-btn.active{border-color:#0369a1;background:#0369a115}
+.lm-btn-label{font-size:12px;font-weight:700;color:#222;margin-bottom:2px}
+.lm-btn.active .lm-btn-label{color:#0369a1}
+.lm-btn-sub{font-size:10px;color:#999;line-height:1.4}
+.lm-btn.active .lm-btn-sub{color:#0369a1aa}
+.lm-price-tag{font-size:10px;font-weight:700;padding:2px 8px;border-radius:999px;
+  background:#e8e4d9;color:#555;display:inline-block;margin-top:4px}
+.lm-btn.active .lm-price-tag{background:#0369a1;color:#fff}
+.lm-area{display:none}
+.lm-area.show{display:block}
+.lm-zone-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:8px}
+.zone-btn{padding:8px 6px;border-radius:10px;cursor:pointer;border:2px solid #e8e4d9;
+  background:#fafaf8;text-align:center;font-size:11px;font-weight:700;color:#555;transition:all .12s}
+.zone-btn.active{border-color:#0369a1;background:#0369a1;color:#fff}
+
+
+/* ── Admin Panel ── */
+#adminOverlay{display:none;position:fixed;inset:0;background:rgba(11,31,59,0.97);
+  z-index:9999;overflow-y:auto;padding:24px 16px 60px;font-family:'Sarabun',sans-serif}
+#adminOverlay.show{display:block}
+.adm-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.adm-title{font-size:20px;font-weight:800;color:#D4AF37;font-family:'Cormorant Garamond',serif}
+.adm-close{padding:8px 16px;border-radius:999px;border:1.5px solid rgba(255,255,255,.3);
+  background:transparent;color:#fff;font-size:12px;font-weight:700;cursor:pointer}
+.adm-section{background:rgba(255,255,255,.05);border-radius:16px;padding:18px;margin-bottom:16px}
+.adm-section-title{font-size:12px;font-weight:800;color:#D4AF37;letter-spacing:.1em;margin-bottom:14px}
+.adm-row{display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;
+  padding:8px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.adm-row:last-child{border-bottom:none}
+.adm-label{font-size:12px;color:#c8d8e8;font-weight:600}
+.adm-sub{font-size:10px;color:#6a8aaa;margin-top:1px}
+.adm-cost{font-size:12px;color:#f87171;font-weight:700;text-align:right;min-width:60px}
+.adm-input{width:70px;padding:6px 8px;border-radius:8px;border:1.5px solid rgba(255,255,255,.2);
+  background:rgba(255,255,255,.08);color:#fff;font-size:13px;font-weight:700;text-align:center;
+  font-family:'Sarabun',sans-serif;outline:none}
+.adm-input:focus{border-color:#D4AF37}
+.adm-profit{font-size:11px;color:#4ade80;font-weight:700;text-align:right;min-width:55px}
+.adm-save-btn{width:100%;padding:12px;border-radius:12px;border:none;margin-top:8px;
+  background:linear-gradient(135deg,#D4AF37,#b8941e);color:#0B1F3B;
+  font-size:14px;font-weight:800;cursor:pointer;font-family:'Sarabun',sans-serif}
+.adm-reset-btn{width:100%;padding:10px;border-radius:12px;border:1.5px solid rgba(255,255,255,.2);
+  background:transparent;color:#aaa;font-size:12px;font-weight:600;cursor:pointer;
+  font-family:'Sarabun',sans-serif;margin-top:6px}
+.adm-summary{background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.3);
+  border-radius:12px;padding:14px;margin-bottom:14px}
+.adm-summary-title{font-size:11px;color:#D4AF37;font-weight:700;margin-bottom:10px}
+.adm-sum-row{display:flex;justify-content:space-between;font-size:12px;
+  color:rgba(255,255,255,.75);padding:3px 0}
+.adm-sum-total{color:#D4AF37;font-weight:800;font-size:14px;border-top:1px solid rgba(212,175,55,.3);
+  margin-top:6px;padding-top:6px}
+.pin-box{max-width:320px;margin:80px auto 0;text-align:center}
+.pin-title{font-size:18px;font-weight:800;color:#D4AF37;font-family:'Cormorant Garamond',serif;margin-bottom:6px}
+.pin-sub{font-size:12px;color:#7a9abb;margin-bottom:20px}
+.pin-input{width:100%;padding:14px;border-radius:12px;border:1.5px solid rgba(255,255,255,.2);
+  background:rgba(255,255,255,.08);color:#fff;font-size:24px;font-weight:800;text-align:center;
+  letter-spacing:.3em;outline:none;font-family:'Sarabun',sans-serif;margin-bottom:12px}
+.pin-input:focus{border-color:#D4AF37}
+.pin-btn{width:100%;padding:13px;border-radius:12px;border:none;
+  background:linear-gradient(135deg,#D4AF37,#b8941e);color:#0B1F3B;
+  font-size:15px;font-weight:800;cursor:pointer;font-family:'Sarabun',sans-serif}
+.pin-error{color:#f87171;font-size:12px;margin-top:8px}
+.adm-fab{position:fixed;bottom:24px;right:20px;width:44px;height:44px;border-radius:999px;
+  background:#D4AF37;border:none;color:#0B1F3B;font-size:18px;cursor:pointer;
+  box-shadow:0 4px 20px rgba(0,0,0,.4);z-index:100;display:flex;align-items:center;justify-content:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="lang-bar">
+  <button class="lang-btn active" onclick="setLang('th')">ไทย</button>
+  <button class="lang-btn" onclick="setLang('en')">EN</button>
+  <button class="lang-btn" onclick="setLang('lo')">ລາວ</button>
+</div>
+
+<div class="header">
+  <div class="brand-tag">VITH HUB · MEKONG GROWTH</div>
+  <div class="title" id="hTitle"></div>
+  <div class="subtitle" id="hSub"></div>
+</div>
+
+<div class="card">
+<div class="card-body">
+
+  <!-- Parcel banner -->
+  <div class="parcel-banner">
+    <div class="parcel-banner-icon">📦</div>
+    <div>
+      <div class="parcel-banner-title" id="parcelTitle"></div>
+      <div class="parcel-banner-text" id="parcelDesc"></div>
+    </div>
+  </div>
+
+  <!-- Volume tier table -->
+  <div class="step-label" id="sTierLabel"></div>
+  <table class="tier-table">
+    <thead><tr>
+      <th id="thTier"></th><th id="thRange"></th>
+      <th id="thDiscount"></th><th id="thRate"></th>
+    </tr></thead>
+    <tbody id="tierBody"></tbody>
+  </table>
+
+  <!-- Direction -->
+  <div class="step-label" id="s0Label"></div>
+  <div class="dir-grid">
+    <button class="dir-btn active" id="btn-th2la" onclick="setDir('th2la')">
+      <div class="dir-label" id="dir0Label"></div>
+      <div class="dir-sub" id="dir0Sub"></div>
+    </button>
+    <button class="dir-btn" id="btn-la2th" onclick="setDir('la2th')">
+      <div class="dir-label" id="dir1Label"></div>
+      <div class="dir-sub" id="dir1Sub"></div>
+      <div class="x2tag">×2 rate</div>
+    </button>
+  </div>
+
+  <!-- Category -->
+  <div class="step-label" id="s1Label"></div>
+  <div class="cat-grid" id="catGrid"></div>
+
+  <!-- Dimensions -->
+  <div class="step-label" id="s2Label"></div>
+  <div class="dim-grid">
+    <div class="dim-wrap"><label id="lW"></label>
+      <input type="number" id="inW" min="1" placeholder="0" oninput="onInput()"/></div>
+    <div class="dim-wrap"><label id="lL"></label>
+      <input type="number" id="inL" min="1" placeholder="0" oninput="onInput()"/></div>
+    <div class="dim-wrap"><label id="lH"></label>
+      <input type="number" id="inH" min="1" placeholder="0" oninput="onInput()"/></div>
+  </div>
+
+  <!-- Weight + Qty -->
+  <div class="qty-row">
+    <div><label id="lKg"></label>
+      <input type="number" id="inKg" class="big-input" min="0.01" step="0.1" placeholder="0.0" oninput="onInput()" style="width:100%"/></div>
+    <div><label id="lQty"></label>
+      <input type="number" id="inQty" class="big-input" min="1" step="1" placeholder="1" oninput="onInput()" style="width:100%"/></div>
+  </div>
+
+
+  <!-- Last Mile -->
+  <div class="step-label" id="s3Label"></div>
+  <div class="lm-grid">
+    <button class="lm-btn active" id="lm-warehouse" onclick="setLM('warehouse')">
+      <div class="lm-btn-label" id="lm0Label"></div>
+      <div class="lm-btn-sub" id="lm0Sub"></div>
+      <div class="lm-price-tag" id="lm0Price"></div>
+    </button>
+    <button class="lm-btn" id="lm-delivery" onclick="setLM('delivery')">
+      <div class="lm-btn-label" id="lm1Label"></div>
+      <div class="lm-btn-sub" id="lm1Sub"></div>
+      <div class="lm-price-tag" id="lm1Price"></div>
+    </button>
+  </div>
+  <!-- Zone selector (shown only when delivery selected) -->
+  <div class="lm-area" id="lmZoneArea">
+    <div class="step-label" id="s3bLabel"></div>
+    <div class="lm-zone-grid" id="zoneGrid"></div>
+  </div>
+
+  <button class="calc-btn" id="calcBtn" onclick="calculate()"></button>
+  <div id="resultArea"></div>
+  <p class="note" id="noteText"></p>
+</div>
+
+<div class="not-accepted">
+  <div class="not-title" id="notTitle"></div>
+  <div class="not-tags" id="notTags"></div>
+</div>
+</div>
+<div class="footer">VITH HUB · vithhub.asia · sales@vithhub.asia</div>
+</div>
+
+<script>
+const RATE_TABLE=[
+  {maxDim:80, maxKg:5,  cost:30 },{maxDim:90, maxKg:5,  cost:50 },
+  {maxDim:110,maxKg:10, cost:100},{maxDim:120,maxKg:10, cost:120},
+  {maxDim:130,maxKg:20, cost:150},{maxDim:150,maxKg:20, cost:200},
+  {maxDim:160,maxKg:20, cost:250},{maxDim:180,maxKg:30, cost:300},
+  {maxDim:200,maxKg:30, cost:350},{maxDim:220,maxKg:40, cost:400},
+  {maxDim:240,maxKg:40, cost:450},{maxDim:260,maxKg:50, cost:500},
+  {maxDim:280,maxKg:50, cost:550},{maxDim:300,maxKg:50, cost:600},
+];
+
+// ── Volume tiers (รวม Parcel tier) ──────────────────────────────────────────
+// Parcel = น้ำหนักรวม < 1 กก. → flat charge 80 บาท
+// S = 1–29 กก. markup ปกติ ไม่มี discount
+// M/L/XL = discount ตามปริมาณ
+// Parcel tiers = flat rate fixed price
+const PARCEL_TIERS=[
+  {id:'P-Mini',  minKg:0,    maxKg:0.99, flat:150, color:'#dc2626',
+   label:{th:'Parcel Mini',  en:'Parcel Mini',  lo:'ພັດສະດຸ Mini'},
+   range:{th:'< 1 กก.',      en:'< 1 kg',       lo:'< 1 ກກ.'}},
+  {id:'P-Small', minKg:1,    maxKg:4.99, flat:180, color:'#ea580c',
+   label:{th:'Parcel Small', en:'Parcel Small', lo:'ພັດສະດຸ Small'},
+   range:{th:'1–4.9 กก.',    en:'1–4.9 kg',     lo:'1–4.9 ກກ.'}},
+];
+
+// Volume tiers = markup-based with discounts
+const VOL_TIERS=[
+  {id:'S',  minKg:5,   maxKg:29,   discount:0,    color:'#6b7280',
+   label:{th:'Retail',          en:'Retail',          lo:'ຂາຍຍ່ອຍ'},
+   range:{th:'5–29 กก.',        en:'5–29 kg',         lo:'5–29 ກກ.'}},
+  {id:'M',  minKg:30,  maxKg:99,   discount:0.05, color:'#0B1F3B',
+   label:{th:'Small Wholesale', en:'Small Wholesale', lo:'ຄ້າສົ່ງນ້ອຍ'},
+   range:{th:'30–99 กก.',       en:'30–99 kg',        lo:'30–99 ກກ.'}},
+  {id:'L',  minKg:100, maxKg:299,  discount:0.12, color:'#166534',
+   label:{th:'Distributor',     en:'Distributor',     lo:'ດິສຕຣິບິວເຕີ'},
+   range:{th:'100–299 กก.',     en:'100–299 kg',      lo:'100–299 ກກ.'}},
+  {id:'XL', minKg:300, maxKg:9999, discount:0.20, color:'#7c3aed',
+   label:{th:'Key Account',     en:'Key Account',     lo:'ລູກຄ້າຫຼັກ'},
+   range:{th:'300 กก.+',        en:'300 kg+',         lo:'300 ກກ.+'}},
+];
+
+// ── 6 Categories (ลด minimum บางหมวด) ───────────────────────────────────────
+const CATEGORIES=[
+  {id:'beauty',      icon:'✨', markup:1.60, minKg:0,  // ไม่มีขั้นต่ำ
+   label:{th:'ความงาม สปา & อาหารเสริม',en:'Beauty, Spa & Supplements',lo:'ສິນຄ້າງາມ & ອາຫານເສີມ'},
+   sub:{th:'ครีม เซรั่ม วิตามิน คอลลาเจน สบู่สมุนไพร',en:'Skincare, serum, vitamins, collagen',lo:'ຄຣີມ, ວິຕາມິນ, ຄໍລາເຈນ'},
+   color:'#7c3aed', minLabel:{th:'ไม่มีขั้นต่ำ',en:'No minimum',lo:'ບໍ່ມີຂັ້ນຕ່ຳ'}, cond:null},
+
+  {id:'fashion',     icon:'👕', markup:1.35, minKg:0,  // ลดจาก 10 → 0
+   label:{th:'เสื้อผ้า แฟชั่น & ของใช้ทั่วไป',en:'Fashion, Clothing & General Goods',lo:'ເຄື່ອງນຸ່ງ & ສິນຄ້າທົ່ວໄປ'},
+   sub:{th:'เสื้อผ้า กระเป๋า รองเท้า ของตกแต่งบ้าน เครื่องเขียน',en:'Clothing, bags, shoes, home décor, stationery',lo:'ເຄື່ອງນຸ່ງ, ກະເປົາ, ເກີບ, ເຄື່ອງຕົກແຕ່ງ'},
+   color:'#b45309', minLabel:{th:'ไม่มีขั้นต่ำ',en:'No minimum',lo:'ບໍ່ມີຂັ້ນຕ່ຳ'}, cond:null},
+
+  {id:'electronics', icon:'🔌', markup:1.40, minKg:0,  // ลดจาก 10 → 0
+   label:{th:'เครื่องใช้ไฟฟ้า & อิเล็กทรอนิกส์',en:'Appliances & Electronics',lo:'ເຄື່ອງໃຊ້ໄຟຟ້າ & ອີເລັກໂທຣນິກ'},
+   sub:{th:'พัดลม หูฟัง กรอบโทรศัพท์ สายชาร์จ กล้อง อุปกรณ์เสริม',en:'Fans, phone cases, earphones, chargers, cameras',lo:'ພັດລົມ, ເຄດໂທລະສັບ, ຫູຟັງ, ສາຍຊາດ'},
+   color:'#0369a1', minLabel:{th:'ไม่มีขั้นต่ำ',en:'No minimum',lo:'ບໍ່ມີຂັ້ນຕ່ຳ'}, cond:null},
+
+  {id:'condiment',   icon:'🍶', markup:1.25, minKg:5,  // ลดจาก 20 → 5
+   label:{th:'เครื่องปรุง ซอส & อาหารสำเร็จรูป',en:'Condiments, Sauces & Processed Food',lo:'ເຄື່ອງປຸງ & ອາຫານສຳເລັດຮູບ'},
+   sub:{th:'น้ำปลา น้ำจิ้ม กะปิ ซอส บะหมี่กึ่งฯ ขนมขบเคี้ยว',en:'Fish sauce, dipping sauce, shrimp paste, instant noodles',lo:'ນ້ຳປາ, ນ້ຳຈິ້ມ, ກະປິ, ຊອດ, ມາມ່າ'},
+   color:'#c2410c', minLabel:{th:'ขั้นต่ำ 5 กก.',en:'Min. 5 kg',lo:'ຂັ້ນຕ່ຳ 5 ກກ.'},
+   cond:{th:'บรรจุขวด/ถุงปิดสนิท + มีกล่องนอก',en:'Sealed packaging + outer box required',lo:'ບັນຈຸຂວດ/ຖົງປິດ + ມີກ່ອງນອກ'}},
+
+  {id:'beverage',    icon:'🥤', markup:1.15, minKg:30, // ลดจาก 50 → 30
+   label:{th:'เครื่องดื่ม & น้ำดื่มบรรจุขวด',en:'Beverages & Bottled Water',lo:'ເຄື່ອງດື່ມ & ນ້ຳດື່ມ'},
+   sub:{th:'น้ำดื่ม น้ำผลไม้ เครื่องดื่มชูกำลัง นม UHT ชา กาแฟ',en:'Water, juice, energy drinks, UHT milk, tea, coffee',lo:'ນ້ຳດື່ມ, ນ້ຳໝາກໄມ້, ນົມ UHT, ຊາ, ກາເຟ'},
+   color:'#0284c7', minLabel:{th:'ขั้นต่ำ 30 กก.',en:'Min. 30 kg',lo:'ຂັ້ນຕ່ຳ 30 ກກ.'},
+   cond:{th:'บรรจุขวด/กระป๋องปิดสนิทเท่านั้น',en:'Sealed bottles/cans only',lo:'ຂວດ/ກະປ໋ອງປິດສະໜິດ'}},
+
+  {id:'agri',        icon:'🌾', markup:1.15, minKg:20, // ลดจาก 30 → 20
+   label:{th:'สินค้าเกษตรแปรรูป & วัตถุดิบแห้ง',en:'Agro-processed & Dry Raw Materials',lo:'ສິນຄ້າກະສິກຳ & ວັດຖຸດິບແຫ້ງ'},
+   sub:{th:'ข้าว น้ำตาล แป้ง ถั่ว ผลไม้อบแห้ง สมุนไพรแห้ง',en:'Rice, sugar, flour, beans, dried fruit, dried herbs',lo:'ເຂົ້າ, ນ້ຳຕານ, ແປ້ງ, ຖົ່ວ, ໝາກໄມ້ອົບແຫ້ງ'},
+   color:'#166534', minLabel:{th:'ขั้นต่ำ 20 กก.',en:'Min. 20 kg',lo:'ຂັ້ນຕ່ຳ 20 ກກ.'},
+   cond:{th:'ของแห้งเท่านั้น ไม่รับของสด',en:'Dry goods only — no fresh produce',lo:'ສິນຄ້າແຫ້ງເທົ່ານັ້ນ'}},
+];
+
+const NOT_ACCEPTED={
+  th:['ของสด / ผลไม้สด','Cold Chain / แช่แข็ง','ของเหลวไม่บรรจุ','วัตถุอันตราย / สเปรย์','ยา / เวชภัณฑ์','สัตว์มีชีวิต'],
+  en:['Fresh produce','Cold chain / frozen','Unpacked liquids','Hazardous / aerosols','Pharmaceuticals','Live animals'],
+  lo:['ສິນຄ້າສົດ','ສິນຄ້າແຊ່ເຢັນ','ຂອງແຫຼວບໍ່ບັນຈຸ','ວັດຖຸອັນຕະລາຍ','ຢາ','ສັດທີ່ມີຊີວິດ'],
+};
+
+const DIRS={
+  th:[{id:'th2la',label:'🇹🇭 ไทย → ลาว',sub:'หนองคาย → เวียงจันทน์',mult:1},
+      {id:'la2th',label:'🇱🇦 ลาว → ไทย',sub:'เวียงจันทน์ → หนองคาย',mult:2}],
+  en:[{id:'th2la',label:'🇹🇭 Thailand → Laos',sub:'Nong Khai → Vientiane',mult:1},
+      {id:'la2th',label:'🇱🇦 Laos → Thailand',sub:'Vientiane → Nong Khai',mult:2}],
+  lo:[{id:'th2la',label:'🇹🇭 ໄທ → ລາວ',sub:'ໜອງຄາຍ → ວຽງຈັນ',mult:1},
+      {id:'la2th',label:'🇱🇦 ລາວ → ໄທ',sub:'ວຽງຈັນ → ໜອງຄາຍ',mult:2}],
+};
+
+const LL={
+  th:{title:'คำนวณค่าขนส่งไทย-ลาว',sub:'หนองคาย → เวียงจันทน์ · รวมภาษีนำเข้าลาว',
+    parcelTitle:'📦 ส่งชิ้นเล็ก / น้อยชิ้น ก็ส่งได้!',
+    parcelDesc:'< 1 กก. → ฿150 flat · 1–4.9 กก. → ฿180 flat · ส่งน้อยก็ส่งได้ ไม่มีขั้นต่ำสำหรับความงาม แฟชั่น อิเล็กทรอนิกส์',
+    sTier:'📊 ส่วนลดตามปริมาณ (Volume Discount)',
+    thTier:'Tier',thRange:'น้ำหนักรวม',thDiscount:'ส่วนลด',thRate:'อัตรา',
+    s0:'เลือกเส้นทาง',s1:'เลือกประเภทสินค้า',s2:'ขนาดต่อกล่อง (ซม.)',
+    lKg:'น้ำหนัก/กล่อง (กก.)',lQty:'จำนวนกล่อง',
+    w:'กว้าง',l:'ยาว',h:'สูง',calc:'คำนวณค่าขนส่ง →',reset:'คำนวณใหม่',
+    result:'ค่าขนส่งรวม',perBox:'ต่อกล่อง',perKg:'ต่อกก.',
+    totalKg:'น้ำหนักรวม',volTier:'Volume Tier',saving:'ประหยัด vs Retail',
+    flatCharge:'Flat Rate (< 1 กก.)',
+    incl:'รวมภาษีนำเข้าลาว · ส่งถึงโกดังเวียงจันทน์',
+    notAccepted:'❌ สินค้าที่ไม่รับ',overLimit:'ขนาด/น้ำหนักต่อกล่องเกินมาตรฐาน',
+    overSub:'กรุณาติดต่อทีมงาน VITH HUB',contact:'ติดต่อทีมงาน →',
+    belowMin:(n)=>`ขั้นต่ำ ${n} กก. สำหรับหมวดนี้`,
+    parcelFlag:'Parcel Rate',dimSum:'มิติรวม',boxes:'กล่อง',
+    note:'* ราคาประมาณเบื้องต้น อาจเปลี่ยนแปลงตามขนาดและน้ำหนักจริง'},
+  en:{title:'Shipping Rate Calculator',sub:'Nong Khai → Vientiane · Import duty included',
+    parcelTitle:'📦 Small items? No problem!',
+    parcelDesc:'< 1 kg → ฿150 flat · 1–4.9 kg → ฿180 flat · No minimum for Beauty, Fashion & Electronics',
+    sTier:'📊 Volume Discount Tiers',
+    thTier:'Tier',thRange:'Total Weight',thDiscount:'Discount',thRate:'Rate',
+    s0:'Select route',s1:'Select product category',s2:'Box dimensions (cm)',
+    lKg:'Weight/box (kg)',lQty:'No. of boxes',
+    w:'Width',l:'Length',h:'Height',calc:'Calculate shipping →',reset:'Recalculate',
+    result:'Total shipping cost',perBox:'per box',perKg:'per kg',
+    totalKg:'Total weight',volTier:'Volume Tier',saving:'Saving vs Retail',
+    flatCharge:'Flat Rate (< 1 kg)',
+    incl:'Includes Lao import duty · Delivered to Vientiane warehouse',
+    notAccepted:'❌ Not accepted',overLimit:'Box size / weight exceeds standard',
+    overSub:'Please contact VITH HUB team',contact:'Contact us →',
+    belowMin:(n)=>`Minimum ${n} kg for this category`,
+    parcelFlag:'Parcel Rate',dimSum:'Total dim.',boxes:'boxes',
+    note:'* Estimated rate only. Final price confirmed upon actual size and weight.'},
+  lo:{title:'ຄິດໄລ່ຄ່າຂົນສົ່ງໄທ-ລາວ',sub:'ໜອງຄາຍ → ວຽງຈັນ · ລວມອາກອນນຳເຂົ້າ',
+    parcelTitle:'📦 ສົ່ງຂອງຊິ້ນນ້ອຍໄດ້!',
+    parcelDesc:'< 1 ກກ. → ฿150 flat · 1–4.9 ກກ. → ฿180 flat · ບໍ່ມີຂັ້ນຕ່ຳສຳລັບໝວດງາມ, ເຄື່ອງນຸ່ງ ແລະ ອີເລັກໂທຣນິກ',
+    sTier:'📊 ສ່ວນຫຼຸດຕາມປະລິມານ',
+    thTier:'Tier',thRange:'ນ້ຳໜັກລວມ',thDiscount:'ສ່ວນຫຼຸດ',thRate:'ອັດຕາ',
+    s0:'ເລືອກເສັ້ນທາງ',s1:'ເລືອກປະເພດສິນຄ້າ',s2:'ຂະໜາດກ່ອງ (ຊມ.)',
+    lKg:'ນ້ຳໜັກ/ກ່ອງ (ກກ.)',lQty:'ຈຳນວນກ່ອງ',
+    w:'ກວ້າງ',l:'ຍາວ',h:'ສູງ',calc:'ຄິດໄລ່ຄ່າຂົນສົ່ງ →',reset:'ຄິດໄລ່ໃໝ່',
+    result:'ຄ່າຂົນສົ່ງລວມ',perBox:'ຕໍ່ກ່ອງ',perKg:'ຕໍ່ກກ.',
+    totalKg:'ນ້ຳໜັກລວມ',volTier:'Volume Tier',saving:'ປະຢັດ vs Retail',
+    flatCharge:'Flat Rate (< 1 ກກ.)',
+    incl:'ລວມອາກອນນຳເຂົ້າລາວ · ສົ່ງຮອດສາງວຽງຈັນ',
+    notAccepted:'❌ ສິນຄ້າທີ່ບໍ່ຮັບ',overLimit:'ຂະໜາດ/ນ້ຳໜັກເກີນ',
+    overSub:'ກະລຸນາຕິດຕໍ່ VITH HUB',contact:'ຕິດຕໍ່ທີມງານ →',
+    belowMin:(n)=>`ຂັ້ນຕ່ຳ ${n} ກກ. ສຳລັບໝວດນີ້`,
+    parcelFlag:'Parcel Rate',dimSum:'ມິຕິລວມ',boxes:'ກ່ອງ',
+    note:'* ລາຄານີ້ເປັນການປະມານ ອາດມີການປ່ຽນແປງ'},
+};
+
+let lang='th', dirId='th2la', catId=null;
+
+// ── Last Mile (Anousith Express via VITH HUB) ─────────────────────────────
+// THB rate: 1 THB = 666 LAK → 1 LAK = 0.0015 THB
+// Markup: small charge ×2, big items +35%
+const LM_ZONES = [
+  { id:'vte',    flat:15,  color:'#0369a1',
+    label:{th:'เวียงจันทน์',     en:'Vientiane City',  lo:'ນະຄອນຫຼວງວຽງຈັນ'},
+    sub:{th:'same day',           en:'same day',         lo:'ມື້ດຽວກັນ'} },
+  { id:'suburb', flat:30,  color:'#7c3aed',
+    label:{th:'ชานเมือง VTE',    en:'VTE Suburbs',     lo:'ຊານເມືອງວຽງຈັນ'},
+    sub:{th:'+15 บ. ห่างไกล',    en:'+remote fee',      lo:'+ຄ່າຫ່າງໄກ'} },
+  { id:'province',flat:25, color:'#166534',
+    label:{th:'ต่างแขวง',        en:'Other Provinces', lo:'ຕ່າງແຂວງ'},
+    sub:{th:'ถึงวันถัดไป',        en:'next day',         lo:'ມື້ຖັດໄປ'} },
+];
+
+const LM_LABELS = {
+  th:{ s3:'เลือกการจัดส่งปลายทาง', s3b:'เขตปลายทางในลาว',
+    lm0:'🏭 ส่งถึงโกดัง',     lm0sub:'ลูกค้าไปรับเองที่โกดังเวียงจันทน์', lm0price:'รวมในราคาแล้ว',
+    lm1:'🚚 ส่งถึงมือผู้รับ',  lm1sub:'Anousith Express จัดส่งถึงที่อยู่ในลาว', lm1price:'มีค่าบริการเพิ่ม' },
+  en:{ s3:'Select delivery option', s3b:'Destination zone in Laos',
+    lm0:'🏭 Warehouse pickup',  lm0sub:'Customer collects at Vientiane warehouse', lm0price:'Included in price',
+    lm1:'🚚 Door-to-door',      lm1sub:'Anousith Express delivers to address in Laos', lm1price:'Additional fee applies' },
+  lo:{ s3:'ເລືອກວິທີຈັດສົ່ງປາຍທາງ', s3b:'ເຂດປາຍທາງໃນລາວ',
+    lm0:'🏭 ຮັບທີ່ສາງ',         lm0sub:'ລູກຄ້າໄປຮັບທີ່ສາງວຽງຈັນ', lm0price:'ລວມໃນລາຄາແລ້ວ',
+    lm1:'🚚 ສົ່ງຮອດທີ່ຢູ່',      lm1sub:'Anousith Express ສົ່ງຮອດທີ່ຢູ່ໃນລາວ', lm1price:'ມີຄ່າບໍລິການເພີ່ມ' },
+};
+
+let lmMode = 'warehouse'; // 'warehouse' | 'delivery'
+let lmZone = 'vte';
+
+function setLM(mode){
+  lmMode = mode;
+  document.getElementById('lm-warehouse').classList.toggle('active', mode==='warehouse');
+  document.getElementById('lm-delivery').classList.toggle('active', mode==='delivery');
+  document.getElementById('lmZoneArea').classList.toggle('show', mode==='delivery');
+  clearResult(); updateBtn();
+}
+function setZone(z){ lmZone=z; clearResult(); renderZones(); }
+
+function getLMCost(){
+  if(lmMode==='warehouse') return 0;
+  const z = LM_ZONES.find(z=>z.id===lmZone);
+  return z ? z.flat : 15;
+}
+
+function renderZones(){
+  const zg = document.getElementById('zoneGrid');
+  if(!zg) return;
+  zg.innerHTML = LM_ZONES.map(z=>`
+    <button class="zone-btn ${lmZone===z.id?'active':''}" onclick="setZone('${z.id}')"
+      style="${lmZone===z.id?`border-color:${z.color};background:${z.color}`:''}">
+      ${z.label[lang]}<br/><span style="font-weight:400;font-size:9px">${z.sub[lang]}</span>
+    </button>`).join('');
+}
+
+function renderLMSection(){
+  const ll = LM_LABELS[lang];
+  const zone = LM_ZONES.find(z=>z.id===lmZone);
+  document.getElementById('s3Label').textContent = ll.s3;
+  document.getElementById('s3bLabel').textContent = ll.s3b;
+  document.getElementById('lm0Label').textContent = ll.lm0;
+  document.getElementById('lm0Sub').textContent = ll.lm0sub;
+  document.getElementById('lm0Price').textContent = ll.lm0price;
+  document.getElementById('lm1Label').textContent = ll.lm1;
+  document.getElementById('lm1Sub').textContent = ll.lm1sub;
+  document.getElementById('lm1Price').textContent = ll.lm1price;
+  document.getElementById('lmZoneArea').classList.toggle('show', lmMode==='delivery');
+  renderZones();
+}
+
+
+
+function getParcelTier(kg){return PARCEL_TIERS.find(t=>kg>=t.minKg&&kg<=t.maxKg)||null;}
+function getVolTier(kg){return VOL_TIERS.find(t=>kg>=t.minKg&&kg<=t.maxKg)||VOL_TIERS[0];}
+function getCostRow(w,l,h,kg){const dim=w+l+h;return RATE_TABLE.find(r=>dim<=r.maxDim&&kg<=r.maxKg)||null;}
+function fmt(n){return n.toLocaleString('th-TH');}
+function setLang(l){lang=l;document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));event.target.classList.add('active');render();}
+function setDir(d){dirId=d;clearResult();render();}
+function setCat(id){catId=id;clearResult();render();}
+function onInput(){clearResult();updateBtn();}
+function clearResult(){document.getElementById('resultArea').innerHTML='';}
+
+function updateBtn(){
+  const ready=catId&&document.getElementById('inW').value&&document.getElementById('inL').value
+    &&document.getElementById('inH').value&&document.getElementById('inKg').value
+    &&document.getElementById('inQty').value;
+  const btn=document.getElementById('calcBtn');
+  btn.classList.toggle('ready',!!ready);
+  btn.disabled=!ready;
+  btn.textContent=LL[lang].calc;
+}
+
+function calculate(){
+  const w=parseFloat(document.getElementById('inW').value);
+  const l=parseFloat(document.getElementById('inL').value);
+  const h=parseFloat(document.getElementById('inH').value);
+  const kgBox=parseFloat(document.getElementById('inKg').value);
+  const qty=parseInt(document.getElementById('inQty').value)||1;
+  if(!w||!l||!h||!kgBox||!catId) return;
+
+  const cat=CATEGORIES.find(c=>c.id===catId);
+  const dir=DIRS[lang].find(d=>d.id===dirId);
+  const ll=LL[lang];
+  const area=document.getElementById('resultArea');
+  const totalKg=parseFloat((kgBox*qty).toFixed(2));
+  const dim=w+l+h;
+  const dirMult=dirId==='la2th'?2:1;
+
+  // Check category minimum
+  if(cat.minKg>0 && totalKg<cat.minKg){
+    area.innerHTML=`<div class="warn-box warn-orange">
+      <div class="warn-emoji">⚖️</div>
+      <div class="warn-title" style="color:#9a3412">${ll.belowMin(cat.minKg)}</div>
+      <div class="warn-sub" style="color:#9a3412">${ll.totalKg}: <strong>${totalKg} กก.</strong></div>
+    </div>`;return;
+  }
+
+  // PARCEL TIERS: < 5 กก. → flat rate
+  const pt = getParcelTier(totalKg);
+  if(pt){
+    const flatPrice = Math.ceil(pt.flat * dirMult);
+    const lmFlat = getLMCost() * qty;
+    const grandFlat = flatPrice + lmFlat;
+    const zone2 = LM_ZONES.find(z=>z.id===lmZone);
+    area.innerHTML=`
+      <div class="result-box" style="background:linear-gradient(135deg,${pt.color},${pt.color}cc)">
+        <div class="result-meta">
+          ${dir.label}${dirMult===2?`<span class="tag" style="background:#D4AF37;color:#0B1F3B">×2</span>`:''}
+          &nbsp;·&nbsp; ${cat.icon} ${cat.label[lang]}<br/>
+          ${ll.dimSum} ${dim} cm &nbsp;·&nbsp; ${kgBox} kg × ${qty} ${ll.boxes} = <strong>${totalKg} kg</strong>
+          &nbsp;<span class="tag" style="background:${pt.color}">${pt.id} ${pt.label[lang]}</span>
+        </div>
+        <div class="result-label">${ll.flatCharge}</div>
+        <div class="result-price">฿${fmt(grandFlat)}</div>
+        <div class="result-unit" style="color:rgba(255,255,255,0.7)">Flat rate · ไม่คิดตามน้ำหนัก</div>
+        <div class="breakdown">
+          <div class="breakdown-row"><span>${ll.totalKg}</span><span>${totalKg} kg → ${pt.id}</span></div>
+          <div class="breakdown-row"><span>Base flat rate</span><span>฿${pt.flat}</span></div>
+          ${dirMult===2?`<div class="breakdown-row"><span>×2 (ขากลับ)</span><span>฿${fmt(flatPrice)}</span></div>`:''}
+          ${lmFlat>0?`<div class="breakdown-row"><span>🚚 Last Mile (${zone2?zone2.label[lang]:''})</span><span>฿${fmt(lmFlat)}</span></div>`:''}
+          <div class="breakdown-row"><span>${lmFlat>0?"💳 รวมทุกค่าใช้จ่าย":ll.result}</span><span>฿${fmt(grandFlat)}</span></div>
+        </div>
+        <div class="result-note">${ll.incl}</div>
+        <button class="reset-btn" onclick="resetAll()">${ll.reset}</button>
+      </div>`;
+    renderTierTable(totalKg);
+    return;
+  }
+
+  // NORMAL FLOW
+  const row=getCostRow(w,l,h,kgBox);
+  if(!row){
+    area.innerHTML=`<div class="warn-box warn-yellow">
+      <div class="warn-emoji">📦</div>
+      <div class="warn-title" style="color:#92400e">${ll.overLimit}</div>
+      <div class="warn-sub" style="color:#92400e">${ll.dimSum} ${dim} cm · ${kgBox} kg/box<br/>${ll.overSub}</div>
+      <a href="mailto:sales@vithhub.asia" class="contact-link">${ll.contact}</a>
+    </div>`;return;
+  }
+
+  const vt=getVolTier(totalKg);
+  const effMarkup=cat.markup*(1-vt.discount)*dirMult;
+  const pricePerBox=Math.ceil(row.cost*effMarkup/5)*5;
+  const totalPrice=pricePerBox*qty;
+  const retailPerBox=Math.ceil(row.cost*cat.markup*dirMult/5)*5;
+  const saving=(retailPerBox*qty)-totalPrice;
+  const lmCostPerBox = getLMCost();
+  const lmTotal = lmCostPerBox * qty;
+  const grandTotal = totalPrice + lmTotal;
+  // Capture P&L snapshot for Admin panel
+  lastCalcSnap = {
+    costPerBox: row.cost,
+    sellPerBox: pricePerBox,
+    lmPerBox: lmCostPerBox,
+    zone: lmZone,
+  };
+  const zone = LM_ZONES.find(z=>z.id===lmZone);
+  const pricePerKg=(grandTotal/totalKg).toFixed(1);
+  const discPct=Math.round(vt.discount*100);
+  const x2badge=dirMult===2?`<span class="tag" style="background:#D4AF37;color:#0B1F3B">×2</span>`:'';
+
+  area.innerHTML=`
+    <div class="result-box" style="background:linear-gradient(135deg,${cat.color},${cat.color}cc)">
+      <div class="result-meta">
+        ${dir.label} ${x2badge} &nbsp;·&nbsp; ${cat.icon} ${cat.label[lang]}<br/>
+        ${ll.dimSum} ${dim} cm &nbsp;·&nbsp; ${kgBox} kg × ${qty} ${ll.boxes} = <strong>${totalKg} kg</strong>
+        &nbsp;<span class="tag" style="background:${vt.color}">${vt.id} ${vt.label[lang]}</span>
+        ${discPct>0?`<span class="tag" style="background:#D4AF37;color:#0B1F3B">-${discPct}%</span>`:''}
+      </div>
+      <div class="result-label">${ll.result}</div>
+      <div class="result-price">฿${fmt(grandTotal)}</div>
+      <div class="result-unit">฿${fmt(Math.ceil((pricePerBox+lmCostPerBox)/5)*5)} ${ll.perBox} &nbsp;·&nbsp; ฿${pricePerKg} ${ll.perKg}</div>
+      <div class="breakdown">
+        <div class="breakdown-row"><span>${ll.totalKg}</span><span>${totalKg} kg</span></div>
+        <div class="breakdown-row"><span>${ll.volTier}</span><span>${vt.id} ${vt.label[lang]}${discPct>0?` (–${discPct}%)`:''}</span></div>
+        <div class="breakdown-row"><span>Effective markup</span><span>×${effMarkup.toFixed(3)}</span></div>
+        <div class="breakdown-row"><span>🚢 ${ll.result} (หนองคาย→โกดัง)</span><span>฿${fmt(totalPrice)}</span></div>
+        ${lmTotal>0?`<div class="breakdown-row"><span>🚚 Last Mile (${zone?zone.label[lang]:''})</span><span>฿${fmt(lmTotal)}</span></div>`:''}
+        ${saving>0?`<div class="breakdown-row"><span>💚 ${ll.saving}</span><span>฿${fmt(saving)}</span></div>`:''}
+        <div class="breakdown-row"><span>${lmTotal>0?"💳 รวมทุกค่าใช้จ่าย":ll.result}</span><span>฿${fmt(grandTotal)}</span></div>
+      </div>
+      <div class="result-note">${ll.incl}</div>
+      <button class="reset-btn" onclick="resetAll()">${ll.reset}</button>
+    </div>`;
+
+  renderTierTable(totalKg);
+}
+
+function resetAll(){
+  catId=null;dirId='th2la';
+  ['inW','inL','inH','inKg','inQty'].forEach(id=>document.getElementById(id).value='');
+  clearResult();render();
+}
+
+function renderTierTable(activeTotalKg){
+  const cat=catId?CATEGORIES.find(c=>c.id===catId):null;
+  const baseMarkup=cat?cat.markup:1.35;
+  const dirMult=dirId==='la2th'?2:1;
+  // Parcel rows
+  const parcelRows=PARCEL_TIERS.map(t=>{
+    const active=activeTotalKg!==undefined&&activeTotalKg>=t.minKg&&activeTotalKg<=t.maxKg;
+    const flatPrice=t.flat*dirMult;
+    return`<tr class="${active?'active-tier':''}" style="background:${t.color}0a">
+      <td><span class="tier-badge" style="background:${t.color}">${t.id}</span> ${t.label[lang]}</td>
+      <td>${t.range[lang]}</td>
+      <td style="color:${t.color};font-weight:700">Flat</td>
+      <td style="color:${t.color};font-weight:700">฿${flatPrice}</td>
+    </tr>`;
+  }).join('');
+  // Volume rows
+  const volRows=VOL_TIERS.map(t=>{
+    const active=activeTotalKg!==undefined&&activeTotalKg>=t.minKg&&activeTotalKg<=t.maxKg;
+    const disc=Math.round(t.discount*100);
+    return`<tr class="${active?'active-tier':''}">
+      <td><span class="tier-badge" style="background:${t.color}">${t.id}</span> ${t.label[lang]}</td>
+      <td>${t.range[lang]}</td>
+      <td style="color:${disc>0?'#166534':'#999'};font-weight:${disc>0?700:400}">${disc>0?`-${disc}%`:'–'}</td>
+      <td>×${(baseMarkup*(1-t.discount)*dirMult).toFixed(2)}</td>
+    </tr>`;
+  }).join('');
+  document.getElementById('tierBody').innerHTML=parcelRows+volRows;
+}
+
+function render(){
+  const ll=LL[lang];
+  const dirs=DIRS[lang];
+  document.getElementById('hTitle').textContent=ll.title;
+  document.getElementById('hSub').textContent=ll.sub;
+  document.getElementById('parcelTitle').textContent=ll.parcelTitle;
+  document.getElementById('parcelDesc').textContent=ll.parcelDesc;
+  document.getElementById('sTierLabel').textContent=ll.sTier;
+  document.getElementById('thTier').textContent=ll.thTier;
+  document.getElementById('thRange').textContent=ll.thRange;
+  document.getElementById('thDiscount').textContent=ll.thDiscount;
+  document.getElementById('thRate').textContent=ll.thRate;
+  document.getElementById('s0Label').textContent=ll.s0;
+  document.getElementById('s1Label').textContent=ll.s1;
+  document.getElementById('s2Label').textContent=ll.s2;
+  document.getElementById('lW').textContent=ll.w;
+  document.getElementById('lL').textContent=ll.l;
+  document.getElementById('lH').textContent=ll.h;
+  document.getElementById('lKg').textContent=ll.lKg;
+  document.getElementById('lQty').textContent=ll.lQty;
+  document.getElementById('noteText').textContent=ll.note;
+  document.getElementById('notTitle').textContent=ll.notAccepted;
+  document.getElementById('dir0Label').textContent=dirs[0].label;
+  document.getElementById('dir0Sub').textContent=dirs[0].sub;
+  document.getElementById('dir1Label').textContent=dirs[1].label;
+  document.getElementById('dir1Sub').textContent=dirs[1].sub;
+  document.getElementById('btn-th2la').classList.toggle('active',dirId==='th2la');
+  document.getElementById('btn-la2th').classList.toggle('active',dirId==='la2th');
+
+  document.getElementById('catGrid').innerHTML=CATEGORIES.map(c=>`
+    <button class="cat-btn" onclick="setCat('${c.id}')"
+      style="${catId===c.id?`border-color:${c.color};background:${c.color}12`:''}">
+      <div class="cat-icon">${c.icon}</div>
+      <div class="cat-name" style="${catId===c.id?`color:${c.color}`:'color:#222'}">${c.label[lang]}</div>
+      <div class="cat-sub">${c.sub[lang]}</div>
+      <div class="cat-badge" style="${catId===c.id?`background:${c.color};color:#fff`:''}">${c.minLabel[lang]}</div>
+      ${c.cond?`<div class="cond-note">${c.cond[lang]}</div>`:''}
+    </button>`).join('');
+
+  document.getElementById('notTags').innerHTML=
+    NOT_ACCEPTED[lang].map(t=>`<span class="not-tag">${t}</span>`).join('');
+
+  renderTierTable(undefined);
+  renderLMSection();
+  updateBtn();
+}
+
+render();
+</script>
+
+<!-- Admin FAB button -->
+<button class="adm-fab" onclick="openAdmin()" title="Admin">⚙️</button>
+
+<!-- Admin Overlay -->
+<div id="adminOverlay">
+  <!-- PIN screen -->
+  <div id="pinScreen" class="pin-box">
+    <div class="pin-title">🔐 Admin Access</div>
+    <div class="pin-sub">VITH HUB · ระบบจัดการราคา</div>
+    <input class="pin-input" type="password" id="pinInput" maxlength="6" placeholder="••••"
+      oninput="checkPin(this.value)" onkeydown="if(event.key==='Enter')checkPin(document.getElementById('pinInput').value)"/>
+    <button class="pin-btn" onclick="checkPin(document.getElementById('pinInput').value)">เข้าสู่ระบบ</button>
+    <div class="pin-error" id="pinError"></div>
+  </div>
+
+  <!-- Admin Panel (hidden until PIN correct) -->
+  <div id="adminPanel" style="display:none;max-width:540px;margin:0 auto">
+    <div class="adm-header">
+      <div class="adm-title">⚙️ Admin · จัดการราคา</div>
+      <button class="adm-close" onclick="closeAdmin()">✕ ปิด</button>
+    </div>
+
+    <!-- Live P&L Summary -->
+    <div class="adm-summary" id="admSummary">
+      <div class="adm-summary-title">📊 ตัวอย่าง P&L (กล่องล่าสุดที่คำนวณ)</div>
+      <div class="adm-sum-row"><span>ต้นทุนตัวแทน (หนองคาย)</span><span id="sum-agent">–</span></div>
+      <div class="adm-sum-row"><span>ราคาขาย (หนองคาย→โกดัง)</span><span id="sum-sell">–</span></div>
+      <div class="adm-sum-row"><span>กำไร leg 1</span><span id="sum-p1" style="color:#4ade80">–</span></div>
+      <div class="adm-sum-row" style="margin-top:6px"><span>ต้นทุน Last Mile (Anousith)</span><span id="sum-lm-cost">–</span></div>
+      <div class="adm-sum-row"><span>ราคาขาย Last Mile</span><span id="sum-lm-sell">–</span></div>
+      <div class="adm-sum-row"><span>กำไร leg 2</span><span id="sum-p2" style="color:#4ade80">–</span></div>
+      <div class="adm-sum-row adm-sum-total"><span>💰 กำไรรวม/กล่อง</span><span id="sum-total">–</span></div>
+    </div>
+
+    <!-- Section 1: Category Markup -->
+    <div class="adm-section">
+      <div class="adm-section-title">📦 MARKUP หมวดสินค้า (หนองคาย → โกดัง)</div>
+      <div id="catMarkupRows"></div>
+    </div>
+
+    <!-- Section 2: Last Mile -->
+    <div class="adm-section">
+      <div class="adm-section-title">🚚 LAST MILE — ราคาขาย vs ต้นทุน Anousith</div>
+      <div id="lmRows"></div>
+    </div>
+
+    <!-- Section 3: Parcel Flat -->
+    <div class="adm-section">
+      <div class="adm-section-title">📫 PARCEL FLAT RATE</div>
+      <div id="parcelRows"></div>
+    </div>
+
+    <button class="adm-save-btn" onclick="saveAdminSettings()">💾 บันทึกการเปลี่ยนแปลง</button>
+    <button class="adm-reset-btn" onclick="resetAdminSettings()">↺ รีเซ็ตเป็นค่าเริ่มต้น</button>
+    <p style="font-size:10px;color:#4a6a8a;text-align:center;margin-top:10px">การเปลี่ยนแปลงจะมีผลทันทีและบันทึกในเครื่องนี้</p>
+  </div>
+</div>
+
+<script>
+// ── Admin PIN & logic ────────────────────────────────────────────────────────
+const ADMIN_PIN = '2026';
+
+// Anousith cost (THB) — internal only, never shown to customer
+const LM_ANOUSITH_COST = { vte: 7.5, suburb: 15, province: 11 };
+
+// Last calc snapshot for P&L
+let lastCalcSnap = null;
+
+function openAdmin(){
+  document.getElementById('adminOverlay').classList.add('show');
+  document.getElementById('pinScreen').style.display='block';
+  document.getElementById('adminPanel').style.display='none';
+  document.getElementById('pinInput').value='';
+  document.getElementById('pinError').textContent='';
+}
+
+function closeAdmin(){
+  document.getElementById('adminOverlay').classList.remove('show');
+}
+
+function checkPin(val){
+  if(val === ADMIN_PIN){
+    document.getElementById('pinScreen').style.display='none';
+    document.getElementById('adminPanel').style.display='block';
+    renderAdminPanel();
+  } else if(val.length >= 4){
+    document.getElementById('pinError').textContent='PIN ไม่ถูกต้อง';
+  }
+}
+
+function renderAdminPanel(){
+  // Category markup rows
+  const catDiv = document.getElementById('catMarkupRows');
+  catDiv.innerHTML = CATEGORIES.map((c,i)=>`
+    <div class="adm-row">
+      <div><div class="adm-label">${c.icon} ${c.label.th}</div>
+           <div class="adm-sub">ต้นทุน = ราคาตัวแทน · ขาย = ต้นทุน × markup</div></div>
+      <div class="adm-cost">×<input class="adm-input" id="mu-${c.id}" type="number"
+        value="${c.markup.toFixed(2)}" min="1" max="3" step="0.05"
+        onchange="updateProfit('mu-${c.id}','profit-mu-${c.id}',null,'markup')"/></div>
+      <div class="adm-profit" id="profit-mu-${c.id}">${Math.round((c.markup-1)*100)}%</div>
+    </div>`).join('');
+
+  // Last Mile rows
+  const lmDiv = document.getElementById('lmRows');
+  lmDiv.innerHTML = LM_ZONES.map(z=>{
+    const cost = LM_ANOUSITH_COST[z.id] || 0;
+    const profit = z.flat - cost;
+    const pct = Math.round((profit/z.flat)*100);
+    return`<div class="adm-row">
+      <div><div class="adm-label">${z.label.th}</div>
+           <div class="adm-sub">ต้นทุน Anousith ≈ ฿${cost} · กำไร = ราคาขาย − ต้นทุน</div></div>
+      <div class="adm-cost">฿${cost}<br/><span style="font-size:9px;color:#6a8aaa">ต้นทุน</span></div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:3px">
+        <div style="display:flex;align-items:center;gap:4px">
+          <span style="font-size:10px;color:#7a9abb">ขาย ฿</span>
+          <input class="adm-input" id="lm-${z.id}" type="number" value="${z.flat}"
+            min="${cost}" step="5" style="width:60px"
+            onchange="updateLMProfit('${z.id}')"/>
+        </div>
+        <div class="adm-profit" id="profit-lm-${z.id}">+฿${profit} (${pct}%)</div>
+      </div>
+    </div>`;
+  }).join('');
+
+  // Parcel rows
+  const parcelDiv = document.getElementById('parcelRows');
+  parcelDiv.innerHTML = PARCEL_TIERS.map(p=>`
+    <div class="adm-row">
+      <div><div class="adm-label">${p.id} ${p.label.th}</div>
+           <div class="adm-sub">${p.range.th} · Flat rate ไม่คิดตามน้ำหนัก</div></div>
+      <div class="adm-cost">฿<input class="adm-input" id="pt-${p.id}" type="number"
+        value="${p.flat}" min="50" step="10" style="width:60px"/></div>
+      <div class="adm-profit" id="profit-pt-${p.id}">ขาย ฿${p.flat}</div>
+    </div>`).join('');
+
+  updatePnLSummary();
+}
+
+function updateProfit(inputId, profitId, cost, type){
+  const val = parseFloat(document.getElementById(inputId).value);
+  if(type==='markup'){
+    document.getElementById(profitId).textContent = Math.round((val-1)*100)+'%';
+  }
+}
+
+function updateLMProfit(zoneId){
+  const sell = parseFloat(document.getElementById('lm-'+zoneId).value);
+  const cost = LM_ANOUSITH_COST[zoneId] || 0;
+  const profit = sell - cost;
+  const pct = Math.round((profit/sell)*100);
+  document.getElementById('profit-lm-'+zoneId).textContent = `+฿${profit.toFixed(0)} (${pct}%)`;
+}
+
+function updatePnLSummary(){
+  if(!lastCalcSnap){
+    document.getElementById('admSummary').innerHTML =
+      '<div class="adm-summary-title">📊 คำนวณราคาในหน้าหลักก่อน แล้วกลับมาดู P&L ที่นี่</div>';
+    return;
+  }
+  const s = lastCalcSnap;
+  const lmCost = LM_ANOUSITH_COST[s.zone] || 0;
+  const lmSell = s.lmPerBox;
+  const lmProfit = lmSell - lmCost;
+  const leg1Profit = s.sellPerBox - s.costPerBox;
+  const totalProfit = leg1Profit + lmProfit;
+  document.getElementById('sum-agent').textContent = '฿'+s.costPerBox.toFixed(0);
+  document.getElementById('sum-sell').textContent = '฿'+s.sellPerBox.toFixed(0);
+  document.getElementById('sum-p1').textContent = '฿'+leg1Profit.toFixed(0)+' ('+Math.round((leg1Profit/s.sellPerBox)*100)+'%)';
+  document.getElementById('sum-lm-cost').textContent = lmSell>0?'฿'+lmCost:'–';
+  document.getElementById('sum-lm-sell').textContent = lmSell>0?'฿'+lmSell:'–';
+  document.getElementById('sum-p2').textContent = lmSell>0?'฿'+lmProfit.toFixed(0):' –';
+  document.getElementById('sum-total').textContent = '฿'+totalProfit.toFixed(0)+'/กล่อง';
+}
+
+function saveAdminSettings(){
+  // Apply markup changes
+  CATEGORIES.forEach(c=>{
+    const el = document.getElementById('mu-'+c.id);
+    if(el) c.markup = parseFloat(el.value);
+  });
+  // Apply last mile changes
+  LM_ZONES.forEach(z=>{
+    const el = document.getElementById('lm-'+z.id);
+    if(el) z.flat = parseFloat(el.value);
+  });
+  // Apply parcel changes
+  PARCEL_TIERS.forEach(p=>{
+    const el = document.getElementById('pt-'+p.id);
+    if(el) p.flat = parseFloat(el.value);
+  });
+  // Save to localStorage
+  const settings = {
+    catMarkup: Object.fromEntries(CATEGORIES.map(c=>[c.id, c.markup])),
+    lmFlat: Object.fromEntries(LM_ZONES.map(z=>[z.id, z.flat])),
+    parcelFlat: Object.fromEntries(PARCEL_TIERS.map(p=>[p.id, p.flat])),
+  };
+  try { localStorage.setItem('vithAdminSettings', JSON.stringify(settings)); } catch(e){}
+  renderAdminPanel();
+  clearResult();
+  alert('✅ บันทึกแล้ว! ราคาใหม่มีผลทันที');
+}
+
+function resetAdminSettings(){
+  if(!confirm('รีเซ็ตเป็นค่าเริ่มต้น?')) return;
+  try { localStorage.removeItem('vithAdminSettings'); } catch(e){}
+  location.reload();
+}
+
+function loadSavedSettings(){
+  try {
+    const raw = localStorage.getItem('vithAdminSettings');
+    if(!raw) return;
+    const s = JSON.parse(raw);
+    if(s.catMarkup) CATEGORIES.forEach(c=>{ if(s.catMarkup[c.id]) c.markup=s.catMarkup[c.id]; });
+    if(s.lmFlat)    LM_ZONES.forEach(z=>{ if(s.lmFlat[z.id]) z.flat=s.lmFlat[z.id]; });
+    if(s.parcelFlat) PARCEL_TIERS.forEach(p=>{ if(s.parcelFlat[p.id]) p.flat=s.parcelFlat[p.id]; });
+  } catch(e){}
+}
+
+loadSavedSettings();
+</script>
+
+</body>
+</html>
